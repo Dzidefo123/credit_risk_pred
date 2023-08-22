@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Risk Prediction</title>
+</head>
+<body>
+    <h1>Credit Risk Prediction</h1>
+    <form action="/predict/" method="post">
+        <label for="RevolvingUtilizationOfUnsecuredLines">RevolvingUtilizationOfUnsecuredLines:</label>
+        <input type="number" step="any" name="RevolvingUtilizationOfUnsecuredLines"><br>
+        <label for="age">Age:</label>
+        <input type="number" name="age"><br>
+        <label for="NumberOfTime30_59DaysPastDueNotWorse">NumberOfTime30_59DaysPastDueNotWorse:</label>
+        <input type="number" name="NumberOfTime30_59DaysPastDueNotWorse"><br>
+        <label for="DebtRatio">DebtRatio:</label>
+        <input type="number" step="any" name="DebtRatio"><br>
+        <label for="MonthlyIncome">MonthlyIncome:</label>
+        <input type="number" step="any" name="MonthlyIncome"><br>
+        <label for="NumberOfOpenCreditLinesAndLoans">NumberOfOpenCreditLinesAndLoans:</label>
+        <input type="number" name="NumberOfOpenCreditLinesAndLoans"><br>
+        <label for="NumberOfTimes90DaysLate">NumberOfTimes90DaysLate:</label>
+        <input type="number" name="NumberOfTimes90DaysLate"><br>
+        <label for="NumberRealEstateLoansOrLines">NumberRealEstateLoansOrLines:</label>
+        <input type="number" name="NumberRealEstateLoansOrLines"><br>
+        <label for="NumberOfTime60_89DaysPastDueNotWorse">NumberOfTime60_89DaysPastDueNotWorse:</label>
+        <input type="number" name="NumberOfTime60_89DaysPastDueNotWorse"><br>
+        <label for="NumberOfDependents">NumberOfDependents:</label>
+        <input type="number" step="any" name="NumberOfDependents"><br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
