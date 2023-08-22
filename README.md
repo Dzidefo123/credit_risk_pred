@@ -5,7 +5,7 @@ Credit Risk Prediction Documentation
 Project Overview
 
 This document provides an overview of the credit risk prediction project, including data preprocessing, modeling, and the development of a web application for credit risk prediction.
-Data Source
+Data Source  https://www.kaggle.com/competitions/GiveMeSomeCredit/overview
 
 The dataset for this project was obtained from Kaggle and focuses on credit risk prediction. The dataset contains information about various features related to credit applicants, including demographic and financial attributes. The goal is to predict the likelihood of credit default based on the provided features.
 
@@ -62,4 +62,3 @@ Conclusion
 
 The credit risk prediction project involved data preprocessing, model training, and the development of a web application using FastAPI. The project aimed to provide users with a convenient way to assess credit risk and make informed decisions.
 
-Feel free to adapt this template to your specific project details, add more sections, and provide more detailed explanations. This documentation will serve as a comprehensive guide to your credit risk prediction project, summarizing the key steps and methodologies employed.
