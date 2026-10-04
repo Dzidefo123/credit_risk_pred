@@ -4,9 +4,10 @@ The lab separates the applicant decision (origination PD, calibration, and
 underwriting) from account evolution (behavioral risk and portfolio analytics).
 Phase 2 established packaging and configuration. Phase 3 adds data contracts,
 synthetic histories and censored forward targets. Phase 4 adds logistic and
-XGBoost candidates with development-only scoring; calibration and a production
-API remain later work. The root notebook, app.py, main.py, and templates
-remain unchanged V1 evidence; they are excluded from the distributable package.
+XGBoost candidates with development-only scoring. Phase 5 fits held-out calibration,
+locks development-selected choices and evaluates the final holdout with uncertainty
+and segment diagnostics. A production API remains later work. The root notebook,
+app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
 
@@ -23,6 +24,7 @@ remain unchanged V1 evidence; they are excluded from the distributable package.
 
 The data package now implements adapters, validation, synthetic histories and
 forward targets. Origination features, initial metrics and PD candidates are implemented in Phase 4.
+Calibration and final-holdout validation are implemented in Phase 5.
 Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
 explicit external inputs, rather than embedded machine-specific paths.
 
@@ -47,7 +49,8 @@ targets for environments with GNU make. uv.lock records resolved dependencies;
 A fresh .venv is separate from
 the ignored V1 venv. Domain dependencies will be added as their phases implement
 actual algorithms. NumPy and pandas support the data layer; scikit-learn and XGBoost support the
-candidates. No TensorFlow or remote MLflow server is required.
+candidates. SciPy supports sigmoid fitting and Matplotlib generates validation figures.
+No TensorFlow or remote MLflow server is required.
 
 ## Configuration contracts
 
@@ -76,3 +79,6 @@ Phase 3 commands, source contracts and target definitions are in
 [data_contracts.md](data_contracts.md).
 
 Phase 4 training discipline and commands are in [pd_modeling.md](pd_modeling.md).
+
+Phase 5 calibration, holdout discipline and commands are in
+[calibration_validation.md](calibration_validation.md).

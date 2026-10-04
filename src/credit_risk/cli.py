@@ -21,6 +21,7 @@ from credit_risk.utils.config import (
     load_config,
 )
 from credit_risk.utils.logging import configure_logging
+from credit_risk.validation.settings import ValidationConfig
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -48,6 +49,13 @@ def main(argv: list[str] | None = None) -> int:
     train.add_argument("--development-config", type=Path, default=Path("configs/development.yaml"))
     train.add_argument("--seed", type=int, default=None)
     train.add_argument("--output-dir", type=Path, required=True)
+    validate = commands.add_parser(
+        "validate", help="Calibrate frozen models and evaluate locked final holdout"
+    )
+    validate.add_argument("--csv", type=Path, required=True)
+    validate.add_argument("--run-dir", type=Path, required=True)
+    validate.add_argument("--output-dir", type=Path, required=True)
+    validate.add_argument("--config", type=Path, default=Path("configs/validation.yaml"))
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -58,6 +66,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "decision_policy.yaml", DecisionPolicyConfig)
             load_config(directory / "synthetic_portfolio.yaml", SyntheticPortfolioConfig)
             load_config(directory / "target.yaml", TargetConfig)
+            load_config(directory / "validation.yaml", ValidationConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -76,6 +85,18 @@ def main(argv: list[str] | None = None) -> int:
                 "status": "valid",
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
+            }
+        elif args.command == "validate":
+            from credit_risk.validation.runner import run_validation
+
+            config = load_config(args.config, ValidationConfig)
+            validation = run_validation(args.csv, args.run_dir, args.output_dir, config)
+            result = {
+                "status": "validated",
+                "selected_methods": validation["selection"]["selected_methods"],
+                "preferred_candidate": validation["selection"]["preferred_candidate"],
+                "final_metrics": validation["final_metrics"],
+                "output_dir": str(args.output_dir),
             }
         elif args.command == "train":
             from credit_risk.models.pd import run_origination_experiment

@@ -1,0 +1,10 @@
+# Freeze these choices before opening the final test.
+selection_metric: log_loss
+probability_epsilon: 0.000001
+calibration_bins: 10
+minimum_calibration_events: 20
+minimum_segment_rows: 100
+minimum_segment_events: 20
+bootstrap_samples: 200
+confidence_level: 0.95
+bootstrap_seed: 43
