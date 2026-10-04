@@ -14,6 +14,7 @@ from credit_risk.data.synthetic_portfolio import (
     write_portfolio,
 )
 from credit_risk.data.targets import TargetConfig, build_forward_targets
+from credit_risk.portfolio.loss_settings import ExpectedLossConfig
 from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
 from credit_risk.utils.config import (
     DecisionPolicyConfig,
@@ -66,6 +67,15 @@ def main(argv: list[str] | None = None) -> int:
     portfolio.add_argument("--as-of", default=None)
     portfolio.add_argument("--source-manifest", type=Path, default=None)
     portfolio.add_argument("--output-dir", type=Path, required=True)
+    loss = commands.add_parser(
+        "expected-loss", help="Model-derived portfolio PD, expected loss and scenarios"
+    )
+    loss.add_argument("--accounts", type=Path, required=True)
+    loss.add_argument("--history", type=Path, required=True)
+    loss.add_argument("--config", type=Path, default=Path("configs/expected_loss.yaml"))
+    loss.add_argument("--as-of", default=None)
+    loss.add_argument("--source-manifest", type=Path, default=None)
+    loss.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -78,6 +88,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "target.yaml", TargetConfig)
             load_config(directory / "validation.yaml", ValidationConfig)
             load_config(directory / "portfolio.yaml", PortfolioAnalyticsConfig)
+            load_config(directory / "expected_loss.yaml", ExpectedLossConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -96,6 +107,25 @@ def main(argv: list[str] | None = None) -> int:
                 "status": "valid",
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
+            }
+        elif args.command == "expected-loss":
+            from credit_risk.portfolio.loss_runner import run_expected_loss
+
+            config = load_config(args.config, ExpectedLossConfig)
+            loss = run_expected_loss(
+                args.accounts,
+                args.history,
+                args.output_dir,
+                config,
+                args.as_of,
+                args.source_manifest,
+            )
+            result = {
+                "status": "calculated",
+                "is_synthetic": loss["is_synthetic"],
+                "coverage": loss["coverage"],
+                "scenario_summary": loss["scenario_summary"],
+                "output_dir": str(args.output_dir),
             }
         elif args.command == "analyze-portfolio":
             from credit_risk.portfolio.runner import run_portfolio_analytics

@@ -1,0 +1,18 @@
+# Illustrative analytical assumptions, not regulatory ECL or a portfolio forecast.
+horizon_months: 12
+minimum_state_pairs: 20
+require_complete_snapshot: true
+top_n_concentration: 10
+scenarios:
+  - name: base
+    pd_odds_multiplier: 1.0
+    lgd: 0.45
+    credit_conversion_factor: 0.5
+  - name: adverse
+    pd_odds_multiplier: 1.5
+    lgd: 0.6
+    credit_conversion_factor: 0.75
+  - name: severe
+    pd_odds_multiplier: 2.5
+    lgd: 0.75
+    credit_conversion_factor: 1.0

@@ -7,7 +7,8 @@ synthetic histories and censored forward targets. Phase 4 adds logistic and
 XGBoost candidates with development-only scoring. Phase 5 fits held-out calibration,
 locks development-selected choices and evaluates the final holdout with uncertainty
 and segment diagnostics. Phase 6 adds coverage-aware vintages and consecutive-month
-account/balance roll rates. A production API remains later work. The root notebook,
+account/balance roll rates. Phase 7 adds a longitudinal transition PD benchmark,
+expected loss and configurable scenarios. A production API remains later work. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -26,7 +27,8 @@ app.py, main.py, and templates remain unchanged V1 evidence; they are excluded f
 The data package now implements adapters, validation, synthetic histories and
 forward targets. Origination features, initial metrics and PD candidates are implemented in Phase 4.
 Calibration and final-holdout validation are implemented in Phase 5.
-The portfolio package implements vintage and roll-rate analytics in Phase 6.
+The portfolio package implements vintage and roll-rate analytics in Phase 6,
+then model-driven expected loss and exposure/concentration summaries in Phase 7.
 Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
 explicit external inputs, rather than embedded machine-specific paths.
 
@@ -87,3 +89,6 @@ Phase 5 calibration, holdout discipline and commands are in
 
 Phase 6 vintage definitions, roll-rate denominators and SQL counterparts are in
 [portfolio_analytics.md](portfolio_analytics.md).
+
+Phase 7 model PD provenance, expected-loss arithmetic and scenario assumptions are in
+[expected_loss.md](expected_loss.md).
