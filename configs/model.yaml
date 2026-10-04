@@ -1,6 +1,22 @@
-# Prospective experiment settings; no model is trained in Phase 2.
+# Fixed initial candidates; no tuning on calibration or final-test data.
 baseline: logistic_regression
 challenger: xgboost
-test_fraction: 0.20
+validation_fraction: 0.15
 calibration_fraction: 0.20
+test_fraction: 0.20
+classification_threshold: 0.10  # Diagnostic classification only, not underwriting.
+clip_lower_quantile: 0.001
+clip_upper_quantile: 0.999
 calibration_methods: [raw, sigmoid, isotonic]
+logistic:
+  c: 1.0
+  max_iter: 3000
+  tolerance: 0.00001
+xgboost:
+  n_estimators: 250
+  max_depth: 3
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_lambda: 5.0
+  n_jobs: 2

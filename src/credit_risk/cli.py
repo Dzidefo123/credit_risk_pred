@@ -40,6 +40,14 @@ def main(argv: list[str] | None = None) -> int:
     target.add_argument("--config", type=Path, default=Path("configs/target.yaml"))
     target.add_argument("--as-of", default=None)
     target.add_argument("--output", type=Path, required=True)
+    train = commands.add_parser(
+        "train", help="Fit origination candidates, reserve calibration/test"
+    )
+    train.add_argument("--csv", type=Path, required=True)
+    train.add_argument("--config", type=Path, default=Path("configs/model.yaml"))
+    train.add_argument("--development-config", type=Path, default=Path("configs/development.yaml"))
+    train.add_argument("--seed", type=int, default=None)
+    train.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -69,6 +77,14 @@ def main(argv: list[str] | None = None) -> int:
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
             }
+        elif args.command == "train":
+            from credit_risk.models.pd import run_origination_experiment
+
+            config = load_config(args.config, ModelConfig)
+            development = load_config(args.development_config, DevelopmentConfig)
+            logger = configure_logging(development.log_level)
+            seed = development.seed if args.seed is None else args.seed
+            result = run_origination_experiment(args.csv, args.output_dir, config, seed)
         else:
             portfolio = load_portfolio_csv(args.accounts, args.history)
             config = load_config(args.config, TargetConfig)

@@ -1,0 +1,174 @@
+{
+  "evidence_type": "measured grouped development holdout; not calibrated PD or final validation",
+  "local_run": "artifacts/phase4-origination-001",
+  "metric_definitions": {
+    "pr_auc": "trapezoidal precision-recall curve area",
+    "average_precision": "non-interpolated precision-recall summary; primary PR comparison",
+    "ks": "maximum absolute TPR-FPR (two-sided, directionless)"
+  },
+  "experiment": {
+    "package_version": "0.4.0",
+    "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+    "probability_status": "raw_uncalibrated",
+    "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "feature_names": [
+      "RevolvingUtilizationOfUnsecuredLines",
+      "age",
+      "NumberOfTime30_59DaysPastDueNotWorse",
+      "DebtRatio",
+      "MonthlyIncome",
+      "NumberOfOpenCreditLinesAndLoans",
+      "NumberOfTimes90DaysLate",
+      "NumberRealEstateLoansOrLines",
+      "NumberOfTime60_89DaysPastDueNotWorse",
+      "NumberOfDependents"
+    ],
+    "seed": 42,
+    "config": {
+      "baseline": "logistic_regression",
+      "challenger": "xgboost",
+      "validation_fraction": 0.15,
+      "classification_threshold": 0.1,
+      "clip_lower_quantile": 0.001,
+      "clip_upper_quantile": 0.999,
+      "logistic": {
+        "c": 1.0,
+        "max_iter": 3000,
+        "tolerance": 1e-05
+      },
+      "xgboost": {
+        "n_estimators": 250,
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 5.0,
+        "n_jobs": 2
+      },
+      "test_fraction": 0.2,
+      "calibration_fraction": 0.2,
+      "calibration_methods": [
+        "raw",
+        "sigmoid",
+        "isotonic"
+      ]
+    },
+    "data_quality": {
+      "rows": 150000,
+      "missing": {
+        "RevolvingUtilizationOfUnsecuredLines": 0,
+        "age": 0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0,
+        "DebtRatio": 0,
+        "MonthlyIncome": 29731,
+        "NumberOfOpenCreditLinesAndLoans": 0,
+        "NumberOfTimes90DaysLate": 0,
+        "NumberRealEstateLoansOrLines": 0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0,
+        "NumberOfDependents": 3924,
+        "SeriousDlqin2yrs": 0
+      },
+      "duplicate_records": 609,
+      "suspicious": {
+        "age_zero_or_over_110": 1,
+        "utilization_over_one": 3321,
+        "delinquency_count_90_or_more": 269
+      }
+    },
+    "validation_type": "grouped cross-sectional development holdout; not out-of-time",
+    "final_test_scored": false,
+    "calibration_scored": false,
+    "partitions": {
+      "train": {
+        "rows": 67562,
+        "bad_count": 4514,
+        "bad_rate": 0.06681270536692223,
+        "row_positions_sha256": "892d79c1fed9be83efbae3370195cba20bfe387e8284fad5377df0ff5d8e81c2"
+      },
+      "development": {
+        "rows": 22483,
+        "bad_count": 1504,
+        "bad_rate": 0.06689498732375572,
+        "row_positions_sha256": "6311677681e2f480459b437f11b04b004cafa794c799dd3b3255654e3a706a28"
+      },
+      "calibration": {
+        "rows": 29964,
+        "bad_count": 2005,
+        "bad_rate": 0.06691362968896009,
+        "row_positions_sha256": "6f5dacf10266e10f8f8c87f5a1ed4d142f2918e9175c86c6a8fa3b2ec7e299af"
+      },
+      "test": {
+        "rows": 29991,
+        "bad_count": 2003,
+        "bad_rate": 0.0667867026774699,
+        "row_positions_sha256": "6afcbf7577b3e3fc42effc5ab98f54504eae3e545bb568584f17846518e159a7"
+      }
+    },
+    "versions": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "joblib": "1.6.0"
+    },
+    "python": "3.11.4",
+    "source_code_sha256": {
+      "pd.py": "dce0e3d2bb5993714446c5f0fa60428bf02a9a8c02fb610877ac7cd3dbe24ff3",
+      "origination.py": "6cbb3d9442caf77aad9f70e099503566c8a9d39afbb52c7caec87ef3f86d6cf7",
+      "config.py": "9b26248bfb20abd4280d1acd7d0bb37114c0544f0c2d2251f874a7a2ff660bc4",
+      "metrics.py": "3195821b50e0f72d218fe7e0b2dda436a985aba991f00a6987e3f412f2ccc91a"
+    },
+    "development_metrics": {
+      "constant_train_prevalence": {
+        "roc_auc": 0.5,
+        "gini": 0.0,
+        "ks": 0.0,
+        "pr_auc": 0.5334474936618778,
+        "average_precision": 0.06689498732375572,
+        "brier": 0.06242005476503072,
+        "log_loss": 0.2455322139104123,
+        "precision": 0.0,
+        "recall": 0.0,
+        "observed_bad_rate": 0.06689498732375572,
+        "mean_probability": 0.06681270536692223,
+        "classification_threshold": 0.1
+      },
+      "logistic_regression": {
+        "roc_auc": 0.8421764913342928,
+        "gini": 0.6843529826685857,
+        "ks": 0.5517599983468778,
+        "pr_auc": 0.34892155945114695,
+        "average_precision": 0.34938332297446845,
+        "brier": 0.05266079646191206,
+        "log_loss": 0.19909407948378668,
+        "precision": 0.3073608617594255,
+        "recall": 0.5691489361702128,
+        "observed_bad_rate": 0.06689498732375572,
+        "mean_probability": 0.06758545362664431,
+        "classification_threshold": 0.1
+      },
+      "xgboost": {
+        "roc_auc": 0.8687264708984568,
+        "gini": 0.7374529417969136,
+        "ks": 0.5873027599534691,
+        "pr_auc": 0.40394875476368913,
+        "average_precision": 0.40461723012156303,
+        "brier": 0.04859496753791712,
+        "log_loss": 0.17604803287352633,
+        "precision": 0.28269810803400053,
+        "recall": 0.6855053191489362,
+        "observed_bad_rate": 0.06689498732375572,
+        "mean_probability": 0.06803288000513148,
+        "classification_threshold": 0.1
+      }
+    },
+    "artifacts_sha256": {
+      "development_predictions.csv": "cdc1f428c2806527740cca9527658e3524a6e7ab87bc2d75faef9af172c69b5a",
+      "logistic_coefficients.csv": "b07d3009dfe4043e0239f6cddb1bb93e45b703319b97ed4de1469dd8c5bb9eb1",
+      "logistic_regression.joblib": "00d6f7254d6d9c5e11367a388546761d4d9927bb5841b3b3ffe283c80b2a83b3",
+      "split_assignments.csv": "efbdc36ee1286f0c06f302197174efbf9884ecb0f8e8c4b9d010569265db04e2",
+      "xgboost.joblib": "ee2563cf382b469919f68caf537aa67824eef03e25ea7010b43cc37ce3b15587",
+      "xgboost_importance.csv": "6db98b483c192639f011257282075ae9720ba2415e3e0e7e54d288d204c316df"
+    }
+  }
+}

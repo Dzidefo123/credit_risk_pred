@@ -48,6 +48,10 @@ def test_unknown_parameter_does_not_silently_use_defaults(tmp_path):
         {"test_fraction": 0.7, "calibration_fraction": 0.3},
         {"test_fraction": -0.1},
         {"calibration_methods": ["raw", "raw"]},
+        {"validation_fraction": 0.7},
+        {"clip_lower_quantile": 0.9, "clip_upper_quantile": 0.1},
+        {"logistic": {"c": 0.0}},
+        {"xgboost": {"subsample": 0.0}},
     ],
 )
 def test_invalid_experiment_partitions(settings):
@@ -76,7 +80,9 @@ def test_invalid_policy_settings(settings):
 def test_configuration_cli_success_and_missing_files(tmp_path, capsys):
     assert main(["check-config", "--config-dir", str(ROOT / "configs")]) == 0
     captured = capsys.readouterr()
-    assert json.loads(captured.out)["status"] == "valid"
+    result = json.loads(captured.out)
+    assert result["status"] == "valid"
+    assert isinstance(result["version"], str)
     assert json.loads(captured.err)["level"] == "INFO"
     assert main(["check-config", "--config-dir", str(tmp_path)]) == 2
     captured = capsys.readouterr()

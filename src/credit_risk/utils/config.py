@@ -29,9 +29,31 @@ class DevelopmentConfig(ConfigModel):
     paths: DataPaths = Field(default_factory=DataPaths)
 
 
+class LogisticConfig(ConfigModel):
+    c: float = Field(default=1.0, gt=0)
+    max_iter: int = Field(default=3000, ge=1)
+    tolerance: float = Field(default=1e-5, gt=0)
+
+
+class XGBoostConfig(ConfigModel):
+    n_estimators: int = Field(default=250, ge=1)
+    max_depth: int = Field(default=3, ge=1, le=16)
+    learning_rate: float = Field(default=0.05, gt=0, le=1)
+    subsample: float = Field(default=0.8, gt=0, le=1)
+    colsample_bytree: float = Field(default=0.8, gt=0, le=1)
+    reg_lambda: float = Field(default=5.0, ge=0)
+    n_jobs: int = Field(default=2, ge=1)
+
+
 class ModelConfig(ConfigModel):
     baseline: Literal["logistic_regression"] = "logistic_regression"
     challenger: Literal["xgboost"] = "xgboost"
+    validation_fraction: float = Field(default=0.15, gt=0, lt=1)
+    classification_threshold: float = Field(default=0.1, gt=0, lt=1)
+    clip_lower_quantile: float = Field(default=0.001, ge=0, lt=1)
+    clip_upper_quantile: float = Field(default=0.999, gt=0, le=1)
+    logistic: LogisticConfig = Field(default_factory=LogisticConfig)
+    xgboost: XGBoostConfig = Field(default_factory=XGBoostConfig)
     test_fraction: float = Field(default=0.2, gt=0, lt=1)
     calibration_fraction: float = Field(default=0.2, gt=0, lt=1)
     calibration_methods: list[Literal["raw", "sigmoid", "isotonic"]] = Field(
@@ -40,8 +62,12 @@ class ModelConfig(ConfigModel):
 
     @model_validator(mode="after")
     def check_partitions(self) -> "ModelConfig":
-        if self.test_fraction + self.calibration_fraction >= 1:
-            raise ValueError("Training partition must remain after test and calibration partitions")
+        if self.test_fraction + self.calibration_fraction + self.validation_fraction >= 1:
+            raise ValueError(
+                "Training partition must remain after validation, test and calibration partitions"
+            )
+        if self.clip_lower_quantile >= self.clip_upper_quantile:
+            raise ValueError("Lower clipping quantile must be below upper quantile")
         if len(set(self.calibration_methods)) != len(self.calibration_methods):
             raise ValueError("Calibration methods must be unique")
         return self

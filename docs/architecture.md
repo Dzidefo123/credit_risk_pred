@@ -3,8 +3,9 @@
 The lab separates the applicant decision (origination PD, calibration, and
 underwriting) from account evolution (behavioral risk and portfolio analytics).
 Phase 2 established packaging and configuration. Phase 3 adds data contracts,
-synthetic histories and censored forward targets. No new predictive model or
-production API exists yet. The root notebook, app.py, main.py, and templates
+synthetic histories and censored forward targets. Phase 4 adds logistic and
+XGBoost candidates with development-only scoring; calibration and a production
+API remain later work. The root notebook, app.py, main.py, and templates
 remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -21,7 +22,8 @@ remain unchanged V1 evidence; they are excluded from the distributable package.
 | utils | Typed config and structured logging |
 
 The data package now implements adapters, validation, synthetic histories and
-forward targets. Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
+forward targets. Origination features, initial metrics and PD candidates are implemented in Phase 4.
+Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
 explicit external inputs, rather than embedded machine-specific paths.
 
 ## Reproducible development
@@ -44,8 +46,8 @@ targets for environments with GNU make. uv.lock records resolved dependencies;
 `uv sync --locked` refuses to silently update it. The project uses uv copy mode because OneDrive rejects environment hardlinks.
 A fresh .venv is separate from
 the ignored V1 venv. Domain dependencies will be added as their phases implement
-actual algorithms. NumPy and pandas support the data layer; no TensorFlow, tree
-model or remote MLflow server is required.
+actual algorithms. NumPy and pandas support the data layer; scikit-learn and XGBoost support the
+candidates. No TensorFlow or remote MLflow server is required.
 
 ## Configuration contracts
 
@@ -72,3 +74,5 @@ historical findings and phase gates.
 
 Phase 3 commands, source contracts and target definitions are in
 [data_contracts.md](data_contracts.md).
+
+Phase 4 training discipline and commands are in [pd_modeling.md](pd_modeling.md).
