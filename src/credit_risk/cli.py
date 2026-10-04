@@ -7,6 +7,7 @@ from hashlib import sha256
 from pathlib import Path
 
 from credit_risk import __version__
+from credit_risk.api.settings import ServingConfig
 from credit_risk.data.loaders import load_origination_csv, load_portfolio_csv
 from credit_risk.data.synthetic_portfolio import (
     SyntheticPortfolioConfig,
@@ -19,6 +20,7 @@ from credit_risk.decisioning.settings import PolicyComparisonConfig
 from credit_risk.monitoring.settings import MonitoringConfig
 from credit_risk.portfolio.loss_settings import ExpectedLossConfig
 from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
+from credit_risk.tracking.settings import TrackingConfig
 from credit_risk.utils.config import (
     DecisionPolicyConfig,
     DevelopmentConfig,
@@ -112,6 +114,13 @@ def main(argv: list[str] | None = None) -> int:
         monitor.add_argument("--" + name, type=Path, required=True)
     monitor.add_argument("--config", type=Path, default=Path("configs/monitoring.yaml"))
     monitor.add_argument("--current-manifest", type=Path, default=None)
+    track = commands.add_parser(
+        "track-experiment", help="Export frozen evidence to optional local MLflow"
+    )
+    track.add_argument("--run-dir", type=Path, required=True)
+    track.add_argument("--kind", choices=("origination", "validation"), required=True)
+    track.add_argument("--config", type=Path, default=Path("configs/tracking.yaml"))
+    track.add_argument("--run-name", default=None)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -128,6 +137,8 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "credit_strategy.yaml", PolicyComparisonConfig)
             load_config(directory / "reject_inference.yaml", RejectInferenceConfig)
             load_config(directory / "monitoring.yaml", MonitoringConfig)
+            load_config(directory / "serving.yaml", ServingConfig)
+            load_config(directory / "tracking.yaml", TrackingConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -147,6 +158,10 @@ def main(argv: list[str] | None = None) -> int:
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
             }
+        elif args.command == "track-experiment":
+            from credit_risk.tracking.mlflow import export_to_mlflow
+
+            result = export_to_mlflow(args.run_dir, args.kind, args.config, args.run_name)
         elif args.command == "freeze-monitor-reference":
             from credit_risk.monitoring.runner import freeze_monitor_reference
 

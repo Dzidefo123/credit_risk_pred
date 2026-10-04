@@ -1,0 +1,140 @@
+{
+  "responses": {
+    "health": {
+      "status": "ready",
+      "package_version": "0.11.0",
+      "research_only": true,
+      "model_version": "xgboost:sigmoid:17030fc4d0a5",
+      "reason": null
+    },
+    "score": {
+      "application_id": "illustrative-001",
+      "pd": 0.01622080119905257,
+      "risk_grade": "G2",
+      "model_version": "xgboost:sigmoid:17030fc4d0a5",
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "package_version": "0.11.0",
+      "calibration_method": "sigmoid",
+      "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+      "missing_features": [],
+      "suspicious_inputs": {
+        "age_zero_or_over_110": 0,
+        "utilization_over_one": 0,
+        "delinquency_count_90_or_more": 0
+      },
+      "research_only": true
+    },
+    "decision": {
+      "application_id": "illustrative-001",
+      "pd": 0.01622080119905257,
+      "risk_grade": "G2",
+      "model_version": "xgboost:sigmoid:17030fc4d0a5",
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "package_version": "0.11.0",
+      "calibration_method": "sigmoid",
+      "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+      "missing_features": [],
+      "suspicious_inputs": {
+        "age_zero_or_over_110": 0,
+        "utilization_over_one": 0,
+        "delinquency_count_90_or_more": 0
+      },
+      "research_only": true,
+      "decision": "APPROVE",
+      "recommended_limit": 5400.0,
+      "reason_codes": [
+        "PD_BELOW_APPROVAL"
+      ],
+      "policy_name": "baseline",
+      "policy_sha256": "5af6956f84c806324f013238e73eb19c1d152675ee38f2d5f28350429d58bf3e",
+      "assumed_ead": 2700.0,
+      "expected_loss_proxy": 19.70827345684887,
+      "limit_units": "unverified source income units"
+    },
+    "missing_income_decision": {
+      "application_id": "illustrative-001",
+      "pd": 0.01344372558090586,
+      "risk_grade": "G2",
+      "model_version": "xgboost:sigmoid:17030fc4d0a5",
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "package_version": "0.11.0",
+      "calibration_method": "sigmoid",
+      "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+      "missing_features": [
+        "MonthlyIncome"
+      ],
+      "suspicious_inputs": {
+        "age_zero_or_over_110": 0,
+        "utilization_over_one": 0,
+        "delinquency_count_90_or_more": 0
+      },
+      "research_only": true,
+      "decision": "MANUAL_REVIEW",
+      "recommended_limit": 0.0,
+      "reason_codes": [
+        "PD_BELOW_APPROVAL",
+        "INCOME_UNAVAILABLE_OR_ZERO"
+      ],
+      "policy_name": "baseline",
+      "policy_sha256": "5af6956f84c806324f013238e73eb19c1d152675ee38f2d5f28350429d58bf3e",
+      "assumed_ead": 0.0,
+      "expected_loss_proxy": 0.0,
+      "limit_units": "unverified source income units"
+    }
+  },
+  "tracking_exports": [
+    {
+      "status": "recorded",
+      "stage": "origination",
+      "run_id": "124e9eec95a048c7b9507b652d5c09d2",
+      "experiment_id": "1",
+      "metric_count": 36,
+      "parameter_count": 23,
+      "artifacts": [
+        "experiment.json",
+        "logistic_regression.joblib",
+        "xgboost.joblib"
+      ],
+      "source_manifest_sha256": "4d4b627f38d5d8783096ea8b9bd25dbef34f1f349b581c1e37b8e200d67f8987",
+      "fitting_performed": false,
+      "final_test_scored": false,
+      "model_promoted": false
+    },
+    {
+      "status": "recorded",
+      "stage": "validation",
+      "run_id": "e14692b5fb8c4b08b5c2ef6f85b2285f",
+      "experiment_id": "1",
+      "metric_count": 144,
+      "parameter_count": 16,
+      "artifacts": [
+        "validation.json",
+        "calibration.png",
+        "discrimination.png",
+        "logistic_regression_selected.joblib",
+        "selection.json",
+        "xgboost_selected.joblib"
+      ],
+      "source_manifest_sha256": "1525483e5398e4be7c5609d0a7eafb5b09cb829f80a13ad687dedbe0688c9d1e",
+      "fitting_performed": false,
+      "final_test_scored": false,
+      "model_promoted": false
+    }
+  ],
+  "input_provenance": "Invented API examples, not historical applicant outcomes",
+  "original_final_test_scored": false,
+  "original_model_and_test_lock_unchanged": true,
+  "local_tracking_store": {
+    "database": "artifacts/mlflow/tracking.db",
+    "artifact_root": "artifacts/mlflow/files",
+    "experiment": "credit-risk-lab"
+  },
+  "source_code_and_config_sha256": {
+    "src/credit_risk/api/main.py": "b7d401e80e70a689e9bf2878c4cf24f0023d104356faeb169f6a1dc0e578611b",
+    "src/credit_risk/api/schemas.py": "af6ba373158bf46b75dc74f013ab53f9357444215470294e7a6372f8075598b8",
+    "src/credit_risk/api/service.py": "02c5c42c0cee7b52b7a86a3253383b0c76c543a05d4dacc5865f0f80e4b8f856",
+    "src/credit_risk/tracking/mlflow.py": "c1dae1368eb16814c1cd93e70535670bc19740867789a9c88ed759fa732512b7",
+    "configs/serving.yaml": "b662354b1902b1be4b2eb519c1166bbf2528accabc3897b347b661be9ef4c19d",
+    "configs/tracking.yaml": "25cc4ad9a979893723338e59330cad5dce34db97355d111dda211f8813390e77"
+  }
+}

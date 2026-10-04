@@ -1,0 +1,5 @@
+# Optional local tracking only; paths resolve relative to this file.
+database_path: ../artifacts/mlflow/tracking.db
+artifact_root: ../artifacts/mlflow/files
+experiment_name: credit-risk-lab
+include_models: true

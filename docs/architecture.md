@@ -12,7 +12,7 @@ expected loss and configurable scenarios. Phase 8 adds configurable underwriting
 hypothetical limits and development policy comparisons. Phase 9 adds separate synthetic
 selection-bias experiments with masked outcomes and propensity weighting.
 Phase 10 adds frozen-reference feature, PD, score and missingness monitoring.
-A production API remains later work. The root notebook,
+Phase 11 adds a research scoring/decision API and optional local MLflow tracking. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -105,3 +105,6 @@ Phase 9 simulation assumptions, propensity weighting and identification limits a
 
 Phase 10 reference freezing, drift definitions and alert governance are in
 [monitoring.md](monitoring.md).
+
+Phase 11 serving contracts, lifecycle and optional experiment export are in
+[api_tracking.md](api_tracking.md).

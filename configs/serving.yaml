@@ -1,0 +1,6 @@
+# Research demonstration; paths resolve relative to this file.
+source_csv: ../cs-training.csv
+run_dir: ../artifacts/phase4-origination-001
+validation_dir: ../artifacts/phase5-validation-001
+policy_config: credit_strategy.yaml
+policy_name: baseline
