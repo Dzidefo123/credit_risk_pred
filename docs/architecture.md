@@ -1,0 +1,69 @@
+# Credit Risk Modeling & Decisioning Lab: architecture
+
+The lab separates the applicant decision (origination PD, calibration, and
+underwriting) from account evolution (behavioral risk and portfolio analytics).
+Phase 2 establishes packaging and configuration. No new model, target, portfolio,
+or production API exists yet. The root notebook, app.py, main.py, and templates
+remain unchanged V1 evidence; they are excluded from the distributable package.
+
+## Package boundaries
+
+| Package | Intended responsibility |
+| --- | --- |
+| data | Source adapters, data contracts, synthetic histories and targets |
+| features | Separate origination and backward-looking behavioral transformations |
+| models | PD models, calibration and interpretability |
+| validation | Discrimination, calibration, backtesting and stability |
+| portfolio | Vintages, monthly transitions, migration and expected loss |
+| decisioning | Configurable risk grades, underwriting, limits and selection bias |
+| monitoring | Feature, score, PD and missingness drift |
+| utils | Typed config and structured logging |
+
+Empty domain packages mark responsibilities; their implementations arrive in
+later phases. Imports never load the inherited CSV or model. Configurations are
+explicit external inputs, rather than embedded machine-specific paths.
+
+## Reproducible development
+
+Python 3.11 is the development baseline (`.python-version`). The package declares
+Python >=3.11,<3.15; only the interpreter used in the phase checks is verified.
+Install uv separately, then run these commands from the repository root:
+
+```console
+uv sync --locked
+uv run --locked credit-risk-lab check-config --config-dir configs
+uv run --locked pytest
+uv run --locked ruff check src tests
+uv run --locked ruff format --check src tests
+uv build
+```
+
+The same commands work on Windows without make. Makefile provides convenience
+targets for environments with GNU make. uv.lock records resolved dependencies;
+`uv sync --locked` refuses to silently update it. The project uses uv copy mode because OneDrive rejects environment hardlinks.
+A fresh .venv is separate from
+the ignored V1 venv. Domain dependencies will be added as their phases implement
+actual algorithms; no TensorFlow, tree model or remote MLflow server is required.
+
+## Configuration contracts
+
+`development.yaml` controls seed, environment, log level and paths. Relative paths
+resolve against the parent of the supplied configuration directory; absolute
+paths remain absolute. Loading and validation do not create output directories.
+`model.yaml` reserves independent training, calibration, and test partitions.
+The final test set must remain untouched by model/calibration selection.
+`decision_policy.yaml` holds illustrative PD thresholds, ordered grade bounds,
+LGD and credit-limit assumptions. These are demonstration settings rather than
+validated policy recommendations. Grade assignment and threshold inclusion
+behavior will be implemented in Phase 8.
+
+Safe YAML loading rejects executable tags. Typed contracts reject unknown keys,
+invalid probabilities, inconsistent partitions, unordered grades and reversed
+limit bounds. JSON logging writes to stderr with UTC timestamps; CLI result JSON
+writes to stdout. Imports do not configure global logging or read configuration.
+
+The wheel contains only credit_risk modules. YAML examples, tests, V1 code and
+local artifacts are not wheel resources. Supply --config-dir when invoking the
+configuration checker outside the checkout. The README's complete business
+rewrite remains scheduled for Phase 14; consult reports/phase1_audit.md for the
+historical findings and phase gates.

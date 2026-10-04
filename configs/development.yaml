@@ -1,0 +1,9 @@
+# Paths resolve relative to this configuration directory's parent.
+environment: development
+seed: 42
+log_level: INFO
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  artifacts: artifacts

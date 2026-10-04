@@ -1,0 +1,9 @@
+# Illustrative risk appetite, not a validated underwriting policy.
+# Boundary behavior will be implemented and tested in Phase 8.
+approve_below_pd: 0.03
+decline_at_or_above_pd: 0.10
+risk_grade_upper_bounds: [0.01, 0.03, 0.06, 0.10, 1.0]
+lgd_assumption: 0.45
+minimum_limit: 500.0
+maximum_limit: 10000.0
+income_limit_multiplier: 2.0

@@ -1,0 +1,6 @@
+# Prospective experiment settings; no model is trained in Phase 2.
+baseline: logistic_regression
+challenger: xgboost
+test_fraction: 0.20
+calibration_fraction: 0.20
+calibration_methods: [raw, sigmoid, isotonic]
