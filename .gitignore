@@ -1,0 +1,36 @@
+# Local environments and Python caches
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+# Build and development outputs
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
+# Local data and model artifacts; keep documentation
+/cs-training.csv
+/combined_model.pkl
+/data/raw/**
+/data/interim/**
+/data/processed/**
+/artifacts/
+/models/
+/mlruns/
+/mlartifacts/
+*.pkl
+*.joblib
+*.h5
+*.keras
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db

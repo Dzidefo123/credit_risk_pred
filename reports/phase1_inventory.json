@@ -1,0 +1,216 @@
+{
+  "baseline_commit": "811a2fef379975f9e67a8d61199259c2a11cb5d3",
+  "preserved_sha256": {
+    "README.md": "de5efdfaac9233d2847623b07b9d0b952ea8f4881ab0190bb424f51750b4062f",
+    "app.py": "16f392b4a88c298124734c6138032da304f9cf6e796602e0f26caf9526c8a232",
+    "main.py": "b62bc5092ae72347ded775167e835a406ae2208acb7bab010c586ecabfc4f854",
+    "credit_risk(1).ipynb": "0bc38570343da2df50dbeef7442df24d6c4ef3535343a77bce4e15b492becf84",
+    "templates/home.html": "6dd921c3581ccafb7f326bfe8f5f750938c6f61e1c1b3d83ed52f38b051131ef",
+    "templates/result.html": "b4c9301d0a88395e4d0f357f79db7579be28d71c2a4a6e8c526554e1c507ee6b"
+  },
+  "local_artifact_sha256": {
+    "cs-training.csv": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "combined_model.pkl": "1fce36b2c58d1f2aec9749690a62de208367e13dc0a4c6b5b9ec3ffc78836d28"
+  },
+  "tracked_inventory": {
+    "README.md": {
+      "files": 1,
+      "bytes": 3883
+    },
+    "__pycache__": {
+      "files": 1,
+      "bytes": 1844
+    },
+    "app.py": {
+      "files": 1,
+      "bytes": 1936
+    },
+    "combined_model.pkl": {
+      "files": 1,
+      "bytes": 339656
+    },
+    "credit_risk(1).ipynb": {
+      "files": 1,
+      "bytes": 240248
+    },
+    "cs-training.csv": {
+      "files": 1,
+      "bytes": 7414964
+    },
+    "main.py": {
+      "files": 1,
+      "bytes": 1558
+    },
+    "templates": {
+      "files": 2,
+      "bytes": 1944
+    },
+    "venv": {
+      "files": 11488,
+      "bytes": 422053480
+    }
+  },
+  "dependency_evidence": [
+    {
+      "name": "annotated-types",
+      "version": "0.5.0"
+    },
+    {
+      "name": "anyio",
+      "version": "3.7.1"
+    },
+    {
+      "name": "click",
+      "version": "8.1.7"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6"
+    },
+    {
+      "name": "exceptiongroup",
+      "version": "1.1.3"
+    },
+    {
+      "name": "fastapi",
+      "version": "0.101.1"
+    },
+    {
+      "name": "h11",
+      "version": "0.14.0"
+    },
+    {
+      "name": "idna",
+      "version": "3.4"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.2"
+    },
+    {
+      "name": "jmespath",
+      "version": "1.0.1"
+    },
+    {
+      "name": "joblib",
+      "version": "1.3.2"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "2.1.3"
+    },
+    {
+      "name": "numpy",
+      "version": "1.24.4"
+    },
+    {
+      "name": "pandas",
+      "version": "2.0.3"
+    },
+    {
+      "name": "pip",
+      "version": "23.2.1"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.2.1"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.6.1"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.8.2"
+    },
+    {
+      "name": "pytz",
+      "version": "2023.3"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.1"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.3.0"
+    },
+    {
+      "name": "scipy",
+      "version": "1.10.1"
+    },
+    {
+      "name": "setuptools",
+      "version": "41.2.0"
+    },
+    {
+      "name": "six",
+      "version": "1.16.0"
+    },
+    {
+      "name": "sniffio",
+      "version": "1.3.0"
+    },
+    {
+      "name": "starlette",
+      "version": "0.27.0"
+    },
+    {
+      "name": "template",
+      "version": "0.7.6"
+    },
+    {
+      "name": "templates",
+      "version": "0.0.5"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.2.0"
+    },
+    {
+      "name": "toml",
+      "version": "0.10.2"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.7.1"
+    },
+    {
+      "name": "tzdata",
+      "version": "2023.3"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.23.2"
+    },
+    {
+      "name": "xgboost",
+      "version": "1.7.6"
+    }
+  ],
+  "dataset": {
+    "rows": 150000,
+    "columns": [
+      "",
+      "SeriousDlqin2yrs",
+      "RevolvingUtilizationOfUnsecuredLines",
+      "age",
+      "NumberOfTime30_59DaysPastDueNotWorse",
+      "DebtRatio",
+      "MonthlyIncome",
+      "NumberOfOpenCreditLinesAndLoans",
+      "NumberOfTimes90DaysLate",
+      "NumberRealEstateLoansOrLines",
+      "NumberOfTime60_89DaysPastDueNotWorse",
+      "NumberOfDependents"
+    ],
+    "missing": {
+      "MonthlyIncome": 29731,
+      "NumberOfDependents": 3924
+    },
+    "target_counts": {
+      "1": 10026,
+      "0": 139974
+    }
+  }
+}
