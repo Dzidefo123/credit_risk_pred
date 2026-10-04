@@ -18,10 +18,11 @@ population, and sampling need independent verification before modeling.
 The inherited file contains no account identifier or dated monthly history.
 It cannot support genuine vintage, behavioral, or out-of-time analysis.
 
-Later phases will separate origination data from explicitly synthetic account
-histories using replaceable data contracts. Proposed ignored locations are
-`data/raw/`, `data/interim/`, and `data/processed/`. No synthetic portfolio or
-new modeling is implemented in Phase 1. A fresh clone will not include local
+The current lab separates origination data from explicitly synthetic account
+histories using replaceable data contracts. Ignored locations are
+`data/raw/`, `data/interim/`, and `data/processed/`. Phase 3 implemented the
+synthetic generator and forward targets; later phases added separate portfolio
+analytics and origination modeling. A fresh clone will not include local
 raw data or model artifacts; the legacy API is historical evidence and is not
 a reproducible serving release.
 

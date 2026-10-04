@@ -1,6 +1,7 @@
 # Allow only package sources, metadata, docs needed for builds and configs.
 **
 !Dockerfile
+!README.md
 !pyproject.toml
 !uv.lock
 !src/

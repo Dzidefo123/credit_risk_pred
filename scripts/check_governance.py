@@ -206,6 +206,7 @@ def main():
         raise ValueError("Governance register differs from recorded evidence/current configuration")
     check_block(root / "reports/model_card.md", "partitions", partitions_table(expected))
     check_block(root / "reports/model_card.md", "final_metrics", metrics_table(expected))
+    check_block(root / "README.md", "final_metrics", metrics_table(expected))
     check_block(root / "reports/monitoring_report.md", "thresholds", monitoring_table(expected))
     risks = (root / "reports/model_risk_register.md").read_text(encoding="utf-8")
     for finding in expected["open_findings"]:

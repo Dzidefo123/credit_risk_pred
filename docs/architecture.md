@@ -14,7 +14,8 @@ selection-bias experiments with masked outcomes and propensity weighting.
 Phase 10 adds frozen-reference feature, PD, score and missingness monitoring.
 Phase 11 adds a research scoring/decision API and optional local MLflow tracking.
 Phase 12 adds clean-checkout CI, release gates and an external-artifact Docker runtime.
-Phase 13 consolidates model evidence, open findings and procedural governance gates. The root notebook,
+Phase 13 consolidates model evidence, open findings and procedural governance gates.
+Phase 14 provides the business-first README and final repository audit. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -22,7 +23,7 @@ app.py, main.py, and templates remain unchanged V1 evidence; they are excluded f
 | Package | Intended responsibility |
 | --- | --- |
 | data | Source adapters, data contracts, synthetic histories and targets |
-| features | Separate origination and backward-looking behavioral transformations |
+| features | Train-only origination transformations; rolling behavioral layer remains deferred |
 | models | PD models, calibration and interpretability |
 | validation | Discrimination, calibration, backtesting and stability |
 | portfolio | Vintages, monthly transitions, migration and expected loss |
@@ -35,7 +36,9 @@ forward targets. Origination features, initial metrics and PD candidates are imp
 Calibration and final-holdout validation are implemented in Phase 5.
 The portfolio package implements vintage and roll-rate analytics in Phase 6,
 then model-driven expected loss and exposure/concentration summaries in Phase 7.
-Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
+Decisioning, monitoring, API and optional tracking now implement the responsibilities
+documented below. The longitudinal PD benchmark uses current delinquency state,
+not a trained rolling behavioral-feature model. Imports never load the inherited CSV or model. Configurations are
 explicit external inputs, rather than embedded machine-specific paths.
 
 ## Reproducible development
@@ -57,8 +60,7 @@ The same commands work on Windows without make. Makefile provides convenience
 targets for environments with GNU make. uv.lock records resolved dependencies;
 `uv sync --locked` refuses to silently update it. The project uses uv copy mode because OneDrive rejects environment hardlinks.
 A fresh .venv is separate from
-the ignored V1 venv. Domain dependencies will be added as their phases implement
-actual algorithms. NumPy and pandas support the data layer; scikit-learn and XGBoost support the
+the ignored V1 venv. Dependencies support the implemented algorithms. NumPy and pandas support the data layer; scikit-learn and XGBoost support the
 candidates. SciPy supports sigmoid fitting and Matplotlib generates validation figures.
 No TensorFlow or remote MLflow server is required.
 
@@ -81,9 +83,9 @@ writes to stdout. Imports do not configure global logging or read configuration.
 
 The wheel contains only credit_risk modules. YAML examples, tests, V1 code and
 local artifacts are not wheel resources. Supply --config-dir when invoking the
-configuration checker outside the checkout. The README's complete business
-rewrite remains scheduled for Phase 14; consult reports/phase1_audit.md for the
-historical findings and phase gates.
+configuration checker outside the checkout. See the [README](../README.md) for
+the current walkthrough and [final audit](../reports/final_repository_audit.md)
+for delivered scope, justified deviations and outstanding evidence.
 
 Phase 3 commands, source contracts and target definitions are in
 [data_contracts.md](data_contracts.md).

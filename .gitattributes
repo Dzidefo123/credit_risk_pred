@@ -5,3 +5,6 @@ src/credit_risk/features/origination.py text eol=crlf
 src/credit_risk/utils/config.py text eol=crlf
 src/credit_risk/validation/metrics.py text eol=crlf
 src/credit_risk/models/calibration.py text eol=crlf
+
+# Phase 1 README archived byte-for-byte during the Phase 14 rewrite.
+docs/history/README_v1.md -text -diff

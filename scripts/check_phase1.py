@@ -16,9 +16,10 @@ def main() -> None:
     tracked = set(git("ls-files").splitlines())
     for group in ("preserved_sha256", "local_artifact_sha256"):
         for name, expected in inventory[group].items():
-            assert hashlib.sha256((root / name).read_bytes()).hexdigest() == expected, name
+            relative = "docs/history/README_v1.md" if group == "preserved_sha256" and name == "README.md" else name
+            assert hashlib.sha256((root / relative).read_bytes()).hexdigest() == expected, name
             if group == "preserved_sha256":
-                assert name in tracked, name
+                assert relative in tracked, relative
             else:
                 assert name not in tracked, name
                 assert git("check-ignore", "--", name) == name, name

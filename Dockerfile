@@ -14,7 +14,7 @@ ENV UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never UV_PROJECT_ENVIRONMENT=/opt/venv
 COPY pyproject.toml uv.lock ./
 RUN uv sync --locked --no-dev --no-install-project
 COPY src/ ./src/
-COPY docs/architecture.md ./docs/architecture.md
+COPY README.md ./README.md
 RUN uv sync --locked --no-dev --no-editable
 
 FROM base AS runtime
