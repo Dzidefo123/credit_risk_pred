@@ -14,6 +14,7 @@ from credit_risk.data.synthetic_portfolio import (
     write_portfolio,
 )
 from credit_risk.data.targets import TargetConfig, build_forward_targets
+from credit_risk.decisioning.reject_settings import RejectInferenceConfig
 from credit_risk.decisioning.settings import PolicyComparisonConfig
 from credit_risk.portfolio.loss_settings import ExpectedLossConfig
 from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
@@ -85,6 +86,11 @@ def main(argv: list[str] | None = None) -> int:
     policy.add_argument("--validation-dir", type=Path, required=True)
     policy.add_argument("--config", type=Path, default=Path("configs/credit_strategy.yaml"))
     policy.add_argument("--output-dir", type=Path, required=True)
+    reject = commands.add_parser(
+        "reject-inference", help="Run explicitly synthetic selection-bias experiments"
+    )
+    reject.add_argument("--config", type=Path, default=Path("configs/reject_inference.yaml"))
+    reject.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -99,6 +105,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "portfolio.yaml", PortfolioAnalyticsConfig)
             load_config(directory / "expected_loss.yaml", ExpectedLossConfig)
             load_config(directory / "credit_strategy.yaml", PolicyComparisonConfig)
+            load_config(directory / "reject_inference.yaml", RejectInferenceConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -117,6 +124,18 @@ def main(argv: list[str] | None = None) -> int:
                 "status": "valid",
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
+            }
+        elif args.command == "reject-inference":
+            from credit_risk.decisioning.reject_runner import run_reject_experiment
+
+            config = load_config(args.config, RejectInferenceConfig)
+            manifest = run_reject_experiment(args.output_dir, config)
+            result = {
+                "status": "simulated",
+                "is_synthetic": True,
+                "original_final_test_accessed": False,
+                "aggregate_metrics": manifest["aggregate_metrics"],
+                "output_dir": str(args.output_dir),
             }
         elif args.command == "compare-policies":
             from credit_risk.decisioning.runner import run_policy_comparison

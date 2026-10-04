@@ -1,0 +1,1655 @@
+{
+  "package_version": "0.9.0",
+  "is_synthetic": true,
+  "original_final_test_accessed": false,
+  "config": {
+    "samples": 12000,
+    "seeds": [
+      91,
+      92,
+      93
+    ],
+    "holdout_fraction": 0.3,
+    "propensity_folds": 5,
+    "selection_intercept": 0.4,
+    "selection_risk_coefficient": -1.2,
+    "selection_debt_coefficient": -0.6,
+    "selection_income_coefficient": 0.5,
+    "true_propensity_floor": 0.05,
+    "outcome_intercept": -2.5,
+    "nonlinear_risk_effect": 0.7,
+    "hidden_outcome_effect": 0.9,
+    "hidden_selection_effect": -1.5,
+    "deterministic_cutoff": 0.5,
+    "estimated_propensity_floor": 0.05,
+    "maximum_weight": 20.0,
+    "logistic_c": 100.0,
+    "reject_odds_multipliers": [
+      0.5,
+      1.0,
+      2.0
+    ]
+  },
+  "features": [
+    "risk_factor",
+    "debt_factor",
+    "income_factor"
+  ],
+  "source_code_sha256": {
+    "reject_inference.py": "6edaec71df62070e42841bf152e37b1eaf30ed4d64879875aef2ae047c998c43",
+    "reject_settings.py": "4918fbf3e6905c1dc22b742f15e34a7a9180f57472561987fd07a5504f954b47",
+    "reject_runner.py": "1c0d4976caa1821f1e49d8b40353e2d9fc4badde74ad1f240eac0508e659d206"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1"
+  },
+  "results": [
+    {
+      "seed": 91,
+      "scenario": "mar_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5671428571428572,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.08638888888888889,
+        "upper": 0.5136111111111111
+      },
+      "accepted_rows": 4764,
+      "estimated_propensity_min": 0.00799575956487906,
+      "estimated_propensity_max": 0.9972166842281175,
+      "population_below_floor_fraction": 0.009642857142857142,
+      "accepted_clipped_fraction": 0.00041981528127623844,
+      "raw_weight_max": 25.84723762362741,
+      "clipped_weight_max": 20.0,
+      "effective_sample_size": 3160.712948985696,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.8018512860941847,
+        "gini": 0.6037025721883693,
+        "ks": 0.4499186694488089,
+        "pr_auc": 0.8315501906179139,
+        "average_precision": 0.8316128431267191,
+        "brier": 0.17889903880183322,
+        "log_loss": 0.5336524909512774,
+        "precision": 0.5860620289138762,
+        "recall": 0.9955919395465995,
+        "observed_bad_rate": 0.5671428571428572,
+        "mean_probability": 0.5670956923814737,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.7404946200390345,
+            "gini": 0.4809892400780691,
+            "ks": 0.3748580532533347,
+            "pr_auc": 0.4921752517454855,
+            "average_precision": 0.4926685784463467,
+            "brier": 0.15541446754753793,
+            "log_loss": 0.4808522668247505,
+            "precision": 0.27582496413199425,
+            "recall": 0.9253910950661853,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.19081862683313275,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6815673542541606,
+            "gini": 0.3631347085083212,
+            "ks": 0.3067222955738659,
+            "pr_auc": 0.2937203178742892,
+            "average_precision": 0.29552260001697545,
+            "brier": 0.12008653451456552,
+            "log_loss": 0.3983204230646449,
+            "precision": 0.18945022288261515,
+            "recall": 0.819935691318328,
+            "observed_bad_rate": 0.15082444228903977,
+            "mean_probability": 0.14531046094756905,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7219151428139642,
+            "gini": 0.44383028562792837,
+            "ks": 0.33112059845851594,
+            "pr_auc": 0.5835298293986748,
+            "average_precision": 0.5842296947624446,
+            "brier": 0.20277870546300555,
+            "log_loss": 0.5915028922040337,
+            "precision": 0.3564493758668516,
+            "recall": 0.9884615384615385,
+            "observed_bad_rate": 0.3381014304291287,
+            "mean_probability": 0.25183152543913556,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.770738783653819,
+            "gini": 0.541477567307638,
+            "ks": 0.43685048362935175,
+            "pr_auc": 0.5940680146789511,
+            "average_precision": 0.5943382347926388,
+            "brier": 0.13943426102001852,
+            "log_loss": 0.4539694751676504,
+            "precision": 0.29051383399209485,
+            "recall": 0.8844765342960289,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.22396740526957554,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6656499455524726,
+            "gini": 0.3312998911049452,
+            "ks": 0.3092087020554172,
+            "pr_auc": 0.37330571046330424,
+            "average_precision": 0.37433526761283803,
+            "brier": 0.1165909607108574,
+            "log_loss": 0.4076130041124282,
+            "precision": 0.19946332737030412,
+            "recall": 0.7170418006430869,
+            "observed_bad_rate": 0.15082444228903977,
+            "mean_probability": 0.14617435849107574,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7950090675532718,
+            "gini": 0.5900181351065437,
+            "ks": 0.4497581985794167,
+            "pr_auc": 0.6970128745012758,
+            "average_precision": 0.6973736256300226,
+            "brier": 0.1700603242433542,
+            "log_loss": 0.5161196983899317,
+            "precision": 0.3626062322946176,
+            "recall": 0.9846153846153847,
+            "observed_bad_rate": 0.3381014304291287,
+            "mean_probability": 0.328264715059736,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7723119860202282,
+            "gini": 0.5446239720404564,
+            "ks": 0.4401216146271315,
+            "pr_auc": 0.6102645382147507,
+            "average_precision": 0.6105062818337296,
+            "brier": 0.13879797138370187,
+            "log_loss": 0.4533181032055178,
+            "precision": 0.28255813953488373,
+            "recall": 0.8772563176895307,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.21828299630804096,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6577059319341636,
+            "gini": 0.3154118638683272,
+            "ks": 0.3010351457412485,
+            "pr_auc": 0.39010154240144856,
+            "average_precision": 0.3910017946701507,
+            "brier": 0.11628309983723432,
+            "log_loss": 0.4082321698377851,
+            "precision": 0.18723037100949094,
+            "recall": 0.6977491961414791,
+            "observed_bad_rate": 0.15082444228903977,
+            "mean_probability": 0.14486560638054133,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.8042636391113798,
+            "gini": 0.6085272782227595,
+            "ks": 0.46762127852501134,
+            "pr_auc": 0.715513864340727,
+            "average_precision": 0.7158322679765543,
+            "brier": 0.16898370943884883,
+            "log_loss": 0.5137649137414507,
+            "precision": 0.36030964109781843,
+            "recall": 0.9846153846153847,
+            "observed_bad_rate": 0.3381014304291287,
+            "mean_probability": 0.3167138532849618,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.1497207926856,
+          "population_bad_rate_assumption": 0.15035293865290356
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.25183152543913556,
+          "population_bad_rate_assumption": 0.19397691281260848
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.38853857254568813,
+          "population_bad_rate_assumption": 0.25238120127090785
+        }
+      ]
+    },
+    {
+      "seed": 91,
+      "scenario": "mnar_hidden",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5595238095238095,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.06722222222222222,
+        "upper": 0.5
+      },
+      "accepted_rows": 4700,
+      "estimated_propensity_min": 0.030232900335548082,
+      "estimated_propensity_max": 0.9861561710475847,
+      "population_below_floor_fraction": 0.0008333333333333334,
+      "accepted_clipped_fraction": 0.0,
+      "raw_weight_max": 11.102922278111825,
+      "clipped_weight_max": 11.102922278111825,
+      "effective_sample_size": 3800.0382952507453,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.7415920644048304,
+        "gini": 0.4831841288096608,
+        "ks": 0.35279470960322024,
+        "pr_auc": 0.7742352431856856,
+        "average_precision": 0.7743047418824085,
+        "brier": 0.20341069882260898,
+        "log_loss": 0.5921436435677632,
+        "precision": 0.5630393096836049,
+        "recall": 0.9995744680851064,
+        "observed_bad_rate": 0.5595238095238095,
+        "mean_probability": 0.5595475056911965,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.7384703171045777,
+            "gini": 0.47694063420915533,
+            "ks": 0.3781070203503722,
+            "pr_auc": 0.4877365392375288,
+            "average_precision": 0.4882205554284863,
+            "brier": 0.16611313105478404,
+            "log_loss": 0.5091763302140812,
+            "precision": 0.3040885860306644,
+            "recall": 0.8592057761732852,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.1425804343743573,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6684986225895316,
+            "gini": 0.33699724517906327,
+            "ks": 0.2979981634527089,
+            "pr_auc": 0.2429154074368559,
+            "average_precision": 0.2453086811853583,
+            "brier": 0.09942693492623657,
+            "log_loss": 0.34562254347489696,
+            "precision": 0.16540642722117202,
+            "recall": 0.7231404958677686,
+            "observed_bad_rate": 0.11851126346718903,
+            "mean_probability": 0.11514635357779623,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.698164316213484,
+            "gini": 0.3963286324269679,
+            "ks": 0.29395119677752257,
+            "pr_auc": 0.5936968599379107,
+            "average_precision": 0.594301830056815,
+            "brier": 0.25351570646845156,
+            "log_loss": 0.7235388671341159,
+            "precision": 0.4178294573643411,
+            "recall": 0.9151103565365025,
+            "observed_bad_rate": 0.3780487804878049,
+            "mean_probability": 0.17853704091259726,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.7706240528735063,
+            "gini": 0.5412481057470127,
+            "ks": 0.4350382588039577,
+            "pr_auc": 0.5994389162016533,
+            "average_precision": 0.5996955796826817,
+            "brier": 0.14713889682676748,
+            "log_loss": 0.47227969958965926,
+            "precision": 0.3292910447761194,
+            "recall": 0.8495788206979543,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.16365683270167722,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6443112947658404,
+            "gini": 0.28862258953168074,
+            "ks": 0.30697887970615245,
+            "pr_auc": 0.32494463210080804,
+            "average_precision": 0.3263333821469886,
+            "brier": 0.09646156785763232,
+            "log_loss": 0.35465393857162236,
+            "precision": 0.17848970251716248,
+            "recall": 0.6446280991735537,
+            "observed_bad_rate": 0.11851126346718903,
+            "mean_probability": 0.11510806011609089,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7644010155219267,
+            "gini": 0.5288020310438535,
+            "ks": 0.4079696394686907,
+            "pr_auc": 0.7020088059210671,
+            "average_precision": 0.7023193321069434,
+            "brier": 0.21355937548849657,
+            "log_loss": 0.6264464544027729,
+            "precision": 0.4330708661417323,
+            "recall": 0.933786078098472,
+            "observed_bad_rate": 0.3780487804878049,
+            "mean_probability": 0.22728750896596944,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7723119860202282,
+            "gini": 0.5446239720404564,
+            "ks": 0.4401216146271315,
+            "pr_auc": 0.6102645382147507,
+            "average_precision": 0.6105062818337296,
+            "brier": 0.13879797138370187,
+            "log_loss": 0.4533181032055178,
+            "precision": 0.28255813953488373,
+            "recall": 0.8772563176895307,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.21828299630804096,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.641251147842057,
+            "gini": 0.2825022956841139,
+            "ks": 0.30649219467401284,
+            "pr_auc": 0.3365703631056568,
+            "average_precision": 0.3378335253741209,
+            "brier": 0.09918900703277787,
+            "log_loss": 0.36333636550878945,
+            "precision": 0.13961312026913372,
+            "recall": 0.6859504132231405,
+            "observed_bad_rate": 0.11851126346718903,
+            "mean_probability": 0.15529333560865433,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7696871260344008,
+            "gini": 0.5393742520688016,
+            "ks": 0.42095276141016674,
+            "pr_auc": 0.7127582964057362,
+            "average_precision": 0.7130502775995566,
+            "brier": 0.19071164609781405,
+            "log_loss": 0.5712530893266471,
+            "precision": 0.404744787922358,
+            "recall": 0.9558573853989814,
+            "observed_bad_rate": 0.3780487804878049,
+            "mean_probability": 0.30084069024138343,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.10064343520455621,
+          "population_bad_rate_assumption": 0.11077846445797182
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.17853704091259726,
+          "population_bad_rate_assumption": 0.14448908603939625
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.2942497416376074,
+          "population_bad_rate_assumption": 0.1945669715198312
+        }
+      ]
+    },
+    {
+      "seed": 91,
+      "scenario": "deterministic_no_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.6051190476190477,
+      "true_zero_support_fraction": 0.3948809523809524,
+      "true_min_propensity": 0.0,
+      "population_risk_bounds": {
+        "lower": 0.06472222222222222,
+        "upper": 0.45694444444444443
+      },
+      "ipw_status": "disabled_structural_zero_support",
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.5146540323740709,
+            "gini": 0.02930806474814185,
+            "ks": 0.06261823463226826,
+            "pr_auc": 0.26331381918758456,
+            "average_precision": 0.26421067982372404,
+            "brier": 0.1921207494612818,
+            "log_loss": 0.6125876801698428,
+            "precision": 0.23826530612244898,
+            "recall": 0.5619735258724429,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.11164186284644437,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.628760853100337,
+            "gini": 0.25752170620067405,
+            "ks": 0.24508084256281348,
+            "pr_auc": 0.2207644225636974,
+            "average_precision": 0.2223824362693961,
+            "brier": 0.09227716807925943,
+            "log_loss": 0.3279971089478721,
+            "precision": 0.14054054054054055,
+            "recall": 0.6695278969957081,
+            "observed_bad_rate": 0.10648994515539305,
+            "mean_probability": 0.10766027086536953,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.4019808041547172,
+            "gini": -0.19603839169056558,
+            "ks": 0.16127057431405267,
+            "pr_auc": 0.37202798170687573,
+            "average_precision": 0.3732807414418439,
+            "brier": 0.3468358741524043,
+            "log_loss": 1.0535821347262677,
+            "precision": 0.3658823529411765,
+            "recall": 0.520066889632107,
+            "observed_bad_rate": 0.4235127478753541,
+            "mean_probability": 0.11781163852250082,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7723119860202282,
+            "gini": 0.5446239720404564,
+            "ks": 0.4401216146271315,
+            "pr_auc": 0.6102645382147507,
+            "average_precision": 0.6105062818337296,
+            "brier": 0.13879797138370187,
+            "log_loss": 0.4533181032055178,
+            "precision": 0.28255813953488373,
+            "recall": 0.8772563176895307,
+            "observed_bad_rate": 0.23083333333333333,
+            "mean_probability": 0.21828299630804096,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.5338660636861574,
+            "gini": 0.06773212737231482,
+            "ks": 0.1670043796581891,
+            "pr_auc": 0.1390293022106706,
+            "average_precision": 0.14075183822104415,
+            "brier": 0.09690109376148377,
+            "log_loss": 0.36133099547103803,
+            "precision": 0.11215753424657535,
+            "recall": 0.5622317596566524,
+            "observed_bad_rate": 0.10648994515539305,
+            "mean_probability": 0.11053845308868476,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7488865423648032,
+            "gini": 0.49777308472960646,
+            "ks": 0.4126161734857387,
+            "pr_auc": 0.7263497768868066,
+            "average_precision": 0.7266271886062526,
+            "brier": 0.2037203284923514,
+            "log_loss": 0.595859032187842,
+            "precision": 0.4235127478753541,
+            "recall": 1.0,
+            "observed_bad_rate": 0.4235127478753541,
+            "mean_probability": 0.3852412544978082,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.06332095888854956,
+          "population_bad_rate_assumption": 0.08955810943073111
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.11781163852250082,
+          "population_bad_rate_assumption": 0.11093056488715866
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.20756628371997674,
+          "population_bad_rate_assumption": 0.14613433128127976
+        }
+      ]
+    },
+    {
+      "seed": 92,
+      "scenario": "mar_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5675,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.08166666666666667,
+        "upper": 0.5022222222222222
+      },
+      "accepted_rows": 4767,
+      "estimated_propensity_min": 0.00871219871699701,
+      "estimated_propensity_max": 0.9972625479804207,
+      "population_below_floor_fraction": 0.007023809523809524,
+      "accepted_clipped_fraction": 0.0008391021606880638,
+      "raw_weight_max": 57.13212376086234,
+      "clipped_weight_max": 20.0,
+      "effective_sample_size": 3149.498984327412,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.7980955175649916,
+        "gini": 0.5961910351299833,
+        "ks": 0.45438109546484684,
+        "pr_auc": 0.8263637874917891,
+        "average_precision": 0.8265214641525122,
+        "brier": 0.18057439949870235,
+        "log_loss": 0.5391933076181238,
+        "precision": 0.583732645288119,
+        "recall": 0.9966435913572478,
+        "observed_bad_rate": 0.5675,
+        "mean_probability": 0.5673979644660774,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.7541877950534975,
+            "gini": 0.5083755901069951,
+            "ks": 0.3869035984560935,
+            "pr_auc": 0.4949636657894599,
+            "average_precision": 0.49544818658011136,
+            "brier": 0.14905814405570425,
+            "log_loss": 0.462481744046099,
+            "precision": 0.2780688622754491,
+            "recall": 0.925280199252802,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.1880790333745227,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.7031743500971817,
+            "gini": 0.4063487001943633,
+            "ks": 0.3181600765306122,
+            "pr_auc": 0.3238732796942163,
+            "average_precision": 0.32526480051265927,
+            "brier": 0.1111750255635072,
+            "log_loss": 0.3722458222746131,
+            "precision": 0.19122257053291536,
+            "recall": 0.8299319727891157,
+            "observed_bad_rate": 0.14093959731543623,
+            "mean_probability": 0.14003069538282595,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.721934531663881,
+            "gini": 0.443869063327762,
+            "ks": 0.3405663235883451,
+            "pr_auc": 0.5715801417454893,
+            "average_precision": 0.5722729641697528,
+            "brier": 0.20125377495050148,
+            "log_loss": 0.5868094407537078,
+            "precision": 0.35744985673352436,
+            "recall": 0.9803536345776032,
+            "observed_bad_rate": 0.33619550858652575,
+            "mean_probability": 0.25428037620852495,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.7841580843378269,
+            "gini": 0.5683161686756537,
+            "ks": 0.45839987782675895,
+            "pr_auc": 0.5983285056130668,
+            "average_precision": 0.5986138535511649,
+            "brier": 0.13332530640241252,
+            "log_loss": 0.43254362821659365,
+            "precision": 0.29122664500406176,
+            "recall": 0.8929016189290162,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.21807826142342635,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6992662020165209,
+            "gini": 0.3985324040330418,
+            "ks": 0.319515306122449,
+            "pr_auc": 0.38118094719398177,
+            "average_precision": 0.38241009835597123,
+            "brier": 0.1076937989018339,
+            "log_loss": 0.37436742984213245,
+            "precision": 0.20036764705882354,
+            "recall": 0.7414965986394558,
+            "observed_bad_rate": 0.14093959731543623,
+            "mean_probability": 0.1403974033748117,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7934003851078596,
+            "gini": 0.5868007702157192,
+            "ks": 0.46688365637431706,
+            "pr_auc": 0.696692154596604,
+            "average_precision": 0.6970641426792425,
+            "brier": 0.16864058027705384,
+            "log_loss": 0.5126992093322645,
+            "precision": 0.36317321688500726,
+            "recall": 0.9803536345776032,
+            "observed_bad_rate": 0.33619550858652575,
+            "mean_probability": 0.3251075017731027,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7846233577961801,
+            "gini": 0.5692467155923602,
+            "ks": 0.4604849262530437,
+            "pr_auc": 0.6026414441090642,
+            "average_precision": 0.6029195788329316,
+            "brier": 0.1331185667889897,
+            "log_loss": 0.4322281518744677,
+            "precision": 0.28888888888888886,
+            "recall": 0.8904109589041096,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.21741816112244458,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6975712159863945,
+            "gini": 0.395142431972789,
+            "ks": 0.3172565901360544,
+            "pr_auc": 0.38348040447955783,
+            "average_precision": 0.38469385070081813,
+            "brier": 0.10770858131628604,
+            "log_loss": 0.3745374612666147,
+            "precision": 0.19690063810391978,
+            "recall": 0.7346938775510204,
+            "observed_bad_rate": 0.14093959731543623,
+            "mean_probability": 0.14090511503501765,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7962290707562385,
+            "gini": 0.592458141512477,
+            "ks": 0.47298087167306885,
+            "pr_auc": 0.7024700491965734,
+            "average_precision": 0.7028304477735838,
+            "brier": 0.168128626033415,
+            "log_loss": 0.5117147969259747,
+            "precision": 0.3621190130624093,
+            "recall": 0.9803536345776032,
+            "observed_bad_rate": 0.33619550858652575,
+            "mean_probability": 0.32283838182150176,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.1523773347445084,
+          "population_bad_rate_assumption": 0.14574980133421825
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.25428037620852495,
+          "population_bad_rate_assumption": 0.18860569154991855
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.3898434854303637,
+          "population_bad_rate_assumption": 0.2456175102615474
+        }
+      ]
+    },
+    {
+      "seed": 92,
+      "scenario": "mnar_hidden",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5521428571428572,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.06861111111111111,
+        "upper": 0.5008333333333334
+      },
+      "accepted_rows": 4638,
+      "estimated_propensity_min": 0.03531300781097677,
+      "estimated_propensity_max": 0.9813274957306979,
+      "population_below_floor_fraction": 0.0002380952380952381,
+      "accepted_clipped_fraction": 0.0,
+      "raw_weight_max": 17.02268322690231,
+      "clipped_weight_max": 17.02268322690231,
+      "effective_sample_size": 3810.885408370552,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.7275263357342747,
+        "gini": 0.45505267146854944,
+        "ks": 0.3321431789124306,
+        "pr_auc": 0.7533870489765752,
+        "average_precision": 0.7535692812191773,
+        "brier": 0.20868634364527625,
+        "log_loss": 0.6046592596157148,
+        "precision": 0.554120320535821,
+        "recall": 0.9989219491159983,
+        "observed_bad_rate": 0.5521428571428572,
+        "mean_probability": 0.55219730254359,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.7695035287318606,
+            "gini": 0.5390070574637211,
+            "ks": 0.4221695456482239,
+            "pr_auc": 0.5368299529878575,
+            "average_precision": 0.5372333172234799,
+            "brier": 0.1553305860308931,
+            "log_loss": 0.47883019590258313,
+            "precision": 0.31431201104463874,
+            "recall": 0.8505603985056039,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.14165438712179823,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.7034238350467154,
+            "gini": 0.4068476700934307,
+            "ks": 0.3223028033677362,
+            "pr_auc": 0.3068071684523671,
+            "average_precision": 0.3087121723712619,
+            "brier": 0.09819670172928308,
+            "log_loss": 0.3386151868044442,
+            "precision": 0.18976545842217485,
+            "recall": 0.7206477732793523,
+            "observed_bad_rate": 0.12084148727984344,
+            "mean_probability": 0.11068308166330094,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7450089928057554,
+            "gini": 0.4900179856115108,
+            "ks": 0.38620863309352516,
+            "pr_auc": 0.6352895168705337,
+            "average_precision": 0.6358010285735123,
+            "brier": 0.2303830664373782,
+            "log_loss": 0.663020092172889,
+            "precision": 0.4089068825910931,
+            "recall": 0.908273381294964,
+            "observed_bad_rate": 0.35732647814910024,
+            "mean_probability": 0.1823390583024978,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.7848593338085506,
+            "gini": 0.5697186676171011,
+            "ks": 0.4659319649989693,
+            "pr_auc": 0.6137019888343753,
+            "average_precision": 0.6139572077621213,
+            "brier": 0.14054986148781462,
+            "log_loss": 0.45110055802899,
+            "precision": 0.3275606135576447,
+            "recall": 0.8244084682440846,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.15558544357900458,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6807724975724272,
+            "gini": 0.3615449951448544,
+            "ks": 0.3057232139035144,
+            "pr_auc": 0.3622338123357334,
+            "average_precision": 0.36348331371945436,
+            "brier": 0.0954002529899736,
+            "log_loss": 0.34356765447970355,
+            "precision": 0.18465227817745802,
+            "recall": 0.6234817813765182,
+            "observed_bad_rate": 0.12084148727984344,
+            "mean_probability": 0.10943414446437834,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7878345323741007,
+            "gini": 0.5756690647482015,
+            "ks": 0.4628273381294964,
+            "pr_auc": 0.7159122787334231,
+            "average_precision": 0.7162235682050571,
+            "brier": 0.1998595014425621,
+            "log_loss": 0.5923584338996465,
+            "precision": 0.42796967144060655,
+            "recall": 0.9136690647482014,
+            "observed_bad_rate": 0.35732647814910024,
+            "mean_probability": 0.21621092904834655,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7846233577961801,
+            "gini": 0.5692467155923602,
+            "ks": 0.4604849262530437,
+            "pr_auc": 0.6026414441090642,
+            "average_precision": 0.6029195788329316,
+            "brier": 0.1331185667889897,
+            "log_loss": 0.4322281518744677,
+            "precision": 0.28888888888888886,
+            "recall": 0.8904109589041096,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.21741816112244458,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6885024298256879,
+            "gini": 0.37700485965137576,
+            "ks": 0.3055294586794455,
+            "pr_auc": 0.3536017555331009,
+            "average_precision": 0.35505877978182915,
+            "brier": 0.09794229055635821,
+            "log_loss": 0.3484347196189326,
+            "precision": 0.160603371783496,
+            "recall": 0.7327935222672065,
+            "observed_bad_rate": 0.12084148727984344,
+            "mean_probability": 0.15462658181337696,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7821888489208633,
+            "gini": 0.5643776978417265,
+            "ks": 0.45144604316546766,
+            "pr_auc": 0.7034980343654167,
+            "average_precision": 0.703838233641452,
+            "brier": 0.17932699135164962,
+            "log_loss": 0.542301272395235,
+            "precision": 0.3961424332344214,
+            "recall": 0.960431654676259,
+            "observed_bad_rate": 0.35732647814910024,
+            "mean_probability": 0.29990272931507583,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.10389867120073681,
+          "population_bad_rate_assumption": 0.1135184256634296
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.1823390583024978,
+          "population_bad_rate_assumption": 0.14742210408852405
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.2973060281732732,
+          "population_bad_rate_assumption": 0.19711338328822586
+        }
+      ]
+    },
+    {
+      "seed": 92,
+      "scenario": "deterministic_no_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.6088095238095238,
+      "true_zero_support_fraction": 0.3911904761904762,
+      "true_min_propensity": 0.0,
+      "population_risk_bounds": {
+        "lower": 0.0625,
+        "upper": 0.44972222222222225
+      },
+      "ipw_status": "disabled_structural_zero_support",
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.445503120894073,
+            "gini": -0.10899375821185397,
+            "ks": 0.10371813600321644,
+            "pr_auc": 0.21501492907939865,
+            "average_precision": 0.216189501826266,
+            "brier": 0.19430401981555456,
+            "log_loss": 0.6582761333050763,
+            "precision": 0.19812002892263195,
+            "recall": 0.3412204234122042,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.0979476904664103,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.592282236805205,
+            "gini": 0.18456447361040995,
+            "ks": 0.16887991474563913,
+            "pr_auc": 0.18440414311018333,
+            "average_precision": 0.18793348241889277,
+            "brier": 0.0898657425299192,
+            "log_loss": 0.3263063573572538,
+            "precision": 0.13439635535307518,
+            "recall": 0.5244444444444445,
+            "observed_bad_rate": 0.10199456029011786,
+            "mean_probability": 0.09982924023652902,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.36826192414682135,
+            "gini": -0.2634761517063573,
+            "ks": 0.18375144175317182,
+            "pr_auc": 0.33662399948989286,
+            "average_precision": 0.3379254644783343,
+            "brier": 0.3595772190207996,
+            "log_loss": 1.1836171130331228,
+            "precision": 0.3089108910891089,
+            "recall": 0.2698961937716263,
+            "observed_bad_rate": 0.4146341463414634,
+            "mean_probability": 0.09497014470394119,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.7846233577961801,
+            "gini": 0.5692467155923602,
+            "ks": 0.4604849262530437,
+            "pr_auc": 0.6026414441090642,
+            "average_precision": 0.6029195788329316,
+            "brier": 0.1331185667889897,
+            "log_loss": 0.4322281518744677,
+            "precision": 0.28888888888888886,
+            "recall": 0.8904109589041096,
+            "observed_bad_rate": 0.22305555555555556,
+            "mean_probability": 0.21741816112244458,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.5829760502552023,
+            "gini": 0.16595210051040454,
+            "ks": 0.14899770037579224,
+            "pr_auc": 0.14046445083850395,
+            "average_precision": 0.1431990492352993,
+            "brier": 0.09176625487010914,
+            "log_loss": 0.3364675415988262,
+            "precision": 0.1267345050878816,
+            "recall": 0.6088888888888889,
+            "observed_bad_rate": 0.10199456029011786,
+            "mean_probability": 0.10494708831344791,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7570052242350227,
+            "gini": 0.5140104484700454,
+            "ks": 0.3989331026528258,
+            "pr_auc": 0.7157600494790015,
+            "average_precision": 0.7160857772552887,
+            "brier": 0.1985584520781221,
+            "log_loss": 0.5837689741614586,
+            "precision": 0.4146341463414634,
+            "recall": 1.0,
+            "observed_bad_rate": 0.4146341463414634,
+            "mean_probability": 0.3954032304313732,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.05086731445035212,
+          "population_bad_rate_assumption": 0.0821969545399419
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.09497014470394119,
+          "population_bad_rate_assumption": 0.09927455047702612
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.16872262251361525,
+          "population_bad_rate_assumption": 0.12783314882888325
+        }
+      ]
+    },
+    {
+      "seed": 93,
+      "scenario": "mar_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5767857142857142,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.07333333333333333,
+        "upper": 0.5
+      },
+      "accepted_rows": 4845,
+      "estimated_propensity_min": 0.00861964014246472,
+      "estimated_propensity_max": 0.9959204694372303,
+      "population_below_floor_fraction": 0.009404761904761905,
+      "accepted_clipped_fraction": 0.0010319917440660474,
+      "raw_weight_max": 42.09270996690354,
+      "clipped_weight_max": 20.0,
+      "effective_sample_size": 3071.344817805493,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.8009308536502173,
+        "gini": 0.6018617073004346,
+        "ks": 0.45420438661807166,
+        "pr_auc": 0.8376587396981273,
+        "average_precision": 0.8377010305722007,
+        "brier": 0.17876058897183944,
+        "log_loss": 0.533873999818092,
+        "precision": 0.5932537239935984,
+        "recall": 0.9946336429308565,
+        "observed_bad_rate": 0.5767857142857142,
+        "mean_probability": 0.5767877915325031,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.7650832467374951,
+            "gini": 0.5301664934749901,
+            "ks": 0.4093000886485383,
+            "pr_auc": 0.5252966279623142,
+            "average_precision": 0.5256874172210171,
+            "brier": 0.13786136373662897,
+            "log_loss": 0.4364971592219209,
+            "precision": 0.2581247665296974,
+            "recall": 0.9225634178905207,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.1874661108610117,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.7026978114478115,
+            "gini": 0.40539562289562303,
+            "ks": 0.320959595959596,
+            "pr_auc": 0.293910423761599,
+            "average_precision": 0.29580834044387017,
+            "brier": 0.10338249023791163,
+            "log_loss": 0.3523825328785395,
+            "precision": 0.1744,
+            "recall": 0.8257575757575758,
+            "observed_bad_rate": 0.12790697674418605,
+            "mean_probability": 0.13601688087650574,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7527715381521771,
+            "gini": 0.5055430763043542,
+            "ks": 0.40274063974418084,
+            "pr_auc": 0.6238493722878745,
+            "average_precision": 0.6243580960575777,
+            "brier": 0.18419235000053039,
+            "log_loss": 0.5495261883708396,
+            "precision": 0.3314646110721794,
+            "recall": 0.9752577319587629,
+            "observed_bad_rate": 0.3157552083333333,
+            "mean_probability": 0.25660101365269156,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.7796809870192878,
+            "gini": 0.5593619740385756,
+            "ks": 0.4599552589469228,
+            "pr_auc": 0.587463962632118,
+            "average_precision": 0.5877460748666432,
+            "brier": 0.12765529691571206,
+            "log_loss": 0.42028326961955614,
+            "precision": 0.26894865525672373,
+            "recall": 0.8811748998664887,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.21119092039141235,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6937626262626263,
+            "gini": 0.3875252525252526,
+            "ks": 0.334040404040404,
+            "pr_auc": 0.3331636246685691,
+            "average_precision": 0.3345346025724245,
+            "brier": 0.1015957720574065,
+            "log_loss": 0.3573250754075871,
+            "precision": 0.18317757009345795,
+            "recall": 0.7424242424242424,
+            "observed_bad_rate": 0.12790697674418605,
+            "mean_probability": 0.13588024744904023,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7935123152226156,
+            "gini": 0.5870246304452311,
+            "ks": 0.4837807880565392,
+            "pr_auc": 0.6970592431675098,
+            "average_precision": 0.6974118536422748,
+            "brier": 0.1626727834440602,
+            "log_loss": 0.5048833430918893,
+            "precision": 0.3352601156069364,
+            "recall": 0.9567010309278351,
+            "observed_bad_rate": 0.3157552083333333,
+            "mean_probability": 0.3123896371577249,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.779953067319035,
+            "gini": 0.55990613463807,
+            "ks": 0.46019315359799273,
+            "pr_auc": 0.59191874189126,
+            "average_precision": 0.592192299895671,
+            "brier": 0.12742965940944376,
+            "log_loss": 0.4203015430315657,
+            "precision": 0.267559886317499,
+            "recall": 0.8798397863818425,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.20964080187885145,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6914667508417508,
+            "gini": 0.3829335016835016,
+            "ks": 0.32575757575757575,
+            "pr_auc": 0.33507119676331265,
+            "average_precision": 0.3364606383352076,
+            "brier": 0.10153564370463743,
+            "log_loss": 0.3578966283722647,
+            "precision": 0.1813953488372093,
+            "recall": 0.7386363636363636,
+            "observed_bad_rate": 0.12790697674418605,
+            "mean_probability": 0.13577229285073325,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7959390663776277,
+            "gini": 0.5918781327552554,
+            "ks": 0.4907608855581822,
+            "pr_auc": 0.7026810629329475,
+            "average_precision": 0.7030209273298439,
+            "brier": 0.16222474301277726,
+            "log_loss": 0.5041581471050015,
+            "precision": 0.33429394812680113,
+            "recall": 0.9567010309278351,
+            "observed_bad_rate": 0.3157552083333333,
+            "mean_probability": 0.30890161088538526,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.15404432902098034,
+          "population_bad_rate_assumption": 0.13905891371561827
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.25660101365269156,
+          "population_bad_rate_assumption": 0.18281643249181506
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.39273117390449563,
+          "population_bad_rate_assumption": 0.24089863419925148
+        }
+      ]
+    },
+    {
+      "seed": 93,
+      "scenario": "mnar_hidden",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.5585714285714286,
+      "true_zero_support_fraction": 0.0,
+      "true_min_propensity": 0.05,
+      "population_risk_bounds": {
+        "lower": 0.057777777777777775,
+        "upper": 0.5008333333333334
+      },
+      "accepted_rows": 4692,
+      "estimated_propensity_min": 0.033831781103640345,
+      "estimated_propensity_max": 0.9792949318687698,
+      "population_below_floor_fraction": 0.00035714285714285714,
+      "accepted_clipped_fraction": 0.0,
+      "raw_weight_max": 16.99410541394969,
+      "clipped_weight_max": 16.99410541394969,
+      "effective_sample_size": 3701.6503755624312,
+      "normalization": "accepted weights divided by their mean",
+      "ipw_status": "estimated_oof_propensity_clipped",
+      "oof_propensity_metrics": {
+        "roc_auc": 0.7373259103838523,
+        "gini": 0.4746518207677046,
+        "ks": 0.35081678654295545,
+        "pr_auc": 0.7726118831080093,
+        "average_precision": 0.7726691928495052,
+        "brier": 0.20512668485357705,
+        "log_loss": 0.5960055401982125,
+        "precision": 0.5615486036198011,
+        "recall": 0.9985080988917306,
+        "observed_bad_rate": 0.5585714285714286,
+        "mean_probability": 0.558380995787228,
+        "classification_threshold": 0.1
+      },
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.767763307934489,
+            "gini": 0.535526615868978,
+            "ks": 0.41732200867378877,
+            "pr_auc": 0.5343321820853167,
+            "average_precision": 0.5347042070965399,
+            "brier": 0.14464456331324968,
+            "log_loss": 0.4526258718655268,
+            "precision": 0.28821942446043164,
+            "recall": 0.855807743658211,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.14377169424928576,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.712132400154103,
+            "gini": 0.4242648003082059,
+            "ks": 0.3728034972817944,
+            "pr_auc": 0.3131816535743468,
+            "average_precision": 0.3153540504614826,
+            "brier": 0.08501839752959196,
+            "log_loss": 0.3033398692555383,
+            "precision": 0.15618448637316562,
+            "recall": 0.7163461538461539,
+            "observed_bad_rate": 0.10374064837905236,
+            "mean_probability": 0.11175168360531086,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.727260291750115,
+            "gini": 0.45452058350022995,
+            "ks": 0.3522607301820019,
+            "pr_auc": 0.6214392927948014,
+            "average_precision": 0.6218793406109497,
+            "brier": 0.21959783127327087,
+            "log_loss": 0.6402863328266721,
+            "precision": 0.38740157480314963,
+            "recall": 0.9094269870609981,
+            "observed_bad_rate": 0.33918495297805645,
+            "mean_probability": 0.1840225540243138,
+            "classification_threshold": 0.1
+          }
+        },
+        "ipw": {
+          "all": {
+            "roc_auc": 0.7799081108495415,
+            "gini": 0.559816221699083,
+            "ks": 0.45867680934570076,
+            "pr_auc": 0.5928603808873724,
+            "average_precision": 0.5931308057497107,
+            "brier": 0.1318165826429008,
+            "log_loss": 0.4310242422685106,
+            "precision": 0.3076923076923077,
+            "recall": 0.8331108144192256,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.15809930913915513,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6983112880441762,
+            "gini": 0.3966225760883524,
+            "ks": 0.3920610205042593,
+            "pr_auc": 0.3576900245270585,
+            "average_precision": 0.35914407626447514,
+            "brier": 0.08243913158067022,
+            "log_loss": 0.30690434082948775,
+            "precision": 0.17191283292978207,
+            "recall": 0.6826923076923077,
+            "observed_bad_rate": 0.10374064837905236,
+            "mean_probability": 0.11041330783070222,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7597445871199234,
+            "gini": 0.5194891742398469,
+            "ks": 0.4345736863703803,
+            "pr_auc": 0.6809781156414008,
+            "average_precision": 0.6813091113530112,
+            "brier": 0.19388667002833804,
+            "log_loss": 0.5870495729175643,
+            "precision": 0.40099833610648916,
+            "recall": 0.8909426987060998,
+            "observed_bad_rate": 0.33918495297805645,
+            "mean_probability": 0.2180431540441383,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.779953067319035,
+            "gini": 0.55990613463807,
+            "ks": 0.46019315359799273,
+            "pr_auc": 0.59191874189126,
+            "average_precision": 0.592192299895671,
+            "brier": 0.12742965940944376,
+            "log_loss": 0.4203015430315657,
+            "precision": 0.267559886317499,
+            "recall": 0.8798397863818425,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.20964080187885145,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6987687813021702,
+            "gini": 0.3975375626043405,
+            "ks": 0.3915045374769916,
+            "pr_auc": 0.35728579607894495,
+            "average_precision": 0.35873660183234357,
+            "brier": 0.08586474665235565,
+            "log_loss": 0.317514733547035,
+            "precision": 0.1409090909090909,
+            "recall": 0.7451923076923077,
+            "observed_bad_rate": 0.10374064837905236,
+            "mean_probability": 0.14931637741961815,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7595797367304205,
+            "gini": 0.5191594734608409,
+            "ks": 0.42997716646732637,
+            "pr_auc": 0.6802072608640336,
+            "average_precision": 0.6805418755375112,
+            "brier": 0.17967896980315007,
+            "log_loss": 0.5495100402205839,
+            "precision": 0.36977256052824653,
+            "recall": 0.9316081330868762,
+            "observed_bad_rate": 0.33918495297805645,
+            "mean_probability": 0.2854718182053485,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.10512150869810055,
+          "population_bad_rate_assumption": 0.10435244621485289
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.1840225540243138,
+          "population_bad_rate_assumption": 0.13930999268577238
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.29926153442919684,
+          "population_bad_rate_assumption": 0.1903672631707136
+        }
+      ]
+    },
+    {
+      "seed": 93,
+      "scenario": "deterministic_no_overlap",
+      "train_rows": 8400,
+      "holdout_rows": 3600,
+      "train_acceptance_rate": 0.6054761904761905,
+      "true_zero_support_fraction": 0.3945238095238095,
+      "true_min_propensity": 0.0,
+      "population_risk_bounds": {
+        "lower": 0.058333333333333334,
+        "upper": 0.435
+      },
+      "ipw_status": "disabled_structural_zero_support",
+      "evaluation": {
+        "accepted_only": {
+          "all": {
+            "roc_auc": 0.6471132561174749,
+            "gini": 0.2942265122349499,
+            "ks": 0.23101537464427024,
+            "pr_auc": 0.32744557485760567,
+            "average_precision": 0.3284788131073243,
+            "brier": 0.16540136640449046,
+            "log_loss": 0.517155077680982,
+            "precision": 0.2524688707599828,
+            "recall": 0.7850467289719626,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.12429206398751518,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.6226061712787376,
+            "gini": 0.24521234255747526,
+            "ks": 0.22456805731142013,
+            "pr_auc": 0.15212204991221412,
+            "average_precision": 0.154652657558843,
+            "brier": 0.08341633851860045,
+            "log_loss": 0.3037789830980854,
+            "precision": 0.11769834350479512,
+            "recall": 0.6428571428571429,
+            "observed_bad_rate": 0.09358288770053476,
+            "mean_probability": 0.10633882393325267,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.48854240705963037,
+            "gini": -0.022915185880739264,
+            "ks": 0.06270508648546769,
+            "pr_auc": 0.4186119292698105,
+            "average_precision": 0.4200136665681173,
+            "brier": 0.30107570458733496,
+            "log_loss": 0.8702641899553333,
+            "precision": 0.383248730964467,
+            "recall": 0.8404452690166976,
+            "observed_bad_rate": 0.3974926253687316,
+            "mean_probability": 0.1540022931038611,
+            "classification_threshold": 0.1
+          }
+        },
+        "oracle_all_labels_benchmark": {
+          "all": {
+            "roc_auc": 0.779953067319035,
+            "gini": 0.55990613463807,
+            "ks": 0.46019315359799273,
+            "pr_auc": 0.59191874189126,
+            "average_precision": 0.592192299895671,
+            "brier": 0.12742965940944376,
+            "log_loss": 0.4203015430315657,
+            "precision": 0.267559886317499,
+            "recall": 0.8798397863818425,
+            "observed_bad_rate": 0.20805555555555555,
+            "mean_probability": 0.20964080187885145,
+            "classification_threshold": 0.1
+          },
+          "accepted": {
+            "roc_auc": 0.5542749449829095,
+            "gini": 0.10854988996581905,
+            "ks": 0.1400899002668914,
+            "pr_auc": 0.13052013543007696,
+            "average_precision": 0.13178903450618482,
+            "brier": 0.08626128319712345,
+            "log_loss": 0.3254882723147058,
+            "precision": 0.10840108401084012,
+            "recall": 0.5714285714285714,
+            "observed_bad_rate": 0.09358288770053476,
+            "mean_probability": 0.10395343968234345,
+            "classification_threshold": 0.1
+          },
+          "rejected": {
+            "roc_auc": 0.7532081487318418,
+            "gini": 0.5064162974636837,
+            "ks": 0.3785263521231348,
+            "pr_auc": 0.7095018182029003,
+            "average_precision": 0.7098195368422942,
+            "brier": 0.19555785721213312,
+            "log_loss": 0.5772049202355729,
+            "precision": 0.3974926253687316,
+            "recall": 1.0,
+            "observed_bad_rate": 0.3974926253687316,
+            "mean_probability": 0.3845393570182054,
+            "classification_threshold": 0.1
+          }
+        }
+      },
+      "reject_sensitivity": [
+        {
+          "reject_odds_multiplier": 0.5,
+          "assumed_reject_bad_rate": 0.08433754768676867,
+          "population_bad_rate_assumption": 0.09010047629534954
+        },
+        {
+          "reject_odds_multiplier": 1.0,
+          "assumed_reject_bad_rate": 0.1540022931038611,
+          "population_bad_rate_assumption": 0.11634086373578768
+        },
+        {
+          "reject_odds_multiplier": 2.0,
+          "assumed_reject_bad_rate": 0.26341799517362136,
+          "population_bad_rate_assumption": 0.1575541115153974
+        }
+      ]
+    }
+  ],
+  "aggregate_metrics": [
+    {
+      "scenario": "deterministic_no_overlap",
+      "model": "accepted_only",
+      "repetitions": 3,
+      "brier_mean": 0.1839420452271089,
+      "log_loss_mean": 0.5960062970519671,
+      "log_loss_seed_sd": 0.0720069078956388,
+      "mean_pd": 0.11129387243345662,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "deterministic_no_overlap",
+      "model": "oracle_all_labels_benchmark",
+      "repetitions": 3,
+      "brier_mean": 0.1331153991940451,
+      "log_loss_mean": 0.4352825993705171,
+      "log_loss_seed_sd": 0.016718868040619304,
+      "mean_pd": 0.21511398643644566,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mar_overlap",
+      "model": "accepted_only",
+      "repetitions": 3,
+      "brier_mean": 0.14744465844662372,
+      "log_loss_mean": 0.45994372336425676,
+      "log_loss_seed_sd": 0.02228620771577665,
+      "mean_pd": 0.18878792368955574,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mar_overlap",
+      "model": "ipw",
+      "repetitions": 3,
+      "brier_mean": 0.1334716214460477,
+      "log_loss_mean": 0.4355987910012667,
+      "log_loss_seed_sd": 0.017049651779076098,
+      "mean_pd": 0.21774552902813807,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mar_overlap",
+      "model": "oracle_all_labels_benchmark",
+      "repetitions": 3,
+      "brier_mean": 0.1331153991940451,
+      "log_loss_mean": 0.4352825993705171,
+      "log_loss_seed_sd": 0.016718868040619304,
+      "mean_pd": 0.21511398643644566,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mnar_hidden",
+      "model": "accepted_only",
+      "repetitions": 3,
+      "brier_mean": 0.1553627601329756,
+      "log_loss_mean": 0.480210799327397,
+      "log_loss_seed_sd": 0.02830049706666566,
+      "mean_pd": 0.14266883858181376,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mnar_hidden",
+      "model": "ipw",
+      "repetitions": 3,
+      "brier_mean": 0.1398351136524943,
+      "log_loss_mean": 0.45146816662905326,
+      "log_loss_seed_sd": 0.020630185208970128,
+      "mean_pd": 0.15911386180661233,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    },
+    {
+      "scenario": "mnar_hidden",
+      "model": "oracle_all_labels_benchmark",
+      "repetitions": 3,
+      "brier_mean": 0.1331153991940451,
+      "log_loss_mean": 0.4352825993705171,
+      "log_loss_seed_sd": 0.016718868040619304,
+      "mean_pd": 0.21511398643644566,
+      "true_synthetic_bad_rate": 0.22064814814814815
+    }
+  ],
+  "limitations": [
+    "Synthetic potential outcomes are not real rejected-applicant outcomes",
+    "IPW requires selection conditional on recorded X and positive acceptance support",
+    "MNAR hidden factors violate conditional selection exchangeability",
+    "Clipping trades variance for bias and cannot restore structural zero support",
+    "Oracle labels evaluate the simulation; the oracle model is unattainable",
+    "Seed standard deviations describe Monte Carlo variation, not confidence intervals",
+    "No real-data reject inference model is promoted or Phase 8 policy changed"
+  ],
+  "artifacts_sha256": {
+    "deterministic_no_overlap_91_holdout.csv": "7b23c952794e54ff706186a1618ac8a2d7baac6095e80594f1b2431dde0718b7",
+    "deterministic_no_overlap_91_training.csv": "afe5814b027fa0b90a9d4a7a99bbb8b2a00233997c0373a5e54b238c7fedfaca",
+    "deterministic_no_overlap_92_holdout.csv": "8692e75d72b627d8ef8948eb3d47c40d9c96b2df79462a7390cf951e7e1bb93c",
+    "deterministic_no_overlap_92_training.csv": "6524acadac55e7a47bd36f25957f24ffa6d29920ea53579d9490d3bb57b27362",
+    "deterministic_no_overlap_93_holdout.csv": "1db66d1af3d9b8866bd667889bb4755b0e0d96b79fd0e3d8f051957169d68998",
+    "deterministic_no_overlap_93_training.csv": "ae3bf6e30186d9c28826713b65d4fc0201b57a72217ddafe152cd4f925a5c1bb",
+    "mar_overlap_91_holdout.csv": "10d9c39afc900e1010acbde0e38cae5780ae8d50d432fb8d9f218297460df658",
+    "mar_overlap_91_training.csv": "27a40fc649a99818d6edf57437649555a82ddc07063e506e4ee9e4cb73221d2c",
+    "mar_overlap_92_holdout.csv": "3234796e24dfdd27006cd9cdad373a8c27080443e5172b2c919c625b1659672c",
+    "mar_overlap_92_training.csv": "e51be560e0f4f2289807d27a5f212e8d9209d1e0eefa2ba66edbd8c6331629a3",
+    "mar_overlap_93_holdout.csv": "71afb0123da8a4582d90d2d4999f660fd6480ac624a86322ee4cefd40c8ce0d5",
+    "mar_overlap_93_training.csv": "9dabc4acbb9b997c26d757851c13ecb17c0f8e67008278ed7bb4673e47bdac78",
+    "metrics.csv": "41884977738d652110181acc905ce237fad2fd76cf494515870001f851f5a41a",
+    "mnar_hidden_91_holdout.csv": "df96de3e8ebdef77b638fbdb5143f986ecf429ea823f2a6cf4f04b23a6267634",
+    "mnar_hidden_91_training.csv": "2c9f9b500e45fcba096750043ec83611c1e3c09cfdd735d6ba44dd133bded104",
+    "mnar_hidden_92_holdout.csv": "38eca22e15f180abd3769c21a00178e5cc42fa6724ce009605ccd9c87d6e5a73",
+    "mnar_hidden_92_training.csv": "5aeb8612131ac917e4b39eb3949e1ad1c41a40130629aea202d2c809322ae8c3",
+    "mnar_hidden_93_holdout.csv": "4a0e8304e2880c1712822558ce79177e7d4c622c5419a988770976fa15987714",
+    "mnar_hidden_93_training.csv": "1e1c7aa5d12688a0fdf5739bdca6be68c1a5b049757d19661a06e5d0cff6b428",
+    "reject_inference.png": "49a23a85d9a051ccbf8628bd75acb1c48cba1b958a878c30c381fc1927d589cc"
+  }
+}

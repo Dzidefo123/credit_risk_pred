@@ -9,7 +9,9 @@ locks development-selected choices and evaluates the final holdout with uncertai
 and segment diagnostics. Phase 6 adds coverage-aware vintages and consecutive-month
 account/balance roll rates. Phase 7 adds a longitudinal transition PD benchmark,
 expected loss and configurable scenarios. Phase 8 adds configurable underwriting,
-hypothetical limits and development policy comparisons. A production API remains later work. The root notebook,
+hypothetical limits and development policy comparisons. Phase 9 adds separate synthetic
+selection-bias experiments with masked outcomes and propensity weighting.
+A production API remains later work. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -96,3 +98,6 @@ Phase 7 model PD provenance, expected-loss arithmetic and scenario assumptions a
 
 Phase 8 underwriting, hypothetical limits and appetite comparisons are in
 [credit_strategy.md](credit_strategy.md).
+
+Phase 9 simulation assumptions, propensity weighting and identification limits are in
+[reject_inference.md](reject_inference.md).

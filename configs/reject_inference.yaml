@@ -1,0 +1,8 @@
+# Independent simulation, not a reconstructed lender approval history.
+samples: 12000
+seeds: [91, 92, 93]
+holdout_fraction: 0.3
+propensity_folds: 5
+estimated_propensity_floor: 0.05
+maximum_weight: 20.0
+reject_odds_multipliers: [0.5, 1.0, 2.0]
