@@ -1,0 +1,7 @@
+# Preserve byte-level hashes of the Windows-frozen Phase 4/5 model code.
+# Only these files require CRLF; V1 evidence and other sources are unchanged.
+src/credit_risk/models/pd.py text eol=crlf
+src/credit_risk/features/origination.py text eol=crlf
+src/credit_risk/utils/config.py text eol=crlf
+src/credit_risk/validation/metrics.py text eol=crlf
+src/credit_risk/models/calibration.py text eol=crlf

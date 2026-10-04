@@ -1,0 +1,90 @@
+name: Credit risk lab CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MLFLOW_DISABLE_TELEMETRY: "true"
+  MLFLOW_DISABLE_AGENT_HINT: "true"
+  MPLBACKEND: Agg
+  UV_LINK_MODE: copy
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }} / ${{ matrix.dependencies }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: "3.11", dependencies: core}
+          - {os: windows-latest, python: "3.11", dependencies: core}
+          - {os: ubuntu-latest, python: "3.11", dependencies: tracking}
+          - {os: windows-latest, python: "3.11", dependencies: tracking}
+          - {os: ubuntu-latest, python: "3.12", dependencies: core}
+          - {os: ubuntu-latest, python: "3.13", dependencies: core}
+          - {os: ubuntu-latest, python: "3.14", dependencies: core}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "0.10.11"
+          enable-cache: true
+      - name: Install locked core dependencies
+        if: matrix.dependencies == 'core'
+        run: uv sync --locked
+      - name: Install locked optional tracking dependencies
+        if: matrix.dependencies == 'tracking'
+        run: uv sync --locked --extra tracking
+      - name: Lint and format
+        run: |
+          uv run --no-sync ruff check src tests scripts api
+          uv run --no-sync ruff format --check src tests scripts api
+      - name: Validate configuration
+        run: uv run --no-sync credit-risk-lab check-config --config-dir configs
+      - name: Test without private datasets or historical artifacts
+        run: uv run --no-sync pytest --strict-config --strict-markers -q
+      - name: Build and inspect release packages
+        run: |
+          uv build
+          uv run --no-sync python scripts/check_release.py --dist-dir dist
+      - name: Install the core wheel in an isolated environment
+        shell: bash
+        run: |
+          uv export --locked --no-dev --no-editable --no-emit-project --output-file dist/runtime-requirements.txt > /dev/null
+          uv run --isolated --no-project --directory "$RUNNER_TEMP" --python "${{ matrix.python }}" --with-requirements "$GITHUB_WORKSPACE/dist/runtime-requirements.txt" --with "$GITHUB_WORKSPACE/dist/credit_risk_lab-0.12.0-py3-none-any.whl" python -I "$GITHUB_WORKSPACE/scripts/smoke_installed.py"
+
+  container:
+    name: Build and smoke-test research API container
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+      - name: Build locked runtime image
+        run: docker build --tag credit-risk-lab:ci .
+      - name: Verify non-root package and configuration
+        run: |
+          docker run --rm --entrypoint python credit-risk-lab:ci -c "import os, importlib.util; from credit_risk import __version__; assert os.getuid() == 10001; assert __version__ == '0.12.0'; assert importlib.util.find_spec('mlflow') is None"
+          docker run --rm --entrypoint credit-risk-lab credit-risk-lab:ci check-config --config-dir configs
+      - name: Check artifact-free API failure behavior
+        run: python scripts/smoke_container.py --image credit-risk-lab:ci

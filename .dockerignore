@@ -1,0 +1,18 @@
+# Allow only package sources, metadata, docs needed for builds and configs.
+**
+!Dockerfile
+!pyproject.toml
+!uv.lock
+!src/
+!src/**
+!docs/
+!docs/architecture.md
+!configs/
+!configs/*.yaml
+# Never include generated files nested under an allowed directory.
+**/__pycache__/**
+**/*.pyc
+**/.env*
+**/*.csv
+**/*.joblib
+**/*.pkl

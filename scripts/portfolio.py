@@ -1,4 +1,5 @@
 """Portfolio analytics: uv run python scripts/portfolio.py --help."""
+
 import sys
 
 from credit_risk.cli import main

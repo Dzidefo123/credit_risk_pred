@@ -1,0 +1,6 @@
+# Mount the original source and verified Phase 4/5 artifacts under /research read-only.
+source_csv: /research/cs-training.csv
+run_dir: /research/phase4-origination-001
+validation_dir: /research/phase5-validation-001
+policy_config: credit_strategy.yaml
+policy_name: baseline
