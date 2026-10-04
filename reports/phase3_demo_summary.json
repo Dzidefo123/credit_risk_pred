@@ -1,0 +1,102 @@
+{
+  "evidence_type": "synthetic data preparation, not model performance",
+  "generator": {
+    "is_synthetic": true,
+    "generator_version": "0.3.0",
+    "config": {
+      "n_accounts": 500,
+      "calendar_months": 36,
+      "origination_months": 12,
+      "start_month": "2022-01-01",
+      "seed": 42,
+      "annual_interest_rate": 0.18,
+      "transition_matrix": [
+        [
+          0.94,
+          0.045,
+          0.01,
+          0.003,
+          0.001,
+          0.001
+        ],
+        [
+          0.4,
+          0.35,
+          0.18,
+          0.04,
+          0.02,
+          0.01
+        ],
+        [
+          0.15,
+          0.2,
+          0.35,
+          0.2,
+          0.07,
+          0.03
+        ],
+        [
+          0.07,
+          0.08,
+          0.15,
+          0.35,
+          0.25,
+          0.1
+        ],
+        [
+          0.02,
+          0.03,
+          0.05,
+          0.1,
+          0.4,
+          0.4
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "accounts": 500,
+    "snapshots": 15142,
+    "state_counts": {
+      "CURRENT": 8808,
+      "DEFAULT": 4186,
+      "DPD_1_29": 946,
+      "DPD_30_59": 556,
+      "DPD_60_89": 349,
+      "DPD_90_PLUS": 297
+    },
+    "files_sha256": {
+      "accounts.csv": "d5f34bd3dcace07f99464ffa48b48c2ff5a2e05732e8406f3bc006f24a73c1c1",
+      "history.csv": "cdee1724fa8ed25544f84b4d453b05a739e3651e6292fca6750f4d3478c7e453"
+    }
+  },
+  "targets": {
+    "version": "0.3.0",
+    "config": {
+      "horizon_months": 12,
+      "default_dpd_threshold": 90,
+      "indeterminate_dpd_threshold": 30
+    },
+    "as_of": "2024-12-31",
+    "rows": 15142,
+    "status_counts": {
+      "preexisting_default": 4859,
+      "good": 3511,
+      "bad": 2874,
+      "censored": 2484,
+      "indeterminate": 1414
+    },
+    "source_sha256": {
+      "accounts": "d5f34bd3dcace07f99464ffa48b48c2ff5a2e05732e8406f3bc006f24a73c1c1",
+      "history": "cdee1724fa8ed25544f84b4d453b05a739e3651e6292fca6750f4d3478c7e453"
+    },
+    "target_sha256": "f461a22b0546bdc5a0e3e91bc86071e183b614ba90cca4adf8c0fb9b1dfd51b8",
+    "is_synthetic": true
+  }
+}

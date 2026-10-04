@@ -2,8 +2,9 @@
 
 The lab separates the applicant decision (origination PD, calibration, and
 underwriting) from account evolution (behavioral risk and portfolio analytics).
-Phase 2 establishes packaging and configuration. No new model, target, portfolio,
-or production API exists yet. The root notebook, app.py, main.py, and templates
+Phase 2 established packaging and configuration. Phase 3 adds data contracts,
+synthetic histories and censored forward targets. No new predictive model or
+production API exists yet. The root notebook, app.py, main.py, and templates
 remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -19,8 +20,8 @@ remain unchanged V1 evidence; they are excluded from the distributable package.
 | monitoring | Feature, score, PD and missingness drift |
 | utils | Typed config and structured logging |
 
-Empty domain packages mark responsibilities; their implementations arrive in
-later phases. Imports never load the inherited CSV or model. Configurations are
+The data package now implements adapters, validation, synthetic histories and
+forward targets. Other domain packages mark responsibilities for later phases. Imports never load the inherited CSV or model. Configurations are
 explicit external inputs, rather than embedded machine-specific paths.
 
 ## Reproducible development
@@ -43,7 +44,8 @@ targets for environments with GNU make. uv.lock records resolved dependencies;
 `uv sync --locked` refuses to silently update it. The project uses uv copy mode because OneDrive rejects environment hardlinks.
 A fresh .venv is separate from
 the ignored V1 venv. Domain dependencies will be added as their phases implement
-actual algorithms; no TensorFlow, tree model or remote MLflow server is required.
+actual algorithms. NumPy and pandas support the data layer; no TensorFlow, tree
+model or remote MLflow server is required.
 
 ## Configuration contracts
 
@@ -67,3 +69,6 @@ local artifacts are not wheel resources. Supply --config-dir when invoking the
 configuration checker outside the checkout. The README's complete business
 rewrite remains scheduled for Phase 14; consult reports/phase1_audit.md for the
 historical findings and phase gates.
+
+Phase 3 commands, source contracts and target definitions are in
+[data_contracts.md](data_contracts.md).

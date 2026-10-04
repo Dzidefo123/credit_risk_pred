@@ -1,0 +1,4 @@
+# Analytic first-default target for longitudinal histories only.
+horizon_months: 12
+default_dpd_threshold: 90
+indeterminate_dpd_threshold: 30

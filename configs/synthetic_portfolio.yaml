@@ -1,0 +1,7 @@
+# Illustrative simulation assumptions, not fitted portfolio performance.
+n_accounts: 500
+calendar_months: 36
+origination_months: 12
+start_month: "2022-01-01"
+seed: 42
+annual_interest_rate: 0.18

@@ -1,4 +1,4 @@
-# Data provenance and local storage (Phase 1)
+# Data provenance and local storage
 
 The inherited `cs-training.csv` remains at the repository root locally, but is
 no longer versioned. The inherited API still refers to that location. Its
@@ -24,3 +24,17 @@ histories using replaceable data contracts. Proposed ignored locations are
 new modeling is implemented in Phase 1. A fresh clone will not include local
 raw data or model artifacts; the legacy API is historical evidence and is not
 a reproducible serving release.
+
+## Phase 3 data preparation
+
+The origination loader preserves the inherited label and all valid input rows;
+it normalizes field names and reports quality without learned preprocessing.
+The separate synthetic generator emits accounts.csv, history.csv and a manifest
+under an ignored run directory. Account and history tables explicitly contain
+is_synthetic=True. Real replacements must conform to the documented contracts
+and explicitly set false. Forward targets are stored separately from features.
+
+Use the commands and definitions in ../docs/data_contracts.md. The audited
+Phase 3 demo is in data/raw/phase3-demo locally, with forward targets in
+data/processed/phase3-demo/targets.csv. Generated CSVs are not committed.
+A small measured run summary is recorded in reports/phase3_demo_summary.json.
