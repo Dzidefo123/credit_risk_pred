@@ -57,6 +57,8 @@ jobs:
           uv run --no-sync ruff format --check src tests scripts api
       - name: Validate configuration
         run: uv run --no-sync credit-risk-lab check-config --config-dir configs
+      - name: Check governance evidence and document links
+        run: uv run --no-sync python scripts/check_governance.py
       - name: Test without private datasets or historical artifacts
         run: uv run --no-sync pytest --strict-config --strict-markers -q
       - name: Build and inspect release packages

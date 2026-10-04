@@ -74,3 +74,60 @@ missing/constant/tied distributions, reference immutability, PD/score endpoints,
 alert boundaries, insufficient populations, changed model/source rejection,
 checksum protection and final-test scoring guards. Lint, format, configuration,
 V1 preservation, wheel build and installed-package smoke checks passed.
+
+## Phase 13 operating interpretation and proposed response
+
+The Phase 10 results remain a controlled label-free mechanics demonstration,
+not a live monitoring period. No new population or outcomes were scored here.
+Current effective warning/critical thresholds are checked against the frozen
+reference configuration and use the following units:
+
+<!-- evidence:thresholds -->
+| Alert channel | Warning | Critical | Unit |
+| --- | ---: | ---: | --- |
+| psi | 0.1 | 0.25 | PSI / feature CSI equivalent |
+| missingness | 0.05 | 0.1 | Absolute proportion change |
+| ks | 0.1 | 0.2 | Numeric KS distance |
+| out_of_range | 0.05 | 0.1 | Fraction outside reference support |
+| pd_mean | 0.01 | 0.03 | Absolute PD proportion change |
+| score_mean | 10 | 25 | Absolute score points change |
+<!-- /evidence:thresholds -->
+
+Alerts include the boundary (`value >= threshold`); missingness, PD mean and score
+mean changes use absolute magnitudes. PSI is reference-binned/smoothed, KS is a
+numeric distribution distance, and out_of_range is the fraction outside observed
+reference support. None is a calibrated probability of model failure. The minimum
+overall population is 500; numeric diagnostics need 50 numeric observations in
+both populations. Sparse/unavailable diagnostics must remain visible and are not
+evidence of stability. These choices require review for any new population.
+
+| State / observation | Proposed response | Current implementation limit |
+| --- | --- | --- |
+| Model/source/reference integrity failure | Reject scoring; inspect trusted bundle and lineage | Readiness/integrity guards exist; no incident ticket system |
+| INSUFFICIENT_DATA or unavailable diagnostics | Establish coverage and sample support; do not label the cohort stable | Status/diagnostics exist; no automatic data collection |
+| WARNING | Review input quality, channel/policy/segment mix and persistence; record evidence | Alerts computed; no notification or owner assigned |
+| CRITICAL | Prioritize containment/triage and intended-use review; check pipeline faults first | No automated suspension or model/policy change |
+| Mature calibration loss or segment error | Independent review of validated outcome windows, uncertainty and cause; consider recalibration/retraining with fresh holdout | Not observed in the label-free demonstration |
+
+Proposed cadence is per-batch quality checks, monthly population/segment drift
+review and monthly mature-outcome review when sufficient support exists, with
+comprehensive review at least annually or after material change. It is neither
+a running scheduler nor an approved institutional requirement. Establish a named
+monitoring owner, dated eligible cohorts and decision/outcome linkage before
+operating this process. Delayed/missing outcomes, acceptance bias and censoring
+must be reported; immature or missing follow-up cannot become a good outcome.
+
+For future performance monitoring, record outcome coverage/maturity, AUC/Gini/KS,
+Brier/log loss, reliability/O:E, event rates and segment support, alongside
+population and policy mix. Define prospective acceptance bands from intended-use
+evidence before evaluating new holdouts; this lab supplies no universal numeric
+recalibration/retraining trigger. Probability drift can prioritize investigation
+but cannot establish concept drift. PD and score alerts are correlated transforms.
+
+The incident record and release/reference change process are in
+[model_governance.md](../docs/model_governance.md). Source/schema incidents need
+pipeline correction; calibration drift with otherwise suitable ranking may call
+for reviewed recalibration, while structural target/population or ranking failure
+may require a new model. Every change needs new independent validation and
+separate policy review. No automatic fit, silent rebinning or test-lock removal
+is permitted by that procedure. See [GOV-007 and GOV-008](model_risk_register.md).

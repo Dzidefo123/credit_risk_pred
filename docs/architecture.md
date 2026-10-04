@@ -13,7 +13,8 @@ hypothetical limits and development policy comparisons. Phase 9 adds separate sy
 selection-bias experiments with masked outcomes and propensity weighting.
 Phase 10 adds frozen-reference feature, PD, score and missingness monitoring.
 Phase 11 adds a research scoring/decision API and optional local MLflow tracking.
-Phase 12 adds clean-checkout CI, release gates and an external-artifact Docker runtime. The root notebook,
+Phase 12 adds clean-checkout CI, release gates and an external-artifact Docker runtime.
+Phase 13 consolidates model evidence, open findings and procedural governance gates. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -112,3 +113,6 @@ Phase 11 serving contracts, lifecycle and optional experiment export are in
 
 Phase 12 test coverage, CI lanes, release checks and Docker mounts are in
 [testing_ci_docker.md](testing_ci_docker.md).
+
+Phase 13 model inventory, intended use, approval status and change controls are in
+[model_governance.md](model_governance.md) and the [model card](../reports/model_card.md).

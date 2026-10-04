@@ -41,3 +41,37 @@ label-independent decisions, loss arithmetic and count conservation, checksum
 rejection before deserialization, calibration provenance, and development-only
 scoring without fitting. Lint, formatting, configuration, packaging and V1
 preservation checks also passed.
+
+## Phase 13 policy governance and current serving configuration
+
+Baseline is the current API demonstration configuration, not a policy selected
+by profitability or approved for lending. Approval is strictly PD < .03;
+.03 <= PD < .10 enters manual review; PD >= .10 declines. Grades use inclusive
+upper bounds .01/.03/.06/.10/1.0, so a grade boundary does not imply approval.
+Decline takes priority over affordability guards. Otherwise-eligible approval
+becomes review when raw income is missing/zero, DebtRatio/utilization is missing
+or above one, or the rounded limit is below 500. Imputed income never supplies
+automatic policy affordability. Review and decline receive zero offered limit.
+
+The indicative limit starts with min(10,000, 2 × raw income), divides by
+(1 + DebtRatio) and (1 + utilization), applies grade factors
+1/.8/.6/.4/.2 and (1 − PD), then rounds down in 100-unit increments. No minimum
+is rounded up into a funded offer. EAD=.5 × offered limit and loss proxy=PD ×
+.45 × EAD are assumptions. Unknown source income/debt units prevent treating
+these as verified cash-flow affordability or monetary loss forecasts.
+
+Policy threshold/grade/limit/LGD/EAD changes require a separate versioned review
+of development or new eligible data, approval/review/decline counts, exposure,
+composition, missingness/segments and economic assumptions. Historical development
+selected bad rates above reuse model-selection data and unknown source selection;
+they are not funded performance, independent policy validation or reject outcomes.
+No real adverse-action explanation, fairness or compliance approval is supplied
+by illustrative model/policy reason codes. Independent policy validation and
+qualified domain review remain required before real offers.
+
+No credit-policy approver or approved exceptions process exists. A future manual
+review/override must record its reason, authorized actor, input/model/policy
+identities and outcome; it cannot silently alter predicted PD or fit a model.
+This is a proposed control, not an implemented manual-review queue or audit log.
+See [model governance](../docs/model_governance.md),
+[model card](model_card.md) and [GOV-004–GOV-006](model_risk_register.md).

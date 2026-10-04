@@ -112,3 +112,34 @@ Phase 5 acceptance: calibration/raw comparisons, final-holdout metrics, reliabil
 Local run: `artifacts/phase5-validation-001`; aggregate evidence: [phase5_validation_summary.json](phase5_validation_summary.json). Row predictions and joblib models remain ignored local artifacts. Figures are aggregate evidence. Methodology and reproduction commands: [calibration_validation.md](../docs/calibration_validation.md).
 
 Selection lock SHA-256: `717064395e6f5f7a87efbc2c904f695cff5e853b1c35d2a0810a2e9efc7b57c7`. Final-test access is now consumed, recorded in `artifacts/phase4-origination-001/test_consumption.json`.
+
+## Phase 13 governance disposition (2026-10-04)
+
+The numerical evidence above remains the original Phase 5 evaluation. Phase 13
+reviewed its aggregate records without rerunning calibration, final-test scoring,
+model selection or bootstrap calculations. The new [model card](model_card.md)
+and [register](governance_register.json) carry those same selected-model metrics,
+partition counts and identities. Historical per-phase test counts describe their
+own commits; the subsequent engineering baseline is documented in
+[Phase 12](phase12_engineering_report.md).
+
+Technical evidence is complete for the declared cross-sectional lab comparison:
+train-only fitting, isolated calibration, development selection, locked final
+measurement, uncertainty, missingness and segment diagnostics. This is lab
+self-validation. No independent validator is assigned or has signed an opinion;
+no production model acceptance is recorded. Favorable bootstrap differences are
+conditional on this source and frozen estimators, not external/temporal approval.
+
+Open validation requirements include verified population/target/units, true
+borrower grouping and dated mature external cohorts, prospective stability,
+selection bias/overlap, fairness/explanation suitability, policy economics and
+LGD/EAD validation. Thresholds or acceptance criteria inferred after seeing the
+consumed test metrics cannot make it an independent future acceptance sample.
+[Findings GOV-001–GOV-009](model_risk_register.md) define required evidence and
+suggested reviewer roles. No finding is closed by this documentation.
+
+Next review must freeze intended use and criteria before using a new independent
+holdout. Recalibration/retraining requires new lineage, calibration/selection
+separation, uncertainty/segment review and independently assessed policy impact.
+The [governance process](../docs/model_governance.md) defines those procedural gates;
+it does not claim they have been executed or are automatically enforced.

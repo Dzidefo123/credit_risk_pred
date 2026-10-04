@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "documentation_revision": "phase13",
+  "review_date": "2026-10-04",
+  "software_package_version": "0.12.0",
+  "use_status": "research_only",
+  "production_approval": {
+    "status": "not_approved",
+    "model_owner": null,
+    "independent_validator": null,
+    "credit_policy_approver": null,
+    "deployment_approver": null
+  },
+  "origination": {
+    "candidate": "xgboost",
+    "calibration_method": "sigmoid",
+    "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+    "benchmark_model_sha256": "4687a557b52a0242bc38bfb17c14afff0fefbf0e6b2bbba7a6038fa56ed135b3",
+    "selection_artifact_sha256": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+    "selection_lock_sha256": "717064395e6f5f7a87efbc2c904f695cff5e853b1c35d2a0810a2e9efc7b57c7",
+    "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+    "validation_type": "grouped cross-sectional final holdout; not out-of-time",
+    "partitions": {
+      "train": {
+        "rows": 67562,
+        "bad_count": 4514,
+        "bad_rate": 0.06681270536692223,
+        "row_positions_sha256": "892d79c1fed9be83efbae3370195cba20bfe387e8284fad5377df0ff5d8e81c2"
+      },
+      "development": {
+        "rows": 22483,
+        "bad_count": 1504,
+        "bad_rate": 0.06689498732375572,
+        "row_positions_sha256": "6311677681e2f480459b437f11b04b004cafa794c799dd3b3255654e3a706a28"
+      },
+      "calibration": {
+        "rows": 29964,
+        "bad_count": 2005,
+        "bad_rate": 0.06691362968896009,
+        "row_positions_sha256": "6f5dacf10266e10f8f8c87f5a1ed4d142f2918e9175c86c6a8fa3b2ec7e299af"
+      },
+      "test": {
+        "rows": 29991,
+        "bad_count": 2003,
+        "bad_rate": 0.0667867026774699,
+        "row_positions_sha256": "6afcbf7577b3e3fc42effc5ab98f54504eae3e545bb568584f17846518e159a7"
+      }
+    },
+    "selected_methods": {
+      "logistic_regression": "isotonic",
+      "xgboost": "sigmoid"
+    },
+    "final_metrics": {
+      "logistic_regression": {
+        "roc_auc": 0.8347755182290163,
+        "gini": 0.6695510364580326,
+        "ks": 0.5123698616716914,
+        "pr_auc": 0.3540902561321079,
+        "average_precision": 0.3452321424627989,
+        "brier": 0.050967027159330464,
+        "log_loss": 0.18828663579857893,
+        "precision": 0.2885473475458602,
+        "recall": 0.5811283075386919,
+        "observed_bad_rate": 0.0667867026774699,
+        "mean_probability": 0.0650680940810874,
+        "classification_threshold": 0.1
+      },
+      "xgboost": {
+        "roc_auc": 0.8681518596765422,
+        "gini": 0.7363037193530844,
+        "ks": 0.5773796073076323,
+        "pr_auc": 0.4083298771296409,
+        "average_precision": 0.40862953563031995,
+        "brier": 0.04854455723113683,
+        "log_loss": 0.17602992450342989,
+        "precision": 0.28778821520068315,
+        "recall": 0.672990514228657,
+        "observed_bad_rate": 0.0667867026774699,
+        "mean_probability": 0.06527662580051471,
+        "classification_threshold": 0.1
+      }
+    },
+    "reliability": {
+      "logistic_regression": {
+        "ece": 0.004049552308306162,
+        "observed_expected_ratio": 1.0264124625233497,
+        "bin_interval_type": "approximate row-binomial Wilson; not borrower-cluster robust"
+      },
+      "xgboost": {
+        "ece": 0.0028203215142459702,
+        "observed_expected_ratio": 1.023133500827233,
+        "bin_interval_type": "approximate row-binomial Wilson; not borrower-cluster robust"
+      }
+    },
+    "uncertainty": {
+      "confidence_level": 0.95,
+      "requested_samples": 200,
+      "valid_samples": 200,
+      "skipped_single_class": 0,
+      "resampling_unit": "exact-predictor group",
+      "interval_type": "percentile, frozen models",
+      "intervals": {
+        "logistic_regression": {
+          "roc_auc": {
+            "lower": 0.8240613723823959,
+            "upper": 0.8435970624227317
+          },
+          "gini": {
+            "lower": 0.6481227447647917,
+            "upper": 0.6871941248454634
+          },
+          "brier": {
+            "lower": 0.04898688166133451,
+            "upper": 0.05291634449743986
+          },
+          "log_loss": {
+            "lower": 0.1822192009128355,
+            "upper": 0.1950634160224657
+          },
+          "average_precision": {
+            "lower": 0.32525932762872917,
+            "upper": 0.3700148387420826
+          }
+        },
+        "xgboost": {
+          "roc_auc": {
+            "lower": 0.8592732567940223,
+            "upper": 0.8754082846728282
+          },
+          "gini": {
+            "lower": 0.7185465135880446,
+            "upper": 0.7508165693456563
+          },
+          "brier": {
+            "lower": 0.046743486386704836,
+            "upper": 0.05039492050743043
+          },
+          "log_loss": {
+            "lower": 0.17015420226009245,
+            "upper": 0.1823408765519108
+          },
+          "average_precision": {
+            "lower": 0.3871572620877496,
+            "upper": 0.4306879359140411
+          }
+        }
+      },
+      "paired_differences": {
+        "direction": "xgboost minus logistic_regression",
+        "intervals": {
+          "roc_auc": {
+            "lower": 0.027511874279525058,
+            "upper": 0.038057979707921526
+          },
+          "gini": {
+            "lower": 0.055023748559050116,
+            "upper": 0.07611595941584305
+          },
+          "brier": {
+            "lower": -0.0028643272897348284,
+            "upper": -0.001910038168539547
+          },
+          "log_loss": {
+            "lower": -0.014009743410898686,
+            "upper": -0.010569303505700374
+          },
+          "average_precision": {
+            "lower": 0.051230477283758354,
+            "upper": 0.07463679811381092
+          }
+        }
+      }
+    },
+    "missingness_by_partition": {
+      "train": {
+        "RevolvingUtilizationOfUnsecuredLines": 0.0,
+        "age": 0.0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0.0,
+        "DebtRatio": 0.0,
+        "MonthlyIncome": 0.19878037950327107,
+        "NumberOfOpenCreditLinesAndLoans": 0.0,
+        "NumberOfTimes90DaysLate": 0.0,
+        "NumberRealEstateLoansOrLines": 0.0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0.0,
+        "NumberOfDependents": 0.025961339214351262
+      },
+      "development": {
+        "RevolvingUtilizationOfUnsecuredLines": 0.0,
+        "age": 0.0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0.0,
+        "DebtRatio": 0.0,
+        "MonthlyIncome": 0.19365743005826624,
+        "NumberOfOpenCreditLinesAndLoans": 0.0,
+        "NumberOfTimes90DaysLate": 0.0,
+        "NumberRealEstateLoansOrLines": 0.0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0.0,
+        "NumberOfDependents": 0.025574878797313527
+      },
+      "calibration": {
+        "RevolvingUtilizationOfUnsecuredLines": 0.0,
+        "age": 0.0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0.0,
+        "DebtRatio": 0.0,
+        "MonthlyIncome": 0.19807101855560005,
+        "NumberOfOpenCreditLinesAndLoans": 0.0,
+        "NumberOfTimes90DaysLate": 0.0,
+        "NumberRealEstateLoansOrLines": 0.0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0.0,
+        "NumberOfDependents": 0.026264851154718997
+      },
+      "test": {
+        "RevolvingUtilizationOfUnsecuredLines": 0.0,
+        "age": 0.0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0.0,
+        "DebtRatio": 0.0,
+        "MonthlyIncome": 0.2004601380414124,
+        "NumberOfOpenCreditLinesAndLoans": 0.0,
+        "NumberOfTimes90DaysLate": 0.0,
+        "NumberRealEstateLoansOrLines": 0.0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0.0,
+        "NumberOfDependents": 0.026941415758060753
+      }
+    },
+    "feature_names": [
+      "RevolvingUtilizationOfUnsecuredLines",
+      "age",
+      "NumberOfTime30_59DaysPastDueNotWorse",
+      "DebtRatio",
+      "MonthlyIncome",
+      "NumberOfOpenCreditLinesAndLoans",
+      "NumberOfTimes90DaysLate",
+      "NumberRealEstateLoansOrLines",
+      "NumberOfTime60_89DaysPastDueNotWorse",
+      "NumberOfDependents"
+    ],
+    "frozen_training_versions": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.2.0",
+      "joblib": "1.6.0"
+    }
+  },
+  "portfolio_benchmark": {
+    "is_synthetic": true,
+    "pd_model": {
+      "model": "empirical time-homogeneous count-weighted Markov benchmark",
+      "horizon_months": 12,
+      "fit_as_of": "2024-12-31",
+      "state_order": [
+        "CURRENT",
+        "DPD_1_29",
+        "DPD_30_59",
+        "DPD_60_89",
+        "DPD_90_PLUS",
+        "DEFAULT"
+      ],
+      "state_pair_counts": {
+        "CURRENT": 8628,
+        "DPD_1_29": 923,
+        "DPD_30_59": 543,
+        "DPD_60_89": 337,
+        "DPD_90_PLUS": 289,
+        "DEFAULT": 3922
+      },
+      "transition_matrix": [
+        [
+          0.9120305980528511,
+          0.06467315716272601,
+          0.013328697264719518,
+          0.005795085767269356,
+          0.0012749188687992583,
+          0.002897542883634678
+        ],
+        [
+          0.3542795232936078,
+          0.3001083423618635,
+          0.24810400866738894,
+          0.056338028169014086,
+          0.028169014084507043,
+          0.013001083423618635
+        ],
+        [
+          0.15653775322283608,
+          0.14917127071823205,
+          0.30755064456721914,
+          0.2523020257826888,
+          0.0865561694290976,
+          0.04788213627992634
+        ],
+        [
+          0.06824925816023739,
+          0.06231454005934718,
+          0.10385756676557864,
+          0.258160237388724,
+          0.35014836795252224,
+          0.1572700296735905
+        ],
+        [
+          0.01384083044982699,
+          0.031141868512110725,
+          0.03460207612456748,
+          0.07958477508650519,
+          0.328719723183391,
+          0.5121107266435986
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "horizon_pd_by_state": {
+        "CURRENT": 0.22267317275341658,
+        "DPD_1_29": 0.4079962738601265,
+        "DPD_30_59": 0.5786675412766902,
+        "DPD_60_89": 0.762950135590151,
+        "DPD_90_PLUS": 0.9017829921128736,
+        "DEFAULT": 1.0
+      },
+      "fit_coverage": {
+        "as_of": "2024-12-31",
+        "snapshots_as_of": 15142,
+        "eligible_origins": 14642,
+        "consecutive_pairs": 14642,
+        "missing_next": 0,
+        "not_yet_due_origins": 500,
+        "gap_links_excluded": 0,
+        "pair_coverage": 1.0,
+        "weight_basis": "origin closing balance; count and balance rates reported separately"
+      },
+      "probability_status": "uncalibrated benchmark",
+      "target": "recorded absorbing DEFAULT by the end of the forward horizon",
+      "default_row": "structural absorption under validated source contract",
+      "limitations": [
+        "Not prospectively validated or calibrated",
+        "Time homogeneity and state-only risk; no macroeconomic or account covariates",
+        "Repeated account observations are dependent; no uncertainty intervals",
+        "Observed-pair selection bias possible under missing follow-up"
+      ],
+      "source_sha256": {
+        "accounts": "d5f34bd3dcace07f99464ffa48b48c2ff5a2e05732e8406f3bc006f24a73c1c1",
+        "history": "cdee1724fa8ed25544f84b4d453b05a739e3651e6292fca6750f4d3478c7e453"
+      }
+    },
+    "config": {
+      "horizon_months": 12,
+      "minimum_state_pairs": 20,
+      "require_complete_snapshot": true,
+      "top_n_concentration": 10,
+      "scenarios": [
+        {
+          "name": "base",
+          "pd_odds_multiplier": 1.0,
+          "lgd": 0.45,
+          "credit_conversion_factor": 0.5
+        },
+        {
+          "name": "adverse",
+          "pd_odds_multiplier": 1.5,
+          "lgd": 0.6,
+          "credit_conversion_factor": 0.75
+        },
+        {
+          "name": "severe",
+          "pd_odds_multiplier": 2.5,
+          "lgd": 0.75,
+          "credit_conversion_factor": 1.0
+        }
+      ]
+    },
+    "production_approved": false
+  },
+  "policy": {
+    "baseline": {
+      "approve_below_pd": 0.03,
+      "decline_at_or_above_pd": 0.1,
+      "risk_grade_upper_bounds": [
+        0.01,
+        0.03,
+        0.06,
+        0.1,
+        1.0
+      ],
+      "lgd_assumption": 0.45,
+      "minimum_limit": 500.0,
+      "maximum_limit": 10000.0,
+      "income_limit_multiplier": 2.0,
+      "name": "baseline",
+      "grade_limit_factors": [
+        1.0,
+        0.8,
+        0.6,
+        0.4,
+        0.2
+      ],
+      "limit_increment": 100.0,
+      "maximum_auto_debt_ratio": 1.0,
+      "maximum_auto_utilization": 1.0,
+      "utilization_penalty": 1.0,
+      "assumed_drawdown": 0.5
+    },
+    "demonstration_only": true
+  },
+  "monitoring": {
+    "config": {
+      "bins": 10,
+      "smoothing": 1e-06,
+      "minimum_population_rows": 500,
+      "minimum_numeric_rows": 50,
+      "score_base": 600.0,
+      "score_base_good_bad_odds": 20.0,
+      "score_points_to_double_odds": 20.0,
+      "score_probability_epsilon": 1e-06,
+      "psi": {
+        "warning": 0.1,
+        "critical": 0.25
+      },
+      "missingness": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "ks": {
+        "warning": 0.1,
+        "critical": 0.2
+      },
+      "out_of_range": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "pd_mean": {
+        "warning": 0.01,
+        "critical": 0.03
+      },
+      "score_mean": {
+        "warning": 10.0,
+        "critical": 25.0
+      }
+    },
+    "reference_partition": "development",
+    "temporal_reference": false,
+    "control_status": "OK",
+    "perturbation_status": "CRITICAL",
+    "perturbation_alert_count": 13
+  },
+  "open_findings": [
+    "GOV-001",
+    "GOV-002",
+    "GOV-003",
+    "GOV-004",
+    "GOV-005",
+    "GOV-006",
+    "GOV-007",
+    "GOV-008",
+    "GOV-009"
+  ],
+  "evidence": [
+    {
+      "path": "reports/phase4_experiment.json",
+      "canonical_json_sha256": "91288b15256505c17440fcb78c5325d67430ac5793e364eb879f96677f54165a"
+    },
+    {
+      "path": "reports/phase5_validation_summary.json",
+      "canonical_json_sha256": "cbaad42eb157655639df5be56ee642aeadb557b40e5c5e89d7d7c7e2abdc5e7f"
+    },
+    {
+      "path": "reports/phase7_expected_loss_summary.json",
+      "canonical_json_sha256": "a81c6ea46a12065160146618eba64ea4a078356eb49e997d13c92d6c185ac6e3"
+    },
+    {
+      "path": "reports/phase8_policy_summary.json",
+      "canonical_json_sha256": "32d6e5e219e98c1f6cd10d87fa2a5482e9cdbab82364cec6232ab991ecb6efb4"
+    },
+    {
+      "path": "reports/phase9_reject_summary.json",
+      "canonical_json_sha256": "5796aed38e382649f3fd1cb7f4ef835fdd8b4e5e7ed270c841eef8005a9376a5"
+    },
+    {
+      "path": "reports/phase10_monitoring_summary.json",
+      "canonical_json_sha256": "4605af3109e303c14175fa62d390a8f79e6a57f6153586d556e98e012756a289"
+    },
+    {
+      "path": "reports/phase11_integration_summary.json",
+      "canonical_json_sha256": "5160ab54a5cd51511cadb991c687af9d6388ae84869bf95588b99bf5436f1ab1"
+    }
+  ]
+}
