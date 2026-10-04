@@ -1,0 +1,11 @@
+# Illustrative appetite comparisons; other assumptions use typed defaults.
+policies:
+  - name: conservative
+    approve_below_pd: 0.02
+    decline_at_or_above_pd: 0.08
+  - name: baseline
+    approve_below_pd: 0.03
+    decline_at_or_above_pd: 0.10
+  - name: growth
+    approve_below_pd: 0.05
+    decline_at_or_above_pd: 0.15

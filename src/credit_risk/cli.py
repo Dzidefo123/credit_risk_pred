@@ -14,6 +14,7 @@ from credit_risk.data.synthetic_portfolio import (
     write_portfolio,
 )
 from credit_risk.data.targets import TargetConfig, build_forward_targets
+from credit_risk.decisioning.settings import PolicyComparisonConfig
 from credit_risk.portfolio.loss_settings import ExpectedLossConfig
 from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
 from credit_risk.utils.config import (
@@ -76,6 +77,14 @@ def main(argv: list[str] | None = None) -> int:
     loss.add_argument("--as-of", default=None)
     loss.add_argument("--source-manifest", type=Path, default=None)
     loss.add_argument("--output-dir", type=Path, required=True)
+    policy = commands.add_parser(
+        "compare-policies", help="Compare illustrative development credit strategies"
+    )
+    policy.add_argument("--csv", type=Path, required=True)
+    policy.add_argument("--run-dir", type=Path, required=True)
+    policy.add_argument("--validation-dir", type=Path, required=True)
+    policy.add_argument("--config", type=Path, default=Path("configs/credit_strategy.yaml"))
+    policy.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -89,6 +98,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "validation.yaml", ValidationConfig)
             load_config(directory / "portfolio.yaml", PortfolioAnalyticsConfig)
             load_config(directory / "expected_loss.yaml", ExpectedLossConfig)
+            load_config(directory / "credit_strategy.yaml", PolicyComparisonConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -108,6 +118,13 @@ def main(argv: list[str] | None = None) -> int:
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
             }
+        elif args.command == "compare-policies":
+            from credit_risk.decisioning.runner import run_policy_comparison
+
+            config = load_config(args.config, PolicyComparisonConfig)
+            result = run_policy_comparison(
+                args.csv, args.run_dir, args.validation_dir, args.output_dir, config
+            )
         elif args.command == "expected-loss":
             from credit_risk.portfolio.loss_runner import run_expected_loss
 

@@ -1,1 +1,1 @@
-"""Underwriting policy, risk-based limits and selection bias."""
+"""Illustrative underwriting and credit-limit strategies."""

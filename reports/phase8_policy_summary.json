@@ -1,0 +1,173 @@
+{
+  "package_version": "0.8.0",
+  "partition": "development",
+  "final_test_scored": false,
+  "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+  "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+  "selection_sha256": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+  "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+  "source_code_sha256": {
+    "policy.py": "201b76da51bcbe731dac81306fb41aa541b915a3d1d9908a6e32ef1aaeb1481a",
+    "settings.py": "b89ab8b81b9045446de647995c1602382de39f48e2d63e5a4a4a07c8fc530bde",
+    "runner.py": "ab32a89418069aa3648f577e93ed6772cf3ec7d0cd2d8f4e274f460a5d7d4a4c"
+  },
+  "preferred_candidate": "xgboost",
+  "config": {
+    "policies": [
+      {
+        "approve_below_pd": 0.02,
+        "decline_at_or_above_pd": 0.08,
+        "risk_grade_upper_bounds": [
+          0.01,
+          0.03,
+          0.06,
+          0.1,
+          1.0
+        ],
+        "lgd_assumption": 0.45,
+        "minimum_limit": 500.0,
+        "maximum_limit": 10000.0,
+        "income_limit_multiplier": 2.0,
+        "name": "conservative",
+        "grade_limit_factors": [
+          1.0,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "limit_increment": 100.0,
+        "maximum_auto_debt_ratio": 1.0,
+        "maximum_auto_utilization": 1.0,
+        "utilization_penalty": 1.0,
+        "assumed_drawdown": 0.5
+      },
+      {
+        "approve_below_pd": 0.03,
+        "decline_at_or_above_pd": 0.1,
+        "risk_grade_upper_bounds": [
+          0.01,
+          0.03,
+          0.06,
+          0.1,
+          1.0
+        ],
+        "lgd_assumption": 0.45,
+        "minimum_limit": 500.0,
+        "maximum_limit": 10000.0,
+        "income_limit_multiplier": 2.0,
+        "name": "baseline",
+        "grade_limit_factors": [
+          1.0,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "limit_increment": 100.0,
+        "maximum_auto_debt_ratio": 1.0,
+        "maximum_auto_utilization": 1.0,
+        "utilization_penalty": 1.0,
+        "assumed_drawdown": 0.5
+      },
+      {
+        "approve_below_pd": 0.05,
+        "decline_at_or_above_pd": 0.15,
+        "risk_grade_upper_bounds": [
+          0.01,
+          0.03,
+          0.06,
+          0.1,
+          1.0
+        ],
+        "lgd_assumption": 0.45,
+        "minimum_limit": 500.0,
+        "maximum_limit": 10000.0,
+        "income_limit_multiplier": 2.0,
+        "name": "growth",
+        "grade_limit_factors": [
+          1.0,
+          0.8,
+          0.6,
+          0.4,
+          0.2
+        ],
+        "limit_increment": 100.0,
+        "maximum_auto_debt_ratio": 1.0,
+        "maximum_auto_utilization": 1.0,
+        "utilization_penalty": 1.0,
+        "assumed_drawdown": 0.5
+      }
+    ]
+  },
+  "policies": [
+    {
+      "policy": "conservative",
+      "applicants": 22483,
+      "approved": 7847,
+      "manual_review": 10062,
+      "declined": 4574,
+      "approval_rate": 0.34901925899568564,
+      "expected_bad_rate": 0.010850522714383793,
+      "expected_bad_count": 85.14405173976962,
+      "total_offered_limit": 47067700.0,
+      "assumed_ead": 23533850.0,
+      "expected_loss_proxy": 106214.99469070707,
+      "approved_grade_counts": {
+        "G2": 4252,
+        "G1": 3595
+      },
+      "historical_selected_bad_rate": 0.009685230024213076
+    },
+    {
+      "policy": "baseline",
+      "applicants": 22483,
+      "approved": 9486,
+      "manual_review": 9466,
+      "declined": 3531,
+      "approval_rate": 0.42191878308054975,
+      "expected_bad_rate": 0.013246981401527524,
+      "expected_bad_count": 125.6608655748901,
+      "total_offered_limit": 53559800.0,
+      "assumed_ead": 26779900.0,
+      "expected_loss_proxy": 142216.2387484035,
+      "approved_grade_counts": {
+        "G2": 5891,
+        "G1": 3595
+      },
+      "historical_selected_bad_rate": 0.01222854733291166
+    },
+    {
+      "policy": "growth",
+      "applicants": 22483,
+      "approved": 11539,
+      "manual_review": 8506,
+      "declined": 2438,
+      "approval_rate": 0.5132322198994796,
+      "expected_bad_rate": 0.01789483231901542,
+      "expected_bad_count": 206.48847012911895,
+      "total_offered_limit": 59221800.0,
+      "assumed_ead": 29610900.0,
+      "expected_loss_proxy": 191946.9686724909,
+      "approved_grade_counts": {
+        "G2": 5891,
+        "G1": 3595,
+        "G3": 2053
+      },
+      "historical_selected_bad_rate": 0.01603258514602652
+    }
+  ],
+  "limitations": [
+    "Development comparison is not independent policy validation",
+    "Historical selected outcomes are not future funded outcomes or reject inference",
+    "Two-year delinquency PD times assumed LGD/EAD is a loss proxy",
+    "Source income units and DebtRatio basis are unverified; limits are hypothetical",
+    "Manual reviews receive no automatic offered exposure; no policy champion is selected"
+  ],
+  "artifacts_sha256": {
+    "baseline_decisions.csv": "50dfb8273e8629ab8264856db75118d512c4b2b034c3d5e5dc6152c8857a19d9",
+    "conservative_decisions.csv": "2e3b1c6753289e5a1e85bac09271759d80856d9cff011e480901822abd7c2b4d",
+    "growth_decisions.csv": "9e9d8e6503d843356c60e487d3ed4964f4e4c90742a221c0515acb93a2b04319",
+    "policy_comparison.png": "64384446f2e254de1a3488148c1b77c852c68d10c4b2ff01448c492d92e85ebd"
+  }
+}

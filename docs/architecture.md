@@ -8,7 +8,8 @@ XGBoost candidates with development-only scoring. Phase 5 fits held-out calibrat
 locks development-selected choices and evaluates the final holdout with uncertainty
 and segment diagnostics. Phase 6 adds coverage-aware vintages and consecutive-month
 account/balance roll rates. Phase 7 adds a longitudinal transition PD benchmark,
-expected loss and configurable scenarios. A production API remains later work. The root notebook,
+expected loss and configurable scenarios. Phase 8 adds configurable underwriting,
+hypothetical limits and development policy comparisons. A production API remains later work. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
 ## Package boundaries
@@ -66,7 +67,7 @@ The final test set must remain untouched by model/calibration selection.
 `decision_policy.yaml` holds illustrative PD thresholds, ordered grade bounds,
 LGD and credit-limit assumptions. These are demonstration settings rather than
 validated policy recommendations. Grade assignment and threshold inclusion
-behavior will be implemented in Phase 8.
+behavior are implemented in Phase 8; see credit_strategy.md.
 
 Safe YAML loading rejects executable tags. Typed contracts reject unknown keys,
 invalid probabilities, inconsistent partitions, unordered grades and reversed
@@ -92,3 +93,6 @@ Phase 6 vintage definitions, roll-rate denominators and SQL counterparts are in
 
 Phase 7 model PD provenance, expected-loss arithmetic and scenario assumptions are in
 [expected_loss.md](expected_loss.md).
+
+Phase 8 underwriting, hypothetical limits and appetite comparisons are in
+[credit_strategy.md](credit_strategy.md).

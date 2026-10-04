@@ -1,5 +1,5 @@
 # Illustrative risk appetite, not a validated underwriting policy.
-# Boundary behavior will be implemented and tested in Phase 8.
+# Approval is strictly below threshold; decline includes its threshold.
 approve_below_pd: 0.03
 decline_at_or_above_pd: 0.10
 risk_grade_upper_bounds: [0.01, 0.03, 0.06, 0.10, 1.0]
