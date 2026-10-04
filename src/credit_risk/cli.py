@@ -16,6 +16,7 @@ from credit_risk.data.synthetic_portfolio import (
 from credit_risk.data.targets import TargetConfig, build_forward_targets
 from credit_risk.decisioning.reject_settings import RejectInferenceConfig
 from credit_risk.decisioning.settings import PolicyComparisonConfig
+from credit_risk.monitoring.settings import MonitoringConfig
 from credit_risk.portfolio.loss_settings import ExpectedLossConfig
 from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
 from credit_risk.utils.config import (
@@ -91,6 +92,26 @@ def main(argv: list[str] | None = None) -> int:
     )
     reject.add_argument("--config", type=Path, default=Path("configs/reject_inference.yaml"))
     reject.add_argument("--output-dir", type=Path, required=True)
+    reference = commands.add_parser(
+        "freeze-monitor-reference", help="Freeze development monitoring bins"
+    )
+    for name in ("csv", "run-dir", "validation-dir", "output-dir"):
+        reference.add_argument("--" + name, type=Path, required=True)
+    reference.add_argument("--config", type=Path, default=Path("configs/monitoring.yaml"))
+    monitor = commands.add_parser(
+        "monitor", help="Compare label-free population against frozen reference"
+    )
+    for name in (
+        "source-csv",
+        "run-dir",
+        "validation-dir",
+        "reference-dir",
+        "current-csv",
+        "output-dir",
+    ):
+        monitor.add_argument("--" + name, type=Path, required=True)
+    monitor.add_argument("--config", type=Path, default=Path("configs/monitoring.yaml"))
+    monitor.add_argument("--current-manifest", type=Path, default=None)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -106,6 +127,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "expected_loss.yaml", ExpectedLossConfig)
             load_config(directory / "credit_strategy.yaml", PolicyComparisonConfig)
             load_config(directory / "reject_inference.yaml", RejectInferenceConfig)
+            load_config(directory / "monitoring.yaml", MonitoringConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -124,6 +146,37 @@ def main(argv: list[str] | None = None) -> int:
                 "status": "valid",
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
+            }
+        elif args.command == "freeze-monitor-reference":
+            from credit_risk.monitoring.runner import freeze_monitor_reference
+
+            config = load_config(args.config, MonitoringConfig)
+            result = freeze_monitor_reference(
+                args.csv, args.run_dir, args.validation_dir, args.output_dir, config
+            )
+        elif args.command == "monitor":
+            from credit_risk.monitoring.runner import run_monitoring
+
+            config = load_config(args.config, MonitoringConfig)
+            manifest = run_monitoring(
+                args.source_csv,
+                args.run_dir,
+                args.validation_dir,
+                args.reference_dir,
+                args.current_csv,
+                args.output_dir,
+                config,
+                args.current_manifest,
+            )
+            result = {
+                "status": manifest["status"],
+                "reference_rows": manifest["reference_rows"],
+                "current_rows": manifest["current_rows"],
+                "alerts": manifest["alerts"],
+                "pd_psi": manifest["metrics"]["pd"]["psi"],
+                "score_psi": manifest["metrics"]["score"]["psi"],
+                "final_test_scored": False,
+                "output_dir": str(args.output_dir),
             }
         elif args.command == "reject-inference":
             from credit_risk.decisioning.reject_runner import run_reject_experiment

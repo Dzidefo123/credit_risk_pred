@@ -11,6 +11,7 @@ account/balance roll rates. Phase 7 adds a longitudinal transition PD benchmark,
 expected loss and configurable scenarios. Phase 8 adds configurable underwriting,
 hypothetical limits and development policy comparisons. Phase 9 adds separate synthetic
 selection-bias experiments with masked outcomes and propensity weighting.
+Phase 10 adds frozen-reference feature, PD, score and missingness monitoring.
 A production API remains later work. The root notebook,
 app.py, main.py, and templates remain unchanged V1 evidence; they are excluded from the distributable package.
 
@@ -101,3 +102,6 @@ Phase 8 underwriting, hypothetical limits and appetite comparisons are in
 
 Phase 9 simulation assumptions, propensity weighting and identification limits are in
 [reject_inference.md](reject_inference.md).
+
+Phase 10 reference freezing, drift definitions and alert governance are in
+[monitoring.md](monitoring.md).

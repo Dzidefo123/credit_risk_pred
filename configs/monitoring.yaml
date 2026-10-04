@@ -1,0 +1,11 @@
+# Demonstration governance thresholds; calibrate to population and business context.
+bins: 10
+smoothing: 0.000001
+minimum_population_rows: 500
+minimum_numeric_rows: 50
+psi: {warning: 0.10, critical: 0.25}
+missingness: {warning: 0.05, critical: 0.10}
+ks: {warning: 0.10, critical: 0.20}
+out_of_range: {warning: 0.05, critical: 0.10}
+pd_mean: {warning: 0.01, critical: 0.03}
+score_mean: {warning: 10.0, critical: 25.0}

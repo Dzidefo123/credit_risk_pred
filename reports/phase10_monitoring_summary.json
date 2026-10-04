@@ -1,0 +1,2417 @@
+{
+  "reference": {
+    "package_version": "0.10.0",
+    "reference_partition": "development",
+    "temporal_reference": false,
+    "final_test_scored": false,
+    "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "model_identity": {
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "selection_sha256": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+      "candidate": "xgboost",
+      "calibration_method": "sigmoid"
+    },
+    "config": {
+      "bins": 10,
+      "smoothing": 1e-06,
+      "minimum_population_rows": 500,
+      "minimum_numeric_rows": 50,
+      "score_base": 600.0,
+      "score_base_good_bad_odds": 20.0,
+      "score_points_to_double_odds": 20.0,
+      "score_probability_epsilon": 1e-06,
+      "psi": {
+        "warning": 0.1,
+        "critical": 0.25
+      },
+      "missingness": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "ks": {
+        "warning": 0.1,
+        "critical": 0.2
+      },
+      "out_of_range": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "pd_mean": {
+        "warning": 0.01,
+        "critical": 0.03
+      },
+      "score_mean": {
+        "warning": 10.0,
+        "critical": 25.0
+      }
+    },
+    "measurement_code_sha256": "b94ba87bc59414044d333b0ea955f67eb4fa034fa1fb2c4c5addadf2126408a6",
+    "artifacts_sha256": {
+      "reference.json": "83f273b05a1a031537d757a9daca56c8aae131796dc6b753a760a351ba435868",
+      "reference_positions.csv": "d251e9cb1ff213213635e4dc50d1233c21751248983beadf3c8404a810d1121d"
+    }
+  },
+  "control": {
+    "package_version": "0.10.0",
+    "status": "OK",
+    "sufficient_population": true,
+    "reference_rows": 22483,
+    "current_rows": 22483,
+    "alerts": [],
+    "metrics": {
+      "RevolvingUtilizationOfUnsecuredLines": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0030535156000000042,
+          0.01963268440000001,
+          0.04492736300000001,
+          0.08490929140000002,
+          0.158136577,
+          0.27648885840000004,
+          0.4475424694000002,
+          0.7021149520000001,
+          0.9800731267999999
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 4.636411824049192,
+        "current_mean": 4.636411824049192,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "age": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.11319639229909849,
+          0.09985312405036391,
+          0.10390058208581339,
+          0.10007551185450948,
+          0.09669521723149672,
+          0.09936387088124364,
+          0.09015701578961678,
+          0.10901550158116166,
+          0.09518298016330681,
+          0.092558804074389,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.11319639229909849,
+          0.09985312405036391,
+          0.10390058208581339,
+          0.10007551185450948,
+          0.09669521723149672,
+          0.09936387088124364,
+          0.09015701578961678,
+          0.10901550158116166,
+          0.09518298016330681,
+          0.092558804074389,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2545,
+          2245,
+          2336,
+          2250,
+          2174,
+          2234,
+          2027,
+          2451,
+          2140,
+          2081,
+          0
+        ],
+        "current_counts": [
+          2545,
+          2245,
+          2336,
+          2250,
+          2174,
+          2234,
+          2027,
+          2451,
+          2140,
+          2081,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          33.0,
+          39.0,
+          44.0,
+          48.0,
+          52.0,
+          56.0,
+          60.0,
+          65.0,
+          72.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 52.232798114130674,
+        "current_mean": 52.232798114130674,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTime30_59DaysPastDueNotWorse": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.8363629082956427,
+          0.11039507872391498,
+          0.05324101298444248,
+          9.99996000016e-07
+        ],
+        "current_shares": [
+          0.8363629082956427,
+          0.11039507872391498,
+          0.05324101298444248,
+          9.99996000016e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          18804,
+          2482,
+          1197,
+          0
+        ],
+        "current_counts": [
+          18804,
+          2482,
+          1197,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.4155139438687008,
+        "current_mean": 0.4155139438687008,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "DebtRatio": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          0
+        ],
+        "current_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.034428616200000005,
+          0.1370526996,
+          0.21555417800000007,
+          0.2888708256,
+          0.365306454,
+          0.46383535900000006,
+          0.6404840504000004,
+          2.958536749200062,
+          1242.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 342.2610928189987,
+        "current_mean": 342.2610928189987,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "MonthlyIncome": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.08063881777218611,
+          0.08686567628826225,
+          0.07441195925610998,
+          0.08072777289384435,
+          0.08259583044866718,
+          0.07863732753487593,
+          0.08143941386711019,
+          0.07983822167726203,
+          0.0809056831371608,
+          0.08028299728555319,
+          0.193656299838968
+        ],
+        "current_shares": [
+          0.08063881777218611,
+          0.08686567628826225,
+          0.07441195925610998,
+          0.08072777289384435,
+          0.08259583044866718,
+          0.07863732753487593,
+          0.08143941386711019,
+          0.07983822167726203,
+          0.0809056831371608,
+          0.08028299728555319,
+          0.193656299838968
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          1813,
+          1953,
+          1673,
+          1815,
+          1857,
+          1768,
+          1831,
+          1795,
+          1819,
+          1805,
+          4354
+        ],
+        "current_counts": [
+          1813,
+          1953,
+          1673,
+          1815,
+          1857,
+          1768,
+          1831,
+          1795,
+          1819,
+          1805,
+          4354
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          2026.8000000000002,
+          3000.0,
+          3760.800000000001,
+          4566.0,
+          5400.0,
+          6300.0,
+          7500.0,
+          9125.0,
+          11700.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.19365743005826624,
+        "current_missing_rate": 0.19365743005826624,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 6611.869049589056,
+        "current_mean": 6611.869049589056,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 18129,
+        "current_numeric_rows": 18129,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfOpenCreditLinesAndLoans": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.15060202095638445,
+          0.07521255535103405,
+          0.08370776946939507,
+          0.1772885574538536,
+          0.08330747142193304,
+          0.07596867388512901,
+          0.06186928710229947,
+          0.10123192843606649,
+          0.09464924943335742,
+          0.09616148650154735,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.15060202095638445,
+          0.07521255535103405,
+          0.08370776946939507,
+          0.1772885574538536,
+          0.08330747142193304,
+          0.07596867388512901,
+          0.06186928710229947,
+          0.10123192843606649,
+          0.09464924943335742,
+          0.09616148650154735,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          3386,
+          1691,
+          1882,
+          3986,
+          1873,
+          1708,
+          1391,
+          2276,
+          2128,
+          2162,
+          0
+        ],
+        "current_counts": [
+          3386,
+          1691,
+          1882,
+          3986,
+          1873,
+          1708,
+          1391,
+          2276,
+          2128,
+          2162,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          3.0,
+          4.0,
+          5.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          12.0,
+          15.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 8.508295156340345,
+        "current_mean": 8.508295156340345,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTimes90DaysLate": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.942488053779445,
+          0.05751094622355505,
+          9.99997000009e-07
+        ],
+        "current_shares": [
+          0.942488053779445,
+          0.05751094622355505,
+          9.99997000009e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          21190,
+          1293,
+          0
+        ],
+        "current_counts": [
+          21190,
+          1293,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.26126406618333853,
+        "current_mean": 0.26126406618333853,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberRealEstateLoansOrLines": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.3720580286481657,
+          0.3503973265616036,
+          0.2096250019127968,
+          0.06791864288243386,
+          9.999950000249998e-07
+        ],
+        "current_shares": [
+          0.3720580286481657,
+          0.3503973265616036,
+          0.2096250019127968,
+          0.06791864288243386,
+          9.999950000249998e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          8365,
+          7878,
+          4713,
+          1527,
+          0
+        ],
+        "current_counts": [
+          8365,
+          7878,
+          4713,
+          1527,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 1.0233509762931994,
+        "current_mean": 1.0233509762931994,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTime60_89DaysPastDueNotWorse": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.9492042191933737,
+          0.05079478080962635,
+          9.99997000009e-07
+        ],
+        "current_shares": [
+          0.9492042191933737,
+          0.05079478080962635,
+          9.99997000009e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          21341,
+          1142,
+          0
+        ],
+        "current_counts": [
+          21341,
+          1142,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.23052973357648002,
+        "current_mean": 0.23052973357648002,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfDependents": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.5738984107196619,
+          0.18102575870610396,
+          0.13072133558515592,
+          0.08877874407051929,
+          0.025575750918558935
+        ],
+        "current_shares": [
+          0.5738984107196619,
+          0.18102575870610396,
+          0.13072133558515592,
+          0.08877874407051929,
+          0.025575750918558935
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          12903,
+          4070,
+          2939,
+          1996,
+          575
+        ],
+        "current_counts": [
+          12903,
+          4070,
+          2939,
+          1996,
+          575
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.025574878797313527,
+        "current_missing_rate": 0.025574878797313527,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.766843162315136,
+        "current_mean": 0.766843162315136,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 21908,
+        "current_numeric_rows": 21908,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "pd": {
+        "channel": "pd",
+        "psi": 0.0,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.006333525893646755,
+          0.008646685228864786,
+          0.011217729174560301,
+          0.01478322955921118,
+          0.02168948643607282,
+          0.033556197058156184,
+          0.05127731700570462,
+          0.0814464492894225,
+          0.16658819766389793
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.0670439219257176,
+        "current_mean": 0.0670439219257176,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK",
+          "mean_delta": "OK"
+        }
+      },
+      "score": {
+        "channel": "score",
+        "psi": 0.0,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          560.0163050498677,
+          583.4702405319052,
+          597.7533132701831,
+          610.5221327926672,
+          623.465931055413,
+          634.7295942963816,
+          642.7974444036249,
+          650.3836048890747,
+          659.4336181911875
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 615.1756764918076,
+        "current_mean": 615.1756764918076,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK",
+          "mean_delta": "OK"
+        }
+      }
+    },
+    "outcome_validation": {
+      "status": "unavailable",
+      "reason": "No mature dated outcomes; population drift does not establish concept drift"
+    },
+    "config": {
+      "bins": 10,
+      "smoothing": 1e-06,
+      "minimum_population_rows": 500,
+      "minimum_numeric_rows": 50,
+      "score_base": 600.0,
+      "score_base_good_bad_odds": 20.0,
+      "score_points_to_double_odds": 20.0,
+      "score_probability_epsilon": 1e-06,
+      "psi": {
+        "warning": 0.1,
+        "critical": 0.25
+      },
+      "missingness": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "ks": {
+        "warning": 0.1,
+        "critical": 0.2
+      },
+      "out_of_range": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "pd_mean": {
+        "warning": 0.01,
+        "critical": 0.03
+      },
+      "score_mean": {
+        "warning": 10.0,
+        "critical": 25.0
+      }
+    },
+    "provenance": {
+      "data_kind": "controlled perturbation of historical development applicants",
+      "observation_dates_available": false,
+      "seed": 101,
+      "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+      "rows": 22483,
+      "labels_removed": true,
+      "perturbations": {
+        "utilization_multiplier": 1.5,
+        "90_day_late_count_increment": 1,
+        "income_multiplier": 0.8,
+        "income_mask_probability": 0.25
+      },
+      "artifacts_sha256": {
+        "perturbed.csv": "3cc2ae203dd0e45a2d9eac17248eaf5005bd512713bb8945810382b51b9c3f5a",
+        "unchanged.csv": "7f4b328d50d18ae7352ba86528e02f2ac36cdc0f4341b8519647145c06a08170"
+      }
+    },
+    "current_source_sha256": "7f4b328d50d18ae7352ba86528e02f2ac36cdc0f4341b8519647145c06a08170",
+    "reference_manifest_sha256": "131d9effa48b9b09ebbbd01d6443672d982c742ee515be8ed933238112f99377",
+    "model_identity": {
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "selection_sha256": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+      "candidate": "xgboost",
+      "calibration_method": "sigmoid"
+    },
+    "final_test_scored": false,
+    "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+    "current_quality": {
+      "rows": 22483,
+      "missing": {
+        "RevolvingUtilizationOfUnsecuredLines": 0,
+        "age": 0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0,
+        "DebtRatio": 0,
+        "MonthlyIncome": 4354,
+        "NumberOfOpenCreditLinesAndLoans": 0,
+        "NumberOfTimes90DaysLate": 0,
+        "NumberRealEstateLoansOrLines": 0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0,
+        "NumberOfDependents": 575
+      },
+      "duplicate_records": 80,
+      "suspicious": {
+        "age_zero_or_over_110": 0,
+        "utilization_over_one": 494,
+        "delinquency_count_90_or_more": 38
+      }
+    },
+    "source_code_sha256": {
+      "runner.py": "a947401cf517af0ccb2331f6bb2b4383364c3611e7398e343c825ecaf92fd291",
+      "drift.py": "b94ba87bc59414044d333b0ea955f67eb4fa034fa1fb2c4c5addadf2126408a6",
+      "settings.py": "f63678bc3ab930700702b4fc34a2200dec6d683d108a6a10b28cfd73346cdea1"
+    },
+    "limitations": [
+      "No temporal drift claim without dated monitoring populations",
+      "Feature/score/PD drift does not prove deteriorated calibration or discrimination",
+      "Score is a deterministic PD transform, not independent scorecard evidence",
+      "Thresholds are illustrative governance settings; alerts require investigation",
+      "No automatic recalibration, retraining, model promotion or policy change"
+    ],
+    "artifacts_sha256": {
+      "monitoring.png": "76bc5cf1c2a5a3b5cadf7f1a9e034e70edb5a0333e758aa376d70065808afef9",
+      "monitor_predictions.csv": "69015b5ae983e9e67de86dca2672bca2a193f3dbbee116504389a3b8cfffc9bb"
+    }
+  },
+  "controlled_perturbation": {
+    "package_version": "0.10.0",
+    "status": "CRITICAL",
+    "sufficient_population": true,
+    "reference_rows": 22483,
+    "current_rows": 22483,
+    "alerts": [
+      {
+        "variable": "RevolvingUtilizationOfUnsecuredLines",
+        "metric": "psi",
+        "value": 0.11385656986677194,
+        "severity": "WARNING",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.25
+      },
+      {
+        "variable": "RevolvingUtilizationOfUnsecuredLines",
+        "metric": "ks_statistic",
+        "value": 0.1908108348530001,
+        "severity": "WARNING",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.2
+      },
+      {
+        "variable": "MonthlyIncome",
+        "metric": "psi",
+        "value": 0.27821943024275264,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.25
+      },
+      {
+        "variable": "MonthlyIncome",
+        "metric": "missingness_delta",
+        "value": 0.19997331316995065,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.05,
+        "critical_threshold": 0.1
+      },
+      {
+        "variable": "MonthlyIncome",
+        "metric": "ks_statistic",
+        "value": 0.14888487725219968,
+        "severity": "WARNING",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.2
+      },
+      {
+        "variable": "NumberOfTimes90DaysLate",
+        "metric": "psi",
+        "value": 15.65665101859912,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.25
+      },
+      {
+        "variable": "NumberOfTimes90DaysLate",
+        "metric": "ks_statistic",
+        "value": 0.9424898812436063,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.2
+      },
+      {
+        "variable": "pd",
+        "metric": "psi",
+        "value": 7.375444552930266,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.25
+      },
+      {
+        "variable": "pd",
+        "metric": "ks_statistic",
+        "value": 0.6726860294444692,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.2
+      },
+      {
+        "variable": "pd",
+        "metric": "mean_delta",
+        "value": 0.15331696627487057,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.01,
+        "critical_threshold": 0.03
+      },
+      {
+        "variable": "score",
+        "metric": "psi",
+        "value": 7.375213773361002,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.25
+      },
+      {
+        "variable": "score",
+        "metric": "ks_statistic",
+        "value": 0.6726860294444692,
+        "severity": "CRITICAL",
+        "warning_threshold": 0.1,
+        "critical_threshold": 0.2
+      },
+      {
+        "variable": "score",
+        "metric": "mean_delta",
+        "value": 58.298851005241204,
+        "severity": "CRITICAL",
+        "warning_threshold": 10.0,
+        "critical_threshold": 25.0
+      }
+    ],
+    "metrics": {
+      "RevolvingUtilizationOfUnsecuredLines": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.11385656986677194,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.09246984895273078,
+          0.07294419974874918,
+          0.08219553240120515,
+          0.08846686847811039,
+          0.09883014015129425,
+          0.09309253480433838,
+          0.08788866018733191,
+          0.0934483552909713,
+          0.07432300413445174,
+          0.2163398558618168,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0005942928860222603,
+          0.008527563418521162,
+          0.0034858806882693146,
+          0.0014100977357333583,
+          1.4504231670773877e-05,
+          0.0004925209767210995,
+          0.0015602046959100788,
+          0.00044215770936919776,
+          0.007612200530305097,
+          0.0897171469942496,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          2079,
+          1640,
+          1848,
+          1989,
+          2222,
+          2093,
+          1976,
+          2101,
+          1671,
+          4864,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0030535156000000042,
+          0.01963268440000001,
+          0.04492736300000001,
+          0.08490929140000002,
+          0.158136577,
+          0.27648885840000004,
+          0.4475424694000002,
+          0.7021149520000001,
+          0.9800731267999999
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 4.636411824049192,
+        "current_mean": 6.954617736073789,
+        "mean_delta": 2.318205912024597,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.1908108348530001,
+        "ks_pvalue_descriptive": 0.0,
+        "wasserstein_distance": 2.3182059120245286,
+        "wasserstein_reference_scale": 4.353757023366505,
+        "out_of_reference_range_fraction": 8.895610016456878e-05,
+        "alerts": {
+          "psi": "WARNING",
+          "missingness_delta": "OK",
+          "ks_statistic": "WARNING",
+          "out_of_range": "OK"
+        }
+      },
+      "age": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.11319639229909849,
+          0.09985312405036391,
+          0.10390058208581339,
+          0.10007551185450948,
+          0.09669521723149672,
+          0.09936387088124364,
+          0.09015701578961678,
+          0.10901550158116166,
+          0.09518298016330681,
+          0.092558804074389,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.11319639229909849,
+          0.09985312405036391,
+          0.10390058208581339,
+          0.10007551185450948,
+          0.09669521723149672,
+          0.09936387088124364,
+          0.09015701578961678,
+          0.10901550158116166,
+          0.09518298016330681,
+          0.092558804074389,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2545,
+          2245,
+          2336,
+          2250,
+          2174,
+          2234,
+          2027,
+          2451,
+          2140,
+          2081,
+          0
+        ],
+        "current_counts": [
+          2545,
+          2245,
+          2336,
+          2250,
+          2174,
+          2234,
+          2027,
+          2451,
+          2140,
+          2081,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          33.0,
+          39.0,
+          44.0,
+          48.0,
+          52.0,
+          56.0,
+          60.0,
+          65.0,
+          72.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 52.232798114130674,
+        "current_mean": 52.232798114130674,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTime30_59DaysPastDueNotWorse": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.8363629082956427,
+          0.11039507872391498,
+          0.05324101298444248,
+          9.99996000016e-07
+        ],
+        "current_shares": [
+          0.8363629082956427,
+          0.11039507872391498,
+          0.05324101298444248,
+          9.99996000016e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          18804,
+          2482,
+          1197,
+          0
+        ],
+        "current_counts": [
+          18804,
+          2482,
+          1197,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.4155139438687008,
+        "current_mean": 0.4155139438687008,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "DebtRatio": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          0
+        ],
+        "current_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.034428616200000005,
+          0.1370526996,
+          0.21555417800000007,
+          0.2888708256,
+          0.365306454,
+          0.46383535900000006,
+          0.6404840504000004,
+          2.958536749200062,
+          1242.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 342.2610928189987,
+        "current_mean": 342.2610928189987,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "MonthlyIncome": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.27821943024275264,
+        "reference_shares": [
+          0.08063881777218611,
+          0.08686567628826225,
+          0.07441195925610998,
+          0.08072777289384435,
+          0.08259583044866718,
+          0.07863732753487593,
+          0.08143941386711019,
+          0.07983822167726203,
+          0.0809056831371608,
+          0.08028299728555319,
+          0.193656299838968
+        ],
+        "current_shares": [
+          0.09171373041863581,
+          0.09153582017531936,
+          0.07027554609900226,
+          0.07054241146397694,
+          0.062136152467274164,
+          0.051683925672432074,
+          0.05386332615305872,
+          0.051016762259995345,
+          0.03478245255736827,
+          0.02882245940626682,
+          0.3936274133266703
+        ],
+        "contributions": [
+          0.0014252521747488225,
+          0.00024456328446943607,
+          0.0002365729840750735,
+          0.0013736849877883368,
+          0.005823463013435163,
+          0.011312333974427725,
+          0.011400217037883948,
+          0.01290763606075885,
+          0.038935895884540744,
+          0.05271632603543627,
+          0.14184348480518824
+        ],
+        "reference_counts": [
+          1813,
+          1953,
+          1673,
+          1815,
+          1857,
+          1768,
+          1831,
+          1795,
+          1819,
+          1805,
+          4354
+        ],
+        "current_counts": [
+          2062,
+          2058,
+          1580,
+          1586,
+          1397,
+          1162,
+          1211,
+          1147,
+          782,
+          648,
+          8850
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          2026.8000000000002,
+          3000.0,
+          3760.800000000001,
+          4566.0,
+          5400.0,
+          6300.0,
+          7500.0,
+          9125.0,
+          11700.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.19365743005826624,
+        "current_missing_rate": 0.3936307432282169,
+        "missing_rate_delta": 0.19997331316995065,
+        "reference_mean": 6611.869049589056,
+        "current_mean": 5288.9733440915425,
+        "mean_delta": -1322.8957054975135,
+        "reference_numeric_rows": 18129,
+        "current_numeric_rows": 13633,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.14888487725219968,
+        "ks_pvalue_descriptive": 5.030830226553637e-151,
+        "wasserstein_distance": 1338.9132169790971,
+        "wasserstein_reference_scale": 0.27532659201708765,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "CRITICAL",
+          "missingness_delta": "CRITICAL",
+          "ks_statistic": "WARNING",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfOpenCreditLinesAndLoans": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.15060202095638445,
+          0.07521255535103405,
+          0.08370776946939507,
+          0.1772885574538536,
+          0.08330747142193304,
+          0.07596867388512901,
+          0.06186928710229947,
+          0.10123192843606649,
+          0.09464924943335742,
+          0.09616148650154735,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.15060202095638445,
+          0.07521255535103405,
+          0.08370776946939507,
+          0.1772885574538536,
+          0.08330747142193304,
+          0.07596867388512901,
+          0.06186928710229947,
+          0.10123192843606649,
+          0.09464924943335742,
+          0.09616148650154735,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          3386,
+          1691,
+          1882,
+          3986,
+          1873,
+          1708,
+          1391,
+          2276,
+          2128,
+          2162,
+          0
+        ],
+        "current_counts": [
+          3386,
+          1691,
+          1882,
+          3986,
+          1873,
+          1708,
+          1391,
+          2276,
+          2128,
+          2162,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          3.0,
+          4.0,
+          5.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          12.0,
+          15.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 8.508295156340345,
+        "current_mean": 8.508295156340345,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTimes90DaysLate": {
+        "channel": "feature_csi_equivalent",
+        "psi": 15.65665101859912,
+        "reference_shares": [
+          0.942488053779445,
+          0.05751094622355505,
+          9.99997000009e-07
+        ],
+        "current_shares": [
+          9.99997000009e-07,
+          0.9999980000059999,
+          9.99997000009e-07
+        ],
+        "contributions": [
+          12.965117243787953,
+          2.691533774811168,
+          0.0
+        ],
+        "reference_counts": [
+          21190,
+          1293,
+          0
+        ],
+        "current_counts": [
+          0,
+          22483,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.26126406618333853,
+        "current_mean": 1.2612640661833385,
+        "mean_delta": 1.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.9424898812436063,
+        "ks_pvalue_descriptive": 0.0,
+        "wasserstein_distance": 1.0,
+        "wasserstein_reference_scale": 0.24676576764459812,
+        "out_of_reference_range_fraction": 0.0016901659031268068,
+        "alerts": {
+          "psi": "CRITICAL",
+          "missingness_delta": "OK",
+          "ks_statistic": "CRITICAL",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberRealEstateLoansOrLines": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.3720580286481657,
+          0.3503973265616036,
+          0.2096250019127968,
+          0.06791864288243386,
+          9.999950000249998e-07
+        ],
+        "current_shares": [
+          0.3720580286481657,
+          0.3503973265616036,
+          0.2096250019127968,
+          0.06791864288243386,
+          9.999950000249998e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          8365,
+          7878,
+          4713,
+          1527,
+          0
+        ],
+        "current_counts": [
+          8365,
+          7878,
+          4713,
+          1527,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 1.0233509762931994,
+        "current_mean": 1.0233509762931994,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfTime60_89DaysPastDueNotWorse": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.9492042191933737,
+          0.05079478080962635,
+          9.99997000009e-07
+        ],
+        "current_shares": [
+          0.9492042191933737,
+          0.05079478080962635,
+          9.99997000009e-07
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          21341,
+          1142,
+          0
+        ],
+        "current_counts": [
+          21341,
+          1142,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.23052973357648002,
+        "current_mean": 0.23052973357648002,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "NumberOfDependents": {
+        "channel": "feature_csi_equivalent",
+        "psi": 0.0,
+        "reference_shares": [
+          0.5738984107196619,
+          0.18102575870610396,
+          0.13072133558515592,
+          0.08877874407051929,
+          0.025575750918558935
+        ],
+        "current_shares": [
+          0.5738984107196619,
+          0.18102575870610396,
+          0.13072133558515592,
+          0.08877874407051929,
+          0.025575750918558935
+        ],
+        "contributions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_counts": [
+          12903,
+          4070,
+          2939,
+          1996,
+          575
+        ],
+        "current_counts": [
+          12903,
+          4070,
+          2939,
+          1996,
+          575
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.025574878797313527,
+        "current_missing_rate": 0.025574878797313527,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.766843162315136,
+        "current_mean": 0.766843162315136,
+        "mean_delta": 0.0,
+        "reference_numeric_rows": 21908,
+        "current_numeric_rows": 21908,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.0,
+        "ks_pvalue_descriptive": 1.0,
+        "wasserstein_distance": 0.0,
+        "wasserstein_reference_scale": 0.0,
+        "out_of_reference_range_fraction": 0.0,
+        "alerts": {
+          "psi": "OK",
+          "missingness_delta": "OK",
+          "ks_statistic": "OK",
+          "out_of_range": "OK"
+        }
+      },
+      "pd": {
+        "channel": "pd",
+        "psi": 7.375444552930266,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          0.00017891023231658208,
+          0.028333206237146552,
+          0.1618993214069797,
+          0.335272853518871,
+          0.47430970867068534,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          1.1516704683310521,
+          1.1511139199715237,
+          1.1511139199715237,
+          1.1511139199715237,
+          1.1516704683310521,
+          0.6313738735473028,
+          0.09035496541704219,
+          0.02983817124847317,
+          0.2846749949163789,
+          0.5825198512243934,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          637,
+          3640,
+          7538,
+          10664,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          0.006333525893646755,
+          0.008646685228864786,
+          0.011217729174560301,
+          0.01478322955921118,
+          0.02168948643607282,
+          0.033556197058156184,
+          0.05127731700570462,
+          0.0814464492894225,
+          0.16658819766389793
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 0.0670439219257176,
+        "current_mean": 0.22036088820058816,
+        "mean_delta": 0.15331696627487057,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.6726860294444692,
+        "ks_pvalue_descriptive": 0.0,
+        "wasserstein_distance": 0.1533169662748706,
+        "wasserstein_reference_scale": 2.8622678749787758,
+        "out_of_reference_range_fraction": 4.447805008228439e-05,
+        "alerts": {
+          "psi": "CRITICAL",
+          "missingness_delta": "OK",
+          "ks_statistic": "CRITICAL",
+          "out_of_range": "OK",
+          "mean_delta": "CRITICAL"
+        }
+      },
+      "score": {
+        "channel": "score",
+        "psi": 7.375213773361002,
+        "reference_shares": [
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.09998655673285126,
+          0.10003103429368038,
+          9.999890001209987e-07
+        ],
+        "current_shares": [
+          0.47430970867068534,
+          0.335272853518871,
+          0.1618993214069797,
+          0.028333206237146552,
+          0.00017891023231658208,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07,
+          9.999890001209987e-07
+        ],
+        "contributions": [
+          0.5825198512243934,
+          0.2846749949163789,
+          0.02983817124847317,
+          0.09035496541704219,
+          0.6316996423375675,
+          1.1511139199715237,
+          1.1511139199715237,
+          1.1511139199715237,
+          1.1511139199715237,
+          1.1516704683310521,
+          0.0
+        ],
+        "reference_counts": [
+          2249,
+          2248,
+          2248,
+          2248,
+          2249,
+          2248,
+          2248,
+          2248,
+          2248,
+          2249,
+          0
+        ],
+        "current_counts": [
+          10664,
+          7538,
+          3640,
+          637,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "bin_kind": "quantile",
+        "bin_cuts": [
+          560.0163050498677,
+          583.4702405319052,
+          597.7533132701831,
+          610.5221327926672,
+          623.465931055413,
+          634.7295942963816,
+          642.7974444036249,
+          650.3836048890747,
+          659.4336181911875
+        ],
+        "missing_bucket": "last",
+        "reference_missing_rate": 0.0,
+        "current_missing_rate": 0.0,
+        "missing_rate_delta": 0.0,
+        "reference_mean": 615.1756764918076,
+        "current_mean": 556.8768254865664,
+        "mean_delta": -58.298851005241204,
+        "reference_numeric_rows": 22483,
+        "current_numeric_rows": 22483,
+        "continuous_metrics_status": "available",
+        "ks_statistic": 0.6726860294444692,
+        "ks_pvalue_descriptive": 0.0,
+        "wasserstein_distance": 58.29885100524101,
+        "wasserstein_reference_scale": 1.0579096930192342,
+        "out_of_reference_range_fraction": 4.447805008228439e-05,
+        "alerts": {
+          "psi": "CRITICAL",
+          "missingness_delta": "OK",
+          "ks_statistic": "CRITICAL",
+          "out_of_range": "OK",
+          "mean_delta": "CRITICAL"
+        }
+      }
+    },
+    "outcome_validation": {
+      "status": "unavailable",
+      "reason": "No mature dated outcomes; population drift does not establish concept drift"
+    },
+    "config": {
+      "bins": 10,
+      "smoothing": 1e-06,
+      "minimum_population_rows": 500,
+      "minimum_numeric_rows": 50,
+      "score_base": 600.0,
+      "score_base_good_bad_odds": 20.0,
+      "score_points_to_double_odds": 20.0,
+      "score_probability_epsilon": 1e-06,
+      "psi": {
+        "warning": 0.1,
+        "critical": 0.25
+      },
+      "missingness": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "ks": {
+        "warning": 0.1,
+        "critical": 0.2
+      },
+      "out_of_range": {
+        "warning": 0.05,
+        "critical": 0.1
+      },
+      "pd_mean": {
+        "warning": 0.01,
+        "critical": 0.03
+      },
+      "score_mean": {
+        "warning": 10.0,
+        "critical": 25.0
+      }
+    },
+    "provenance": {
+      "data_kind": "controlled perturbation of historical development applicants",
+      "observation_dates_available": false,
+      "seed": 101,
+      "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+      "rows": 22483,
+      "labels_removed": true,
+      "perturbations": {
+        "utilization_multiplier": 1.5,
+        "90_day_late_count_increment": 1,
+        "income_multiplier": 0.8,
+        "income_mask_probability": 0.25
+      },
+      "artifacts_sha256": {
+        "perturbed.csv": "3cc2ae203dd0e45a2d9eac17248eaf5005bd512713bb8945810382b51b9c3f5a",
+        "unchanged.csv": "7f4b328d50d18ae7352ba86528e02f2ac36cdc0f4341b8519647145c06a08170"
+      }
+    },
+    "current_source_sha256": "3cc2ae203dd0e45a2d9eac17248eaf5005bd512713bb8945810382b51b9c3f5a",
+    "reference_manifest_sha256": "131d9effa48b9b09ebbbd01d6443672d982c742ee515be8ed933238112f99377",
+    "model_identity": {
+      "model_sha256": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75",
+      "selection_sha256": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+      "candidate": "xgboost",
+      "calibration_method": "sigmoid"
+    },
+    "final_test_scored": false,
+    "target_semantics": "Inherited SeriousDlqin2yrs; source two-year delinquency label",
+    "current_quality": {
+      "rows": 22483,
+      "missing": {
+        "RevolvingUtilizationOfUnsecuredLines": 0,
+        "age": 0,
+        "NumberOfTime30_59DaysPastDueNotWorse": 0,
+        "DebtRatio": 0,
+        "MonthlyIncome": 8850,
+        "NumberOfOpenCreditLinesAndLoans": 0,
+        "NumberOfTimes90DaysLate": 0,
+        "NumberRealEstateLoansOrLines": 0,
+        "NumberOfTime60_89DaysPastDueNotWorse": 0,
+        "NumberOfDependents": 575
+      },
+      "duplicate_records": 91,
+      "suspicious": {
+        "age_zero_or_over_110": 0,
+        "utilization_over_one": 4753,
+        "delinquency_count_90_or_more": 38
+      }
+    },
+    "source_code_sha256": {
+      "runner.py": "a947401cf517af0ccb2331f6bb2b4383364c3611e7398e343c825ecaf92fd291",
+      "drift.py": "b94ba87bc59414044d333b0ea955f67eb4fa034fa1fb2c4c5addadf2126408a6",
+      "settings.py": "f63678bc3ab930700702b4fc34a2200dec6d683d108a6a10b28cfd73346cdea1"
+    },
+    "limitations": [
+      "No temporal drift claim without dated monitoring populations",
+      "Feature/score/PD drift does not prove deteriorated calibration or discrimination",
+      "Score is a deterministic PD transform, not independent scorecard evidence",
+      "Thresholds are illustrative governance settings; alerts require investigation",
+      "No automatic recalibration, retraining, model promotion or policy change"
+    ],
+    "artifacts_sha256": {
+      "monitoring.png": "c1065d6faab572856b3d314e0b2a6f6056286eab4a237e64377c57fc911e648c",
+      "monitor_predictions.csv": "1c8e628be6351a5a12614f85ff47deb01438ec1939a96f9aa7a8717e9e3190cd"
+    }
+  }
+}
