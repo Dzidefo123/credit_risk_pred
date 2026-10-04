@@ -1,0 +1,6 @@
+# Snapshot bad = recorded default OR 90+ DPD; delinquent = default OR 30+ DPD.
+# Cumulative default refers to the absorbing recorded flag, not the analytic DPD target.
+max_months_on_book: 35
+bad_dpd_threshold: 90
+delinquency_dpd_threshold: 30
+minimum_cohort_size: 20

@@ -14,6 +14,7 @@ from credit_risk.data.synthetic_portfolio import (
     write_portfolio,
 )
 from credit_risk.data.targets import TargetConfig, build_forward_targets
+from credit_risk.portfolio.settings import PortfolioAnalyticsConfig
 from credit_risk.utils.config import (
     DecisionPolicyConfig,
     DevelopmentConfig,
@@ -56,6 +57,15 @@ def main(argv: list[str] | None = None) -> int:
     validate.add_argument("--run-dir", type=Path, required=True)
     validate.add_argument("--output-dir", type=Path, required=True)
     validate.add_argument("--config", type=Path, default=Path("configs/validation.yaml"))
+    portfolio = commands.add_parser(
+        "analyze-portfolio", help="Vintage curves and consecutive-month roll rates"
+    )
+    portfolio.add_argument("--accounts", type=Path, required=True)
+    portfolio.add_argument("--history", type=Path, required=True)
+    portfolio.add_argument("--config", type=Path, default=Path("configs/portfolio.yaml"))
+    portfolio.add_argument("--as-of", default=None)
+    portfolio.add_argument("--source-manifest", type=Path, default=None)
+    portfolio.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     logger = configure_logging()
     try:
@@ -67,6 +77,7 @@ def main(argv: list[str] | None = None) -> int:
             load_config(directory / "synthetic_portfolio.yaml", SyntheticPortfolioConfig)
             load_config(directory / "target.yaml", TargetConfig)
             load_config(directory / "validation.yaml", ValidationConfig)
+            load_config(directory / "portfolio.yaml", PortfolioAnalyticsConfig)
             logger = configure_logging(development.log_level)
             result = {
                 "status": "valid",
@@ -85,6 +96,26 @@ def main(argv: list[str] | None = None) -> int:
                 "status": "valid",
                 "target_semantics": data.target_semantics,
                 "quality": asdict(data.quality),
+            }
+        elif args.command == "analyze-portfolio":
+            from credit_risk.portfolio.runner import run_portfolio_analytics
+
+            config = load_config(args.config, PortfolioAnalyticsConfig)
+            analytics = run_portfolio_analytics(
+                args.accounts,
+                args.history,
+                args.output_dir,
+                config,
+                args.as_of,
+                args.source_manifest,
+            )
+            result = {
+                "status": "analyzed",
+                "is_synthetic": analytics["is_synthetic"],
+                "as_of": analytics["as_of"],
+                "vintage_checkpoints": analytics["vintage_checkpoints"],
+                "roll_diagnostics": analytics["roll_diagnostics"],
+                "output_dir": str(args.output_dir),
             }
         elif args.command == "validate":
             from credit_risk.validation.runner import run_validation

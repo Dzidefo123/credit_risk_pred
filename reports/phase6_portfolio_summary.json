@@ -1,0 +1,475 @@
+{
+  "package_version": "0.6.0",
+  "is_synthetic": true,
+  "source_sha256": {
+    "accounts": "d5f34bd3dcace07f99464ffa48b48c2ff5a2e05732e8406f3bc006f24a73c1c1",
+    "history": "cdee1724fa8ed25544f84b4d453b05a739e3651e6292fca6750f4d3478c7e453"
+  },
+  "source_manifest_sha256": "77e3a29fed2813e23484dec847424252c7c129352b8d382c2807f9f5b8ab41bb",
+  "generator_provenance": {
+    "is_synthetic": true,
+    "generator_version": "0.3.0",
+    "config": {
+      "n_accounts": 500,
+      "calendar_months": 36,
+      "origination_months": 12,
+      "start_month": "2022-01-01",
+      "seed": 42,
+      "annual_interest_rate": 0.18,
+      "transition_matrix": [
+        [
+          0.94,
+          0.045,
+          0.01,
+          0.003,
+          0.001,
+          0.001
+        ],
+        [
+          0.4,
+          0.35,
+          0.18,
+          0.04,
+          0.02,
+          0.01
+        ],
+        [
+          0.15,
+          0.2,
+          0.35,
+          0.2,
+          0.07,
+          0.03
+        ],
+        [
+          0.07,
+          0.08,
+          0.15,
+          0.35,
+          0.25,
+          0.1
+        ],
+        [
+          0.02,
+          0.03,
+          0.05,
+          0.1,
+          0.4,
+          0.4
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "accounts": 500,
+    "snapshots": 15142,
+    "state_counts": {
+      "CURRENT": 8808,
+      "DEFAULT": 4186,
+      "DPD_1_29": 946,
+      "DPD_30_59": 556,
+      "DPD_60_89": 349,
+      "DPD_90_PLUS": 297
+    },
+    "files_sha256": {
+      "accounts.csv": "d5f34bd3dcace07f99464ffa48b48c2ff5a2e05732e8406f3bc006f24a73c1c1",
+      "history.csv": "cdee1724fa8ed25544f84b4d453b05a739e3651e6292fca6750f4d3478c7e453"
+    }
+  },
+  "config": {
+    "max_months_on_book": 35,
+    "bad_dpd_threshold": 90,
+    "delinquency_dpd_threshold": 30,
+    "minimum_cohort_size": 20
+  },
+  "as_of": "2024-12-31",
+  "vintage_cells": 432,
+  "immature_cells": 66,
+  "mature_incomplete_cells": 0,
+  "low_support_cohorts": 0,
+  "vintage_checkpoints": [
+    {
+      "months_on_book": 0,
+      "cohorts": 12,
+      "matured_cohorts": 12,
+      "complete_cohorts": 12,
+      "complete_cohort_accounts": 500,
+      "recorded_defaults": 0,
+      "cumulative_default_rate": 0.0
+    },
+    {
+      "months_on_book": 6,
+      "cohorts": 12,
+      "matured_cohorts": 12,
+      "complete_cohorts": 12,
+      "complete_cohort_accounts": 500,
+      "recorded_defaults": 37,
+      "cumulative_default_rate": 0.074
+    },
+    {
+      "months_on_book": 12,
+      "cohorts": 12,
+      "matured_cohorts": 12,
+      "complete_cohorts": 12,
+      "complete_cohort_accounts": 500,
+      "recorded_defaults": 125,
+      "cumulative_default_rate": 0.25
+    },
+    {
+      "months_on_book": 24,
+      "cohorts": 12,
+      "matured_cohorts": 12,
+      "complete_cohorts": 12,
+      "complete_cohort_accounts": 500,
+      "recorded_defaults": 234,
+      "cumulative_default_rate": 0.468
+    },
+    {
+      "months_on_book": 35,
+      "cohorts": 12,
+      "matured_cohorts": 1,
+      "complete_cohorts": 1,
+      "complete_cohort_accounts": 33,
+      "recorded_defaults": 17,
+      "cumulative_default_rate": 0.5151515151515151
+    }
+  ],
+  "roll_diagnostics": {
+    "as_of": "2024-12-31",
+    "snapshots_as_of": 15142,
+    "eligible_origins": 14642,
+    "consecutive_pairs": 14642,
+    "missing_next": 0,
+    "not_yet_due_origins": 500,
+    "gap_links_excluded": 0,
+    "pair_coverage": 1.0,
+    "weight_basis": "origin closing balance; count and balance rates reported separately"
+  },
+  "count_matrix": [
+    {
+      "from_state": "CURRENT",
+      "CURRENT": 7869,
+      "DPD_1_29": 558,
+      "DPD_30_59": 115,
+      "DPD_60_89": 50,
+      "DPD_90_PLUS": 11,
+      "DEFAULT": 25
+    },
+    {
+      "from_state": "DPD_1_29",
+      "CURRENT": 327,
+      "DPD_1_29": 277,
+      "DPD_30_59": 229,
+      "DPD_60_89": 52,
+      "DPD_90_PLUS": 26,
+      "DEFAULT": 12
+    },
+    {
+      "from_state": "DPD_30_59",
+      "CURRENT": 85,
+      "DPD_1_29": 81,
+      "DPD_30_59": 167,
+      "DPD_60_89": 137,
+      "DPD_90_PLUS": 47,
+      "DEFAULT": 26
+    },
+    {
+      "from_state": "DPD_60_89",
+      "CURRENT": 23,
+      "DPD_1_29": 21,
+      "DPD_30_59": 35,
+      "DPD_60_89": 87,
+      "DPD_90_PLUS": 118,
+      "DEFAULT": 53
+    },
+    {
+      "from_state": "DPD_90_PLUS",
+      "CURRENT": 4,
+      "DPD_1_29": 9,
+      "DPD_30_59": 10,
+      "DPD_60_89": 23,
+      "DPD_90_PLUS": 95,
+      "DEFAULT": 148
+    },
+    {
+      "from_state": "DEFAULT",
+      "CURRENT": 0,
+      "DPD_1_29": 0,
+      "DPD_30_59": 0,
+      "DPD_60_89": 0,
+      "DPD_90_PLUS": 0,
+      "DEFAULT": 3922
+    }
+  ],
+  "probability_matrix": [
+    {
+      "from_state": "CURRENT",
+      "CURRENT": 0.9120305981,
+      "DPD_1_29": 0.0646731572,
+      "DPD_30_59": 0.0133286973,
+      "DPD_60_89": 0.0057950858,
+      "DPD_90_PLUS": 0.0012749189,
+      "DEFAULT": 0.0028975429
+    },
+    {
+      "from_state": "DPD_1_29",
+      "CURRENT": 0.3542795233,
+      "DPD_1_29": 0.3001083424,
+      "DPD_30_59": 0.2481040087,
+      "DPD_60_89": 0.0563380282,
+      "DPD_90_PLUS": 0.0281690141,
+      "DEFAULT": 0.0130010834
+    },
+    {
+      "from_state": "DPD_30_59",
+      "CURRENT": 0.1565377532,
+      "DPD_1_29": 0.1491712707,
+      "DPD_30_59": 0.3075506446,
+      "DPD_60_89": 0.2523020258,
+      "DPD_90_PLUS": 0.0865561694,
+      "DEFAULT": 0.0478821363
+    },
+    {
+      "from_state": "DPD_60_89",
+      "CURRENT": 0.0682492582,
+      "DPD_1_29": 0.0623145401,
+      "DPD_30_59": 0.1038575668,
+      "DPD_60_89": 0.2581602374,
+      "DPD_90_PLUS": 0.350148368,
+      "DEFAULT": 0.1572700297
+    },
+    {
+      "from_state": "DPD_90_PLUS",
+      "CURRENT": 0.0138408304,
+      "DPD_1_29": 0.0311418685,
+      "DPD_30_59": 0.0346020761,
+      "DPD_60_89": 0.0795847751,
+      "DPD_90_PLUS": 0.3287197232,
+      "DEFAULT": 0.5121107266
+    },
+    {
+      "from_state": "DEFAULT",
+      "CURRENT": 0.0,
+      "DPD_1_29": 0.0,
+      "DPD_30_59": 0.0,
+      "DPD_60_89": 0.0,
+      "DPD_90_PLUS": 0.0,
+      "DEFAULT": 1.0
+    }
+  ],
+  "balance_probability_matrix": [
+    {
+      "from_state": "CURRENT",
+      "CURRENT": 0.9090573177,
+      "DPD_1_29": 0.0676612095,
+      "DPD_30_59": 0.0127149277,
+      "DPD_60_89": 0.0058304946,
+      "DPD_90_PLUS": 0.0018806272,
+      "DEFAULT": 0.0028554234
+    },
+    {
+      "from_state": "DPD_1_29",
+      "CURRENT": 0.3411410415,
+      "DPD_1_29": 0.2960856198,
+      "DPD_30_59": 0.2657135625,
+      "DPD_60_89": 0.0620089406,
+      "DPD_90_PLUS": 0.0267617315,
+      "DEFAULT": 0.0082891041
+    },
+    {
+      "from_state": "DPD_30_59",
+      "CURRENT": 0.1703242586,
+      "DPD_1_29": 0.1576022251,
+      "DPD_30_59": 0.3052111992,
+      "DPD_60_89": 0.2208270603,
+      "DPD_90_PLUS": 0.0994895165,
+      "DEFAULT": 0.0465457403
+    },
+    {
+      "from_state": "DPD_60_89",
+      "CURRENT": 0.0606995674,
+      "DPD_1_29": 0.0545858011,
+      "DPD_30_59": 0.1124481939,
+      "DPD_60_89": 0.2760660094,
+      "DPD_90_PLUS": 0.357327141,
+      "DEFAULT": 0.1388732871
+    },
+    {
+      "from_state": "DPD_90_PLUS",
+      "CURRENT": 0.0113367921,
+      "DPD_1_29": 0.0425176107,
+      "DPD_30_59": 0.0361925289,
+      "DPD_60_89": 0.0620670405,
+      "DPD_90_PLUS": 0.3356293422,
+      "DEFAULT": 0.5122566857
+    },
+    {
+      "from_state": "DEFAULT",
+      "CURRENT": 0.0,
+      "DPD_1_29": 0.0,
+      "DPD_30_59": 0.0,
+      "DPD_60_89": 0.0,
+      "DPD_90_PLUS": 0.0,
+      "DEFAULT": 1.0
+    }
+  ],
+  "roll_state_summary": [
+    {
+      "from_state": "CURRENT",
+      "pairs": 8628,
+      "origin_balance": 18949284.38,
+      "roll_forward_rate": 0.0879694019,
+      "roll_forward_balance_rate": 0.0909426823,
+      "roll_back_rate": 0.0,
+      "roll_back_balance_rate": 0.0,
+      "cure_rate": 0.0,
+      "cure_balance_rate": 0.0,
+      "new_default_rate": 0.0028975429,
+      "new_default_balance_rate": 0.0028554234,
+      "stay_rate": 0.9120305981,
+      "stay_balance_rate": 0.9090573177
+    },
+    {
+      "from_state": "DPD_1_29",
+      "pairs": 923,
+      "origin_balance": 2260793.1799999997,
+      "roll_forward_rate": 0.3456121343,
+      "roll_forward_balance_rate": 0.3627733387,
+      "roll_back_rate": 0.3542795233,
+      "roll_back_balance_rate": 0.3411410415,
+      "cure_rate": 0.3542795233,
+      "cure_balance_rate": 0.3411410415,
+      "new_default_rate": 0.0130010834,
+      "new_default_balance_rate": 0.0082891041,
+      "stay_rate": 0.3001083424,
+      "stay_balance_rate": 0.2960856198
+    },
+    {
+      "from_state": "DPD_30_59",
+      "pairs": 543,
+      "origin_balance": 1309726.94,
+      "roll_forward_rate": 0.3867403315,
+      "roll_forward_balance_rate": 0.3668623171,
+      "roll_back_rate": 0.3057090239,
+      "roll_back_balance_rate": 0.3279264837,
+      "cure_rate": 0.1565377532,
+      "cure_balance_rate": 0.1703242586,
+      "new_default_rate": 0.0478821363,
+      "new_default_balance_rate": 0.0465457403,
+      "stay_rate": 0.3075506446,
+      "stay_balance_rate": 0.3052111992
+    },
+    {
+      "from_state": "DPD_60_89",
+      "pairs": 337,
+      "origin_balance": 764034.77,
+      "roll_forward_rate": 0.5074183976,
+      "roll_forward_balance_rate": 0.4962004282,
+      "roll_back_rate": 0.234421365,
+      "roll_back_balance_rate": 0.2277335624,
+      "cure_rate": 0.0682492582,
+      "cure_balance_rate": 0.0606995674,
+      "new_default_rate": 0.1572700297,
+      "new_default_balance_rate": 0.1388732871,
+      "stay_rate": 0.2581602374,
+      "stay_balance_rate": 0.2760660094
+    },
+    {
+      "from_state": "DPD_90_PLUS",
+      "pairs": 289,
+      "origin_balance": 740232.3300000001,
+      "roll_forward_rate": 0.5121107266,
+      "roll_forward_balance_rate": 0.5122566857,
+      "roll_back_rate": 0.1591695502,
+      "roll_back_balance_rate": 0.1521139721,
+      "cure_rate": 0.0138408304,
+      "cure_balance_rate": 0.0113367921,
+      "new_default_rate": 0.5121107266,
+      "new_default_balance_rate": 0.5122566857,
+      "stay_rate": 0.3287197232,
+      "stay_balance_rate": 0.3356293422
+    },
+    {
+      "from_state": "DEFAULT",
+      "pairs": 3922,
+      "origin_balance": 7200710.52,
+      "roll_forward_rate": 0.0,
+      "roll_forward_balance_rate": 0.0,
+      "roll_back_rate": 0.0,
+      "roll_back_balance_rate": 0.0,
+      "cure_rate": 0.0,
+      "cure_balance_rate": 0.0,
+      "new_default_rate": 0.0,
+      "new_default_balance_rate": 0.0,
+      "stay_rate": 1.0,
+      "stay_balance_rate": 1.0
+    }
+  ],
+  "overall_nondefault_pairs": 10720,
+  "overall_new_default_rate": 0.024626865671641792,
+  "latest_observed_snapshot": {
+    "date": "2024-12-31",
+    "accounts": 500,
+    "recorded_defaults": 264,
+    "balance_exposure": 1020693.33,
+    "state_counts": {
+      "DEFAULT": 264,
+      "CURRENT": 180,
+      "DPD_1_29": 23,
+      "DPD_30_59": 13,
+      "DPD_60_89": 12,
+      "DPD_90_PLUS": 8
+    }
+  },
+  "definitions": {
+    "snapshot_bad": "recorded default OR dpd >= configured bad threshold",
+    "snapshot_delinquency": "recorded default OR dpd >= configured delinquency threshold",
+    "cumulative_default": "ever recorded default / original cohort; missing unless every account has MOB 0..h",
+    "cumulative_default_lower_bound": "observed ever-default accounts / original cohort; not an estimate under missingness",
+    "transition": "same account, consecutive calendar month-ends, both within cutoff",
+    "roll_forward": "higher state, including DEFAULT; deterioration synonym",
+    "roll_back": "any lower ordinal state; partial improvement counts",
+    "cure": "delinquent nondefault origin to CURRENT; subset of roll-back",
+    "new_default": "nondefault origin to DEFAULT; default persistence excluded",
+    "monthly_denominators": "forward/default among nondefault pairs; back/cure among delinquent nondefault pairs",
+    "exposure": "observed closing balance in source currency units; not EAD or expected loss"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "source_code_sha256": {
+    "runner.py": "afabd8b82a1dd18219e742ee2ea4da683f490c828d4533200820bfb2e444d518",
+    "vintage.py": "2be2b4cea32e8ac9ac152a3b0ea6594f9db1eec90a153aff2353928d0d73ad10",
+    "roll_rates.py": "a78abdd29b05f159ead0b7d9382d9276246ebe029cd9c7fd836138864da4425d",
+    "common.py": "ec524340bd7f5817b878d035229ba053cec0c6ccf1c9ccc8f0fe4a5997291071",
+    "settings.py": "13f2e8c065838a5c624a9552e697461e816983cd4257f8be161655e38137086d"
+  },
+  "limitations": [
+    "Synthetic simulation demonstrates mechanics, not real portfolio performance",
+    "No closure status: missing accounts are not assumed closed or good",
+    "Observed-pair transition estimates can be biased by missing follow-up",
+    "Pooled transition rates combine ages and calendar months, not causal estimates",
+    "Sparse cohorts/states: no smoothing or uncertainty intervals in Phase 6"
+  ],
+  "artifacts_sha256": {
+    "monthly_transition_matrices.csv": "2e8c5482cc8a8d2a9d46d385e25f3fc74154cd28b5a0e2986c8e99952d602031",
+    "roll_monthly_summary.csv": "622208aa604832e7e9f6029f5450fa267aec0f50f31aa2856f7c436c387ee9e0",
+    "roll_rates.png": "44581b0f5f8808ba028dc48983b723c55ad87514ceabac9fce660a766eb27192",
+    "roll_state_summary.csv": "a76cdd0d43dda4b20d2d61259bd53052ff2f46ce4d6ec8821ac1e36dc8708192",
+    "transition_balance_probabilities.csv": "b7b09620a78fe8586b61f7a9007c67d62816f4906ce298017ee59e1971cd5b41",
+    "transition_balances.csv": "faee34590835f6d1083ed52b1ad9890d8e3178ab38824391374eb0cc6f8c1b35",
+    "transition_counts.csv": "af795bfc87524e625415e385f01184af228b72d5e70fe636ae4b15d8a7e5f4fd",
+    "transition_pairs.csv": "41793e08ab32b950fd3baf7a1a537065a62a837913fd1f5755c482134f07408a",
+    "transition_probabilities.csv": "d6ca9a9fb4a1a748eddcb953d2a65e239cfa9b705d0e346a7c4cc053309e0bca",
+    "vintages.csv": "567f6ab4f1e2183448635e137c1f255b3b89898a255633d6430a778ffb295339",
+    "vintages.png": "00e48ffeee98b5afae23c76ef8c3ea37b33178cf1423eccdcd5019eff48b4b24"
+  }
+}
