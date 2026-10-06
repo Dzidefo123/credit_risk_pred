@@ -289,7 +289,14 @@ def test_committed_task4_evidence_and_frozen_source_hashes_preserved():
     root = Path(__file__).resolve().parents[1]
     task4 = json.loads((root / "reports/model_validation/pd_diagnostics.json").read_text())
     for name, digest in task4["reused_source_sha256"].items():
-        assert workflow.file_digest(root / name) == digest
+        if name == "scripts/pd_diagnostics.py":
+            # This non-frozen CLI undergoes Git LF/CRLF conversion on Linux.
+            payload = (root / name).read_bytes()
+            windows = payload.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+            assert digest in {sha256(payload).hexdigest(), sha256(windows).hexdigest()}
+        else:
+            # Frozen model/preprocessing/metric source remains byte-exact.
+            assert workflow.file_digest(root / name) == digest
     for name, digest in task4["diagnostic_source_sha256"].items():
         # Non-frozen source files undergo Git LF/CRLF conversion on checkout.
         payload = (root / "src/credit_risk/validation" / name).read_bytes()
