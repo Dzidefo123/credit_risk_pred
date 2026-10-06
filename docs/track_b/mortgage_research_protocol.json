@@ -1,0 +1,172 @@
+{
+  "components": [
+    {
+      "component": "12-month mortgage PD",
+      "decision": "PROCEED",
+      "scope": "Prespecified loan-level composite-event CIF; implementation conditional on Task 2 quality/access gates."
+    },
+    {
+      "component": "Lifetime PD / survival",
+      "decision": "PROCEED",
+      "scope": "Discrete monthly hazards/cumulative incidence within observed support; contractual/behavioral extrapolation restricted."
+    },
+    {
+      "component": "Competing risk of prepayment",
+      "decision": "PROCEED",
+      "scope": "Code 01 combines payoff/maturity; competing payoff endpoint, not isolated discretionary prepayment."
+    },
+    {
+      "component": "Mortgage EAD",
+      "decision": "PROCEED_WITH_DEFINED_INTERPRETATION",
+      "scope": "Monthly principal exposure at observed research event; not contractual/accounting EAD or revolving CCF."
+    },
+    {
+      "component": "Workout LGD",
+      "decision": "PROCEED_WITH_LIMITATIONS",
+      "scope": "Only aggregate disposition-loss severity proxy; true timed workout/downturn/IFRS LGD unsupported."
+    },
+    {
+      "component": "SICR research",
+      "decision": "RESEARCH_POLICY_SIMULATION",
+      "scope": "Later declared heuristic and reconstructed comparable risk; no observed institutional SICR validation."
+    },
+    {
+      "component": "IFRS 9 staging",
+      "decision": "LATER_POLICY_DEPENDENT",
+      "scope": "Recognition/impairment/POCI/policy evidence absent."
+    },
+    {
+      "component": "ECL",
+      "decision": "LATER",
+      "scope": "After compatible PD/exposure/loss foundations, with explicit discount/scenario/dependence assumptions."
+    },
+    {
+      "component": "Revolving CCF/EAD",
+      "decision": "OUT_OF_SCOPE",
+      "scope": "Mortgage sample has no revolving commitment/drawdown contract."
+    },
+    {
+      "component": "Borrower-level portfolio modeling",
+      "decision": "UNSUPPORTED",
+      "scope": "No stable cross-facility borrower identity."
+    }
+  ],
+  "event": {
+    "administrative_exit_codes": [
+      "15",
+      "16",
+      "96"
+    ],
+    "competing_payoff_codes": [
+      "01"
+    ],
+    "credit_termination_codes": [
+      "02",
+      "03",
+      "09"
+    ],
+    "default_and_payoff_same_month": "ambiguous_event_order; quarantine from primary labeled sample",
+    "event_and_terminal_dates_disagree": "quarantine; no automatic date reconciliation",
+    "event_time": "first qualifying reporting/event month; never backdated",
+    "missing_state_implies_current": false,
+    "name": "first observed composite adverse mortgage event",
+    "numeric_delinquency_max": 99,
+    "numeric_delinquency_min": 3,
+    "prior_observed_event_excludes_incident_risk": true,
+    "reo_state": "RA",
+    "terminal_code_15_implies_default": false,
+    "unknown_state": "XX",
+    "unrecognized_codes": "fail closed; require reviewed protocol revision"
+  },
+  "evidence": {
+    "contract_path": "docs/track_b/LONGITUDINAL_DATA_CONTRACT.md",
+    "contract_sha256_lf": "1fee9a31f30cb1ceb1e6c270a2f3a71286edfe58addbcf4818976a9ceabe9a30",
+    "crosswalk_path": "docs/track_b/field_dictionary_comparison.json",
+    "crosswalk_sha256_lf": "1810b423360a9d288451b4715fb150446a6cbe8a2a7c7afaaae46f42ebdc8fbe"
+  },
+  "labels": {
+    "ambiguous_event_order": {
+      "binary_default_12m": null,
+      "rule": "same-month default/payoff or unresolved event/exit contradiction"
+    },
+    "competing_payoff": {
+      "binary_default_12m": 0,
+      "rule": "verified payoff before default; facility risk ends; retain competing cause and time"
+    },
+    "insufficient_followup": {
+      "binary_default_12m": null,
+      "rule": "risk interval or coverage cannot be established"
+    },
+    "negative_survived_horizon": {
+      "binary_default_12m": 0,
+      "rule": "12 consecutive ascertainable non-event follow-up months without unresolved exit"
+    },
+    "not_incident_risk_eligible": {
+      "binary_default_12m": null,
+      "rule": "qualifying event at/before t0, insufficient lookback or unresolved pre-t0 history"
+    },
+    "positive_default": {
+      "binary_default_12m": 1,
+      "rule": "valid first event in offsets 1..12 before competing payoff and any earlier ascertainment gap"
+    },
+    "right_censored": {
+      "binary_default_12m": null,
+      "rule": "administrative cutoff, non-default sales/defect exit or first unknown/gap before horizon; retain last confirmed risk interval"
+    }
+  },
+  "pilot_plan": {
+    "archive_scope": "one official sample-vintage archive only, after separate acquisition authorization",
+    "event_count_can_change_selection": false,
+    "maximum_retained_loans": 1000,
+    "purpose": "engineering and temporal leakage tests only; no empirical performance claim",
+    "retain": "all available monthly histories for selected identifiers, including events, exits, unknowns and gaps",
+    "selection": "lowest SHA256 values of UTF-8 protocol_id + colon + provider loan identifier; no outcome-based selection",
+    "source_product": "official Standard sample only",
+    "vintage_year": 2010
+  },
+  "prohibited_claims": [
+    "regulatory default/PD equivalence",
+    "exact daily DPD or default date",
+    "borrower independence",
+    "historically available features from latest-release dates alone",
+    "timed workout/accounting/downturn LGD",
+    "accounting EIR from note coupon",
+    "validated IFRS 9 staging/ECL",
+    "revolving CCF",
+    "deployment readiness"
+  ],
+  "protocol_id": "freddie_mortgage_research_v1",
+  "schema_version": 1,
+  "selection": {
+    "dataset_selected": true,
+    "development_source": "Freddie Mac Single-Family Loan-Level Standard Dataset",
+    "downloads_authorized_by_task1": false,
+    "external_replication_candidate": "Fannie Mae Primary SF Loan Performance",
+    "models_implemented": false,
+    "record_level_data_accessed": false,
+    "schema_family": "Release 47, July 2026",
+    "selection_level": "restricted research design; access and record-level quality gates pending"
+  },
+  "status": "prespecified_before_loan_records",
+  "time": {
+    "first_payment_month_is_origination_date": false,
+    "horizon_months": 12,
+    "knowledge_time_status": "unverified in latest-release retrospective panel",
+    "minimum_consecutive_pre_t0_months": 6,
+    "origination_date_proxy_permitted": false,
+    "outcome_offsets": [
+      1,
+      12
+    ],
+    "primary_reentry_after_gap": false,
+    "real_time_pit_claim_permitted": false,
+    "t0": "nominal monthly reporting-period endpoint",
+    "unit": "calendar_month"
+  },
+  "track_a": {
+    "reinterpretation_permitted": false,
+    "tag": "track-a-v1.0",
+    "tag_object": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "target_commit": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  }
+}
