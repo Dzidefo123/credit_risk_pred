@@ -1,0 +1,339 @@
+{
+  "schema_version": "1.0",
+  "amendment_id": "nested_2010_expansion_v1",
+  "phase": "A_FROZEN",
+  "chosen_n": 20000,
+  "authorization": "User explicitly approved Task 4 Phase A and B; Phase B only after Phase A artifacts pass tests",
+  "approval_boundary": "No further expansion, outcome-adaptive resizing, changed cohort or model refitting authorized",
+  "base_protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "original_sample_sha256": "b40de7596b0d4fbb189c1ceec5176f4461f7d290117250c1a7ec15b605ce7b11",
+  "task3_commit": "6fd505a84cabaac82a6835c461fe7ecfa2cc56cd",
+  "planning_inputs_sha256_lf": {
+    "reports/track_b/freddie_2010_data_audit.json": "511a807bc7be47b33966376bb9d6dd3fd694cd1f8706d75bbb5f91d8deb86d8d",
+    "reports/track_b/pd_baseline_validation.json": "8dd5123a250787e33ea29b69fa7a93cc4c0bd1a9a326f23ec2a67296b7cf33cb"
+  },
+  "candidates": [
+    {
+      "n": 5000,
+      "support": {
+        "overall": {
+          "observed": 31,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.03146853146853147,
+          "rate_95": [
+            0.021573145572835586,
+            0.04313361007986452
+          ],
+          "expected": 156.87412587412587,
+          "predictive_95": [
+            113,
+            209
+          ]
+        },
+        "development": {
+          "observed": 13,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.013486513486513486,
+          "rate_95": [
+            0.007305785917318555,
+            0.021499030205823465
+          ],
+          "expected": 66.94605394605395,
+          "predictive_95": [
+            39,
+            103
+          ],
+          "probability_meeting_target": 6.617265314723397e-05
+        },
+        "evaluation": {
+          "observed": 5,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.005494505494505495,
+          "rate_95": [
+            0.0019103525008339467,
+            0.01092466407181425
+          ],
+          "expected": 26.978021978021978,
+          "predictive_95": [
+            11,
+            51
+          ],
+          "probability_meeting_target": 0.03216276082742753
+        }
+      },
+      "joint_probability_lower_bound": 0.0,
+      "uniform_prior_probabilities": {
+        "development": 0.00010080607393048169,
+        "evaluation": 0.04696764057350322
+      }
+    },
+    {
+      "n": 10000,
+      "support": {
+        "overall": {
+          "observed": 31,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.03146853146853147,
+          "rate_95": [
+            0.021573145572835586,
+            0.04313361007986452
+          ],
+          "expected": 314.2167832167832,
+          "predictive_95": [
+            220,
+            425
+          ]
+        },
+        "development": {
+          "observed": 13,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.013486513486513486,
+          "rate_95": [
+            0.007305785917318555,
+            0.021499030205823465
+          ],
+          "expected": 134.37862137862138,
+          "predictive_95": [
+            76,
+            210
+          ],
+          "probability_meeting_target": 0.30520445997428813
+        },
+        "evaluation": {
+          "observed": 5,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.005494505494505495,
+          "rate_95": [
+            0.0019103525008339467,
+            0.01092466407181425
+          ],
+          "expected": 54.45054945054945,
+          "predictive_95": [
+            20,
+            106
+          ],
+          "probability_meeting_target": 0.5349978982480001
+        }
+      },
+      "joint_probability_lower_bound": 0.0,
+      "uniform_prior_probabilities": {
+        "development": 0.35024293777350723,
+        "evaluation": 0.6153355559033334
+      }
+    },
+    {
+      "n": 20000,
+      "support": {
+        "overall": {
+          "observed": 31,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.03146853146853147,
+          "rate_95": [
+            0.021573145572835586,
+            0.04313361007986452
+          ],
+          "expected": 628.9020979020979,
+          "predictive_95": [
+            436,
+            856
+          ]
+        },
+        "development": {
+          "observed": 13,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.013486513486513486,
+          "rate_95": [
+            0.007305785917318555,
+            0.021499030205823465
+          ],
+          "expected": 269.24375624375625,
+          "predictive_95": [
+            149,
+            425
+          ],
+          "probability_meeting_target": 0.9740735956280363
+        },
+        "evaluation": {
+          "observed": 5,
+          "denominator": 1000,
+          "posterior_rate_mean": 0.005494505494505495,
+          "rate_95": [
+            0.0019103525008339467,
+            0.01092466407181425
+          ],
+          "expected": 109.3956043956044,
+          "predictive_95": [
+            40,
+            215
+          ],
+          "probability_meeting_target": 0.9387385889910391
+        }
+      },
+      "joint_probability_lower_bound": 0.9128121846190753,
+      "uniform_prior_probabilities": {
+        "development": 0.9815733985918274,
+        "evaluation": 0.9622747685473434
+      }
+    }
+  ],
+  "event_support_objective": {
+    "development": 150,
+    "evaluation": 50
+  },
+  "selection_criterion": "Smallest candidate with >=0.90 union-bound lower probability of both targets",
+  "probability_model": "Nested prediction: observed k stays fixed; new events ~ BetaBinomial(N-1000,k+0.5,1000-k+0.5); Jeffreys prior",
+  "assumptions": [
+    "Identifier hash ranking approximates outcome-independent exchangeable sampling within the fixed 2010 universe",
+    "Facility events treated as independent for planning; unknown borrower links and finite-universe heterogeneity not captured",
+    "Per-selected-ID temporal yield (5/1000) integrates eligibility and fixed split; not 5/130 applied to all selected loans",
+    "95% posterior predictive ranges, not frequentist confidence guarantees; finite population correction omitted (<1.1% sampled)",
+    "No change in calendar windows or original split hash; approximate planning cannot guarantee calibration or future performance"
+  ],
+  "conditional_evaluation_rate": {
+    "events": 5,
+    "eligible_loans": 130,
+    "rate": 0.038461538461538464,
+    "rate_95": [
+      0.014824891351309391,
+      0.08223138303723421
+    ],
+    "eligibility_fraction": 0.13
+  },
+  "precision_planning": {
+    "unit": "one representative observation per facility, illustrative independent-unit approximation only; actual monthly cluster CI can differ",
+    "auc_95_halfwidth": [
+      {
+        "assumed_auc": 0.7,
+        "events": 5,
+        "negatives": 125,
+        "halfwidth": 0.2615107078295309
+      },
+      {
+        "assumed_auc": 0.7,
+        "events": 50,
+        "negatives": 1250,
+        "halfwidth": 0.08244548625661989
+      },
+      {
+        "assumed_auc": 0.7,
+        "events": 100,
+        "negatives": 2500,
+        "halfwidth": 0.05828786819808152
+      },
+      {
+        "assumed_auc": 0.8,
+        "events": 5,
+        "negatives": 125,
+        "halfwidth": 0.2363008312394276
+      },
+      {
+        "assumed_auc": 0.8,
+        "events": 50,
+        "negatives": 1250,
+        "halfwidth": 0.07449421150964983
+      },
+      {
+        "assumed_auc": 0.8,
+        "events": 100,
+        "negatives": 2500,
+        "halfwidth": 0.052666285635752465
+      },
+      {
+        "assumed_auc": 0.85,
+        "events": 5,
+        "negatives": 125,
+        "halfwidth": 0.2141063061830642
+      },
+      {
+        "assumed_auc": 0.85,
+        "events": 50,
+        "negatives": 1250,
+        "halfwidth": 0.06749241103472928
+      },
+      {
+        "assumed_auc": 0.85,
+        "events": 100,
+        "negatives": 2500,
+        "halfwidth": 0.04771592279185
+      }
+    ],
+    "prevalence_relative_95_halfwidth": {
+      "5": 0.8765386471799175,
+      "50": 0.2771858582251266,
+      "100": 0.196
+    },
+    "citl_95_halfwidth_rare_event": {
+      "5": 0.8765386471799175,
+      "50": 0.2771858582251266,
+      "100": 0.196
+    },
+    "bootstrap_no_default_probability": {
+      "5": 0.006104721993744222,
+      "50": 7.188841553279362e-23,
+      "100": 5.1679442878156034e-45
+    },
+    "brier": "Not forecast: requires future joint score/outcome distribution; no expanded predictions accessed"
+  },
+  "objective_rationale": "50 evaluation defaults gives illustrative rare-event CITL halfwidth ~0.28 rather than ~0.88 at five; AUC halfwidth at assumed 0.8 ~0.07 rather than ~0.23. Development 150 supplies materially more support for later modest fixed models. Neither threshold is a validity/regulatory minimum; dependence and calibration slope still require empirical validation.",
+  "sampling": {
+    "salt": "freddie_mortgage_research_v1",
+    "algorithm": "SHA256(UTF8 salt + colon + ID); ascending digest then ID; first N; no quotas",
+    "annual_universe": 1820190,
+    "original_first_n": 1000,
+    "nested_required": true,
+    "outcome_fields_allowed": false
+  },
+  "cohort": {
+    "reuse": "Task 2 build_panel and Task 3 cohort/split without modification",
+    "development_end": "2014-12",
+    "evaluation_start": "2016-01",
+    "purged_year": "2015",
+    "monthly": true
+  },
+  "feasibility_gates": {
+    "adequate": {
+      "development": 150,
+      "evaluation": 50
+    },
+    "marginal": {
+      "development": 100,
+      "evaluation": 30
+    },
+    "otherwise": "EXPANSION SUPPORT INADEQUATE",
+    "integrity": "Blocking conflicts or missing selected history prohibit adequate classification; no replacement"
+  },
+  "resources": {
+    "elapsed_scan_seconds": 465.125,
+    "full_text_extracted": false,
+    "non_selected_attributes_retained": false,
+    "peak_memory_bytes": 708743168,
+    "temporary_bytes_peak": 0,
+    "temporary_files_created": 0,
+    "expected_retained_rows": 1444640.0,
+    "expected_panel_csv_bytes": 296410140.0,
+    "strategy": "Bounded SQLite selected-row spool; one facility at a time through unchanged panel builder; bounded per-loan accounting. Universe IDs are retained during source scan for linkage, then released. Memory need not scale with retained history count.",
+    "expected_disk_range_gib": [
+      0.5,
+      1.5
+    ],
+    "scan_seconds_planning_range": [
+      465,
+      1200
+    ],
+    "model_run": "Cached panel avoids repeated population scans; future model memory must be measured separately"
+  },
+  "limits": {
+    "max_peak_memory_bytes": 1610612736,
+    "max_retained_performance_rows": 3000000,
+    "max_cache_bytes": 2147483648,
+    "max_panel_bytes": 1073741824,
+    "free_disk_reserve_bytes": 4294967296
+  },
+  "models_permitted": false,
+  "primary_future_pr_summary": "Average Precision; trapezoidal PR-AUC secondary diagnostic",
+  "references": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html",
+    "https://doi.org/10.1148/radiology.143.1.7063747"
+  ]
+}
