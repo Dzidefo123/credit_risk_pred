@@ -1,0 +1,3861 @@
+{
+  "schema_version": "1.0",
+  "decision": "TEMPORAL VALIDATION SUPPORTS RESEARCH PD WITH MATERIAL LIMITATIONS",
+  "champion": "logistic",
+  "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+  "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+  "protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "cohort_reproduction": {
+    "cohorts": {
+      "primary": {
+        "landmarks": 1241045,
+        "loans": 19590,
+        "positive_landmarks": 7153,
+        "default_loans": 618
+      },
+      "development": {
+        "landmarks": 478796,
+        "loans": 13801,
+        "positive_landmarks": 2560,
+        "default_loans": 246
+      },
+      "evaluation": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      }
+    },
+    "hashes": {
+      "primary": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374",
+      "development": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+      "evaluation": "69850e4e1b1176edd89c8374ff72f4db053536c61aac1b83a65358720a962402"
+    },
+    "internal_partitions": {
+      "fit": {
+        "landmarks": 287484,
+        "loans": 8261,
+        "positive_landmarks": 1556,
+        "default_loans": 151
+      },
+      "calibration": {
+        "landmarks": 95742,
+        "loans": 2764,
+        "positive_landmarks": 525,
+        "default_loans": 47
+      },
+      "selection": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      }
+    },
+    "hazard_fit": {
+      "landmarks": 287571,
+      "loans": 8268,
+      "positive_landmarks": 127,
+      "default_loans": 127
+    },
+    "hazard_selection": {
+      "landmarks": 95601,
+      "loans": 2778,
+      "positive_landmarks": 43,
+      "default_loans": 43
+    },
+    "count_audit_only": true,
+    "evaluation_predictions_accessed": false
+  },
+  "model_specifications": {
+    "null_prevalence": 0.005346744751418141,
+    "preprocessing": "Development-fit-only median + missing indicators; numeric scaling; categorical modal imputation and first-category reference OHE",
+    "design": {
+      "version": "expanded_pd_v1",
+      "seed": 51005,
+      "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+      "development_end": "2014-12",
+      "evaluation_start": "2016-01",
+      "purged": "2015",
+      "internal_split": "SHA256(task5-development-v1:ID) integer modulo 10: 0..5 fit, 6..7 calibrate, 8..9 select; same development calendar coverage; no group overlap. Internal validation is grouped but not calendar-held-out; outer evaluation provides calendar separation. No final refit.",
+      "features": [
+        "orig_credit_score",
+        "orig_ltv",
+        "orig_dti",
+        "orig_interest_rate",
+        "original_loan_term",
+        "number_of_borrowers",
+        "loan_age",
+        "delinquency_state",
+        "loan_purpose",
+        "occupancy_status"
+      ],
+      "logistic": {
+        "C": 1.0,
+        "max_iter": 3000,
+        "tol": 1e-08,
+        "solver": "lbfgs",
+        "class_weight": null
+      },
+      "xgboost_candidates": [
+        {
+          "max_depth": 2,
+          "n_estimators": 120
+        },
+        {
+          "max_depth": 3,
+          "n_estimators": 180
+        }
+      ],
+      "xgboost_fixed": {
+        "learning_rate": 0.05,
+        "min_child_weight": 30,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.1,
+        "tree_method": "hist",
+        "n_jobs": 2,
+        "random_state": 51005,
+        "objective": "binary:logistic"
+      },
+      "xgboost_selection": "Choose depth3 only if selection log loss improves >=1% and Brier does not worsen; otherwise depth2. Evaluate raw candidates only for architecture. Record both.",
+      "calibration": "For each frozen primary logistic/XGB architecture: sigmoid fit on calibration partition only. Retain only if independent selection Brier and log loss each improve >=1%, positive slope and selection AUC drops <=0.002. No isotonic; no selection of alternative models after evaluation. Raw probabilities always retained. Hazard, null and static sensitivity raw retained.",
+      "hazard": "One next-month risk interval per eligible clean t0 with observed_followup_months>=1. Event iff positive_default and event_offset=1. Payoff interval ends facility risk, is an observed default-free interval but not twelve-month survival; censor payoff as competing exit. Administrative/ambiguous first-month intervals have no known at-risk month and are excluded. Strict t0<=2014-12 on development groups, so hazard events end 2015-01; unlike landmark labels through2015-12. No purged 2015 t0 used. One default event per loan maximum.",
+      "hazard_forecast": "Default-only logistic hazard with linear loan_age time basis. At t0 freeze all predictors except deterministic loan_age+t; predict 12 future conditional hazards, product survival, PD=1-product(1-h). This is a net-risk benchmark under hypothetical removal of payoff and frozen covariates, NOT the primary default-before-payoff cumulative incidence. Report separately; not eligible for primary champion selection.",
+      "sensitivity": "Origination-only Logistic and fixed shallow XGB, same partitions; raw only. Drop both loan_age and delinquency_state. These are prespecified family sensitivities, not champion candidates.",
+      "bootstrap": {
+        "draws": 1000,
+        "seed": 51005,
+        "unit": "loan_id",
+        "paired": true,
+        "scope": "fixed trained model; excludes training uncertainty and unknown borrower links"
+      },
+      "reliability_edges": [
+        0,
+        0.005,
+        0.02,
+        0.1,
+        1.0
+      ],
+      "calendar_blocks": [
+        "2016-2018",
+        "2019-2021",
+        "2022-2026"
+      ],
+      "minimum_diagnostic_event_loans": 20,
+      "champion_rule": "Default logistic. Promote selected XGB only if paired 95% intervals for XGB-minus-logistic Brier and logloss are entirely below zero, both point improvements >=2%, AP and AUC do not materially deteriorate (>0.01), and no supported calendar block has >10% worse logloss. Interpretability and calibration reviewed; retained frozen variants only. No policy thresholds.",
+      "evaluation_access": "Aggregate labels were already audited in Tasks3/4 and required count reproduction; nested 1000 Task3 predictions previously seen. Task5 predictive metrics access is one-shot after freeze; cannot claim never-seen outcomes. Fail closed on repeat.",
+      "historical_knowledge_time": "UNVERIFIED"
+    },
+    "design_sha256_lf": "b8c5b3dbac018c3e8a994445e9a233894131c855d97dd10b3a25e4534a685a63",
+    "registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c",
+    "artifacts": {
+      "logistic": {
+        "path": "data\\track_b\\models\\expanded_pd_v1\\logistic.joblib",
+        "sha256": "39ed38441fef44aea1204144ce2d50ec7d710c8765182a2c6cdd0525c65a6e64",
+        "model_type": "logistic",
+        "seed": 51005,
+        "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+        "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+      },
+      "hazard": {
+        "path": "data\\track_b\\models\\expanded_pd_v1\\hazard.joblib",
+        "sha256": "5b9b13b982cbc5b2568b86a1c80b7ea5d81266b60de1bf1b0a5f74029aba045c",
+        "model_type": "hazard",
+        "seed": 51005,
+        "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "fit_cohort_sha256": "52d73879c450cb0d7368cc348c6154c15fae274df981c298aeaa1a3f9658fbf2",
+        "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+      },
+      "xgboost": {
+        "path": "data\\track_b\\models\\expanded_pd_v1\\xgboost.joblib",
+        "sha256": "3f49da294ac64469356b5e1d6d6ca79742b6ea2e531f97be292cd2c6d49def21",
+        "model_type": "xgboost",
+        "seed": 51005,
+        "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+        "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+      },
+      "static_logistic": {
+        "path": "data\\track_b\\models\\expanded_pd_v1\\static_logistic.joblib",
+        "sha256": "5cc2bc73944eb7f8b25695019a837fc47ae8156779ea3d49a6e6db505fc9c867",
+        "model_type": "static_logistic",
+        "seed": 51005,
+        "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+        "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+      },
+      "static_xgboost": {
+        "path": "data\\track_b\\models\\expanded_pd_v1\\static_xgboost.joblib",
+        "sha256": "c2da921280ae50db9ec5ae225ab712a94878ba9f0d96eede4f264fe58f087869",
+        "model_type": "static_xgboost",
+        "seed": 51005,
+        "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+        "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+      }
+    },
+    "xgboost_configuration": {
+      "learning_rate": 0.05,
+      "min_child_weight": 30,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "reg_alpha": 0.1,
+      "tree_method": "hist",
+      "n_jobs": 2,
+      "random_state": 51005,
+      "objective": "binary:logistic",
+      "max_depth": 2,
+      "n_estimators": 120
+    },
+    "calibration_decisions": {
+      "logistic": "RAW RETAINED",
+      "xgboost": "RAW RETAINED"
+    },
+    "source_code_sha256_lf": {
+      "src\\credit_risk\\track_b\\expanded_pd\\core.py": "edf6da1cb5deb10af1620c4380efb753274e837b894c714422d4f07450d2541a",
+      "src\\credit_risk\\track_b\\expanded_pd\\reporting.py": "356d3a0fed69449f6f4257572f65810a36eeda816dc02885e25c01ebdabc22c8",
+      "src\\credit_risk\\track_b\\expanded_pd\\study.py": "a97abeba02622aeed40981eb343ed557ec66e42cbac2be043c3ddb4b4bbca9eb",
+      "src\\credit_risk\\track_b\\expanded_pd\\__init__.py": "efd07b7065c222d07eb41ec325cd5a06e550c412dacea957ca871c641b47ec7a"
+    }
+  },
+  "development_selection": {
+    "hazard_monthly": {
+      "effective_sample": {
+        "landmarks": 95601,
+        "loans": 2778,
+        "positive_landmarks": 43,
+        "default_loans": 43
+      },
+      "metrics": {
+        "brier": 0.00018883292619655388,
+        "log_loss": 0.0005504886030134198,
+        "observed_rate": 0.00044978609010366,
+        "mean_probability": 0.0003584367423845947,
+        "roc_auc": 0.9998924310914058,
+        "gini": 0.9997848621828116,
+        "pr_auc_trapezoid": 0.7856407396235766,
+        "average_precision": 0.7884658662928465,
+        "discrimination_status": "estimated"
+      }
+    },
+    "logistic": {
+      "decision": "RAW RETAINED",
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "raw": {
+        "brier": 0.0043085464829401895,
+        "log_loss": 0.02249991906843506,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.004919921491001277,
+        "roc_auc": 0.9085199543722419,
+        "gini": 0.8170399087444837,
+        "pr_auc_trapezoid": 0.22849968999948603,
+        "average_precision": 0.22891840121654286,
+        "discrimination_status": "estimated"
+      },
+      "sigmoid": {
+        "brier": 0.004351582474564729,
+        "log_loss": 0.022465613081523637,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.00536939184412083,
+        "roc_auc": 0.9085199543722419,
+        "gini": 0.8170399087444837,
+        "pr_auc_trapezoid": 0.22849968999948603,
+        "average_precision": 0.22891840121654286,
+        "discrimination_status": "estimated"
+      },
+      "sigmoid_intercept": 0.46267015963725533,
+      "sigmoid_slope": 1.0828259548104615,
+      "fit_sample": {
+        "landmarks": 287484,
+        "loans": 8261,
+        "positive_landmarks": 1556,
+        "default_loans": 151
+      },
+      "calibration_sample": {
+        "landmarks": 95742,
+        "loans": 2764,
+        "positive_landmarks": 525,
+        "default_loans": 47
+      }
+    },
+    "xgboost": {
+      "decision": "RAW RETAINED",
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "raw": {
+        "brier": 0.004930901056189123,
+        "log_loss": 0.026515919762395878,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005153118550905374,
+        "roc_auc": 0.8898204069504765,
+        "gini": 0.779640813900953,
+        "pr_auc_trapezoid": 0.026079772322080554,
+        "average_precision": 0.027071718708665152,
+        "discrimination_status": "estimated"
+      },
+      "sigmoid": {
+        "brier": 0.004934135689200365,
+        "log_loss": 0.02650300541373368,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005424075783727051,
+        "roc_auc": 0.8898204069504765,
+        "gini": 0.779640813900953,
+        "pr_auc_trapezoid": 0.026079772322080554,
+        "average_precision": 0.027071718708665152,
+        "discrimination_status": "estimated"
+      },
+      "sigmoid_intercept": 0.1709112972021103,
+      "sigmoid_slope": 1.026476502418518,
+      "fit_sample": {
+        "landmarks": 287484,
+        "loans": 8261,
+        "positive_landmarks": 1556,
+        "default_loans": 151
+      },
+      "calibration_sample": {
+        "landmarks": 95742,
+        "loans": 2764,
+        "positive_landmarks": 525,
+        "default_loans": 47
+      }
+    },
+    "static_logistic": {
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "decision": "RAW RETAINED",
+      "metrics": {
+        "brier": 0.0049153301388470535,
+        "log_loss": 0.026673581772647677,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005010807214695145,
+        "roc_auc": 0.865265025004397,
+        "gini": 0.7305300500087939,
+        "pr_auc_trapezoid": 0.03092087133449307,
+        "average_precision": 0.03363044341930305,
+        "discrimination_status": "estimated"
+      }
+    },
+    "static_xgboost": {
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "decision": "RAW RETAINED",
+      "metrics": {
+        "brier": 0.004931955748416409,
+        "log_loss": 0.026618010067622273,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005138517122302764,
+        "roc_auc": 0.8852144355119321,
+        "gini": 0.7704288710238643,
+        "pr_auc_trapezoid": 0.025371705910480352,
+        "average_precision": 0.02702599860505675,
+        "discrimination_status": "estimated"
+      }
+    }
+  },
+  "xgboost_trials": [
+    {
+      "configuration": {
+        "learning_rate": 0.05,
+        "min_child_weight": 30,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.1,
+        "tree_method": "hist",
+        "n_jobs": 2,
+        "random_state": 51005,
+        "objective": "binary:logistic",
+        "max_depth": 2,
+        "n_estimators": 120
+      },
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "metrics": {
+        "brier": 0.004930901056189123,
+        "log_loss": 0.026515919762395878,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005153118550905374,
+        "roc_auc": 0.8898204069504765,
+        "gini": 0.779640813900953,
+        "pr_auc_trapezoid": 0.026079772322080554,
+        "average_precision": 0.027071718708665152,
+        "discrimination_status": "estimated"
+      }
+    },
+    {
+      "configuration": {
+        "learning_rate": 0.05,
+        "min_child_weight": 30,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.1,
+        "tree_method": "hist",
+        "n_jobs": 2,
+        "random_state": 51005,
+        "objective": "binary:logistic",
+        "max_depth": 3,
+        "n_estimators": 180
+      },
+      "effective_sample": {
+        "landmarks": 95570,
+        "loans": 2776,
+        "positive_landmarks": 479,
+        "default_loans": 48
+      },
+      "metrics": {
+        "brier": 0.004951018314320266,
+        "log_loss": 0.026722945811332065,
+        "observed_rate": 0.005012033064769279,
+        "mean_probability": 0.005194928917276177,
+        "roc_auc": 0.879602285813947,
+        "gini": 0.7592045716278939,
+        "pr_auc_trapezoid": 0.02251178731167861,
+        "average_precision": 0.0229669200346859,
+        "discrimination_status": "estimated"
+      }
+    }
+  ],
+  "evaluation_ledger": {
+    "specification_sha256": "0f8e7f2f8fc5ddaecc262a17936508c4fa64014b82882fe9b89815d6f5aeb2ae",
+    "state": "CONSUMED",
+    "specification": {
+      "null_prevalence": 0.005346744751418141,
+      "preprocessing": "Development-fit-only median + missing indicators; numeric scaling; categorical modal imputation and first-category reference OHE",
+      "design": {
+        "version": "expanded_pd_v1",
+        "seed": 51005,
+        "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+        "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+        "development_end": "2014-12",
+        "evaluation_start": "2016-01",
+        "purged": "2015",
+        "internal_split": "SHA256(task5-development-v1:ID) integer modulo 10: 0..5 fit, 6..7 calibrate, 8..9 select; same development calendar coverage; no group overlap. Internal validation is grouped but not calendar-held-out; outer evaluation provides calendar separation. No final refit.",
+        "features": [
+          "orig_credit_score",
+          "orig_ltv",
+          "orig_dti",
+          "orig_interest_rate",
+          "original_loan_term",
+          "number_of_borrowers",
+          "loan_age",
+          "delinquency_state",
+          "loan_purpose",
+          "occupancy_status"
+        ],
+        "logistic": {
+          "C": 1.0,
+          "max_iter": 3000,
+          "tol": 1e-08,
+          "solver": "lbfgs",
+          "class_weight": null
+        },
+        "xgboost_candidates": [
+          {
+            "max_depth": 2,
+            "n_estimators": 120
+          },
+          {
+            "max_depth": 3,
+            "n_estimators": 180
+          }
+        ],
+        "xgboost_fixed": {
+          "learning_rate": 0.05,
+          "min_child_weight": 30,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "reg_lambda": 10.0,
+          "reg_alpha": 0.1,
+          "tree_method": "hist",
+          "n_jobs": 2,
+          "random_state": 51005,
+          "objective": "binary:logistic"
+        },
+        "xgboost_selection": "Choose depth3 only if selection log loss improves >=1% and Brier does not worsen; otherwise depth2. Evaluate raw candidates only for architecture. Record both.",
+        "calibration": "For each frozen primary logistic/XGB architecture: sigmoid fit on calibration partition only. Retain only if independent selection Brier and log loss each improve >=1%, positive slope and selection AUC drops <=0.002. No isotonic; no selection of alternative models after evaluation. Raw probabilities always retained. Hazard, null and static sensitivity raw retained.",
+        "hazard": "One next-month risk interval per eligible clean t0 with observed_followup_months>=1. Event iff positive_default and event_offset=1. Payoff interval ends facility risk, is an observed default-free interval but not twelve-month survival; censor payoff as competing exit. Administrative/ambiguous first-month intervals have no known at-risk month and are excluded. Strict t0<=2014-12 on development groups, so hazard events end 2015-01; unlike landmark labels through2015-12. No purged 2015 t0 used. One default event per loan maximum.",
+        "hazard_forecast": "Default-only logistic hazard with linear loan_age time basis. At t0 freeze all predictors except deterministic loan_age+t; predict 12 future conditional hazards, product survival, PD=1-product(1-h). This is a net-risk benchmark under hypothetical removal of payoff and frozen covariates, NOT the primary default-before-payoff cumulative incidence. Report separately; not eligible for primary champion selection.",
+        "sensitivity": "Origination-only Logistic and fixed shallow XGB, same partitions; raw only. Drop both loan_age and delinquency_state. These are prespecified family sensitivities, not champion candidates.",
+        "bootstrap": {
+          "draws": 1000,
+          "seed": 51005,
+          "unit": "loan_id",
+          "paired": true,
+          "scope": "fixed trained model; excludes training uncertainty and unknown borrower links"
+        },
+        "reliability_edges": [
+          0,
+          0.005,
+          0.02,
+          0.1,
+          1.0
+        ],
+        "calendar_blocks": [
+          "2016-2018",
+          "2019-2021",
+          "2022-2026"
+        ],
+        "minimum_diagnostic_event_loans": 20,
+        "champion_rule": "Default logistic. Promote selected XGB only if paired 95% intervals for XGB-minus-logistic Brier and logloss are entirely below zero, both point improvements >=2%, AP and AUC do not materially deteriorate (>0.01), and no supported calendar block has >10% worse logloss. Interpretability and calibration reviewed; retained frozen variants only. No policy thresholds.",
+        "evaluation_access": "Aggregate labels were already audited in Tasks3/4 and required count reproduction; nested 1000 Task3 predictions previously seen. Task5 predictive metrics access is one-shot after freeze; cannot claim never-seen outcomes. Fail closed on repeat.",
+        "historical_knowledge_time": "UNVERIFIED"
+      },
+      "design_sha256_lf": "b8c5b3dbac018c3e8a994445e9a233894131c855d97dd10b3a25e4534a685a63",
+      "registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c",
+      "artifacts": {
+        "logistic": {
+          "path": "data\\track_b\\models\\expanded_pd_v1\\logistic.joblib",
+          "sha256": "39ed38441fef44aea1204144ce2d50ec7d710c8765182a2c6cdd0525c65a6e64",
+          "model_type": "logistic",
+          "seed": 51005,
+          "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+          "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+          "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+        },
+        "hazard": {
+          "path": "data\\track_b\\models\\expanded_pd_v1\\hazard.joblib",
+          "sha256": "5b9b13b982cbc5b2568b86a1c80b7ea5d81266b60de1bf1b0a5f74029aba045c",
+          "model_type": "hazard",
+          "seed": 51005,
+          "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+          "fit_cohort_sha256": "52d73879c450cb0d7368cc348c6154c15fae274df981c298aeaa1a3f9658fbf2",
+          "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+        },
+        "xgboost": {
+          "path": "data\\track_b\\models\\expanded_pd_v1\\xgboost.joblib",
+          "sha256": "3f49da294ac64469356b5e1d6d6ca79742b6ea2e531f97be292cd2c6d49def21",
+          "model_type": "xgboost",
+          "seed": 51005,
+          "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+          "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+          "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+        },
+        "static_logistic": {
+          "path": "data\\track_b\\models\\expanded_pd_v1\\static_logistic.joblib",
+          "sha256": "5cc2bc73944eb7f8b25695019a837fc47ae8156779ea3d49a6e6db505fc9c867",
+          "model_type": "static_logistic",
+          "seed": 51005,
+          "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+          "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+          "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+        },
+        "static_xgboost": {
+          "path": "data\\track_b\\models\\expanded_pd_v1\\static_xgboost.joblib",
+          "sha256": "c2da921280ae50db9ec5ae225ab712a94878ba9f0d96eede4f264fe58f087869",
+          "model_type": "static_xgboost",
+          "seed": 51005,
+          "development_cohort_sha256": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+          "fit_cohort_sha256": "872a9a91d361615be4e9c4a8544e9046391a9fbad94c7d73c6386c3c98ca4d43",
+          "feature_registry_sha256_lf": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c"
+        }
+      },
+      "xgboost_configuration": {
+        "learning_rate": 0.05,
+        "min_child_weight": 30,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.1,
+        "tree_method": "hist",
+        "n_jobs": 2,
+        "random_state": 51005,
+        "objective": "binary:logistic",
+        "max_depth": 2,
+        "n_estimators": 120
+      },
+      "calibration_decisions": {
+        "logistic": "RAW RETAINED",
+        "xgboost": "RAW RETAINED"
+      },
+      "source_code_sha256_lf": {
+        "src\\credit_risk\\track_b\\expanded_pd\\core.py": "edf6da1cb5deb10af1620c4380efb753274e837b894c714422d4f07450d2541a",
+        "src\\credit_risk\\track_b\\expanded_pd\\reporting.py": "356d3a0fed69449f6f4257572f65810a36eeda816dc02885e25c01ebdabc22c8",
+        "src\\credit_risk\\track_b\\expanded_pd\\study.py": "a97abeba02622aeed40981eb343ed557ec66e42cbac2be043c3ddb4b4bbca9eb",
+        "src\\credit_risk\\track_b\\expanded_pd\\__init__.py": "efd07b7065c222d07eb41ec325cd5a06e550c412dacea957ca871c641b47ec7a"
+      }
+    },
+    "post_evaluation_model_change": false,
+    "prior_access": "Tasks3/4 aggregate outcomes and nested Task3 scores already inspected; Task5 model metrics sealed",
+    "accessed_at": "2026-10-06T21:39:38.871880+00:00",
+    "metrics_computed": [
+      "ROC-AUC",
+      "Gini",
+      "Average Precision",
+      "secondary trapezoidal PR-AUC",
+      "Brier",
+      "log loss",
+      "calibration diagnostics",
+      "reliability",
+      "paired cluster intervals",
+      "hazard monthly diagnostics",
+      "static sensitivity",
+      "calendar/segment diagnostics",
+      "TreeSHAP"
+    ],
+    "prediction_generation_count": 1,
+    "post_evaluation_diagnostic_supplement": {
+      "recorded_at": "2026-10-06T21:47:49.703641+00:00",
+      "reason": "Interpretation audit after initial frozen evaluation; no model or prediction changes",
+      "models_modified": false,
+      "predictions_regenerated": false,
+      "primary_metrics_recomputed": false,
+      "metrics_added": [
+        "categorical delinquency PSI",
+        "current-state exposure/event counts",
+        "frozen booster split usage"
+      ],
+      "source_sha256_lf": "01a8122e4ae7e23875a68b094c7f1cc057a61d075d9594f7e7a3ab4a94841406",
+      "delinquency_state_counts": {
+        "development": {
+          "00": {
+            "landmarks": 476338,
+            "loans": 13795,
+            "positive_landmarks": 1729,
+            "default_loans": 235,
+            "fraction": 0.9948662896097712
+          },
+          "01": {
+            "landmarks": 1982,
+            "loans": 723,
+            "positive_landmarks": 486,
+            "default_loans": 219,
+            "fraction": 0.004139550038012013
+          },
+          "02": {
+            "landmarks": 476,
+            "loans": 267,
+            "positive_landmarks": 345,
+            "default_loans": 216,
+            "fraction": 0.0009941603522168104
+          }
+        },
+        "evaluation": {
+          "00": {
+            "landmarks": 127668,
+            "loans": 2418,
+            "positive_landmarks": 705,
+            "default_loans": 88,
+            "fraction": 0.9911188398596404
+          },
+          "01": {
+            "landmarks": 893,
+            "loans": 260,
+            "positive_landmarks": 199,
+            "default_loans": 93,
+            "fraction": 0.006932583920752725
+          },
+          "02": {
+            "landmarks": 251,
+            "loans": 122,
+            "positive_landmarks": 168,
+            "default_loans": 95,
+            "fraction": 0.001948576219606869
+          }
+        },
+        "hazard_monthly_evaluation": {
+          "00": {
+            "landmarks": 131219,
+            "loans": 2418,
+            "positive_landmarks": 0,
+            "default_loans": 0,
+            "fraction": 0.9910126955116344
+          },
+          "01": {
+            "landmarks": 939,
+            "loans": 264,
+            "positive_landmarks": 0,
+            "default_loans": 0,
+            "fraction": 0.0070916629534246165
+          },
+          "02": {
+            "landmarks": 251,
+            "loans": 122,
+            "positive_landmarks": 95,
+            "default_loans": 95,
+            "fraction": 0.0018956415349409782
+          }
+        }
+      },
+      "categorical_delinquency_psi": 0.0020966374995279547,
+      "numeric_quantile_psi_warning": "Mostly-zero delinquency collapses development deciles at zero; reported numeric PSI=0 is uninformative, not proof of stability",
+      "frozen_xgboost_split_counts": {
+        "orig_credit_score": 85,
+        "orig_ltv": 82,
+        "orig_dti": 47,
+        "orig_interest_rate": 43,
+        "original_loan_term": 23,
+        "number_of_borrowers": 28,
+        "loan_age": 9,
+        "delinquency_state": 0,
+        "missingindicator_orig_ltv": 0,
+        "missingindicator_orig_dti": 24,
+        "loan_purpose_N": 6,
+        "loan_purpose_P": 0,
+        "occupancy_status_P": 0,
+        "occupancy_status_S": 0
+      },
+      "loan_age_ranges": {
+        "development": [
+          1.0,
+          59.0
+        ],
+        "evaluation": [
+          1.0,
+          190.0
+        ]
+      },
+      "interpretation": [
+        "This bounded, strongly regularized challenger did not split current delinquency; failure is specific to its prespecified architecture, not a universal failure of boosting",
+        "Monthly hazard discrimination is largely recognition of imminent movement across the delinquency default proxy boundary, not evidence of reliable twelve-month or lifetime forecasting",
+        "Hazard net-risk projection freezes delinquency; future distress evolution and payoff are not modeled. Its low projected mean must not be called calibrated primary CIF",
+        "Static sensitivity removes both age and delinquency, so the difference does not isolate the causal effect of delinquency",
+        "Raw probabilities are materially too low out of time; development sigmoid hurt Brier despite small log-loss improvements, so raw remained frozen. No post-evaluation recalibration permitted here"
+      ]
+    }
+  },
+  "temporal_results": {
+    "null": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.008261800262526589,
+        "log_loss": 0.048852158301755766,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.005346744751418141,
+        "roc_auc": 0.5,
+        "gini": 0.0,
+        "pr_auc_trapezoid": 0.5041611030028258,
+        "average_precision": 0.008322206005651648,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.4454353857070663,
+        "joint_intercept": null,
+        "calibration_slope": null,
+        "slope_status": "constant logits: joint slope unidentifiable",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "constant logits: joint slope unidentifiable"
+      },
+      "reliability": [
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 128812,
+          "loans": 2423,
+          "positive_landmarks": 1072,
+          "default_loans": 95,
+          "observed_rate": 0.008322206005651648,
+          "mean_probability": 0.005346744751418141,
+          "support": "descriptive"
+        }
+      ]
+    },
+    "logistic_raw": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.007422536403713394,
+        "log_loss": 0.04233034893925971,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.003958756535786404,
+        "roc_auc": 0.7833771782234903,
+        "gini": 0.5667543564469806,
+        "pr_auc_trapezoid": 0.17574679688029038,
+        "average_precision": 0.1763022671246067,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.9871119332588771,
+        "joint_intercept": -0.15564386765910931,
+        "calibration_slope": 0.7680755130883121,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 116335,
+          "loans": 2200,
+          "positive_landmarks": 564,
+          "default_loans": 67,
+          "observed_rate": 0.004848068079253879,
+          "mean_probability": 0.001274059029928317,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 10710,
+          "loans": 396,
+          "positive_landmarks": 163,
+          "default_loans": 36,
+          "observed_rate": 0.015219421101774043,
+          "mean_probability": 0.008049041167436393,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 1148,
+          "loans": 163,
+          "positive_landmarks": 88,
+          "default_loans": 50,
+          "observed_rate": 0.07665505226480836,
+          "mean_probability": 0.03806539494298219,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.1, 1.0]",
+          "landmarks": 619,
+          "loans": 156,
+          "positive_landmarks": 257,
+          "default_loans": 95,
+          "observed_rate": 0.41518578352180935,
+          "mean_probability": 0.374496583753183,
+          "support": "descriptive"
+        }
+      ]
+    },
+    "logistic": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.007422536403713394,
+        "log_loss": 0.04233034893925971,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.003958756535786404,
+        "roc_auc": 0.7833771782234903,
+        "gini": 0.5667543564469806,
+        "pr_auc_trapezoid": 0.17574679688029038,
+        "average_precision": 0.1763022671246067,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.9871119332588771,
+        "joint_intercept": -0.15564386765910931,
+        "calibration_slope": 0.7680755130883121,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 116335,
+          "loans": 2200,
+          "positive_landmarks": 564,
+          "default_loans": 67,
+          "observed_rate": 0.004848068079253879,
+          "mean_probability": 0.001274059029928317,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 10710,
+          "loans": 396,
+          "positive_landmarks": 163,
+          "default_loans": 36,
+          "observed_rate": 0.015219421101774043,
+          "mean_probability": 0.008049041167436393,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 1148,
+          "loans": 163,
+          "positive_landmarks": 88,
+          "default_loans": 50,
+          "observed_rate": 0.07665505226480836,
+          "mean_probability": 0.03806539494298219,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.1, 1.0]",
+          "landmarks": 619,
+          "loans": 156,
+          "positive_landmarks": 257,
+          "default_loans": 95,
+          "observed_rate": 0.41518578352180935,
+          "mean_probability": 0.374496583753183,
+          "support": "descriptive"
+        }
+      ]
+    },
+    "xgboost_raw": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.00826404410506195,
+        "log_loss": 0.0481564182189125,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.0047974375222997485,
+        "roc_auc": 0.7222974999941579,
+        "gini": 0.44459499998831586,
+        "pr_auc_trapezoid": 0.016950509496160025,
+        "average_precision": 0.017483339178524127,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.5650097564295878,
+        "joint_intercept": -1.4743478734835411,
+        "calibration_slope": 0.5837533364364608,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 98654,
+          "loans": 1811,
+          "positive_landmarks": 498,
+          "default_loans": 44,
+          "observed_rate": 0.0050479453443347455,
+          "mean_probability": 0.0017680327873677015,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 24722,
+          "loans": 498,
+          "positive_landmarks": 465,
+          "default_loans": 40,
+          "observed_rate": 0.018809157835126607,
+          "mean_probability": 0.009869490750133991,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 5436,
+          "loans": 114,
+          "positive_landmarks": 109,
+          "default_loans": 11,
+          "observed_rate": 0.02005150846210449,
+          "mean_probability": 0.03670905902981758,
+          "support": "sparse"
+        }
+      ]
+    },
+    "xgboost": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.00826404410506195,
+        "log_loss": 0.0481564182189125,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.0047974375222997485,
+        "roc_auc": 0.7222974999941579,
+        "gini": 0.44459499998831586,
+        "pr_auc_trapezoid": 0.016950509496160025,
+        "average_precision": 0.017483339178524127,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.5650097564295878,
+        "joint_intercept": -1.4743478734835411,
+        "calibration_slope": 0.5837533364364608,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 98654,
+          "loans": 1811,
+          "positive_landmarks": 498,
+          "default_loans": 44,
+          "observed_rate": 0.0050479453443347455,
+          "mean_probability": 0.0017680327873677015,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 24722,
+          "loans": 498,
+          "positive_landmarks": 465,
+          "default_loans": 40,
+          "observed_rate": 0.018809157835126607,
+          "mean_probability": 0.009869490750133991,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 5436,
+          "loans": 114,
+          "positive_landmarks": 109,
+          "default_loans": 11,
+          "observed_rate": 0.02005150846210449,
+          "mean_probability": 0.03670905902981758,
+          "support": "sparse"
+        }
+      ]
+    },
+    "static_logistic": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.00826587930739862,
+        "log_loss": 0.048218321638468904,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.004765192930465412,
+        "roc_auc": 0.7129225072967711,
+        "gini": 0.4258450145935422,
+        "pr_auc_trapezoid": 0.018912997263944843,
+        "average_precision": 0.01954580076246623,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.5738007135855131,
+        "joint_intercept": -1.5551637661846807,
+        "calibration_slope": 0.5650761107357284,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 95080,
+          "loans": 1749,
+          "positive_landmarks": 454,
+          "default_loans": 40,
+          "observed_rate": 0.004774926377787127,
+          "mean_probability": 0.0016580205863678428,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 29514,
+          "loans": 588,
+          "positive_landmarks": 533,
+          "default_loans": 47,
+          "observed_rate": 0.018059226129972218,
+          "mean_probability": 0.009527923970699001,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 4120,
+          "loans": 83,
+          "positive_landmarks": 84,
+          "default_loans": 7,
+          "observed_rate": 0.020388349514563107,
+          "mean_probability": 0.038660862482711396,
+          "support": "sparse"
+        },
+        {
+          "bin": "(0.1, 1.0]",
+          "landmarks": 98,
+          "loans": 3,
+          "positive_landmarks": 1,
+          "default_loans": 1,
+          "observed_rate": 0.01020408163265306,
+          "mean_probability": 0.15999523374770325,
+          "support": "sparse"
+        }
+      ]
+    },
+    "static_xgboost": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.00826432624684029,
+        "log_loss": 0.048218213509918284,
+        "observed_rate": 0.008322206005651648,
+        "mean_probability": 0.004783130868791987,
+        "roc_auc": 0.720368186077597,
+        "gini": 0.440736372155194,
+        "pr_auc_trapezoid": 0.01711072622473512,
+        "average_precision": 0.017669344051266876,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.568552935760391,
+        "joint_intercept": -1.4977580394337162,
+        "calibration_slope": 0.5781667634685681,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 98240,
+          "loans": 1806,
+          "positive_landmarks": 498,
+          "default_loans": 44,
+          "observed_rate": 0.005069218241042345,
+          "mean_probability": 0.0017257382860407233,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 25152,
+          "loans": 503,
+          "positive_landmarks": 465,
+          "default_loans": 40,
+          "observed_rate": 0.01848759541984733,
+          "mean_probability": 0.009734345600008965,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 5420,
+          "loans": 114,
+          "positive_landmarks": 109,
+          "default_loans": 11,
+          "observed_rate": 0.020110701107011072,
+          "mean_probability": 0.037223219871520996,
+          "support": "sparse"
+        }
+      ]
+    }
+  },
+  "clustered_uncertainty": {
+    "draws": 1000,
+    "seed": 51005,
+    "unit": "loan_id",
+    "invalid_single_class_draws": 0,
+    "loan_sample_sequence_sha256": "68fb663b88d629471e55fbe59fb07caea4c6c7b4ac57c374269e2eacd3368d82",
+    "fixed_fit_only": true,
+    "intervals": {
+      "null": {
+        "brier": {
+          "lower": 0.006462977415970402,
+          "upper": 0.009961061630512379,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.03935006820647959,
+          "upper": 0.05782832549070905,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.005346744751417977,
+          "upper": 0.0053467447514180914,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.5,
+          "upper": 0.5,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.5032519697728965,
+          "upper": 0.5050199174096628,
+          "valid_draws": 1000
+        }
+      },
+      "logistic_raw": {
+        "brier": {
+          "lower": 0.005854596439146609,
+          "upper": 0.008917922929802622,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.0330227642125768,
+          "upper": 0.05120658566472236,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.003392380759843127,
+          "upper": 0.004731076302006112,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.7433638060294455,
+          "upper": 0.8226824489998135,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.486727612058891,
+          "upper": 0.6453648979996269,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.14020797932649184,
+          "upper": 0.22275720834861462,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.13920430929498717,
+          "upper": 0.22160409295244934,
+          "valid_draws": 1000
+        }
+      },
+      "logistic": {
+        "brier": {
+          "lower": 0.005854596439146609,
+          "upper": 0.008917922929802622,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.0330227642125768,
+          "upper": 0.05120658566472236,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.003392380759843127,
+          "upper": 0.004731076302006112,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.7433638060294455,
+          "upper": 0.8226824489998135,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.486727612058891,
+          "upper": 0.6453648979996269,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.14020797932649184,
+          "upper": 0.22275720834861462,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.13920430929498717,
+          "upper": 0.22160409295244934,
+          "valid_draws": 1000
+        }
+      },
+      "xgboost_raw": {
+        "brier": {
+          "lower": 0.006466886833997152,
+          "upper": 0.009951376813318306,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.03855053440036583,
+          "upper": 0.05751060123524532,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.004401542731443141,
+          "upper": 0.005212728393788824,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.6766482199636649,
+          "upper": 0.7697812549023401,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.3532964399273296,
+          "upper": 0.5395625098046802,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.013294542921821133,
+          "upper": 0.02477592347568737,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.012624683854537772,
+          "upper": 0.02316417994492944,
+          "valid_draws": 1000
+        }
+      },
+      "xgboost": {
+        "brier": {
+          "lower": 0.006466886833997152,
+          "upper": 0.009951376813318306,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.03855053440036583,
+          "upper": 0.05751060123524532,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.004401542731443141,
+          "upper": 0.005212728393788824,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.6766482199636649,
+          "upper": 0.7697812549023401,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.3532964399273296,
+          "upper": 0.5395625098046802,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.013294542921821133,
+          "upper": 0.02477592347568737,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.012624683854537772,
+          "upper": 0.02316417994492944,
+          "valid_draws": 1000
+        }
+      },
+      "static_logistic": {
+        "brier": {
+          "lower": 0.006493031082855633,
+          "upper": 0.009962468119027094,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.03845469500697516,
+          "upper": 0.057640957372148055,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.004381020802375998,
+          "upper": 0.00517941167240037,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.6635306712767112,
+          "upper": 0.7611165182569594,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.3270613425534223,
+          "upper": 0.5222330365139187,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.014375631245551565,
+          "upper": 0.029161690900952754,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.013589328331746938,
+          "upper": 0.026842828443035132,
+          "valid_draws": 1000
+        }
+      },
+      "static_xgboost": {
+        "brier": {
+          "lower": 0.006466904931412293,
+          "upper": 0.009947637743151508,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "lower": 0.038499680790436044,
+          "upper": 0.05750563175338673,
+          "valid_draws": 1000
+        },
+        "observed_rate": {
+          "lower": 0.006503939545793099,
+          "upper": 0.010039834819325563,
+          "valid_draws": 1000
+        },
+        "mean_probability": {
+          "lower": 0.004383475668815437,
+          "upper": 0.005196448436737579,
+          "valid_draws": 1000
+        },
+        "roc_auc": {
+          "lower": 0.674680922578308,
+          "upper": 0.7697215916772718,
+          "valid_draws": 1000
+        },
+        "gini": {
+          "lower": 0.349361845156616,
+          "upper": 0.5394431833545438,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "lower": 0.013383001862521103,
+          "upper": 0.02547783498992602,
+          "valid_draws": 1000
+        },
+        "pr_auc_trapezoid": {
+          "lower": 0.012836470262158891,
+          "upper": 0.0238481335152005,
+          "valid_draws": 1000
+        }
+      }
+    },
+    "paired": {
+      "xgboost-minus-logistic": {
+        "roc_auc": {
+          "point": -0.06107967822933247,
+          "lower": -0.08563797685842676,
+          "upper": -0.035000580040540775,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "point": -0.15881892794608257,
+          "lower": -0.20348153879984424,
+          "upper": -0.12291266882871729,
+          "valid_draws": 1000
+        },
+        "brier": {
+          "point": 0.000841507701348599,
+          "lower": 0.0005293733529794522,
+          "upper": 0.001182520849511761,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "point": 0.005826069279653019,
+          "lower": 0.003942391862550103,
+          "upper": 0.00806472957117753,
+          "valid_draws": 1000
+        }
+      },
+      "logistic-minus-null": {
+        "roc_auc": {
+          "point": 0.2833771782234904,
+          "lower": 0.2433638060294455,
+          "upper": 0.32268244899981346,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "point": 0.16798006111895505,
+          "lower": 0.13215754380271083,
+          "upper": 0.21391239822980834,
+          "valid_draws": 1000
+        },
+        "brier": {
+          "point": -0.0008392638588140856,
+          "lower": -0.0011761256143829881,
+          "upper": -0.0005186810193216821,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "point": -0.0065218093624867385,
+          "lower": -0.009317930066578148,
+          "upper": -0.004259394672632313,
+          "valid_draws": 1000
+        }
+      },
+      "xgboost-minus-null": {
+        "roc_auc": {
+          "point": 0.22229749999415793,
+          "lower": 0.1766482199636648,
+          "upper": 0.2697812549023401,
+          "valid_draws": 1000
+        },
+        "average_precision": {
+          "point": 0.009161133172872479,
+          "lower": 0.005958349317588182,
+          "upper": 0.016230061833713474,
+          "valid_draws": 1000
+        },
+        "brier": {
+          "point": 2.243842534513374e-06,
+          "lower": -3.7432489053466605e-05,
+          "upper": 3.8095596830396465e-05,
+          "valid_draws": 1000
+        },
+        "log_loss": {
+          "point": -0.0006957400828337193,
+          "lower": -0.0025183583101298108,
+          "upper": 0.0009757559669044185,
+          "valid_draws": 1000
+        }
+      }
+    }
+  },
+  "calendar": {
+    "logistic": {
+      "2016-2018": {
+        "effective_sample": {
+          "landmarks": 67600,
+          "loans": 2423,
+          "positive_landmarks": 361,
+          "default_loans": 38
+        },
+        "metrics": {
+          "brier": 0.004687551590373015,
+          "log_loss": 0.02492460895296247,
+          "observed_rate": 0.005340236686390533,
+          "mean_probability": 0.00434062709215046,
+          "roc_auc": 0.8610280053222311,
+          "gini": 0.7220560106444622,
+          "pr_auc_trapezoid": 0.1922391711082842,
+          "average_precision": 0.19363205152245155,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.27219792189649744,
+          "joint_intercept": -0.27087331869676995,
+          "calibration_slope": 0.8757734992580529,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 59005,
+            "loans": 2142,
+            "positive_landmarks": 131,
+            "default_loans": 20,
+            "observed_rate": 0.0022201508346750276,
+            "mean_probability": 0.0013718695688440545,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 7430,
+            "loans": 356,
+            "positive_landmarks": 75,
+            "default_loans": 15,
+            "observed_rate": 0.010094212651413189,
+            "mean_probability": 0.00792619745340254,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 794,
+            "loans": 95,
+            "positive_landmarks": 34,
+            "default_loans": 16,
+            "observed_rate": 0.042821158690176324,
+            "mean_probability": 0.03303870962836144,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 371,
+            "loans": 78,
+            "positive_landmarks": 121,
+            "default_loans": 36,
+            "observed_rate": 0.3261455525606469,
+            "mean_probability": 0.343274514814091,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "2019-2021": {
+        "effective_sample": {
+          "landmarks": 39835,
+          "loans": 1503,
+          "positive_landmarks": 538,
+          "default_loans": 49
+        },
+        "metrics": {
+          "brier": 0.012441225077346638,
+          "log_loss": 0.07343329316364842,
+          "observed_rate": 0.013505711058114723,
+          "mean_probability": 0.003894804463665874,
+          "roc_auc": 0.7485357670350082,
+          "gini": 0.4970715340700165,
+          "pr_auc_trapezoid": 0.15334411580210086,
+          "average_precision": 0.15452835230398104,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.6866599398748994,
+          "joint_intercept": -0.028880520962399306,
+          "calibration_slope": 0.6794828927781035,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 36841,
+            "loans": 1408,
+            "positive_landmarks": 347,
+            "default_loans": 38,
+            "observed_rate": 0.009418853994191255,
+            "mean_probability": 0.0012281526576844001,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 2539,
+            "loans": 158,
+            "positive_landmarks": 62,
+            "default_loans": 15,
+            "observed_rate": 0.024419062623079954,
+            "mean_probability": 0.008362793857067837,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 265,
+            "loans": 79,
+            "positive_landmarks": 34,
+            "default_loans": 26,
+            "observed_rate": 0.12830188679245283,
+            "mean_probability": 0.04670916496545823,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 190,
+            "loans": 84,
+            "positive_landmarks": 95,
+            "default_loans": 47,
+            "observed_rate": 0.5,
+            "mean_probability": 0.40153737594440747,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "2022-2026": {
+        "effective_sample": {
+          "landmarks": 21377,
+          "loans": 688,
+          "positive_landmarks": 173,
+          "default_loans": 16
+        },
+        "status": "SUPPRESSED \u2014 INSUFFICIENT EVENT LOANS",
+        "observed_rate": 0.008092810029470926,
+        "mean_probability": 0.0028703475533618937
+      }
+    },
+    "xgboost": {
+      "2016-2018": {
+        "effective_sample": {
+          "landmarks": 67600,
+          "loans": 2423,
+          "positive_landmarks": 361,
+          "default_loans": 38
+        },
+        "metrics": {
+          "brier": 0.00533815235942321,
+          "log_loss": 0.03181529840362088,
+          "observed_rate": 0.005340236686390533,
+          "mean_probability": 0.004891343816882818,
+          "roc_auc": 0.7666661146192897,
+          "gini": 0.5333322292385794,
+          "pr_auc_trapezoid": 0.012382298155840764,
+          "average_precision": 0.013102248888117524,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.08965353466032491,
+          "joint_intercept": -1.4733681815665525,
+          "calibration_slope": 0.6735888234568371,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 51373,
+            "loans": 1811,
+            "positive_landmarks": 135,
+            "default_loans": 14,
+            "observed_rate": 0.0026278395265995754,
+            "mean_probability": 0.0017774513689801097,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 13276,
+            "loans": 498,
+            "positive_landmarks": 195,
+            "default_loans": 19,
+            "observed_rate": 0.014688159084061464,
+            "mean_probability": 0.009733244776725769,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 2951,
+            "loans": 114,
+            "positive_landmarks": 31,
+            "default_loans": 5,
+            "observed_rate": 0.010504913588614028,
+            "mean_probability": 0.037317268550395966,
+            "support": "sparse"
+          }
+        ]
+      },
+      "2019-2021": {
+        "effective_sample": {
+          "landmarks": 39835,
+          "loans": 1503,
+          "positive_landmarks": 538,
+          "default_loans": 49
+        },
+        "metrics": {
+          "brier": 0.013396679996976163,
+          "log_loss": 0.07720140084061936,
+          "observed_rate": 0.013505711058114723,
+          "mean_probability": 0.004704071661180577,
+          "roc_auc": 0.6966397257071848,
+          "gini": 0.3932794514143696,
+          "pr_auc_trapezoid": 0.023656987437213957,
+          "average_precision": 0.024821298786245824,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.0904577699661422,
+          "joint_intercept": -1.405132559045727,
+          "calibration_slope": 0.5018013542512365,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 30767,
+            "loans": 1154,
+            "positive_landmarks": 279,
+            "default_loans": 24,
+            "observed_rate": 0.009068157441414502,
+            "mean_probability": 0.0017617687117308378,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 7488,
+            "loans": 288,
+            "positive_landmarks": 217,
+            "default_loans": 21,
+            "observed_rate": 0.028979700854700856,
+            "mean_probability": 0.009858442470431328,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 1580,
+            "loans": 61,
+            "positive_landmarks": 42,
+            "default_loans": 4,
+            "observed_rate": 0.026582278481012658,
+            "mean_probability": 0.037571102380752563,
+            "support": "sparse"
+          }
+        ]
+      },
+      "2022-2026": {
+        "effective_sample": {
+          "landmarks": 21377,
+          "loans": 688,
+          "positive_landmarks": 173,
+          "default_loans": 16
+        },
+        "status": "SUPPRESSED \u2014 INSUFFICIENT EVENT LOANS",
+        "observed_rate": 0.008092810029470926,
+        "mean_probability": 0.004674462601542473
+      }
+    }
+  },
+  "segments": {
+    "logistic": {
+      "delinquency_state:(-1.0, 0.5]": {
+        "effective_sample": {
+          "landmarks": 127668,
+          "loans": 2418,
+          "positive_landmarks": 705,
+          "default_loans": 88
+        },
+        "metrics": {
+          "brier": 0.005500209923032128,
+          "log_loss": 0.036177393133222734,
+          "observed_rate": 0.005522135539054423,
+          "mean_probability": 0.001992460188086108,
+          "roc_auc": 0.6763917203107646,
+          "gini": 0.3527834406215291,
+          "pr_auc_trapezoid": 0.010084639195814165,
+          "average_precision": 0.01012660452774749,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.0320859537303162,
+          "joint_intercept": -1.8338844308994555,
+          "calibration_slope": 0.512125504799847,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 116307,
+            "loans": 2200,
+            "positive_landmarks": 564,
+            "default_loans": 67,
+            "observed_rate": 0.004849235213701669,
+            "mean_probability": 0.001273542776512384,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 10618,
+            "loans": 345,
+            "positive_landmarks": 141,
+            "default_loans": 21,
+            "observed_rate": 0.013279336974948201,
+            "mean_probability": 0.008005541844151899,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 743,
+            "loans": 30,
+            "positive_landmarks": 0,
+            "default_loans": 0,
+            "observed_rate": 0.0,
+            "mean_probability": 0.028598417609080117,
+            "support": "sparse"
+          }
+        ]
+      },
+      "delinquency_state:(0.5, 2.0]": {
+        "effective_sample": {
+          "landmarks": 1144,
+          "loans": 262,
+          "positive_landmarks": 367,
+          "default_loans": 95
+        },
+        "metrics": {
+          "brier": 0.22195013879498607,
+          "log_loss": 0.7289873085940916,
+          "observed_rate": 0.3208041958041958,
+          "mean_probability": 0.22339330384190662,
+          "roc_auc": 0.6612135685705168,
+          "gini": 0.32242713714103366,
+          "pr_auc_trapezoid": 0.47070089486141503,
+          "average_precision": 0.47228114677338745,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.7965634489854352,
+          "joint_intercept": -0.17104670986573936,
+          "calibration_slope": 0.3418473850467093,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 28,
+            "loans": 16,
+            "positive_landmarks": 0,
+            "default_loans": 0,
+            "observed_rate": 0.0,
+            "mean_probability": 0.0034184835316052272,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 92,
+            "loans": 51,
+            "positive_landmarks": 22,
+            "default_loans": 15,
+            "observed_rate": 0.2391304347826087,
+            "mean_probability": 0.013069430456944644,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 405,
+            "loans": 133,
+            "positive_landmarks": 88,
+            "default_loans": 50,
+            "observed_rate": 0.21728395061728395,
+            "mean_probability": 0.05543320768147414,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 619,
+            "loans": 156,
+            "positive_landmarks": 257,
+            "default_loans": 95,
+            "observed_rate": 0.41518578352180935,
+            "mean_probability": 0.374496583753183,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "orig_ltv:(-inf, 80.0]": {
+        "effective_sample": {
+          "landmarks": 105507,
+          "loans": 1962,
+          "positive_landmarks": 842,
+          "default_loans": 74
+        },
+        "metrics": {
+          "brier": 0.0070097558320855995,
+          "log_loss": 0.041125615311423606,
+          "observed_rate": 0.00798051314130816,
+          "mean_probability": 0.0027690214043917635,
+          "roc_auc": 0.7968132236851587,
+          "gini": 0.5936264473703174,
+          "pr_auc_trapezoid": 0.21403682261016013,
+          "average_precision": 0.21464690022209487,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.358774672828683,
+          "joint_intercept": 0.6543816870211745,
+          "calibration_slope": 0.8692438441801308,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 100208,
+            "loans": 1872,
+            "positive_landmarks": 502,
+            "default_loans": 60,
+            "observed_rate": 0.00500958007344723,
+            "mean_probability": 0.001103543934592988,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 4523,
+            "loans": 197,
+            "positive_landmarks": 80,
+            "default_loans": 24,
+            "observed_rate": 0.017687375635640063,
+            "mean_probability": 0.00776862797500432,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 432,
+            "loans": 118,
+            "positive_landmarks": 76,
+            "default_loans": 45,
+            "observed_rate": 0.17592592592592593,
+            "mean_probability": 0.0498657244064967,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 344,
+            "loans": 109,
+            "positive_landmarks": 184,
+            "default_loans": 74,
+            "observed_rate": 0.5348837209302325,
+            "mean_probability": 0.3630456786073156,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "orig_ltv:(80.0, inf]": {
+        "effective_sample": {
+          "landmarks": 23305,
+          "loans": 461,
+          "positive_landmarks": 230,
+          "default_loans": 21
+        },
+        "metrics": {
+          "brier": 0.009291287305697251,
+          "log_loss": 0.047784450242503745,
+          "observed_rate": 0.009869126796824716,
+          "mean_probability": 0.009344956257221907,
+          "roc_auc": 0.7873789627396487,
+          "gini": 0.5747579254792974,
+          "pr_auc_trapezoid": 0.14468746604462726,
+          "average_precision": 0.1464534456136483,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.07756848272798939,
+          "joint_intercept": -1.0973081189543679,
+          "calibration_slope": 0.6986494916289839,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 16127,
+            "loans": 328,
+            "positive_landmarks": 62,
+            "default_loans": 7,
+            "observed_rate": 0.0038444844050350346,
+            "mean_probability": 0.002333585083959609,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 6187,
+            "loans": 199,
+            "positive_landmarks": 83,
+            "default_loans": 12,
+            "observed_rate": 0.013415225472765475,
+            "mean_probability": 0.008254036943963025,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 716,
+            "loans": 45,
+            "positive_landmarks": 12,
+            "default_loans": 5,
+            "observed_rate": 0.01675977653631285,
+            "mean_probability": 0.030945643087900807,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 275,
+            "loans": 47,
+            "positive_landmarks": 73,
+            "default_loans": 21,
+            "observed_rate": 0.26545454545454544,
+            "mean_probability": 0.3888206250992863,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "orig_credit_score:(-inf, 720.0]": {
+        "effective_sample": {
+          "landmarks": 24375,
+          "loans": 464,
+          "positive_landmarks": 403,
+          "default_loans": 37
+        },
+        "metrics": {
+          "brier": 0.014430830002193027,
+          "log_loss": 0.07191800009013614,
+          "observed_rate": 0.016533333333333334,
+          "mean_probability": 0.010728277711519999,
+          "roc_auc": 0.7809569187211383,
+          "gini": 0.5619138374422765,
+          "pr_auc_trapezoid": 0.211309707600684,
+          "average_precision": 0.21257652344222833,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.620483838914208,
+          "joint_intercept": -0.4753288659876899,
+          "calibration_slope": 0.723755774283417,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 16376,
+            "loans": 333,
+            "positive_landmarks": 124,
+            "default_loans": 18,
+            "observed_rate": 0.007572056668295066,
+            "mean_probability": 0.0020791799827645915,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 6750,
+            "loans": 190,
+            "positive_landmarks": 102,
+            "default_loans": 16,
+            "observed_rate": 0.015111111111111112,
+            "mean_probability": 0.00871327464988938,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 877,
+            "loans": 68,
+            "positive_landmarks": 35,
+            "default_loans": 14,
+            "observed_rate": 0.039908779931584946,
+            "mean_probability": 0.0330293757891708,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 372,
+            "loans": 67,
+            "positive_landmarks": 142,
+            "default_loans": 37,
+            "observed_rate": 0.3817204301075269,
+            "mean_probability": 0.37546169722228734,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "orig_credit_score:(720.0, 780.0]": {
+        "effective_sample": {
+          "landmarks": 51504,
+          "loans": 977,
+          "positive_landmarks": 473,
+          "default_loans": 41
+        },
+        "metrics": {
+          "brier": 0.00822997771555622,
+          "log_loss": 0.04886180504532635,
+          "observed_rate": 0.009183752718235476,
+          "mean_probability": 0.0035111934279846266,
+          "roc_auc": 0.7270169030034102,
+          "gini": 0.4540338060068203,
+          "pr_auc_trapezoid": 0.16620947179137027,
+          "average_precision": 0.16799848846609008,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.2386030482036992,
+          "joint_intercept": 0.06297743460109279,
+          "calibration_slope": 0.7773949746664194,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 47701,
+            "loans": 899,
+            "positive_landmarks": 297,
+            "default_loans": 33,
+            "observed_rate": 0.0062262845642649,
+            "mean_probability": 0.0014304763453876343,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 3383,
+            "loans": 159,
+            "positive_landmarks": 45,
+            "default_loans": 13,
+            "observed_rate": 0.013301803133313627,
+            "mean_probability": 0.006955186249239903,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 206,
+            "loans": 65,
+            "positive_landmarks": 41,
+            "default_loans": 27,
+            "observed_rate": 0.19902912621359223,
+            "mean_probability": 0.058729078972372444,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 214,
+            "loans": 65,
+            "positive_landmarks": 90,
+            "default_loans": 41,
+            "observed_rate": 0.4205607476635514,
+            "mean_probability": 0.35970920006587553,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "orig_credit_score:(780.0, inf]": {
+        "effective_sample": {
+          "landmarks": 52933,
+          "loans": 982,
+          "positive_landmarks": 196,
+          "default_loans": 17
+        },
+        "status": "SUPPRESSED \u2014 INSUFFICIENT EVENT LOANS",
+        "observed_rate": 0.003702794098199611,
+        "mean_probability": 0.0012769552331154134
+      },
+      "loan_age:(-inf, 120.0]": {
+        "effective_sample": {
+          "landmarks": 94837,
+          "loans": 2423,
+          "positive_landmarks": 821,
+          "default_loans": 77
+        },
+        "metrics": {
+          "brier": 0.00781911768453686,
+          "log_loss": 0.04461711797628701,
+          "observed_rate": 0.008656958781910013,
+          "mean_probability": 0.0042067441866209115,
+          "roc_auc": 0.7703616182883116,
+          "gini": 0.5407232365766232,
+          "pr_auc_trapezoid": 0.15880809484185296,
+          "average_precision": 0.15950033845111689,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.9462908070961056,
+          "joint_intercept": -0.3033825271775493,
+          "calibration_slope": 0.7436057593589643,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 84086,
+            "loans": 2178,
+            "positive_landmarks": 438,
+            "default_loans": 54,
+            "observed_rate": 0.005208952738862593,
+            "mean_probability": 0.0013289428807025069,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 9245,
+            "loans": 379,
+            "positive_landmarks": 126,
+            "default_loans": 27,
+            "observed_rate": 0.013628988642509464,
+            "mean_probability": 0.007955163364702767,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 998,
+            "loans": 131,
+            "positive_landmarks": 62,
+            "default_loans": 36,
+            "observed_rate": 0.06212424849699399,
+            "mean_probability": 0.0356704375450093,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 508,
+            "loans": 122,
+            "positive_landmarks": 195,
+            "default_loans": 68,
+            "observed_rate": 0.3838582677165354,
+            "mean_probability": 0.35052150665988185,
+            "support": "descriptive"
+          }
+        ]
+      },
+      "loan_age:(120.0, inf]": {
+        "effective_sample": {
+          "landmarks": 33975,
+          "loans": 992,
+          "positive_landmarks": 251,
+          "default_loans": 29
+        },
+        "metrics": {
+          "brier": 0.006315528929704417,
+          "log_loss": 0.0359471167048356,
+          "observed_rate": 0.007387785136129507,
+          "mean_probability": 0.0032665297560309347,
+          "roc_auc": 0.8138168474246769,
+          "gini": 0.6276336948493537,
+          "pr_auc_trapezoid": 0.23456036392722673,
+          "average_precision": 0.2370912410898042,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 1.1376338370096244,
+          "joint_intercept": 0.3591797365092127,
+          "calibration_slope": 0.84927529974906,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 32249,
+            "loans": 943,
+            "positive_landmarks": 126,
+            "default_loans": 18,
+            "observed_rate": 0.003907097894508357,
+            "mean_probability": 0.0011309549499196807,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 1465,
+            "loans": 82,
+            "positive_landmarks": 37,
+            "default_loans": 9,
+            "observed_rate": 0.025255972696245733,
+            "mean_probability": 0.008641464571035283,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 150,
+            "loans": 50,
+            "positive_landmarks": 26,
+            "default_loans": 15,
+            "observed_rate": 0.17333333333333334,
+            "mean_probability": 0.05399984483082847,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.1, 1.0]",
+            "landmarks": 111,
+            "loans": 45,
+            "positive_landmarks": 62,
+            "default_loans": 29,
+            "observed_rate": 0.5585585585585585,
+            "mean_probability": 0.4842203600000024,
+            "support": "descriptive"
+          }
+        ]
+      }
+    },
+    "xgboost": {
+      "delinquency_state:(-1.0, 0.5]": {
+        "effective_sample": {
+          "landmarks": 127668,
+          "loans": 2418,
+          "positive_landmarks": 705,
+          "default_loans": 88
+        },
+        "metrics": {
+          "brier": 0.00552031707484753,
+          "log_loss": 0.03411427581518406,
+          "observed_rate": 0.005522135539054423,
+          "mean_probability": 0.004720607311777299,
+          "roc_auc": 0.6995316946920873,
+          "gini": 0.3990633893841746,
+          "pr_auc_trapezoid": 0.010253240496954433,
+          "average_precision": 0.010586536170637099,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.16005838987793816,
+          "joint_intercept": -2.1989819291763135,
+          "calibration_slope": 0.523452893333789,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 98275,
+            "loans": 1809,
+            "positive_landmarks": 368,
+            "default_loans": 41,
+            "observed_rate": 0.0037445942508267617,
+            "mean_probability": 0.0017650106456130743,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 24123,
+            "loans": 497,
+            "positive_landmarks": 266,
+            "default_loans": 37,
+            "observed_rate": 0.01102682087634208,
+            "mean_probability": 0.00985162053257227,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 5270,
+            "loans": 112,
+            "positive_landmarks": 71,
+            "default_loans": 10,
+            "observed_rate": 0.013472485768500948,
+            "mean_probability": 0.03634979948401451,
+            "support": "sparse"
+          }
+        ]
+      },
+      "delinquency_state:(0.5, 2.0]": {
+        "effective_sample": {
+          "landmarks": 1144,
+          "loans": 262,
+          "positive_landmarks": 367,
+          "default_loans": 95
+        },
+        "metrics": {
+          "brier": 0.31445822460629835,
+          "log_loss": 1.6152300514349969,
+          "observed_rate": 0.3208041958041958,
+          "mean_probability": 0.013371527834345222,
+          "roc_auc": 0.45547922387159445,
+          "gini": -0.0890415522568111,
+          "pr_auc_trapezoid": 0.2782460080888584,
+          "average_precision": 0.283828395616205,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 3.9478584962859293,
+          "joint_intercept": -1.316323917248214,
+          "calibration_slope": -0.1151378395435976,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 379,
+            "loans": 139,
+            "positive_landmarks": 130,
+            "default_loans": 44,
+            "observed_rate": 0.34300791556728233,
+            "mean_probability": 0.0025516997557133436,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 599,
+            "loans": 95,
+            "positive_landmarks": 199,
+            "default_loans": 40,
+            "observed_rate": 0.332220367278798,
+            "mean_probability": 0.010589172132313251,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 166,
+            "loans": 28,
+            "positive_landmarks": 38,
+            "default_loans": 11,
+            "observed_rate": 0.2289156626506024,
+            "mean_probability": 0.04811457172036171,
+            "support": "sparse"
+          }
+        ]
+      },
+      "orig_ltv:(-inf, 80.0]": {
+        "effective_sample": {
+          "landmarks": 105507,
+          "loans": 1962,
+          "positive_landmarks": 842,
+          "default_loans": 74
+        },
+        "metrics": {
+          "brier": 0.007918366072134465,
+          "log_loss": 0.04655362145187273,
+          "observed_rate": 0.00798051314130816,
+          "mean_probability": 0.0034464484579543094,
+          "roc_auc": 0.7538461416261565,
+          "gini": 0.507692283252313,
+          "pr_auc_trapezoid": 0.018621923735074,
+          "average_precision": 0.0192799523130973,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.8574662932209367,
+          "joint_intercept": -0.7313127992804771,
+          "calibration_slope": 0.6941572381763009,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 88411,
+            "loans": 1617,
+            "positive_landmarks": 454,
+            "default_loans": 40,
+            "observed_rate": 0.005135107622354684,
+            "mean_probability": 0.0016005990328267217,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 14555,
+            "loans": 294,
+            "positive_landmarks": 352,
+            "default_loans": 30,
+            "observed_rate": 0.024184129165235314,
+            "mean_probability": 0.00962316244840622,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 2541,
+            "loans": 51,
+            "positive_landmarks": 36,
+            "default_loans": 4,
+            "observed_rate": 0.014167650531286895,
+            "mean_probability": 0.03228994458913803,
+            "support": "sparse"
+          }
+        ]
+      },
+      "orig_ltv:(80.0, inf]": {
+        "effective_sample": {
+          "landmarks": 23305,
+          "loans": 461,
+          "positive_landmarks": 230,
+          "default_loans": 21
+        },
+        "metrics": {
+          "brier": 0.009829006654732846,
+          "log_loss": 0.05541264128263548,
+          "observed_rate": 0.009869126796824716,
+          "mean_probability": 0.01091367022823814,
+          "roc_auc": 0.6445185359649537,
+          "gini": 0.28903707192990735,
+          "pr_auc_trapezoid": 0.01689830952948484,
+          "average_precision": 0.018880214709775852,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": -0.10326189482656412,
+          "joint_intercept": -2.1899366202609327,
+          "calibration_slope": 0.5098946471361341,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 10243,
+            "loans": 194,
+            "positive_landmarks": 44,
+            "default_loans": 4,
+            "observed_rate": 0.004295616518598067,
+            "mean_probability": 0.0032132137566804886,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 10167,
+            "loans": 204,
+            "positive_landmarks": 113,
+            "default_loans": 10,
+            "observed_rate": 0.01111438969214124,
+            "mean_probability": 0.010222134180366993,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 2895,
+            "loans": 63,
+            "positive_landmarks": 73,
+            "default_loans": 7,
+            "observed_rate": 0.02521588946459413,
+            "mean_probability": 0.040587808936834335,
+            "support": "sparse"
+          }
+        ]
+      },
+      "orig_credit_score:(-inf, 720.0]": {
+        "effective_sample": {
+          "landmarks": 24375,
+          "loans": 464,
+          "positive_landmarks": 403,
+          "default_loans": 37
+        },
+        "metrics": {
+          "brier": 0.016396771440912925,
+          "log_loss": 0.0873288189369712,
+          "observed_rate": 0.016533333333333334,
+          "mean_probability": 0.013654707971473152,
+          "roc_auc": 0.5895590451059736,
+          "gini": 0.17911809021194713,
+          "pr_auc_trapezoid": 0.02010765674798721,
+          "average_precision": 0.02136580487809951,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.1975180596431866,
+          "joint_intercept": -2.6794163399557425,
+          "calibration_slope": 0.3063008250362881,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 6751,
+            "loans": 130,
+            "positive_landmarks": 49,
+            "default_loans": 5,
+            "observed_rate": 0.0072581839727447785,
+            "mean_probability": 0.002882306929677725,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 12792,
+            "loans": 235,
+            "positive_landmarks": 257,
+            "default_loans": 22,
+            "observed_rate": 0.02009068167604753,
+            "mean_probability": 0.0103890560567379,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 4832,
+            "loans": 99,
+            "positive_landmarks": 97,
+            "default_loans": 10,
+            "observed_rate": 0.020074503311258277,
+            "mean_probability": 0.03735063225030899,
+            "support": "sparse"
+          }
+        ]
+      },
+      "orig_credit_score:(720.0, 780.0]": {
+        "effective_sample": {
+          "landmarks": 51504,
+          "loans": 977,
+          "positive_landmarks": 473,
+          "default_loans": 41
+        },
+        "metrics": {
+          "brier": 0.009118921345588683,
+          "log_loss": 0.05428625854367593,
+          "observed_rate": 0.009183752718235476,
+          "mean_probability": 0.003907328072074606,
+          "roc_auc": 0.6643981233808758,
+          "gini": 0.32879624676175156,
+          "pr_auc_trapezoid": 0.015225109353993113,
+          "average_precision": 0.01635273102406351,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.8676807061533319,
+          "joint_intercept": -1.4365962659988336,
+          "calibration_slope": 0.5645597004417183,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 40444,
+            "loans": 736,
+            "positive_landmarks": 276,
+            "default_loans": 24,
+            "observed_rate": 0.006824250815943032,
+            "mean_probability": 0.002082723891362548,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 10456,
+            "loans": 226,
+            "positive_landmarks": 185,
+            "default_loans": 16,
+            "observed_rate": 0.01769319051262433,
+            "mean_probability": 0.0093665961176157,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 604,
+            "loans": 15,
+            "positive_landmarks": 12,
+            "default_loans": 1,
+            "observed_rate": 0.019867549668874173,
+            "mean_probability": 0.031576499342918396,
+            "support": "sparse"
+          }
+        ]
+      },
+      "orig_credit_score:(780.0, inf]": {
+        "effective_sample": {
+          "landmarks": 52933,
+          "loans": 982,
+          "positive_landmarks": 196,
+          "default_loans": 17
+        },
+        "status": "SUPPRESSED \u2014 INSUFFICIENT EVENT LOANS",
+        "observed_rate": 0.003702794098199611,
+        "mean_probability": 0.001584852347150445
+      },
+      "loan_age:(-inf, 120.0]": {
+        "effective_sample": {
+          "landmarks": 94837,
+          "loans": 2423,
+          "positive_landmarks": 821,
+          "default_loans": 77
+        },
+        "metrics": {
+          "brier": 0.008613175382989873,
+          "log_loss": 0.050210842298690835,
+          "observed_rate": 0.008656958781910013,
+          "mean_probability": 0.004774363435218718,
+          "roc_auc": 0.7225677993804563,
+          "gini": 0.4451355987609127,
+          "pr_auc_trapezoid": 0.01664925802444408,
+          "average_precision": 0.01714510423156953,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.6109455775842978,
+          "joint_intercept": -1.5359903451339705,
+          "calibration_slope": 0.5638337695364035,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 72565,
+            "loans": 1811,
+            "positive_landmarks": 379,
+            "default_loans": 36,
+            "observed_rate": 0.005222903603665679,
+            "mean_probability": 0.001770157483406365,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 18356,
+            "loans": 498,
+            "positive_landmarks": 384,
+            "default_loans": 34,
+            "observed_rate": 0.020919590324689475,
+            "mean_probability": 0.009732112288475037,
+            "support": "descriptive"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 3916,
+            "loans": 114,
+            "positive_landmarks": 58,
+            "default_loans": 7,
+            "observed_rate": 0.01481103166496425,
+            "mean_probability": 0.037204332649707794,
+            "support": "sparse"
+          }
+        ]
+      },
+      "loan_age:(120.0, inf]": {
+        "effective_sample": {
+          "landmarks": 33975,
+          "loans": 992,
+          "positive_landmarks": 251,
+          "default_loans": 29
+        },
+        "metrics": {
+          "brier": 0.007289487430894166,
+          "log_loss": 0.04242174812460965,
+          "observed_rate": 0.007387785136129507,
+          "mean_probability": 0.004861845975471308,
+          "roc_auc": 0.720279716149044,
+          "gini": 0.4405594322980879,
+          "pr_auc_trapezoid": 0.025848799203699046,
+          "average_precision": 0.03145581125104091,
+          "discrimination_status": "estimated"
+        },
+        "calibration": {
+          "epsilon": 1e-12,
+          "clipped_rows": 0,
+          "calibration_intercept": 0.42812914111503764,
+          "joint_intercept": -1.2570614183320543,
+          "calibration_slope": 0.6509334367442392,
+          "slope_status": "estimated",
+          "confidence_intervals": null,
+          "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+          "support_status": "estimated"
+        },
+        "reliability": [
+          {
+            "bin": "(-0.001000000001, 0.005]",
+            "landmarks": 26089,
+            "loans": 761,
+            "positive_landmarks": 119,
+            "default_loans": 14,
+            "observed_rate": 0.004561309364099812,
+            "mean_probability": 0.0017621234292164445,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.005, 0.02]",
+            "landmarks": 6366,
+            "loans": 190,
+            "positive_landmarks": 81,
+            "default_loans": 10,
+            "observed_rate": 0.012723845428840716,
+            "mean_probability": 0.010265614837408066,
+            "support": "sparse"
+          },
+          {
+            "bin": "(0.02, 0.1]",
+            "landmarks": 1520,
+            "loans": 41,
+            "positive_landmarks": 51,
+            "default_loans": 5,
+            "observed_rate": 0.03355263157894737,
+            "mean_probability": 0.035433076322078705,
+            "support": "sparse"
+          }
+        ]
+      }
+    }
+  },
+  "stability": {
+    "feature_psi": {
+      "orig_credit_score": 0.023861372512793192,
+      "orig_ltv": 0.005559920634492713,
+      "orig_dti": 0.00580286186759356,
+      "orig_interest_rate": 0.03916462359027602,
+      "original_loan_term": 0.008861900700795136,
+      "number_of_borrowers": 0.007778692831196966,
+      "loan_age": 10.630543421952822,
+      "delinquency_state": 0.0
+    },
+    "missingness": {
+      "orig_credit_score": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "orig_ltv": {
+        "development": 0.00018379435082999858,
+        "evaluation": 0.0
+      },
+      "orig_dti": {
+        "development": 0.3304225599211355,
+        "evaluation": 0.3356441946402509
+      },
+      "orig_interest_rate": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "original_loan_term": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "number_of_borrowers": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "loan_age": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "delinquency_state": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "loan_purpose": {
+        "development": 0.0,
+        "evaluation": 0.0
+      },
+      "occupancy_status": {
+        "development": 0.0,
+        "evaluation": 0.0
+      }
+    },
+    "event_rate": {
+      "development": 0.005346744751418141,
+      "evaluation": 0.008322206005651648
+    },
+    "prediction_psi": {
+      "logistic": 0.23861824188302236,
+      "xgboost": 0.00764025746732196
+    },
+    "psi_interpretation": "Descriptive development-bin statistic; no universal threshold"
+  },
+  "logistic_coefficients": [
+    {
+      "feature": "orig_credit_score",
+      "coefficient": -0.3611942469679257,
+      "odds_ratio": 0.6968436255580268,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "orig_ltv",
+      "coefficient": 0.23542573031881703,
+      "odds_ratio": 1.2654473933925676,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "orig_dti",
+      "coefficient": 0.28358161415122213,
+      "odds_ratio": 1.3278772494662165,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "orig_interest_rate",
+      "coefficient": 0.40490510297926635,
+      "odds_ratio": 1.4991602274670621,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "original_loan_term",
+      "coefficient": 0.267901559719855,
+      "odds_ratio": 1.3072184507304347,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "number_of_borrowers",
+      "coefficient": -0.2083587863216263,
+      "odds_ratio": 0.8119156802073279,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "loan_age",
+      "coefficient": -0.09516590193928753,
+      "odds_ratio": 0.9092220802487173,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "delinquency_state",
+      "coefficient": 0.29714297417866764,
+      "odds_ratio": 1.3460077300411497,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "missingindicator_orig_ltv",
+      "coefficient": -0.07013063915661338,
+      "odds_ratio": 0.9322720207197289,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "missingindicator_orig_dti",
+      "coefficient": 0.596498834023633,
+      "odds_ratio": 1.815750414934316,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "loan_purpose_N",
+      "coefficient": -0.6596184402220615,
+      "odds_ratio": 0.5170485818005417,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "loan_purpose_P",
+      "coefficient": -0.16392107685049667,
+      "odds_ratio": 0.848809009917108,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "occupancy_status_P",
+      "coefficient": 0.18231843464834463,
+      "odds_ratio": 1.1999962534311166,
+      "direction": "positive",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    },
+    {
+      "feature": "occupancy_status_S",
+      "coefficient": -0.0193547561762616,
+      "odds_ratio": 0.9808313445383949,
+      "direction": "negative",
+      "scale": "one development SD for numeric features; category vs reference for one-hot"
+    }
+  ],
+  "categorical_references": {
+    "loan_purpose": "C",
+    "occupancy_status": "I"
+  },
+  "xgboost_explanations": {
+    "effective_sample": {
+      "landmarks": 1000,
+      "loans": 1000,
+      "positive_landmarks": 6,
+      "default_loans": 6
+    },
+    "unit": "one earliest evaluation landmark per deterministic selected facility",
+    "scale": "raw XGBoost log odds; calibrated probabilities have a further sigmoid mapping if retained",
+    "global_mean_abs": {
+      "orig_credit_score": 0.6334701180458069,
+      "orig_ltv": 0.2675439119338989,
+      "orig_dti": 0.16294711828231812,
+      "orig_interest_rate": 0.3997829258441925,
+      "original_loan_term": 0.18422552943229675,
+      "number_of_borrowers": 0.18401332199573517,
+      "loan_age": 0.011886627413332462,
+      "delinquency_state": 0.0,
+      "missingindicator_orig_ltv": 0.0,
+      "missingindicator_orig_dti": 0.20139899849891663,
+      "loan_purpose_N": 0.016138657927513123,
+      "loan_purpose_P": 0.0,
+      "occupancy_status_P": 0.0,
+      "occupancy_status_S": 0.0
+    },
+    "half_sample_rank_spearman": 0.9954022988505749,
+    "causal": false,
+    "direction_bins": [
+      {
+        "feature": "orig_credit_score",
+        "bin": "(-5.205, -0.644]",
+        "rows": 255,
+        "mean_standardized_feature": -1.4869881456046763,
+        "mean_shap_logodds": 0.6449297666549683
+      },
+      {
+        "feature": "orig_credit_score",
+        "bin": "(-0.644, 0.263]",
+        "rows": 248,
+        "mean_standardized_feature": -0.1478815053538897,
+        "mean_shap_logodds": -0.2117745727300644
+      },
+      {
+        "feature": "orig_credit_score",
+        "bin": "(0.263, 0.782]",
+        "rows": 253,
+        "mean_standardized_feature": 0.5280012655649947,
+        "mean_shap_logodds": -0.6173028349876404
+      },
+      {
+        "feature": "orig_credit_score",
+        "bin": "(0.782, 1.754]",
+        "rows": 244,
+        "mean_standardized_feature": 1.0351762863227092,
+        "mean_shap_logodds": -0.8785048723220825
+      },
+      {
+        "feature": "orig_interest_rate",
+        "bin": "(-2.808, -0.824]",
+        "rows": 301,
+        "mean_standardized_feature": -1.2921438731048696,
+        "mean_shap_logodds": -0.40498602390289307
+      },
+      {
+        "feature": "orig_interest_rate",
+        "bin": "(-0.824, -0.0798]",
+        "rows": 274,
+        "mean_standardized_feature": -0.35259877403331746,
+        "mean_shap_logodds": -0.37477701902389526
+      },
+      {
+        "feature": "orig_interest_rate",
+        "bin": "(-0.0798, 0.664]",
+        "rows": 232,
+        "mean_standardized_feature": 0.4103511887532749,
+        "mean_shap_logodds": -0.29472869634628296
+      },
+      {
+        "feature": "orig_interest_rate",
+        "bin": "(0.664, 2.399]",
+        "rows": 193,
+        "mean_standardized_feature": 1.3045368855671844,
+        "mean_shap_logodds": 0.5503770709037781
+      },
+      {
+        "feature": "orig_ltv",
+        "bin": "(-2.984, -0.71]",
+        "rows": 260,
+        "mean_standardized_feature": -1.4323101766446633,
+        "mean_shap_logodds": -0.5219911932945251
+      },
+      {
+        "feature": "orig_ltv",
+        "bin": "(-0.71, 0.189]",
+        "rows": 247,
+        "mean_standardized_feature": -0.1761061520446576,
+        "mean_shap_logodds": -0.16235999763011932
+      },
+      {
+        "feature": "orig_ltv",
+        "bin": "(0.189, 0.559]",
+        "rows": 298,
+        "mean_standardized_feature": 0.4723064937916392,
+        "mean_shap_logodds": 0.017234841361641884
+      },
+      {
+        "feature": "orig_ltv",
+        "bin": "(0.559, 2.833]",
+        "rows": 195,
+        "mean_standardized_feature": 1.2278106088574272,
+        "mean_shap_logodds": 0.31909844279289246
+      },
+      {
+        "feature": "missingindicator_orig_dti",
+        "bin": "(-0.7, 1.431]",
+        "rows": 1000,
+        "mean_standardized_feature": 0.05521923953368471,
+        "mean_shap_logodds": -0.043250661343336105
+      }
+    ]
+  },
+  "model_agreement": {
+    "rank_spearman": 0.870025477860681,
+    "top_5_percent_overlap": 0.6788819875776397,
+    "disagreement_top_1_percent_effective_sample": {
+      "landmarks": 1288,
+      "loans": 205,
+      "positive_landmarks": 308,
+      "default_loans": 95
+    },
+    "disagreement_observed_rate": 0.2391304347826087,
+    "mean_logistic": 0.1986074436562148,
+    "mean_xgboost": 0.03246394544839859,
+    "ids_published": false
+  },
+  "hazard": {
+    "estimand": "monthly default hazard with payoff censored; twelve-month net-default projection not primary CIF",
+    "development_selection": {
+      "effective_sample": {
+        "landmarks": 95601,
+        "loans": 2778,
+        "positive_landmarks": 43,
+        "default_loans": 43
+      },
+      "metrics": {
+        "brier": 0.00018883292619655388,
+        "log_loss": 0.0005504886030134198,
+        "observed_rate": 0.00044978609010366,
+        "mean_probability": 0.0003584367423845947,
+        "roc_auc": 0.9998924310914058,
+        "gini": 0.9997848621828116,
+        "pr_auc_trapezoid": 0.7856407396235766,
+        "average_precision": 0.7884658662928465,
+        "discrimination_status": "estimated"
+      }
+    },
+    "temporal_monthly": {
+      "effective_sample": {
+        "landmarks": 132409,
+        "loans": 2423,
+        "positive_landmarks": 95,
+        "default_loans": 95
+      },
+      "metrics": {
+        "brier": 0.0006499596701805678,
+        "log_loss": 0.0024993394525466032,
+        "observed_rate": 0.0007174738877266651,
+        "mean_probability": 0.00012524543056332134,
+        "roc_auc": 0.9993094576458075,
+        "gini": 0.998618915291615,
+        "pr_auc_trapezoid": 0.33924377404762485,
+        "average_precision": 0.3445219494770987,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 2.421779258223696,
+        "joint_intercept": 1.7635927710264105,
+        "calibration_slope": 0.8080066678871363,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "Point calibration diagnostics only; no iid/Wald interval; loan-cluster intervals supplied for core predictive metrics",
+        "support_status": "estimated"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 132173,
+          "loans": 2421,
+          "positive_landmarks": 5,
+          "default_loans": 5,
+          "observed_rate": 3.782920868861265e-05,
+          "mean_probability": 1.6457313742962945e-06,
+          "support": "sparse"
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 38,
+          "loans": 24,
+          "positive_landmarks": 17,
+          "default_loans": 17,
+          "observed_rate": 0.4473684210526316,
+          "mean_probability": 0.012440273390289726,
+          "support": "sparse"
+        },
+        {
+          "bin": "(0.02, 0.1]",
+          "landmarks": 139,
+          "loans": 75,
+          "positive_landmarks": 56,
+          "default_loans": 56,
+          "observed_rate": 0.4028776978417266,
+          "mean_probability": 0.0492745528834675,
+          "support": "descriptive"
+        },
+        {
+          "bin": "(0.1, 1.0]",
+          "landmarks": 59,
+          "loans": 26,
+          "positive_landmarks": 17,
+          "default_loans": 17,
+          "observed_rate": 0.288135593220339,
+          "mean_probability": 0.15329165632018574,
+          "support": "sparse"
+        }
+      ]
+    },
+    "clustered_uncertainty": {
+      "draws": 1000,
+      "seed": 51005,
+      "unit": "loan_id",
+      "invalid_single_class_draws": 0,
+      "loan_sample_sequence_sha256": "68fb663b88d629471e55fbe59fb07caea4c6c7b4ac57c374269e2eacd3368d82",
+      "fixed_fit_only": true,
+      "intervals": {
+        "hazard_monthly": {
+          "brier": {
+            "lower": 0.0005155300607334696,
+            "upper": 0.0007874231411007196,
+            "valid_draws": 1000
+          },
+          "log_loss": {
+            "lower": 0.0019748674150871096,
+            "upper": 0.00302888262322994,
+            "valid_draws": 1000
+          },
+          "observed_rate": {
+            "lower": 0.0005694169154897823,
+            "upper": 0.0008651790181225709,
+            "valid_draws": 1000
+          },
+          "mean_probability": {
+            "lower": 8.537918109854048e-05,
+            "upper": 0.00017448363515049862,
+            "valid_draws": 1000
+          },
+          "roc_auc": {
+            "lower": 0.9989741187660405,
+            "upper": 0.9995722018652331,
+            "valid_draws": 1000
+          },
+          "gini": {
+            "lower": 0.9979482375320808,
+            "upper": 0.9991444037304663,
+            "valid_draws": 1000
+          },
+          "average_precision": {
+            "lower": 0.2619014445586954,
+            "upper": 0.4718031084401012,
+            "valid_draws": 1000
+          },
+          "pr_auc_trapezoid": {
+            "lower": 0.2517329206422408,
+            "upper": 0.45932800618136743,
+            "valid_draws": 1000
+          }
+        }
+      },
+      "paired": {}
+    },
+    "net_12m": {
+      "effective_sample": {
+        "landmarks": 128812,
+        "loans": 2423,
+        "positive_landmarks": 1072,
+        "default_loans": 95
+      },
+      "mean": 0.00082445566356322,
+      "minimum": 4.175028798046392e-08,
+      "maximum": 0.980367694361545
+    },
+    "events_once_per_facility": true
+  },
+  "preservation": {
+    "previous_file_sha256": {
+      ".dockerignore": "dbe9970ebe60c67057306de378787e5ae2aba3a4b7611adffde996a1618dd9e8",
+      ".gitattributes": "a32e8395c132d43683f8a916d528db4f979838ba8b44a981544b3a255292aaae",
+      ".github/workflows/ci.yml": "cd89b8270db53b4a9e7ca468999d5dd37d754a0ac7b8ad09abf784fc63474bcb",
+      ".gitignore": "7496dd6d0137e3301255c59c39d51db74eff3d86133c5299e29bc21f4264d5c2",
+      ".python-version": "ceba8fa5c10f40fbed8feb7eb5238b63dda568908acfd874ee413747b29936c8",
+      "Dockerfile": "027286b78221c5226185c38019ab4c5b00a5546da0ba64cf6f0f6c3eea6e92ea",
+      "Makefile": "4ca2b06c3694650c3c91cc371a9c61f558f411fe07559312476956b8ac261975",
+      "README.md": "44b70c4091bed4ff8296b2208843a58bedc9f568258aee41895b449980bef555",
+      "api/main.py": "b4492dc8b977594e78b92bb32aa8d71b2cd44a46fc3ffab864b8b66d2fdb3091",
+      "api/schemas.py": "f3849fc1bfbf4c41ee26f7abe9d412e1e42b1f451112172ce081fb3e42b9acd4",
+      "app.py": "16f392b4a88c298124734c6138032da304f9cf6e796602e0f26caf9526c8a232",
+      "configs/credit_strategy.yaml": "23481c9279ed9611ecb1b290bfd25ff1dbce7b991212853f4f5c44cdc2d894c5",
+      "configs/decision_policy.yaml": "ec968d785f046f2928131904e703ea3d2150ad929eba99d266291f3152044867",
+      "configs/development.yaml": "5d69ad1b2c5a20b1ee3c11d08df6c1d216c1575f61a9006fc3cf633cd5ca3be8",
+      "configs/expected_loss.yaml": "3dff4b671c0c4200e0556ca2d601c5bf43002645e5de270f49e9b069d5a2e22e",
+      "configs/model.yaml": "f33d4f59254ac2a2144345ef25f074a6b4c5758ce057f412f2085c6b59eaa98e",
+      "configs/monitoring.yaml": "89f820bd23082cab2d7d7224a8f52f0af36fbbfceffe57e0a891d6eda952d5c4",
+      "configs/portfolio.yaml": "7d1ed62996a264085d9062a7597ed4ad8546d1b671070347b93eb0ee8ca89c89",
+      "configs/reject_inference.yaml": "18e21d9e53586c640820e6f4584d50e9348478674d57d3ed27723e13aa38c41f",
+      "configs/serving.container.yaml": "fb047bbd0071903661178515308caadc03b294d51c2c6bbbc78d1202a2d8f8e0",
+      "configs/serving.yaml": "b662354b1902b1be4b2eb519c1166bbf2528accabc3897b347b661be9ef4c19d",
+      "configs/synthetic_portfolio.yaml": "60b16657df0aa1ff13c88add4e5325aeeba3a3a8cdc29bea26df553727d8feed",
+      "configs/target.yaml": "c17e83d7744cdb8f6b5ae0326898d73be8a0eacd5e1283d7134b30034ee12590",
+      "configs/tracking.yaml": "25cc4ad9a979893723338e59330cad5dce34db97355d111dda211f8813390e77",
+      "configs/validation.yaml": "2d9715d087d680fbc06e5694e078770738aec851ad1fdb8b16431617025e851f",
+      "credit_risk(1).ipynb": "0bc38570343da2df50dbeef7442df24d6c4ef3535343a77bce4e15b492becf84",
+      "data/README.md": "012ac4faedc8509e2e4a875df7bb300ba11c5eeaa3a5ee1044f31b6392b539b1",
+      "docs/DATA_DICTIONARY.md": "ef4a51a90988f64be93254209a1876b3f2b155628d9ee936913abf486ef8f801",
+      "docs/HOLDOUT_REGISTRY.md": "a8d2a872ea7fc3771421218a63c8bd8cc98b05e9936a36d2cc74d4ef0140a048",
+      "docs/REPOSITORY_AUDIT.md": "d86202d4e74b5986998456d1746924cdef2ed9a6ee99749a108e4a629d749fd6",
+      "docs/TARGET_DEFINITION.md": "e395d39191921f592d3d6142450dcfe1d6ebef1b241fa173413f5ae46861d716",
+      "docs/api_tracking.md": "b17e4cf4142bf63a10d9500ebfc67faffc775d285c05bbb7f7d5229dd48da74d",
+      "docs/architecture.md": "491e5f5fa75d5607a13e0d915a2d36a57e4b6c832a863339dfe7093c47021d08",
+      "docs/calibration_validation.md": "1617be8e704e932e309b4479c92d34b6d628b50b8473ebbb690b5ca3fd75f3d3",
+      "docs/credit_strategy.md": "dfc15b923eb25cfc824dadd893d23ab7ae567799104697dd17d1a919ded99b16",
+      "docs/data_contracts.md": "f0edb6ccd49efaa83eb60aa7bd0e0d0654fb35c55688b892f6d7b37445401568",
+      "docs/expected_loss.md": "fbc7c42366d228cb7e9be7cc850159186bc14ddf8105a4a194986831cfc4d680",
+      "docs/history/README.md": "7631827e3698cef001529295e53bd093ed5c2413ab79358be2586a4a4ff8748a",
+      "docs/history/README_v1.md": "de5efdfaac9233d2847623b07b9d0b952ea8f4881ab0190bb424f51750b4062f",
+      "docs/model_governance.md": "8b4b273842622d130b235357f1ce889a67eeeca1ba80ef30f7870f4110bdb579",
+      "docs/monitoring.md": "7b0491d42c8be6c69b0efad35e3cc4e8493cb3c2aade562c757653d516eee8df",
+      "docs/pd_modeling.md": "c1328f91b7a7001c4709b2d7f75e59ffb6be5c3a7e147e66ca583cd3b553904c",
+      "docs/portfolio_analytics.md": "b6edb690e798d0775bf6cc30ac5f56bd05a807b42bea5b98419979672306c3d9",
+      "docs/reject_inference.md": "1f388593d8b051df0ad89e16486801ad7029932627c89033030d0f07bcd2250e",
+      "docs/testing_ci_docker.md": "703b244d984848732898136cd30ca5d31ce7ad63ee91a54b07ea1cb3d1567cff",
+      "docs/track_b/ANNUAL_BUNDLE_ACQUISITION_AMENDMENT.md": "a54cf1754dc785c02bb77d6cbaedebe08b2d3fb28e6db681dbface4adacebe2c",
+      "docs/track_b/DATASET_COMPARATIVE_ASSESSMENT.md": "a98ce48c3bd8953725d2d4ea8225e19421912050e22424d21fdccfe7f1bb2022",
+      "docs/track_b/DATASET_SEARCH_STRATEGY.md": "ed7003dab5ea6052d7223750a4a0bfececf49442108abcb00510233998868942",
+      "docs/track_b/DATASET_SELECTION_DECISION.md": "e443c2e1daa6b5946e731de424017af17117d03ce967a73bbebeeadf97b2d875",
+      "docs/track_b/DATASET_SUITABILITY_FRAMEWORK.md": "c1bc14e02eac7cdd711c5cbebd36a372340f84f7dc9bcd806fa2e90e100369ab",
+      "docs/track_b/FIELD_DICTIONARY_COMPARISON.md": "1c717bc291d7003f6383a8fcfcedfed2767c6140765cf318415e224a62b6e369",
+      "docs/track_b/LONGITUDINAL_DATA_CONTRACT.md": "2174c4e984052bd0decd7d33d19b1eec1e33793b4bb67cd17f6e0fefd4b25c00",
+      "docs/track_b/MORTGAGE_RESEARCH_DESIGN.md": "1e314248e8fca328e6661dae57284469561fd1f143aa9ddd875e032eae93d5c9",
+      "docs/track_b/PANEL_ENGINEERING.md": "6c24191ee0ac1a1f47c01f7f66532150b08201ee387bef2f4f53d7ef51a8ae65",
+      "docs/track_b/PD_COHORT_DESIGN.md": "7f9b36969b7bf56e9062079921f3d4918e38e3439d39a8cbccbaa59d17114762",
+      "docs/track_b/SAMPLE_EXPANSION_AMENDMENT.md": "87890329944f5addb8af3593bff4f98704a42bf085e8a50f52119ef9a0f41354",
+      "docs/track_b/annual_bundle_acquisition_amendment.json": "ce4daee66263a308e0bc8521a4d561a587cb806d0d69bdb0db517a433396f372",
+      "docs/track_b/field_dictionary_comparison.json": "a37af0abc0fdee1e5e040a37300df628d71d1479ae805be58da99342099faa36",
+      "docs/track_b/mortgage_research_protocol.json": "ce3cc22db877e35f75c202c7a0d2dca9736638d3095402cb5cf4873371e91b7a",
+      "docs/track_b/pd_feature_registry.json": "bd3b0aeec7577ec5211f151bc3f11ef6bcaf67b008538f78685eba722c05763d",
+      "docs/track_b/sample_expansion_amendment.json": "78ec14bd89b533d5faa1e29cb8463e1e0b29ba12e61d8650caf3c9224860a78a",
+      "main.py": "b62bc5092ae72347ded775167e835a406ae2208acb7bab010c586ecabfc4f854",
+      "pyproject.toml": "b1ccf8345f3cc49de5e066c0f61348e15f540677d3960f3da3efa6f8f520c2da",
+      "reports/baseline/Baseline_Model_Report.md": "03636b350d9608c66afed189a14852c01eb8c1d5d8c26af705a67e9c56bb2248",
+      "reports/credit_policy.md": "98478055c986f44e3e21897d5d29dac872a96452cccbb3dd87c152b0ea767ff8",
+      "reports/data/DATASET_SUITABILITY.md": "a0c1b3dc41c53e761547163966d6305fe6287d0ba4d86d20fa6620e98e7747a7",
+      "reports/data/DATA_AUDIT.md": "05c9e43f472821f69208e914176564d6a19925a82cd744ed1225d0a06e41d889",
+      "reports/data/LEAKAGE_REVIEW.md": "d1839750ae30d9bae0b04095dc7e64b305015e29a7c1193f2ad5076eac70fc57",
+      "reports/data/TRAINING_DATA_AUDIT.json": "fc1507b36191379a5a38c675b920923bab70cb1ab5fe6f1b5768aa888e68c4eb",
+      "reports/figures/phase10_monitoring.png": "c1065d6faab572856b3d314e0b2a6f6056286eab4a237e64377c57fc911e648c",
+      "reports/figures/phase5_calibration.png": "7f65dfd121223025fbcb7a70cf8b57eb8ea89c8bdf7bb759f76781d21fe60413",
+      "reports/figures/phase5_discrimination.png": "9ecb61ab61d8e6a0d5152e341c6f9656f39329c841418f49da81542699e3c63a",
+      "reports/figures/phase6_roll_rates.png": "44581b0f5f8808ba028dc48983b723c55ad87514ceabac9fce660a766eb27192",
+      "reports/figures/phase6_vintages.png": "00e48ffeee98b5afae23c76ef8c3ea37b33178cf1423eccdcd5019eff48b4b24",
+      "reports/figures/phase7_expected_loss.png": "a5a3e90fd95de3c4fb852f20e881d50bd123a8d83090b27535a1b9c8e2df20ec",
+      "reports/figures/phase8_policy_comparison.png": "64384446f2e254de1a3488148c1b77c852c68d10c4b2ff01448c492d92e85ebd",
+      "reports/figures/phase9_reject_inference.png": "49a23a85d9a051ccbf8628bd75acb1c48cba1b958a878c30c381fc1927d589cc",
+      "reports/final_repository_audit.md": "988d6646138d09fad82f9e5fd5add270ec358bd8b7e77d5c1d3fbac9ec2e3876",
+      "reports/governance_register.json": "b016c61938fac4fdc7f72b80b4cf43fa2a1b32956f2f3a4c92dd607f812149c7",
+      "reports/holdout_registry.json": "5937d349ae1c33791f81b626090b4ff22b071c575761f51e5bb50fdb08a5cd77",
+      "reports/model_card.md": "183e86dc219581321967c057603bc391bad0f2058e71382ee2239472cee8ed7b",
+      "reports/model_risk_register.md": "d847e827abadbbc1f26f188c8b784f1f935647a4cbae770adc47f218df753f7a",
+      "reports/model_validation/CALIBRATION_STUDY.md": "b420d1742b557560da863350d71ee9e5c27c16b879c833c558d5eb7d0dec77fb",
+      "reports/model_validation/EXPLAINABILITY_STABILITY.md": "75e73a46225e1caa0a74d1be2a6a119d69105cb3bd365500f3a9915f412775f8",
+      "reports/model_validation/MODEL_DEVELOPMENT_VALIDATION_REPORT.md": "ef7f1795e1962e478ec9d179367adb1b7ac63cbd0210eb1fead79d16a7232604",
+      "reports/model_validation/PD_DIAGNOSTICS.md": "e56489ca3a28efb439ad595061b8728cd37c14db8f035c7967a40ffc4c73dad6",
+      "reports/model_validation/calibration_comparison.png": "8df111642fc1d536cd7950e037466a57362d584d4887311a2b8976be4e2f60cf",
+      "reports/model_validation/calibration_study.json": "10a7198a612c19003518abfa153889f26c6c4bc674165b8098a69dfdbb29782f",
+      "reports/model_validation/cross_model_ranks.png": "b0a7aae24aa26aa29e2ba694f65bcf52def12f84f6bff89620613f444586dd7a",
+      "reports/model_validation/explainability_stability.json": "a2a99a2179972cdc55acca88dfd8015c3d02facba8ad7cd2f20eaa5a493b103e",
+      "reports/model_validation/logistic_coefficient_stability.png": "c73f2144fe05b4c114a9d0a8ff7b2a29dafd12a6b807e0eda0609bd2aea26c92",
+      "reports/model_validation/logistic_coefficients.png": "5cc108ce85129f388a3f02f8a605f18b4e8653349f19e2d9a73151ab08198882",
+      "reports/model_validation/model_validation_manifest.json": "50ff2e06188324a77e9d46ae34ba437d32ac220f5bee726ff9e451f324656ae7",
+      "reports/model_validation/pd_diagnostics.json": "1a4764eacabaf7983008fbf26139a14d6ac41d4a5396441c3f58a4fde0a38b18",
+      "reports/model_validation/pd_diagnostics.png": "eaf1f230d91cd8e428428fd884eccfd1189543b175d03a6236f980278e1a3e45",
+      "reports/model_validation/shap_dependence.png": "bc7cb31cb769a600e38b846e361b9d1e94fcc78b460f8d0fd7a32242c39044fb",
+      "reports/model_validation/xgboost_shap_stability.png": "b7af621cb0d504a987b09e4df67b3e69919fc377f7481a66bc474f14252a0655",
+      "reports/model_validation/xgboost_shap_summary.png": "f1a29b1e65a199c07a9541280bb70a0824b281f53c9fe7353cb2e2b4e7381f45",
+      "reports/monitoring_report.md": "823db689c53230653be70c38a2c768fd407f328219d839411b63dffb6acee551",
+      "reports/phase10_monitoring_summary.json": "ea6d97521f138d3fa5815e02f53ddcb3bb864cff494aee789a1d88471ea2bb2d",
+      "reports/phase11_api_tracking_report.md": "82f4045607cac37ce1a1bc4233ee05fceba40c474c9a68a50de959d8f815ee14",
+      "reports/phase11_integration_summary.json": "5cba423484deec21f9ba3ee29b4fbe830e761886d0ed90a52544a4113dcbecd9",
+      "reports/phase12_engineering_report.md": "7749f67d1889cd0c057713d35f3cabac2ef69d7f398cef418f7eb5c309fd2ab1",
+      "reports/phase13_governance_report.md": "634904ff2bffa8e13c6de20fcc0ec412c5bbcc8c9801453735504aa0401a738d",
+      "reports/phase1_audit.md": "4511e6ba303fb308ae28293c239140fbde5cf6252600bfea154ec93eddf7ce9a",
+      "reports/phase1_inventory.json": "3f1d5fce8c80935cec148740929013377f7b34447aebebfcc73252bd64f0b4f9",
+      "reports/phase2_architecture.md": "b0d81fd76e516390dbb7b51515bda2af42bd1dea187c289f78c7ce6012d60d71",
+      "reports/phase3_data.md": "da68f3dea4981d4040d963b326314620fa43a7691425938735e8901a2838384b",
+      "reports/phase3_demo_summary.json": "b27f6ea30bebe5c6db251c7d5d152ff308ce5b91863dcc71b2354ee377a84d97",
+      "reports/phase4_experiment.json": "7894e7dd967c33c8f1a75112bfc48169bf54e9e7b034533d9476c5fc879726a0",
+      "reports/phase4_modeling.md": "f427af319831db7d5726afede9a9613b8c1c7a7c0fce5459737cd80deaaa2ddb",
+      "reports/phase5_validation_summary.json": "1b8f6d29b7b0cb571b7c4e5d3d3cf0f964ae873a1b629ed03240c1c92f6d2215",
+      "reports/phase6_portfolio_report.md": "7b49c9baa327aaf9be4d926d0b01eb5e5b5b49eb2f9501bc5121b5522cc1aa34",
+      "reports/phase6_portfolio_summary.json": "925eca176a4104040b8a3bc72ef4b9c9e2cc0a6e9f420c866fb17143c6c2f940",
+      "reports/phase7_expected_loss_report.md": "28f1e2fe0949ebc83738849d1a4a854db8b512ee5b2673368e33840bc4ef88ed",
+      "reports/phase7_expected_loss_summary.json": "d48bfeb02bf247cde4a5f0c2dfc8f31fec9a191b45da121c637ae88a8e8183a1",
+      "reports/phase8_policy_summary.json": "7ef8ede2b1b18e5b5239ce5e33c06c8a09a74920a29b3bf774db418104e3ab6e",
+      "reports/phase9_reject_summary.json": "f5ef52ba7b168911b2522aba42ad44f8b32b071ab94516cbf9275c7e766d9fe6",
+      "reports/reject_inference_report.md": "0167542e5e4ed97451ea66c81b37b22d74ca7715e9a18a88c63441cbcdf57d41",
+      "reports/track_b/FREDDIE_2010_DATA_AUDIT.md": "fe6a78b39452ed871589d528a4ffdf2234151d36004ea0b24adec616349d1a11",
+      "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.json": "b56e4ac042b0fca85bd3b947f0442ac876cd3adb461b805f59faba1c009b3a1d",
+      "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.md": "a248829a23b01e84bc1c36daef25a389161dcfc9a587e21b62790408742a2670",
+      "reports/track_b/PD_BASELINE_VALIDATION.md": "77e566d8125ed5c529c875675f7946f6fe884e6cdbd5241f8b6469b91a5409c6",
+      "reports/track_b/SAMPLE_EXPANSION_FEASIBILITY.md": "a5b2dcdabdf077fe52f9daf31bef66c876965deba5bf61fb1e1047a9452fce19",
+      "reports/track_b/freddie_2010_data_audit.json": "4d2818aa5e95542a0c0264865fd3718bd30e4f85354b305df835e28a9c424dc3",
+      "reports/track_b/pd_baseline_validation.json": "4dc9a587f7d96c8affed8a586e2bf88e96033124b8ec7f112f63b8fe42e7b936",
+      "reports/track_b/sample_expansion_feasibility.json": "11b5311fd61bb652d03ec49ad931ce898c3f70dd90192229b3cc9bf8759ff8f4",
+      "reports/validation_report.md": "5ac24938888cf7d579a78ccf6965e2cf0689addf22cb1addec0fb1832860bb68",
+      "scripts/build_track_b_panel.py": "31a5c7eabbd9bc558df82ff93b123e6d93cbea68d5051605dda3b02ab4ad69e3",
+      "scripts/calibration_study.py": "e11ce8345fe6f4e97ab79f0d296334ec4a0950bd7cd7888734afd51f304448bf",
+      "scripts/check_governance.py": "ecdaaadb539f75f70e10321f7e15ecb4e7a0c5eac6304314040bb18f04c85083",
+      "scripts/check_phase1.py": "f62c535d3279df61550a0ccb12b8b16e4ee921354e8dacc59e205d7e9499abea",
+      "scripts/check_phase11.py": "60321fc13604e80884fca6254e47aa9479c2446951382bc7db78170d89d6a646",
+      "scripts/check_release.py": "d959a59d9e45648c6f804ead049b9bf3a3943fd8a05687ec2f17e0b2a521edd7",
+      "scripts/check_repository.py": "b4d810a4bfb08b17402f4b167cb4f2cb6dadef789ed66cfcb8921be3db2b12da",
+      "scripts/compare_policies.py": "5e3d512a4019d9066713fb7460a38a303cd378f97e928ace279429db9a09dfdf",
+      "scripts/expected_loss.py": "e3f1bb058064fc7fbec64f8cb3b3b83d1654e982a626a343542c3145ab4402af",
+      "scripts/explainability_study.py": "a470650f318d0a017c522a53eec1421c934b836991b20b091804e0223644c602",
+      "scripts/generate_model_validation_report.py": "881ad72847572bffa2c41a95ebbfe660046079d11641782ae1c5a83a47acc523",
+      "scripts/make_monitoring_demo.py": "b0dcac185bddd9f5fdc8116f5c47cbc68bd0ae7663ee0f3cbbb0aa4984f0941e",
+      "scripts/monitor.py": "2da46d3ebb26ffb294254cc8061dadf3265c87c0413352adc828c40eaf0add36",
+      "scripts/pd_diagnostics.py": "c10fa1a10235a4eebad35155f06d77e800121a60f22745d815ed37a749fc96e8",
+      "scripts/portfolio.py": "d1f6f5db12b3eff7d0db721a94e18cfbe58d8e481f1b518eef336c8b5cd2efaf",
+      "scripts/reject_inference.py": "711337d1db5a43b78062d067524a3ac4d484c55b11fc1fe570e51e5a2d1a6a19",
+      "scripts/run_track_b_expansion.py": "5f19b2c4598a21eb85b2b68e6f99a51dd413215e4defeae589c32eea82132a17",
+      "scripts/run_track_b_pd_baseline.py": "86fb5e2c1a2b2cfa602b53dd6b072c2a1fa4f04fc2ca259f6d3f7b7f1a8b3861",
+      "scripts/smoke_container.py": "c8ad4f57760d4d332bbad5560091ceb7080c7a8d88273a0dbb9726e5483a72d8",
+      "scripts/smoke_installed.py": "83db0a56ff4e95d5f7d88bc4edbfe715da085b82ca742d993348930017d1cc43",
+      "scripts/train.py": "3e3f028c6acbe6fcd875e44824006f9a0c06144008f3caaf8600adc2dcb6165d",
+      "scripts/validate.py": "b179ac67b68cb290487e2a6290c95432350836582ee4a5409e3d1c5cfc77262f",
+      "sql/delinquency_analysis.sql": "af0f1c5c554e0a6c021a69aa87b100fb1161e743031427cd99ddcc4e887279f4",
+      "sql/portfolio_snapshot.sql": "3f07b805e78e3b75d869c0ab3375f901894ed621addfa7758f585338a50eed57",
+      "sql/roll_rates.sql": "88458828e4bf27f06da93811bd7e8ba3324dead5996ffdbe927eba1940bc915f",
+      "sql/vintage_analysis.sql": "2dac93db9cf479f06654829e7c713acac6baf737ed95e83326071a77474f62e6",
+      "src/credit_risk/__init__.py": "188ab448b072aed14ced4f7746195b26a990a51fa58a6beec4af649c89dd79de",
+      "src/credit_risk/api/__init__.py": "4afcdf5f8a5a4bc75d07cad4d6822ea8016d847fec237accd7debbca40aae2d4",
+      "src/credit_risk/api/main.py": "b7d401e80e70a689e9bf2878c4cf24f0023d104356faeb169f6a1dc0e578611b",
+      "src/credit_risk/api/schemas.py": "af6ba373158bf46b75dc74f013ab53f9357444215470294e7a6372f8075598b8",
+      "src/credit_risk/api/service.py": "02c5c42c0cee7b52b7a86a3253383b0c76c543a05d4dacc5865f0f80e4b8f856",
+      "src/credit_risk/api/settings.py": "acadb851068dbfa83dccb96a299a314f524f126001a5caf5d695d95b56212d2b",
+      "src/credit_risk/cli.py": "b421ba4f861b159870c5b9e168c2c9bab0c130e4df007f23b393e9441a1a1c87",
+      "src/credit_risk/data/__init__.py": "8736139787021faa75693500b5e19094c4c6306c442404f25580daad58eb4981",
+      "src/credit_risk/data/audit.py": "41cfe9d6c8ec8e3b0774b2294d27b0dca6812246027b0a4aa1c0bff70431a2e3",
+      "src/credit_risk/data/loaders.py": "1cfd7ac9053b13cf69bd07cd29eaab187023e5312886aaddbdebe0d8e654f1d8",
+      "src/credit_risk/data/synthetic_portfolio.py": "938692a1864a1442d42f794543be80ff5fa57fd1178b88ee380d3daa9b32045e",
+      "src/credit_risk/data/targets.py": "ab22fd57eb4b43baa55e13e8d982c8151c56ced0e59122398ccc2a85d1a1632e",
+      "src/credit_risk/data/validation.py": "02d3bad035c7cb7fd5aee1a1b6da28a7ad3b7f3f2933781883294cbc5af45091",
+      "src/credit_risk/decisioning/__init__.py": "5ca5388307ad2448d5ffaff18707ff29e477a57faaca2d849092200cc74f64cb",
+      "src/credit_risk/decisioning/policy.py": "201b76da51bcbe731dac81306fb41aa541b915a3d1d9908a6e32ef1aaeb1481a",
+      "src/credit_risk/decisioning/reject_inference.py": "6edaec71df62070e42841bf152e37b1eaf30ed4d64879875aef2ae047c998c43",
+      "src/credit_risk/decisioning/reject_runner.py": "1c0d4976caa1821f1e49d8b40353e2d9fc4badde74ad1f240eac0508e659d206",
+      "src/credit_risk/decisioning/reject_settings.py": "4918fbf3e6905c1dc22b742f15e34a7a9180f57472561987fd07a5504f954b47",
+      "src/credit_risk/decisioning/runner.py": "ab32a89418069aa3648f577e93ed6772cf3ec7d0cd2d8f4e274f460a5d7d4a4c",
+      "src/credit_risk/decisioning/settings.py": "b89ab8b81b9045446de647995c1602382de39f48e2d63e5a4a4a07c8fc530bde",
+      "src/credit_risk/explainability/__init__.py": "87062768eaef21a3cfa25ee87a9aac6136629ab628aaee7e6242ae5b6b920df6",
+      "src/credit_risk/explainability/logistic.py": "042c2d6436376acd69deb45b8c8fe72caf65d864a33d009b84ee7c3364eb4349",
+      "src/credit_risk/explainability/reporting.py": "fecb77e147830cbfa08cd1acc4ebe32494f3b762e67d5ca8dabca01deba7bf4b",
+      "src/credit_risk/explainability/stability.py": "212b4e2708f65d8e25d4d409075fbdf901a46c2eeb5cf0dc576b8ed7265a71ea",
+      "src/credit_risk/explainability/study.py": "58b92fd0cc81623f7132be67854d01941154954d91f4b9b9658c1e11d1c85227",
+      "src/credit_risk/explainability/xgboost.py": "654e5251c5d7076cf0b30a31d1fd1d4a2842d08d4c122bd654ff546d603fa561",
+      "src/credit_risk/features/__init__.py": "08a7d5214d2d52481a035a5a944975133fe64c311ef6afc916de4d7153905bf3",
+      "src/credit_risk/features/origination.py": "6cbb3d9442caf77aad9f70e099503566c8a9d39afbb52c7caec87ef3f86d6cf7",
+      "src/credit_risk/models/__init__.py": "2abb4cca8b5108f5ce7a1186eb5a5911967d0254032133d03c7f2a02ebfd2403",
+      "src/credit_risk/models/calibration.py": "307cc6f3f5f887392fde6ee06250bb88e16c41c05db456049c079d7a35988344",
+      "src/credit_risk/models/pd.py": "dce0e3d2bb5993714446c5f0fa60428bf02a9a8c02fb610877ac7cd3dbe24ff3",
+      "src/credit_risk/models/transition_pd.py": "f4bb904d3d7aac1a9716fc258965a7e1d5624df08fad0f335dd9a733493f3de4",
+      "src/credit_risk/monitoring/__init__.py": "29b1c1962f9e3f3e84347a69f29cff80c0be88870edd433c93ad4cff72f91fcc",
+      "src/credit_risk/monitoring/demo.py": "e086633061f552cccf6780fca2282ca67740a0b28180a126639359ec923af898",
+      "src/credit_risk/monitoring/drift.py": "b94ba87bc59414044d333b0ea955f67eb4fa034fa1fb2c4c5addadf2126408a6",
+      "src/credit_risk/monitoring/runner.py": "a947401cf517af0ccb2331f6bb2b4383364c3611e7398e343c825ecaf92fd291",
+      "src/credit_risk/monitoring/settings.py": "f63678bc3ab930700702b4fc34a2200dec6d683d108a6a10b28cfd73346cdea1",
+      "src/credit_risk/portfolio/__init__.py": "2f285a5908dc19cfce595f9cdadfde0f105c8a1aa9443f03c4f29b1e94508964",
+      "src/credit_risk/portfolio/common.py": "ec524340bd7f5817b878d035229ba053cec0c6ccf1c9ccc8f0fe4a5997291071",
+      "src/credit_risk/portfolio/expected_loss.py": "1ea03c26d9e28b06db52befaa92bb159baa0bbdddf02ad0eda7a9f9182063243",
+      "src/credit_risk/portfolio/loss_plots.py": "f600c1cf143949b6eb22413bb4be88c89c6ba2f12e2d265b698df2318f6144d4",
+      "src/credit_risk/portfolio/loss_runner.py": "b8093fd120ee426e750e3eee321673d3e9c383911163d83afed3e9cdec843827",
+      "src/credit_risk/portfolio/loss_settings.py": "1312d8d1270733e47de6e1cc182fad00ca4209349a039a0a7c93e9d0a96302bc",
+      "src/credit_risk/portfolio/plots.py": "4410fc388d0163bfc2e5f569f3bcd4af7a1b8276901b5c19f9766ecbf2c83dd6",
+      "src/credit_risk/portfolio/roll_rates.py": "a78abdd29b05f159ead0b7d9382d9276246ebe029cd9c7fd836138864da4425d",
+      "src/credit_risk/portfolio/runner.py": "afabd8b82a1dd18219e742ee2ea4da683f490c828d4533200820bfb2e444d518",
+      "src/credit_risk/portfolio/settings.py": "13f2e8c065838a5c624a9552e697461e816983cd4257f8be161655e38137086d",
+      "src/credit_risk/portfolio/vintage.py": "2be2b4cea32e8ac9ac152a3b0ea6594f9db1eec90a153aff2353928d0d73ad10",
+      "src/credit_risk/reporting/__init__.py": "b2de00f14c6314168f192df9d159df480dde2cc93fa4978b7649afc15cdf6bc4",
+      "src/credit_risk/reporting/evidence.py": "ca0152013aa9230c3c68e2754661ce2a567bd9f013350eec2d572613b5f27e9f",
+      "src/credit_risk/reporting/mdvr.py": "8ac1fbd76f7d89f9954aa028228dc8a43f0a53aa796c0d5fd4d237f283a6c2e5",
+      "src/credit_risk/track_b/__init__.py": "d20b21b36ce2ce7f3c8da86f8379e9f65c325a17a7ed9b664e50c48cf44f58a8",
+      "src/credit_risk/track_b/data/__init__.py": "91f1c8c2f021965b0b48b2f5fd1c7fce6e93e09ee1fca32f033116ac025b8cbf",
+      "src/credit_risk/track_b/data/annual.py": "429bae05a953620ae09ad0a33f2078c6544696c30cc6de4c5291b27237d3425b",
+      "src/credit_risk/track_b/data/annual_report.py": "44a473d3c445fb0402f6006e4f2ff3166c07392590012a7ed2bff6fef28016bb",
+      "src/credit_risk/track_b/data/annual_run.py": "8fc934b23aa4de68f72653bcbf5203f69d23ca0bf26bb359b8d19f25c7191b19",
+      "src/credit_risk/track_b/data/freddie.py": "4bf917befa33efa1344fc90d2ac112901264f1fd7b1a6def4d95e71407883199",
+      "src/credit_risk/track_b/data/panel.py": "00dbc085228634c80ffa6f11d7f3102174ae6893896fb47b3559718d122e61c2",
+      "src/credit_risk/track_b/data/preflight.py": "cbcb0bc46f200871f79af38600c6a845ef443cf4a56ac3da84e2981fa7e7f0fd",
+      "src/credit_risk/track_b/data/sampling.py": "8fdaa7abea1a8b37b778c7d0b1c30f2bee43924c0e75de5833d487aed83d2606",
+      "src/credit_risk/track_b/data/schemas.py": "a51bcceabd4c0ab0bbae045983d318cf248f2558768e524bb8f36770c9bcc7ac",
+      "src/credit_risk/track_b/data/workflow.py": "5b95dfe7a2dca27bab7a39e3c1748e7f6a353bc3a308664853886bc084304b13",
+      "src/credit_risk/track_b/expansion/__init__.py": "1e5f25453365baab26201ca32ffd72c3a74534481b59a91ca46e8e26f74035b6",
+      "src/credit_risk/track_b/expansion/empirical.py": "a65ccd89c08929450050289f1de35b33249d0586570457f8bb80dd75a71eb59f",
+      "src/credit_risk/track_b/expansion/planning.py": "15ad427bb4122a4c046c96a86678b4b9f04138234ada12cf37c62f5b8006f8e7",
+      "src/credit_risk/track_b/expansion/reporting.py": "4f904ac6de1b4121d5179a62c2860cfda29996c7945c9e495481efd1e4569440",
+      "src/credit_risk/track_b/pd/__init__.py": "096972b347d02e213092d55e735d94737c71070bcba6a9b32b115d53b4ceef85",
+      "src/credit_risk/track_b/pd/baseline.py": "56a18b5fe4b88f0be78bead6352b10d19f1feeaccf4feeeb18a83acef0afdc1a",
+      "src/credit_risk/track_b/pd/research.py": "f86c48b7a81d1890bf128b43536c314f64a57b1ed36ade9cc72f371537aa61c3",
+      "src/credit_risk/tracking/__init__.py": "a427a3c4c14774113d05113ccbda19b36e92dfdebc8637a0a9c293b8d39029f9",
+      "src/credit_risk/tracking/mlflow.py": "c1dae1368eb16814c1cd93e70535670bc19740867789a9c88ed759fa732512b7",
+      "src/credit_risk/tracking/settings.py": "11bb3027458b58237146cb61e1eccf55aa45375b44327f6276b827c74d4138a3",
+      "src/credit_risk/utils/__init__.py": "b61c1d0d0b8a7529569d88b65eb78820b8be98d2a1330e59a865b7d1c693c78a",
+      "src/credit_risk/utils/config.py": "9b26248bfb20abd4280d1acd7d0bb37114c0544f0c2d2251f874a7a2ff660bc4",
+      "src/credit_risk/utils/logging.py": "195019874818e1a01f8e979ca03e34373b8314733c08b26b44fe895fcadf2e3d",
+      "src/credit_risk/validation/__init__.py": "f01d34aa46303eff440136c3dd8f1e0e3ed7123e62a373df30e87b8abcbd6113",
+      "src/credit_risk/validation/backtesting.py": "ff53898a9d52d218bfb4bdfc146fcd33780c2509edb3b7344e8be9c8bb033e60",
+      "src/credit_risk/validation/calibration.py": "9af17172c833cf2cfb4f274f5662be9e0423a1923d4571dc7464e909062de5da",
+      "src/credit_risk/validation/calibration_study.py": "38005e1ae57713ea900fbacfe9f41a767512367ed348b96a77eb9faab211e448",
+      "src/credit_risk/validation/diagnostics.py": "8c2f3456f1c6d2818905d350d1065c9ff0fb0b306d4d3b67eede31cc34c49e4e",
+      "src/credit_risk/validation/holdout_registry.py": "9edb283232c509aecd015fcaaafb7d1ffbdfec09f48fad2226c4a446b84c619b",
+      "src/credit_risk/validation/metrics.py": "3195821b50e0f72d218fe7e0b2dda436a985aba991f00a6987e3f412f2ccc91a",
+      "src/credit_risk/validation/pd_diagnostics.py": "47ed5fc40767f5efae97a62848118e1b20d33737472898a88607394b87396657",
+      "src/credit_risk/validation/plots.py": "b6d17313a14df1b518cab9e1cb0aa46192b3058f25b49618ac4c67d70d90d5f7",
+      "src/credit_risk/validation/runner.py": "5fa59d5ff13c7dc75fe61c79c46a98803a09aa50bed209aa6e787a6dcf31afcd",
+      "src/credit_risk/validation/settings.py": "8c02424076d20415b26329b69606bdd5903ea7c1de499fab55fa9270b4d8f8bb",
+      "src/credit_risk/validation/stability.py": "bac2e3f39a34e5dbfad997a5252d874a160f2e025865ab656d6b7957cb8f82d0",
+      "src/credit_risk/validation/thresholds.py": "5344476e206333b660b5e6eea19dfe52a2d2eb17f36820ba779e20e06d3667ae",
+      "templates/home.html": "6dd921c3581ccafb7f326bfe8f5f750938c6f61e1c1b3d83ed52f38b051131ef",
+      "templates/result.html": "b4c9301d0a88395e4d0f357f79db7579be28d71c2a4a6e8c526554e1c507ee6b",
+      "tests/test_api.py": "711aa1f556c3b412cc3ca7e45d053ed612c87ae67743ddb07fe1177e333f08fa",
+      "tests/test_calibration.py": "6b635d8ee78909f87b61e0873b194e587dbeb9661935f857f441ee2f9e394e8c",
+      "tests/test_calibration_study.py": "4a3d7eaf2afeda7439ce91c96a0f235336b929015ebf44b480ef86734d9e73de",
+      "tests/test_config.py": "17e385e897a59953e0a7b4791eaeda8057cbac02ca3c3e8a6e9d15c2e9fff48d",
+      "tests/test_container_smoke.py": "50f262efe76ac05bd77647b0e77ff6f433670dacda3af86a35e9237741a8492d",
+      "tests/test_credit_strategy.py": "4d3fdfedbf0291ceb8a9fc6f82996aa0af0e9458ba1c75ac88d0b05e0039f8c3",
+      "tests/test_data.py": "9759eb08bdea9cb40425728d66f71e0363a468a44f304dcb67dec7abb53d5ebf",
+      "tests/test_data_audit.py": "34db98e64f85e12af2314be729ef6976c242ed550f533e80b158e83c4ba79941",
+      "tests/test_expected_loss.py": "2059142ac709201cf9ea18dcec4dbac2f9c9eb93a60c19e953702697dc41ff64",
+      "tests/test_explainability.py": "0fe892cd637f10334b008a0bbc552e7e2d0b327f102ccb3421639256a9f93ffc",
+      "tests/test_holdout_registry.py": "d76019ced907be6fdf754bdc18015f9490587bebe47d135180cf4d3d6215735c",
+      "tests/test_metrics.py": "a9d0af513d0058299893c85a7e81660910660a720ace12b329ac14c55f622bac",
+      "tests/test_model_validation_report.py": "cebd773d6e775141bca7181f71f1aa97658b6d1898323db52a6ae9fca7e9fda0",
+      "tests/test_monitoring.py": "c432b504f48ea6d6ca0411bc2955ee186c8504984282e5704e5bfbc7bf537980",
+      "tests/test_pd.py": "d951bc88b47b90fe3b8439a6de93b1af0298cd586c94668801f1c5ff6a84be4e",
+      "tests/test_pd_diagnostics.py": "1299e4dea05192b9f7cfa9c0bf9b1b3280abcb9d94fca8d0c1e31fb45a5a0f63",
+      "tests/test_portfolio.py": "4eb223cb913e1a1558d52e038ca37c19c2aded6b91a778e282a779da58ffb980",
+      "tests/test_reject_inference.py": "0af3dfe5e21962165c4b0dee4128efcb5759a7bd443bae2595f060c5bcfc1b31",
+      "tests/test_release.py": "049491ef56c798dd5cfdf8e95a2deeef60e412dd6bad92d679cd330ea28e60a3",
+      "tests/test_serving_integration.py": "25f5a4f60c703166f5fa7ce854a6005663f8265c0fa120acd317b09ee016edc8",
+      "tests/test_targets.py": "31a14aacd5f3f1bbc44a689132028b59ad5bd943793a29f0e9423d72cf6d30c5",
+      "tests/test_track_b_annual.py": "89f4eb4dccce73f073badfbacb9213a72026ffa6e169c75f6e63dc6407b1f6ce",
+      "tests/test_track_b_dataset_comparison.py": "7ffc50df6d218436992dd2f9f38060163d29b0d08d9ed7f46f74965fddc82729",
+      "tests/test_track_b_documentation.py": "daebf9ea7152acad4786df534d14e40a584a215522380c515080c68d01baf190",
+      "tests/test_track_b_expansion.py": "0388614eacfd1880302f075983f8848655b86abbdc1d8df9a63bc8c5d600b11d",
+      "tests/test_track_b_panel.py": "31bec0e16f5949f653e29a095d0b477d4a65eaf008b4a8dc16ec86316521bfea",
+      "tests/test_track_b_pd_baseline.py": "450cbc35b471748f5e2503d572ac78d7e75808d85cd903144b0f9e338cf82dcc",
+      "tests/test_track_b_preflight.py": "de69b7e4449b2a29cea593836384d30449f9da00cbf24e36f74b970355d2ce2e",
+      "tests/test_track_b_research_design.py": "0ee2af4a0e8f5cb7c108cf8bd6e160c2432e67b018297c5aaac21c56f3ee5d2c",
+      "tests/test_tracking.py": "31dc99cf6acaf89f09aaa3b19f04f5c3842c529ab38d9ba6eb186b95a384677d",
+      "tests/test_validation.py": "8b058d32bdd2f03a856219165ddb117aa4aaea89964bd5f5d72d3d5c31c7a2c6",
+      "uv.lock": "ae21727ef6def2de31a8186b00bb0465eb07bad06360eec276d2cf2131376040",
+      "data\\track_b\\manifests\\freddie_2010_manifest.json": "58e6efe1ab096250637a73e7d5faa480c3805f7b74c91a3a9c929a7ce5e39a5b",
+      "data\\track_b\\manifests\\annual_2010_v1\\panel_manifest.json": "f89a8ff09223c6d632a63ecd87f22e627751736ca73b7c8c7db21733efcc050e",
+      "data\\track_b\\manifests\\annual_2010_v1\\run_audit.json": "4d2818aa5e95542a0c0264865fd3718bd30e4f85354b305df835e28a9c424dc3",
+      "data\\track_b\\manifests\\annual_2010_v1\\sample_manifest.json": "5065b3fa9df503bb415e457219395cde772d8e9dd4422d9e4f4bc7999ea3db01",
+      "data\\track_b\\manifests\\annual_2010_v1\\source_manifest.json": "312d8fe1dddcfbfa17d1514062617643af27e8c6c61e71305759f54b5bafa9ea",
+      "data\\track_b\\manifests\\expansion_v1\\panel_manifest.json": "f9af8f49d275e9313427ef298efd8ba652381e4464884a4dcda60b1c6bc6a166",
+      "data\\track_b\\manifests\\expansion_v1\\phase_a_test_attestation.json": "a434d60ff6cfb626768d57ea27efca3d58bfaf18e74cb650670f8a941af68068",
+      "data\\track_b\\manifests\\expansion_v1\\sample_manifest.json": "b1143e54eeb2c49a842b50fbb28474f1266916c7efc420b6710f4a7bd47aec59",
+      "data\\track_b\\manifests\\expansion_v1\\scan_started.json": "86ebbbbc0f6ed451c00418fe66b41e63d0acd943bd216c1beb29248225893b07",
+      "data\\track_b\\processed\\expansion_v1\\panel.csv": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad"
+    },
+    "unchanged": true,
+    "source_unchanged": true,
+    "sample_unchanged": true
+  },
+  "runtime_seconds": 111.54700000002049,
+  "resources": {
+    "peak_working_set_bytes": 1367040000,
+    "source_performance_rescanned": false
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.2.0",
+    "credit-risk-lab": "0.12.0"
+  },
+  "limitations": [
+    "Historical operational knowledge time UNVERIFIED; nominal-time retrospective research",
+    "2010-vintage facilities only; ageing/survival selection and calendar drift confounded",
+    "Unknown borrower identity; loan clusters are not proven independent borrower clusters",
+    "Fixed-fit bootstrap excludes development model uncertainty",
+    "Tasks3/4 outcomes and nested Task3 scores previously seen; Task5 specifications frozen without new predictive evaluation",
+    "Internal development partitions grouped but not time-held-out; calibration from development cannot guarantee temporal calibration",
+    "Hazard net-risk projection with frozen covariates is not payoff-adjusted primary cumulative incidence",
+    "No regulatory/IFRS9/IRB/production/fairness/causal/external-validity claim",
+    "This bounded, strongly regularized challenger did not split current delinquency; failure is specific to its prespecified architecture, not a universal failure of boosting",
+    "Monthly hazard discrimination is largely recognition of imminent movement across the delinquency default proxy boundary, not evidence of reliable twelve-month or lifetime forecasting",
+    "Hazard net-risk projection freezes delinquency; future distress evolution and payoff are not modeled. Its low projected mean must not be called calibrated primary CIF",
+    "Static sensitivity removes both age and delinquency, so the difference does not isolate the causal effect of delinquency",
+    "Raw probabilities are materially too low out of time; development sigmoid hurt Brier despite small log-loss improvements, so raw remained frozen. No post-evaluation recalibration permitted here"
+  ],
+  "next_task": "Formal survival and competing-risk modeling of default versus payoff with the frozen cohort",
+  "post_evaluation_diagnostic_supplement": {
+    "recorded_at": "2026-10-06T21:47:49.703641+00:00",
+    "reason": "Interpretation audit after initial frozen evaluation; no model or prediction changes",
+    "models_modified": false,
+    "predictions_regenerated": false,
+    "primary_metrics_recomputed": false,
+    "metrics_added": [
+      "categorical delinquency PSI",
+      "current-state exposure/event counts",
+      "frozen booster split usage"
+    ],
+    "source_sha256_lf": "01a8122e4ae7e23875a68b094c7f1cc057a61d075d9594f7e7a3ab4a94841406",
+    "delinquency_state_counts": {
+      "development": {
+        "00": {
+          "landmarks": 476338,
+          "loans": 13795,
+          "positive_landmarks": 1729,
+          "default_loans": 235,
+          "fraction": 0.9948662896097712
+        },
+        "01": {
+          "landmarks": 1982,
+          "loans": 723,
+          "positive_landmarks": 486,
+          "default_loans": 219,
+          "fraction": 0.004139550038012013
+        },
+        "02": {
+          "landmarks": 476,
+          "loans": 267,
+          "positive_landmarks": 345,
+          "default_loans": 216,
+          "fraction": 0.0009941603522168104
+        }
+      },
+      "evaluation": {
+        "00": {
+          "landmarks": 127668,
+          "loans": 2418,
+          "positive_landmarks": 705,
+          "default_loans": 88,
+          "fraction": 0.9911188398596404
+        },
+        "01": {
+          "landmarks": 893,
+          "loans": 260,
+          "positive_landmarks": 199,
+          "default_loans": 93,
+          "fraction": 0.006932583920752725
+        },
+        "02": {
+          "landmarks": 251,
+          "loans": 122,
+          "positive_landmarks": 168,
+          "default_loans": 95,
+          "fraction": 0.001948576219606869
+        }
+      },
+      "hazard_monthly_evaluation": {
+        "00": {
+          "landmarks": 131219,
+          "loans": 2418,
+          "positive_landmarks": 0,
+          "default_loans": 0,
+          "fraction": 0.9910126955116344
+        },
+        "01": {
+          "landmarks": 939,
+          "loans": 264,
+          "positive_landmarks": 0,
+          "default_loans": 0,
+          "fraction": 0.0070916629534246165
+        },
+        "02": {
+          "landmarks": 251,
+          "loans": 122,
+          "positive_landmarks": 95,
+          "default_loans": 95,
+          "fraction": 0.0018956415349409782
+        }
+      }
+    },
+    "categorical_delinquency_psi": 0.0020966374995279547,
+    "numeric_quantile_psi_warning": "Mostly-zero delinquency collapses development deciles at zero; reported numeric PSI=0 is uninformative, not proof of stability",
+    "frozen_xgboost_split_counts": {
+      "orig_credit_score": 85,
+      "orig_ltv": 82,
+      "orig_dti": 47,
+      "orig_interest_rate": 43,
+      "original_loan_term": 23,
+      "number_of_borrowers": 28,
+      "loan_age": 9,
+      "delinquency_state": 0,
+      "missingindicator_orig_ltv": 0,
+      "missingindicator_orig_dti": 24,
+      "loan_purpose_N": 6,
+      "loan_purpose_P": 0,
+      "occupancy_status_P": 0,
+      "occupancy_status_S": 0
+    },
+    "loan_age_ranges": {
+      "development": [
+        1.0,
+        59.0
+      ],
+      "evaluation": [
+        1.0,
+        190.0
+      ]
+    },
+    "interpretation": [
+      "This bounded, strongly regularized challenger did not split current delinquency; failure is specific to its prespecified architecture, not a universal failure of boosting",
+      "Monthly hazard discrimination is largely recognition of imminent movement across the delinquency default proxy boundary, not evidence of reliable twelve-month or lifetime forecasting",
+      "Hazard net-risk projection freezes delinquency; future distress evolution and payoff are not modeled. Its low projected mean must not be called calibrated primary CIF",
+      "Static sensitivity removes both age and delinquency, so the difference does not isolate the causal effect of delinquency",
+      "Raw probabilities are materially too low out of time; development sigmoid hurt Brier despite small log-loss improvements, so raw remained frozen. No post-evaluation recalibration permitted here"
+    ]
+  }
+}

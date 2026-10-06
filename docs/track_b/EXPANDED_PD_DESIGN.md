@@ -1,0 +1,51 @@
+# Task 5 frozen development design
+
+Prespecified before fitting. Full configuration and feature rationale are in expanded_pd_design.json and expanded_pd_feature_registry.json. Task 2-4 scientific/sample/calendar rules are unchanged.
+
+**version**: expanded_pd_v1
+
+**seed**: 51005
+
+**sample_sha256**: e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832
+
+**panel_sha256**: 7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad
+
+**development_end**: 2014-12
+
+**evaluation_start**: 2016-01
+
+**purged**: 2015
+
+**internal_split**: SHA256(task5-development-v1:ID) integer modulo 10: 0..5 fit, 6..7 calibrate, 8..9 select; same development calendar coverage; no group overlap. Internal validation is grouped but not calendar-held-out; outer evaluation provides calendar separation. No final refit.
+
+**features**: ['orig_credit_score', 'orig_ltv', 'orig_dti', 'orig_interest_rate', 'original_loan_term', 'number_of_borrowers', 'loan_age', 'delinquency_state', 'loan_purpose', 'occupancy_status']
+
+**logistic**: {'C': 1.0, 'max_iter': 3000, 'tol': 1e-08, 'solver': 'lbfgs', 'class_weight': None}
+
+**xgboost_candidates**: [{'max_depth': 2, 'n_estimators': 120}, {'max_depth': 3, 'n_estimators': 180}]
+
+**xgboost_fixed**: {'learning_rate': 0.05, 'min_child_weight': 30, 'subsample': 0.8, 'colsample_bytree': 0.8, 'reg_lambda': 10.0, 'reg_alpha': 0.1, 'tree_method': 'hist', 'n_jobs': 2, 'random_state': 51005, 'objective': 'binary:logistic'}
+
+**xgboost_selection**: Choose depth3 only if selection log loss improves >=1% and Brier does not worsen; otherwise depth2. Evaluate raw candidates only for architecture. Record both.
+
+**calibration**: For each frozen primary logistic/XGB architecture: sigmoid fit on calibration partition only. Retain only if independent selection Brier and log loss each improve >=1%, positive slope and selection AUC drops <=0.002. No isotonic; no selection of alternative models after evaluation. Raw probabilities always retained. Hazard, null and static sensitivity raw retained.
+
+**hazard**: One next-month risk interval per eligible clean t0 with observed_followup_months>=1. Event iff positive_default and event_offset=1. Payoff interval ends facility risk, is an observed default-free interval but not twelve-month survival; censor payoff as competing exit. Administrative/ambiguous first-month intervals have no known at-risk month and are excluded. Strict t0<=2014-12 on development groups, so hazard events end 2015-01; unlike landmark labels through2015-12. No purged 2015 t0 used. One default event per loan maximum.
+
+**hazard_forecast**: Default-only logistic hazard with linear loan_age time basis. At t0 freeze all predictors except deterministic loan_age+t; predict 12 future conditional hazards, product survival, PD=1-product(1-h). This is a net-risk benchmark under hypothetical removal of payoff and frozen covariates, NOT the primary default-before-payoff cumulative incidence. Report separately; not eligible for primary champion selection.
+
+**sensitivity**: Origination-only Logistic and fixed shallow XGB, same partitions; raw only. Drop both loan_age and delinquency_state. These are prespecified family sensitivities, not champion candidates.
+
+**bootstrap**: {'draws': 1000, 'seed': 51005, 'unit': 'loan_id', 'paired': True, 'scope': 'fixed trained model; excludes training uncertainty and unknown borrower links'}
+
+**reliability_edges**: [0, 0.005, 0.02, 0.1, 1.0]
+
+**calendar_blocks**: ['2016-2018', '2019-2021', '2022-2026']
+
+**minimum_diagnostic_event_loans**: 20
+
+**champion_rule**: Default logistic. Promote selected XGB only if paired 95% intervals for XGB-minus-logistic Brier and logloss are entirely below zero, both point improvements >=2%, AP and AUC do not materially deteriorate (>0.01), and no supported calendar block has >10% worse logloss. Interpretability and calibration reviewed; retained frozen variants only. No policy thresholds.
+
+**evaluation_access**: Aggregate labels were already audited in Tasks3/4 and required count reproduction; nested 1000 Task3 predictions previously seen. Task5 predictive metrics access is one-shot after freeze; cannot claim never-seen outcomes. Fail closed on repeat.
+
+**historical_knowledge_time**: UNVERIFIED
