@@ -1,0 +1,1108 @@
+{
+  "component_assessments": [
+    {
+      "component": "12-month PD",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Loan-month proxy outcomes only; future definition, gaps/censoring and PIT-vintage gates unresolved."
+    },
+    {
+      "component": "Lifetime PD",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Mortgage hazard/competing-exit research candidate; no automatic borrower independence, maturity coverage or real-time backtest."
+    },
+    {
+      "component": "LGD",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Aggregate disposition-loss research candidate; full timed workout/accounting/downturn LGD unsupported."
+    },
+    {
+      "component": "EAD",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Mortgage principal-at-proxy-default research candidate; revolving CCF and complete accounting exposure unsupported."
+    },
+    {
+      "component": "SICR",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Declared heuristic studies possible later; actual recognition/current-risk and policy evidence unsupported."
+    },
+    {
+      "component": "IFRS 9 staging",
+      "fannie": "UNSUPPORTED",
+      "freddie": "UNSUPPORTED",
+      "scope": "No accounting recognition/impairment/POCI or stage adjudication; simulations are not empirical staging validation."
+    },
+    {
+      "component": "ECL",
+      "fannie": "UNSUPPORTED",
+      "freddie": "UNSUPPORTED",
+      "scope": "Complete IFRS-oriented portfolio loss requires missing recognition/discount/workout/scenario evidence; simplified integration only after separate approvals."
+    },
+    {
+      "component": "Stress testing",
+      "fannie": "PARTIALLY SUPPORTED",
+      "freddie": "PARTIALLY SUPPORTED",
+      "scope": "Macro-linked mortgage sensitivity candidate only; separate dated macro vintages/scenarios and regime validation required."
+    }
+  ],
+  "contract_sha256_lf": "1fee9a31f30cb1ceb1e6c270a2f3a71286edfe58addbcf4818976a9ceabe9a30",
+  "fields": [
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_PAGE; release namespace",
+        "status": "DERIVABLE"
+      },
+      "field": "dataset_id",
+      "freddie": {
+        "locator": "FM_PAGE; release namespace",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Local provider/product/release namespace, not a supplied row-level field."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_DICT 2/3",
+        "status": "DERIVABLE"
+      },
+      "field": "source_record_id",
+      "freddie": {
+        "locator": "FM_CHANGES O20/P1/P2",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Loan/month composite audit key; not a transaction or borrower identifier."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_PAGE corrections; FN_FAQ publication lag",
+        "status": "UNKNOWN"
+      },
+      "field": "available_at",
+      "freddie": {
+        "locator": "FM_GUIDE p16; FM_PAGE",
+        "status": "UNKNOWN"
+      },
+      "qualification": "Public release context does not establish first availability of each historical row/attribute."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_DICT 3/45",
+        "status": "PARTIAL"
+      },
+      "field": "effective_from",
+      "freddie": {
+        "locator": "FM_CHANGES P2/P10",
+        "status": "PARTIAL"
+      },
+      "qualification": "Reporting/event months are coarsened proxies, not complete valid-time version history."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_DICT 3/45",
+        "status": "PARTIAL"
+      },
+      "field": "effective_to",
+      "freddie": {
+        "locator": "FM_CHANGES P2/P10",
+        "status": "PARTIAL"
+      },
+      "qualification": "Next report/termination can bound an interval only after coverage and modification checks."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_PAGE corrections",
+        "status": "PARTIAL"
+      },
+      "field": "revision_id",
+      "freddie": {
+        "locator": "FM_GUIDE p2/p17",
+        "status": "PARTIAL"
+      },
+      "qualification": "Local release/hash can be recorded; individual value revision lineage is not provided."
+    },
+    {
+      "entity": "Lineage / source version",
+      "fannie": {
+        "locator": "FN_DICT dated 2026-09-10",
+        "status": "DERIVABLE"
+      },
+      "field": "definition_version",
+      "freddie": {
+        "locator": "FM_GUIDE Release 47; FM_CHANGES",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Pin dictionary version and declared research derivation separately; do not assume old layouts match."
+    },
+    {
+      "entity": "Borrower",
+      "fannie": {
+        "locator": "FN_DICT complete SF field register",
+        "status": "ABSENT"
+      },
+      "field": "borrower_id",
+      "freddie": {
+        "locator": "FM_GUIDE origination/performance glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Loan identity and borrower count do not establish cross-loan obligor identity."
+    },
+    {
+      "entity": "Borrower",
+      "fannie": {
+        "locator": "FN_DICT 21",
+        "status": "PARTIAL"
+      },
+      "field": "borrower_type",
+      "freddie": {
+        "locator": "FM_CHANGES O23",
+        "status": "PARTIAL"
+      },
+      "qualification": "Borrower count is not a full individual/business legal-entity classification."
+    },
+    {
+      "entity": "Borrower",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "relationship_start_date",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No lender relationship-start field; first payment/acquisition are different concepts."
+    },
+    {
+      "entity": "Borrower",
+      "fannie": {
+        "locator": "FN_DICT 22/26/30",
+        "status": "PARTIAL"
+      },
+      "field": "segment_attributes",
+      "freddie": {
+        "locator": "FM_CHANGES O3/O8/O10",
+        "status": "PARTIAL"
+      },
+      "qualification": "Selected mortgage attributes only; no complete demographic/business register."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 2",
+        "status": "SUPPORTED"
+      },
+      "field": "facility_id",
+      "freddie": {
+        "locator": "FM_CHANGES O20/P1",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Loan-level key only; refinance mappings do not supply borrower identity."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "borrower_id",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No stable cross-facility borrower key."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 28/35; FN_PAGE scope",
+        "status": "SUPPORTED"
+      },
+      "field": "product_type",
+      "freddie": {
+        "locator": "FM_CHANGES O16/O18; FM_GUIDE p2",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Mortgage/product coding is documented; this comparison is Standard/Primary fixed-rate scope."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 14",
+        "status": "SUPPORTED"
+      },
+      "field": "origination_date",
+      "freddie": {
+        "locator": "FM_CHANGES O2/O20; FM_GUIDE p4",
+        "status": "PARTIAL"
+      },
+      "qualification": "Freddie has first-payment month and origination quarter, not an exact note-date field; Fannie supplies month-level note date."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_PAGE acquisition coverage",
+        "status": "UNKNOWN"
+      },
+      "field": "initial_recognition_date",
+      "freddie": {
+        "locator": "FM_GUIDE acquisition coverage",
+        "status": "UNKNOWN"
+      },
+      "qualification": "Accounting recognition is not established by booking/first payment or portfolio acquisition."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 3/17",
+        "status": "DERIVABLE"
+      },
+      "field": "maturity_date",
+      "freddie": {
+        "locator": "FM_CHANGES O4/P6",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Month-level legal maturity; Fannie requires a documented calendar transformation and modification checks."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT dollar amount definitions",
+        "status": "PARTIAL"
+      },
+      "field": "currency",
+      "freddie": {
+        "locator": "FM_GUIDE dollar amount definitions",
+        "status": "PARTIAL"
+      },
+      "qualification": "Monetary units are described as dollars; no row-level currency/FX register."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 10",
+        "status": "SUPPORTED"
+      },
+      "field": "original_balance",
+      "freddie": {
+        "locator": "FM_CHANGES O11",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Booking principal is masked/rounded; not unrounded accounting exposure."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "credit_limit",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Original mortgage principal is not a revolving commitment limit."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 8/10/13/15/17; 48/50 SF NA",
+        "status": "PARTIAL"
+      },
+      "field": "contractual_schedule",
+      "freddie": {
+        "locator": "FM_CHANGES O2/O4/O11/O13/O22",
+        "status": "PARTIAL"
+      },
+      "qualification": "Terms permit only assumption-based amortization; no full due/payment/fee ledger."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 8/9",
+        "status": "PARTIAL"
+      },
+      "field": "contractual_rate_terms",
+      "freddie": {
+        "locator": "FM_CHANGES O13/P11",
+        "status": "PARTIAL"
+      },
+      "qualification": "Note/current coupons do not provide every fee/reset/contract version."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 8/9",
+        "status": "ABSENT"
+      },
+      "field": "effective_interest_rate",
+      "freddie": {
+        "locator": "FM_GUIDE rate fields",
+        "status": "ABSENT"
+      },
+      "qualification": "Note coupon is not accounting EIR."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT 20/28/31/32/53",
+        "status": "PARTIAL"
+      },
+      "field": "collateral_reference",
+      "freddie": {
+        "locator": "FM_CHANGES O12/O17/O18/P26",
+        "status": "PARTIAL"
+      },
+      "qualification": "Collateral characteristics/proxy ratios exist, not complete valuation/priority/cash-flow lineage."
+    },
+    {
+      "entity": "Facility / contractual version",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "impairment_scope",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No accounting recognition/POCI/simplified-approach adjudication."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 2",
+        "status": "SUPPORTED"
+      },
+      "field": "facility_id",
+      "freddie": {
+        "locator": "FM_CHANGES P1",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Stable disclosed loan key, not borrower key."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 3",
+        "status": "SUPPORTED"
+      },
+      "field": "observation_date",
+      "freddie": {
+        "locator": "FM_CHANGES P2; FM_GUIDE p16",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Reporting month is documented; not exact scoring timestamp or row availability."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 40/44",
+        "status": "DERIVABLE"
+      },
+      "field": "credit_state",
+      "freddie": {
+        "locator": "FM_CHANGES P4/P9",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Construct declared monthly research states; termination is not automatically default."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 12/63/108",
+        "status": "SUPPORTED"
+      },
+      "field": "outstanding_balance",
+      "freddie": {
+        "locator": "FM_CHANGES P3/P12/P32",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Defined principal balance; masking, deferral and accrued amounts require reconciliation."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "available_limit",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No revolving undrawn commitment."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 40/41",
+        "status": "PARTIAL"
+      },
+      "field": "days_past_due",
+      "freddie": {
+        "locator": "FM_CHANGES P4",
+        "status": "PARTIAL"
+      },
+      "qualification": "Delinquency bands/months do not identify exact integer days; missing/special codes are not current."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 85 SF NA",
+        "status": "ABSENT"
+      },
+      "field": "arrears_amount",
+      "freddie": {
+        "locator": "FM_CHANGES P28",
+        "status": "PARTIAL"
+      },
+      "qualification": "Freddie loss-stage accrued interest is not t0 total arrears; Fannie CRT-only interest field is excluded."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 41/51; 48/50 SF NA",
+        "status": "PARTIAL"
+      },
+      "field": "payment_history",
+      "freddie": {
+        "locator": "FM_CHANGES P13; balance/state series",
+        "status": "PARTIAL"
+      },
+      "qualification": "Status/last-paid-due-month history is not a complete actual-payment/due-event ledger."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 24/25/111/114; 71/113 SF NA",
+        "status": "PARTIAL"
+      },
+      "field": "score_or_rating",
+      "freddie": {
+        "locator": "FM_CHANGES O1/O31",
+        "status": "PARTIAL"
+      },
+      "qualification": "Origination scores are disclosed with vintage changes; a public current-score series is not established."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 42/102/106",
+        "status": "PARTIAL"
+      },
+      "field": "forbearance_status",
+      "freddie": {
+        "locator": "FM_CHANGES P8/P25/P30",
+        "status": "PARTIAL"
+      },
+      "qualification": "Selected assistance/modification measures; time bounds and full source-policy coverage remain limited."
+    },
+    {
+      "entity": "Observation / snapshot",
+      "fannie": {
+        "locator": "FN_DICT 102/106",
+        "status": "PARTIAL"
+      },
+      "field": "qualitative_risk_flags",
+      "freddie": {
+        "locator": "FM_CHANGES P7/P29/P30",
+        "status": "PARTIAL"
+      },
+      "qualification": "Selected flags do not constitute the full qualitative-risk adjudication required by a staging policy."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 2/40/44",
+        "status": "DERIVABLE"
+      },
+      "field": "default_episode_id",
+      "freddie": {
+        "locator": "FM_CHANGES P1/P4/P9",
+        "status": "DERIVABLE"
+      },
+      "qualification": "A local episode key requires declared research entry/cure rules; no supplied bank episode identifier."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 2",
+        "status": "SUPPORTED"
+      },
+      "field": "event_entity_id",
+      "freddie": {
+        "locator": "FM_CHANGES P1",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Supported at facility scope only; borrower contagion cannot be identified."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 3/40/44/45",
+        "status": "DERIVABLE"
+      },
+      "field": "default_date",
+      "freddie": {
+        "locator": "FM_CHANGES P2/P4/P9/P10",
+        "status": "DERIVABLE"
+      },
+      "qualification": "First qualifying month under a separately declared proxy; not a supplied universal default date."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT state codes; local policy",
+        "status": "DERIVABLE"
+      },
+      "field": "default_definition_id",
+      "freddie": {
+        "locator": "FM_GUIDE states; local policy",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Pin an explicit research-definition identifier; do not imply regulatory equivalence."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT state/event inputs",
+        "status": "DERIVABLE"
+      },
+      "field": "default_derivation",
+      "freddie": {
+        "locator": "FM_CHANGES state/event inputs",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Versioned rule and lineage can be designed later; no labels calculated here."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 40/44",
+        "status": "PARTIAL"
+      },
+      "field": "default_reason",
+      "freddie": {
+        "locator": "FM_CHANGES P4/P9",
+        "status": "PARTIAL"
+      },
+      "qualification": "Delinquency/exit codes are evidence, not complete default-reason adjudication."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "credit_impaired_status",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Research delinquency/REO is not accounting credit-impaired status."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 3/40/41",
+        "status": "PARTIAL"
+      },
+      "field": "cure_date",
+      "freddie": {
+        "locator": "FM_CHANGES P2/P4",
+        "status": "PARTIAL"
+      },
+      "qualification": "Return-to-current can proxy a transition; institutional cure/probation rules are unavailable."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 80/44/45",
+        "status": "PARTIAL"
+      },
+      "field": "write_off_date",
+      "freddie": {
+        "locator": "FM_CHANGES P9/P10",
+        "status": "PARTIAL"
+      },
+      "qualification": "Exit/amount-reporting month does not isolate a verified write-off occurrence date."
+    },
+    {
+      "entity": "Default episode / impairment event",
+      "fannie": {
+        "locator": "FN_DICT 12/46; 85 SF NA",
+        "status": "PARTIAL"
+      },
+      "field": "exposure_at_default",
+      "freddie": {
+        "locator": "FM_CHANGES P3/P27/P28",
+        "status": "PARTIAL"
+      },
+      "qualification": "Removal exposure is not necessarily first-default exposure; reconcile amount/event timing and masking."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "cash_flow_id",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No individual transaction/reversal identifiers."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT 2/40/44",
+        "status": "DERIVABLE"
+      },
+      "field": "default_episode_id",
+      "freddie": {
+        "locator": "FM_CHANGES P1/P4/P9",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Link aggregate loss records to declared research episode only with consistent rules."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT 53/54:62",
+        "status": "PARTIAL"
+      },
+      "field": "cash_flow_date",
+      "freddie": {
+        "locator": "FM_GUIDE p17; FM_CHANGES P10",
+        "status": "PARTIAL"
+      },
+      "qualification": "Disposition/reporting dates are proxies, not dates of each recovery/cost transaction."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT 54:62",
+        "status": "PARTIAL"
+      },
+      "field": "cash_flow_amount",
+      "freddie": {
+        "locator": "FM_CHANGES P14:21/P35",
+        "status": "PARTIAL"
+      },
+      "qualification": "Aggregate loss components, not complete timed cash-flow ledger."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT 54:62",
+        "status": "PARTIAL"
+      },
+      "field": "cash_flow_type",
+      "freddie": {
+        "locator": "FM_CHANGES P14:21/P35",
+        "status": "PARTIAL"
+      },
+      "qualification": "Aggregate categories can be mapped; no per-transaction type/reversal trail."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT dollar units",
+        "status": "PARTIAL"
+      },
+      "field": "cash_flow_currency",
+      "freddie": {
+        "locator": "FM_GUIDE dollar units",
+        "status": "PARTIAL"
+      },
+      "qualification": "No individual currency/FX transaction register."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_PAGE corrections; FN_DICT 53",
+        "status": "PARTIAL"
+      },
+      "field": "workout_end_date",
+      "freddie": {
+        "locator": "FM_GUIDE p17 trailing updates",
+        "status": "PARTIAL"
+      },
+      "qualification": "Disposition is not proof ultimate recovery is complete; later updates require frozen-release review."
+    },
+    {
+      "entity": "Recovery / workout cash flow",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "discount_basis",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Accounting discount convention and actual recovery timing are not supplied."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_DICT 2",
+        "status": "SUPPORTED"
+      },
+      "field": "entity_id",
+      "freddie": {
+        "locator": "FM_CHANGES P1",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Loan-scope coverage key, not obligor identity."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_PAGE acquisition start; FN_DICT 3",
+        "status": "DERIVABLE"
+      },
+      "field": "coverage_start_date",
+      "freddie": {
+        "locator": "FM_GUIDE acquisition start; P2",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Earliest observed month identifies dataset entry, not origination or continuous pre-entry history."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_PAGE cutoff; FN_DICT 3/45",
+        "status": "PARTIAL"
+      },
+      "field": "followup_end_date",
+      "freddie": {
+        "locator": "FM_GUIDE cutoff/termination; P2",
+        "status": "PARTIAL"
+      },
+      "qualification": "Last month/release cutoff is a coverage proxy; record-level gap/completeness checks remain unperformed."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_DICT 45",
+        "status": "SUPPORTED"
+      },
+      "field": "exit_date",
+      "freddie": {
+        "locator": "FM_CHANGES P10",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Coarsened termination month; event definition separate from default."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_DICT 44",
+        "status": "SUPPORTED"
+      },
+      "field": "exit_reason",
+      "freddie": {
+        "locator": "FM_CHANGES P9",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Decode each provider's current codebook; equal numeric codes need not mean identical events."
+    },
+    {
+      "entity": "Coverage / exit",
+      "fannie": {
+        "locator": "FN_DICT 2/3",
+        "status": "DERIVABLE"
+      },
+      "field": "coverage_gaps",
+      "freddie": {
+        "locator": "FM_CHANGES P1/P2",
+        "status": "DERIVABLE"
+      },
+      "qualification": "Missing expected loan-months can be flagged later; true event-ascertainment gaps remain unknown."
+    },
+    {
+      "entity": "Origination risk / policy reference",
+      "fannie": {
+        "locator": "FN_DICT 2",
+        "status": "SUPPORTED"
+      },
+      "field": "facility_id",
+      "freddie": {
+        "locator": "FM_CHANGES O20/P1",
+        "status": "SUPPORTED"
+      },
+      "qualification": "Loan identity with scope-specific refinance mapping."
+    },
+    {
+      "entity": "Origination risk / policy reference",
+      "fannie": {
+        "locator": "FN_DICT 24/25/111/114",
+        "status": "PARTIAL"
+      },
+      "field": "initial_risk_reference",
+      "freddie": {
+        "locator": "FM_CHANGES O1/O31",
+        "status": "PARTIAL"
+      },
+      "qualification": "Origination score is not a complete archived recognition-time PD term structure."
+    },
+    {
+      "entity": "Origination risk / policy reference",
+      "fannie": {
+        "locator": "FN_DICT 40/102; 71/113 SF NA",
+        "status": "PARTIAL"
+      },
+      "field": "current_risk_reference",
+      "freddie": {
+        "locator": "FM_CHANGES P4/P30",
+        "status": "PARTIAL"
+      },
+      "qualification": "Current states provide research inputs, not a comparable current probability/rating series."
+    },
+    {
+      "entity": "Origination risk / policy reference",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "sicr_policy_version",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Institution/accounting SICR policy not disclosed; a future heuristic must be labeled research."
+    },
+    {
+      "entity": "Origination risk / policy reference",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "stage_reason_record",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No accounting stage decisions, reasons or overrides."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "series_id",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Requires separate macro provider/version, not mortgage field."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT 31/32/33",
+        "status": "PARTIAL"
+      },
+      "field": "geography",
+      "freddie": {
+        "locator": "FM_CHANGES O5/O17/O19",
+        "status": "PARTIAL"
+      },
+      "qualification": "Property geography supports a coarse regional macro link; no macro observation itself."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "reference_period",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Loan reporting month is not an external economic-series reference period."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "release_date",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No macro release calendar in loan files."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "macro_vintage_id",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No historical macro revision archive."
+    },
+    {
+      "entity": "Macroeconomic observation / release vintage",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "macro_value",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No unemployment/GDP/rate/house-price series."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "scenario_id",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "External justified scenario design/source required."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "forecast_as_of",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No historical forecast issuance record."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "forecast_period",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "Contractual maturity is not a macro forecast horizon."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "forecast_value",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No baseline/upside/downside macro paths."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT SF register",
+        "status": "ABSENT"
+      },
+      "field": "scenario_weight",
+      "freddie": {
+        "locator": "FM_GUIDE glossary",
+        "status": "ABSENT"
+      },
+      "qualification": "No scenario probability weights; do not invent them."
+    },
+    {
+      "entity": "Scenario forecast / valuation run",
+      "fannie": {
+        "locator": "FN_DICT 13/17/44",
+        "status": "PARTIAL"
+      },
+      "field": "valuation_horizon_basis",
+      "freddie": {
+        "locator": "FM_CHANGES O4/P6/P9",
+        "status": "PARTIAL"
+      },
+      "qualification": "Legal term/exit evidence supports mortgage-life research, not complete accounting/behavioral-life policy."
+    }
+  ],
+  "review_date": "2026-10-06",
+  "schema_version": 1,
+  "scope": {
+    "dataset_selected": false,
+    "fannie": "Primary SF Loan Performance applicability; not CAS/CIRT",
+    "freddie": "Standard Dataset Release 47; not Non-Standard Release 30",
+    "models_implemented": false,
+    "record_level_data_accessed": false
+  },
+  "sources": {
+    "FM_CHANGES": {
+      "reviewed_on": "2026-10-06",
+      "sha256": "e513ccc06fca13880a541442b393a655e1b5904fd1a97e79cf7f56808f1fa2f0",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/disclosure-changes-summary.pdf",
+      "version": "v1.2, June 2026, effective July 2026"
+    },
+    "FM_GUIDE": {
+      "reviewed_on": "2026-10-06",
+      "sha256": "4693ae754109c213feb84e97702fa675ed3926c2a5f4b6f7ba3c347db2aaf03e",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/general_user_guide_july_2026.pdf",
+      "version": "Release 47, July 2026"
+    },
+    "FM_PAGE": {
+      "reviewed_on": "2026-10-06",
+      "url": "https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset",
+      "version": "page reviewed 2026-10-06"
+    },
+    "FN_DICT": {
+      "hash_note": "Official web extraction reviewed; direct PDF retrieval was blocked (403); no binary hash invented",
+      "reviewed_on": "2026-10-06",
+      "sha256": null,
+      "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/crt-file-layout-and-glossary.pdf",
+      "version": "2026-09-10; applicability restricted to SF Loan Performance column"
+    },
+    "FN_FAQ": {
+      "reviewed_on": "2026-10-06",
+      "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/sf-loan-performance-dataset-faqs.pdf",
+      "version": "2026-03-10"
+    },
+    "FN_PAGE": {
+      "reviewed_on": "2026-10-06",
+      "url": "https://capitalmarkets.fanniemae.com/credit-risk-transfer/fannie-mae-single-family-loan-performance-data",
+      "version": "2026-07-31"
+    }
+  },
+  "status_definitions": {
+    "ABSENT": "No applicable field in the reviewed public mortgage dictionaries; outside-scope CRT fields excluded.",
+    "DERIVABLE": "Transparent future transformation or local metadata possible from documented inputs; condition/definition must be declared. No values derived in this task.",
+    "PARTIAL": "Relevant information exists but falls short of the field definition, precision, completeness or provenance.",
+    "SUPPORTED": "A documented applicable field represents the named concept at its disclosed granularity, not verified record quality or full PIT readiness.",
+    "UNKNOWN": "Documentation does not establish the required property; do not treat as supported."
+  }
+}
