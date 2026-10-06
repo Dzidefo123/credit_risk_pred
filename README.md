@@ -39,6 +39,24 @@ flowchart LR
   end
 ```
 
+## Model Development & Validation
+
+The [automated Model Development & Validation Report](reports/model_validation/MODEL_DEVELOPMENT_VALIDATION_REPORT.md)
+completes Track A's research evidence package. It separates training-only findings
+from retained consumed-holdout results, documents unresolved risks, and supports
+raw XGBoost as development champion with Logistic Regression as interpretable
+challenger. This does not replace frozen models or establish deployment readiness.
+
+Supporting evidence: [provenance and target](docs/TARGET_DEFINITION.md),
+[validation diagnostics](reports/model_validation/PD_DIAGNOSTICS.md),
+[nested calibration](reports/model_validation/CALIBRATION_STUDY.md), and
+[explainability and stability](reports/model_validation/EXPLAINABILITY_STABILITY.md).
+Generate it from committed aggregates, without applicant data or model bundles:
+
+```console
+uv run --no-sync python scripts/generate_model_validation_report.py
+```
+
 ## What is implemented
 
 | Capability | Evidence | Practical limit |
