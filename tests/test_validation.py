@@ -19,6 +19,7 @@ from credit_risk.validation.diagnostics import (
     group_bootstrap_comparison,
     reliability_diagnostics,
 )
+from credit_risk.validation.holdout_registry import HoldoutRegistry
 from credit_risk.validation.runner import run_validation, verify_experiment
 from credit_risk.validation.settings import ValidationConfig
 
@@ -92,6 +93,7 @@ def test_segments_missing_age_and_low_support_explicit():
 
 @pytest.fixture
 def frozen_run(tmp_path):
+    HoldoutRegistry.initialize(tmp_path / "holdout_registry.json")
     rng = np.random.default_rng(24)
     n = 400
     frame = pd.DataFrame(
@@ -134,6 +136,10 @@ def test_calibrators_fit_only_calibration_and_test_scored_after_selection_lock(
             assert (output / "selection.json").exists()
             assert (run / "test_consumption.json").exists()
             assert (
+                HoldoutRegistry(tmp_path / "holdout_registry.json").read().entries[0].status
+                == "consumed"
+            )
+            assert (
                 json.loads((output / "selection.json").read_text())["test_used_for_selection"]
                 is False
             )
@@ -142,7 +148,9 @@ def test_calibrators_fit_only_calibration_and_test_scored_after_selection_lock(
     monkeypatch.setattr(ProbabilityCalibrator, "fit", traced_fit)
     monkeypatch.setattr(Pipeline, "fit", forbidden_fit)
     monkeypatch.setattr(Pipeline, "predict_proba", traced_predict)
-    result = run_validation(source, run, output, config)
+    result = run_validation(
+        source, run, output, config, registry_path=tmp_path / "holdout_registry.json"
+    )
     assert fit_labels == [set(splits["calibration"])] * 6
     assert (
         score_rows
@@ -156,22 +164,22 @@ def test_calibrators_fit_only_calibration_and_test_scored_after_selection_lock(
     method = result["selection"]["selected_methods"]["xgboost"]
     assert np.allclose(p, preds[f"xgboost__{method}"])
     with pytest.raises(FileExistsError):
-        run_validation(source, run, output, config)
-
-
-def test_test_consumption_guard_reproduction_and_changed_choices(frozen_run, tmp_path):
-    source, run, _, config = frozen_run
-    first = run_validation(source, run, tmp_path / "first", config)
-    repeat = run_validation(source, run, tmp_path / "repeat", config)
-    assert repeat["fresh_test_access"] is False
-    assert repeat["final_metrics"] == first["final_metrics"]
-    with pytest.raises(ValueError, match="already consumed"):
         run_validation(
-            source,
-            run,
-            tmp_path / "changed",
-            config.model_copy(update={"probability_epsilon": 0.01}),
+            source, run, output, config, registry_path=tmp_path / "holdout_registry.json"
         )
+
+
+def test_test_consumption_guard_blocks_repeat_before_loading(frozen_run, tmp_path, monkeypatch):
+    source, run, _, config = frozen_run
+    registry_path = tmp_path / "holdout_registry.json"
+    first = run_validation(source, run, tmp_path / "first", config, registry_path=registry_path)
+    assert first["fresh_test_access"] is True
+    monkeypatch.setattr(joblib, "load", lambda *a, **k: pytest.fail("No repeat loading/scoring"))
+    for repeated_config in (config, config.model_copy(update={"probability_epsilon": 0.01})):
+        with pytest.raises(ValueError, match="already consumed"):
+            run_validation(
+                source, run, tmp_path / "repeat", repeated_config, registry_path=registry_path
+            )
 
 
 @pytest.mark.parametrize("target", ["source", "model", "splits"])
@@ -187,3 +195,23 @@ def test_tampered_artifacts_rejected_before_deserialization(frozen_run, monkeypa
     monkeypatch.setattr(joblib, "load", lambda *a, **k: pytest.fail("Must verify before loading"))
     with pytest.raises(ValueError, match="checksum"):
         verify_experiment(source, run)
+
+
+def test_interrupted_final_access_stays_consumed(frozen_run, tmp_path, monkeypatch):
+    from credit_risk.validation import runner
+
+    source, run, splits, config = frozen_run
+    original = runner.predict_probability
+
+    def interrupted(pipeline, frame):
+        if set(frame.index) == set(splits["test"]):
+            raise RuntimeError("interrupted first final prediction")
+        return original(pipeline, frame)
+
+    monkeypatch.setattr(runner, "predict_probability", interrupted)
+    registry = tmp_path / "holdout_registry.json"
+    with pytest.raises(RuntimeError, match="interrupted first final"):
+        run_validation(source, run, tmp_path / "interrupted", config, registry_path=registry)
+    assert HoldoutRegistry(registry).read().entries[0].status == "consumed"
+    with pytest.raises(ValueError, match="already consumed"):
+        run_validation(source, run, tmp_path / "retry", config, registry_path=registry)

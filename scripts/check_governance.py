@@ -11,6 +11,7 @@ from urllib.parse import unquote, urlsplit
 from credit_risk.decisioning.settings import PolicyComparisonConfig
 from credit_risk.monitoring.settings import MonitoringConfig
 from credit_risk.utils.config import load_config
+from credit_risk.validation.holdout_registry import verify_repository_registry
 
 EVIDENCE = (
     "reports/phase4_experiment.json",
@@ -200,6 +201,7 @@ def main():
     parser.add_argument("--register", type=Path)
     args = parser.parse_args()
     root = args.root.resolve()
+    verify_repository_registry(root / "reports/holdout_registry.json")
     expected = build_snapshot(root)
     register = args.register or root / "reports/governance_register.json"
     if read_json(register) != expected:

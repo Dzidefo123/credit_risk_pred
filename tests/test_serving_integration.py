@@ -13,6 +13,7 @@ from credit_risk.api.main import create_app
 from credit_risk.data.validation import ORIGINATION_FEATURES, ORIGINATION_TARGET
 from credit_risk.models.pd import run_origination_experiment, split_origination
 from credit_risk.utils.config import ModelConfig, XGBoostConfig
+from credit_risk.validation.holdout_registry import HoldoutRegistry
 from credit_risk.validation.runner import digest, run_validation
 from credit_risk.validation.settings import ValidationConfig
 
@@ -20,6 +21,8 @@ from credit_risk.validation.settings import ValidationConfig
 @pytest.fixture(scope="module")
 def serving_bundle(tmp_path_factory):
     root = tmp_path_factory.mktemp("synthetic-serving")
+    registry_path = root / "holdout_registry.json"
+    HoldoutRegistry.initialize(registry_path)
     rng = np.random.default_rng(112)
     n = 400
     frame = pd.DataFrame({name: rng.integers(0, 6, n) for name in ORIGINATION_FEATURES})
@@ -39,6 +42,7 @@ def serving_bundle(tmp_path_factory):
         run,
         validation,
         ValidationConfig(bootstrap_samples=20, minimum_calibration_events=4),
+        registry_path=registry_path,
     )
     (root / "policy.yaml").write_text("policies: [{}]\n", encoding="utf-8")
     settings = root / "serving.yaml"

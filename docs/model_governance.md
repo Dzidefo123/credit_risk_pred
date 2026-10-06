@@ -146,3 +146,19 @@ A future approval record must contain a named reviewer/role, decision and date,
 allowed population/use, model/policy/reference hashes, independent evidence,
 findings/conditions, effective version and next review trigger. The current
 register records not_approved and null reviewers. No approval is fabricated.
+
+## Cross-experiment final-holdout integrity (Task 3)
+
+The [repository-level holdout registry](HOLDOUT_REGISTRY.md) now checks source
+and raw-profile identities across run directories. Its tracked
+[ledger](../reports/holdout_registry.json) retains the migrated historical consumed
+holdout; the existing governance checker validates that baseline. New final
+access is a one-way consumption transition, including interrupted scoring.
+The per-run consumption marker remains intact. Retrospective review uses stored
+evidence rather than rescoring via the validation runner.
+
+This addresses the earlier per-directory enforcement gap within the supported
+local workflow. It does not establish borrower identity, temporal independence,
+regulatory approval or transformed-data equivalence. See the registry document
+for the weaker historical 64-bit bridge, concurrency/Git limitations and lifecycle.
+Historical governance snapshots and model metrics remain unchanged.

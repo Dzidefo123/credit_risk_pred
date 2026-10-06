@@ -38,3 +38,7 @@ Thumbs.db
 # Default MLflow SQLite metadata and sidecar files
 /mlflow.db
 /mlflow.db-*
+
+# Local holdout registry transaction sidecars; the ledger itself stays tracked
+/reports/holdout_registry.json.lock
+/reports/holdout_registry.json.*.tmp

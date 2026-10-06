@@ -270,6 +270,22 @@ def main(argv: list[str] | None = None) -> int:
             development = load_config(args.development_config, DevelopmentConfig)
             logger = configure_logging(development.log_level)
             seed = development.seed if args.seed is None else args.seed
+            from credit_risk.models.pd import split_origination
+            from credit_risk.validation.holdout_registry import (
+                HoldoutRegistry,
+                default_registry_path,
+                sample_fingerprints,
+            )
+
+            registry = HoldoutRegistry(default_registry_path())
+            registry.read()
+            frame = load_origination_csv(args.csv).frame.reset_index(drop=True)
+            splits = split_origination(frame, config, seed)
+            registry.reserve(
+                sha256(Path(args.csv).read_bytes()).hexdigest(),
+                sample_fingerprints(frame.iloc[splits["test"]]),
+                str(Path(args.output_dir).resolve()),
+            )
             result = run_origination_experiment(args.csv, args.output_dir, config, seed)
         else:
             portfolio = load_portfolio_csv(args.accounts, args.history)

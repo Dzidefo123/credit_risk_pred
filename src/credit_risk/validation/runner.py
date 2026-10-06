@@ -23,6 +23,11 @@ from credit_risk.validation.diagnostics import (
     group_bootstrap_comparison,
     reliability_diagnostics,
 )
+from credit_risk.validation.holdout_registry import (
+    HoldoutRegistry,
+    default_registry_path,
+    sample_fingerprints,
+)
 from credit_risk.validation.metrics import binary_metrics
 from credit_risk.validation.settings import ValidationConfig
 
@@ -90,12 +95,25 @@ def digest_positions(rows):
     return sha256(np.asarray(rows, dtype="<i8").tobytes()).hexdigest()
 
 
-def run_validation(csv_path, run_dir, output_dir, config=None):
+def run_validation(csv_path, run_dir, output_dir, config=None, *, registry_path=None):
     config = config or ValidationConfig()
     directory, run_dir = Path(output_dir), Path(run_dir)
     if directory.exists() and any(directory.iterdir()):
         raise FileExistsError("Validation output is not empty; choose a new directory")
+    if (run_dir / "test_consumption.json").exists():
+        raise ValueError(
+            f"Test already consumed in {run_dir}; fresh evaluation blocked. "
+            "Read retained evidence instead of rescoring."
+        )
+    registry = HoldoutRegistry(registry_path or default_registry_path())
+    # Fail before source verification/model loading if the shared ledger is missing/corrupt.
+    registry.read()
     manifest, model_config, frame, splits, groups = verify_experiment(csv_path, run_dir)
+    reservation = registry.reserve(
+        manifest["source_sha256"],
+        sample_fingerprints(frame.iloc[splits["test"]]),
+        str(run_dir.resolve()),
+    )
     X, y = frame.loc[:, ORIGINATION_FEATURES], frame[ORIGINATION_TARGET].astype(int)
     cal, dev, test = (splits[name] for name in ("calibration", "development", "test"))
     if (
@@ -194,6 +212,7 @@ def run_validation(csv_path, run_dir, output_dir, config=None):
         raise ValueError(
             "Test already consumed with different choices; use a new independently held-out sample"
         )
+    registry.consume(reservation)  # One-way, before access; interrupted scoring stays consumed.
     predictions = pd.DataFrame({"row_position": test, "label": y.iloc[test].to_numpy()})
     final_metrics, reliability, segments, selected_predictions = {}, {}, {}, {}
     for kind in kinds:
@@ -225,6 +244,7 @@ def run_validation(csv_path, run_dir, output_dir, config=None):
         "target_semantics": manifest["target_semantics"],
         "validation_type": "grouped cross-sectional final holdout; not out-of-time",
         "fresh_test_access": fresh,
+        "holdout_registry": {"schema_version": 1, "reservation_id": reservation},
         "selection_sha256": lock_hash,
         "selection": selection,
         "source_sha256": manifest["source_sha256"],
