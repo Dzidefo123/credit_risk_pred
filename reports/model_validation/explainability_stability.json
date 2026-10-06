@@ -1,0 +1,3235 @@
+{
+  "cross_model_comparison": [
+    {
+      "feature": "RevolvingUtilizationOfUnsecuredLines",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.2298231429968094,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 4.0,
+      "xgboost_shap_rank": 1.0
+    },
+    {
+      "feature": "age",
+      "logistic_direction": "negative",
+      "logistic_mean_abs_standardized_coefficient": 0.3334607229929064,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 3.0,
+      "xgboost_shap_rank": 4.0
+    },
+    {
+      "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.43844160187793124,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 1.0,
+      "xgboost_shap_rank": 2.0
+    },
+    {
+      "feature": "DebtRatio",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.12057955546194347,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 6.0,
+      "xgboost_shap_rank": 8.0
+    },
+    {
+      "feature": "MonthlyIncome",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.020717939504001415,
+      "logistic_sign_flip": true,
+      "logistic_standardized_rank": 8.0,
+      "xgboost_shap_rank": 7.0
+    },
+    {
+      "feature": "NumberOfOpenCreditLinesAndLoans",
+      "logistic_direction": "negative",
+      "logistic_mean_abs_standardized_coefficient": 0.01258544211571333,
+      "logistic_sign_flip": true,
+      "logistic_standardized_rank": 10.0,
+      "xgboost_shap_rank": 6.0
+    },
+    {
+      "feature": "NumberOfTimes90DaysLate",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.3991208728654213,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 2.0,
+      "xgboost_shap_rank": 3.0
+    },
+    {
+      "feature": "NumberRealEstateLoansOrLines",
+      "logistic_direction": "negative",
+      "logistic_mean_abs_standardized_coefficient": 0.0164462802171745,
+      "logistic_sign_flip": true,
+      "logistic_standardized_rank": 9.0,
+      "xgboost_shap_rank": 9.0
+    },
+    {
+      "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.1356291818167693,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 5.0,
+      "xgboost_shap_rank": 5.0
+    },
+    {
+      "feature": "NumberOfDependents",
+      "logistic_direction": "positive",
+      "logistic_mean_abs_standardized_coefficient": 0.06250038515081989,
+      "logistic_sign_flip": false,
+      "logistic_standardized_rank": 7.0,
+      "xgboost_shap_rank": 10.0
+    }
+  ],
+  "dependence": {
+    "NumberOfTime30_59DaysPastDueNotWorse": {
+      "binning": "exact observed input values (<=24 unique)",
+      "bins": [
+        {
+          "bin": "value=0",
+          "mean_shap": -0.2850424897572736,
+          "median_input": 0.0,
+          "rows": 56710,
+          "shap_q25": -0.3083594962954521,
+          "shap_q75": -0.2600832134485245,
+          "sparse": false
+        },
+        {
+          "bin": "value=1",
+          "mean_shap": 0.583638277278171,
+          "median_input": 1.0,
+          "rows": 7264,
+          "shap_q25": 0.4906206801533699,
+          "shap_q75": 0.6952712535858154,
+          "sparse": false
+        },
+        {
+          "bin": "value=2",
+          "mean_shap": 0.931542534523945,
+          "median_input": 2.0,
+          "rows": 2061,
+          "shap_q25": 0.7871123552322388,
+          "shap_q75": 1.0618269443511963,
+          "sparse": false
+        },
+        {
+          "bin": "value=3",
+          "mean_shap": 1.1414448347754944,
+          "median_input": 3.0,
+          "rows": 798,
+          "shap_q25": 0.966988205909729,
+          "shap_q75": 1.2990020513534546,
+          "sparse": false
+        },
+        {
+          "bin": "value=4",
+          "mean_shap": 1.1865816284082606,
+          "median_input": 4.0,
+          "rows": 334,
+          "shap_q25": 1.017123520374298,
+          "shap_q75": 1.3643364012241364,
+          "sparse": false
+        },
+        {
+          "bin": "value=5",
+          "mean_shap": 1.1683023805711783,
+          "median_input": 5.0,
+          "rows": 153,
+          "shap_q25": 1.0217081308364868,
+          "shap_q75": 1.3419088125228882,
+          "sparse": false
+        },
+        {
+          "bin": "value=6",
+          "mean_shap": 1.1668329678597997,
+          "median_input": 6.0,
+          "rows": 61,
+          "shap_q25": 1.0102039575576782,
+          "shap_q75": 1.3304206132888794,
+          "sparse": true
+        },
+        {
+          "bin": "value=7",
+          "mean_shap": 1.1475216960906982,
+          "median_input": 7.0,
+          "rows": 25,
+          "shap_q25": 1.0045808553695679,
+          "shap_q75": 1.36745023727417,
+          "sparse": true
+        },
+        {
+          "bin": "value=8",
+          "mean_shap": 1.159332628433521,
+          "median_input": 8.0,
+          "rows": 13,
+          "shap_q25": 0.9423354864120483,
+          "shap_q75": 1.3653390407562256,
+          "sparse": true
+        },
+        {
+          "bin": "value=9",
+          "mean_shap": 1.1862562469073705,
+          "median_input": 9.0,
+          "rows": 7,
+          "shap_q25": 1.0204366445541382,
+          "shap_q75": 1.3566483855247498,
+          "sparse": true
+        },
+        {
+          "bin": "value=10",
+          "mean_shap": 0.8812505304813385,
+          "median_input": 10.0,
+          "rows": 2,
+          "shap_q25": 0.7892927974462509,
+          "shap_q75": 0.9732082635164261,
+          "sparse": true
+        },
+        {
+          "bin": "value=12",
+          "mean_shap": 1.2906217575073242,
+          "median_input": 12.0,
+          "rows": 1,
+          "shap_q25": 1.2906217575073242,
+          "shap_q75": 1.2906217575073242,
+          "sparse": true
+        },
+        {
+          "bin": "value=13",
+          "mean_shap": 1.2050575017929077,
+          "median_input": 13.0,
+          "rows": 1,
+          "shap_q25": 1.2050575017929077,
+          "shap_q75": 1.2050575017929077,
+          "sparse": true
+        },
+        {
+          "bin": "value=96",
+          "mean_shap": 0.6341222922007242,
+          "median_input": 96.0,
+          "rows": 3,
+          "shap_q25": 0.5955860316753387,
+          "shap_q75": 0.6658499836921692,
+          "sparse": true
+        },
+        {
+          "bin": "value=98",
+          "mean_shap": 0.6801961440910664,
+          "median_input": 98.0,
+          "rows": 129,
+          "shap_q25": 0.6343508958816528,
+          "shap_q75": 0.7634230852127075,
+          "sparse": false
+        }
+      ],
+      "interpretation": "observed input vs model contribution; not causal or partial dependence",
+      "missing_rows": 0,
+      "spearman_rho": 0.6376284251127206
+    },
+    "NumberOfTime60_89DaysPastDueNotWorse": {
+      "binning": "exact observed input values (<=24 unique)",
+      "bins": [
+        {
+          "bin": "value=0",
+          "mean_shap": -0.11616474381107995,
+          "median_input": 0.0,
+          "rows": 64093,
+          "shap_q25": -0.12762585282325745,
+          "shap_q75": -0.10560649633407593,
+          "sparse": false
+        },
+        {
+          "bin": "value=1",
+          "mean_shap": 0.9824308469111472,
+          "median_input": 1.0,
+          "rows": 2617,
+          "shap_q25": 0.8387911319732666,
+          "shap_q75": 1.1233171224594116,
+          "sparse": false
+        },
+        {
+          "bin": "value=2",
+          "mean_shap": 1.0522157851457596,
+          "median_input": 2.0,
+          "rows": 500,
+          "shap_q25": 0.8872175067663193,
+          "shap_q75": 1.1676297783851624,
+          "sparse": false
+        },
+        {
+          "bin": "value=3",
+          "mean_shap": 1.0572676184951075,
+          "median_input": 3.0,
+          "rows": 151,
+          "shap_q25": 0.9211310744285583,
+          "shap_q75": 1.1838043928146362,
+          "sparse": false
+        },
+        {
+          "bin": "value=4",
+          "mean_shap": 1.0227074700853098,
+          "median_input": 4.0,
+          "rows": 46,
+          "shap_q25": 0.8858421444892883,
+          "shap_q75": 1.1190230250358582,
+          "sparse": true
+        },
+        {
+          "bin": "value=5",
+          "mean_shap": 1.0543566783269247,
+          "median_input": 5.0,
+          "rows": 15,
+          "shap_q25": 0.9213486611843109,
+          "shap_q75": 1.1525589227676392,
+          "sparse": true
+        },
+        {
+          "bin": "value=6",
+          "mean_shap": 1.0823415517807007,
+          "median_input": 6.0,
+          "rows": 5,
+          "shap_q25": 0.9731867909431458,
+          "shap_q75": 1.1785050630569458,
+          "sparse": true
+        },
+        {
+          "bin": "value=7",
+          "mean_shap": 0.9167234003543854,
+          "median_input": 7.0,
+          "rows": 2,
+          "shap_q25": 0.8828447312116623,
+          "shap_q75": 0.9506020694971085,
+          "sparse": true
+        },
+        {
+          "bin": "value=8",
+          "mean_shap": 0.9481257796287537,
+          "median_input": 8.0,
+          "rows": 1,
+          "shap_q25": 0.9481257796287537,
+          "shap_q75": 0.9481257796287537,
+          "sparse": true
+        },
+        {
+          "bin": "value=96",
+          "mean_shap": 0.7281959056854248,
+          "median_input": 96.0,
+          "rows": 3,
+          "shap_q25": 0.686767578125,
+          "shap_q75": 0.800531268119812,
+          "sparse": true
+        },
+        {
+          "bin": "value=98",
+          "mean_shap": 0.7552197095035582,
+          "median_input": 98.0,
+          "rows": 129,
+          "shap_q25": 0.6449234485626221,
+          "shap_q75": 0.8221695423126221,
+          "sparse": false
+        }
+      ],
+      "interpretation": "observed input vs model contribution; not causal or partial dependence",
+      "missing_rows": 0,
+      "spearman_rho": 0.3821670701398685
+    },
+    "NumberOfTimes90DaysLate": {
+      "binning": "exact observed input values (<=24 unique)",
+      "bins": [
+        {
+          "bin": "value=0",
+          "mean_shap": -0.24768713553236923,
+          "median_input": 0.0,
+          "rows": 63821,
+          "shap_q25": -0.26190146803855896,
+          "shap_q75": -0.23633268475532532,
+          "sparse": false
+        },
+        {
+          "bin": "value=1",
+          "mean_shap": 1.2643611315467287,
+          "median_input": 1.0,
+          "rows": 2381,
+          "shap_q25": 1.1100544929504395,
+          "shap_q75": 1.3793290853500366,
+          "sparse": false
+        },
+        {
+          "bin": "value=2",
+          "mean_shap": 1.5779059325947482,
+          "median_input": 2.0,
+          "rows": 680,
+          "shap_q25": 1.433030128479004,
+          "shap_q75": 1.7000848352909088,
+          "sparse": false
+        },
+        {
+          "bin": "value=3",
+          "mean_shap": 1.8724707507436187,
+          "median_input": 3.0,
+          "rows": 293,
+          "shap_q25": 1.7208882570266724,
+          "shap_q75": 2.005655288696289,
+          "sparse": false
+        },
+        {
+          "bin": "value=4",
+          "mean_shap": 1.9218992376700044,
+          "median_input": 4.0,
+          "rows": 128,
+          "shap_q25": 1.7625931203365326,
+          "shap_q75": 2.033085882663727,
+          "sparse": false
+        },
+        {
+          "bin": "value=5",
+          "mean_shap": 1.9912575504236054,
+          "median_input": 5.0,
+          "rows": 57,
+          "shap_q25": 1.8683125972747803,
+          "shap_q75": 2.1127543449401855,
+          "sparse": true
+        },
+        {
+          "bin": "value=6",
+          "mean_shap": 1.9190319511625502,
+          "median_input": 6.0,
+          "rows": 36,
+          "shap_q25": 1.7275928854942322,
+          "shap_q75": 2.0594021677970886,
+          "sparse": true
+        },
+        {
+          "bin": "value=7",
+          "mean_shap": 1.874301286844107,
+          "median_input": 7.0,
+          "rows": 13,
+          "shap_q25": 1.683397650718689,
+          "shap_q75": 2.0379366874694824,
+          "sparse": true
+        },
+        {
+          "bin": "value=8",
+          "mean_shap": 1.8212569157282512,
+          "median_input": 8.0,
+          "rows": 3,
+          "shap_q25": 1.7203903794288635,
+          "shap_q75": 1.8848831057548523,
+          "sparse": true
+        },
+        {
+          "bin": "value=9",
+          "mean_shap": 1.9161308606465657,
+          "median_input": 9.0,
+          "rows": 9,
+          "shap_q25": 1.838916301727295,
+          "shap_q75": 2.002140760421753,
+          "sparse": true
+        },
+        {
+          "bin": "value=10",
+          "mean_shap": 1.9038909077644348,
+          "median_input": 10.0,
+          "rows": 2,
+          "shap_q25": 1.7193137109279633,
+          "shap_q75": 2.0884681046009064,
+          "sparse": true
+        },
+        {
+          "bin": "value=11",
+          "mean_shap": 2.2436306476593018,
+          "median_input": 11.0,
+          "rows": 2,
+          "shap_q25": 2.214993953704834,
+          "shap_q75": 2.2722673416137695,
+          "sparse": true
+        },
+        {
+          "bin": "value=12",
+          "mean_shap": 1.6436855792999268,
+          "median_input": 12.0,
+          "rows": 1,
+          "shap_q25": 1.6436855792999268,
+          "shap_q75": 1.6436855792999268,
+          "sparse": true
+        },
+        {
+          "bin": "value=13",
+          "mean_shap": 1.7776528596878052,
+          "median_input": 13.0,
+          "rows": 2,
+          "shap_q25": 1.7721540927886963,
+          "shap_q75": 1.783151626586914,
+          "sparse": true
+        },
+        {
+          "bin": "value=15",
+          "mean_shap": 1.748020052909851,
+          "median_input": 15.0,
+          "rows": 1,
+          "shap_q25": 1.748020052909851,
+          "shap_q75": 1.748020052909851,
+          "sparse": true
+        },
+        {
+          "bin": "value=17",
+          "mean_shap": 1.6398957967758179,
+          "median_input": 17.0,
+          "rows": 1,
+          "shap_q25": 1.6398957967758179,
+          "shap_q75": 1.6398957967758179,
+          "sparse": true
+        },
+        {
+          "bin": "value=96",
+          "mean_shap": 1.2923203309377034,
+          "median_input": 96.0,
+          "rows": 3,
+          "shap_q25": 1.1599141359329224,
+          "shap_q75": 1.4167636036872864,
+          "sparse": true
+        },
+        {
+          "bin": "value=98",
+          "mean_shap": 1.1436167622721471,
+          "median_input": 98.0,
+          "rows": 129,
+          "shap_q25": 0.9500957131385803,
+          "shap_q75": 1.3256230354309082,
+          "sparse": false
+        }
+      ],
+      "interpretation": "observed input vs model contribution; not causal or partial dependence",
+      "missing_rows": 0,
+      "spearman_rho": 0.3961764539909951
+    },
+    "RevolvingUtilizationOfUnsecuredLines": {
+      "binning": "12 quantile bins of observed nonmissing raw input; unique edges",
+      "bins": [
+        {
+          "bin": "quantile bin 1",
+          "mean_shap": -0.817732177874564,
+          "median_input": 0.0,
+          "rows": 5631,
+          "shap_q25": -0.8898786902427673,
+          "shap_q75": -0.7481561005115509,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 2",
+          "mean_shap": -1.0793488962400446,
+          "median_input": 0.0061777575000000005,
+          "rows": 5630,
+          "shap_q25": -1.1304073631763458,
+          "shap_q75": -1.0414790213108063,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 3",
+          "mean_shap": -1.0727305918296743,
+          "median_input": 0.0206792425,
+          "rows": 5630,
+          "shap_q25": -1.1216065287590027,
+          "shap_q75": -1.0428074598312378,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 4",
+          "mean_shap": -0.9979692861570134,
+          "median_input": 0.0408529835,
+          "rows": 5630,
+          "shap_q25": -1.0799716114997864,
+          "shap_q75": -0.9327946305274963,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 5",
+          "mean_shap": -0.9448831852598258,
+          "median_input": 0.06996860999999999,
+          "rows": 5630,
+          "shap_q25": -0.9955388754606247,
+          "shap_q75": -0.9114032685756683,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 6",
+          "mean_shap": -0.8281730343933428,
+          "median_input": 0.1181857975,
+          "rows": 5630,
+          "shap_q25": -0.931915208697319,
+          "shap_q75": -0.7297682613134384,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 7",
+          "mean_shap": -0.6166548726772542,
+          "median_input": 0.1935911585,
+          "rows": 5630,
+          "shap_q25": -0.7198733687400818,
+          "shap_q75": -0.5252682268619537,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 8",
+          "mean_shap": -0.21969477558992062,
+          "median_input": 0.30410750350000004,
+          "rows": 5630,
+          "shap_q25": -0.40283095091581345,
+          "shap_q75": -0.02249828027561307,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 9",
+          "mean_shap": 0.11273379245040761,
+          "median_input": 0.45757406450000004,
+          "rows": 5630,
+          "shap_q25": 0.017105430364608765,
+          "shap_q75": 0.21064076200127602,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 10",
+          "mean_shap": 0.5364941136822183,
+          "median_input": 0.670531662,
+          "rows": 5630,
+          "shap_q25": 0.4303003028035164,
+          "shap_q75": 0.6496770828962326,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 11",
+          "mean_shap": 0.8191760193752083,
+          "median_input": 0.911548782,
+          "rows": 5163,
+          "shap_q25": 0.7381086945533752,
+          "shap_q75": 0.9165518283843994,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 12",
+          "mean_shap": 0.948266031190621,
+          "median_input": 0.9999999,
+          "rows": 6098,
+          "shap_q25": 0.8549300879240036,
+          "shap_q75": 0.9669784009456635,
+          "sparse": false
+        }
+      ],
+      "interpretation": "observed input vs model contribution; not causal or partial dependence",
+      "missing_rows": 0,
+      "spearman_rho": 0.8905557362429791
+    },
+    "age": {
+      "binning": "12 quantile bins of observed nonmissing raw input; unique edges",
+      "bins": [
+        {
+          "bin": "quantile bin 1",
+          "mean_shap": 0.22620266833801497,
+          "median_input": 27.0,
+          "rows": 4948,
+          "shap_q25": 0.1976313665509224,
+          "shap_q75": 0.2802143767476082,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 2",
+          "mean_shap": 0.2301056642300356,
+          "median_input": 34.0,
+          "rows": 5890,
+          "shap_q25": 0.1979832723736763,
+          "shap_q75": 0.26382337510585785,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 3",
+          "mean_shap": 0.1339474865609952,
+          "median_input": 39.0,
+          "rows": 5035,
+          "shap_q25": 0.1134110540151596,
+          "shap_q75": 0.15227460861206055,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 4",
+          "mean_shap": 0.10201345568892822,
+          "median_input": 43.0,
+          "rows": 5752,
+          "shap_q25": 0.07163675501942635,
+          "shap_q75": 0.1327098198235035,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 5",
+          "mean_shap": 0.08202697701758091,
+          "median_input": 46.0,
+          "rows": 4968,
+          "shap_q25": 0.06527717038989067,
+          "shap_q75": 0.0999187733978033,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 6",
+          "mean_shap": 0.09027606465947711,
+          "median_input": 49.0,
+          "rows": 6740,
+          "shap_q25": 0.06998021714389324,
+          "shap_q75": 0.10923341289162636,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 7",
+          "mean_shap": 0.06287291730298156,
+          "median_input": 53.0,
+          "rows": 4858,
+          "shap_q25": 0.03372318856418133,
+          "shap_q75": 0.09321523644030094,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 8",
+          "mean_shap": -0.1334619571147465,
+          "median_input": 57.0,
+          "rows": 6067,
+          "shap_q25": -0.21062999963760376,
+          "shap_q75": -0.05618950352072716,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 9",
+          "mean_shap": -0.2647197870545084,
+          "median_input": 61.0,
+          "rows": 6098,
+          "shap_q25": -0.3018834888935089,
+          "shap_q75": -0.2289522960782051,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 10",
+          "mean_shap": -0.3834519993980789,
+          "median_input": 64.0,
+          "rows": 5353,
+          "shap_q25": -0.43704792857170105,
+          "shap_q75": -0.3252389132976532,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 11",
+          "mean_shap": -0.44899845704787594,
+          "median_input": 69.0,
+          "rows": 5981,
+          "shap_q25": -0.5007153153419495,
+          "shap_q75": -0.40217265486717224,
+          "sparse": false
+        },
+        {
+          "bin": "quantile bin 12",
+          "mean_shap": -0.42126542873419215,
+          "median_input": 79.0,
+          "rows": 5872,
+          "shap_q25": -0.4838825911283493,
+          "shap_q75": -0.3587411642074585,
+          "sparse": false
+        }
+      ],
+      "interpretation": "observed input vs model contribution; not causal or partial dependence",
+      "missing_rows": 0,
+      "spearman_rho": -0.9306667154672668
+    }
+  },
+  "fold_design": [
+    {
+      "evaluation_events": 903,
+      "evaluation_positions_sha256": "4681e9e179a603c3931a55743a9b671b8dcb303fa4f934bb6120407981a43dd5",
+      "evaluation_rows": 13513,
+      "fold": 1,
+      "group_overlap": 0,
+      "training_positions_sha256": "209e702ede7502fb5cabc82e048103f5089d3eaf90255cc8711209074e7e1746",
+      "training_rows": 54049
+    },
+    {
+      "evaluation_events": 902,
+      "evaluation_positions_sha256": "929fb57cff3af149664e811c4bcc59c577d0d229605695ef6e85871dd788bc08",
+      "evaluation_rows": 13511,
+      "fold": 2,
+      "group_overlap": 0,
+      "training_positions_sha256": "606c3e4212e880ab46f34c2a66a854620632da79a42dcfd58cedeffbf255341c",
+      "training_rows": 54051
+    },
+    {
+      "evaluation_events": 903,
+      "evaluation_positions_sha256": "e24786f2562f481331f36c808e52bac51614af5ae6b5bd99fe5c8245ef91e60d",
+      "evaluation_rows": 13512,
+      "fold": 3,
+      "group_overlap": 0,
+      "training_positions_sha256": "bbc49f8b2adea2b605fa34904d07a29256a27e8deb1654a9e378f0d989464c76",
+      "training_rows": 54050
+    },
+    {
+      "evaluation_events": 903,
+      "evaluation_positions_sha256": "d6ab50cbdca92bbfc85c7837ec365a48b368e96c05d65d401f3c236a8fb19a26",
+      "evaluation_rows": 13512,
+      "fold": 4,
+      "group_overlap": 0,
+      "training_positions_sha256": "a1f19d5753a61729c24f9675438a2c1c4167f15d26410c8c5236cdb8fdac84aa",
+      "training_rows": 54050
+    },
+    {
+      "evaluation_events": 903,
+      "evaluation_positions_sha256": "b3b6f2cf20399016977bb3fdb00bd4bad2f9b32d087519e48bfe7df1f2a778a1",
+      "evaluation_rows": 13514,
+      "fold": 5,
+      "group_overlap": 0,
+      "training_positions_sha256": "a269f2a7a7d16dab62a823486f8a5d9b132e072b0be35129b9112b88afe0f036",
+      "training_rows": 54048
+    }
+  ],
+  "historical_metrics": {
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "roc_auc": 0.868152,
+    "status": "retained historical, not reevaluated"
+  },
+  "leading_interactions": [
+    {
+      "estimated_folds": 5,
+      "feature_a": "age",
+      "feature_b": "NumberOfTime30_59DaysPastDueNotWorse",
+      "fold_values": [
+        0.048410434871912,
+        0.043607407361268995,
+        0.04135099999606609,
+        0.04576954774558544,
+        0.04410325780510902
+      ],
+      "mean_abs_pair_contribution": 0.04464832955598831
+    },
+    {
+      "estimated_folds": 5,
+      "feature_a": "RevolvingUtilizationOfUnsecuredLines",
+      "feature_b": "NumberOfTime30_59DaysPastDueNotWorse",
+      "fold_values": [
+        0.04784541517496109,
+        0.039442293643951416,
+        0.04364417254924774,
+        0.03741189777851105,
+        0.05021870128810406
+      ],
+      "mean_abs_pair_contribution": 0.04371249608695508
+    },
+    {
+      "estimated_folds": 5,
+      "feature_a": "RevolvingUtilizationOfUnsecuredLines",
+      "feature_b": "NumberOfTimes90DaysLate",
+      "fold_values": [
+        0.04414281085133553,
+        0.03020342454314232,
+        0.03509794361889362,
+        0.03181998334825039,
+        0.02505482725799084
+      ],
+      "mean_abs_pair_contribution": 0.03326379792392255
+    }
+  ],
+  "local_examples": [
+    {
+      "example": "fold1-p10",
+      "models": {
+        "logistic": {
+          "additivity_error": 0.0,
+          "baseline_log_odds": -2.9897282095574607,
+          "contributions_log_odds": {
+            "DebtRatio": -0.05530794218640439,
+            "MonthlyIncome": 0.0005475329802585446,
+            "NumberOfDependents": -0.0419560936146024,
+            "NumberOfOpenCreditLinesAndLoans": 0.024616486014178048,
+            "NumberOfTime30_59DaysPastDueNotWorse": -0.16848299064055455,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.021075185278253247,
+            "NumberOfTimes90DaysLate": -0.07964545584351297,
+            "NumberRealEstateLoansOrLines": 0.0015133761480650666,
+            "RevolvingUtilizationOfUnsecuredLines": -0.17061981271852822,
+            "age": -0.8258881810766932,
+            "missingindicator_MonthlyIncome": -0.2617024106271469,
+            "missingindicator_NumberOfDependents": -0.14132792444837544
+          },
+          "margin": -4.7290568108490305,
+          "raw_probability": 0.00875742985743386
+        },
+        "xgboost": {
+          "additivity_error": 3.7499703466892242e-06,
+          "baseline_log_odds": -2.661428689956665,
+          "contributions_log_odds": {
+            "DebtRatio": -0.12025079876184464,
+            "MonthlyIncome": -0.0622829906642437,
+            "NumberOfDependents": -0.024383440613746643,
+            "NumberOfOpenCreditLinesAndLoans": -0.08907953649759293,
+            "NumberOfTime30_59DaysPastDueNotWorse": -0.33761292695999146,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.10558773577213287,
+            "NumberOfTimes90DaysLate": -0.24635112285614014,
+            "NumberRealEstateLoansOrLines": 0.002187573816627264,
+            "RevolvingUtilizationOfUnsecuredLines": -0.9530004262924194,
+            "age": -0.34433531761169434,
+            "missingindicator_MonthlyIncome": -0.03238757699728012,
+            "missingindicator_NumberOfDependents": 0.0
+          },
+          "margin": -4.974509239196777,
+          "raw_probability": 0.006864463645537846
+        }
+      },
+      "quantile": 0.1,
+      "selection": "first evaluation fold; XGB predicted-score percentile"
+    },
+    {
+      "example": "fold1-p50",
+      "models": {
+        "logistic": {
+          "additivity_error": 0.0,
+          "baseline_log_odds": -2.9897282095574607,
+          "contributions_log_odds": {
+            "DebtRatio": -0.047024975422693176,
+            "MonthlyIncome": 0.005165898930620459,
+            "NumberOfDependents": 0.03197824936589322,
+            "NumberOfOpenCreditLinesAndLoans": -0.00704092609908458,
+            "NumberOfTime30_59DaysPastDueNotWorse": 0.6153506981068679,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.021075185278253247,
+            "NumberOfTimes90DaysLate": -0.07964545584351297,
+            "NumberRealEstateLoansOrLines": -0.00032276325767679255,
+            "RevolvingUtilizationOfUnsecuredLines": -0.16055449593432342,
+            "age": -0.05949818678963294,
+            "missingindicator_MonthlyIncome": 0.065268315031352,
+            "missingindicator_NumberOfDependents": 0.003771858784476246
+          },
+          "margin": -2.6433551779634277,
+          "raw_probability": 0.06639974252232371
+        },
+        "xgboost": {
+          "additivity_error": 2.0794104784727097e-06,
+          "baseline_log_odds": -2.661428689956665,
+          "contributions_log_odds": {
+            "DebtRatio": -0.22572273015975952,
+            "MonthlyIncome": -0.19958695769309998,
+            "NumberOfDependents": -0.0005520747508853674,
+            "NumberOfOpenCreditLinesAndLoans": 0.06292786449193954,
+            "NumberOfTime30_59DaysPastDueNotWorse": 0.7075913548469543,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.12377309799194336,
+            "NumberOfTimes90DaysLate": -0.23708891868591309,
+            "NumberRealEstateLoansOrLines": -0.1328609436750412,
+            "RevolvingUtilizationOfUnsecuredLines": -0.912872850894928,
+            "age": -0.09252544492483139,
+            "missingindicator_MonthlyIncome": 0.0037053609266877174,
+            "missingindicator_NumberOfDependents": 0.0
+          },
+          "margin": -3.812185049057007,
+          "raw_probability": 0.021621994383518656
+        }
+      },
+      "quantile": 0.5,
+      "selection": "first evaluation fold; XGB predicted-score percentile"
+    },
+    {
+      "example": "fold1-p90",
+      "models": {
+        "logistic": {
+          "additivity_error": 4.440892098500626e-16,
+          "baseline_log_odds": -2.9897282095574607,
+          "contributions_log_odds": {
+            "DebtRatio": -0.045942368995780095,
+            "MonthlyIncome": 0.00011784687670738716,
+            "NumberOfDependents": 0.12971413452884864,
+            "NumberOfOpenCreditLinesAndLoans": 0.00520583264671185,
+            "NumberOfTime30_59DaysPastDueNotWorse": 0.6153506981068679,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.021075185278253247,
+            "NumberOfTimes90DaysLate": -0.07964545584351297,
+            "NumberRealEstateLoansOrLines": -0.00032276325767679255,
+            "RevolvingUtilizationOfUnsecuredLines": 0.22911761328512933,
+            "age": 0.4589421034633784,
+            "missingindicator_MonthlyIncome": 0.065268315031352,
+            "missingindicator_NumberOfDependents": 0.003771858784476246
+          },
+          "margin": -1.6292255802092122,
+          "raw_probability": 0.16393647659072838
+        },
+        "xgboost": {
+          "additivity_error": 1.1153751984238625e-06,
+          "baseline_log_odds": -2.661428689956665,
+          "contributions_log_odds": {
+            "DebtRatio": -0.1284777969121933,
+            "MonthlyIncome": 0.0857672244310379,
+            "NumberOfDependents": 0.13683979213237762,
+            "NumberOfOpenCreditLinesAndLoans": -0.10600564628839493,
+            "NumberOfTime30_59DaysPastDueNotWorse": 0.5471458435058594,
+            "NumberOfTime60_89DaysPastDueNotWorse": -0.11674359440803528,
+            "NumberOfTimes90DaysLate": -0.24460874497890472,
+            "NumberRealEstateLoansOrLines": -0.10236725956201553,
+            "RevolvingUtilizationOfUnsecuredLines": 0.7345098257064819,
+            "age": 0.2139783799648285,
+            "missingindicator_MonthlyIncome": 0.00036695378366857767,
+            "missingindicator_NumberOfDependents": 0.0
+          },
+          "margin": -1.6410248279571533,
+          "raw_probability": 0.16232566230330406
+        }
+      },
+      "quantile": 0.9,
+      "selection": "first evaluation fold; XGB predicted-score percentile"
+    }
+  ],
+  "logistic_folds": [
+    {
+      "coefficients": [
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "odds_ratio_per_training_sd": 1.269523222121851,
+          "odds_ratio_per_transformed_unit": 1.9511032814660116,
+          "standardized_coefficient": 0.23864141433231667,
+          "training_scale": 0.35703650545775917,
+          "transformed_coefficient": 0.6683949979466461
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "age",
+          "odds_ratio_per_training_sd": 0.7155137276926044,
+          "odds_ratio_per_transformed_unit": 0.9777112654035306,
+          "standardized_coefficient": -0.3347544940164976,
+          "training_scale": 14.850993464689974,
+          "transformed_coefficient": -0.022540882184913538
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.564471585426723,
+          "odds_ratio_per_transformed_unit": 3.0982361808281547,
+          "standardized_coefficient": 0.4475481218824317,
+          "training_scale": 0.3957685454212067,
+          "transformed_coefficient": 1.1308329756376099
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "DebtRatio",
+          "odds_ratio_per_training_sd": 1.0999416198304832,
+          "odds_ratio_per_transformed_unit": 1.037017452904236,
+          "standardized_coefficient": 0.09525710551453073,
+          "training_scale": 2.6206425574666596,
+          "transformed_coefficient": 0.03634875929306991
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "MonthlyIncome",
+          "odds_ratio_per_training_sd": 1.0045311496086038,
+          "odds_ratio_per_transformed_unit": 1.0038057089282046,
+          "standardized_coefficient": 0.004520914855368745,
+          "training_scale": 1.1901887763003338,
+          "transformed_coefficient": 0.0037984855389259116
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "odds_ratio_per_training_sd": 0.9894895907922652,
+          "odds_ratio_per_transformed_unit": 0.982486831767682,
+          "standardized_coefficient": -0.010566033659057771,
+          "training_scale": 0.598020798196192,
+          "transformed_coefficient": -0.01766833810952405
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTimes90DaysLate",
+          "odds_ratio_per_training_sd": 1.5091057235431273,
+          "odds_ratio_per_transformed_unit": 4.056503326120485,
+          "standardized_coefficient": 0.4115172393216293,
+          "training_scale": 0.29387343019406986,
+          "transformed_coefficient": 1.4003213528009972
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberRealEstateLoansOrLines",
+          "odds_ratio_per_training_sd": 0.9986804560662191,
+          "odds_ratio_per_transformed_unit": 0.9973545162608803,
+          "standardized_coefficient": -0.0013204152984977783,
+          "training_scale": 0.4984600507237447,
+          "transformed_coefficient": -0.0026489892150445885
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.1240174053046286,
+          "odds_ratio_per_transformed_unit": 1.5429070106528806,
+          "standardized_coefficient": 0.11690923649807244,
+          "training_scale": 0.2695821548571967,
+          "transformed_coefficient": 0.4336683062719849
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.0576955554715706,
+          "odds_ratio_per_transformed_unit": 1.1125611612697361,
+          "standardized_coefficient": 0.05609253727399585,
+          "training_scale": 0.525877183654432,
+          "transformed_coefficient": 0.10666470996934478
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.8774863993821934,
+          "odds_ratio_per_transformed_unit": 0.721104852587334,
+          "standardized_coefficient": -0.1306938230417829,
+          "training_scale": 0.39971108354906576,
+          "transformed_coefficient": -0.3269707256584989
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_NumberOfDependents",
+          "odds_ratio_per_training_sd": 0.9771762085014175,
+          "odds_ratio_per_transformed_unit": 0.8649359826960836,
+          "standardized_coefficient": -0.023088286496022178,
+          "training_scale": 0.15912006194365433,
+          "transformed_coefficient": -0.1450997832328517
+        }
+      ],
+      "fold": 1
+    },
+    {
+      "coefficients": [
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "odds_ratio_per_training_sd": 1.240210950066742,
+          "odds_ratio_per_transformed_unit": 1.7934716109741353,
+          "standardized_coefficient": 0.21528148616957152,
+          "training_scale": 0.3685360111261136,
+          "transformed_coefficient": 0.5841531890241842
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "age",
+          "odds_ratio_per_training_sd": 0.7186126722320652,
+          "odds_ratio_per_transformed_unit": 0.9779580857309481,
+          "standardized_coefficient": -0.33043276984637093,
+          "training_scale": 14.82528026588388,
+          "transformed_coefficient": -0.022288466991532495
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.5732033827030014,
+          "odds_ratio_per_transformed_unit": 3.184437359061191,
+          "standardized_coefficient": 0.4531139117785206,
+          "training_scale": 0.39119696895099615,
+          "transformed_coefficient": 1.1582756200631008
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "DebtRatio",
+          "odds_ratio_per_training_sd": 1.0076242717110138,
+          "odds_ratio_per_transformed_unit": 1.0028892490872408,
+          "standardized_coefficient": 0.007595353843561215,
+          "training_scale": 2.6326290231145384,
+          "transformed_coefficient": 0.002885083229301906
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.9735900431716309,
+          "odds_ratio_per_transformed_unit": 0.9777943561954329,
+          "standardized_coefficient": -0.026764964177433837,
+          "training_scale": 1.1918900257296516,
+          "transformed_coefficient": -0.02245590079592188
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "odds_ratio_per_training_sd": 0.9754492773671827,
+          "odds_ratio_per_transformed_unit": 0.9591896628346385,
+          "standardized_coefficient": -0.024857116819087952,
+          "training_scale": 0.5965738745120209,
+          "transformed_coefficient": -0.04166645218820604
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTimes90DaysLate",
+          "odds_ratio_per_training_sd": 1.5073967355067224,
+          "odds_ratio_per_transformed_unit": 4.140391811745453,
+          "standardized_coefficient": 0.41038414677988433,
+          "training_scale": 0.28884214017993715,
+          "transformed_coefficient": 1.420790423877317
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberRealEstateLoansOrLines",
+          "odds_ratio_per_training_sd": 1.0049655062969516,
+          "odds_ratio_per_transformed_unit": 1.0099929402999661,
+          "standardized_coefficient": 0.004953218829437025,
+          "training_scale": 0.498144317500914,
+          "transformed_coefficient": 0.009943341026725526
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.1782215355906926,
+          "odds_ratio_per_transformed_unit": 1.8652311099469547,
+          "standardized_coefficient": 0.1640061283212683,
+          "training_scale": 0.2630896437027985,
+          "transformed_coefficient": 0.6233849649609896
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.074037566265765,
+          "odds_ratio_per_transformed_unit": 1.1450688004219818,
+          "standardized_coefficient": 0.07142497337604531,
+          "training_scale": 0.5272588452841321,
+          "transformed_coefficient": 0.13546472290579673
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.9539096347528588,
+          "odds_ratio_per_transformed_unit": 0.8886710666594757,
+          "standardized_coefficient": -0.04718633450158817,
+          "training_scale": 0.39978893354419576,
+          "transformed_coefficient": -0.11802811569413246
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_NumberOfDependents",
+          "odds_ratio_per_training_sd": 0.9759278748052588,
+          "odds_ratio_per_transformed_unit": 0.8576931744592579,
+          "standardized_coefficient": -0.024366594064796517,
+          "training_scale": 0.15873087595534335,
+          "transformed_coefficient": -0.153508848975619
+        }
+      ],
+      "fold": 2
+    },
+    {
+      "coefficients": [
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "odds_ratio_per_training_sd": 1.2528391926804847,
+          "odds_ratio_per_transformed_unit": 1.8440018052805938,
+          "standardized_coefficient": 0.22541232983314063,
+          "training_scale": 0.3683580550213481,
+          "transformed_coefficient": 0.611938104136414
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "age",
+          "odds_ratio_per_training_sd": 0.717961009038322,
+          "odds_ratio_per_transformed_unit": 0.9779167653179028,
+          "standardized_coefficient": -0.33134001636903493,
+          "training_scale": 14.837856648356313,
+          "transformed_coefficient": -0.022330719606038225
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.5605861588572951,
+          "odds_ratio_per_transformed_unit": 3.0402882337692936,
+          "standardized_coefficient": 0.4450614935450165,
+          "training_scale": 0.4002523162849675,
+          "transformed_coefficient": 1.111952324663491
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "DebtRatio",
+          "odds_ratio_per_training_sd": 1.2296205934652644,
+          "odds_ratio_per_transformed_unit": 1.0819120555354358,
+          "standardized_coefficient": 0.20670566120322467,
+          "training_scale": 2.6255040024190093,
+          "transformed_coefficient": 0.07872989757881775
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "MonthlyIncome",
+          "odds_ratio_per_training_sd": 1.0390018385774835,
+          "odds_ratio_per_transformed_unit": 1.0322683245502706,
+          "standardized_coefficient": 0.03826048167999395,
+          "training_scale": 1.2047267919243598,
+          "transformed_coefficient": 0.031758637673259434
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "odds_ratio_per_training_sd": 0.9820991226434824,
+          "odds_ratio_per_transformed_unit": 0.9702804577353863,
+          "standardized_coefficient": -0.018063036166244165,
+          "training_scale": 0.5987061904153073,
+          "transformed_coefficient": -0.030170117589254083
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTimes90DaysLate",
+          "odds_ratio_per_training_sd": 1.4517249651530035,
+          "odds_ratio_per_transformed_unit": 3.4662858524824864,
+          "standardized_coefficient": 0.3727524805220581,
+          "training_scale": 0.2998611373930251,
+          "transformed_coefficient": 1.2430836611998006
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberRealEstateLoansOrLines",
+          "odds_ratio_per_training_sd": 0.9718648012497014,
+          "odds_ratio_per_transformed_unit": 0.9443241109675024,
+          "standardized_coefficient": -0.028538577560581795,
+          "training_scale": 0.4981786181764162,
+          "transformed_coefficient": -0.05728583387429857
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.13103262377001,
+          "odds_ratio_per_transformed_unit": 1.562528700965925,
+          "standardized_coefficient": 0.12313104178429425,
+          "training_scale": 0.27588960871779133,
+          "transformed_coefficient": 0.44630547107791047
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.0644990029277732,
+          "odds_ratio_per_transformed_unit": 1.1258483935332317,
+          "standardized_coefficient": 0.06250426869315973,
+          "training_scale": 0.5272980797584672,
+          "transformed_coefficient": 0.11853687903014984
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.7771395830364701,
+          "odds_ratio_per_transformed_unit": 0.531627892804495,
+          "standardized_coefficient": -0.25213530120087896,
+          "training_scale": 0.3990672971161461,
+          "transformed_coefficient": -0.6318114839851098
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_NumberOfDependents",
+          "odds_ratio_per_training_sd": 0.9552176301051477,
+          "odds_ratio_per_transformed_unit": 0.7492085147109245,
+          "standardized_coefficient": -0.04581607953637641,
+          "training_scale": 0.15867703079096418,
+          "transformed_coefficient": -0.28873794340614417
+        }
+      ],
+      "fold": 3
+    },
+    {
+      "coefficients": [
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "odds_ratio_per_training_sd": 1.2563679211362127,
+          "odds_ratio_per_transformed_unit": 1.8677178388554927,
+          "standardized_coefficient": 0.2282249559910786,
+          "training_scale": 0.3653251860210364,
+          "transformed_coefficient": 0.6247172785342447
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "age",
+          "odds_ratio_per_training_sd": 0.7144482282554556,
+          "odds_ratio_per_transformed_unit": 0.9776443417536905,
+          "standardized_coefficient": -0.3362447429422244,
+          "training_scale": 14.871943841142441,
+          "transformed_coefficient": -0.022609333825751896
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.5206412528423965,
+          "odds_ratio_per_transformed_unit": 2.85951250438414,
+          "standardized_coefficient": 0.4191321227631567,
+          "training_scale": 0.39892605633640005,
+          "transformed_coefficient": 1.0506511572904569
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "DebtRatio",
+          "odds_ratio_per_training_sd": 1.1842789709106698,
+          "odds_ratio_per_transformed_unit": 1.0665137876096489,
+          "standardized_coefficient": 0.16913412603161257,
+          "training_scale": 2.626502609409856,
+          "transformed_coefficient": 0.06439518674973448
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "MonthlyIncome",
+          "odds_ratio_per_training_sd": 1.0231616489961013,
+          "odds_ratio_per_transformed_unit": 1.019466429225582,
+          "standardized_coefficient": 0.022897489145433682,
+          "training_scale": 1.1876671852628844,
+          "transformed_coefficient": 0.019279381824770576
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "odds_ratio_per_training_sd": 1.0082957932133527,
+          "odds_ratio_per_transformed_unit": 1.013915617358997,
+          "standardized_coefficient": 0.008261572250591105,
+          "training_scale": 0.5978119459108103,
+          "transformed_coefficient": 0.013819684111537774
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTimes90DaysLate",
+          "odds_ratio_per_training_sd": 1.4987150070832658,
+          "odds_ratio_per_transformed_unit": 3.8528454175123725,
+          "standardized_coefficient": 0.40460807901913715,
+          "training_scale": 0.2999736772625573,
+          "transformed_coefficient": 1.3488119448060663
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberRealEstateLoansOrLines",
+          "odds_ratio_per_training_sd": 0.9667605851061111,
+          "odds_ratio_per_transformed_unit": 0.9343420329223662,
+          "standardized_coefficient": -0.03380439938879575,
+          "training_scale": 0.4977625192757581,
+          "transformed_coefficient": -0.0679127055166407
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.1272976443169853,
+          "odds_ratio_per_transformed_unit": 1.543292665595674,
+          "standardized_coefficient": 0.11982330339791841,
+          "training_scale": 0.27614258984461204,
+          "transformed_coefficient": 0.4339182284968939
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.0654660353560212,
+          "odds_ratio_per_transformed_unit": 1.1280172635760952,
+          "standardized_coefficient": 0.06341229532957007,
+          "training_scale": 0.5264114897876839,
+          "transformed_coefficient": 0.12046145754749003
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.800739583910261,
+          "odds_ratio_per_transformed_unit": 0.5736023641005106,
+          "standardized_coefficient": -0.22221949849472458,
+          "training_scale": 0.3998056043292321,
+          "transformed_coefficient": -0.5558188681910801
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_NumberOfDependents",
+          "odds_ratio_per_training_sd": 0.9913135027783319,
+          "odds_ratio_per_transformed_unit": 0.9474364812931474,
+          "standardized_coefficient": -0.008724444752555802,
+          "training_scale": 0.16157760813820723,
+          "transformed_coefficient": -0.05399538248575415
+        }
+      ],
+      "fold": 4
+    },
+    {
+      "coefficients": [
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "odds_ratio_per_training_sd": 1.2732281536052277,
+          "odds_ratio_per_transformed_unit": 1.9662213503964727,
+          "standardized_coefficient": 0.24155552865793958,
+          "training_scale": 0.3572706228860326,
+          "transformed_coefficient": 0.6761136046021743
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "age",
+          "odds_ratio_per_training_sd": 0.7156732350719218,
+          "odds_ratio_per_transformed_unit": 0.9777052617901432,
+          "standardized_coefficient": -0.33453159179040437,
+          "training_scale": 14.83706281442019,
+          "transformed_coefficient": -0.0225470226806125
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.5331928014838567,
+          "odds_ratio_per_transformed_unit": 2.93852319081843,
+          "standardized_coefficient": 0.42735235942053085,
+          "training_scale": 0.39646491234630904,
+          "transformed_coefficient": 1.0779071390994668
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "DebtRatio",
+          "odds_ratio_per_training_sd": 1.1322485589439981,
+          "odds_ratio_per_transformed_unit": 1.0486542399629737,
+          "standardized_coefficient": 0.12420553071678823,
+          "training_scale": 2.614431342370779,
+          "transformed_coefficient": 0.04750766589424301
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "MonthlyIncome",
+          "odds_ratio_per_training_sd": 1.0112081940409348,
+          "odds_ratio_per_transformed_unit": 1.009437955062944,
+          "standardized_coefficient": 0.01114584766177685,
+          "training_scale": 1.1865242253420456,
+          "transformed_coefficient": 0.009393695824932507
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "odds_ratio_per_training_sd": 1.0011801475102604,
+          "odds_ratio_per_transformed_unit": 1.0019696279640498,
+          "standardized_coefficient": 0.0011794516835856455,
+          "training_scale": 0.5994090583187917,
+          "transformed_coefficient": 0.0019676907901487904
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTimes90DaysLate",
+          "odds_ratio_per_training_sd": 1.4863781940877374,
+          "odds_ratio_per_transformed_unit": 3.7858678394416923,
+          "standardized_coefficient": 0.39634241868439773,
+          "training_scale": 0.29771638141740614,
+          "transformed_coefficient": 1.3312751444762299
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "NumberRealEstateLoansOrLines",
+          "odds_ratio_per_training_sd": 0.9864774720607401,
+          "odds_ratio_per_transformed_unit": 0.9730491397104412,
+          "standardized_coefficient": -0.013614790008560168,
+          "training_scale": 0.498332495650408,
+          "transformed_coefficient": -0.027320694771852214
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "odds_ratio_per_training_sd": 1.1668131149883905,
+          "odds_ratio_per_transformed_unit": 1.762980816068782,
+          "standardized_coefficient": 0.15427619908229306,
+          "training_scale": 0.27208917209290795,
+          "transformed_coefficient": 0.567006021943474
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.0608472179291273,
+          "odds_ratio_per_transformed_unit": 1.118658701350215,
+          "standardized_coefficient": 0.05906785108132851,
+          "training_scale": 0.5267783032654969,
+          "transformed_coefficient": 0.11213037954518458
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "negative",
+          "feature": "missingindicator_MonthlyIncome",
+          "odds_ratio_per_training_sd": 0.8419138732149897,
+          "odds_ratio_per_transformed_unit": 0.6482858503424881,
+          "standardized_coefficient": -0.1720775583148623,
+          "training_scale": 0.3970193986756373,
+          "transformed_coefficient": -0.43342355282606415
+        },
+        {
+          "constant_training_feature": false,
+          "direction": "positive",
+          "feature": "missingindicator_NumberOfDependents",
+          "odds_ratio_per_training_sd": 1.0086531521591822,
+          "odds_ratio_per_transformed_unit": 1.0564286734288222,
+          "standardized_coefficient": 0.008615928220174419,
+          "training_scale": 0.15695561204476852,
+          "transformed_coefficient": 0.05489404365940667
+        }
+      ],
+      "fold": 5
+    }
+  ],
+  "logistic_stability": [
+    {
+      "coefficient": {
+        "max": 0.20670566120322467,
+        "mean": 0.12057955546194347,
+        "min": 0.007595353843561215,
+        "std": 0.0761496165397347
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "DebtRatio",
+      "fold_coefficients": [
+        0.09525710551453073,
+        0.007595353843561215,
+        0.20670566120322467,
+        0.16913412603161257,
+        0.12420553071678823
+      ],
+      "fold_ranks": [
+        7.0,
+        11.0,
+        6.0,
+        6.0,
+        7.0
+      ],
+      "rank": {
+        "max": 11.0,
+        "mean": 7.4,
+        "min": 6.0,
+        "std": 2.073644135332772
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.03826048167999395,
+        "mean": 0.010011953833027876,
+        "min": -0.026764964177433837,
+        "std": 0.02422805846753586
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "MonthlyIncome",
+      "fold_coefficients": [
+        0.004520914855368745,
+        -0.026764964177433837,
+        0.03826048167999395,
+        0.022897489145433682,
+        0.01114584766177685
+      ],
+      "fold_ranks": [
+        11.0,
+        8.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "rank": {
+        "max": 11.0,
+        "mean": 9.8,
+        "min": 8.0,
+        "std": 1.0954451150103324
+      },
+      "sign_consistency": 0.8,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 1,
+        "positive": 4
+      },
+      "sign_flip": true,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.07142497337604531,
+        "mean": 0.06250038515081989,
+        "min": 0.05609253727399585,
+        "std": 0.005773271923194396
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "NumberOfDependents",
+      "fold_coefficients": [
+        0.05609253727399585,
+        0.07142497337604531,
+        0.06250426869315973,
+        0.06341229532957007,
+        0.05906785108132851
+      ],
+      "fold_ranks": [
+        8.0,
+        6.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "rank": {
+        "max": 8.0,
+        "mean": 7.6,
+        "min": 6.0,
+        "std": 0.8944271909999157
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.008261572250591105,
+        "mean": -0.00880903254204263,
+        "min": -0.024857116819087952,
+        "std": 0.013577923350764942
+      },
+      "dominant_sign": "negative",
+      "estimated_folds": 5,
+      "feature": "NumberOfOpenCreditLinesAndLoans",
+      "fold_coefficients": [
+        -0.010566033659057771,
+        -0.024857116819087952,
+        -0.018063036166244165,
+        0.008261572250591105,
+        0.0011794516835856455
+      ],
+      "fold_ranks": [
+        10.0,
+        9.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "rank": {
+        "max": 12.0,
+        "mean": 11.0,
+        "min": 9.0,
+        "std": 1.4142135623730951
+      },
+      "sign_consistency": 0.6,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 3,
+        "positive": 2
+      },
+      "sign_flip": true,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.4531139117785206,
+        "mean": 0.43844160187793124,
+        "min": 0.4191321227631567,
+        "std": 0.014472867995478391
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+      "fold_coefficients": [
+        0.4475481218824317,
+        0.4531139117785206,
+        0.4450614935450165,
+        0.4191321227631567,
+        0.42735235942053085
+      ],
+      "fold_ranks": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "std": 0.0
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.1640061283212683,
+        "mean": 0.1356291818167693,
+        "min": 0.11690923649807244,
+        "std": 0.021848501066536526
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+      "fold_coefficients": [
+        0.11690923649807244,
+        0.1640061283212683,
+        0.12313104178429425,
+        0.11982330339791841,
+        0.15427619908229306
+      ],
+      "fold_ranks": [
+        6.0,
+        5.0,
+        7.0,
+        7.0,
+        6.0
+      ],
+      "rank": {
+        "max": 7.0,
+        "mean": 6.2,
+        "min": 5.0,
+        "std": 0.8366600265340756
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.4115172393216293,
+        "mean": 0.3991208728654213,
+        "min": 0.3727524805220581,
+        "std": 0.01591895563763356
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "NumberOfTimes90DaysLate",
+      "fold_coefficients": [
+        0.4115172393216293,
+        0.41038414677988433,
+        0.3727524805220581,
+        0.40460807901913715,
+        0.39634241868439773
+      ],
+      "fold_ranks": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "rank": {
+        "max": 2.0,
+        "mean": 2.0,
+        "min": 2.0,
+        "std": 0.0
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.004953218829437025,
+        "mean": -0.014464992685399695,
+        "min": -0.03380439938879575,
+        "std": 0.016752970934920845
+      },
+      "dominant_sign": "negative",
+      "estimated_folds": 5,
+      "feature": "NumberRealEstateLoansOrLines",
+      "fold_coefficients": [
+        -0.0013204152984977783,
+        0.004953218829437025,
+        -0.028538577560581795,
+        -0.03380439938879575,
+        -0.013614790008560168
+      ],
+      "fold_ranks": [
+        12.0,
+        12.0,
+        11.0,
+        9.0,
+        9.0
+      ],
+      "rank": {
+        "max": 12.0,
+        "mean": 10.6,
+        "min": 9.0,
+        "std": 1.51657508881031
+      },
+      "sign_consistency": 0.8,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 4,
+        "positive": 1
+      },
+      "sign_flip": true,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.24155552865793958,
+        "mean": 0.2298231429968094,
+        "min": 0.21528148616957152,
+        "std": 0.010593394644769882
+      },
+      "dominant_sign": "positive",
+      "estimated_folds": 5,
+      "feature": "RevolvingUtilizationOfUnsecuredLines",
+      "fold_coefficients": [
+        0.23864141433231667,
+        0.21528148616957152,
+        0.22541232983314063,
+        0.2282249559910786,
+        0.24155552865793958
+      ],
+      "fold_ranks": [
+        4.0,
+        4.0,
+        5.0,
+        4.0,
+        4.0
+      ],
+      "rank": {
+        "max": 5.0,
+        "mean": 4.2,
+        "min": 4.0,
+        "std": 0.4472135954999579
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 0,
+        "positive": 5
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": -0.33043276984637093,
+        "mean": -0.3334607229929064,
+        "min": -0.3362447429422244,
+        "std": 0.0024615679638842953
+      },
+      "dominant_sign": "negative",
+      "estimated_folds": 5,
+      "feature": "age",
+      "fold_coefficients": [
+        -0.3347544940164976,
+        -0.33043276984637093,
+        -0.33134001636903493,
+        -0.3362447429422244,
+        -0.33453159179040437
+      ],
+      "fold_ranks": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "rank": {
+        "max": 3.0,
+        "mean": 3.0,
+        "min": 3.0,
+        "std": 0.0
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 5,
+        "positive": 0
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": -0.04718633450158817,
+        "mean": -0.1648625031107674,
+        "min": -0.25213530120087896,
+        "std": 0.08058163963295764
+      },
+      "dominant_sign": "negative",
+      "estimated_folds": 5,
+      "feature": "missingindicator_MonthlyIncome",
+      "fold_coefficients": [
+        -0.1306938230417829,
+        -0.04718633450158817,
+        -0.25213530120087896,
+        -0.22221949849472458,
+        -0.1720775583148623
+      ],
+      "fold_ranks": [
+        5.0,
+        7.0,
+        4.0,
+        5.0,
+        5.0
+      ],
+      "rank": {
+        "max": 7.0,
+        "mean": 5.2,
+        "min": 4.0,
+        "std": 1.0954451150103321
+      },
+      "sign_consistency": 1.0,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 5,
+        "positive": 0
+      },
+      "sign_flip": false,
+      "sign_tolerance": 1e-08
+    },
+    {
+      "coefficient": {
+        "max": 0.008615928220174419,
+        "mean": -0.0186758953259153,
+        "min": -0.04581607953637641,
+        "std": 0.020200976758175695
+      },
+      "dominant_sign": "negative",
+      "estimated_folds": 5,
+      "feature": "missingindicator_NumberOfDependents",
+      "fold_coefficients": [
+        -0.023088286496022178,
+        -0.024366594064796517,
+        -0.04581607953637641,
+        -0.008724444752555802,
+        0.008615928220174419
+      ],
+      "fold_ranks": [
+        9.0,
+        10.0,
+        9.0,
+        11.0,
+        11.0
+      ],
+      "rank": {
+        "max": 11.0,
+        "mean": 10.0,
+        "min": 9.0,
+        "std": 1.0
+      },
+      "sign_consistency": 0.8,
+      "sign_counts": {
+        "near_zero": 0,
+        "negative": 4,
+        "positive": 1
+      },
+      "sign_flip": true,
+      "sign_tolerance": 1e-08
+    }
+  ],
+  "methodology": {
+    "background": "tree-path-dependent training cover; no external background",
+    "folds": 5,
+    "global_importance": "row-weighted pooled mean absolute SHAP; fold means/SD descriptive",
+    "global_shap_rows": 67562,
+    "interaction_pair_scale": "2 * off-diagonal SHAP interaction allocation; raw margin",
+    "interaction_rows_per_fold": 200,
+    "local_selection": "fold 1 XGB score p10/p50/p90, deterministic ties by evaluation order",
+    "missing_indicator_policy": "separate transformed columns; absent tree columns contribute zero, absent coefficients are not estimated",
+    "shap_implementation": "XGBoost native exact TreeSHAP (approx_contribs=False)",
+    "shap_scale": "raw margin / log-odds"
+  },
+  "model_config": {
+    "baseline": "logistic_regression",
+    "calibration_fraction": 0.2,
+    "calibration_methods": [
+      "raw",
+      "sigmoid",
+      "isotonic"
+    ],
+    "challenger": "xgboost",
+    "classification_threshold": 0.1,
+    "clip_lower_quantile": 0.001,
+    "clip_upper_quantile": 0.999,
+    "logistic": {
+      "c": 1.0,
+      "max_iter": 3000,
+      "tolerance": 1e-05
+    },
+    "test_fraction": 0.2,
+    "validation_fraction": 0.15,
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 250,
+      "n_jobs": 2,
+      "reg_lambda": 5.0,
+      "subsample": 0.8
+    }
+  },
+  "preserved_evidence_sha256": {
+    "reports/holdout_registry.json": "5937d349ae1c33791f81b626090b4ff22b071c575761f51e5bb50fdb08a5cd77",
+    "reports/model_validation/CALIBRATION_STUDY.md": "b420d1742b557560da863350d71ee9e5c27c16b879c833c558d5eb7d0dec77fb",
+    "reports/model_validation/PD_DIAGNOSTICS.md": "e56489ca3a28efb439ad595061b8728cd37c14db8f035c7967a40ffc4c73dad6",
+    "reports/model_validation/calibration_comparison.png": "8df111642fc1d536cd7950e037466a57362d584d4887311a2b8976be4e2f60cf",
+    "reports/model_validation/calibration_study.json": "10a7198a612c19003518abfa153889f26c6c4bc674165b8098a69dfdbb29782f",
+    "reports/model_validation/pd_diagnostics.json": "1a4764eacabaf7983008fbf26139a14d6ac41d4a5396441c3f58a4fde0a38b18",
+    "reports/model_validation/pd_diagnostics.png": "eaf1f230d91cd8e428428fd884eccfd1189543b175d03a6236f980278e1a3e45"
+  },
+  "provenance": {
+    "assignments_sha256": "efbdc36ee1286f0c06f302197174efbf9884ecb0f8e8c4b9d010569265db04e2",
+    "events": 4514,
+    "original_holdout_access": "excluded at CSV parsing; no frozen model/prediction loading",
+    "partition": "original train only",
+    "registry_sha256": "5937d349ae1c33791f81b626090b4ff22b071c575761f51e5bb50fdb08a5cd77",
+    "rows": 67562,
+    "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "training_positions_sha256": "892d79c1fed9be83efbae3370195cba20bfe387e8284fad5377df0ff5d8e81c2"
+  },
+  "rows": 67562,
+  "schema_version": 1,
+  "seed": 42,
+  "source_code_sha256": {
+    "scripts/explainability_study.py": "a470650f318d0a017c522a53eec1421c934b836991b20b091804e0223644c602",
+    "src/credit_risk/explainability/__init__.py": "87062768eaef21a3cfa25ee87a9aac6136629ab628aaee7e6242ae5b6b920df6",
+    "src/credit_risk/explainability/logistic.py": "042c2d6436376acd69deb45b8c8fe72caf65d864a33d009b84ee7c3364eb4349",
+    "src/credit_risk/explainability/reporting.py": "fecb77e147830cbfa08cd1acc4ebe32494f3b762e67d5ca8dabca01deba7bf4b",
+    "src/credit_risk/explainability/stability.py": "212b4e2708f65d8e25d4d409075fbdf901a46c2eeb5cf0dc576b8ed7265a71ea",
+    "src/credit_risk/explainability/study.py": "58b92fd0cc81623f7132be67854d01941154954d91f4b9b9658c1e11d1c85227",
+    "src/credit_risk/explainability/xgboost.py": "654e5251c5d7076cf0b30a31d1fd1d4a2842d08d4c122bd654ff546d603fa561",
+    "src/credit_risk/features/origination.py": "6cbb3d9442caf77aad9f70e099503566c8a9d39afbb52c7caec87ef3f86d6cf7",
+    "src/credit_risk/models/pd.py": "dce0e3d2bb5993714446c5f0fa60428bf02a9a8c02fb610877ac7cd3dbe24ff3",
+    "src/credit_risk/utils/config.py": "9b26248bfb20abd4280d1acd7d0bb37114c0544f0c2d2251f874a7a2ff660bc4",
+    "src/credit_risk/validation/metrics.py": "3195821b50e0f72d218fe7e0b2dda436a985aba991f00a6987e3f412f2ccc91a",
+    "src/credit_risk/validation/pd_diagnostics.py": "47ed5fc40767f5efae97a62848118e1b20d33737472898a88607394b87396657"
+  },
+  "target": "two-year serious-delinquency outcome",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "xgboost": "3.2.0"
+  },
+  "xgboost_folds": [
+    {
+      "evaluation_rows": 13513,
+      "features": [
+        {
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "mean_abs_shap": 0.7730969388072743,
+          "mean_signed_shap": -0.35515925340170734,
+          "rank": 1.0
+        },
+        {
+          "feature": "age",
+          "mean_abs_shap": 0.21308659354321752,
+          "mean_signed_shap": -0.05686995208556909,
+          "rank": 4.0
+        },
+        {
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "mean_abs_shap": 0.3737309946347278,
+          "mean_signed_shap": -0.1338931502724597,
+          "rank": 2.0
+        },
+        {
+          "feature": "DebtRatio",
+          "mean_abs_shap": 0.11640014279651262,
+          "mean_signed_shap": -0.02133094853322264,
+          "rank": 8.0
+        },
+        {
+          "feature": "MonthlyIncome",
+          "mean_abs_shap": 0.1185511642116774,
+          "mean_signed_shap": -0.022617839659624554,
+          "rank": 7.0
+        },
+        {
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "mean_abs_shap": 0.15114930845477106,
+          "mean_signed_shap": -0.005483685950972011,
+          "rank": 5.0
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "mean_abs_shap": 0.3239896909281317,
+          "mean_signed_shap": -0.1632784348520724,
+          "rank": 3.0
+        },
+        {
+          "feature": "NumberRealEstateLoansOrLines",
+          "mean_abs_shap": 0.07896955446013051,
+          "mean_signed_shap": -0.01248764044126461,
+          "rank": 9.0
+        },
+        {
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "mean_abs_shap": 0.1382838242394993,
+          "mean_signed_shap": -0.05388037174331403,
+          "rank": 6.0
+        },
+        {
+          "feature": "NumberOfDependents",
+          "mean_abs_shap": 0.01964620253220774,
+          "mean_signed_shap": -0.0021289826589377895,
+          "rank": 10.0
+        },
+        {
+          "feature": "missingindicator_MonthlyIncome",
+          "mean_abs_shap": 0.005899548517358802,
+          "mean_signed_shap": -0.0014320129140851952,
+          "rank": 11.0
+        },
+        {
+          "feature": "missingindicator_NumberOfDependents",
+          "mean_abs_shap": 0.0,
+          "mean_signed_shap": 0.0,
+          "rank": 12.0
+        }
+      ],
+      "fold": 1,
+      "interaction_sampling": {
+        "population_counts": [
+          1349,
+          1354,
+          1351,
+          1351,
+          1351,
+          1352,
+          1351,
+          1351,
+          1351,
+          1352
+        ],
+        "positions_sha256": "2a799fa2ee9b672996312c9233a49e17d1f61ef54e1592387b2bec62ab98a105",
+        "sample_counts": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "seed": 142,
+        "size": 200,
+        "strategy": "proportional predicted-score deciles; no labels used"
+      },
+      "max_additivity_error": 5.241716280579567e-06,
+      "max_interaction_error": 3.14321368932724e-07
+    },
+    {
+      "evaluation_rows": 13511,
+      "features": [
+        {
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "mean_abs_shap": 0.7421681165989085,
+          "mean_signed_shap": -0.32708059031629344,
+          "rank": 1.0
+        },
+        {
+          "feature": "age",
+          "mean_abs_shap": 0.21702332006365424,
+          "mean_signed_shap": -0.06399405076200772,
+          "rank": 4.0
+        },
+        {
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "mean_abs_shap": 0.3538780705339506,
+          "mean_signed_shap": -0.1158576737657817,
+          "rank": 2.0
+        },
+        {
+          "feature": "DebtRatio",
+          "mean_abs_shap": 0.11378475180545995,
+          "mean_signed_shap": -0.018875068749741767,
+          "rank": 8.0
+        },
+        {
+          "feature": "MonthlyIncome",
+          "mean_abs_shap": 0.12479565961118545,
+          "mean_signed_shap": -0.025436185642496292,
+          "rank": 7.0
+        },
+        {
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "mean_abs_shap": 0.1459217473216663,
+          "mean_signed_shap": -0.008347955343741007,
+          "rank": 6.0
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "mean_abs_shap": 0.31188289889527165,
+          "mean_signed_shap": -0.15410915447145218,
+          "rank": 3.0
+        },
+        {
+          "feature": "NumberRealEstateLoansOrLines",
+          "mean_abs_shap": 0.06757801617111815,
+          "mean_signed_shap": -0.014581002767030924,
+          "rank": 9.0
+        },
+        {
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "mean_abs_shap": 0.15628092657672946,
+          "mean_signed_shap": -0.05269427165989034,
+          "rank": 5.0
+        },
+        {
+          "feature": "NumberOfDependents",
+          "mean_abs_shap": 0.030674837742929752,
+          "mean_signed_shap": -0.004043103435970795,
+          "rank": 10.0
+        },
+        {
+          "feature": "missingindicator_MonthlyIncome",
+          "mean_abs_shap": 0.0036842970296854577,
+          "mean_signed_shap": -0.0007559661873738182,
+          "rank": 11.0
+        },
+        {
+          "feature": "missingindicator_NumberOfDependents",
+          "mean_abs_shap": 0.0010872606407982225,
+          "mean_signed_shap": 0.000333234849189594,
+          "rank": 12.0
+        }
+      ],
+      "fold": 2,
+      "interaction_sampling": {
+        "population_counts": [
+          1351,
+          1351,
+          1352,
+          1350,
+          1351,
+          1352,
+          1350,
+          1351,
+          1351,
+          1352
+        ],
+        "positions_sha256": "ff2caa43ce2730433811acd92abfa91defddccc569775853ecb3dae6cd9c669b",
+        "sample_counts": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "seed": 142,
+        "size": 200,
+        "strategy": "proportional predicted-score deciles; no labels used"
+      },
+      "max_additivity_error": 3.6382698453962803e-06,
+      "max_interaction_error": 2.795022737700492e-07
+    },
+    {
+      "evaluation_rows": 13512,
+      "features": [
+        {
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "mean_abs_shap": 0.759295872286444,
+          "mean_signed_shap": -0.3567524551489629,
+          "rank": 1.0
+        },
+        {
+          "feature": "age",
+          "mean_abs_shap": 0.22718275496384477,
+          "mean_signed_shap": -0.06984009309567397,
+          "rank": 4.0
+        },
+        {
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "mean_abs_shap": 0.34909570746811946,
+          "mean_signed_shap": -0.12523399400284935,
+          "rank": 2.0
+        },
+        {
+          "feature": "DebtRatio",
+          "mean_abs_shap": 0.10350821698738986,
+          "mean_signed_shap": -0.020501597426779934,
+          "rank": 8.0
+        },
+        {
+          "feature": "MonthlyIncome",
+          "mean_abs_shap": 0.1370849363346592,
+          "mean_signed_shap": -0.024529267076729765,
+          "rank": 7.0
+        },
+        {
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "mean_abs_shap": 0.15659885671597404,
+          "mean_signed_shap": -0.005485450520893227,
+          "rank": 6.0
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "mean_abs_shap": 0.2945413976045333,
+          "mean_signed_shap": -0.14674977583798557,
+          "rank": 3.0
+        },
+        {
+          "feature": "NumberRealEstateLoansOrLines",
+          "mean_abs_shap": 0.05832917921783252,
+          "mean_signed_shap": -0.015777058234628223,
+          "rank": 9.0
+        },
+        {
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "mean_abs_shap": 0.17097489047649964,
+          "mean_signed_shap": -0.0683100750391929,
+          "rank": 5.0
+        },
+        {
+          "feature": "NumberOfDependents",
+          "mean_abs_shap": 0.025750312605417984,
+          "mean_signed_shap": -0.004656660805676411,
+          "rank": 10.0
+        },
+        {
+          "feature": "missingindicator_MonthlyIncome",
+          "mean_abs_shap": 0.0036506764501481564,
+          "mean_signed_shap": -0.0013632576692355338,
+          "rank": 11.0
+        },
+        {
+          "feature": "missingindicator_NumberOfDependents",
+          "mean_abs_shap": 0.0,
+          "mean_signed_shap": 0.0,
+          "rank": 12.0
+        }
+      ],
+      "fold": 3,
+      "interaction_sampling": {
+        "population_counts": [
+          1352,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1352
+        ],
+        "positions_sha256": "6300551e647a9218f717880f8d7374ce85b73cacac75c27da1c7659162ce47e1",
+        "sample_counts": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "seed": 142,
+        "size": 200,
+        "strategy": "proportional predicted-score deciles; no labels used"
+      },
+      "max_additivity_error": 7.830560207366943e-06,
+      "max_interaction_error": 2.6030465960502625e-07
+    },
+    {
+      "evaluation_rows": 13512,
+      "features": [
+        {
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "mean_abs_shap": 0.7363666906847479,
+          "mean_signed_shap": -0.3292231726717691,
+          "rank": 1.0
+        },
+        {
+          "feature": "age",
+          "mean_abs_shap": 0.22146710503108283,
+          "mean_signed_shap": -0.07164392742275136,
+          "rank": 4.0
+        },
+        {
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "mean_abs_shap": 0.34413857134020476,
+          "mean_signed_shap": -0.11403416577051684,
+          "rank": 2.0
+        },
+        {
+          "feature": "DebtRatio",
+          "mean_abs_shap": 0.10202059585801165,
+          "mean_signed_shap": -0.018162590512404167,
+          "rank": 8.0
+        },
+        {
+          "feature": "MonthlyIncome",
+          "mean_abs_shap": 0.13445446734795283,
+          "mean_signed_shap": -0.028235726094096116,
+          "rank": 7.0
+        },
+        {
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "mean_abs_shap": 0.15406265839109276,
+          "mean_signed_shap": -0.0004904605777882637,
+          "rank": 6.0
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "mean_abs_shap": 0.3228839804496133,
+          "mean_signed_shap": -0.1581968224842858,
+          "rank": 3.0
+        },
+        {
+          "feature": "NumberRealEstateLoansOrLines",
+          "mean_abs_shap": 0.058810987744801806,
+          "mean_signed_shap": -0.007226745146835564,
+          "rank": 9.0
+        },
+        {
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "mean_abs_shap": 0.1707885655998531,
+          "mean_signed_shap": -0.06265007275172668,
+          "rank": 5.0
+        },
+        {
+          "feature": "NumberOfDependents",
+          "mean_abs_shap": 0.01755038414021226,
+          "mean_signed_shap": -0.0020631494277129864,
+          "rank": 10.0
+        },
+        {
+          "feature": "missingindicator_MonthlyIncome",
+          "mean_abs_shap": 0.008739151338553805,
+          "mean_signed_shap": -0.0009596464373857484,
+          "rank": 11.0
+        },
+        {
+          "feature": "missingindicator_NumberOfDependents",
+          "mean_abs_shap": 0.002180680921087921,
+          "mean_signed_shap": 0.0004528729509172273,
+          "rank": 12.0
+        }
+      ],
+      "fold": 4,
+      "interaction_sampling": {
+        "population_counts": [
+          1352,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1351,
+          1352
+        ],
+        "positions_sha256": "0bfd6d87bf0f47ce838321aa5ffcda5d9179ea4fa55fe5cdc2a5f8566d91e0d1",
+        "sample_counts": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "seed": 142,
+        "size": 200,
+        "strategy": "proportional predicted-score deciles; no labels used"
+      },
+      "max_additivity_error": 5.675596185028553e-06,
+      "max_interaction_error": 2.34867911785841e-07
+    },
+    {
+      "evaluation_rows": 13514,
+      "features": [
+        {
+          "feature": "RevolvingUtilizationOfUnsecuredLines",
+          "mean_abs_shap": 0.7550552475832436,
+          "mean_signed_shap": -0.36080648520378655,
+          "rank": 1.0
+        },
+        {
+          "feature": "age",
+          "mean_abs_shap": 0.2175639260175287,
+          "mean_signed_shap": -0.07649082599263116,
+          "rank": 4.0
+        },
+        {
+          "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+          "mean_abs_shap": 0.35732199308768836,
+          "mean_signed_shap": -0.12539382212539918,
+          "rank": 2.0
+        },
+        {
+          "feature": "DebtRatio",
+          "mean_abs_shap": 0.1153214160076082,
+          "mean_signed_shap": -0.02243719232421563,
+          "rank": 8.0
+        },
+        {
+          "feature": "MonthlyIncome",
+          "mean_abs_shap": 0.1214719271455383,
+          "mean_signed_shap": -0.021675635511953256,
+          "rank": 7.0
+        },
+        {
+          "feature": "NumberOfOpenCreditLinesAndLoans",
+          "mean_abs_shap": 0.1618331744384197,
+          "mean_signed_shap": 0.0022493089208695362,
+          "rank": 6.0
+        },
+        {
+          "feature": "NumberOfTimes90DaysLate",
+          "mean_abs_shap": 0.30702016562437345,
+          "mean_signed_shap": -0.1570702881360832,
+          "rank": 3.0
+        },
+        {
+          "feature": "NumberRealEstateLoansOrLines",
+          "mean_abs_shap": 0.06133483473766003,
+          "mean_signed_shap": -0.016653977818651508,
+          "rank": 9.0
+        },
+        {
+          "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+          "mean_abs_shap": 0.16832441352423574,
+          "mean_signed_shap": -0.05981483695835903,
+          "rank": 5.0
+        },
+        {
+          "feature": "NumberOfDependents",
+          "mean_abs_shap": 0.020015700022343378,
+          "mean_signed_shap": -0.0031144548578292694,
+          "rank": 10.0
+        },
+        {
+          "feature": "missingindicator_MonthlyIncome",
+          "mean_abs_shap": 0.0033473057146048727,
+          "mean_signed_shap": -0.0006306811392377782,
+          "rank": 11.0
+        },
+        {
+          "feature": "missingindicator_NumberOfDependents",
+          "mean_abs_shap": 0.0032987793287108055,
+          "mean_signed_shap": 0.0009118101890963331,
+          "rank": 12.0
+        }
+      ],
+      "fold": 5,
+      "interaction_sampling": {
+        "population_counts": [
+          1352,
+          1351,
+          1351,
+          1352,
+          1351,
+          1351,
+          1352,
+          1351,
+          1351,
+          1352
+        ],
+        "positions_sha256": "e630ab516bbd9e46ea2055ff17b71364181e2ad5bf491a43f900087325632da0",
+        "sample_counts": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "seed": 142,
+        "size": 200,
+        "strategy": "proportional predicted-score deciles; no labels used"
+      },
+      "max_additivity_error": 5.611567758023739e-06,
+      "max_interaction_error": 2.392916940152645e-07
+    }
+  ],
+  "xgboost_rank_agreement": {
+    "interpretation": "descriptive rank agreement; folds share training data",
+    "mean_rho": 0.9951515151515151,
+    "pairs": [
+      {
+        "fold_a": 1,
+        "fold_b": 2,
+        "spearman_rho": 0.9878787878787878
+      },
+      {
+        "fold_a": 1,
+        "fold_b": 3,
+        "spearman_rho": 0.9878787878787878
+      },
+      {
+        "fold_a": 1,
+        "fold_b": 4,
+        "spearman_rho": 0.9878787878787878
+      },
+      {
+        "fold_a": 1,
+        "fold_b": 5,
+        "spearman_rho": 0.9878787878787878
+      },
+      {
+        "fold_a": 2,
+        "fold_b": 3,
+        "spearman_rho": 0.9999999999999999
+      },
+      {
+        "fold_a": 2,
+        "fold_b": 4,
+        "spearman_rho": 0.9999999999999999
+      },
+      {
+        "fold_a": 2,
+        "fold_b": 5,
+        "spearman_rho": 0.9999999999999999
+      },
+      {
+        "fold_a": 3,
+        "fold_b": 4,
+        "spearman_rho": 0.9999999999999999
+      },
+      {
+        "fold_a": 3,
+        "fold_b": 5,
+        "spearman_rho": 0.9999999999999999
+      },
+      {
+        "fold_a": 4,
+        "fold_b": 5,
+        "spearman_rho": 0.9999999999999999
+      }
+    ]
+  },
+  "xgboost_stability": [
+    {
+      "distribution": {
+        "median": -0.0334757175296545,
+        "p05": -0.1924985982477665,
+        "p25": -0.1267956681549549,
+        "p75": 0.06410610862076283,
+        "p95": 0.21922507360577573
+      },
+      "feature": "DebtRatio",
+      "fold_importance": {
+        "max": 0.11640014279651262,
+        "mean": 0.11020702469099646,
+        "min": 0.10202059585801165,
+        "std": 0.006877562856879189
+      },
+      "fold_mean_abs_shap": [
+        0.11640014279651262,
+        0.11378475180545995,
+        0.10350821698738986,
+        0.10202059585801165,
+        0.1153214160076082
+      ],
+      "fold_ranks": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "global_rank": 8.0,
+      "pooled_mean_abs_shap": 0.11020721480043111,
+      "present_folds": 5,
+      "rank": {
+        "max": 8.0,
+        "mean": 8.0,
+        "min": 8.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.05386957712471485,
+        "p05": -0.22986592650413512,
+        "p25": -0.13818436861038208,
+        "p75": 0.09679635614156723,
+        "p95": 0.23125158995389927
+      },
+      "feature": "MonthlyIncome",
+      "fold_importance": {
+        "max": 0.1370849363346592,
+        "mean": 0.12727163093020263,
+        "min": 0.1185511642116774,
+        "std": 0.008119538775642475
+      },
+      "fold_mean_abs_shap": [
+        0.1185511642116774,
+        0.12479565961118545,
+        0.1370849363346592,
+        0.13445446734795283,
+        0.1214719271455383
+      ],
+      "fold_ranks": [
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "global_rank": 7.0,
+      "pooled_mean_abs_shap": 0.1272713668186759,
+      "present_folds": 5,
+      "rank": {
+        "max": 7.0,
+        "mean": 7.0,
+        "min": 7.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.012241702061146498,
+        "p05": -0.034185354784131046,
+        "p25": -0.01909381616860628,
+        "p75": 0.003093043516855687,
+        "p95": 0.057231361977755996
+      },
+      "feature": "NumberOfDependents",
+      "fold_importance": {
+        "max": 0.030674837742929752,
+        "mean": 0.02272748740862222,
+        "min": 0.01755038414021226,
+        "std": 0.005383965895981885
+      },
+      "fold_mean_abs_shap": [
+        0.01964620253220774,
+        0.030674837742929752,
+        0.025750312605417984,
+        0.01755038414021226,
+        0.020015700022343378
+      ],
+      "fold_ranks": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "global_rank": 10.0,
+      "pooled_mean_abs_shap": 0.022727243895849018,
+      "present_folds": 5,
+      "rank": {
+        "max": 10.0,
+        "mean": 10.0,
+        "min": 10.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.08308229967951775,
+        "p05": -0.2038614943623543,
+        "p25": -0.14409654214978218,
+        "p75": 0.1136140525341034,
+        "p95": 0.3576936587691307
+      },
+      "feature": "NumberOfOpenCreditLinesAndLoans",
+      "fold_importance": {
+        "max": 0.1618331744384197,
+        "mean": 0.15391314906438477,
+        "min": 0.1459217473216663,
+        "std": 0.0059469214153797445
+      },
+      "fold_mean_abs_shap": [
+        0.15114930845477106,
+        0.1459217473216663,
+        0.15659885671597404,
+        0.15406265839109276,
+        0.1618331744384197
+      ],
+      "fold_ranks": [
+        5.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "global_rank": 6.0,
+      "pooled_mean_abs_shap": 0.1539134608907351,
+      "present_folds": 5,
+      "rank": {
+        "max": 6.0,
+        "mean": 5.8,
+        "min": 5.0,
+        "std": 0.44721359549995787
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.27259108424186707,
+        "p05": -0.3447296619415283,
+        "p25": -0.30291035026311874,
+        "p75": -0.24653713405132294,
+        "p95": 0.7773612201213835
+      },
+      "feature": "NumberOfTime30_59DaysPastDueNotWorse",
+      "fold_importance": {
+        "max": 0.3737309946347278,
+        "mean": 0.3556330674129382,
+        "min": 0.34413857134020476,
+        "std": 0.011273064897350285
+      },
+      "fold_mean_abs_shap": [
+        0.3737309946347278,
+        0.3538780705339506,
+        0.34909570746811946,
+        0.34413857134020476,
+        0.35732199308768836
+      ],
+      "fold_ranks": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "global_rank": 2.0,
+      "pooled_mean_abs_shap": 0.3556334112567476,
+      "present_folds": 5,
+      "rank": {
+        "max": 2.0,
+        "mean": 2.0,
+        "min": 2.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.11682013794779778,
+        "p05": -0.13726256787776947,
+        "p25": -0.12709149345755577,
+        "p75": -0.10314966924488544,
+        "p95": 0.6310216307640066
+      },
+      "feature": "NumberOfTime60_89DaysPastDueNotWorse",
+      "fold_importance": {
+        "max": 0.17097489047649964,
+        "mean": 0.16093052408336345,
+        "min": 0.1382838242394993,
+        "std": 0.014028824350564918
+      },
+      "fold_mean_abs_shap": [
+        0.1382838242394993,
+        0.15628092657672946,
+        0.17097489047649964,
+        0.1707885655998531,
+        0.16832441352423574
+      ],
+      "fold_ranks": [
+        6.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "global_rank": 5.0,
+      "pooled_mean_abs_shap": 0.16093047658146215,
+      "present_folds": 5,
+      "rank": {
+        "max": 6.0,
+        "mean": 5.2,
+        "min": 5.0,
+        "std": 0.44721359549995787
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.24963368475437164,
+        "p05": -0.2760156810283661,
+        "p25": -0.26124541461467743,
+        "p75": -0.23264950886368752,
+        "p95": 1.0311471223831172
+      },
+      "feature": "NumberOfTimes90DaysLate",
+      "fold_importance": {
+        "max": 0.3239896909281317,
+        "mean": 0.3120636267003847,
+        "min": 0.2945413976045333,
+        "std": 0.012163559695614137
+      },
+      "fold_mean_abs_shap": [
+        0.3239896909281317,
+        0.31188289889527165,
+        0.2945413976045333,
+        0.3228839804496133,
+        0.30702016562437345
+      ],
+      "fold_ranks": [
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "global_rank": 3.0,
+      "pooled_mean_abs_shap": 0.3120636565969224,
+      "present_folds": 5,
+      "rank": {
+        "max": 3.0,
+        "mean": 3.0,
+        "min": 3.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.025004541501402855,
+        "p05": -0.11201863996684551,
+        "p25": -0.07448793761432171,
+        "p75": 0.012597685679793358,
+        "p95": 0.1245151557028293
+      },
+      "feature": "NumberRealEstateLoansOrLines",
+      "fold_importance": {
+        "max": 0.07896955446013051,
+        "mean": 0.0650045144663086,
+        "min": 0.05832917921783252,
+        "std": 0.008631796978238708
+      },
+      "fold_mean_abs_shap": [
+        0.07896955446013051,
+        0.06757801617111815,
+        0.05832917921783252,
+        0.058810987744801806,
+        0.06133483473766003
+      ],
+      "fold_ranks": [
+        9.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "global_rank": 9.0,
+      "pooled_mean_abs_shap": 0.06500457444349743,
+      "present_folds": 5,
+      "rank": {
+        "max": 9.0,
+        "mean": 9.0,
+        "min": 9.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.6997786164283752,
+        "p05": -1.1282160997390747,
+        "p25": -0.9771047979593277,
+        "p75": 0.3327968716621399,
+        "p95": 0.93616464138031
+      },
+      "feature": "RevolvingUtilizationOfUnsecuredLines",
+      "fold_importance": {
+        "max": 0.7730969388072743,
+        "mean": 0.7531965731921237,
+        "min": 0.7363666906847479,
+        "std": 0.014504761904210581
+      },
+      "fold_mean_abs_shap": [
+        0.7730969388072743,
+        0.7421681165989085,
+        0.759295872286444,
+        0.7363666906847479,
+        0.7550552475832436
+      ],
+      "fold_ranks": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "global_rank": 1.0,
+      "pooled_mean_abs_shap": 0.7531970859977095,
+      "present_folds": 5,
+      "rank": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": 0.0538165420293808,
+        "p05": -0.4947186350822449,
+        "p25": -0.3065745532512665,
+        "p75": 0.12269614264369011,
+        "p95": 0.26125114560127255
+      },
+      "feature": "age",
+      "fold_importance": {
+        "max": 0.22718275496384477,
+        "mean": 0.21926473992386558,
+        "min": 0.21308659354321752,
+        "std": 0.005329906140666977
+      },
+      "fold_mean_abs_shap": [
+        0.21308659354321752,
+        0.21702332006365424,
+        0.22718275496384477,
+        0.22146710503108283,
+        0.2175639260175287
+      ],
+      "fold_ranks": [
+        4.0,
+        4.0,
+        4.0,
+        4.0,
+        4.0
+      ],
+      "global_rank": 4.0,
+      "pooled_mean_abs_shap": 0.21926463130727147,
+      "present_folds": 5,
+      "rank": {
+        "max": 4.0,
+        "mean": 4.0,
+        "min": 4.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": 0.0013905665837228298,
+        "p05": -0.02133891172707081,
+        "p25": -0.0001668962650001049,
+        "p75": 0.0033629455137997866,
+        "p95": 0.005960265174508095
+      },
+      "feature": "missingindicator_MonthlyIncome",
+      "fold_importance": {
+        "max": 0.008739151338553805,
+        "mean": 0.005064195810070219,
+        "min": 0.0033473057146048727,
+        "std": 0.0022941764048779725
+      },
+      "fold_mean_abs_shap": [
+        0.005899548517358802,
+        0.0036842970296854577,
+        0.0036506764501481564,
+        0.008739151338553805,
+        0.0033473057146048727
+      ],
+      "fold_ranks": [
+        11.0,
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ],
+      "global_rank": 11.0,
+      "pooled_mean_abs_shap": 0.005064177774359268,
+      "present_folds": 5,
+      "rank": {
+        "max": 11.0,
+        "mean": 11.0,
+        "min": 11.0,
+        "std": 0.0
+      }
+    },
+    {
+      "distribution": {
+        "median": -0.00025112408911809325,
+        "p05": -0.0014622519200202077,
+        "p25": -0.000895434117410332,
+        "p75": 0.0,
+        "p95": 0.0
+      },
+      "feature": "missingindicator_NumberOfDependents",
+      "fold_importance": {
+        "max": 0.0032987793287108055,
+        "mean": 0.0013133441781193896,
+        "min": 0.0,
+        "std": 0.0014313529778809855
+      },
+      "fold_mean_abs_shap": [
+        0.0,
+        0.0010872606407982225,
+        0.0,
+        0.002180680921087921,
+        0.0032987793287108055
+      ],
+      "fold_ranks": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "global_rank": 12.0,
+      "pooled_mean_abs_shap": 0.0013133868590592729,
+      "present_folds": 5,
+      "rank": {
+        "max": 12.0,
+        "mean": 12.0,
+        "min": 12.0,
+        "std": 0.0
+      }
+    }
+  ]
+}

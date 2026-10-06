@@ -2,6 +2,7 @@
 
 import json
 from dataclasses import replace
+from hashlib import sha256
 from pathlib import Path
 
 import joblib
@@ -290,7 +291,10 @@ def test_committed_task4_evidence_and_frozen_source_hashes_preserved():
     for name, digest in task4["reused_source_sha256"].items():
         assert workflow.file_digest(root / name) == digest
     for name, digest in task4["diagnostic_source_sha256"].items():
-        assert workflow.file_digest(root / "src/credit_risk/validation" / name) == digest
+        # Non-frozen source files undergo Git LF/CRLF conversion on checkout.
+        payload = (root / "src/credit_risk/validation" / name).read_bytes()
+        windows = payload.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        assert digest in {sha256(payload).hexdigest(), sha256(windows).hexdigest()}
     marker = json.loads((root / "reports/phase5_validation_summary.json").read_text())
     retained = marker["final_metrics"]["xgboost"]["sigmoid"]
     assert {key: round(retained[key], 6) for key in ("roc_auc", "brier", "log_loss")} == {
