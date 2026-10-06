@@ -1,0 +1,2763 @@
+{
+  "schema_version": "1.0",
+  "design_version": "track-b-pd-v1",
+  "decision": "BASELINE ESTABLISHED \u2014 EXPLORATORY ONLY",
+  "source_archive_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "sample_set_sha256": "b40de7596b0d4fbb189c1ceec5176f4461f7d290117250c1a7ec15b605ce7b11",
+  "panel_sha256": "26a3b6eae7055ed6329b583e6b1e629d754a899ded29640f226530d9d8994172",
+  "panel_version": "annual_2010_v1/parser-1.0.0",
+  "protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "feature_registry_sha256_lf": "d2d3bd32b97d07e8ff17f73b090c9a4ae908488d04dea098d030b175adda9acf",
+  "design_sha256_lf": "0333bac863deffbd389869a78c086cc0fb57723cc35b2726dd35226460effb07",
+  "cohort_rules": {
+    "known_statuses": [
+      "positive_default",
+      "negative_survived_horizon",
+      "competing_payoff"
+    ],
+    "horizon_months": 12,
+    "minimum_history_months": 6,
+    "payoff": "facility default-before-payoff cumulative incidence; zero after competing termination",
+    "unknown": "exclude; never label zero",
+    "primary_frequency": "monthly",
+    "weighting": "equal landmark"
+  },
+  "cohort_sha256": "40c65fc57b681e4c748413c3aaff478f3f5aed6bb089f2e38a7ea6cacc70e408",
+  "annual_feasibility": [
+    {
+      "year": "2010",
+      "landmarks": 1254,
+      "loans": 363,
+      "positive_landmarks": 6,
+      "default_loans": 1,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 126,
+          "loans": 51,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 1122,
+          "loans": 326,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 6,
+          "loans": 1,
+          "positive_landmarks": 6,
+          "default_loans": 1
+        }
+      }
+    },
+    {
+      "year": "2011",
+      "landmarks": 9631,
+      "loans": 966,
+      "positive_landmarks": 46,
+      "default_loans": 7,
+      "statuses": {
+        "ambiguous_event_order": {
+          "landmarks": 4,
+          "loans": 1,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "competing_payoff": {
+          "landmarks": 1459,
+          "loans": 229,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 8114,
+          "loans": 871,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 46,
+          "loans": 7,
+          "positive_landmarks": 46,
+          "default_loans": 7
+        },
+        "right_censored": {
+          "landmarks": 8,
+          "loans": 1,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    },
+    {
+      "year": "2012",
+      "landmarks": 9731,
+      "loans": 889,
+      "positive_landmarks": 65,
+      "default_loans": 10,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 2072,
+          "loans": 294,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 7590,
+          "loans": 708,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 65,
+          "loans": 10,
+          "positive_landmarks": 65,
+          "default_loans": 10
+        },
+        "right_censored": {
+          "landmarks": 4,
+          "loans": 1,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    },
+    {
+      "year": "2013",
+      "landmarks": 7595,
+      "loans": 709,
+      "positive_landmarks": 50,
+      "default_loans": 8,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 873,
+          "loans": 173,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 6672,
+          "loans": 582,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 50,
+          "loans": 8,
+          "positive_landmarks": 50,
+          "default_loans": 8
+        }
+      }
+    },
+    {
+      "year": "2014",
+      "landmarks": 6679,
+      "loans": 582,
+      "positive_landmarks": 28,
+      "default_loans": 5,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 875,
+          "loans": 134,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 5776,
+          "loans": 527,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 28,
+          "loans": 5,
+          "positive_landmarks": 28,
+          "default_loans": 5
+        }
+      }
+    },
+    {
+      "year": "2015",
+      "landmarks": 5783,
+      "loans": 529,
+      "positive_landmarks": 25,
+      "default_loans": 4,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 924,
+          "loans": 151,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 4834,
+          "loans": 439,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 25,
+          "loans": 4,
+          "positive_landmarks": 25,
+          "default_loans": 4
+        }
+      }
+    },
+    {
+      "year": "2016",
+      "landmarks": 4851,
+      "loans": 439,
+      "positive_landmarks": 16,
+      "default_loans": 2,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 764,
+          "loans": 126,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 4071,
+          "loans": 369,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 16,
+          "loans": 2,
+          "positive_landmarks": 16,
+          "default_loans": 2
+        }
+      }
+    },
+    {
+      "year": "2017",
+      "landmarks": 4071,
+      "loans": 369,
+      "positive_landmarks": 5,
+      "default_loans": 1,
+      "statuses": {
+        "ambiguous_event_order": {
+          "landmarks": 5,
+          "loans": 1,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "competing_payoff": {
+          "landmarks": 612,
+          "loans": 95,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 3449,
+          "loans": 307,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 5,
+          "loans": 1,
+          "positive_landmarks": 5,
+          "default_loans": 1
+        }
+      }
+    },
+    {
+      "year": "2018",
+      "landmarks": 3449,
+      "loans": 307,
+      "positive_landmarks": 19,
+      "default_loans": 2,
+      "statuses": {
+        "ambiguous_event_order": {
+          "landmarks": 7,
+          "loans": 1,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "competing_payoff": {
+          "landmarks": 414,
+          "loans": 72,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 3009,
+          "loans": 267,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 19,
+          "loans": 2,
+          "positive_landmarks": 19,
+          "default_loans": 2
+        }
+      }
+    },
+    {
+      "year": "2019",
+      "landmarks": 3009,
+      "loans": 267,
+      "positive_landmarks": 50,
+      "default_loans": 8,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 521,
+          "loans": 81,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 2438,
+          "loans": 227,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 50,
+          "loans": 8,
+          "positive_landmarks": 50,
+          "default_loans": 8
+        }
+      }
+    },
+    {
+      "year": "2020",
+      "landmarks": 2438,
+      "loans": 227,
+      "positive_landmarks": 46,
+      "default_loans": 8,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 612,
+          "loans": 90,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 1780,
+          "loans": 171,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 46,
+          "loans": 8,
+          "positive_landmarks": 46,
+          "default_loans": 8
+        }
+      }
+    },
+    {
+      "year": "2021",
+      "landmarks": 1780,
+      "loans": 171,
+      "positive_landmarks": 0,
+      "default_loans": 0,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 364,
+          "loans": 64,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 1416,
+          "loans": 128,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    },
+    {
+      "year": "2022",
+      "landmarks": 1416,
+      "loans": 128,
+      "positive_landmarks": 4,
+      "default_loans": 1,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 192,
+          "loans": 31,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 1220,
+          "loans": 105,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 4,
+          "loans": 1,
+          "positive_landmarks": 4,
+          "default_loans": 1
+        }
+      }
+    },
+    {
+      "year": "2023",
+      "landmarks": 1220,
+      "loans": 105,
+      "positive_landmarks": 8,
+      "default_loans": 1,
+      "statuses": {
+        "competing_payoff": {
+          "landmarks": 125,
+          "loans": 18,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 1087,
+          "loans": 96,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "positive_default": {
+          "landmarks": 8,
+          "loans": 1,
+          "positive_landmarks": 8,
+          "default_loans": 1
+        }
+      }
+    },
+    {
+      "year": "2024",
+      "landmarks": 1087,
+      "loans": 96,
+      "positive_landmarks": 0,
+      "default_loans": 0,
+      "statuses": {
+        "ambiguous_event_order": {
+          "landmarks": 7,
+          "loans": 3,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "competing_payoff": {
+          "landmarks": 184,
+          "loans": 33,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 896,
+          "loans": 86,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    },
+    {
+      "year": "2025",
+      "landmarks": 896,
+      "loans": 86,
+      "positive_landmarks": 0,
+      "default_loans": 0,
+      "statuses": {
+        "ambiguous_event_order": {
+          "landmarks": 29,
+          "loans": 3,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "competing_payoff": {
+          "landmarks": 171,
+          "loans": 25,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "negative_survived_horizon": {
+          "landmarks": 174,
+          "loans": 58,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "right_censored": {
+          "landmarks": 522,
+          "loans": 58,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    },
+    {
+      "year": "2026",
+      "landmarks": 174,
+      "loans": 58,
+      "positive_landmarks": 0,
+      "default_loans": 0,
+      "statuses": {
+        "right_censored": {
+          "landmarks": 174,
+          "loans": 58,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      }
+    }
+  ],
+  "eligible": {
+    "landmarks": 65064,
+    "loans": 983,
+    "positive_landmarks": 368,
+    "default_loans": 31
+  },
+  "primary": {
+    "landmarks": 64304,
+    "loans": 982,
+    "positive_landmarks": 368,
+    "default_loans": 31
+  },
+  "eligible_by_status": {
+    "ambiguous_event_order": {
+      "landmarks": 52,
+      "loans": 5,
+      "positive_landmarks": 0,
+      "default_loans": 0
+    },
+    "competing_payoff": {
+      "landmarks": 10288,
+      "loans": 888,
+      "positive_landmarks": 0,
+      "default_loans": 0
+    },
+    "negative_survived_horizon": {
+      "landmarks": 53648,
+      "loans": 891,
+      "positive_landmarks": 0,
+      "default_loans": 0
+    },
+    "positive_default": {
+      "landmarks": 368,
+      "loans": 31,
+      "positive_landmarks": 368,
+      "default_loans": 31
+    },
+    "right_censored": {
+      "landmarks": 708,
+      "loans": 59,
+      "positive_landmarks": 0,
+      "default_loans": 0
+    }
+  },
+  "temporal_split": {
+    "salt": "track-b-pd-v1:",
+    "algorithm": "SHA256(salt+loan_id) integer modulo 10; 0..6 development",
+    "development_end": "2014-12",
+    "evaluation_start": "2016-01",
+    "purged_year": "2015",
+    "development": {
+      "landmarks": 23635,
+      "loans": 665,
+      "positive_landmarks": 137,
+      "default_loans": 13
+    },
+    "evaluation": {
+      "landmarks": 7848,
+      "loans": 130,
+      "positive_landmarks": 60,
+      "default_loans": 5
+    },
+    "development_cohort_sha256": "8a5fc7f51aaa65879adf2c556c835ce52d394536e7cd88bdfddd7633532d50c2",
+    "evaluation_cohort_sha256": "b0e6f8a3cfe98baf0ab84e6fc0380db45c4cfebb5c3e058f8820a1f645d9ba61",
+    "unused_primary_landmarks": 32821
+  },
+  "feature_registry": {
+    "schema_version": "1.0",
+    "historical_knowledge_time": "UNVERIFIED",
+    "selected": [
+      "orig_credit_score",
+      "orig_ltv",
+      "loan_age",
+      "delinquency_state"
+    ],
+    "fields": {
+      "orig_credit_score": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": true,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Fixed compact baseline"
+      },
+      "orig_ltv": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": true,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Fixed compact baseline"
+      },
+      "orig_dti": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "orig_upb": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "orig_interest_rate": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "original_loan_term": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "number_of_borrowers": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "occupancy_status": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "property_state": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "property_type": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "loan_purpose": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "amortization_type": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "vantage_score": {
+        "classification": "STATIC_AT_ORIGINATION",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "current_principal_balance": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "current_interest_rate": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "delinquency_state": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": true,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Fixed compact baseline"
+      },
+      "loan_age": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": true,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Fixed compact baseline"
+      },
+      "remaining_legal_months": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "non_interest_upb": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "modification_flag": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "assistance_plan": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "payment_deferral_flag": {
+        "classification": "TIME_VARYING_KNOWN_AT_T0",
+        "selected": false,
+        "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+        "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+      },
+      "outcome_status": {
+        "classification": "OUTCOME",
+        "selected": false
+      },
+      "binary_default_12m": {
+        "classification": "OUTCOME",
+        "selected": false
+      },
+      "event_offset": {
+        "classification": "OUTCOME",
+        "selected": false
+      },
+      "observed_followup_months": {
+        "classification": "OUTCOME",
+        "selected": false
+      },
+      "loan_id": {
+        "classification": "AUDIT",
+        "selected": false
+      },
+      "t0": {
+        "classification": "AUDIT",
+        "selected": false
+      },
+      "eligible": {
+        "classification": "AUDIT",
+        "selected": false
+      },
+      "eligibility_reason": {
+        "classification": "AUDIT",
+        "selected": false
+      },
+      "knowledge_time_status": {
+        "classification": "AUDIT",
+        "selected": false
+      },
+      "mi_recoveries": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "net_sale_proceeds": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "non_mi_recoveries": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "total_expenses": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "legal_costs": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "preservation_costs": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "taxes_insurance": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "misc_expenses": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "actual_loss": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "removal_upb": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "delinquent_accrued_interest": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "bankruptcy_cramdown_costs": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "termination_code": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "termination_month": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "future_delinquency": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "future_balance": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "future_payoff": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "future_macro": {
+        "classification": "PROHIBITED",
+        "selected": false
+      },
+      "disposition_date": {
+        "classification": "PROHIBITED",
+        "selected": false
+      }
+    }
+  },
+  "model_configuration": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "tol": 1e-08,
+    "class_weight": null,
+    "random_state": 31003,
+    "penalty": "L2",
+    "features": [
+      "orig_credit_score",
+      "orig_ltv",
+      "loan_age",
+      "delinquency_state"
+    ]
+  },
+  "preprocessing": {
+    "imputation": "development median",
+    "scaling": "development StandardScaler",
+    "sampling": "none",
+    "calibrator": "none"
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "credit-risk-lab": "0.12.0"
+  },
+  "seeds": {
+    "model": 31003,
+    "cluster_bootstrap": 31003
+  },
+  "missingness": {
+    "orig_credit_score": {
+      "effective_sample": {
+        "landmarks": 65064,
+        "loans": 983,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "missing": 0,
+      "rate": 0.0,
+      "by_year": {
+        "2010": {
+          "effective_sample": {
+            "landmarks": 1254,
+            "loans": 363,
+            "positive_landmarks": 6,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2011": {
+          "effective_sample": {
+            "landmarks": 9631,
+            "loans": 966,
+            "positive_landmarks": 46,
+            "default_loans": 7
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2012": {
+          "effective_sample": {
+            "landmarks": 9731,
+            "loans": 889,
+            "positive_landmarks": 65,
+            "default_loans": 10
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2013": {
+          "effective_sample": {
+            "landmarks": 7595,
+            "loans": 709,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2014": {
+          "effective_sample": {
+            "landmarks": 6679,
+            "loans": 582,
+            "positive_landmarks": 28,
+            "default_loans": 5
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2015": {
+          "effective_sample": {
+            "landmarks": 5783,
+            "loans": 529,
+            "positive_landmarks": 25,
+            "default_loans": 4
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2016": {
+          "effective_sample": {
+            "landmarks": 4851,
+            "loans": 439,
+            "positive_landmarks": 16,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2017": {
+          "effective_sample": {
+            "landmarks": 4071,
+            "loans": 369,
+            "positive_landmarks": 5,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2018": {
+          "effective_sample": {
+            "landmarks": 3449,
+            "loans": 307,
+            "positive_landmarks": 19,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2019": {
+          "effective_sample": {
+            "landmarks": 3009,
+            "loans": 267,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2020": {
+          "effective_sample": {
+            "landmarks": 2438,
+            "loans": 227,
+            "positive_landmarks": 46,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2021": {
+          "effective_sample": {
+            "landmarks": 1780,
+            "loans": 171,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2022": {
+          "effective_sample": {
+            "landmarks": 1416,
+            "loans": 128,
+            "positive_landmarks": 4,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2023": {
+          "effective_sample": {
+            "landmarks": 1220,
+            "loans": 105,
+            "positive_landmarks": 8,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2024": {
+          "effective_sample": {
+            "landmarks": 1087,
+            "loans": 96,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2025": {
+          "effective_sample": {
+            "landmarks": 896,
+            "loans": 86,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2026": {
+          "effective_sample": {
+            "landmarks": 174,
+            "loans": 58,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      },
+      "by_outcome": {
+        "ambiguous_event_order": {
+          "effective_sample": {
+            "landmarks": 52,
+            "loans": 5,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "competing_payoff": {
+          "effective_sample": {
+            "landmarks": 10288,
+            "loans": 888,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "negative_survived_horizon": {
+          "effective_sample": {
+            "landmarks": 53648,
+            "loans": 891,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "positive_default": {
+          "effective_sample": {
+            "landmarks": 368,
+            "loans": 31,
+            "positive_landmarks": 368,
+            "default_loans": 31
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "right_censored": {
+          "effective_sample": {
+            "landmarks": 708,
+            "loans": 59,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "orig_ltv": {
+      "effective_sample": {
+        "landmarks": 65064,
+        "loans": 983,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "missing": 0,
+      "rate": 0.0,
+      "by_year": {
+        "2010": {
+          "effective_sample": {
+            "landmarks": 1254,
+            "loans": 363,
+            "positive_landmarks": 6,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2011": {
+          "effective_sample": {
+            "landmarks": 9631,
+            "loans": 966,
+            "positive_landmarks": 46,
+            "default_loans": 7
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2012": {
+          "effective_sample": {
+            "landmarks": 9731,
+            "loans": 889,
+            "positive_landmarks": 65,
+            "default_loans": 10
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2013": {
+          "effective_sample": {
+            "landmarks": 7595,
+            "loans": 709,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2014": {
+          "effective_sample": {
+            "landmarks": 6679,
+            "loans": 582,
+            "positive_landmarks": 28,
+            "default_loans": 5
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2015": {
+          "effective_sample": {
+            "landmarks": 5783,
+            "loans": 529,
+            "positive_landmarks": 25,
+            "default_loans": 4
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2016": {
+          "effective_sample": {
+            "landmarks": 4851,
+            "loans": 439,
+            "positive_landmarks": 16,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2017": {
+          "effective_sample": {
+            "landmarks": 4071,
+            "loans": 369,
+            "positive_landmarks": 5,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2018": {
+          "effective_sample": {
+            "landmarks": 3449,
+            "loans": 307,
+            "positive_landmarks": 19,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2019": {
+          "effective_sample": {
+            "landmarks": 3009,
+            "loans": 267,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2020": {
+          "effective_sample": {
+            "landmarks": 2438,
+            "loans": 227,
+            "positive_landmarks": 46,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2021": {
+          "effective_sample": {
+            "landmarks": 1780,
+            "loans": 171,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2022": {
+          "effective_sample": {
+            "landmarks": 1416,
+            "loans": 128,
+            "positive_landmarks": 4,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2023": {
+          "effective_sample": {
+            "landmarks": 1220,
+            "loans": 105,
+            "positive_landmarks": 8,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2024": {
+          "effective_sample": {
+            "landmarks": 1087,
+            "loans": 96,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2025": {
+          "effective_sample": {
+            "landmarks": 896,
+            "loans": 86,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2026": {
+          "effective_sample": {
+            "landmarks": 174,
+            "loans": 58,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      },
+      "by_outcome": {
+        "ambiguous_event_order": {
+          "effective_sample": {
+            "landmarks": 52,
+            "loans": 5,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "competing_payoff": {
+          "effective_sample": {
+            "landmarks": 10288,
+            "loans": 888,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "negative_survived_horizon": {
+          "effective_sample": {
+            "landmarks": 53648,
+            "loans": 891,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "positive_default": {
+          "effective_sample": {
+            "landmarks": 368,
+            "loans": 31,
+            "positive_landmarks": 368,
+            "default_loans": 31
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "right_censored": {
+          "effective_sample": {
+            "landmarks": 708,
+            "loans": 59,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "loan_age": {
+      "effective_sample": {
+        "landmarks": 65064,
+        "loans": 983,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "missing": 0,
+      "rate": 0.0,
+      "by_year": {
+        "2010": {
+          "effective_sample": {
+            "landmarks": 1254,
+            "loans": 363,
+            "positive_landmarks": 6,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2011": {
+          "effective_sample": {
+            "landmarks": 9631,
+            "loans": 966,
+            "positive_landmarks": 46,
+            "default_loans": 7
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2012": {
+          "effective_sample": {
+            "landmarks": 9731,
+            "loans": 889,
+            "positive_landmarks": 65,
+            "default_loans": 10
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2013": {
+          "effective_sample": {
+            "landmarks": 7595,
+            "loans": 709,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2014": {
+          "effective_sample": {
+            "landmarks": 6679,
+            "loans": 582,
+            "positive_landmarks": 28,
+            "default_loans": 5
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2015": {
+          "effective_sample": {
+            "landmarks": 5783,
+            "loans": 529,
+            "positive_landmarks": 25,
+            "default_loans": 4
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2016": {
+          "effective_sample": {
+            "landmarks": 4851,
+            "loans": 439,
+            "positive_landmarks": 16,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2017": {
+          "effective_sample": {
+            "landmarks": 4071,
+            "loans": 369,
+            "positive_landmarks": 5,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2018": {
+          "effective_sample": {
+            "landmarks": 3449,
+            "loans": 307,
+            "positive_landmarks": 19,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2019": {
+          "effective_sample": {
+            "landmarks": 3009,
+            "loans": 267,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2020": {
+          "effective_sample": {
+            "landmarks": 2438,
+            "loans": 227,
+            "positive_landmarks": 46,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2021": {
+          "effective_sample": {
+            "landmarks": 1780,
+            "loans": 171,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2022": {
+          "effective_sample": {
+            "landmarks": 1416,
+            "loans": 128,
+            "positive_landmarks": 4,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2023": {
+          "effective_sample": {
+            "landmarks": 1220,
+            "loans": 105,
+            "positive_landmarks": 8,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2024": {
+          "effective_sample": {
+            "landmarks": 1087,
+            "loans": 96,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2025": {
+          "effective_sample": {
+            "landmarks": 896,
+            "loans": 86,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2026": {
+          "effective_sample": {
+            "landmarks": 174,
+            "loans": 58,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      },
+      "by_outcome": {
+        "ambiguous_event_order": {
+          "effective_sample": {
+            "landmarks": 52,
+            "loans": 5,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "competing_payoff": {
+          "effective_sample": {
+            "landmarks": 10288,
+            "loans": 888,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "negative_survived_horizon": {
+          "effective_sample": {
+            "landmarks": 53648,
+            "loans": 891,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "positive_default": {
+          "effective_sample": {
+            "landmarks": 368,
+            "loans": 31,
+            "positive_landmarks": 368,
+            "default_loans": 31
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "right_censored": {
+          "effective_sample": {
+            "landmarks": 708,
+            "loans": 59,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "delinquency_state": {
+      "effective_sample": {
+        "landmarks": 65064,
+        "loans": 983,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "missing": 0,
+      "rate": 0.0,
+      "by_year": {
+        "2010": {
+          "effective_sample": {
+            "landmarks": 1254,
+            "loans": 363,
+            "positive_landmarks": 6,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2011": {
+          "effective_sample": {
+            "landmarks": 9631,
+            "loans": 966,
+            "positive_landmarks": 46,
+            "default_loans": 7
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2012": {
+          "effective_sample": {
+            "landmarks": 9731,
+            "loans": 889,
+            "positive_landmarks": 65,
+            "default_loans": 10
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2013": {
+          "effective_sample": {
+            "landmarks": 7595,
+            "loans": 709,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2014": {
+          "effective_sample": {
+            "landmarks": 6679,
+            "loans": 582,
+            "positive_landmarks": 28,
+            "default_loans": 5
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2015": {
+          "effective_sample": {
+            "landmarks": 5783,
+            "loans": 529,
+            "positive_landmarks": 25,
+            "default_loans": 4
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2016": {
+          "effective_sample": {
+            "landmarks": 4851,
+            "loans": 439,
+            "positive_landmarks": 16,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2017": {
+          "effective_sample": {
+            "landmarks": 4071,
+            "loans": 369,
+            "positive_landmarks": 5,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2018": {
+          "effective_sample": {
+            "landmarks": 3449,
+            "loans": 307,
+            "positive_landmarks": 19,
+            "default_loans": 2
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2019": {
+          "effective_sample": {
+            "landmarks": 3009,
+            "loans": 267,
+            "positive_landmarks": 50,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2020": {
+          "effective_sample": {
+            "landmarks": 2438,
+            "loans": 227,
+            "positive_landmarks": 46,
+            "default_loans": 8
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2021": {
+          "effective_sample": {
+            "landmarks": 1780,
+            "loans": 171,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2022": {
+          "effective_sample": {
+            "landmarks": 1416,
+            "loans": 128,
+            "positive_landmarks": 4,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2023": {
+          "effective_sample": {
+            "landmarks": 1220,
+            "loans": 105,
+            "positive_landmarks": 8,
+            "default_loans": 1
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2024": {
+          "effective_sample": {
+            "landmarks": 1087,
+            "loans": 96,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2025": {
+          "effective_sample": {
+            "landmarks": 896,
+            "loans": 86,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "2026": {
+          "effective_sample": {
+            "landmarks": 174,
+            "loans": 58,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      },
+      "by_outcome": {
+        "ambiguous_event_order": {
+          "effective_sample": {
+            "landmarks": 52,
+            "loans": 5,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "competing_payoff": {
+          "effective_sample": {
+            "landmarks": 10288,
+            "loans": 888,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "negative_survived_horizon": {
+          "effective_sample": {
+            "landmarks": 53648,
+            "loans": 891,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "positive_default": {
+          "effective_sample": {
+            "landmarks": 368,
+            "loans": 31,
+            "positive_landmarks": 368,
+            "default_loans": 31
+          },
+          "missing": 0,
+          "rate": 0.0
+        },
+        "right_censored": {
+          "effective_sample": {
+            "landmarks": 708,
+            "loans": 59,
+            "positive_landmarks": 0,
+            "default_loans": 0
+          },
+          "missing": 0,
+          "rate": 0.0
+        }
+      }
+    }
+  },
+  "baselines": {
+    "null": {
+      "effective_sample": {
+        "landmarks": 7848,
+        "loans": 130,
+        "positive_landmarks": 60,
+        "default_loans": 5
+      },
+      "metrics": {
+        "brier": 0.007590227896029921,
+        "log_loss": 0.04514584288804045,
+        "observed_rate": 0.00764525993883792,
+        "mean_probability": 0.005796488258938014,
+        "roc_auc": 0.5,
+        "gini": 0.0,
+        "pr_auc_trapezoid": 0.503822629969419,
+        "average_precision": 0.00764525993883792,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 0.27869486002937904,
+        "joint_intercept": null,
+        "calibration_slope": null,
+        "slope_status": "constant logits: joint slope unidentifiable",
+        "confidence_intervals": null,
+        "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+        "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+      },
+      "reliability": [
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 7848,
+          "loans": 130,
+          "positive_landmarks": 60,
+          "default_loans": 5,
+          "observed_rate": 0.00764525993883792,
+          "mean_probability": 0.005796488258938014,
+          "sparse": true
+        }
+      ],
+      "uncertainty": {
+        "unit": "loan_id",
+        "draws": 500,
+        "seed": 31003,
+        "single_class_draws": 2,
+        "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+        "intervals": {
+          "brier": {
+            "lower": 0.0016049880466176055,
+            "upper": 0.01452088426657025,
+            "valid_draws": 500
+          },
+          "log_loss": {
+            "lower": 0.013992481104810172,
+            "upper": 0.08122012741782296,
+            "valid_draws": 500
+          },
+          "observed_rate": {
+            "lower": 0.0015898195107372376,
+            "upper": 0.014657205631133655,
+            "valid_draws": 500
+          },
+          "mean_probability": {
+            "lower": 0.005796488258938013,
+            "upper": 0.005796488258938015,
+            "valid_draws": 500
+          },
+          "roc_auc": {
+            "lower": 0.5,
+            "upper": 0.5,
+            "valid_draws": 498
+          },
+          "gini": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "valid_draws": 498
+          },
+          "pr_auc_trapezoid": {
+            "lower": 0.5008096901275623,
+            "upper": 0.5073352649988474,
+            "valid_draws": 498
+          },
+          "average_precision": {
+            "lower": 0.0016193802551245603,
+            "upper": 0.014670529997694911,
+            "valid_draws": 498
+          }
+        }
+      }
+    },
+    "logistic": {
+      "effective_sample": {
+        "landmarks": 7848,
+        "loans": 130,
+        "positive_landmarks": 60,
+        "default_loans": 5
+      },
+      "metrics": {
+        "brier": 0.00683705120744868,
+        "log_loss": 0.03848917298179421,
+        "observed_rate": 0.00764525993883792,
+        "mean_probability": 0.003400331354583515,
+        "roc_auc": 0.836459938366718,
+        "gini": 0.6729198767334359,
+        "pr_auc_trapezoid": 0.1619330397341177,
+        "average_precision": 0.16986662911864275,
+        "discrimination_status": "estimated"
+      },
+      "calibration": {
+        "epsilon": 1e-12,
+        "clipped_rows": 0,
+        "calibration_intercept": 1.1384786076641769,
+        "joint_intercept": -0.00042852000982144086,
+        "calibration_slope": 0.764554692505559,
+        "slope_status": "estimated",
+        "confidence_intervals": null,
+        "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+        "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+      },
+      "reliability": [
+        {
+          "bin": "(-0.001000000001, 0.005]",
+          "landmarks": 7665,
+          "loans": 129,
+          "positive_landmarks": 33,
+          "default_loans": 4,
+          "observed_rate": 0.004305283757338552,
+          "mean_probability": 0.0009373107945001495,
+          "sparse": true
+        },
+        {
+          "bin": "(0.005, 0.02]",
+          "landmarks": 54,
+          "loans": 12,
+          "positive_landmarks": 0,
+          "default_loans": 0,
+          "observed_rate": 0.0,
+          "mean_probability": 0.009931587640971705,
+          "sparse": true
+        },
+        {
+          "bin": "(0.02, 1.0]",
+          "landmarks": 129,
+          "loans": 14,
+          "positive_landmarks": 27,
+          "default_loans": 5,
+          "observed_rate": 0.20930232558139536,
+          "mean_probability": 0.14701556200244426,
+          "sparse": true
+        }
+      ],
+      "uncertainty": {
+        "unit": "loan_id",
+        "draws": 500,
+        "seed": 31003,
+        "single_class_draws": 2,
+        "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+        "intervals": {
+          "brier": {
+            "lower": 0.0016074177225738138,
+            "upper": 0.012858140137504971,
+            "valid_draws": 500
+          },
+          "log_loss": {
+            "lower": 0.010291159854364872,
+            "upper": 0.07529304110638341,
+            "valid_draws": 500
+          },
+          "observed_rate": {
+            "lower": 0.0015898195107372376,
+            "upper": 0.014657205631133655,
+            "valid_draws": 500
+          },
+          "mean_probability": {
+            "lower": 0.0014633823370954163,
+            "upper": 0.006150657181171304,
+            "valid_draws": 500
+          },
+          "roc_auc": {
+            "lower": 0.6782322252524869,
+            "upper": 0.9596518892417827,
+            "valid_draws": 498
+          },
+          "gini": {
+            "lower": 0.3564644505049738,
+            "upper": 0.9193037784835653,
+            "valid_draws": 498
+          },
+          "pr_auc_trapezoid": {
+            "lower": 0.029880393731465046,
+            "upper": 0.27657123059719174,
+            "valid_draws": 498
+          },
+          "average_precision": {
+            "lower": 0.04845160206428967,
+            "upper": 0.2935679711713198,
+            "valid_draws": 498
+          }
+        }
+      }
+    }
+  },
+  "sensitivities": {
+    "S1_payoff_exclusion": {
+      "cohort": {
+        "landmarks": 54016,
+        "loans": 893,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "cohort_sha256": "d53b7ab63c2c7feb12b7d817ac1c8da8ae37de4bc2d0f2af171ecd178405a1f7",
+      "development": {
+        "landmarks": 20040,
+        "loans": 605,
+        "positive_landmarks": 137,
+        "default_loans": 13
+      },
+      "evaluation": {
+        "landmarks": 6669,
+        "loans": 119,
+        "positive_landmarks": 60,
+        "default_loans": 5
+      },
+      "decision": "BASELINE ESTABLISHED \u2014 EXPLORATORY ONLY",
+      "removed_known_landmarks": 10288,
+      "baselines": {
+        "null": {
+          "effective_sample": {
+            "landmarks": 6669,
+            "loans": 119,
+            "positive_landmarks": 60,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.008920575635264364,
+            "log_loss": 0.05165192828102994,
+            "observed_rate": 0.00899685110211426,
+            "mean_probability": 0.006836327345309381,
+            "roc_auc": 0.5,
+            "gini": 0.0,
+            "pr_auc_trapezoid": 0.5044984255510572,
+            "average_precision": 0.00899685110211426,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 0.27680175404269475,
+            "joint_intercept": null,
+            "calibration_slope": null,
+            "slope_status": "constant logits: joint slope unidentifiable",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 6669,
+              "loans": 119,
+              "positive_landmarks": 60,
+              "default_loans": 5,
+              "observed_rate": 0.00899685110211426,
+              "mean_probability": 0.006836327345309381,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 0,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.0017922802509848824,
+                "upper": 0.0173873009897753,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.01567071868452006,
+                "upper": 0.094389076947539,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.001769741949986323,
+                "upper": 0.01758094379180358,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.00683632734530938,
+                "upper": 0.006836327345309383,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.5,
+                "upper": 0.5,
+                "valid_draws": 500
+              },
+              "gini": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_draws": 500
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.5008848709749932,
+                "upper": 0.5087904718959018,
+                "valid_draws": 500
+              },
+              "average_precision": {
+                "lower": 0.001769741949986323,
+                "upper": 0.01758094379180358,
+                "valid_draws": 500
+              }
+            }
+          }
+        },
+        "logistic": {
+          "effective_sample": {
+            "landmarks": 6669,
+            "loans": 119,
+            "positive_landmarks": 60,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.007991831886340273,
+            "log_loss": 0.04423149673884306,
+            "observed_rate": 0.00899685110211426,
+            "mean_probability": 0.003861866928534082,
+            "roc_auc": 0.8285620618348716,
+            "gini": 0.6571241236697432,
+            "pr_auc_trapezoid": 0.16637545903243367,
+            "average_precision": 0.17431872528201867,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 1.1787966188099652,
+            "joint_intercept": 0.10962201302698407,
+            "calibration_slope": 0.7773291180205535,
+            "slope_status": "estimated",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(-0.001000000001, 0.005]",
+              "landmarks": 6505,
+              "loans": 118,
+              "positive_landmarks": 33,
+              "default_loans": 4,
+              "observed_rate": 0.005073020753266718,
+              "mean_probability": 0.0011161456400417367,
+              "sparse": true
+            },
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 46,
+              "loans": 10,
+              "positive_landmarks": 0,
+              "default_loans": 0,
+              "observed_rate": 0.0,
+              "mean_probability": 0.008892002750619434,
+              "sparse": true
+            },
+            {
+              "bin": "(0.02, 1.0]",
+              "landmarks": 118,
+              "loans": 12,
+              "positive_landmarks": 27,
+              "default_loans": 5,
+              "observed_rate": 0.2288135593220339,
+              "mean_probability": 0.15326466975757452,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 0,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.0017162581077840235,
+                "upper": 0.015720487093303377,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.00964072987961289,
+                "upper": 0.08809012712201908,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.001769741949986323,
+                "upper": 0.01758094379180358,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.0017305665609856202,
+                "upper": 0.007079445832276118,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.6765390960098471,
+                "upper": 0.9798002273192182,
+                "valid_draws": 500
+              },
+              "gini": {
+                "lower": 0.35307819201969404,
+                "upper": 0.9596004546384365,
+                "valid_draws": 500
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.038132328908954745,
+                "upper": 0.30729335390871637,
+                "valid_draws": 500
+              },
+              "average_precision": {
+                "lower": 0.050019770017335236,
+                "upper": 0.3264151437617188,
+                "valid_draws": 500
+              }
+            }
+          }
+        }
+      }
+    },
+    "S2_quarterly": {
+      "cohort": {
+        "landmarks": 21465,
+        "loans": 977,
+        "positive_landmarks": 122,
+        "default_loans": 31
+      },
+      "cohort_sha256": "49f7329645c627f409b5e0f1a77f34d5de5e3e5466e999149094dbf6de727306",
+      "development": {
+        "landmarks": 8001,
+        "loans": 661,
+        "positive_landmarks": 46,
+        "default_loans": 13
+      },
+      "evaluation": {
+        "landmarks": 2579,
+        "loans": 129,
+        "positive_landmarks": 20,
+        "default_loans": 5
+      },
+      "decision": "BASELINE ESTABLISHED \u2014 EXPLORATORY ONLY",
+      "removed_known_landmarks": 42839,
+      "baselines": {
+        "null": {
+          "effective_sample": {
+            "landmarks": 2579,
+            "loans": 129,
+            "positive_landmarks": 20,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.007698827305488991,
+            "log_loss": 0.0457264346550711,
+            "observed_rate": 0.0077549437766576195,
+            "mean_probability": 0.00574928133983252,
+            "roc_auc": 0.5,
+            "gini": 0.0,
+            "pr_auc_trapezoid": 0.5038774718883288,
+            "average_precision": 0.0077549437766576195,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 0.3012749816771972,
+            "joint_intercept": null,
+            "calibration_slope": null,
+            "slope_status": "constant logits: joint slope unidentifiable",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 2579,
+              "loans": 129,
+              "positive_landmarks": 20,
+              "default_loans": 5,
+              "observed_rate": 0.0077549437766576195,
+              "mean_probability": 0.00574928133983252,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 4,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.0015429559620766104,
+                "upper": 0.014404894742132515,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.013636770664098217,
+                "upper": 0.08068419103719301,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.001527465382594849,
+                "upper": 0.014539018319657345,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.005749281339832519,
+                "upper": 0.00574928133983252,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.5,
+                "upper": 0.5,
+                "valid_draws": 496
+              },
+              "gini": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_draws": 496
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.5007823592067336,
+                "upper": 0.5072882128586463,
+                "valid_draws": 496
+              },
+              "average_precision": {
+                "lower": 0.0015647184134672512,
+                "upper": 0.014576425717292714,
+                "valid_draws": 496
+              }
+            }
+          }
+        },
+        "logistic": {
+          "effective_sample": {
+            "landmarks": 2579,
+            "loans": 129,
+            "positive_landmarks": 20,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.007277992871902404,
+            "log_loss": 0.0427325840832116,
+            "observed_rate": 0.0077549437766576195,
+            "mean_probability": 0.0018359833872422125,
+            "roc_auc": 0.8113325517780383,
+            "gini": 0.6226651035560766,
+            "pr_auc_trapezoid": 0.16120468852668607,
+            "average_precision": 0.18602125751647677,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 1.7828943932036647,
+            "joint_intercept": 0.7347086321494165,
+            "calibration_slope": 0.8091125589617919,
+            "slope_status": "estimated",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(-0.001000000001, 0.005]",
+              "landmarks": 2530,
+              "loans": 128,
+              "positive_landmarks": 11,
+              "default_loans": 4,
+              "observed_rate": 0.004347826086956522,
+              "mean_probability": 0.0006148935000513409,
+              "sparse": true
+            },
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 18,
+              "loans": 6,
+              "positive_landmarks": 1,
+              "default_loans": 1,
+              "observed_rate": 0.05555555555555555,
+              "mean_probability": 0.010027888370252721,
+              "sparse": true
+            },
+            {
+              "bin": "(0.02, 1.0]",
+              "landmarks": 31,
+              "loans": 7,
+              "positive_landmarks": 8,
+              "default_loans": 3,
+              "observed_rate": 0.25806451612903225,
+              "mean_probability": 0.0967360841904266,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 4,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.001465960737499,
+                "upper": 0.013709420289784809,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.00859188574131815,
+                "upper": 0.08370237770990628,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.001527465382594849,
+                "upper": 0.014539018319657345,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.000726820492949221,
+                "upper": 0.0035405929112008222,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.5838794781020545,
+                "upper": 0.9738268635227483,
+                "valid_draws": 496
+              },
+              "gini": {
+                "lower": 0.167758956204109,
+                "upper": 0.9476537270454967,
+                "valid_draws": 496
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.0034637165348176003,
+                "upper": 0.33932516504982185,
+                "valid_draws": 496
+              },
+              "average_precision": {
+                "lower": 0.004039460103433935,
+                "upper": 0.39315476190476195,
+                "valid_draws": 496
+              }
+            }
+          }
+        }
+      }
+    },
+    "S3_physical_future_presence_known_labels": {
+      "cohort": {
+        "landmarks": 54781,
+        "loans": 902,
+        "positive_landmarks": 325,
+        "default_loans": 31
+      },
+      "cohort_sha256": "a87e6ae275d6886418723601602351f89e601a534f640b9fb0aeaf6249755b78",
+      "development": {
+        "landmarks": 20303,
+        "loans": 611,
+        "positive_landmarks": 114,
+        "default_loans": 13
+      },
+      "evaluation": {
+        "landmarks": 6764,
+        "loans": 122,
+        "positive_landmarks": 60,
+        "default_loans": 5
+      },
+      "decision": "BASELINE ESTABLISHED \u2014 EXPLORATORY ONLY",
+      "removed_known_landmarks": 9523,
+      "baselines": {
+        "null": {
+          "effective_sample": {
+            "landmarks": 6764,
+            "loans": 122,
+            "positive_landmarks": 60,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.008802403878095546,
+            "log_loss": 0.05155057992365311,
+            "observed_rate": 0.008870490833826138,
+            "mean_probability": 0.005614933753632466,
+            "roc_auc": 0.5,
+            "gini": 0.0,
+            "pr_auc_trapezoid": 0.5044352454169131,
+            "average_precision": 0.008870490833826138,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 0.46057965227591025,
+            "joint_intercept": null,
+            "calibration_slope": null,
+            "slope_status": "constant logits: joint slope unidentifiable",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 6764,
+              "loans": 122,
+              "positive_landmarks": 60,
+              "default_loans": 5,
+              "observed_rate": 0.008870490833826138,
+              "mean_probability": 0.005614933753632466,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 4,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.0017412973224692448,
+                "upper": 0.017631319750700314,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.014582237223037427,
+                "upper": 0.09777426810653292,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.0017291883980163874,
+                "upper": 0.017799680321322755,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.005614933753632465,
+                "upper": 0.005614933753632468,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.5,
+                "upper": 0.5,
+                "valid_draws": 496
+              },
+              "gini": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_draws": 496
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.5008889871098301,
+                "upper": 0.508916295682726,
+                "valid_draws": 496
+              },
+              "average_precision": {
+                "lower": 0.0017779742196600808,
+                "upper": 0.017832591365452014,
+                "valid_draws": 496
+              }
+            }
+          }
+        },
+        "logistic": {
+          "effective_sample": {
+            "landmarks": 6764,
+            "loans": 122,
+            "positive_landmarks": 60,
+            "default_loans": 5
+          },
+          "metrics": {
+            "brier": 0.008055625418081877,
+            "log_loss": 0.04560585569913308,
+            "observed_rate": 0.008870490833826138,
+            "mean_probability": 0.0027669660102702686,
+            "roc_auc": 0.8354191527446301,
+            "gini": 0.6708383054892602,
+            "pr_auc_trapezoid": 0.17311401664830184,
+            "average_precision": 0.181315770544065,
+            "discrimination_status": "estimated"
+          },
+          "calibration": {
+            "epsilon": 1e-12,
+            "clipped_rows": 0,
+            "calibration_intercept": 1.5428525539290163,
+            "joint_intercept": 0.5229097472321059,
+            "calibration_slope": 0.8029072724733557,
+            "slope_status": "estimated",
+            "confidence_intervals": null,
+            "interval_reason": "No calibration interval estimated: sparse event-loan support; no iid landmark inference justified",
+            "support_status": "UNSTABLE / INSUFFICIENT EVENT SUPPORT"
+          },
+          "reliability": [
+            {
+              "bin": "(-0.001000000001, 0.005]",
+              "landmarks": 6616,
+              "loans": 120,
+              "positive_landmarks": 33,
+              "default_loans": 4,
+              "observed_rate": 0.004987908101571947,
+              "mean_probability": 0.0008310288146165135,
+              "sparse": true
+            },
+            {
+              "bin": "(0.005, 0.02]",
+              "landmarks": 42,
+              "loans": 12,
+              "positive_landmarks": 2,
+              "default_loans": 2,
+              "observed_rate": 0.047619047619047616,
+              "mean_probability": 0.010995326429797888,
+              "sparse": true
+            },
+            {
+              "bin": "(0.02, 1.0]",
+              "landmarks": 106,
+              "loans": 11,
+              "positive_landmarks": 25,
+              "default_loans": 5,
+              "observed_rate": 0.2358490566037736,
+              "mean_probability": 0.1203383749614503,
+              "sparse": true
+            }
+          ],
+          "uncertainty": {
+            "unit": "loan_id",
+            "draws": 500,
+            "seed": 31003,
+            "single_class_draws": 4,
+            "scope": "Evaluation sampling only; fitted model fixed; no training uncertainty or borrower clustering",
+            "intervals": {
+              "brier": {
+                "lower": 0.0017667661638993376,
+                "upper": 0.016004853885744647,
+                "valid_draws": 500
+              },
+              "log_loss": {
+                "lower": 0.009931370578108828,
+                "upper": 0.09039673877540831,
+                "valid_draws": 500
+              },
+              "observed_rate": {
+                "lower": 0.0017291883980163874,
+                "upper": 0.017799680321322755,
+                "valid_draws": 500
+              },
+              "mean_probability": {
+                "lower": 0.001159079935543773,
+                "upper": 0.005140841832985397,
+                "valid_draws": 500
+              },
+              "roc_auc": {
+                "lower": 0.6557862780438114,
+                "upper": 0.9677949155878448,
+                "valid_draws": 496
+              },
+              "gini": {
+                "lower": 0.3115725560876228,
+                "upper": 0.9355898311756897,
+                "valid_draws": 496
+              },
+              "pr_auc_trapezoid": {
+                "lower": 0.030825665608102272,
+                "upper": 0.3171407464999913,
+                "valid_draws": 496
+              },
+              "average_precision": {
+                "lower": 0.043075776174690425,
+                "upper": 0.34010972605747364,
+                "valid_draws": 496
+              }
+            }
+          }
+        }
+      }
+    },
+    "S3_unknown_exclusion": {
+      "loans_with_no_remaining_known_landmark": 1,
+      "excluded": {
+        "landmarks": 760,
+        "loans": 64,
+        "positive_landmarks": 0,
+        "default_loans": 0
+      },
+      "by_status": {
+        "ambiguous_event_order": {
+          "landmarks": 52,
+          "loans": 5,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        },
+        "right_censored": {
+          "landmarks": 708,
+          "loans": 59,
+          "positive_landmarks": 0,
+          "default_loans": 0
+        }
+      },
+      "explanation": "Loan removal counts overlap, are not additive; remaining labels never imputed"
+    }
+  },
+  "limitations": [
+    "Historical operational knowledge time UNVERIFIED: nominal-time retrospective research only",
+    "Only 13 development and 5 evaluation default loans; coefficients and metrics exploratory",
+    "Repeated overlapping windows; loan clustering cannot account for unknown borrower links",
+    "Fixed-fit bootstrap omits development uncertainty; percentile intervals unstable with five event loans",
+    "2010 mortgage cohort ageing/survival selection confounded with calendar drift; no new-vintage validation",
+    "No regulatory/IFRS9/production/profit/fairness/external-validity claim",
+    "No proper competing-risk or censoring-adjusted estimator fitted"
+  ],
+  "next_task": "Prespecified identifier-only sample-expansion feasibility study under a protocol amendment; no expansion in Task 3",
+  "fitted_development": {
+    "effective_sample": {
+      "landmarks": 23635,
+      "loans": 665,
+      "positive_landmarks": 137,
+      "default_loans": 13
+    },
+    "medians": [
+      771.0,
+      74.0,
+      24.0,
+      0.0
+    ],
+    "scaling_means": [
+      759.1362386291516,
+      69.4022001269304,
+      25.435117410619842,
+      0.006896551724137931
+    ],
+    "scaling_scales": [
+      44.731468874417295,
+      17.40610482304369,
+      13.620308715323086,
+      0.09557058383942149
+    ],
+    "standardized_coefficients": {
+      "orig_credit_score": -0.20120733639147517,
+      "orig_ltv": 0.6842836811068632,
+      "loan_age": -0.24836487629208195,
+      "delinquency_state": 0.3292657346027565
+    },
+    "intercept": -5.740145438738273,
+    "iterations": 19
+  },
+  "preservation": {
+    "source_unchanged": true,
+    "sample_unchanged": true,
+    "panel_unchanged": true,
+    "task2_manifests_unchanged": true
+  },
+  "implementation_sha256_lf": {
+    "baseline.py": "d1dacf0d51d5530923b6451967527ae3d09136c8d4295d9acbd7c59a064f21ea",
+    "research.py": "636e282306b22399f994addf003fd157b53d7f1a641c8a761ba9ba9979791ebe",
+    "__init__.py": "e16a57f102f384b95d23d818b77cce2be61e823d3d2a46270f46fd374bcf8acb"
+  }
+}

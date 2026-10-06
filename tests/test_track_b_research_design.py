@@ -27,8 +27,8 @@ def test_selection_is_formal_but_does_not_authorize_data_or_models():
     ):
         assert data["selection"][flag] is False
     assert data["track_a"]["reinterpretation_permitted"] is False
-    # Task 2 may implement data engineering; predictive/accounting modules remain absent.
-    for component in ("pd", "survival", "lgd", "ead", "sicr", "staging", "ecl"):
+    # Task 3 authorizes the PD baseline; survival/accounting modules remain absent.
+    for component in ("survival", "lgd", "ead", "sicr", "staging", "ecl"):
         assert not (ROOT / "src/credit_risk/track_b" / component).exists()
 
 
