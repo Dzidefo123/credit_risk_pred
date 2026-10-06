@@ -89,3 +89,55 @@ Past-due counts and utilization have stronger positive monotone associations tha
 The aggregate audit read the retained source and saved partition assignments. `verify_experiment` confirmed the frozen source, code, versions, artifacts and assignments without model deserialization. No new original-holdout prediction, recalibration, tuning or champion selection occurred. Whole-source descriptive auditing is not a new independent holdout evaluation and must not become a route for choosing features against the consumed test.
 
 Before a lender-specific model is developed, obtain a dated data dictionary, borrower/account keys, target event definitions, observation/performance windows, units, censoring rules and sampling/approval lineage. Keep the current artifact and consumed holdout intact. Any new feature/capping/CV experiment should be approved and confined to training records; genuinely independent final validation requires new unseen data.
+
+## Task 2: reusable audit and provenance update (2026-10-05)
+
+The original whole-source observations above remain retained audit evidence. Task 2
+added [target/provenance documentation](../../docs/TARGET_DEFINITION.md), a
+[feature dictionary](../../docs/DATA_DICTIONARY.md), a
+[leakage review](LEAKAGE_REVIEW.md), and a
+[dataset suitability assessment](DATASET_SUITABILITY.md). Repository attribution
+and the external competition description support Give Me Some Credit and the
+intended two-year task; pristine-download equivalence and dated borrower lineage
+remain unverified.
+
+The new reusable function is `credit_risk.data.audit.audit_frame`. It reports
+row/column counts, dtypes, missingness, duplicate counts with explicit profile
+columns, binary prevalence with its denominator, unique-value counts, finite
+ranges, descriptive quantile tails and caller-justified numeric review rules.
+It performs no model fitting, feature transformation, repair or source mutation.
+Missingness, infinities and invalid binary/schema inputs are handled explicitly.
+Quantile tails are not banking invalidity thresholds. Low-cardinality unique values
+are included (at most 20); high-cardinality values are omitted. Avoid publishing
+sensitive identifiers or profiles in audit outputs. Rules have no banking defaults.
+
+Fresh output is [TRAINING_DATA_AUDIT.json](TRAINING_DATA_AUDIT.json): **67,562 saved
+training rows, 4,514 positives (6.6813%), 332 extra predictor-plus-target duplicate
+profiles**, 1,467 utilization values above one and 132 sentinel-like values in each
+past-due-count field. These flags request review, not deletion or recoding.
+The JSON's provenance records source/assignment hashes and the audited population.
+No fresh full-source/holdout statistics were calculated. Existing full-source
+numbers in the dictionary are copied from the earlier audit, not recomputed.
+
+Usage with an explicitly authorized training frame:
+
+```python
+from credit_risk.data.audit import NumericRule, audit_frame
+
+report = audit_frame(
+    training_frame,
+    target="SeriousDlqin2yrs",
+    duplicate_columns=[*predictor_names, "SeriousDlqin2yrs"],
+    rules={"RevolvingUtilizationOfUnsecuredLines": NumericRule(
+        "Over-limit utilization needs review; it can be legitimate", maximum=1
+    )},
+)
+```
+
+The recorded Task 2 audit first checks the source SHA and saved-assignment SHA
+against the retained training manifest, selects `partition == "train"` positions,
+and parses the CSV using `skiprows=lambda row: row > 0 and row - 1 not in positions`.
+It applies the existing documented aliases, checks the training row count and
+passes that frame to `audit_frame`. It never reads a prediction file, deserializes a
+model or reopens the consumed final evaluation. Existing experiment and validation
+assets are read only for manifest/checksum preservation.

@@ -1,0 +1,395 @@
+{
+  "rows": 67562,
+  "column_count": 12,
+  "duplicate_rows": 0,
+  "duplicate_profile_columns": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30_59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60_89DaysPastDueNotWorse",
+    "NumberOfDependents",
+    "SeriousDlqin2yrs"
+  ],
+  "duplicate_profiles": 332,
+  "tail_quantiles": [
+    0.01,
+    0.99
+  ],
+  "columns": {
+    "source_row_id": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 67562,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 1.0,
+        "maximum": 149998.0,
+        "mean": 75115.64568840474,
+        "median": 74827.5,
+        "lower_tail_boundary": 1426.22,
+        "upper_tail_boundary": 148515.78,
+        "below_lower_tail": 676,
+        "above_upper_tail": 676
+      }
+    },
+    "SeriousDlqin2yrs": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 2,
+      "unique_values": [
+        0,
+        1
+      ],
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.06681270536692223,
+        "median": 0.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 1.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 0
+      }
+    },
+    "RevolvingUtilizationOfUnsecuredLines": {
+      "dtype": "float64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 57244,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 50708.0,
+        "mean": 6.91955125986975,
+        "median": 0.1523786895,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 1.091367684519999,
+        "below_lower_tail": 0,
+        "above_upper_tail": 676
+      }
+    },
+    "age": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 85,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 107.0,
+        "mean": 52.29032592285605,
+        "median": 52.0,
+        "lower_tail_boundary": 24.0,
+        "upper_tail_boundary": 87.0,
+        "below_lower_tail": 610,
+        "above_upper_tail": 613
+      }
+    },
+    "NumberOfTime30_59DaysPastDueNotWorse": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 15,
+      "unique_values": [
+        0,
+        1,
+        10,
+        12,
+        13,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        96,
+        98
+      ],
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 98.0,
+        "mean": 0.43758325686036526,
+        "median": 0.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 3.9999999999999996,
+        "below_lower_tail": 0,
+        "above_upper_tail": 729
+      }
+    },
+    "DebtRatio": {
+      "dtype": "float64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 54835,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 329664.0,
+        "mean": 355.4009075202754,
+        "median": 0.3658704145,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 4983.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 675
+      }
+    },
+    "MonthlyIncome": {
+      "dtype": "float64",
+      "missing_count": 13430,
+      "missing_fraction": 0.19878037950327107,
+      "unique_count": 10074,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 54132,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 1560100.0,
+        "mean": 6689.15547180965,
+        "median": 5375.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 25641.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 541
+      }
+    },
+    "NumberOfOpenCreditLinesAndLoans": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 56,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 58.0,
+        "mean": 8.425046623841805,
+        "median": 8.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 24.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 665
+      }
+    },
+    "NumberOfTimes90DaysLate": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 18,
+      "unique_values": [
+        0,
+        1,
+        10,
+        11,
+        12,
+        13,
+        15,
+        17,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        96,
+        98
+      ],
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 98.0,
+        "mean": 0.2793138154583938,
+        "median": 0.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 3.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 387
+      }
+    },
+    "NumberRealEstateLoansOrLines": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 26,
+      "unique_values": null,
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 54.0,
+        "mean": 1.015141647671768,
+        "median": 1.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 4.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 647
+      }
+    },
+    "NumberOfTime60_89DaysPastDueNotWorse": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_fraction": 0.0,
+      "unique_count": 11,
+      "unique_values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        96,
+        98
+      ],
+      "numeric": {
+        "finite_count": 67562,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 98.0,
+        "mean": 0.2562239128504188,
+        "median": 0.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 1.9999999999999998,
+        "below_lower_tail": 0,
+        "above_upper_tail": 852
+      }
+    },
+    "NumberOfDependents": {
+      "dtype": "float64",
+      "missing_count": 1754,
+      "missing_fraction": 0.025961339214351262,
+      "unique_count": 12,
+      "unique_values": [
+        0.0,
+        1.0,
+        10.0,
+        13.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0
+      ],
+      "numeric": {
+        "finite_count": 65808,
+        "nonfinite_count": 0,
+        "minimum": 0.0,
+        "maximum": 13.0,
+        "mean": 0.7553336980306347,
+        "median": 0.0,
+        "lower_tail_boundary": 0.0,
+        "upper_tail_boundary": 4.0,
+        "below_lower_tail": 0,
+        "above_upper_tail": 416
+      }
+    }
+  },
+  "target": {
+    "name": "SeriousDlqin2yrs",
+    "observed_count": 67562,
+    "missing_count": 0,
+    "positive_count": 4514,
+    "negative_count": 63048,
+    "positive_fraction": 0.06681270536692223
+  },
+  "rule_findings": {
+    "RevolvingUtilizationOfUnsecuredLines": {
+      "classification": "review",
+      "explanation": "Over-limit utilization can be real; values above one require review, not deletion",
+      "minimum": 0,
+      "maximum": 1,
+      "integer": false,
+      "below_minimum": 0,
+      "above_maximum": 1467,
+      "fractional": 0,
+      "violating_finite_rows": 1467
+    },
+    "age": {
+      "classification": "review",
+      "explanation": "Age zero is implausible for the described borrower population; source explanation required",
+      "minimum": 1,
+      "maximum": null,
+      "integer": true,
+      "below_minimum": 1,
+      "above_maximum": 0,
+      "fractional": 0,
+      "violating_finite_rows": 1
+    },
+    "NumberOfTime30_59DaysPastDueNotWorse": {
+      "classification": "review",
+      "explanation": "Counts at least 90 are sentinel-like in prior source audit; coding is unverified",
+      "minimum": 0,
+      "maximum": 89,
+      "integer": true,
+      "below_minimum": 0,
+      "above_maximum": 132,
+      "fractional": 0,
+      "violating_finite_rows": 132
+    },
+    "NumberOfTimes90DaysLate": {
+      "classification": "review",
+      "explanation": "Counts at least 90 are sentinel-like in prior source audit; coding is unverified",
+      "minimum": 0,
+      "maximum": 89,
+      "integer": true,
+      "below_minimum": 0,
+      "above_maximum": 132,
+      "fractional": 0,
+      "violating_finite_rows": 132
+    },
+    "NumberOfTime60_89DaysPastDueNotWorse": {
+      "classification": "review",
+      "explanation": "Counts at least 90 are sentinel-like in prior source audit; coding is unverified",
+      "minimum": 0,
+      "maximum": 89,
+      "integer": true,
+      "below_minimum": 0,
+      "above_maximum": 132,
+      "fractional": 0,
+      "violating_finite_rows": 132
+    }
+  },
+  "provenance": {
+    "population": "saved training partition only",
+    "source_sha256": "9d863f88e2ef2190ed608c15c3dd362d1833d940e35f4f2bf22660e04b5f05cb",
+    "split_assignments_sha256": "efbdc36ee1286f0c06f302197174efbf9884ecb0f8e8c4b9d010569265db04e2",
+    "seed": 42,
+    "partition_rows": 67562,
+    "holdout_predictions_accessed": false,
+    "new_holdout_feature_summaries": false,
+    "model_fitting_or_scoring": false,
+    "tail_interpretation": "descriptive quantile tails, not source invalidity",
+    "rule_basis": "caller-specified review rules; no banking policy imposed",
+    "audit_module_hash_convention": "SHA-256 of UTF-8 source with LF line endings; not Git object SHA",
+    "audit_module_source_sha256": "41cfe9d6c8ec8e3b0774b2294d27b0dca6812246027b0a4aa1c0bff70431a2e3"
+  }
+}
