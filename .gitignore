@@ -42,3 +42,6 @@ Thumbs.db
 # Local holdout registry transaction sidecars; the ledger itself stays tracked
 /reports/holdout_registry.json.lock
 /reports/holdout_registry.json.*.tmp
+
+# Track B licensed source, selected records, panels and private manifests
+/data/track_b/**

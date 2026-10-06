@@ -1,0 +1,272 @@
+{
+  "acquisition_date": null,
+  "acquisition_date_status": "Retrieval time unknown; ZIP/filesystem times not substituted",
+  "acquisition_reported_on": "2026-10-06",
+  "acquisition_source": "Authenticated Freddie Mac/Clarity download (user attestation)",
+  "actual_column_counts": null,
+  "apparent_structure": "annual nested quarter archives",
+  "archive_inventory": [
+    {
+      "compressed_bytes": 340461810,
+      "compression_type": 0,
+      "crc32": "a9bcbfce",
+      "encrypted": false,
+      "members": [
+        {
+          "compressed_bytes": 8214739,
+          "compression_type": 8,
+          "crc32": "142d6ef5",
+          "encrypted": false,
+          "name": "orig_2010Q1.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 46698781,
+          "zip_member_timestamp": [
+            2026,
+            7,
+            6,
+            10,
+            5,
+            38
+          ]
+        },
+        {
+          "compressed_bytes": 332246733,
+          "compression_type": 8,
+          "crc32": "9f7f53fe",
+          "encrypted": false,
+          "name": "perf_2010Q1.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 2641467789,
+          "zip_member_timestamp": [
+            2026,
+            8,
+            20,
+            23,
+            7,
+            50
+          ]
+        }
+      ],
+      "name": "historical_data_2010Q1.zip",
+      "nested_inspection": "central directory only; no loan-member payloads",
+      "timestamp_is_not_release_or_acquisition_proof": true,
+      "uncompressed_bytes": 340461810,
+      "zip_member_timestamp": [
+        2026,
+        9,
+        5,
+        17,
+        11,
+        2
+      ]
+    },
+    {
+      "compressed_bytes": 339810443,
+      "compression_type": 0,
+      "crc32": "8f974898",
+      "encrypted": false,
+      "members": [
+        {
+          "compressed_bytes": 8192850,
+          "compression_type": 8,
+          "crc32": "c5f605cf",
+          "encrypted": false,
+          "name": "orig_2010Q2.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 46785787,
+          "zip_member_timestamp": [
+            2026,
+            7,
+            6,
+            10,
+            5,
+            50
+          ]
+        },
+        {
+          "compressed_bytes": 331617255,
+          "compression_type": 8,
+          "crc32": "0c54c55a",
+          "encrypted": false,
+          "name": "perf_2010Q2.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 2623274434,
+          "zip_member_timestamp": [
+            2026,
+            8,
+            20,
+            23,
+            15,
+            42
+          ]
+        }
+      ],
+      "name": "historical_data_2010Q2.zip",
+      "nested_inspection": "central directory only; no loan-member payloads",
+      "timestamp_is_not_release_or_acquisition_proof": true,
+      "uncompressed_bytes": 339810443,
+      "zip_member_timestamp": [
+        2026,
+        9,
+        5,
+        17,
+        11,
+        54
+      ]
+    },
+    {
+      "compressed_bytes": 522375743,
+      "compression_type": 0,
+      "crc32": "e27a22dd",
+      "encrypted": false,
+      "members": [
+        {
+          "compressed_bytes": 11514945,
+          "compression_type": 8,
+          "crc32": "f6395957",
+          "encrypted": false,
+          "name": "orig_2010Q3.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 64766530,
+          "zip_member_timestamp": [
+            2026,
+            6,
+            4,
+            14,
+            55,
+            48
+          ]
+        },
+        {
+          "compressed_bytes": 510860460,
+          "compression_type": 8,
+          "crc32": "9ebb287b",
+          "encrypted": false,
+          "name": "perf_2010Q3.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 3954924580,
+          "zip_member_timestamp": [
+            2026,
+            8,
+            13,
+            10,
+            18,
+            52
+          ]
+        }
+      ],
+      "name": "historical_data_2010Q3.zip",
+      "nested_inspection": "central directory only; no loan-member payloads",
+      "timestamp_is_not_release_or_acquisition_proof": true,
+      "uncompressed_bytes": 522375743,
+      "zip_member_timestamp": [
+        2026,
+        9,
+        5,
+        17,
+        13,
+        14
+      ]
+    },
+    {
+      "compressed_bytes": 680027037,
+      "compression_type": 0,
+      "crc32": "46145441",
+      "encrypted": false,
+      "members": [
+        {
+          "compressed_bytes": 13603582,
+          "compression_type": 8,
+          "crc32": "be6d2432",
+          "encrypted": false,
+          "name": "orig_2010Q4.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 76618439,
+          "zip_member_timestamp": [
+            2026,
+            7,
+            6,
+            10,
+            6,
+            0
+          ]
+        },
+        {
+          "compressed_bytes": 666423009,
+          "compression_type": 8,
+          "crc32": "e13394a1",
+          "encrypted": false,
+          "name": "perf_2010Q4.txt",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 5149323563,
+          "zip_member_timestamp": [
+            2026,
+            8,
+            20,
+            23,
+            29,
+            58
+          ]
+        }
+      ],
+      "name": "historical_data_2010Q4.zip",
+      "nested_inspection": "central directory only; no loan-member payloads",
+      "timestamp_is_not_release_or_acquisition_proof": true,
+      "uncompressed_bytes": 680027037,
+      "zip_member_timestamp": [
+        2026,
+        9,
+        5,
+        17,
+        14,
+        58
+      ]
+    }
+  ],
+  "assumptions": {
+    "compatible_release_47_record_layout": "NOT TESTABLE",
+    "default_followup_exposure_and_loss_semantics": "NOT TESTABLE",
+    "official_2010_sample_structure": "CONTRADICTED",
+    "quarter_names_indicate_2010": "CONFIRMED WITH QUALIFICATION"
+  },
+  "blockers": [
+    "Not the prespecified sample pair; frame/packaging amendment required",
+    "Original ZIP exceeds current 200 MiB engineering budget; no automatic budget increase",
+    "Underlying payload exceeds current 2 GiB expanded-data budget"
+  ],
+  "byte_size": 1882675775,
+  "cohort": null,
+  "copied": false,
+  "dataset_family": "Standard Dataset (user attestation; records not checked)",
+  "delimiter_verified": false,
+  "eligibility_universe": null,
+  "encoding_verified": false,
+  "expected_layout": "freddie-standard-r47-july-2026",
+  "extracted": false,
+  "feasibility": "STOP \u2014 DATA/PROTOCOL INCOMPATIBLE",
+  "followup": null,
+  "inventory_recorded_at": "2026-10-06T18:24:02.211957+00:00",
+  "loan_payloads_read": false,
+  "loss_signs_verified_on_records": false,
+  "member_count": 4,
+  "modeling_gate": "BLOCKED: record-level schema and empirical gates not passed",
+  "official_dataset": "Freddie Mac Single-Family Loan-Level Dataset",
+  "official_source_reference": "https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset",
+  "original_filename": "historical_data_2010.zip",
+  "outcomes": null,
+  "parser_version": "1.0.0",
+  "performance_rows_scanned": 0,
+  "protocol_id": "freddie_mortgage_research_v1",
+  "protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "records_parsed": 0,
+  "redistribution_status": "Raw redistribution not authorized; original retained privately",
+  "release_verified": false,
+  "schema_version": 1,
+  "selected_loans": null,
+  "sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "source_release": null,
+  "source_unchanged": true,
+  "status": "ACQUIRED_PREFLIGHT_STOPPED",
+  "underlying_member_uncompressed_bytes": 14603859903,
+  "vintage": 2010
+}

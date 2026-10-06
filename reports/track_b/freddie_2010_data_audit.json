@@ -1,0 +1,996 @@
+{
+  "amendment_id": "annual_2010_acquisition_v1",
+  "amendment_sha256_lf": "4b142d00c097c222446848a138d07f7364a817f40be4ea218423655b39890f41",
+  "annual_preflight": {
+    "inventory": [
+      {
+        "members": [
+          {
+            "compressed_bytes": 8214739,
+            "compression_type": 8,
+            "crc32": "142d6ef5",
+            "encrypted": false,
+            "name": "orig_2010Q1.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 46698781,
+            "zip_member_timestamp": [
+              2026,
+              7,
+              6,
+              10,
+              5,
+              38
+            ]
+          },
+          {
+            "compressed_bytes": 332246733,
+            "compression_type": 8,
+            "crc32": "9f7f53fe",
+            "encrypted": false,
+            "name": "perf_2010Q1.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 2641467789,
+            "zip_member_timestamp": [
+              2026,
+              8,
+              20,
+              23,
+              7,
+              50
+            ]
+          }
+        ],
+        "outer": {
+          "compressed_bytes": 340461810,
+          "compression_type": 0,
+          "crc32": "a9bcbfce",
+          "encrypted": false,
+          "name": "historical_data_2010Q1.zip",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 340461810,
+          "zip_member_timestamp": [
+            2026,
+            9,
+            5,
+            17,
+            11,
+            2
+          ]
+        },
+        "quarter": 1
+      },
+      {
+        "members": [
+          {
+            "compressed_bytes": 8192850,
+            "compression_type": 8,
+            "crc32": "c5f605cf",
+            "encrypted": false,
+            "name": "orig_2010Q2.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 46785787,
+            "zip_member_timestamp": [
+              2026,
+              7,
+              6,
+              10,
+              5,
+              50
+            ]
+          },
+          {
+            "compressed_bytes": 331617255,
+            "compression_type": 8,
+            "crc32": "0c54c55a",
+            "encrypted": false,
+            "name": "perf_2010Q2.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 2623274434,
+            "zip_member_timestamp": [
+              2026,
+              8,
+              20,
+              23,
+              15,
+              42
+            ]
+          }
+        ],
+        "outer": {
+          "compressed_bytes": 339810443,
+          "compression_type": 0,
+          "crc32": "8f974898",
+          "encrypted": false,
+          "name": "historical_data_2010Q2.zip",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 339810443,
+          "zip_member_timestamp": [
+            2026,
+            9,
+            5,
+            17,
+            11,
+            54
+          ]
+        },
+        "quarter": 2
+      },
+      {
+        "members": [
+          {
+            "compressed_bytes": 11514945,
+            "compression_type": 8,
+            "crc32": "f6395957",
+            "encrypted": false,
+            "name": "orig_2010Q3.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 64766530,
+            "zip_member_timestamp": [
+              2026,
+              6,
+              4,
+              14,
+              55,
+              48
+            ]
+          },
+          {
+            "compressed_bytes": 510860460,
+            "compression_type": 8,
+            "crc32": "9ebb287b",
+            "encrypted": false,
+            "name": "perf_2010Q3.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 3954924580,
+            "zip_member_timestamp": [
+              2026,
+              8,
+              13,
+              10,
+              18,
+              52
+            ]
+          }
+        ],
+        "outer": {
+          "compressed_bytes": 522375743,
+          "compression_type": 0,
+          "crc32": "e27a22dd",
+          "encrypted": false,
+          "name": "historical_data_2010Q3.zip",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 522375743,
+          "zip_member_timestamp": [
+            2026,
+            9,
+            5,
+            17,
+            13,
+            14
+          ]
+        },
+        "quarter": 3
+      },
+      {
+        "members": [
+          {
+            "compressed_bytes": 13603582,
+            "compression_type": 8,
+            "crc32": "be6d2432",
+            "encrypted": false,
+            "name": "orig_2010Q4.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 76618439,
+            "zip_member_timestamp": [
+              2026,
+              7,
+              6,
+              10,
+              6,
+              0
+            ]
+          },
+          {
+            "compressed_bytes": 666423009,
+            "compression_type": 8,
+            "crc32": "e13394a1",
+            "encrypted": false,
+            "name": "perf_2010Q4.txt",
+            "timestamp_is_not_release_or_acquisition_proof": true,
+            "uncompressed_bytes": 5149323563,
+            "zip_member_timestamp": [
+              2026,
+              8,
+              20,
+              23,
+              29,
+              58
+            ]
+          }
+        ],
+        "outer": {
+          "compressed_bytes": 680027037,
+          "compression_type": 0,
+          "crc32": "46145441",
+          "encrypted": false,
+          "name": "historical_data_2010Q4.zip",
+          "timestamp_is_not_release_or_acquisition_proof": true,
+          "uncompressed_bytes": 680027037,
+          "zip_member_timestamp": [
+            2026,
+            9,
+            5,
+            17,
+            14,
+            58
+          ]
+        },
+        "quarter": 4
+      }
+    ],
+    "source_unchanged_before_scan": true,
+    "status": "passed"
+  },
+  "annual_universe": 1820190,
+  "assumptions": {
+    "all_termination_dates_align_with_report_month": {
+      "classification": "CONTRADICTED",
+      "qualification": "Ambiguous records quarantined, no date reconciliation"
+    },
+    "annual_frame_and_identifier_sampling": {
+      "classification": "CONFIRMED",
+      "qualification": "No outcome-based selection"
+    },
+    "facility_identity_linkage": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "Not borrower identity"
+    },
+    "first_payment_equals_origination": {
+      "classification": "NOT TESTABLE",
+      "qualification": "Inference explicitly prohibited"
+    },
+    "historical_feature_availability": {
+      "classification": "NOT TESTABLE",
+      "qualification": "Revised release only"
+    },
+    "monthly_principal_exposure_proxy": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "Not accounting EAD"
+    },
+    "monthly_time_and_delinquency_bands": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "No precise daily or knowledge time"
+    },
+    "payoff_maturity_combined_cause": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "Cannot isolate voluntary prepayment"
+    },
+    "pinned_31_35_column_structure": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "Typed selected rows and structural probes; not all unselected attributes"
+    },
+    "recovery_gain_signs": {
+      "classification": "CONFIRMED WITH QUALIFICATION",
+      "qualification": "Signed values retained; expense credit requires review"
+    },
+    "timed_workout_ledger": {
+      "classification": "NOT TESTABLE",
+      "qualification": "No dated transaction-level recoveries"
+    }
+  },
+  "audit_enrichment": {
+    "panel_unchanged": true,
+    "reporter_sha256_lf": "974c4af2933df381afbc2cab1473f3e222394d5a7405f1b400fceb2449cbd953",
+    "source_manifest_sha256": "312d8fe1dddcfbfa17d1514062617643af27e8c6c61e71305759f54b5bafa9ea"
+  },
+  "cohort": {
+    "ambiguous_records": 9,
+    "balance_distribution": {
+      "available": 72232,
+      "max": 717000.0,
+      "median": 130426.81,
+      "min": 0.0
+    },
+    "delinquency_state_distribution": {
+      "00": 71163,
+      "01": 538,
+      "02": 126,
+      "03": 46,
+      "04": 38,
+      "05": 33,
+      "06": 27,
+      "07": 32,
+      "08": 26,
+      "09": 26,
+      "10": 31,
+      "11": 25,
+      "12": 16,
+      "13": 12,
+      "14": 9,
+      "15": 7,
+      "16": 8,
+      "17": 7,
+      "18": 5,
+      "19": 6,
+      "20": 6,
+      "21": 3,
+      "22": 3,
+      "23": 3,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 1,
+      "28": 1,
+      "29": 1,
+      "30": 1,
+      "31": 1,
+      "32": 1,
+      "33": 1,
+      "34": 1,
+      "35": 1,
+      "36": 1,
+      "RA": 20
+    },
+    "eligible_landmarks": 65064,
+    "feature_missingness": {
+      "amortization_type": 0,
+      "assistance_plan": 72063,
+      "current_interest_rate": 0,
+      "current_principal_balance": 0,
+      "delinquency_state": 0,
+      "loan_age": 0,
+      "loan_purpose": 0,
+      "modification_flag": 71648,
+      "non_interest_upb": 0,
+      "number_of_borrowers": 0,
+      "occupancy_status": 0,
+      "orig_credit_score": 0,
+      "orig_dti": 22006,
+      "orig_interest_rate": 0,
+      "orig_ltv": 0,
+      "orig_upb": 0,
+      "original_loan_term": 0,
+      "payment_deferral_flag": 72103,
+      "property_state": 0,
+      "property_type": 0,
+      "remaining_legal_months": 0,
+      "vantage_score": 72232
+    },
+    "followup": {
+      "complete_event_free_fraction": 0.8245419894257962,
+      "complete_event_free_horizons": 53648,
+      "denominator_eligible_landmarks": 65064,
+      "outcome_ascertained_including_events_and_payoff": 64304,
+      "status_counts": {
+        "ambiguous_event_order": 52,
+        "competing_payoff": 10288,
+        "negative_survived_horizon": 53648,
+        "positive_default": 368,
+        "right_censored": 708
+      }
+    },
+    "ineligible_landmarks": 7168,
+    "monthly_performance_records": 72232,
+    "observations_per_loan": {
+      "available": 1000,
+      "max": 194.0,
+      "median": 58.0,
+      "min": 2.0
+    },
+    "origination_missingness": {
+      "amortization_type": 0,
+      "channel": 0,
+      "first_payment_month": 0,
+      "first_time_buyer": 0,
+      "harp_indicator": 0,
+      "interest_only": 0,
+      "loan_id": 0,
+      "loan_purpose": 0,
+      "maturity_month": 0,
+      "mi_percentage": 0,
+      "msa": 185,
+      "number_of_borrowers": 0,
+      "number_units": 0,
+      "occupancy_status": 0,
+      "orig_cltv": 0,
+      "orig_credit_score": 0,
+      "orig_dti": 289,
+      "orig_interest_rate": 0,
+      "orig_ltv": 0,
+      "orig_upb": 0,
+      "original_loan_term": 0,
+      "postal_prefix": 0,
+      "pre_harp_loan_id": 711,
+      "prepayment_penalty": 0,
+      "property_state": 0,
+      "property_type": 0,
+      "seller_name": 0,
+      "special_program": 1000,
+      "super_conforming": 0,
+      "valuation_method": 0,
+      "vantage_score": 1000
+    },
+    "origination_records": 1000,
+    "outcomes_eligible_only": {
+      "ambiguous_event_order": 52,
+      "competing_payoff": 10288,
+      "negative_survived_horizon": 53648,
+      "positive_default": 368,
+      "right_censored": 708
+    },
+    "panel_observations": 72232,
+    "performance_missingness": {
+      "actual_loss": 72224,
+      "assistance_plan": 72063,
+      "bankruptcy_cramdown_costs": 71819,
+      "cumulative_modification_costs": 0,
+      "current_interest_rate": 0,
+      "current_principal_balance": 0,
+      "defect_month": 72231,
+      "delinquency_state": 0,
+      "delinquent_accrued_interest": 72224,
+      "disaster_flag": 72107,
+      "estimated_ltv": 55718,
+      "interest_bearing_upb": 0,
+      "last_paid_due_month": 72009,
+      "legal_costs": 72224,
+      "loan_age": 0,
+      "loan_id": 0,
+      "mi_cancelled": 0,
+      "mi_recoveries": 72224,
+      "misc_expenses": 72224,
+      "modification_flag": 71648,
+      "net_sale_proceeds": 72224,
+      "non_interest_upb": 0,
+      "non_mi_recoveries": 72224,
+      "payment_deferral_flag": 72103,
+      "period_modification_costs": 71519,
+      "preservation_costs": 72224,
+      "rate_step_indicator": 71648,
+      "remaining_legal_months": 0,
+      "removal_upb": 71296,
+      "reporting_month": 0,
+      "servicer_name": 0,
+      "taxes_insurance": 72224,
+      "termination_code": 71296,
+      "termination_month": 71296,
+      "total_expenses": 72224
+    },
+    "reporting_period_range": [
+      "2010-01",
+      "2026-03"
+    ],
+    "selected_loans": 1000,
+    "temporal_integrity": {
+      "source_out_of_order_loans": 0
+    },
+    "termination_categories": {
+      "administrative": 3,
+      "ambiguous": 9,
+      "default": 399,
+      "none": 70905,
+      "payoff": 916
+    }
+  },
+  "default_record_loans": {
+    "selected_loans_with_observed_qualifying_record": 31
+  },
+  "empirical_gates": {
+    "A": "PASS with release-vintage and acquisition-time qualifications",
+    "B": "PASS pinned mapping, no column shifts",
+    "C": "PASS source ID linkage; no borrower independence",
+    "D": "PASS monthly chronology; knowledge time unverified",
+    "E": "CONDITIONAL: ambiguous windows retained as unknown",
+    "F": "PASS statuses distinguish censored/competing/event-free",
+    "G": "PASS nominal-time firewall; historical PIT unverified",
+    "H": "PASS monthly principal proxy only",
+    "LGD": "LIMITED: sparse actual-loss observations, no timed workouts"
+  },
+  "exposure_eligible": {
+    "available": 65064,
+    "max": 710000.0,
+    "median": 128728.81,
+    "min": 288.33
+  },
+  "feasibility": "PROCEED WITH CONDITIONS",
+  "followup_by_year": {
+    "2010": {
+      "eligible": 1254,
+      "statuses": {
+        "competing_payoff": 126,
+        "negative_survived_horizon": 1122,
+        "positive_default": 6
+      }
+    },
+    "2011": {
+      "eligible": 9631,
+      "statuses": {
+        "ambiguous_event_order": 4,
+        "competing_payoff": 1459,
+        "negative_survived_horizon": 8114,
+        "positive_default": 46,
+        "right_censored": 8
+      }
+    },
+    "2012": {
+      "eligible": 9731,
+      "statuses": {
+        "competing_payoff": 2072,
+        "negative_survived_horizon": 7590,
+        "positive_default": 65,
+        "right_censored": 4
+      }
+    },
+    "2013": {
+      "eligible": 7595,
+      "statuses": {
+        "competing_payoff": 873,
+        "negative_survived_horizon": 6672,
+        "positive_default": 50
+      }
+    },
+    "2014": {
+      "eligible": 6679,
+      "statuses": {
+        "competing_payoff": 875,
+        "negative_survived_horizon": 5776,
+        "positive_default": 28
+      }
+    },
+    "2015": {
+      "eligible": 5783,
+      "statuses": {
+        "competing_payoff": 924,
+        "negative_survived_horizon": 4834,
+        "positive_default": 25
+      }
+    },
+    "2016": {
+      "eligible": 4851,
+      "statuses": {
+        "competing_payoff": 764,
+        "negative_survived_horizon": 4071,
+        "positive_default": 16
+      }
+    },
+    "2017": {
+      "eligible": 4071,
+      "statuses": {
+        "ambiguous_event_order": 5,
+        "competing_payoff": 612,
+        "negative_survived_horizon": 3449,
+        "positive_default": 5
+      }
+    },
+    "2018": {
+      "eligible": 3449,
+      "statuses": {
+        "ambiguous_event_order": 7,
+        "competing_payoff": 414,
+        "negative_survived_horizon": 3009,
+        "positive_default": 19
+      }
+    },
+    "2019": {
+      "eligible": 3009,
+      "statuses": {
+        "competing_payoff": 521,
+        "negative_survived_horizon": 2438,
+        "positive_default": 50
+      }
+    },
+    "2020": {
+      "eligible": 2438,
+      "statuses": {
+        "competing_payoff": 612,
+        "negative_survived_horizon": 1780,
+        "positive_default": 46
+      }
+    },
+    "2021": {
+      "eligible": 1780,
+      "statuses": {
+        "competing_payoff": 364,
+        "negative_survived_horizon": 1416
+      }
+    },
+    "2022": {
+      "eligible": 1416,
+      "statuses": {
+        "competing_payoff": 192,
+        "negative_survived_horizon": 1220,
+        "positive_default": 4
+      }
+    },
+    "2023": {
+      "eligible": 1220,
+      "statuses": {
+        "competing_payoff": 125,
+        "negative_survived_horizon": 1087,
+        "positive_default": 8
+      }
+    },
+    "2024": {
+      "eligible": 1087,
+      "statuses": {
+        "ambiguous_event_order": 7,
+        "competing_payoff": 184,
+        "negative_survived_horizon": 896
+      }
+    },
+    "2025": {
+      "eligible": 896,
+      "statuses": {
+        "ambiguous_event_order": 29,
+        "competing_payoff": 171,
+        "negative_survived_horizon": 174,
+        "right_censored": 522
+      }
+    },
+    "2026": {
+      "eligible": 174,
+      "statuses": {
+        "right_censored": 174
+      }
+    }
+  },
+  "followup_selection_contrast": {
+    "all_eligible": {
+      "landmarks": 65064,
+      "median_loan_age": 48.0,
+      "median_orig_score": 770.0,
+      "median_principal": 128728.81,
+      "represented_loans": 983,
+      "statuses": {
+        "ambiguous_event_order": 52,
+        "competing_payoff": 10288,
+        "negative_survived_horizon": 53648,
+        "positive_default": 368,
+        "right_censored": 708
+      }
+    },
+    "not_physical_full12": {
+      "landmarks": 10278,
+      "median_loan_age": 54.0,
+      "median_orig_score": 772.0,
+      "median_principal": 139307.575,
+      "represented_loans": 960,
+      "statuses": {
+        "ambiguous_event_order": 48,
+        "competing_payoff": 9480,
+        "positive_default": 43,
+        "right_censored": 707
+      }
+    },
+    "physical_full12": {
+      "landmarks": 54786,
+      "median_loan_age": 47.0,
+      "median_orig_score": 769.0,
+      "median_principal": 126977.62,
+      "represented_loans": 902,
+      "statuses": {
+        "ambiguous_event_order": 4,
+        "competing_payoff": 808,
+        "negative_survived_horizon": 53648,
+        "positive_default": 325,
+        "right_censored": 1
+      }
+    }
+  },
+  "followup_selection_warning": "Physical-full12 filtering drops event/censored cases; not an approved modeling filter.",
+  "followup_status_table": [
+    {
+      "count": 52,
+      "fraction_of_all_eligible": 0.0007992130825033813,
+      "status": "ambiguous_event_order"
+    },
+    {
+      "count": 10288,
+      "fraction_of_all_eligible": 0.15812123447682283,
+      "status": "competing_payoff"
+    },
+    {
+      "count": 53648,
+      "fraction_of_all_eligible": 0.8245419894257962,
+      "status": "negative_survived_horizon"
+    },
+    {
+      "count": 368,
+      "fraction_of_all_eligible": 0.005655969506947006,
+      "status": "positive_default"
+    },
+    {
+      "count": 708,
+      "fraction_of_all_eligible": 0.010881593507930653,
+      "status": "right_censored"
+    }
+  ],
+  "history_length_quantiles": {
+    "0.0": 2.0,
+    "0.25": 28.0,
+    "0.5": 58.0,
+    "0.75": 108.25,
+    "1.0": 194.0
+  },
+  "initial_stop_preserved": "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.json",
+  "integrity_rates": {
+    "all_observation_principal_zero": 936,
+    "duplicate_loan_month_rate": 0.0,
+    "eligible_principal_missing": 0,
+    "eligible_principal_zero": 0,
+    "gap_interval_count": 0,
+    "post_terminal_unexplained_rows": 0,
+    "selected_loans_with_history": 1000,
+    "selected_loans_without_history": 0
+  },
+  "limitations": [
+    "Facility IDs are not borrower IDs; no cross-facility identity inference.",
+    "Latest-release data gives nominal-time consistency, not verified historical availability.",
+    "Delinquency bands are not exact DPD and the composite event is not regulatory default.",
+    "Principal balance is an exposure proxy, not validated EAD.",
+    "Loss fields are aggregate disclosures, not timed recoveries/workout LGD.",
+    "All censoring/ineligible statuses retained; no complete-case cohort selection.",
+    "No models, performance comparisons, calibration, feature selection or ECL calculated."
+  ],
+  "loan_first_observed_events": {
+    "active_or_unknown": 58,
+    "administrative": 1,
+    "ambiguous": 5,
+    "default": 31,
+    "payoff": 905
+  },
+  "loss_availability": {
+    "actual_loss": {
+      "available": 8,
+      "max": 149346.08,
+      "median": 49472.235,
+      "min": -1339.03
+    },
+    "bankruptcy_cramdown_costs": {
+      "available": 413,
+      "max": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    },
+    "delinquent_accrued_interest": {
+      "available": 8,
+      "max": 21855.3,
+      "median": 14250.414999999999,
+      "min": 4734.27
+    },
+    "legal_costs": {
+      "available": 8,
+      "max": 5968.15,
+      "median": 2382.75,
+      "min": 0.0
+    },
+    "mi_recoveries": {
+      "available": 8,
+      "max": 0.0,
+      "median": 0.0,
+      "min": -27771.31
+    },
+    "misc_expenses": {
+      "available": 8,
+      "max": 1341.45,
+      "median": 445.0,
+      "min": -1339.03
+    },
+    "net_sale_proceeds": {
+      "available": 8,
+      "max": -74133.73,
+      "median": -154638.99,
+      "min": -301081.95
+    },
+    "non_mi_recoveries": {
+      "available": 8,
+      "max": 0.0,
+      "median": -880.325,
+      "min": -3020.61
+    },
+    "preservation_costs": {
+      "available": 8,
+      "max": 12135.17,
+      "median": 51.25,
+      "min": 0.0
+    },
+    "removal_upb": {
+      "available": 936,
+      "max": 688566.39,
+      "median": 146489.47,
+      "min": 288.33
+    },
+    "taxes_insurance": {
+      "available": 8,
+      "max": 13947.75,
+      "median": 3506.3050000000003,
+      "min": 0.0
+    },
+    "total_expenses": {
+      "available": 8,
+      "max": 28957.3,
+      "median": 4897.305,
+      "min": -1339.03
+    }
+  },
+  "modeling_gate": "Task 3 cohort/censoring review required; no models fitted",
+  "original_filename": "historical_data_2010.zip",
+  "parser_version": "1.0.0",
+  "phase": "complete",
+  "protocol_id": "freddie_mortgage_research_v1",
+  "protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "quarter_counts": {
+    "1": {
+      "duplicates_within_or_across": 0,
+      "malformed_rows": 0,
+      "malformed_selected_rows": 0,
+      "missing_ids": 0,
+      "origination_rows": 360856,
+      "performance_rows_scanned": 23293531,
+      "selected_rows_retained": 13961,
+      "unmatched_ids": 0,
+      "valid_ids": 360856
+    },
+    "2": {
+      "duplicates_within_or_across": 0,
+      "malformed_rows": 0,
+      "malformed_selected_rows": 0,
+      "missing_ids": 0,
+      "origination_rows": 363854,
+      "performance_rows_scanned": 23119788,
+      "selected_rows_retained": 12073,
+      "unmatched_ids": 0,
+      "valid_ids": 363854
+    },
+    "3": {
+      "duplicates_within_or_across": 0,
+      "malformed_rows": 0,
+      "malformed_selected_rows": 0,
+      "missing_ids": 0,
+      "origination_rows": 503408,
+      "performance_rows_scanned": 35128486,
+      "selected_rows_retained": 20508,
+      "unmatched_ids": 0,
+      "valid_ids": 503408
+    },
+    "4": {
+      "duplicates_within_or_across": 0,
+      "malformed_rows": 0,
+      "malformed_selected_rows": 0,
+      "missing_ids": 0,
+      "origination_rows": 592072,
+      "performance_rows_scanned": 45690516,
+      "selected_rows_retained": 25690,
+      "unmatched_ids": 0,
+      "valid_ids": 592072
+    }
+  },
+  "resources": {
+    "elapsed_scan_seconds": 465.125,
+    "full_text_extracted": false,
+    "non_selected_attributes_retained": false,
+    "peak_memory_bytes": 708743168,
+    "temporary_bytes_peak": 0,
+    "temporary_files_created": 0
+  },
+  "sample": {
+    "algorithm": "SHA256(salt:ID), then ID; no quotas",
+    "amendment_sha256_lf": "4b142d00c097c222446848a138d07f7364a817f40be4ea218423655b39890f41",
+    "eligible_annual_universe": 1820190,
+    "frozen_at": "2026-10-06T19:04:49.802131+00:00",
+    "frozen_before_performance_access": true,
+    "protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+    "salt": "freddie_mortgage_research_v1",
+    "sample_set_sha256": "b40de7596b0d4fbb189c1ceec5176f4461f7d290117250c1a7ec15b605ce7b11",
+    "selected_by_quarter": {
+      "1": 195,
+      "2": 191,
+      "3": 278,
+      "4": 336
+    },
+    "selected_count": 1000,
+    "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d"
+  },
+  "schema_evidence": [
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 31,
+      "field_counts": {
+        "31": 20
+      },
+      "kind": "origination",
+      "quarter": 1,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 31,
+      "field_counts": {
+        "31": 20
+      },
+      "kind": "origination",
+      "quarter": 2,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 31,
+      "field_counts": {
+        "31": 20
+      },
+      "kind": "origination",
+      "quarter": 3,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 31,
+      "field_counts": {
+        "31": 20
+      },
+      "kind": "origination",
+      "quarter": 4,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 35,
+      "field_counts": {
+        "35": 20
+      },
+      "kind": "performance",
+      "quarter": 1,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 35,
+      "field_counts": {
+        "35": 20
+      },
+      "kind": "performance",
+      "quarter": 2,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 35,
+      "field_counts": {
+        "35": 20
+      },
+      "kind": "performance",
+      "quarter": 3,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    },
+    {
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible",
+      "expected_fields": 35,
+      "field_counts": {
+        "35": 20
+      },
+      "kind": "performance",
+      "quarter": 4,
+      "rows_inspected": 20,
+      "status": "compatible structural probe"
+    }
+  ],
+  "schema_version": 2,
+  "source_kind": "authorized_freddie",
+  "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "status": "ACQUIRED"
+}

@@ -184,7 +184,9 @@ def test_discovery_plan_and_proposed_architecture_do_not_create_modules():
         assert f"RQ-B{n}" in body
     assert "No dataset search/selection/download was performed" in body
     assert "no empty package/modules are created" in body
-    assert not (ROOT / "src/credit_risk/track_b").exists()
+    # Task 2 may implement data engineering; predictive/accounting modules remain absent.
+    for component in ("pd", "survival", "lgd", "ead", "sicr", "staging", "ecl"):
+        assert not (ROOT / "src/credit_risk/track_b" / component).exists()
     assert "not one observed portfolio's empirical ECL" in body
     assert "Candidate Dataset Discovery and Comparative Suitability Assessment" in body
 
