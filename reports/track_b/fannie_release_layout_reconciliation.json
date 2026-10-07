@@ -1,0 +1,185 @@
+{
+  "version": "task13r-v1",
+  "decision": "FANNIE RELEASE LAYOUT RECONCILED WITH MATERIAL LIMITATIONS",
+  "archive_hash": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+  "observed_width": 113,
+  "records_checked": 512,
+  "current_documented_physical_width": 114,
+  "current_sf_applicability_count": 73,
+  "current_sf_semantic_inventory_count": 72,
+  "historical_widths": [
+    25,
+    31,
+    108,
+    110,
+    113
+  ],
+  "field_level_differences": [
+    {
+      "position": 114,
+      "classification": "FIELD_ADDED_LATER",
+      "previous_name": null,
+      "current_name": "Origination VantageScore\u00ae 4.0",
+      "sf_applicable": true,
+      "activity": "2026-05",
+      "sf_publication": "2026-10",
+      "research_impact": "NO_RESEARCH_IMPACT",
+      "reason": "VantageScore is not any of the19 frozen primary predictors and is not an event variable; never substitute it for FICO"
+    }
+  ],
+  "earlier_evolution": [
+    {
+      "position": 32,
+      "classification": "FIELD_RENAMED_ONLY",
+      "period": "2026-04",
+      "width_effect": 0
+    },
+    {
+      "positions": [
+        109,
+        110
+      ],
+      "classification": "FIELD_ADDED_LATER",
+      "period": "2024-01",
+      "sf_notes": "109 always7;110 NA"
+    },
+    {
+      "positions": [
+        111,
+        112,
+        113
+      ],
+      "classification": "FIELD_ADDED_LATER",
+      "period": "2026-04",
+      "sf_notes": "Only111 discloses SF score;112/113 remain physical NA slots"
+    },
+    {
+      "positions": [
+        24,
+        25
+      ],
+      "classification": "CONDITIONAL_DISCLOSURE",
+      "period": "2026-03 activity",
+      "research_impact": "REPLICATION_FEATURE_IMPACT; same-width score regime, already governed by Task13"
+    }
+  ],
+  "source_references": [
+    "layout_2024",
+    "layout_1225",
+    "layout_current",
+    "layout",
+    "announcement_fico",
+    "announcement_vs4",
+    "vs4_changes",
+    "comparison_2020",
+    "legacy_2017",
+    "tutorial_2021"
+  ],
+  "ordering_proof": {
+    "base_width": 110,
+    "append_positions": [
+      111,
+      112,
+      113
+    ],
+    "composite_width": 113,
+    "shared_prefix_names_identical": true,
+    "shared_prefix_sf_applicability_identical": true,
+    "full_historical_113_binary": "NOT_LOCATED; reconstructed from independently pinned official full110 plus amendment",
+    "indexed_2026_02": "Search index shows earlier113 ending but openingsameURL returnscurrent114; NOT used as binary proof"
+  },
+  "archive_binding": {
+    "candidate_layout_id": "fannie-sflpd-2026-04-113-reconstructed",
+    "provider_release_verified": false,
+    "ordering_verified": false,
+    "archive_sha256_verified": true,
+    "research_use": "STOP; width andZIPtime alone do not bind publication identity",
+    "download_date": "UNVERIFIED; filesystem/ZIP clocks are not download receipts",
+    "portal_label": "USER_ATTESTED Primary2010Q1 acquisition/performance; exact UI release label unavailable",
+    "acquisition_quarter": "2010Q1",
+    "performance_observation_period": "NOT_INSPECTED",
+    "zip_timestamp_is_release_proof": false
+  },
+  "research_impact": "NO_RESEARCH_IMPACT for114 alone;PROVENANCE_ONLY for mismatch; same-width24/25 score transition remainsREPLICATION_FEATURE_IMPACT",
+  "sample_comparison": {
+    "status": "UNAVAILABLE_HTTP403",
+    "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/xls/sf-loan-performance-data-sample.csv",
+    "loan_records_acquired": false,
+    "field_width": null,
+    "header": null,
+    "delimiter": null,
+    "positions_verified": false
+  },
+  "vintage_availability": [
+    {
+      "year": 2006,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2008,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2010,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2014,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2018,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2020,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    },
+    {
+      "year": 2022,
+      "status": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE",
+      "basis": "Notes since1999/acquisitions since2000 throughpublished2026Q1",
+      "package_manifest_verified": false,
+      "origination_year_coverage_verified": false
+    }
+  ],
+  "license": {
+    "workflow": "USER_ATTESTED_AUTHENTICATED_MANUAL_DATA_DYNAMICS_DOWNLOAD",
+    "exact_accepted_version": "LICENSE_PROVENANCE_UNRESOLVED",
+    "published_document": "Royalty-free Internal Use Only Terms v2.0 effective2015-10-28,footer2017-04-20",
+    "publication_review": "LEGAL_OR_LICENSE_REVIEW_REQUIRED",
+    "non_sensitive_only": true
+  },
+  "remaining_unresolved": [
+    "Exact archive release/download receipt and accepted terms version",
+    "Providerconfirmation of candidate ordering for this hash",
+    "Complete acquisition-quarter coverage for origination-year cohort",
+    "Official public sample retrieval unavailable",
+    "Current24/25 SF first affected publication identity unverified"
+  ],
+  "no_blind_padding": true,
+  "no_outcome_access": true,
+  "no_new_performance_archive_acquisition": true,
+  "no_sample_freeze": true,
+  "no_model_fitting": true,
+  "no_task13a_authorization": true,
+  "preserved_task13_protocol": "DRAFT_NOT_YET_AUTHORIZED"
+}

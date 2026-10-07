@@ -1,0 +1,9 @@
+{
+  "status": "SCHEMA_ONLY_AUTHORIZED",
+  "purpose": "Task13R official public sample structural comparison only; no outcomes or field values interpreted",
+  "allowed_url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/xls/sf-loan-performance-data-sample.csv",
+  "maximum_bytes": 1048576,
+  "maximum_lines": 512,
+  "private_storage": true,
+  "no_quarterly_archives": true
+}

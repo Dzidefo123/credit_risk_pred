@@ -1,0 +1,70 @@
+{
+  "status": "PASSED",
+  "public": 460,
+  "private": 280,
+  "earlier": {
+    "status": "PASSED",
+    "public_lf_hashes": 435,
+    "private_byte_hashes": 248,
+    "task10_ledger_unchanged": true,
+    "task10_ledger_api_called": false,
+    "old_models_mutated": false,
+    "earlier": {
+      "status": "PASSED",
+      "prior_public_lf_hashes": 410,
+      "prior_private_byte_hashes": 184,
+      "task9a_and_earlier": {
+        "status": "PASSED",
+        "prior_public_lf_hashes": 395,
+        "task9_private_byte_hashes": 94,
+        "older_private_byte_hashes": 51,
+        "prior_tracked_byte_hashes": 371,
+        "source_and_frozen_artifact_checks": {
+          "status": "PASSED",
+          "preexisting_tracked_files": 321,
+          "retained_private_byte_hashes": 17,
+          "track_a_artifacts": 12,
+          "track_a_tag": [
+            "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+            "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+          ],
+          "source_hashes": {
+            "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+            "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+            "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+            "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+            "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+            "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+            "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+          },
+          "original_2010_source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+          "original_2010_location_status": "Old path absent; byte-identical source verified in user-supplied directory",
+          "consumed_ledger_byte_hashes": {
+            "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+            "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+          },
+          "ledger_check": "Byte hashing against retained public serialization; no consumption API",
+          "locked_holdout_scored": false,
+          "model_artifacts_regenerated": false,
+          "retained_historical_metrics": {
+            "auc": 0.868152,
+            "brier": 0.048545,
+            "log_loss": 0.17603
+          },
+          "metrics_status": "Retained historical evidence; not newly evaluated"
+        },
+        "locked_holdout_consumed": false,
+        "models_loaded_or_regenerated": false,
+        "task9_original_decision_preserved": true,
+        "replacement_credentials_accessed": false
+      },
+      "prior_ledgers_reused": false,
+      "prior_models_regenerated": false,
+      "retained_metrics_only": {
+        "auc": 0.868152,
+        "brier": 0.048545,
+        "log_loss": 0.17603
+      }
+    }
+  }
+}

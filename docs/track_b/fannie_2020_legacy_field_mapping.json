@@ -1,0 +1,594 @@
+{
+  "version": "task13r-v1",
+  "source_widths": {
+    "acquisition": 25,
+    "performance": 31
+  },
+  "merged_width": 108,
+  "legacy_unique_mapped_positions": 55,
+  "moves": [
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 1,
+      "legacy_name": "LOAN IDENTIFIER",
+      "enhanced_position": 2,
+      "enhanced_name": "Loan Identifier",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 2,
+      "legacy_name": "CHANNEL",
+      "enhanced_position": 4,
+      "enhanced_name": "Channel",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 3,
+      "legacy_name": "SELLER NAME",
+      "enhanced_position": 5,
+      "enhanced_name": "Seller Name",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 4,
+      "legacy_name": "ORIGINAL INTEREST RATE",
+      "enhanced_position": 8,
+      "enhanced_name": "Original Interest Rate",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 5,
+      "legacy_name": "ORIGINAL UNPAID PRINCIPAL BALANCE (UPB)",
+      "enhanced_position": 10,
+      "enhanced_name": "Original UPB",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 6,
+      "legacy_name": "ORIGINAL LOAN TERM",
+      "enhanced_position": 13,
+      "enhanced_name": "Original Loan Term",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 7,
+      "legacy_name": "ORIGINATION",
+      "enhanced_position": 14,
+      "enhanced_name": "Origination Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 8,
+      "legacy_name": "FIRST PAYMENT",
+      "enhanced_position": 15,
+      "enhanced_name": "First Payment Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 9,
+      "legacy_name": "ORIGINAL LOAN-TO-VALUE (LTV)",
+      "enhanced_position": 20,
+      "enhanced_name": "Original Loan to Value Ratio (LTV)",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 10,
+      "legacy_name": "ORIGINAL COMBINED LOAN-TO-VALUE (CLTV)",
+      "enhanced_position": 21,
+      "enhanced_name": "Original Combined Loan to Value Ratio (CLTV)",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 11,
+      "legacy_name": "NUMBER OF BORROWERS",
+      "enhanced_position": 22,
+      "enhanced_name": "Number of Borrowers",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 12,
+      "legacy_name": "DEBT-TO-INCOME RATIO (DTI)",
+      "enhanced_position": 23,
+      "enhanced_name": "Debt-To-Income (DTI)",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 13,
+      "legacy_name": "BORROWER CREDIT SCORE",
+      "enhanced_position": 24,
+      "enhanced_name": "Borrower Credit Score at Origination",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 14,
+      "legacy_name": "FIRST-TIME HOME BUYER INDICATOR",
+      "enhanced_position": 26,
+      "enhanced_name": "First Time Home Buyer Indicator",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 15,
+      "legacy_name": "LOAN PURPOSE",
+      "enhanced_position": 27,
+      "enhanced_name": "Loan Purpose",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 16,
+      "legacy_name": "PROPERTY TYPE",
+      "enhanced_position": 28,
+      "enhanced_name": "Property Type",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 17,
+      "legacy_name": "NUMBER OF UNITS",
+      "enhanced_position": 29,
+      "enhanced_name": "Number of Units",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 18,
+      "legacy_name": "OCCUPANCY STATUS",
+      "enhanced_position": 30,
+      "enhanced_name": "Occupancy Status",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 19,
+      "legacy_name": "PROPERTY STATE",
+      "enhanced_position": 31,
+      "enhanced_name": "Property State",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 20,
+      "legacy_name": "ZIP (3-DIGIT)",
+      "enhanced_position": 33,
+      "enhanced_name": "Zip Code Short",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 21,
+      "legacy_name": "MORTGAGE INSURANCE PERCENTAGE",
+      "enhanced_position": 34,
+      "enhanced_name": "Mortgage Insurance Percentage",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 22,
+      "legacy_name": "PRODUCT TYPE",
+      "enhanced_position": 35,
+      "enhanced_name": "Amortization Type",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 23,
+      "legacy_name": "CO-BORROWER CREDIT SCORE",
+      "enhanced_position": 25,
+      "enhanced_name": "Co-Borrower Credit Score at Origination",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 24,
+      "legacy_name": "MORTGAGE INSURANCE TYPE",
+      "enhanced_position": 73,
+      "enhanced_name": "Mortgage Insurance Type",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "acquisition",
+      "legacy_position": 25,
+      "legacy_name": "RELOCATION MORTGAGE INDICATOR",
+      "enhanced_position": 81,
+      "enhanced_name": "Relocation Mortgage Indicator",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 1,
+      "legacy_name": "LOAN IDENTIFIER",
+      "enhanced_position": 2,
+      "enhanced_name": "Loan Identifier",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 2,
+      "legacy_name": "MONTHLY REPORTING PERIOD",
+      "enhanced_position": 3,
+      "enhanced_name": "Monthly Reporting Period",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 3,
+      "legacy_name": "SERVICER NAME",
+      "enhanced_position": 6,
+      "enhanced_name": "Servicer Name",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 4,
+      "legacy_name": "CURRENT INTEREST RATE",
+      "enhanced_position": 9,
+      "enhanced_name": "Current Interest Rate",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 5,
+      "legacy_name": "CURRENT ACTUAL UNPAID PRINCIPAL BALANCE (UPB)",
+      "enhanced_position": 12,
+      "enhanced_name": "Current Actual UPB",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 6,
+      "legacy_name": "LOAN AGE",
+      "enhanced_position": 16,
+      "enhanced_name": "Loan Age",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 7,
+      "legacy_name": "REMAINING MONTHS TO LEGAL MATURITY",
+      "enhanced_position": 17,
+      "enhanced_name": "Remaining Months to Legal Maturity",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 8,
+      "legacy_name": "ADJUSTED REMAINING MONTHS TO MATURITY",
+      "enhanced_position": 18,
+      "enhanced_name": "Remaining Months To Maturity",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 9,
+      "legacy_name": "MATURITY",
+      "enhanced_position": 19,
+      "enhanced_name": "Maturity Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 10,
+      "legacy_name": "METROPOLITAN STATISTICAL AREA (MSA)",
+      "enhanced_position": 32,
+      "enhanced_name": "Metropolitan Statistical Area (MSA) or Metropolitan Statistical Division Area (MSDA)",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 11,
+      "legacy_name": "CURRENT LOAN DELINQUENCY STATUS",
+      "enhanced_position": 40,
+      "enhanced_name": "Current Loan Delinquency Status",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 12,
+      "legacy_name": "MODIFICATION FLAG",
+      "enhanced_position": 42,
+      "enhanced_name": "Modification Flag",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 13,
+      "legacy_name": "ZERO BALANCE CODE",
+      "enhanced_position": 44,
+      "enhanced_name": "Zero Balance Code",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 14,
+      "legacy_name": "ZERO BALANCE EFFECTIVE",
+      "enhanced_position": 45,
+      "enhanced_name": "Zero Balance Effective Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 15,
+      "legacy_name": "LAST PAID INSTALLMENT",
+      "enhanced_position": 51,
+      "enhanced_name": "Last Paid Installment Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 16,
+      "legacy_name": "FORECLOSURE",
+      "enhanced_position": 52,
+      "enhanced_name": "Foreclosure Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 17,
+      "legacy_name": "DISPOSITION",
+      "enhanced_position": 53,
+      "enhanced_name": "Disposition Date",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 18,
+      "legacy_name": "FORECLOSURE COSTS",
+      "enhanced_position": 54,
+      "enhanced_name": "Foreclosure Costs",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 19,
+      "legacy_name": "PROPERTY PRESERVATION AND REPAIR COSTS",
+      "enhanced_position": 55,
+      "enhanced_name": "Property Preservation and Repair Costs",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 20,
+      "legacy_name": "ASSET RECOVERY COSTS",
+      "enhanced_position": 56,
+      "enhanced_name": "Asset Recovery Costs",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 21,
+      "legacy_name": "MISCELLANEOUS HOLDING EXPENSES AND CREDITS",
+      "enhanced_position": 57,
+      "enhanced_name": "Miscellaneous Holding Expenses and Credits",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 22,
+      "legacy_name": "ASSOCIATED TAXES FOR HOLDING PROPERTY",
+      "enhanced_position": 58,
+      "enhanced_name": "Associated Taxes for Holding Property",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 23,
+      "legacy_name": "NET SALE PROCEEDS",
+      "enhanced_position": 59,
+      "enhanced_name": "Net Sales Proceeds",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 24,
+      "legacy_name": "CREDIT ENHANCEMENT PROCEEDS",
+      "enhanced_position": 60,
+      "enhanced_name": "Credit Enhancement Proceeds",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 25,
+      "legacy_name": "REPURCHASE MAKE WHOLE PROCEEDS",
+      "enhanced_position": 61,
+      "enhanced_name": "Repurchase Make Whole Proceeds",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 26,
+      "legacy_name": "OTHER FORECLOSURE PROCEEDS",
+      "enhanced_position": 62,
+      "enhanced_name": "Other Foreclosure Proceeds",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 27,
+      "legacy_name": "NON INTEREST BEARING UPB",
+      "enhanced_position": 63,
+      "enhanced_name": "Modification-Related Non-Interest Bearing UPB",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 28,
+      "legacy_name": "PRINCIPAL FORGIVENESS UPB",
+      "enhanced_position": 64,
+      "enhanced_name": "Principal Forgiveness Amount",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 29,
+      "legacy_name": "REPURCHASE MAKE WHOLE PROCEEDS FLAG",
+      "enhanced_position": 105,
+      "enhanced_name": "Repurchase Make Whole Proceeds Flag",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 30,
+      "legacy_name": "FORECLOSURE PRINCIPAL WRITE-OFF AMOUNT",
+      "enhanced_position": 80,
+      "enhanced_name": "Foreclosure Principal Write-off Amount",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    },
+    {
+      "legacy_file": "performance",
+      "legacy_position": 31,
+      "legacy_name": "SERVICING ACTIVITY INDICATOR",
+      "enhanced_position": 74,
+      "enhanced_name": "Servicing Activity Indicator",
+      "classification": "FIELD_POSITION_CHANGED",
+      "source": "legacy_2017 and shared glossary ordering;2020 formatting changes confirmed by comparison_2020",
+      "qualification": "Ordering correspondence, not universal equality of provider definitions or historical disclosure availability"
+    }
+  ],
+  "new_sf_positions": [
+    36,
+    37,
+    38,
+    39,
+    41,
+    46,
+    49,
+    79,
+    86,
+    87,
+    102,
+    103,
+    106,
+    107,
+    108
+  ],
+  "format_changes": {
+    "date_fields": "MM/YYYY or MM/DD/YYYY toMMYYYY; effectiveOctober 2020 comparison",
+    "original_upb": "Whole dollars to two decimal places; does not remove source rounding limitation",
+    "delinquency": "One digit/X to zero-padded two-digit bands/XX"
+  },
+  "later_names": "Current labels used for correspondence;79 HomeReady later became Special Eligibility Program;32 later MSA/MSDA. Not asserted to be literal October 2020 labels."
+}

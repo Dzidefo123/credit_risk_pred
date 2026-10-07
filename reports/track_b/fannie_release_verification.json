@@ -1,0 +1,83 @@
+{
+  "task": "Track B Task13R",
+  "base_commit": "f855163e3dfbfea1798dddb1ce5a05c7d0bfb88c",
+  "verified_at": "2026-10-07T17:23:06.660517+00:00",
+  "decision": "FANNIE RELEASE LAYOUT RECONCILED WITH MATERIAL LIMITATIONS",
+  "checks": {
+    "new_regression_cases": 42,
+    "targeted_combined": {
+      "passed": 108,
+      "exit_code": 0
+    },
+    "full_pytest": {
+      "passed": 1110,
+      "warnings": 4,
+      "seconds": 73.24,
+      "exit_code": 0
+    },
+    "lint": "PASSED",
+    "format": {
+      "status": "PASSED",
+      "files": 239
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "report_links": "PASSED",
+    "field_source_resolution": "PASSED",
+    "documentation_byte_hashes": "PASSED",
+    "whitespace_diff": "PASSED"
+  },
+  "registry": {
+    "status": "PASSED",
+    "layouts": 6
+  },
+  "preservation": {
+    "status": "PASSED",
+    "public": 490,
+    "private": 336,
+    "external_archives": 1
+  },
+  "prior_preservation_chain": "reports/track_b/fannie_release_prior_preservation_check.json",
+  "track_a_tag": {
+    "object_sha": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "commit_sha": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  },
+  "task13_frozen": {
+    "crosswalk_sha256_lf": "9b2fd684c2d7b5a267ec56d60b3136edb14e0f546211186444e7b43a8e20e025",
+    "protocol_sha256_lf": "fd718fa4e1c01a4200051c6dc598cd894f73678dc98cd79f7b7a10ff6908706a",
+    "status": "DRAFT_NOT_YET_AUTHORIZED"
+  },
+  "research_scope": {
+    "loan_values_interpreted": false,
+    "outcomes_interpreted": false,
+    "additional_quarterly_archives_acquired": false,
+    "sample_frozen": false,
+    "research_models_fitted": false,
+    "holdout_consumed": false,
+    "model_artifacts_regenerated": false,
+    "task13a_authorized": false
+  },
+  "source_binding": {
+    "candidate_layout_id": "fannie-sflpd-2026-04-113-reconstructed",
+    "provider_release_verified": false,
+    "ordering_verified": false,
+    "archive_sha256_verified": true,
+    "research_use": "STOP; width andZIPtime alone do not bind publication identity",
+    "download_date": "UNVERIFIED; filesystem/ZIP clocks are not download receipts",
+    "portal_label": "USER_ATTESTED Primary2010Q1 acquisition/performance; exact UI release label unavailable",
+    "acquisition_quarter": "2010Q1",
+    "performance_observation_period": "NOT_INSPECTED",
+    "zip_timestamp_is_release_proof": false
+  },
+  "license_provenance": "LICENSE_PROVENANCE_UNRESOLVED",
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical results; NOT newly evaluated"
+  },
+  "modified_preexisting_files": [],
+  "intended_commit": "docs: reconcile Fannie release layout",
+  "push": false
+}
