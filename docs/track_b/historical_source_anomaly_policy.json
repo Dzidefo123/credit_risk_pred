@@ -1,0 +1,526 @@
+{
+  "id": "track-b-historical-source-anomaly-policy",
+  "version": "1.0.0",
+  "date": "2026-10-07",
+  "decision": "ROBUSTNESS POLICY READY WITH MATERIAL LIMITATIONS",
+  "status": "DESIGN_ONLY_NOT_AUTHORIZED",
+  "execution_authorized": false,
+  "task8_resumption_authorized": false,
+  "parser_change_authorized": false,
+  "new_sample_freeze_authorized": false,
+  "performance_access_authorized": false,
+  "macro_acquisition_authorized": false,
+  "model_fitting_authorized": false,
+  "frozen_anomalies": [
+    {
+      "key": "A1",
+      "vintage": 2006,
+      "member": "2006Q3",
+      "line": 107274,
+      "field": "orig_interest_rate",
+      "raw_token": ".",
+      "classification": "MALFORMED_ISOLATED_VALUE"
+    },
+    {
+      "key": "A2",
+      "vintage": 2008,
+      "member": "2008Q4",
+      "line": 206261,
+      "embedded_quarter": "2009Q1",
+      "annual_dispute": true
+    },
+    {
+      "key": "A3",
+      "vintage": 2020,
+      "member": "2020Q4",
+      "line": 17103,
+      "embedded_quarter": "2020Q3",
+      "annual_dispute": false
+    },
+    {
+      "key": "A4",
+      "vintage": 2022,
+      "member": "2022Q4",
+      "line": 98552,
+      "embedded_quarter": "2022Q3",
+      "annual_dispute": false
+    }
+  ],
+  "prevalence": {
+    "inspected": 12169807,
+    "unresolved": 4,
+    "fraction": 3.286822872375873e-07,
+    "percent": 3.286822872375873e-05,
+    "per_million": 0.32868228723758725,
+    "interpretation": "Descriptive frequency only; no regulatory materiality threshold or harmlessness conclusion."
+  },
+  "candidate_policies": {
+    "A": {
+      "name": "STRICT STOP",
+      "effect": "Any unresolved record blocks its entire vintage. No selected sample exists.",
+      "authorized": false
+    },
+    "B": {
+      "name": "RECORD QUARANTINE",
+      "effect": "Exclude frozen source-invalid record before hash ranking; preserve raw record, anomaly register and excluded-universe count.",
+      "authorized": false
+    },
+    "C": {
+      "name": "FIELD QUARANTINE",
+      "effect": "Only non-identity predictor anomaly: retain ID, retain raw dot, prohibit value use; hypothetical canonical null with unresolved-source reason. Not a provider missing enumeration.",
+      "reason_code": "UNRESOLVED_SOURCE_ANOMALY:ORIGINAL_RATE_DOT",
+      "authorized": false
+    },
+    "D": {
+      "name": "COHORT-ATTRIBUTE QUARANTINE",
+      "effect": "Retain immutable ID, archive vintage, member quarter, embedded quarter and mismatch; prohibit disputed quarter use. Requires independently justified annual cohort definition; 2008 annual crossing blocked.",
+      "authorized": false
+    }
+  },
+  "recommended_fallback": "B — RECORD QUARANTINE, proposed only; separate review and authorization required before any execution.",
+  "sampling": {
+    "namespace": "track-b-multivintage-v1:{vintage}:{loan_id}",
+    "n": 20000,
+    "ordering": [
+      "SHA256(namespace UTF-8) ascending",
+      "immutable loan_id ascending"
+    ],
+    "eligibility_before_ranking": true,
+    "criteria_use_outcomes": false,
+    "reference_definition": "Counterfactual strict-valid-only reference excludes the one frozen anomaly from each surveyed identifier universe. This is NOT a certification of full origination-schema eligibility.",
+    "formula": "E_B = E_ID \\ A_frozen; S_p = first_20000(sort(E_p,(SHA256(namespace),id)))",
+    "sample_difference_definition": "Symmetric difference |S_p XOR S_B|; entering and leaving IDs also counted separately.",
+    "strict_stop_difference": null,
+    "new_samples_created": false,
+    "ephemeral_rank_sets_persisted": false,
+    "identifiers_public": false,
+    "rank_diagnostic_basis": "Read-only hashed Task8A identifier census databases; A1 key resolved using its origination member/line only.",
+    "population_limitation": "If a later full origination gate excludes additional records, ranks and eligibility must be recertified before sample freeze. Discovery of any additional anomaly stops scope expansion and requires a new versioned review."
+  },
+  "sampling_impact": [
+    {
+      "anomaly": "A1",
+      "vintage": 2006,
+      "identifier_universe": 1193544,
+      "strict_valid_only_reference_universe": 1193543,
+      "raw_namespace_rank": 474260,
+      "within_first_20000": false,
+      "selected_ids_entering": 0,
+      "selected_ids_leaving": 0,
+      "symmetric_difference": 0,
+      "annual_boundary_disputed": false,
+      "quarter_disputed": false,
+      "identifier_duplicate_count": 0,
+      "identifier_database_sha256": "96da0c72d027306f0dfffee0e2fd391100e9731f3f67c1e612bcd3edf3356a5b",
+      "full_schema_eligibility_certified": false,
+      "samples_frozen": false,
+      "performance_accessed": false,
+      "policies": [
+        {
+          "policy": "A",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 474260,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true,
+          "record_valid_candidate_count_before_vintage_stop": 1193543
+        },
+        {
+          "policy": "B",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": 1193543,
+          "anomaly_eligible": false,
+          "anomaly_rank_if_retained": 474260,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "C",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": 1193544,
+          "anomaly_eligible": true,
+          "anomaly_rank_if_retained": 474260,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "D",
+          "authorized": false,
+          "applicability": "not_applicable",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 474260,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true
+        }
+      ]
+    },
+    {
+      "anomaly": "A2",
+      "vintage": 2008,
+      "identifier_universe": 1233146,
+      "strict_valid_only_reference_universe": 1233145,
+      "raw_namespace_rank": 378990,
+      "within_first_20000": false,
+      "selected_ids_entering": 0,
+      "selected_ids_leaving": 0,
+      "symmetric_difference": 0,
+      "annual_boundary_disputed": true,
+      "quarter_disputed": true,
+      "identifier_duplicate_count": 0,
+      "identifier_database_sha256": "99ce29e80ea4b52a32e849650acd9a6af37e618bed793e65d07f997afb0c32a1",
+      "full_schema_eligibility_certified": false,
+      "samples_frozen": false,
+      "performance_accessed": false,
+      "policies": [
+        {
+          "policy": "A",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 378990,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true,
+          "record_valid_candidate_count_before_vintage_stop": 1233145
+        },
+        {
+          "policy": "B",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": 1233145,
+          "anomaly_eligible": false,
+          "anomaly_rank_if_retained": 378990,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "C",
+          "authorized": false,
+          "applicability": "not_applicable",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 378990,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "D",
+          "authorized": false,
+          "applicability": "blocked_annual_cohort_unresolved",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 378990,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true
+        }
+      ]
+    },
+    {
+      "anomaly": "A3",
+      "vintage": 2020,
+      "identifier_universe": 3913741,
+      "strict_valid_only_reference_universe": 3913740,
+      "raw_namespace_rank": 1413681,
+      "within_first_20000": false,
+      "selected_ids_entering": 0,
+      "selected_ids_leaving": 0,
+      "symmetric_difference": 0,
+      "annual_boundary_disputed": false,
+      "quarter_disputed": true,
+      "identifier_duplicate_count": 0,
+      "identifier_database_sha256": "4663c05105cbaf45a20ad6db59c953df7f0fa6bc7cd084d64503096440931602",
+      "full_schema_eligibility_certified": false,
+      "samples_frozen": false,
+      "performance_accessed": false,
+      "policies": [
+        {
+          "policy": "A",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 1413681,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true,
+          "record_valid_candidate_count_before_vintage_stop": 3913740
+        },
+        {
+          "policy": "B",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": 3913740,
+          "anomaly_eligible": false,
+          "anomaly_rank_if_retained": 1413681,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "C",
+          "authorized": false,
+          "applicability": "not_applicable",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 1413681,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "D",
+          "authorized": false,
+          "applicability": "conditional_annual_definition_review_required",
+          "candidate_eligible_universe": 3913741,
+          "anomaly_eligible": true,
+          "anomaly_rank_if_retained": 1413681,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        }
+      ]
+    },
+    {
+      "anomaly": "A4",
+      "vintage": 2022,
+      "identifier_universe": 1580753,
+      "strict_valid_only_reference_universe": 1580752,
+      "raw_namespace_rank": 646011,
+      "within_first_20000": false,
+      "selected_ids_entering": 0,
+      "selected_ids_leaving": 0,
+      "symmetric_difference": 0,
+      "annual_boundary_disputed": false,
+      "quarter_disputed": true,
+      "identifier_duplicate_count": 0,
+      "identifier_database_sha256": "64afa2b400ae719d1dfd6d23cc576420c7e9728a1ba3029959b2bf30fd8924c5",
+      "full_schema_eligibility_certified": false,
+      "samples_frozen": false,
+      "performance_accessed": false,
+      "policies": [
+        {
+          "policy": "A",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 646011,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true,
+          "record_valid_candidate_count_before_vintage_stop": 1580752
+        },
+        {
+          "policy": "B",
+          "authorized": false,
+          "applicability": "applicable_as_design",
+          "candidate_eligible_universe": 1580752,
+          "anomaly_eligible": false,
+          "anomaly_rank_if_retained": 646011,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "C",
+          "authorized": false,
+          "applicability": "not_applicable",
+          "candidate_eligible_universe": null,
+          "anomaly_eligible": null,
+          "anomaly_rank_if_retained": 646011,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": null,
+          "sample_defined": false,
+          "diagnostic_only": true
+        },
+        {
+          "policy": "D",
+          "authorized": false,
+          "applicability": "conditional_annual_definition_review_required",
+          "candidate_eligible_universe": 1580753,
+          "anomaly_eligible": true,
+          "anomaly_rank_if_retained": 646011,
+          "anomaly_selected_if_retained": false,
+          "selected_id_symmetric_difference": 0,
+          "sample_defined": true,
+          "diagnostic_only": true
+        }
+      ]
+    }
+  ],
+  "rate_record": {
+    "rank": 474260,
+    "selected": false,
+    "field_exists_in_canonical_schema": true,
+    "non_null_required_for_incident_PD_or_event_definition": false,
+    "current_parser_rejects_dot": true,
+    "canonical_schema_can_represent_missing": true,
+    "scientific_model_feasibility": "PD/hazard models can use a prespecified reduced predictor set or an explicit missing-category/indicator design; training-only preprocessing and sensitivity validation required later. No imputation or model execution now.",
+    "cashflow_limitation": "Do not calculate rate-dependent amortization, discounting or ECL from an unknown rate. Original coupon is not automatically accounting effective interest rate."
+  },
+  "annual_quarter_analysis": {
+    "task8_grouping": "Annual archive vintage is the sampling/reporting group. Monthly calendar and provider age are separate clocks; exact quarter cohort is not required for current descriptive Task8 support summaries.",
+    "quarter_scope": "No quarter-cohort effects or exact origination date inferred; first-payment month is not a validated substitute.",
+    "same_year_cases": [
+      "A3",
+      "A4"
+    ],
+    "cross_year_case": "A2",
+    "cross_year_rule": "2008 versus 2009 annual assignment unresolved: D cannot assign either as true origination vintage without authoritative evidence.",
+    "apc": "Annual grouping does not solve unrestricted APC identification or validate macro models."
+  },
+  "materiality_dimensions": [
+    "frequency and concentration",
+    "identity/uniqueness and linkage",
+    "selection composition and eligibility population",
+    "feature usability and missingness",
+    "event-definition/coverage impact (not inspected now)",
+    "calendar/cohort classification",
+    "preservable raw provenance",
+    "future prediction/calibration/parameter sensitivity"
+  ],
+  "clarifications": [
+    {
+      "issue": "original_rate_dot",
+      "provider": "Freddie Mac",
+      "submission_status": "NO_SUBMISSION_RECORDED",
+      "date_submitted": null,
+      "evidence_requested": "Confirm whether field13 dot in the supplied hashed 2006Q3 record is a missing convention, malformed value or corrected source observation; identify applicable release/layout and meaning.",
+      "response_status": "NO_RESPONSE_RECORDED",
+      "response_date": null,
+      "response_text": null,
+      "response_sha256": null,
+      "protocol_impact": "None until authoritative evidence is reviewed and a separate amendment is approved."
+    },
+    {
+      "issue": "identifier_member_quarter_disagreements",
+      "provider": "Freddie Mac",
+      "submission_status": "NO_SUBMISSION_RECORDED",
+      "date_submitted": null,
+      "evidence_requested": "Explain the three exact record placements under the documented origination-quarter file convention, including the 2008/2009 annual boundary; supply release-specific authoritative semantics.",
+      "response_status": "NO_RESPONSE_RECORDED",
+      "response_date": null,
+      "response_text": null,
+      "response_sha256": null,
+      "protocol_impact": "None until authoritative evidence is reviewed and a separate amendment is approved."
+    }
+  ],
+  "provider_response_amendment": {
+    "authority_verified_required": true,
+    "response_hash_required": true,
+    "new_version_required": true,
+    "old_rule_required": true,
+    "new_rule_required": true,
+    "affected_convention_required": true,
+    "parser_version_change_required_if_behavior_changes": true,
+    "prior_audit_overwrite_allowed": false,
+    "automatic_execution_authorized": false,
+    "required_fields": [
+      "provider",
+      "response_date",
+      "response_sha256",
+      "authority_verified",
+      "affected_convention",
+      "old_rule",
+      "new_rule",
+      "version",
+      "parser_version",
+      "prior_audit_sha256",
+      "protocol_impact"
+    ]
+  },
+  "robustness_design": {
+    "primary_proposed": "B",
+    "sensitivities_proposed": [
+      "C for non-identity predictor only after approval",
+      "D for within-year quarter discrepancy only after annual-cohort justification",
+      "Broader compatibility only after authoritative clarification"
+    ],
+    "paired_comparison": "Keep source hashes, ranking namespace, time/event definitions and evaluation discipline fixed. Compare common-ID predictions separately from composition changes; report excluded records, feature effects and annual/cohort changes.",
+    "future_metrics": "Prespecify effect on counts, missingness, hazards/CIFs, calibration and temporal transport; do not choose anomaly policy by favorable outcomes.",
+    "models_run": false
+  },
+  "audit_trail": {
+    "original_task8_stop": "reports/track_b/multi_vintage_data_audit.json",
+    "task8a_unresolved": "reports/track_b/source_convention_reconciliation.json",
+    "task8a_unresolved_sha256": "e9bf419c7d061ce29d7b845658d0b4828f3b840049c117d5c4e87dc59aa8c941",
+    "history_rewritten": false,
+    "prior_task8_and_8a_artifacts_included_in_this_commit": false,
+    "publication_limitation": "Previous Task8/8A artifacts remain local and uncommitted; this focused commit contains only standalone policy documents/tests and their pinned lineage references."
+  },
+  "verification": {
+    "status": "passed",
+    "baseline_public_files": 349,
+    "source_parser_changes": false,
+    "performance_histories_accessed": false,
+    "new_samples_frozen": false,
+    "full_schema_gate_rerun": false,
+    "models_run": false,
+    "macro_acquired": false,
+    "public_files_byte_verified": 349,
+    "track_a_private_files_byte_verified": 17,
+    "completed_cohorts_byte_verified": [
+      2010,
+      2014,
+      2018
+    ],
+    "archive_hashes_verified": {
+      "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+      "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+      "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+      "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+      "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+      "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+    },
+    "ledger_hashes_verified": {
+      "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+      "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+    },
+    "track_a_tag_object": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "track_a_tag_commit": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c",
+    "census_databases_read_only": true,
+    "exact_hash_and_identifier_tie_break_verified": true,
+    "locked_holdout_re_evaluated": false,
+    "models_regenerated": false,
+    "stopped_cohorts_have_no_samples_or_performance": true,
+    "tests": {
+      "targeted_passed": 17,
+      "full_passed": 822,
+      "full_warnings": 4,
+      "full_seconds": 67.73,
+      "lint": "passed",
+      "format": "passed; 178 Python files",
+      "governance": "passed",
+      "repository_hygiene": "passed"
+    }
+  },
+  "next_action": "Review and explicitly authorize or reject candidate B as the future primary handling policy; this task itself authorizes no execution."
+}
