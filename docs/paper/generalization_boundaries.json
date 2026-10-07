@@ -1,0 +1,314 @@
+{
+  "boundaries": [
+    {
+      "boundary_id": "mortgage_vs_consumer",
+      "allowed_scope": "Selected mortgage facilities",
+      "prohibited_scope": "General consumer credit",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "freddie_vs_us",
+      "allowed_scope": "Deterministic Freddie samples",
+      "prohibited_scope": "All US mortgages or industry-wide transport",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "facility_vs_borrower",
+      "allowed_scope": "Facility-level clustered uncertainty",
+      "prohibited_scope": "Independent or uniquely linked borrowers",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "mortgage_vs_revolving_ead",
+      "allowed_scope": "No EAD empirical finding in this paper",
+      "prohibited_scope": "Revolving commitments or CCF",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "severity_vs_lgd",
+      "allowed_scope": "Aggregate disposition-loss proxy as background only",
+      "prohibited_scope": "Timed workout or regulatory LGD",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "sicr",
+      "allowed_scope": "Research considerations only",
+      "prohibited_scope": "Validated IFRS 9 SICR or staging",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "research_vs_regulatory_pd",
+      "allowed_scope": "Composite monthly adverse-event proxy",
+      "prohibited_scope": "Regulatory default equivalence",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "conditional_vs_lifetime",
+      "allowed_scope": "Conditional-entry risk within support",
+      "prohibited_scope": "Lifetime-from-origination risk",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "national_vs_geographic",
+      "allowed_scope": "National PIT macro series",
+      "prohibited_scope": "Geographic macro or household conditions",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "temporal_vs_external",
+      "allowed_scope": "Temporal Freddie evaluation",
+      "prohibited_scope": "Completed external Fannie validation",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "association_vs_causality",
+      "allowed_scope": "Predictive associations and diagnostics",
+      "prohibited_scope": "Identified causal macro mechanisms",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "pit_macro_vs_mortgage",
+      "allowed_scope": "Vintage-aware macro information",
+      "prohibited_scope": "Historically verified operational mortgage information",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "boundary_id": "historical_vs_forecast",
+      "allowed_scope": "Rolling historical PIT CIF paths",
+      "prohibited_scope": "Prospective entry-time macro forecasts",
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/prohibited_claims",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    }
+  ],
+  "regulatory_prohibited_claims": [
+    "IFRS 9 model",
+    "IRB model",
+    "regulatory PD model",
+    "regulatory LGD model",
+    "regulatory EAD model",
+    "production bank model",
+    "regulator validated",
+    "audit approved"
+  ],
+  "allowed_relevance": "Credit-risk research, temporal validation and model-risk/IFRS 9/IRB research considerations only"
+}

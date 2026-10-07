@@ -1,0 +1,94 @@
+{
+  "headlines": [
+    {
+      "headline_id": "H1",
+      "decision": "QUALIFY",
+      "claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE"
+      ],
+      "qualification": "Meaningful ranking and material underprediction in Task 5, not deployable calibration"
+    },
+    {
+      "headline_id": "H2",
+      "decision": "QUALIFY",
+      "claim_ids": [
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF"
+      ],
+      "qualification": "Different estimands: descriptive net risk versus observed competing CIF, conditional entry"
+    },
+    {
+      "headline_id": "H3",
+      "decision": "VERIFY",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "qualification": "Task 10 design-specific development gain and temporal deterioration"
+    },
+    {
+      "headline_id": "H4",
+      "decision": "VERIFY",
+      "claim_ids": [
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF"
+      ],
+      "qualification": "Payoff ranking gain accompanies worse proper scores/calibration in this design"
+    },
+    {
+      "headline_id": "H5",
+      "decision": "QUALIFY",
+      "claim_ids": [
+        "MACRO_CIF_24_OBSERVED_PAYOFF",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "DIAG_CIF_COMPONENTS"
+      ],
+      "qualification": "Large payoff CIF discrepancy; component substitution traces numerical propagation, not a causal mechanism"
+    },
+    {
+      "headline_id": "H6",
+      "decision": "QUALIFY",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ASSESSMENT"
+      ],
+      "qualification": "Post-hoc diagnostic support only"
+    },
+    {
+      "headline_id": "H7",
+      "decision": "QUALIFY",
+      "claim_ids": [
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PAIRED",
+        "REFI_DECISION"
+      ],
+      "qualification": "EXPLORATORY_ONLY; small payoff Brier gain is not robust to calendar block uncertainty"
+    },
+    {
+      "headline_id": "H8",
+      "decision": "VERIFY",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ],
+      "qualification": "Cross-provider transport has not been tested"
+    }
+  ]
+}

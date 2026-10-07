@@ -1,0 +1,141 @@
+{
+  "causal_findings": false,
+  "mechanisms": [
+    {
+      "mechanism": "support extrapolation",
+      "explanation_status": "SUPPORTED_DIAGNOSTICALLY",
+      "claim_id": "MECHANISM_1",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H1",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    },
+    {
+      "mechanism": "coefficient instability",
+      "explanation_status": "SUPPORTED_DIAGNOSTICALLY",
+      "claim_id": "MECHANISM_2",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H3",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    },
+    {
+      "mechanism": "composition/survivor shift",
+      "explanation_status": "PARTIALLY_SUPPORTED",
+      "claim_id": "MECHANISM_3",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H6",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    },
+    {
+      "mechanism": "pandemic regime change",
+      "explanation_status": "PARTIALLY_SUPPORTED",
+      "claim_id": "MECHANISM_4",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H7",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "PARTIALLY_SUPPORTED for presence/contribution; pandemic alone and intercept dominance NOT_SUPPORTED"
+    },
+    {
+      "mechanism": "macro collinearity",
+      "explanation_status": "PARTIALLY_SUPPORTED",
+      "claim_id": "MECHANISM_5",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H5",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    },
+    {
+      "mechanism": "intercept drift",
+      "explanation_status": "PARTIALLY_SUPPORTED",
+      "claim_id": "MECHANISM_6",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H2",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "PARTIALLY_SUPPORTED for presence/contribution; pandemic alone and intercept dominance NOT_SUPPORTED"
+    },
+    {
+      "mechanism": "payoff hazard amplification",
+      "explanation_status": "SUPPORTED_DIAGNOSTICALLY",
+      "claim_id": "MECHANISM_7",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H1",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    },
+    {
+      "mechanism": "default hazard instability",
+      "explanation_status": "PARTIALLY_SUPPORTED",
+      "claim_id": "MECHANISM_8",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/assessment/hypothesis_register/H4",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "causal_finding": false,
+      "qualification": "Separate causal contribution unidentified"
+    }
+  ]
+}

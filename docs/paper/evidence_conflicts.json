@@ -1,0 +1,90 @@
+{
+  "conflicts": [
+    {
+      "conflict_id": "C_MANIFEST",
+      "status": "EVIDENCE_CONFLICT",
+      "sources": [
+        {
+          "path": "reports/track_b/multi_vintage_dataset_manifest.json",
+          "json_pointer": "/decision",
+          "sha256_lf": "3e536efbe0b7976b92c060e59bcbb71a2027376708dc8d9483abb09f07b24505",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "/complete",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "/decision",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "resolution": "RESOLVED_DOCUMENTED_SUPERSESSION",
+      "reason": "Earlier 60000-facility STOP remains historical; Task 8C recovery completes seven vintages and 140000 facilities. Use recovery manifest for paper population; never rewrite old evidence."
+    },
+    {
+      "conflict_id": "C_BRIER_PRECISION",
+      "status": "EVIDENCE_CONFLICT",
+      "sources": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M1/scores/payoff_brier",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/score_accounting/brier/payoff/M1/brier",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "resolution": "RESOLVED_FLOATING_POINT_ACCOUNTING_PRECISION",
+      "values": [
+        0.015127305620779442,
+        0.015127305620779095
+      ],
+      "reason": "Different frozen numerical accounting paths; preserve both exact values. Task 10 proper-score artifact governs headline, Task 11 decomposition remains diagnostic."
+    },
+    {
+      "conflict_id": "C_FANNIE_TERMINOLOGY",
+      "status": "EVIDENCE_CONFLICT",
+      "sources": [
+        {
+          "path": "reports/track_b/fannie_source_provenance_closure.json",
+          "json_pointer": "/protocol_status",
+          "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+          "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/fannie_source_provenance_closure.json",
+          "json_pointer": "/scope/task13a_authorized",
+          "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+          "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "lower_priority_source": "Human proposal describing a sealed/pre-registered Fannie extension",
+      "resolution": "RESOLVED_HIGHER_PRIORITY_STATUS",
+      "reason": "Draft, unauthorized and unexecuted; no sealed or pre-registered Fannie assertion admitted."
+    }
+  ],
+  "unresolved_primary_conflicts": []
+}

@@ -1,0 +1,76 @@
+{
+  "legal_permission_determined": false,
+  "publication_status": "PUBLICATION_REVIEW_REQUIRED",
+  "license_sources": [
+    {
+      "path": "reports/track_b/fannie_source_provenance_closure.json",
+      "json_pointer": "/license",
+      "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+      "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+      "role": "evidence",
+      "evidence_level": 1
+    },
+    {
+      "path": "docs/track_b/LONGITUDINAL_DATA_CONTRACT.md",
+      "sha256_lf": "1fee9a31f30cb1ceb1e6c270a2f3a71286edfe58addbcf4818976a9ceabe9a30",
+      "evidence_level": 4
+    }
+  ],
+  "classes": [
+    {
+      "object": "raw records",
+      "status": "PRIVATE_NON_COMMITTABLE",
+      "restriction": "Exclude from preprint/repository"
+    },
+    {
+      "object": "loan identifiers",
+      "status": "PRIVATE_NON_COMMITTABLE",
+      "restriction": "No direct or reconstructible identifiers"
+    },
+    {
+      "object": "archive names",
+      "status": "PUBLIC_METADATA_ONLY",
+      "restriction": "No personal paths/account labels"
+    },
+    {
+      "object": "archive hashes",
+      "status": "PUBLIC_METADATA_ONLY",
+      "restriction": "Integrity metadata, not records"
+    },
+    {
+      "object": "aggregated counts",
+      "status": "PUBLICATION_REVIEW_REQUIRED",
+      "restriction": "No sparse reconstructible cells; existing suppression applies"
+    },
+    {
+      "object": "model metrics",
+      "status": "PUBLICATION_REVIEW_REQUIRED",
+      "restriction": "Use frozen aggregate references"
+    },
+    {
+      "object": "coefficient tables",
+      "status": "PUBLICATION_REVIEW_REQUIRED",
+      "restriction": "Predictive associations; no causal or household reconstruction"
+    },
+    {
+      "object": "figures",
+      "status": "PUBLICATION_REVIEW_REQUIRED",
+      "restriction": "Aggregate-only; no raw scatter or IDs"
+    },
+    {
+      "object": "schemas",
+      "status": "PUBLIC_DOCUMENTATION_REFERENCES",
+      "restriction": "Cite provider; do not redistribute documents without review"
+    },
+    {
+      "object": "code",
+      "status": "PUBLICLY_REPRODUCIBLE",
+      "restriction": "No credentials, identifiers or bundled licensed data"
+    },
+    {
+      "object": "provider documentation",
+      "status": "REFERENCE_ONLY",
+      "restriction": "Link official sources; avoid reproducing full licensed documents"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "version": "task14-v1",
+  "base_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+  "freeze_meaning": "Paper-facing evidence inventory only; NOT dataset pre-registration or external replication sealing",
+  "source_artifact_hashes_lf": {
+    "reports/track_b/expanded_pd_validation.json": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+    "docs/track_b/expanded_pd_design.json": "b8c5b3dbac018c3e8a994445e9a233894131c855d97dd10b3a25e4534a685a63",
+    "reports/track_b/pd_baseline_validation.json": "8dd5123a250787e33ea29b69fa7a93cc4c0bd1a9a326f23ec2a67296b7cf33cb",
+    "reports/track_b/sample_expansion_feasibility.json": "d0c4ff78d79cb0ce28aa5be64b920fb792aeafb107b11676c32f7be8c4c68075",
+    "reports/track_b/survival_competing_risk_validation.json": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+    "docs/track_b/mortgage_research_protocol.json": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+    "reports/track_b/macro_design_validation.json": "c8fed29cb3c92b47b1d51fe3804c9ea854546fcca89c2dfd1f824f6b221e17a8",
+    "reports/track_b/pit_macro_data_audit_task9_api_v5.json": "2ba241a67c46b08d2dd60961dd5cdfede35200e3b427cd5e19ffaec08470ae00",
+    "reports/track_b/macro_support_eligibility.json": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+    "reports/track_b/multi_vintage_recovery_audit.json": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+    "reports/track_b/multi_vintage_recovery_dataset_manifest.json": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+    "reports/track_b/multi_vintage_dataset_manifest.json": "3e536efbe0b7976b92c060e59bcbb71a2027376708dc8d9483abb09f07b24505",
+    "reports/track_b/macro_competing_risk_validation.json": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+    "reports/track_b/macro_signal_attribution_stability.json": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+    "reports/track_b/refinancing_incentive_payoff_research.json": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+    "reports/track_b/fannie_source_provenance_closure.json": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+    "docs/track_b/fannie_external_replication_protocol.json": "fd718fa4e1c01a4200051c6dc598cd894f73678dc98cd79f7b7a10ff6908706a"
+  },
+  "paper_artifact_hashes_lf": {
+    "docs/paper/arxiv_manuscript_architecture.md": "1701c335fd9ef85426bb235a82ec5aa63e95faaa961eb26c5a797141d663c603",
+    "docs/paper/arxiv_positioning.md": "1f96d30731ba5e366d5480c44ffa2357701e92c5ed393e7d693366321961537a",
+    "docs/paper/dataset_facts_registry.json": "75ef1e8e6958260fc9d29249bceda707e9c2b3c95e970d1d57bf7f9cb5291699",
+    "docs/paper/evidence_conflicts.json": "73197f1a00a8a9587a988744687a199254a51cb6888496a525432cf7d9c280fa",
+    "docs/paper/experiment_design_freeze.json": "0ee92f1711272232ff17c262dd987b8c5cd2a7021488a18fc789054fe8502b3f",
+    "docs/paper/figure_registry.json": "ee878c48b1cff05b1d671f75524252696dc0455f68d3134f9e42e215e1b5efe2",
+    "docs/paper/generalization_boundaries.json": "fb32e80146526fd34e058ee3bfd3a49499786f4cdb8492ada738a38f852690a8",
+    "docs/paper/headline_claim_audit.json": "98833774e75b1fadbcf155d4cc4dfce85ec2d6596e72d80d793f16b9b63e4048",
+    "docs/paper/manuscript_section_map.json": "35486b192ed6655224f0e838f99026a4336f9c73d88fb5617e3816f661543109",
+    "docs/paper/mechanism_claim_gate.json": "20e9ad0f8cf54a04c342a27583b60479b03193fde879265a8e7ed5031bcca7fb",
+    "docs/paper/paper_contribution_candidates.json": "87aac9ddd61d32ceaca3001f5a5a465d057aaa1fe63f413e536b00aff14127a0",
+    "docs/paper/publication_data_boundary.json": "c60ca677a93817e108d6223ebab03c2d802b8030ea36da518d1c09843a93c260",
+    "docs/paper/related_work_search_plan.md": "16065a3a1619d51ff4b661ed6ade567e0a851d1421bb7e6941c65661c929cc87",
+    "docs/paper/reproducibility_matrix.json": "e0ec8450f6587754bdc7de112974665a0cf24fa8a20f4133d7dc70a5aba547ac",
+    "docs/paper/statistical_unit_audit.json": "67decc3a06ca38ba31523e59caafec7b58729da9a0ca806f9dd98312f44be6ad",
+    "docs/paper/table_registry.json": "226f97a9f2d9ab44d7637a516ab5b3cd9efd2f8329e964eb7ccc7998d392f46c",
+    "docs/paper/task14_audit_coverage.json": "df5077e9eb48bc3525b7e790ec8880c26f6d9cb917f04f7b9b99cf2901b1b9b0",
+    "docs/paper/task14_preservation_manifest.json": "a10e6963d71a0fa0611001b213fb222dc20f96813a2be5b2290477af81c55c81",
+    "docs/paper/track_b_claim_evidence_registry.json": "c6d3911d1d59cf88ac4b3eb775a7040f31a7292857c029bdb83178c75450a8d2"
+  },
+  "new_empirical_calculations": false,
+  "audit_code_hashes_lf": {
+    "scripts/build_paper_evidence.py": "281e4f2406ac3bb6519f5298638494bd523bcbc5660288d88bcb8fb62fbaf958",
+    "scripts/check_paper_evidence.py": "9c1c4bb7e6b0aef86500c07e8c50ad36f9ac9c47c56a0920fdadabbdf7c25607",
+    "tests/test_paper_evidence.py": "927176e0cd689cb139bb6489013b23049a58ea7c33c7fb3bf4d3947b99c83e99"
+  },
+  "audit_report_hashes_lf": {
+    "reports/track_b/TASK14_MANUSCRIPT_EVIDENCE_FREEZE.md": "5a88d18565ed073622c2788802103eaf2c623e0d1e9a305c75e6d5cc2bc8f726"
+  }
+}

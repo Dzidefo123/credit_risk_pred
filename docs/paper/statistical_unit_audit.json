@@ -1,0 +1,852 @@
+{
+  "units": [
+    {
+      "experiment_id": "B5",
+      "observation_unit": "monthly 12-month landmark",
+      "cluster_unit": "loan_id",
+      "resampling_unit": "loan_id",
+      "number_of_clusters": 2423,
+      "number_of_bootstrap_draws": 1000,
+      "interval_type": "Frozen percentile intervals; method recorded in protocol/report",
+      "uncertainty_record": {
+        "draws": 1000,
+        "seed": 51005,
+        "unit": "loan_id",
+        "invalid_single_class_draws": 0,
+        "loan_sample_sequence_sha256": "68fb663b88d629471e55fbe59fb07caea4c6c7b4ac57c374269e2eacd3368d82",
+        "fixed_fit_only": true,
+        "intervals": {
+          "null": {
+            "brier": {
+              "lower": 0.006462977415970402,
+              "upper": 0.009961061630512379,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.03935006820647959,
+              "upper": 0.05782832549070905,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.005346744751417977,
+              "upper": 0.0053467447514180914,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.5,
+              "upper": 0.5,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.0,
+              "upper": 0.0,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.5032519697728965,
+              "upper": 0.5050199174096628,
+              "valid_draws": 1000
+            }
+          },
+          "logistic_raw": {
+            "brier": {
+              "lower": 0.005854596439146609,
+              "upper": 0.008917922929802622,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.0330227642125768,
+              "upper": 0.05120658566472236,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.003392380759843127,
+              "upper": 0.004731076302006112,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.7433638060294455,
+              "upper": 0.8226824489998135,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.486727612058891,
+              "upper": 0.6453648979996269,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.14020797932649184,
+              "upper": 0.22275720834861462,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.13920430929498717,
+              "upper": 0.22160409295244934,
+              "valid_draws": 1000
+            }
+          },
+          "logistic": {
+            "brier": {
+              "lower": 0.005854596439146609,
+              "upper": 0.008917922929802622,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.0330227642125768,
+              "upper": 0.05120658566472236,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.003392380759843127,
+              "upper": 0.004731076302006112,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.7433638060294455,
+              "upper": 0.8226824489998135,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.486727612058891,
+              "upper": 0.6453648979996269,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.14020797932649184,
+              "upper": 0.22275720834861462,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.13920430929498717,
+              "upper": 0.22160409295244934,
+              "valid_draws": 1000
+            }
+          },
+          "xgboost_raw": {
+            "brier": {
+              "lower": 0.006466886833997152,
+              "upper": 0.009951376813318306,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.03855053440036583,
+              "upper": 0.05751060123524532,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.004401542731443141,
+              "upper": 0.005212728393788824,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.6766482199636649,
+              "upper": 0.7697812549023401,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.3532964399273296,
+              "upper": 0.5395625098046802,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.013294542921821133,
+              "upper": 0.02477592347568737,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.012624683854537772,
+              "upper": 0.02316417994492944,
+              "valid_draws": 1000
+            }
+          },
+          "xgboost": {
+            "brier": {
+              "lower": 0.006466886833997152,
+              "upper": 0.009951376813318306,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.03855053440036583,
+              "upper": 0.05751060123524532,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.004401542731443141,
+              "upper": 0.005212728393788824,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.6766482199636649,
+              "upper": 0.7697812549023401,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.3532964399273296,
+              "upper": 0.5395625098046802,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.013294542921821133,
+              "upper": 0.02477592347568737,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.012624683854537772,
+              "upper": 0.02316417994492944,
+              "valid_draws": 1000
+            }
+          },
+          "static_logistic": {
+            "brier": {
+              "lower": 0.006493031082855633,
+              "upper": 0.009962468119027094,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.03845469500697516,
+              "upper": 0.057640957372148055,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.004381020802375998,
+              "upper": 0.00517941167240037,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.6635306712767112,
+              "upper": 0.7611165182569594,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.3270613425534223,
+              "upper": 0.5222330365139187,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.014375631245551565,
+              "upper": 0.029161690900952754,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.013589328331746938,
+              "upper": 0.026842828443035132,
+              "valid_draws": 1000
+            }
+          },
+          "static_xgboost": {
+            "brier": {
+              "lower": 0.006466904931412293,
+              "upper": 0.009947637743151508,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "lower": 0.038499680790436044,
+              "upper": 0.05750563175338673,
+              "valid_draws": 1000
+            },
+            "observed_rate": {
+              "lower": 0.006503939545793099,
+              "upper": 0.010039834819325563,
+              "valid_draws": 1000
+            },
+            "mean_probability": {
+              "lower": 0.004383475668815437,
+              "upper": 0.005196448436737579,
+              "valid_draws": 1000
+            },
+            "roc_auc": {
+              "lower": 0.674680922578308,
+              "upper": 0.7697215916772718,
+              "valid_draws": 1000
+            },
+            "gini": {
+              "lower": 0.349361845156616,
+              "upper": 0.5394431833545438,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "lower": 0.013383001862521103,
+              "upper": 0.02547783498992602,
+              "valid_draws": 1000
+            },
+            "pr_auc_trapezoid": {
+              "lower": 0.012836470262158891,
+              "upper": 0.0238481335152005,
+              "valid_draws": 1000
+            }
+          }
+        },
+        "paired": {
+          "xgboost-minus-logistic": {
+            "roc_auc": {
+              "point": -0.06107967822933247,
+              "lower": -0.08563797685842676,
+              "upper": -0.035000580040540775,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "point": -0.15881892794608257,
+              "lower": -0.20348153879984424,
+              "upper": -0.12291266882871729,
+              "valid_draws": 1000
+            },
+            "brier": {
+              "point": 0.000841507701348599,
+              "lower": 0.0005293733529794522,
+              "upper": 0.001182520849511761,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "point": 0.005826069279653019,
+              "lower": 0.003942391862550103,
+              "upper": 0.00806472957117753,
+              "valid_draws": 1000
+            }
+          },
+          "logistic-minus-null": {
+            "roc_auc": {
+              "point": 0.2833771782234904,
+              "lower": 0.2433638060294455,
+              "upper": 0.32268244899981346,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "point": 0.16798006111895505,
+              "lower": 0.13215754380271083,
+              "upper": 0.21391239822980834,
+              "valid_draws": 1000
+            },
+            "brier": {
+              "point": -0.0008392638588140856,
+              "lower": -0.0011761256143829881,
+              "upper": -0.0005186810193216821,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "point": -0.0065218093624867385,
+              "lower": -0.009317930066578148,
+              "upper": -0.004259394672632313,
+              "valid_draws": 1000
+            }
+          },
+          "xgboost-minus-null": {
+            "roc_auc": {
+              "point": 0.22229749999415793,
+              "lower": 0.1766482199636648,
+              "upper": 0.2697812549023401,
+              "valid_draws": 1000
+            },
+            "average_precision": {
+              "point": 0.009161133172872479,
+              "lower": 0.005958349317588182,
+              "upper": 0.016230061833713474,
+              "valid_draws": 1000
+            },
+            "brier": {
+              "point": 2.243842534513374e-06,
+              "lower": -3.7432489053466605e-05,
+              "upper": 3.8095596830396465e-05,
+              "valid_draws": 1000
+            },
+            "log_loss": {
+              "point": -0.0006957400828337193,
+              "lower": -0.0025183583101298108,
+              "upper": 0.0009757559669044185,
+              "valid_draws": 1000
+            }
+          }
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/clustered_uncertainty",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B6",
+      "observation_unit": "monthly risk interval or facility-entry horizon, specified by metric",
+      "cluster_unit": "facility",
+      "resampling_unit": "facility",
+      "number_of_clusters": 2423,
+      "number_of_bootstrap_draws": 400,
+      "interval_type": "Frozen percentile intervals; method recorded in protocol/report",
+      "uncertainty_record": {
+        "requested_draws": 400,
+        "valid_draws": 400,
+        "failed_draws": 0,
+        "seed": 61006,
+        "unit": "facility",
+        "models_fixed": true,
+        "intervals": {
+          "12": {
+            "default_cif": {
+              "lower": 0.0028889806025588116,
+              "upper": 0.008677259595542705,
+              "valid_draws": 400
+            },
+            "payoff_cif": {
+              "lower": 0.17002682624845236,
+              "upper": 0.2018262484523318,
+              "valid_draws": 400
+            },
+            "survival": {
+              "lower": 0.7928085018572016,
+              "upper": 0.8241952125464301,
+              "valid_draws": 400
+            },
+            "brier": {
+              "lower": 0.0029205828700518575,
+              "upper": 0.008635393107059791,
+              "valid_draws": 400
+            },
+            "auc": {
+              "lower": 0.6727447577716618,
+              "upper": 0.8563345512000929,
+              "valid_draws": 400
+            },
+            "calibration_difference": {
+              "lower": -0.005553933243804396,
+              "upper": 0.00025109938700739945,
+              "valid_draws": 400
+            },
+            "payoff_calibration_difference": {
+              "lower": -0.10817414147085161,
+              "upper": -0.07619514492191279,
+              "valid_draws": 400
+            }
+          },
+          "24": {
+            "default_cif": {
+              "lower": 0.006190672719768881,
+              "upper": 0.014032191498142797,
+              "valid_draws": 400
+            },
+            "payoff_cif": {
+              "lower": 0.2711411473380107,
+              "upper": 0.30459141560049524,
+              "valid_draws": 400
+            },
+            "survival": {
+              "lower": 0.6855138258357407,
+              "upper": 0.7197688815517952,
+              "valid_draws": 400
+            },
+            "brier": {
+              "lower": 0.0061467746660956455,
+              "upper": 0.013768710595425534,
+              "valid_draws": 400
+            },
+            "auc": {
+              "lower": 0.659398338054375,
+              "upper": 0.8266367469102172,
+              "valid_draws": 400
+            },
+            "calibration_difference": {
+              "lower": -0.005314074338125217,
+              "upper": 0.0022935216168594365,
+              "valid_draws": 400
+            },
+            "payoff_calibration_difference": {
+              "lower": -0.02474493574891843,
+              "upper": 0.009318443156133088,
+              "valid_draws": 400
+            }
+          },
+          "36": {
+            "default_cif": {
+              "lower": 0.008668187667162255,
+              "upper": 0.017766405217171346,
+              "valid_draws": 400
+            },
+            "payoff_cif": {
+              "lower": 0.3467299225319914,
+              "upper": 0.38311756149695414,
+              "valid_draws": 400
+            },
+            "survival": {
+              "lower": 0.6037736438726535,
+              "upper": 0.6400807613847715,
+              "valid_draws": 400
+            },
+            "brier": {
+              "lower": 0.008657862648867996,
+              "upper": 0.017812343593093218,
+              "valid_draws": 400
+            },
+            "auc": {
+              "lower": 0.6659420446806117,
+              "upper": 0.8196628242467136,
+              "valid_draws": 400
+            },
+            "calibration_difference": {
+              "lower": -0.0053139240688497525,
+              "upper": 0.004282684031393232,
+              "valid_draws": 400
+            },
+            "payoff_calibration_difference": {
+              "lower": 0.017338672661085696,
+              "upper": 0.054584363711143266,
+              "valid_draws": 400
+            }
+          },
+          "60": {
+            "default_cif": {
+              "lower": 0.024391891649462327,
+              "upper": 0.03928379856598325,
+              "valid_draws": 400
+            },
+            "payoff_cif": {
+              "lower": 0.5666665236010542,
+              "upper": 0.6056545957621521,
+              "valid_draws": 400
+            },
+            "survival": {
+              "lower": 0.36423855302577485,
+              "upper": 0.4020262259459637,
+              "valid_draws": 400
+            },
+            "brier": null,
+            "auc": null,
+            "calibration_difference": null,
+            "payoff_calibration_difference": null
+          }
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/uncertainty",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B6",
+      "observation_unit": "monthly risk interval or facility-entry horizon, specified by metric",
+      "cluster_unit": "facility, all monthly intervals retained",
+      "resampling_unit": "facility, all monthly intervals retained",
+      "number_of_clusters": 2423,
+      "number_of_bootstrap_draws": 400,
+      "interval_type": "Frozen percentile intervals; method recorded in protocol/report",
+      "uncertainty_record": {
+        "unit": "facility, all monthly intervals retained",
+        "draws": 400,
+        "seed": 61006,
+        "valid_draws": 400,
+        "failed_draws": 0,
+        "intervals": {
+          "structural": {
+            "joint_log_loss": {
+              "lower": 0.08423491076798358,
+              "upper": 0.09075810507132315
+            },
+            "default_brier": {
+              "lower": 0.0005786681988632664,
+              "upper": 0.000866396964687274
+            },
+            "payoff_brier": {
+              "lower": 0.014312999643075959,
+              "upper": 0.015615321005274707
+            }
+          },
+          "dynamic": {
+            "joint_log_loss": {
+              "lower": 0.09628450030258995,
+              "upper": 0.10053239964767431
+            },
+            "default_brier": {
+              "lower": 0.00042694286663558077,
+              "upper": 0.000645585652501467
+            },
+            "payoff_brier": {
+              "lower": 0.015989740332365387,
+              "upper": 0.017074765089861086
+            }
+          }
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/monthly_uncertainty",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B10",
+      "observation_unit": "monthly risk interval; first eligible entry per facility for CIF",
+      "cluster_unit": "facility",
+      "resampling_unit": "facility",
+      "number_of_clusters": 5619,
+      "number_of_bootstrap_draws": 1000,
+      "interval_type": "Percentile 95; fixed-model",
+      "uncertainty_record": {
+        "unit": "facility",
+        "clusters": 5619,
+        "seed": 61035,
+        "draws": 1000,
+        "intervals": {
+          "joint_log_loss": {
+            "delta": 0.01612163642779664,
+            "lower": 0.01540973362343688,
+            "upper": 0.016783525058395806,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "default_brier": {
+            "delta": 4.914470945406504e-05,
+            "lower": 1.2089641798975724e-06,
+            "upper": 0.00014630158807203393,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "payoff_brier": {
+            "delta": 0.004697658763666197,
+            "lower": 0.004562480802523502,
+            "upper": 0.0048216635534249295,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "default_auc": {
+            "delta": -0.07067645852352022,
+            "lower": -0.0939064581688147,
+            "upper": -0.04525144548510709,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "payoff_auc": {
+            "delta": 0.060442253166786086,
+            "lower": 0.05134358834073219,
+            "upper": 0.0700304642438737,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          }
+        },
+        "orientation": "M2 minus M1; negative proper score is better",
+        "fixed_models": true,
+        "conditional_on_realized_calendar": true
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/paired_facility",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B10",
+      "observation_unit": "monthly risk interval; first eligible entry per facility for CIF",
+      "cluster_unit": "calendar_year",
+      "resampling_unit": "calendar_year",
+      "number_of_clusters": 8,
+      "number_of_bootstrap_draws": 1000,
+      "interval_type": "Percentile 95; fixed-model",
+      "uncertainty_record": {
+        "unit": "calendar_year",
+        "clusters": 8,
+        "seed": 61036,
+        "draws": 1000,
+        "intervals": {
+          "joint_log_loss": {
+            "delta": 0.01612163642779664,
+            "lower": 5.3258694600802695e-05,
+            "upper": 0.041502093619988564,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "default_brier": {
+            "delta": 4.914470945406504e-05,
+            "lower": 2.6176783977388353e-05,
+            "upper": 7.761425349346868e-05,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "payoff_brier": {
+            "delta": 0.004697658763666197,
+            "lower": -4.738299084767613e-05,
+            "upper": 0.013214850850784124,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          }
+        },
+        "orientation": "M2 minus M1; negative proper score is better",
+        "fixed_models": true,
+        "conditional_on_realized_calendar": false
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/paired_calendar",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B12",
+      "observation_unit": "monthly risk interval; facility entry for CIF",
+      "cluster_unit": "facility",
+      "resampling_unit": "facility",
+      "number_of_clusters": 5619,
+      "number_of_bootstrap_draws": 1000,
+      "interval_type": "Percentile 95; fixed-model",
+      "uncertainty_record": {
+        "unit": "facility",
+        "clusters": 5619,
+        "seed": 61201,
+        "draws": 1000,
+        "intervals": {
+          "joint_log_loss": {
+            "delta": 0.006581616526905171,
+            "lower": 0.005800916048663267,
+            "upper": 0.007324344797756831,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "default_brier": {
+            "delta": 2.083764241108321e-05,
+            "lower": 6.31072709512137e-10,
+            "upper": 6.323080545731703e-05,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "payoff_brier": {
+            "delta": -1.1359543897818125e-05,
+            "lower": -1.870780789711456e-05,
+            "upper": -4.763802130818638e-06,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          }
+        },
+        "orientation": "P2 minus P1; negative proper score is better; EXPLORATORY_ONLY",
+        "fixed_models": true,
+        "conditional_on_realized_calendar": true
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/paired/facility",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    },
+    {
+      "experiment_id": "B12",
+      "observation_unit": "monthly risk interval; facility entry for CIF",
+      "cluster_unit": "calendar_year",
+      "resampling_unit": "calendar_year",
+      "number_of_clusters": 8,
+      "number_of_bootstrap_draws": 1000,
+      "interval_type": "Percentile 95; fixed-model",
+      "uncertainty_record": {
+        "unit": "calendar_year",
+        "clusters": 8,
+        "seed": 61202,
+        "draws": 1000,
+        "intervals": {
+          "joint_log_loss": {
+            "delta": 0.006581616526905171,
+            "lower": 0.0007903907546276087,
+            "upper": 0.017209066007567036,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "default_brier": {
+            "delta": 2.083764241108321e-05,
+            "lower": 4.914108225857138e-06,
+            "upper": 5.1635917546183695e-05,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          },
+          "payoff_brier": {
+            "delta": -1.1359543897818125e-05,
+            "lower": -5.098802206086796e-05,
+            "upper": 3.759846512088142e-05,
+            "valid_replicates": 1000,
+            "status": "SUPPORTED"
+          }
+        },
+        "orientation": "P2 minus P1; negative proper score is better; EXPLORATORY_ONLY",
+        "fixed_models": true,
+        "conditional_on_realized_calendar": false
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/paired/calendar_year",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ],
+      "limitations": "No training, borrower dependence or future macro-path uncertainty; calendar has eight year blocks including partial 2026"
+    }
+  ],
+  "intervals_are_not_independent_observations": true,
+  "point_calibration_CI": null,
+  "diagnostic_refit_coefficient_CI": null
+}

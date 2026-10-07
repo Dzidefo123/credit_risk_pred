@@ -1,0 +1,135 @@
+{
+  "task": "Track B Task 14 - arXiv Manuscript Evidence Freeze & Paper Architecture",
+  "base_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+  "verified_at": "2026-10-07T20:14:25.214594+00:00",
+  "decision": "ARXIV MANUSCRIPT EVIDENCE FREEZE READY WITH MATERIAL LIMITATIONS",
+  "evidence_inventory": {
+    "claims": 258,
+    "primary_claims": 19,
+    "class_counts": {
+      "SUPPORTED_EMPIRICAL": 127,
+      "SUPPORTED_METHODOLOGICAL": 22,
+      "EXPLORATORY_DIAGNOSTIC": 82,
+      "LIMITATION": 8,
+      "PROPOSED_EXTERNAL_REPLICATION": 1,
+      "EXPLORATORY_HYPOTHESIS": 8,
+      "PROHIBITED": 8,
+      "UNSUPPORTED": 2
+    },
+    "dataset_facts": 31,
+    "figures_planned": 8,
+    "tables_planned": 9,
+    "figures_generated": 0,
+    "unresolved_primary_conflicts": [],
+    "resolved_conflicts": [
+      "C_MANIFEST",
+      "C_BRIER_PRECISION",
+      "C_FANNIE_TERMINOLOGY"
+    ]
+  },
+  "checks": {
+    "new_regression_cases": 38,
+    "targeted_combined": {
+      "passed": 55,
+      "status": "PASSED"
+    },
+    "full_pytest": {
+      "passed": 1165,
+      "warnings": 4,
+      "seconds": 112.16,
+      "exit_code": 0
+    },
+    "lint": "PASSED",
+    "format": {
+      "status": "PASSED",
+      "files": 244
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "exact_point_and_uncertainty_bindings": "PASSED",
+    "source_commit_byte_bindings": "PASSED",
+    "paper_evidence_hashes": "PASSED",
+    "private_identifiers_and_raw_row_scan": "PASSED",
+    "terminology_and_language_mutation_tests": "PASSED",
+    "diff_whitespace": "PASSED"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "public_lf_hashes": 509,
+    "private_byte_hashes": 360,
+    "git_refs": 2,
+    "freddie_source_archives": 7,
+    "fannie_archive_hash_and_directory": "PASSED",
+    "fannie_member_bodies_opened": false,
+    "full_prior_chain": "PASSED; Track A artifacts/tag, Tasks 2 through 13S, macro evidence, model/results/diagnostics and consumed ledgers unchanged",
+    "ledger_consumption_api_called": false,
+    "models_loaded_or_regenerated": false,
+    "locked_holdout_consumed": false
+  },
+  "track_a_tag": {
+    "object_sha": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "commit_sha": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical results; NOT newly evaluated"
+  },
+  "scientific_scope": {
+    "new_empirical_data_acquired": false,
+    "model_fitting": false,
+    "recalibration": false,
+    "resampling_or_bootstrap": false,
+    "new_headline_metrics": false,
+    "frozen_experiments_rerun": false,
+    "manuscript_narrative_written": false,
+    "abstract_written": false
+  },
+  "fannie": {
+    "status": "FANNIE SOURCE PROVENANCE REQUIRES PROVIDER CONFIRMATION",
+    "protocol": "DRAFT_NOT_YET_AUTHORIZED",
+    "task13a_authorized": false,
+    "external_outcome_analysis": false,
+    "proposed_only": true
+  },
+  "task15": {
+    "scientific_evidence_gate": "READY_WITH_MATERIAL_LIMITATIONS",
+    "drafting_executed": false,
+    "separate_authorization_required": true,
+    "publication_review_required": true,
+    "literature_novelty_established": false
+  },
+  "modified_preexisting_files": [],
+  "files_created": [
+    "docs/paper/arxiv_manuscript_architecture.md",
+    "docs/paper/arxiv_positioning.md",
+    "docs/paper/dataset_facts_registry.json",
+    "docs/paper/evidence_conflicts.json",
+    "docs/paper/experiment_design_freeze.json",
+    "docs/paper/figure_registry.json",
+    "docs/paper/generalization_boundaries.json",
+    "docs/paper/headline_claim_audit.json",
+    "docs/paper/manuscript_section_map.json",
+    "docs/paper/mechanism_claim_gate.json",
+    "docs/paper/paper_contribution_candidates.json",
+    "docs/paper/paper_evidence_manifest.json",
+    "docs/paper/publication_data_boundary.json",
+    "docs/paper/related_work_search_plan.md",
+    "docs/paper/reproducibility_matrix.json",
+    "docs/paper/statistical_unit_audit.json",
+    "docs/paper/table_registry.json",
+    "docs/paper/task14_audit_coverage.json",
+    "docs/paper/task14_preservation_manifest.json",
+    "docs/paper/track_b_claim_evidence_registry.json",
+    "reports/track_b/TASK14_MANUSCRIPT_EVIDENCE_FREEZE.md",
+    "reports/track_b/task14_verification.json",
+    "scripts/build_paper_evidence.py",
+    "scripts/check_paper_evidence.py",
+    "tests/test_paper_evidence.py"
+  ],
+  "new_files": 25,
+  "push": false,
+  "intended_commit": "docs: freeze Track B manuscript evidence"
+}

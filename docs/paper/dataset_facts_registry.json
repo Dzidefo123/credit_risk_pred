@@ -1,0 +1,1769 @@
+{
+  "facts": [
+    {
+      "fact_id": "pd:/source_sha256",
+      "value": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/source_sha256",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/sample_sha256",
+      "value": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/sample_sha256",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/panel_sha256",
+      "value": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/panel_sha256",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/cohort_reproduction/cohorts",
+      "value": {
+        "primary": {
+          "landmarks": 1241045,
+          "loans": 19590,
+          "positive_landmarks": 7153,
+          "default_loans": 618
+        },
+        "development": {
+          "landmarks": 478796,
+          "loans": 13801,
+          "positive_landmarks": 2560,
+          "default_loans": 246
+        },
+        "evaluation": {
+          "landmarks": 128812,
+          "loans": 2423,
+          "positive_landmarks": 1072,
+          "default_loans": 95
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/cohort_reproduction/cohorts",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/cohort_reproduction/hashes",
+      "value": {
+        "primary": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374",
+        "development": "68878393f2118f6c3d53af473842757c57ef0d46c42af08f95201d16cc3c4659",
+        "evaluation": "69850e4e1b1176edd89c8374ff72f4db053536c61aac1b83a65358720a962402"
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/cohort_reproduction/hashes",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/model_specifications/design",
+      "value": {
+        "version": "expanded_pd_v1",
+        "seed": 51005,
+        "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+        "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+        "development_end": "2014-12",
+        "evaluation_start": "2016-01",
+        "purged": "2015",
+        "internal_split": "SHA256(task5-development-v1:ID) integer modulo 10: 0..5 fit, 6..7 calibrate, 8..9 select; same development calendar coverage; no group overlap. Internal validation is grouped but not calendar-held-out; outer evaluation provides calendar separation. No final refit.",
+        "features": [
+          "orig_credit_score",
+          "orig_ltv",
+          "orig_dti",
+          "orig_interest_rate",
+          "original_loan_term",
+          "number_of_borrowers",
+          "loan_age",
+          "delinquency_state",
+          "loan_purpose",
+          "occupancy_status"
+        ],
+        "logistic": {
+          "C": 1.0,
+          "max_iter": 3000,
+          "tol": 1e-08,
+          "solver": "lbfgs",
+          "class_weight": null
+        },
+        "xgboost_candidates": [
+          {
+            "max_depth": 2,
+            "n_estimators": 120
+          },
+          {
+            "max_depth": 3,
+            "n_estimators": 180
+          }
+        ],
+        "xgboost_fixed": {
+          "learning_rate": 0.05,
+          "min_child_weight": 30,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "reg_lambda": 10.0,
+          "reg_alpha": 0.1,
+          "tree_method": "hist",
+          "n_jobs": 2,
+          "random_state": 51005,
+          "objective": "binary:logistic"
+        },
+        "xgboost_selection": "Choose depth3 only if selection log loss improves >=1% and Brier does not worsen; otherwise depth2. Evaluate raw candidates only for architecture. Record both.",
+        "calibration": "For each frozen primary logistic/XGB architecture: sigmoid fit on calibration partition only. Retain only if independent selection Brier and log loss each improve >=1%, positive slope and selection AUC drops <=0.002. No isotonic; no selection of alternative models after evaluation. Raw probabilities always retained. Hazard, null and static sensitivity raw retained.",
+        "hazard": "One next-month risk interval per eligible clean t0 with observed_followup_months>=1. Event iff positive_default and event_offset=1. Payoff interval ends facility risk, is an observed default-free interval but not twelve-month survival; censor payoff as competing exit. Administrative/ambiguous first-month intervals have no known at-risk month and are excluded. Strict t0<=2014-12 on development groups, so hazard events end 2015-01; unlike landmark labels through2015-12. No purged 2015 t0 used. One default event per loan maximum.",
+        "hazard_forecast": "Default-only logistic hazard with linear loan_age time basis. At t0 freeze all predictors except deterministic loan_age+t; predict 12 future conditional hazards, product survival, PD=1-product(1-h). This is a net-risk benchmark under hypothetical removal of payoff and frozen covariates, NOT the primary default-before-payoff cumulative incidence. Report separately; not eligible for primary champion selection.",
+        "sensitivity": "Origination-only Logistic and fixed shallow XGB, same partitions; raw only. Drop both loan_age and delinquency_state. These are prespecified family sensitivities, not champion candidates.",
+        "bootstrap": {
+          "draws": 1000,
+          "seed": 51005,
+          "unit": "loan_id",
+          "paired": true,
+          "scope": "fixed trained model; excludes training uncertainty and unknown borrower links"
+        },
+        "reliability_edges": [
+          0,
+          0.005,
+          0.02,
+          0.1,
+          1.0
+        ],
+        "calendar_blocks": [
+          "2016-2018",
+          "2019-2021",
+          "2022-2026"
+        ],
+        "minimum_diagnostic_event_loans": 20,
+        "champion_rule": "Default logistic. Promote selected XGB only if paired 95% intervals for XGB-minus-logistic Brier and logloss are entirely below zero, both point improvements >=2%, AP and AUC do not materially deteriorate (>0.01), and no supported calendar block has >10% worse logloss. Interpretability and calibration reviewed; retained frozen variants only. No policy thresholds.",
+        "evaluation_access": "Aggregate labels were already audited in Tasks3/4 and required count reproduction; nested 1000 Task3 predictions previously seen. Task5 predictive metrics access is one-shot after freeze; cannot claim never-seen outcomes. Fail closed on repeat.",
+        "historical_knowledge_time": "UNVERIFIED"
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/model_specifications/design",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "pd:/limitations",
+      "value": [
+        "Historical operational knowledge time UNVERIFIED; nominal-time retrospective research",
+        "2010-vintage facilities only; ageing/survival selection and calendar drift confounded",
+        "Unknown borrower identity; loan clusters are not proven independent borrower clusters",
+        "Fixed-fit bootstrap excludes development model uncertainty",
+        "Tasks3/4 outcomes and nested Task3 scores previously seen; Task5 specifications frozen without new predictive evaluation",
+        "Internal development partitions grouped but not time-held-out; calibration from development cannot guarantee temporal calibration",
+        "Hazard net-risk projection with frozen covariates is not payoff-adjusted primary cumulative incidence",
+        "No regulatory/IFRS9/IRB/production/fairness/causal/external-validity claim",
+        "This bounded, strongly regularized challenger did not split current delinquency; failure is specific to its prespecified architecture, not a universal failure of boosting",
+        "Monthly hazard discrimination is largely recognition of imminent movement across the delinquency default proxy boundary, not evidence of reliable twelve-month or lifetime forecasting",
+        "Hazard net-risk projection freezes delinquency; future distress evolution and payoff are not modeled. Its low projected mean must not be called calibrated primary CIF",
+        "Static sensitivity removes both age and delinquency, so the difference does not isolate the causal effect of delinquency",
+        "Raw probabilities are materially too low out of time; development sigmoid hurt Brier despite small log-loss improvements, so raw remained frozen. No post-evaluation recalibration permitted here"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "survival:/survival_audit",
+      "value": {
+        "total_selected_facilities": 20000,
+        "raw_first_endpoints": {
+          "default": 623,
+          "payoff": 18147,
+          "administrative": 29,
+          "ambiguous": 33,
+          "active_or_unknown": 1168
+        },
+        "raw_calendar": {
+          "2013": {
+            "payoff": 2647,
+            "default": 74,
+            "ambiguous": 2
+          },
+          "2026": {
+            "active_or_unknown": 1168,
+            "ambiguous": 3,
+            "payoff": 25,
+            "default": 3
+          },
+          "2011": {
+            "payoff": 1575,
+            "default": 58,
+            "administrative": 11,
+            "ambiguous": 3
+          },
+          "2019": {
+            "payoff": 694,
+            "default": 11
+          },
+          "2021": {
+            "payoff": 855,
+            "default": 16
+          },
+          "2025": {
+            "payoff": 378,
+            "ambiguous": 15,
+            "default": 5
+          },
+          "2014": {
+            "payoff": 1231,
+            "default": 65,
+            "ambiguous": 2
+          },
+          "2018": {
+            "payoff": 691,
+            "default": 22,
+            "administrative": 3,
+            "ambiguous": 3
+          },
+          "2017": {
+            "payoff": 932,
+            "default": 26,
+            "ambiguous": 2
+          },
+          "2012": {
+            "payoff": 3635,
+            "default": 88,
+            "administrative": 9,
+            "ambiguous": 2
+          },
+          "2023": {
+            "payoff": 263,
+            "default": 13
+          },
+          "2010": {
+            "payoff": 586,
+            "default": 7,
+            "administrative": 4
+          },
+          "2015": {
+            "payoff": 1510,
+            "default": 49,
+            "ambiguous": 1
+          },
+          "2016": {
+            "payoff": 1421,
+            "default": 40
+          },
+          "2024": {
+            "payoff": 222,
+            "default": 8
+          },
+          "2020": {
+            "payoff": 1073,
+            "default": 129,
+            "administrative": 1
+          },
+          "2022": {
+            "payoff": 409,
+            "default": 9,
+            "administrative": 1
+          }
+        },
+        "flow": {
+          "global": {
+            "included": 19606,
+            "no_eligible_entry": 392,
+            "zero_duration_quarantined": 2
+          },
+          "development": {
+            "included": 13813,
+            "no_eligible_entry": 347,
+            "zero_duration_quarantined": 1
+          },
+          "evaluation": {
+            "included": 2423,
+            "no_eligible_entry": 3416
+          }
+        },
+        "global_cohort": {
+          "facilities": 19606,
+          "risk_intervals": null,
+          "default_facilities": 618,
+          "payoff_facilities": 17762,
+          "censored_facilities": 1226
+        },
+        "global_risk_intervals": 1254425,
+        "partitions": {
+          "development": {
+            "facilities": 13813,
+            "risk_intervals": 471976,
+            "default_facilities": 212,
+            "payoff_facilities": 6577,
+            "censored_facilities": 7024
+          },
+          "evaluation": {
+            "facilities": 2423,
+            "risk_intervals": 132409,
+            "default_facilities": 95,
+            "payoff_facilities": 2001,
+            "censored_facilities": 327
+          }
+        },
+        "censor_reasons": {
+          "global": {
+            "observation_end": 1168,
+            "ambiguous": 32,
+            "administrative": 26
+          },
+          "development": {
+            "calendar_censor": 7001,
+            "ambiguous": 6,
+            "administrative": 17
+          },
+          "evaluation": {
+            "observation_end": 316,
+            "ambiguous": 8,
+            "administrative": 3
+          }
+        },
+        "delayed_entry_age": {
+          "global": {
+            "minimum": 5.0,
+            "median": 5.0,
+            "maximum": 106.0
+          },
+          "development": {
+            "minimum": 5.0,
+            "median": 5.0,
+            "maximum": 53.0
+          },
+          "evaluation": {
+            "minimum": 38.0,
+            "median": 63.0,
+            "maximum": 101.0
+          }
+        },
+        "survival_cohort_sha256": {
+          "global": "417f82da776b4846527a1324611eb9cc005a2d1ae86b090ae53915eed7288602",
+          "development": "97f45ead4dcdaafc6a6b12991d287245d1b2b3968b937b2a516434fae5b3ca52",
+          "evaluation": "a84470117d66e9c7e53c6fe73850bf5c33fa89239d2ed7004950db3a4cc3c692"
+        },
+        "risk_set_sha256": {
+          "development": "5bc01170d7eb5c98b62b3a994e14915c9e7c2b275e79deef3da39c5c560ccc4e",
+          "evaluation": "8909a2b6e02fe65c3afabb281ccbd631cfaf6fb84a1436eeb054a22a5f88f532"
+        },
+        "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374"
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/survival_audit",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "survival:/protocol/origin",
+      "value": "First globally protocol-eligible t0 inside assigned calendar window, conditional on still active; one entry per facility. Relative time zero at this window entry. Mortgage age at entry records delayed observation; no exposure from origination is fabricated. Evaluation clock resets at conditional 2016+ entry, NOT origination lifetime.",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/protocol/origin",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "survival:/protocol/events",
+      "value": "Unchanged Task2 event_category/protocol; default03..99,RA or credit term02/03/09; payoff01, ambiguous same-month/default-payoff conflicts or mismatched dates; admin15/16/96; unknown/gaps separately censor. Do not call payoff voluntary prepayment.",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/protocol/events",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "survival:/protocol/risk_set",
+      "value": "One interval (t0,t0+1] from eligible current row to consecutive next month with category none/default/payoff. Stop at first endpoint; default/payoff each counted once. No missing/gap/pre-entry/post-event exposure. First-month admin/ambiguity/unknown censor at last known active boundary; record reason separately. Zero-duration entry/exit quarantined. Development interval endpoints must be <=2014-12; no 2015 intervals used.",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/protocol/risk_set",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "survival:/protocol/knowledge_time",
+      "value": "UNVERIFIED",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/protocol/knowledge_time",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "manifest:/components",
+      "value": [
+        {
+          "vintage": 2006,
+          "source_sha256": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+          "eligible_universe_count": 1193543,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 1,
+          "sample_size": 20000,
+          "sample_sha256": "1b39c08d96da214fd5e33273c6d38e0a88940f59afe96537625bbeaaf20af371",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+          "performance_row_count": 1280801,
+          "calendar": {
+            "first": "2006-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2006": 99141,
+              "2007": 219833,
+              "2008": 199320,
+              "2009": 165135,
+              "2010": 130930,
+              "2011": 103527,
+              "2012": 80668,
+              "2013": 56663,
+              "2014": 43888,
+              "2015": 36302,
+              "2016": 30070,
+              "2017": 25061,
+              "2018": 20802,
+              "2019": 16874,
+              "2020": 13519,
+              "2021": 10262,
+              "2022": 8044,
+              "2023": 7152,
+              "2024": 6460,
+              "2025": 5777,
+              "2026": 1373
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 29.0,
+            "median": 50.0,
+            "p75": 79.25,
+            "maximum": 241.0
+          },
+          "event_counts": {
+            "payoff": 16750,
+            "default": 2876,
+            "active_or_unknown": 290,
+            "administrative": 38,
+            "ambiguous": 46
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2008,
+          "source_sha256": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+          "eligible_universe_count": 1233145,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 1,
+          "sample_size": 20000,
+          "sample_sha256": "91286c8885dbc90b8c91bb7a8300eda1df0cf63e45f43f72f7ea1e697c27e26d",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+          "performance_row_count": 1016145,
+          "calendar": {
+            "first": "2008-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2008": 123697,
+              "2009": 208737,
+              "2010": 167208,
+              "2011": 125377,
+              "2012": 93677,
+              "2013": 62660,
+              "2014": 46613,
+              "2015": 37810,
+              "2016": 30878,
+              "2017": 25226,
+              "2018": 20663,
+              "2019": 17407,
+              "2020": 14380,
+              "2021": 11417,
+              "2022": 8958,
+              "2023": 7394,
+              "2024": 6601,
+              "2025": 6018,
+              "2026": 1424
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 19.0,
+            "median": 38.0,
+            "p75": 61.0,
+            "maximum": 218.0
+          },
+          "event_counts": {
+            "payoff": 17625,
+            "default": 1956,
+            "active_or_unknown": 344,
+            "administrative": 39,
+            "ambiguous": 36
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2010,
+          "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+          "eligible_universe_count": null,
+          "eligible_universe_status": "inherited 2010 sample; full universe not reconstructed",
+          "quarantine_count": 0,
+          "sample_size": 20000,
+          "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+          "performance_row_count": 1400360,
+          "calendar": {
+            "first": "2010-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2010": 91536,
+              "2011": 225390,
+              "2012": 193918,
+              "2013": 150014,
+              "2014": 129498,
+              "2015": 112687,
+              "2016": 95630,
+              "2017": 80364,
+              "2018": 70072,
+              "2019": 61932,
+              "2020": 51357,
+              "2021": 37761,
+              "2022": 29582,
+              "2023": 25563,
+              "2024": 22458,
+              "2025": 18684,
+              "2026": 3914
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 26.0,
+            "median": 53.0,
+            "p75": 107.0,
+            "maximum": 194.0
+          },
+          "event_counts": {
+            "payoff": 18147,
+            "active_or_unknown": 1168,
+            "default": 623,
+            "ambiguous": 33,
+            "administrative": 29
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2014,
+          "source_sha256": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+          "eligible_universe_count": 1142999,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 0,
+          "sample_size": 20000,
+          "sample_sha256": "d26b2ba3e08837f82c940ecefbaa18c4bd201d64a0a114760eafeeb80a8126f5",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+          "performance_row_count": 1352589,
+          "calendar": {
+            "first": "2014-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2014": 97137,
+              "2015": 219770,
+              "2016": 194852,
+              "2017": 164799,
+              "2018": 145014,
+              "2019": 130440,
+              "2020": 108534,
+              "2021": 77141,
+              "2022": 59555,
+              "2023": 53125,
+              "2024": 48130,
+              "2025": 43771,
+              "2026": 10321
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 27.0,
+            "median": 64.0,
+            "p75": 92.0,
+            "maximum": 146.0
+          },
+          "event_counts": {
+            "payoff": 16018,
+            "active_or_unknown": 3121,
+            "default": 800,
+            "administrative": 33,
+            "ambiguous": 28
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2018,
+          "source_sha256": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+          "eligible_universe_count": 1285434,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 0,
+          "sample_size": 20000,
+          "sample_sha256": "b3e2952bb5bc0d0a551105cecfa964b18481b3764442edb8362245f4f17f921e",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+          "performance_row_count": 819246,
+          "calendar": {
+            "first": "2018-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2018": 105693,
+              "2019": 221554,
+              "2020": 158613,
+              "2021": 93938,
+              "2022": 65831,
+              "2023": 58418,
+              "2024": 53782,
+              "2025": 49640,
+              "2026": 11777
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 18.0,
+            "median": 29.0,
+            "p75": 55.0,
+            "maximum": 98.0
+          },
+          "event_counts": {
+            "payoff": 15488,
+            "active_or_unknown": 3410,
+            "default": 1051,
+            "administrative": 42,
+            "ambiguous": 9
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2020,
+          "source_sha256": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+          "eligible_universe_count": 3913740,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 1,
+          "sample_size": 20000,
+          "sample_sha256": "978c32ebac99980286cf83e86051316dad6080f9cc167c017900e15cd7e2a3f1",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+          "performance_row_count": 1034572,
+          "calendar": {
+            "first": "2020-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2020": 86697,
+              "2021": 215516,
+              "2022": 187127,
+              "2023": 176555,
+              "2024": 168728,
+              "2025": 160934,
+              "2026": 39015
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 28.0,
+            "median": 63.0,
+            "p75": 67.0,
+            "maximum": 74.0
+          },
+          "event_counts": {
+            "payoff": 6913,
+            "active_or_unknown": 12686,
+            "default": 352,
+            "administrative": 28,
+            "ambiguous": 21
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        },
+        {
+          "vintage": 2022,
+          "source_sha256": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31",
+          "eligible_universe_count": 1580752,
+          "eligible_universe_status": "full gate certified",
+          "quarantine_count": 1,
+          "sample_size": 20000,
+          "sample_sha256": "8b0e0fee2f6921c2c6a04363b01cb234be7ccb7cd93a350765e6faac5db66f59",
+          "parser_version": "multivintage-r47-v1.0.0",
+          "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+          "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+          "performance_row_count": 837950,
+          "calendar": {
+            "first": "2022-01",
+            "last": "2026-03",
+            "source_rows_by_year": {
+              "2022": 130802,
+              "2023": 230885,
+              "2024": 220101,
+              "2025": 206782,
+              "2026": 49380
+            }
+          },
+          "followup": {
+            "n": 20000,
+            "minimum": 0.0,
+            "p25": 40.0,
+            "median": 44.0,
+            "p75": 47.0,
+            "maximum": 50.0
+          },
+          "event_counts": {
+            "active_or_unknown": 15703,
+            "payoff": 3492,
+            "administrative": 86,
+            "default": 678,
+            "ambiguous": 41
+          },
+          "harmonization_status": "READY_WITH_LIMITATIONS"
+        }
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "/components",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "manifest:/frozen_facilities",
+      "value": 140000,
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "/frozen_facilities",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "manifest:/combined_sample_sha256",
+      "value": "93fdaf807fe2f9b168dca275be21644004a2ff3c14ae847d17e9330963bf2b8b",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "/combined_sample_sha256",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "manifest:/key_definition",
+      "value": "archive_vintage:immutable source facility ID; no borrower uniqueness claim",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "/key_definition",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "population:/completed_performance_rows",
+      "value": 7741663,
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "/completed_performance_rows",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "population:/chronology",
+      "value": [
+        "Original Task8 STOP",
+        "Task8A SOURCE CONVENTIONS UNRESOLVED",
+        "Task8B robustness design",
+        "Task8C Policy B authorized, followed by gated recovery"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "/chronology",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "population:/apc",
+      "value": {
+        "synthetic": {
+          "rows": 35,
+          "columns": 4,
+          "rank": 3,
+          "null_vector": [
+            0,
+            1,
+            -1,
+            -1
+          ],
+          "maximum_identity_residual": 0.0,
+          "scope": "Exact-clock illustration; does not assert exact mortgage origination month"
+        },
+        "empirical_proxy": {
+          "unique_clock_rows": 18738,
+          "columns": 4,
+          "rank": 3,
+          "maximum_identity_residual": 0.0,
+          "scope": "First-payment proxy clocks; not exact origination date or provider age"
+        },
+        "structural_identity": "period = cohort + age",
+        "unrestricted_apc_identified": false,
+        "causal_macro_effects_identified": false,
+        "future_constraints": [
+          "smooth duration basis",
+          "parsimonious cohort representation",
+          "national macro replacing unrestricted period FE",
+          "prespecified interactions only"
+        ]
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "/apc",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "population:/limitations",
+      "value": [
+        "Current-release retrospective disclosure: operational knowledge time and historical revisions remain unverified.",
+        "ZIP timestamps and matching field counts do not independently attest the exact source release.",
+        "Facility identity is not borrower identity; cross-facility or cross-vintage borrower independence is not established.",
+        "First payment month is not exact origination or accounting recognition; no fabricated daily dates or exact DPD.",
+        "Monthly research default is a proxy; payoff includes maturity, not uniquely voluntary prepayment.",
+        "Loss amounts are signed aggregate disclosures, not timed recovery cash flows, accounting LGD or ECL.",
+        "Modification and assistance disclosures do not identify every intervention or pandemic forbearance.",
+        "Natural follow-up is unequal; no outcome extrapolation, adaptive replacement or global truncation.",
+        "Overlap does not identify unrestricted age, period and cohort effects or causal macro coefficients.",
+        "Source semantics for A1-A4 remain unresolved; exact-record eligibility exclusion does not establish provider error or harmlessness.",
+        "Inherited 2010 frozen sample has no reconstructed full eligible-universe count; do not present identifier census as full eligibility certification.",
+        "Source-wide structural performance column checks; semantic typing covers selected histories, not every unselected performance record.",
+        "Provider-reported age diverges from the immutable first-payment elapsed clock on some histories. Both support matrices are retained separately; no reset mechanism is inferred and no provider age is rewritten. Broad provider-age coverage does not establish original-duration overlap."
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "support:/totals",
+      "value": {
+        "PRIMARY": {
+          "sample_facilities_retained": 140000,
+          "contributing_facilities": 119629,
+          "eligible_intervals": 5541179,
+          "unique_default_facilities": 5617,
+          "unique_payoff_facilities": 76729,
+          "censored_facilities": 37283,
+          "no_eligible_intervals": 20371
+        },
+        "REDUCED": {
+          "sample_facilities_retained": 140000,
+          "contributing_facilities": 136389,
+          "eligible_intervals": 6498466,
+          "unique_default_facilities": 8104,
+          "unique_payoff_facilities": 90946,
+          "censored_facilities": 37339,
+          "no_eligible_intervals": 3611
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_support_eligibility.json",
+          "json_pointer": "/totals",
+          "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+          "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "support:/macro_support/designs",
+      "value": {
+        "PRIMARY": {
+          "features": [
+            "unemployment_level",
+            "unemployment_change_3m",
+            "treasury_10y_level",
+            "mortgage_30y_level",
+            "mortgage_treasury_spread",
+            "hpi_yoy",
+            "cpi_yoy",
+            "gdp_qoq"
+          ],
+          "support_months": [
+            "2010-09",
+            "2010-10",
+            "2010-11",
+            "2010-12",
+            "2011-01",
+            "2011-02",
+            "2011-03",
+            "2011-04",
+            "2011-05",
+            "2011-06",
+            "2011-07",
+            "2011-08",
+            "2011-09",
+            "2011-10",
+            "2011-11",
+            "2011-12",
+            "2012-01",
+            "2012-02",
+            "2012-03",
+            "2012-04",
+            "2012-05",
+            "2012-06",
+            "2012-07",
+            "2012-08",
+            "2012-09",
+            "2012-10",
+            "2012-11",
+            "2012-12",
+            "2013-01",
+            "2013-02",
+            "2013-03",
+            "2013-04",
+            "2013-05",
+            "2013-06",
+            "2013-07",
+            "2013-08",
+            "2013-09",
+            "2013-10",
+            "2013-11",
+            "2013-12",
+            "2014-01",
+            "2014-02",
+            "2014-03",
+            "2014-04",
+            "2014-05",
+            "2014-06",
+            "2014-07",
+            "2014-08",
+            "2014-09",
+            "2014-10",
+            "2014-11",
+            "2014-12",
+            "2015-01",
+            "2015-02",
+            "2015-03",
+            "2015-04",
+            "2015-05",
+            "2015-06",
+            "2015-07",
+            "2015-08",
+            "2015-09",
+            "2015-10",
+            "2015-11",
+            "2015-12",
+            "2016-01",
+            "2016-02",
+            "2016-03",
+            "2016-04",
+            "2016-05",
+            "2016-06",
+            "2016-07",
+            "2016-08",
+            "2016-09",
+            "2016-10",
+            "2016-11",
+            "2016-12",
+            "2017-01",
+            "2017-02",
+            "2017-03",
+            "2017-04",
+            "2017-05",
+            "2017-06",
+            "2017-07",
+            "2017-08",
+            "2017-09",
+            "2017-10",
+            "2017-11",
+            "2017-12",
+            "2018-01",
+            "2018-02",
+            "2018-03",
+            "2018-04",
+            "2018-05",
+            "2018-06",
+            "2018-07",
+            "2018-08",
+            "2018-09",
+            "2018-10",
+            "2018-11",
+            "2018-12",
+            "2019-01",
+            "2019-02",
+            "2019-03",
+            "2019-04",
+            "2019-05",
+            "2019-06",
+            "2019-07",
+            "2019-08",
+            "2019-09",
+            "2019-10",
+            "2019-11",
+            "2019-12",
+            "2020-01",
+            "2020-02",
+            "2020-03",
+            "2020-04",
+            "2020-05",
+            "2020-06",
+            "2020-07",
+            "2020-08",
+            "2020-09",
+            "2020-10",
+            "2020-11",
+            "2020-12",
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-02"
+          ],
+          "support_windows": [
+            {
+              "first": "2010-09",
+              "last": "2026-02",
+              "months": 186
+            }
+          ]
+        },
+        "REDUCED": {
+          "features": [
+            "unemployment_level",
+            "unemployment_change_3m",
+            "treasury_10y_level",
+            "cpi_yoy",
+            "gdp_qoq"
+          ],
+          "support_months": [
+            "2006-02",
+            "2006-03",
+            "2006-04",
+            "2006-05",
+            "2006-06",
+            "2006-07",
+            "2006-08",
+            "2006-09",
+            "2006-10",
+            "2006-11",
+            "2006-12",
+            "2007-01",
+            "2007-02",
+            "2007-03",
+            "2007-04",
+            "2007-05",
+            "2007-06",
+            "2007-07",
+            "2007-08",
+            "2007-09",
+            "2007-10",
+            "2007-11",
+            "2007-12",
+            "2008-01",
+            "2008-02",
+            "2008-03",
+            "2008-04",
+            "2008-05",
+            "2008-06",
+            "2008-07",
+            "2008-08",
+            "2008-09",
+            "2008-10",
+            "2008-11",
+            "2008-12",
+            "2009-01",
+            "2009-02",
+            "2009-03",
+            "2009-04",
+            "2009-05",
+            "2009-06",
+            "2009-07",
+            "2009-08",
+            "2009-09",
+            "2009-10",
+            "2009-11",
+            "2009-12",
+            "2010-01",
+            "2010-02",
+            "2010-03",
+            "2010-04",
+            "2010-05",
+            "2010-06",
+            "2010-07",
+            "2010-08",
+            "2010-09",
+            "2010-10",
+            "2010-11",
+            "2010-12",
+            "2011-01",
+            "2011-02",
+            "2011-03",
+            "2011-04",
+            "2011-05",
+            "2011-06",
+            "2011-07",
+            "2011-08",
+            "2011-09",
+            "2011-10",
+            "2011-11",
+            "2011-12",
+            "2012-01",
+            "2012-02",
+            "2012-03",
+            "2012-04",
+            "2012-05",
+            "2012-06",
+            "2012-07",
+            "2012-08",
+            "2012-09",
+            "2012-10",
+            "2012-11",
+            "2012-12",
+            "2013-01",
+            "2013-02",
+            "2013-03",
+            "2013-04",
+            "2013-05",
+            "2013-06",
+            "2013-07",
+            "2013-08",
+            "2013-09",
+            "2013-10",
+            "2013-11",
+            "2013-12",
+            "2014-01",
+            "2014-02",
+            "2014-03",
+            "2014-04",
+            "2014-05",
+            "2014-06",
+            "2014-07",
+            "2014-08",
+            "2014-09",
+            "2014-10",
+            "2014-11",
+            "2014-12",
+            "2015-01",
+            "2015-02",
+            "2015-03",
+            "2015-04",
+            "2015-05",
+            "2015-06",
+            "2015-07",
+            "2015-08",
+            "2015-09",
+            "2015-10",
+            "2015-11",
+            "2015-12",
+            "2016-01",
+            "2016-02",
+            "2016-03",
+            "2016-04",
+            "2016-05",
+            "2016-06",
+            "2016-07",
+            "2016-08",
+            "2016-09",
+            "2016-10",
+            "2016-11",
+            "2016-12",
+            "2017-01",
+            "2017-02",
+            "2017-03",
+            "2017-04",
+            "2017-05",
+            "2017-06",
+            "2017-07",
+            "2017-08",
+            "2017-09",
+            "2017-10",
+            "2017-11",
+            "2017-12",
+            "2018-01",
+            "2018-02",
+            "2018-03",
+            "2018-04",
+            "2018-05",
+            "2018-06",
+            "2018-07",
+            "2018-08",
+            "2018-09",
+            "2018-10",
+            "2018-11",
+            "2018-12",
+            "2019-01",
+            "2019-02",
+            "2019-03",
+            "2019-04",
+            "2019-05",
+            "2019-06",
+            "2019-07",
+            "2019-08",
+            "2019-09",
+            "2019-10",
+            "2019-11",
+            "2019-12",
+            "2020-01",
+            "2020-02",
+            "2020-03",
+            "2020-04",
+            "2020-05",
+            "2020-06",
+            "2020-07",
+            "2020-08",
+            "2020-09",
+            "2020-10",
+            "2020-11",
+            "2020-12",
+            "2021-01",
+            "2021-02",
+            "2021-03",
+            "2021-04",
+            "2021-05",
+            "2021-06",
+            "2021-07",
+            "2021-08",
+            "2021-09",
+            "2021-10",
+            "2021-11",
+            "2021-12",
+            "2022-01",
+            "2022-02",
+            "2022-03",
+            "2022-04",
+            "2022-05",
+            "2022-06",
+            "2022-07",
+            "2022-08",
+            "2022-09",
+            "2022-10",
+            "2022-11",
+            "2022-12",
+            "2023-01",
+            "2023-02",
+            "2023-03",
+            "2023-04",
+            "2023-05",
+            "2023-06",
+            "2023-07",
+            "2023-08",
+            "2023-09",
+            "2023-10",
+            "2023-11",
+            "2023-12",
+            "2024-01",
+            "2024-02",
+            "2024-03",
+            "2024-04",
+            "2024-05",
+            "2024-06",
+            "2024-07",
+            "2024-08",
+            "2024-09",
+            "2024-10",
+            "2024-11",
+            "2024-12",
+            "2025-01",
+            "2025-02",
+            "2025-03",
+            "2025-04",
+            "2025-05",
+            "2025-06",
+            "2025-07",
+            "2025-08",
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-02"
+          ],
+          "support_windows": [
+            {
+              "first": "2006-02",
+              "last": "2026-02",
+              "months": 241
+            }
+          ]
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_support_eligibility.json",
+          "json_pointer": "/macro_support/designs",
+          "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+          "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "event:/event",
+      "value": {
+        "administrative_exit_codes": [
+          "15",
+          "16",
+          "96"
+        ],
+        "competing_payoff_codes": [
+          "01"
+        ],
+        "credit_termination_codes": [
+          "02",
+          "03",
+          "09"
+        ],
+        "default_and_payoff_same_month": "ambiguous_event_order; quarantine from primary labeled sample",
+        "event_and_terminal_dates_disagree": "quarantine; no automatic date reconciliation",
+        "event_time": "first qualifying reporting/event month; never backdated",
+        "missing_state_implies_current": false,
+        "name": "first observed composite adverse mortgage event",
+        "numeric_delinquency_max": 99,
+        "numeric_delinquency_min": 3,
+        "prior_observed_event_excludes_incident_risk": true,
+        "reo_state": "RA",
+        "terminal_code_15_implies_default": false,
+        "unknown_state": "XX",
+        "unrecognized_codes": "fail closed; require reviewed protocol revision"
+      },
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/event",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "event:/labels",
+      "value": {
+        "ambiguous_event_order": {
+          "binary_default_12m": null,
+          "rule": "same-month default/payoff or unresolved event/exit contradiction"
+        },
+        "competing_payoff": {
+          "binary_default_12m": 0,
+          "rule": "verified payoff before default; facility risk ends; retain competing cause and time"
+        },
+        "insufficient_followup": {
+          "binary_default_12m": null,
+          "rule": "risk interval or coverage cannot be established"
+        },
+        "negative_survived_horizon": {
+          "binary_default_12m": 0,
+          "rule": "12 consecutive ascertainable non-event follow-up months without unresolved exit"
+        },
+        "not_incident_risk_eligible": {
+          "binary_default_12m": null,
+          "rule": "qualifying event at/before t0, insufficient lookback or unresolved pre-t0 history"
+        },
+        "positive_default": {
+          "binary_default_12m": 1,
+          "rule": "valid first event in offsets 1..12 before competing payoff and any earlier ascertainment gap"
+        },
+        "right_censored": {
+          "binary_default_12m": null,
+          "rule": "administrative cutoff, non-default sales/defect exit or first unknown/gap before horizon; retain last confirmed risk interval"
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/labels",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "event:/time",
+      "value": {
+        "first_payment_month_is_origination_date": false,
+        "horizon_months": 12,
+        "knowledge_time_status": "unverified in latest-release retrospective panel",
+        "minimum_consecutive_pre_t0_months": 6,
+        "origination_date_proxy_permitted": false,
+        "outcome_offsets": [
+          1,
+          12
+        ],
+        "primary_reentry_after_gap": false,
+        "real_time_pit_claim_permitted": false,
+        "t0": "nominal monthly reporting-period endpoint",
+        "unit": "calendar_month"
+      },
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "/time",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "m10:/split_counts",
+      "value": {
+        "development": {
+          "facilities": 42609,
+          "intervals": 1568661,
+          "defaults": 1904,
+          "payoffs": 25822
+        },
+        "reduced_development": {
+          "facilities": 54359,
+          "intervals": 2241245,
+          "defaults": 3652,
+          "payoffs": 35789
+        },
+        "evaluation_seen": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        },
+        "evaluation_unseen": {
+          "facilities": 17352,
+          "intervals": 652508,
+          "defaults": 588,
+          "payoffs": 7323
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/split_counts",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "m10:/protocol/splits",
+      "value": {
+        "development": [
+          "2010-09",
+          "2017-12"
+        ],
+        "reduced_development": [
+          "2006-02",
+          "2017-12"
+        ],
+        "purge": [
+          "2018-01",
+          "2018-12"
+        ],
+        "evaluation": [
+          "2019-01",
+          "2026-02"
+        ],
+        "role_salt": "track-b-macro-eligibility-v1",
+        "primary_vintages": [
+          2006,
+          2008,
+          2010,
+          2014
+        ],
+        "unseen_vintages": [
+          2018,
+          2020,
+          2022
+        ],
+        "virgin_holdout": false
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/protocol/splits",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "m10:/limitations",
+      "value": [
+        "Research mortgage hazards, not regulatory/IRB/IFRS9/underwriting or borrower-level PD.",
+        "Mortgage operational knowledge time is unverified retrospective disclosure; macro PIT alone does not cure this.",
+        "Delayed entry conditions on surviving facilities; payoff includes maturity and default is a monthly proxy.",
+        "Unseen cohort and unobserved development duration-band effects are reference/zero restrictions, not estimated effects.",
+        "IPCW assumes pooled independent administrative censoring; informative censoring is not ruled out.",
+        "Facility bootstrap conditions on the macro path; calendar uncertainty has only eight annual blocks, including partial 2026.",
+        "Previously inspected support outcomes mean this is locked temporal evaluation after support design, not a virgin holdout.",
+        "Rolling historical PIT CIF paths use subsequently observed macro information; prospective future paths remain unsolved.",
+        "Coefficients are conditional predictive associations; no causal shocks, fairness assessment or EAD/LGD/ECL claims.",
+        "Coefficient uncertainty is represented by prespecified fit sensitivity, not naive independent-row standard errors."
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "p12:/counts",
+      "value": {
+        "development": {
+          "facilities": 42609,
+          "intervals": 1568661,
+          "defaults": 1904,
+          "payoffs": 25822
+        },
+        "exploratory": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        }
+      },
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/counts",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "p12:/prespecification/population",
+      "value": "Exact Task10 primary development and seen-vintage temporal risk arrays",
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/prespecification/population",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "fact_id": "p12:/limitations",
+      "value": [
+        "Hypothesis generated from Tasks10/11 inspected outcomes; no independent validation available.",
+        "Freddie nominal-time loan variables lack historically archived knowledge-time verification.",
+        "Original coupon remains a proxy after modification; blank flag does not prove no modification.",
+        "PMMS national 30-year survey is not a personalized refinance offer; costs/eligibility unobserved.",
+        "Payoff endpoint combines payoff and maturity; refinancing purpose of an exit is unobserved.",
+        "Facility bootstrap conditions on realized calendar; only eight coarse year blocks including partial2026.",
+        "Survivor selection and cohort/period/age cannot be causally separated by this experiment.",
+        "CIF uses later rolling historical PIT paths, not a prospective entry-date macro forecast.",
+        "AJ/IPCW require unverified independent censoring; sparse cells suppressed.",
+        "No burnout, threshold search, retuning, outcome recalibration, regulatory PD or causal claims."
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/limitations",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    }
+  ],
+  "missing_information": {
+    "borrower_identity": "UNAVAILABLE",
+    "mortgage_operational_knowledge_time": "UNVERIFIED",
+    "exact_origination_date_from_first_payment": "PROHIBITED",
+    "release_specific_generalization": "Retrospective Release 47 research; source metadata do not establish historic operational availability"
+  }
+}

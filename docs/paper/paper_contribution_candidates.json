@@ -1,0 +1,145 @@
+{
+  "research_questions": [
+    {
+      "rank": 1,
+      "formulation": "Does the frozen PIT macro feature set improve temporal competing-risk probability quality relative to the mortgage baseline in the evaluated Freddie population?",
+      "causal": false,
+      "headline_ids": [
+        "H3",
+        "H4"
+      ]
+    },
+    {
+      "rank": 2,
+      "formulation": "How do payoff ranking and calibration diverge under temporal shift in the frozen mortgage competing-risk design?",
+      "causal": false,
+      "headline_ids": [
+        "H4"
+      ]
+    },
+    {
+      "rank": 3,
+      "formulation": "How do competing payoff and historical rolling PIT hazard mappings alter conditional cumulative incidence?",
+      "causal": false,
+      "headline_ids": [
+        "H2",
+        "H5"
+      ]
+    },
+    {
+      "rank": 4,
+      "formulation": "Does the exploratory asymmetric original-coupon versus PIT market-rate gap restore temporal probability performance?",
+      "causal": false,
+      "headline_ids": [
+        "H7"
+      ]
+    }
+  ],
+  "contributions": [
+    {
+      "category": "EMPIRICAL_FINDING",
+      "headline_id": "H3",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "NEGATIVE_RESULT",
+      "headline_id": "H4",
+      "claim_ids": [
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "METHOD",
+      "headline_id": "H2",
+      "claim_ids": [
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "DIAGNOSTIC_INSIGHT",
+      "headline_id": "H6",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ASSESSMENT"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "VALIDATION_DESIGN",
+      "headline_id": "H1",
+      "claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "PROPOSED_EXTERNAL_EXTENSION",
+      "headline_id": "H8",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ],
+      "original_method_novelty_claimed": false
+    },
+    {
+      "category": "REPRODUCIBILITY/GOVERNANCE",
+      "headline_id": "H8",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ],
+      "original_method_novelty_claimed": false
+    }
+  ],
+  "titles": [
+    {
+      "title": "Temporal Transport of Mortgage Competing-Risk Probabilities with Point-in-Time Macroeconomic Information",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "Ranking Gains and Calibration Losses in Temporally Shifted Mortgage Risk Models",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "When Mortgage Probabilities Fail to Travel Across Time: Default, Payoff, and Macroeconomic Information",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "Point-in-Time Macroeconomic Features and Temporal Deterioration in Freddie Mortgage Risk Modeling",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "Competing Payoff and Probability Calibration under Mortgage Temporal Shift",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "Mortgage Default and Payoff under Temporal Shift: A Frozen-Evidence Validation Study",
+      "status": "PROVISIONAL"
+    },
+    {
+      "title": "Temporal Mortgage Probability Transport and an Exploratory Refinancing-Incentive Study",
+      "status": "PROVISIONAL"
+    }
+  ]
+}

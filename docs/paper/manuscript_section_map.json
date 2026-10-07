@@ -1,0 +1,424 @@
+{
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "Introduction \u2014 motivation slots only",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ]
+    },
+    {
+      "section_id": "2",
+      "title": "Related Work \u2014 search plan only",
+      "claim_ids": []
+    },
+    {
+      "section_id": "3",
+      "title": "Problem Formulation",
+      "claim_ids": []
+    },
+    {
+      "section_id": "3.1",
+      "title": "Longitudinal mortgage risk",
+      "claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE"
+      ]
+    },
+    {
+      "section_id": "3.2",
+      "title": "Default and payoff as competing events",
+      "claim_ids": [
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF"
+      ]
+    },
+    {
+      "section_id": "3.3",
+      "title": "Temporal transport",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ]
+    },
+    {
+      "section_id": "3.4",
+      "title": "Point-in-time information constraint",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ]
+    },
+    {
+      "section_id": "4",
+      "title": "Data",
+      "claim_ids": [
+        "PD_SAMPLE",
+        "SURV_COUNTS"
+      ]
+    },
+    {
+      "section_id": "4.1",
+      "title": "Freddie source",
+      "claim_ids": [
+        "COHORT_COMPONENTS"
+      ]
+    },
+    {
+      "section_id": "4.2",
+      "title": "Cohort construction",
+      "claim_ids": [
+        "PD_COUNTS",
+        "SURV_COUNTS",
+        "COHORT_RECOVERY",
+        "COHORT_ROWS"
+      ]
+    },
+    {
+      "section_id": "4.3",
+      "title": "Event definitions",
+      "claim_ids": [
+        "SURV_DESIGN"
+      ]
+    },
+    {
+      "section_id": "4.4",
+      "title": "Censoring",
+      "claim_ids": [
+        "SURV_DESIGN"
+      ]
+    },
+    {
+      "section_id": "4.5",
+      "title": "Macro data",
+      "claim_ids": [
+        "PIT_SERIES",
+        "PIT_FEATURES",
+        "PIT_PROVENANCE",
+        "PIT_SUPPORT"
+      ]
+    },
+    {
+      "section_id": "4.6",
+      "title": "Data limitations",
+      "claim_ids": [
+        "PIT_GAPS",
+        "PD_LIMITS"
+      ]
+    },
+    {
+      "section_id": "5",
+      "title": "Methods",
+      "claim_ids": []
+    },
+    {
+      "section_id": "5.1",
+      "title": "12-month PD baseline",
+      "claim_ids": [
+        "PD_FEATURES"
+      ]
+    },
+    {
+      "section_id": "5.2",
+      "title": "Discrete-time competing risks",
+      "claim_ids": [
+        "SURV_DESIGN"
+      ]
+    },
+    {
+      "section_id": "5.3",
+      "title": "M0/M1/M2 ladder",
+      "claim_ids": [
+        "MACRO_ACTUAL_FEATURES"
+      ]
+    },
+    {
+      "section_id": "5.4",
+      "title": "Temporal validation",
+      "claim_ids": [
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER"
+      ]
+    },
+    {
+      "section_id": "5.5",
+      "title": "Calibration",
+      "claim_ids": [
+        "PD_CALIBRATION_INTERCEPT",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF"
+      ]
+    },
+    {
+      "section_id": "5.6",
+      "title": "CIF estimation",
+      "claim_ids": [
+        "MACRO_CIF_24_SUPPORT"
+      ]
+    },
+    {
+      "section_id": "5.7",
+      "title": "Cluster bootstrap",
+      "claim_ids": [
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ]
+    },
+    {
+      "section_id": "5.8",
+      "title": "Support diagnostics",
+      "claim_ids": [
+        "DIAG_SUPPORT"
+      ]
+    },
+    {
+      "section_id": "6",
+      "title": "Results",
+      "claim_ids": []
+    },
+    {
+      "section_id": "6.1",
+      "title": "Expanded PD results",
+      "claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE"
+      ]
+    },
+    {
+      "section_id": "6.2",
+      "title": "Competing-risk foundation",
+      "claim_ids": [
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF"
+      ]
+    },
+    {
+      "section_id": "6.3",
+      "title": "Macro development performance",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ]
+    },
+    {
+      "section_id": "6.4",
+      "title": "Temporal deterioration",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ]
+    },
+    {
+      "section_id": "6.5",
+      "title": "Discrimination versus calibration",
+      "claim_ids": [
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF"
+      ]
+    },
+    {
+      "section_id": "6.6",
+      "title": "Cumulative incidence",
+      "claim_ids": [
+        "MACRO_CIF_24_OBSERVED_PAYOFF",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "DIAG_CIF_COMPONENTS"
+      ]
+    },
+    {
+      "section_id": "7",
+      "title": "Diagnostic Analysis",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT"
+      ]
+    },
+    {
+      "section_id": "7.1",
+      "title": "Covariate support",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL"
+      ]
+    },
+    {
+      "section_id": "7.2",
+      "title": "Composition shift",
+      "claim_ids": [
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS"
+      ]
+    },
+    {
+      "section_id": "7.3",
+      "title": "Payoff instability",
+      "claim_ids": [
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL"
+      ]
+    },
+    {
+      "section_id": "7.4",
+      "title": "Calendar regimes",
+      "claim_ids": [
+        "DIAG_ANNUAL"
+      ]
+    },
+    {
+      "section_id": "7.5",
+      "title": "Limits of attribution",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ASSESSMENT"
+      ]
+    },
+    {
+      "section_id": "8",
+      "title": "Exploratory refinancing incentive",
+      "claim_ids": [
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PAIRED",
+        "REFI_DECISION",
+        "REFI_GAP"
+      ]
+    },
+    {
+      "section_id": "9",
+      "title": "Proposed external replication \u2014 no results",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ]
+    },
+    {
+      "section_id": "10",
+      "title": "Discussion \u2014 bounded implications slots",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "DIAG_SUPPORT",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ASSESSMENT",
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PAIRED",
+        "REFI_DECISION"
+      ]
+    },
+    {
+      "section_id": "11",
+      "title": "Limitations",
+      "claim_ids": [
+        "MACRO_LIMITS",
+        "PD_LIMITS",
+        "PIT_APC",
+        "REFI_LIMITS",
+        "FANNIE_PROVENANCE"
+      ]
+    },
+    {
+      "section_id": "12",
+      "title": "Reproducibility and governance",
+      "claim_ids": [
+        "MACRO_LEDGER",
+        "FANNIE_PROVENANCE"
+      ]
+    },
+    {
+      "section_id": "13",
+      "title": "Conclusion \u2014 verified claim slots only",
+      "claim_ids": [
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF"
+      ]
+    },
+    {
+      "section_id": "Appendix",
+      "title": "Supplement \u2014 sensitivities and provenance",
+      "claim_ids": [
+        "B3_FEASIBILITY",
+        "SURV_DURATION",
+        "MACRO_REDUCED_SENS",
+        "MACRO_RATE_SENS"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,750 @@
+{
+  "version": "task14-v1",
+  "new_experiments": false,
+  "experiments": [
+    {
+      "placement": "BACKGROUND_ONLY",
+      "description": "Earlier static public-data benchmark; no Track A result promoted to longitudinal evidence",
+      "population": null,
+      "experiment_id": "A",
+      "claim_ids": [],
+      "source_artifacts": [
+        {
+          "path": "docs/track_b/mortgage_research_protocol.json",
+          "json_pointer": "",
+          "sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+          "source_commit": "5fd4ac687e7311c0e6a7e3a760740b84127d06b7",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "SUPPLEMENT",
+      "description": "Small-sample feasibility only",
+      "population": {
+        "landmarks": 64304,
+        "loans": 982,
+        "positive_landmarks": 368,
+        "default_loans": 31
+      },
+      "experiment_id": "B3",
+      "claim_ids": [
+        "B3_FEASIBILITY"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/pd_baseline_validation.json",
+          "json_pointer": "",
+          "sha256_lf": "8dd5123a250787e33ea29b69fa7a93cc4c0bd1a9a326f23ec2a67296b7cf33cb",
+          "source_commit": "6fd505a84cabaac82a6835c461fe7ecfa2cc56cd",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "Expanded 12-month default-before-payoff landmark research",
+      "population": {
+        "primary": {
+          "landmarks": 1241045,
+          "loans": 19590,
+          "positive_landmarks": 7153,
+          "default_loans": 618
+        },
+        "development": {
+          "landmarks": 478796,
+          "loans": 13801,
+          "positive_landmarks": 2560,
+          "default_loans": 246
+        },
+        "evaluation": {
+          "landmarks": 128812,
+          "loans": 2423,
+          "positive_landmarks": 1072,
+          "default_loans": 95
+        }
+      },
+      "vintages": [
+        2010
+      ],
+      "development_window": {
+        "end": "2014-12"
+      },
+      "purge_window": "2015",
+      "evaluation_window": {
+        "start": "2016-01"
+      },
+      "unit": "monthly 12-month landmark",
+      "bootstrap": {
+        "draws": 1000,
+        "seed": 51005,
+        "unit": "loan_id",
+        "paired": true,
+        "scope": "fixed trained model; excludes training uncertainty and unknown borrower links"
+      },
+      "prior_exposure": "Tasks3/4 aggregate outcomes and nested Task3 scores already inspected; Task5 model metrics sealed",
+      "experiment_id": "B5",
+      "claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_AVERAGE_PRECISION",
+        "PD_LOGISTIC_BRIER",
+        "PD_LOGISTIC_LOG_LOSS",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_XGBOOST_ROC_AUC",
+        "PD_XGBOOST_AVERAGE_PRECISION",
+        "PD_XGBOOST_BRIER",
+        "PD_XGBOOST_LOG_LOSS",
+        "PD_XGBOOST_MEAN_PROBABILITY",
+        "PD_XGBOOST_OBSERVED_RATE",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE",
+        "PD_COUNTS",
+        "PD_CHAMPION",
+        "PD_FEATURES",
+        "PD_HAZARD",
+        "PD_PSI",
+        "PD_DISTRESS",
+        "PD_PAIRED",
+        "PD_LIMITS",
+        "PD_SAMPLE"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/expanded_pd_validation.json",
+          "json_pointer": "",
+          "sha256_lf": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "docs/track_b/expanded_pd_design.json",
+          "json_pointer": "",
+          "sha256_lf": "b8c5b3dbac018c3e8a994445e9a233894131c855d97dd10b3a25e4534a685a63",
+          "source_commit": "4a70fd1d00f9b70050b3399f1f6401df2043ff6e",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/sample_expansion_feasibility.json",
+          "json_pointer": "",
+          "sha256_lf": "d0c4ff78d79cb0ce28aa5be64b920fb792aeafb107b11676c32f7be8c4c68075",
+          "source_commit": "a8d29f1f8797875e3e3ea63fe0f14cf4e76b0cd0",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "Conditional-entry competing-risk survival; no lifetime-from-origination claim",
+      "population": {
+        "development": {
+          "facilities": 13813,
+          "risk_intervals": 471976,
+          "default_facilities": 212,
+          "payoff_facilities": 6577,
+          "censored_facilities": 7024
+        },
+        "evaluation": {
+          "facilities": 2423,
+          "risk_intervals": 132409,
+          "default_facilities": 95,
+          "payoff_facilities": 2001,
+          "censored_facilities": 327
+        }
+      },
+      "vintages": [
+        2010
+      ],
+      "development_window": {
+        "end": "2014-12"
+      },
+      "purge_window": "2015",
+      "evaluation_window": {
+        "start": "2016-01"
+      },
+      "unit": "monthly risk interval or facility-entry horizon, specified by metric",
+      "bootstrap": {
+        "replicates": 400,
+        "seed": 61006,
+        "unit": "facility",
+        "reestimate_censoring_and_AJ_each_draw": true,
+        "models_fixed": true,
+        "scope": "No model training, borrower clustering or future macro uncertainty"
+      },
+      "prior_exposure": "Own protocol frozen before Task6 construction/aggregate audit. Count-audit access logged separately; model artifacts/specification frozen before Task6 predictive/nonparametric temporal metrics. Prior Task4/5 temporal outcomes already inspected; no claim of virgin outcomes. One consumed Task6 study; silent repeat prohibited.",
+      "experiment_id": "B6",
+      "claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "PIT macro provenance, seven-vintage recovery and support constraints",
+      "population": {
+        "PRIMARY": {
+          "sample_facilities_retained": 140000,
+          "contributing_facilities": 119629,
+          "eligible_intervals": 5541179,
+          "unique_default_facilities": 5617,
+          "unique_payoff_facilities": 76729,
+          "censored_facilities": 37283,
+          "no_eligible_intervals": 20371
+        },
+        "REDUCED": {
+          "sample_facilities_retained": 140000,
+          "contributing_facilities": 136389,
+          "eligible_intervals": 6498466,
+          "unique_default_facilities": 8104,
+          "unique_payoff_facilities": 90946,
+          "censored_facilities": 37339,
+          "no_eligible_intervals": 3611
+        }
+      },
+      "vintages": [
+        2006,
+        2008,
+        2010,
+        2014,
+        2018,
+        2020,
+        2022
+      ],
+      "unit": "facility risk intervals and distinct macro calendar months",
+      "experiment_id": "B7_9A",
+      "claim_ids": [
+        "COHORT_RECOVERY",
+        "COHORT_ROWS",
+        "COHORT_HASH",
+        "COHORT_COMPONENTS",
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS",
+        "PIT_SUPPORT",
+        "PIT_COUNTS",
+        "PIT_APC",
+        "PIT_RATES"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_design_validation.json",
+          "json_pointer": "",
+          "sha256_lf": "c8fed29cb3c92b47b1d51fe3804c9ea854546fcca89c2dfd1f824f6b221e17a8",
+          "source_commit": "de6eaae43d6c49ce81f2aaf8a5899c53f8420669",
+          "role": "evidence",
+          "evidence_level": 3
+        },
+        {
+          "path": "reports/track_b/pit_macro_data_audit_task9_api_v5.json",
+          "json_pointer": "",
+          "sha256_lf": "2ba241a67c46b08d2dd60961dd5cdfede35200e3b427cd5e19ffaec08470ae00",
+          "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_support_eligibility.json",
+          "json_pointer": "",
+          "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+          "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/multi_vintage_recovery_audit.json",
+          "json_pointer": "",
+          "sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/multi_vintage_recovery_dataset_manifest.json",
+          "json_pointer": "",
+          "sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f",
+          "source_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "Primary macro temporal validation; previously inspected support outcomes",
+      "population": {
+        "development": {
+          "facilities": 42609,
+          "intervals": 1568661,
+          "defaults": 1904,
+          "payoffs": 25822
+        },
+        "reduced_development": {
+          "facilities": 54359,
+          "intervals": 2241245,
+          "defaults": 3652,
+          "payoffs": 35789
+        },
+        "evaluation_seen": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        },
+        "evaluation_unseen": {
+          "facilities": 17352,
+          "intervals": 652508,
+          "defaults": 588,
+          "payoffs": 7323
+        }
+      },
+      "vintages": [
+        2006,
+        2008,
+        2010,
+        2014
+      ],
+      "development_window": [
+        "2010-09",
+        "2017-12"
+      ],
+      "purge_window": [
+        "2018-01",
+        "2018-12"
+      ],
+      "evaluation_window": [
+        "2019-01",
+        "2026-02"
+      ],
+      "unit": "monthly risk interval; first eligible entry per facility for CIF",
+      "bootstrap": {
+        "unit": "facility",
+        "replicates": 1000,
+        "seed": 61035,
+        "minimum_valid": 950,
+        "interval": "Percentile95 paired fixed-model differences",
+        "auc_min_events": 20,
+        "calendar_sensitivity": "1000 calendar-year block resamples, seed61036",
+        "no_model_refitting": true
+      },
+      "prior_exposure": {
+        "state": "CONSUMED",
+        "registration_sha256": "3dab5d081c99b70ad550089adbfa7fb7961436a44afc414f074af971111861d4",
+        "population_counts": {
+          "facilities": 22971,
+          "intervals": 901447,
+          "defaults": 868,
+          "payoffs": 11146
+        },
+        "primary_counts": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        },
+        "code_sha256_lf": {
+          "protocol.py": "3fa554f00c00cb8f63cf2b40ec97751cd582519d976502b89b277b05d5222a68",
+          "data.py": "b3b7f1a6114255ff6ce3f78fd3675e7ef5fe525b7c5cda121ff9800eee72aa82",
+          "models.py": "a5dff01833557288b3c0765b3dfbfa7c218781334f4b42455d351b05bd462c72",
+          "ledger.py": "18d091fdf7d25db0041c9160d4959c7b99ae42734c69fd4d6c9a0d12aabb9a83",
+          "metrics.py": "b810288aebdda591b4cfdd8dbb677d944fdf578ae4624c372f5ab3bd455552a8",
+          "cif.py": "6d80cb45b57433a5f999bd775a78603705c5aa1862741c8cca2d71971e2465f9",
+          "study.py": "9120f6a4436704a709c73ba49bd8a53004b8462ea8e6dd577f40ca6267a3051b"
+        },
+        "prediction_generation_count": 1,
+        "namespace": "TASK10_MACRO_HAZARD",
+        "virgin_holdout": false
+      },
+      "future_macro_path": "Historical rolling PIT paths, NOT entry-time known forecasts",
+      "experiment_id": "B10",
+      "claim_ids": [
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M0_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_M0_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_M0_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_M0_PAYOFF_AUC",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_DEFAULT_BRIER",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M1_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_M1_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_M1_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_DEFAULT_BRIER",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_M2_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_M2_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_DEFAULT_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_RATE_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_RATE_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_RATE_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_RATE_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_RATE_PAYOFF_AUC",
+        "MACRO_PRIMARY_RATE_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_RATE_DEFAULT_BRIER",
+        "MACRO_PRIMARY_RATE_PAYOFF_BRIER",
+        "MACRO_PRIMARY_RATE_DEFAULT_AUC",
+        "MACRO_PRIMARY_RATE_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_REDUCED_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_REDUCED_M1_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_REDUCED_M1_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_REDUCED_M1_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_REDUCED_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_REDUCED_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_REDUCED_M1_DEFAULT_BRIER",
+        "MACRO_PRIMARY_REDUCED_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_REDUCED_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_REDUCED_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_REDUCED_M2_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_REDUCED_M2_DEFAULT_BRIER",
+        "MACRO_DEVELOPMENT_REDUCED_M2_PAYOFF_BRIER",
+        "MACRO_DEVELOPMENT_REDUCED_M2_DEFAULT_AUC",
+        "MACRO_DEVELOPMENT_REDUCED_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_REDUCED_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_REDUCED_M2_DEFAULT_BRIER",
+        "MACRO_PRIMARY_REDUCED_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_REDUCED_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_REDUCED_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_DEFAULT_BRIER",
+        "MACRO_DELTA_FACILITY_PAYOFF_BRIER",
+        "MACRO_DELTA_FACILITY_DEFAULT_AUC",
+        "MACRO_DELTA_FACILITY_PAYOFF_AUC",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_DEFAULT_BRIER",
+        "MACRO_DELTA_CALENDAR_PAYOFF_BRIER",
+        "MACRO_CAL_M1_DEFAULT",
+        "MACRO_CAL_M2_DEFAULT",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_CALENDAR",
+        "MACRO_VINTAGE",
+        "MACRO_PANDEMIC",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_REDUCED_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_12_SUPPORT",
+        "MACRO_CIF_12_M1_DEFAULT",
+        "MACRO_CIF_12_M2_DEFAULT",
+        "MACRO_CIF_12_OBSERVED_DEFAULT",
+        "MACRO_CIF_12_M1_PAYOFF",
+        "MACRO_CIF_12_M2_PAYOFF",
+        "MACRO_CIF_12_OBSERVED_PAYOFF",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_OBSERVED_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF",
+        "MACRO_CIF_36_SUPPORT",
+        "MACRO_CIF_36_M1_DEFAULT",
+        "MACRO_CIF_36_M2_DEFAULT",
+        "MACRO_CIF_36_OBSERVED_DEFAULT",
+        "MACRO_CIF_36_M1_PAYOFF",
+        "MACRO_CIF_36_M2_PAYOFF",
+        "MACRO_CIF_36_OBSERVED_PAYOFF",
+        "MACRO_CIF_60_SUPPORT",
+        "MACRO_CIF_60_M1_DEFAULT",
+        "MACRO_CIF_60_M2_DEFAULT",
+        "MACRO_CIF_60_OBSERVED_DEFAULT",
+        "MACRO_CIF_60_M1_PAYOFF",
+        "MACRO_CIF_60_M2_PAYOFF",
+        "MACRO_CIF_60_OBSERVED_PAYOFF",
+        "R_CAUSAL",
+        "R_EXTERNAL",
+        "R_REGULATORY",
+        "R_REFI_SOLVES",
+        "R_BEHAVIOR",
+        "R_LIFETIME",
+        "R_GENERAL",
+        "R_INDEPENDENCE"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "POST_VALIDATION_DIAGNOSTIC; no causal attribution",
+      "population": {
+        "development": {
+          "facilities": 42609,
+          "intervals": 1568661,
+          "defaults": 1904,
+          "payoffs": 25822
+        },
+        "evaluation": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        }
+      },
+      "vintages": [
+        2006,
+        2008,
+        2010,
+        2014
+      ],
+      "development_window": [
+        "2010-09",
+        "2017-12"
+      ],
+      "purge_window": [
+        "2018-01",
+        "2018-12"
+      ],
+      "evaluation_window": [
+        "2019-01",
+        "2026-02"
+      ],
+      "unit": "risk intervals, calendar months, and diagnostic refit windows",
+      "prior_exposure": "Task 10 inspected outcomes; same-sample oracle and post-hoc frozen-score diagnostics",
+      "experiment_id": "B11",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+        "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M",
+        "DIAG_GEOMETRY_2010_2013",
+        "DIAG_GEOMETRY_2014_2017",
+        "DIAG_GEOMETRY_2019_2021",
+        "DIAG_GEOMETRY_2022_2025",
+        "MECHANISM_1",
+        "MECHANISM_2",
+        "MECHANISM_3",
+        "MECHANISM_4",
+        "MECHANISM_5",
+        "MECHANISM_6",
+        "MECHANISM_7",
+        "MECHANISM_8"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "MAIN_TEXT",
+      "description": "EXPLORATORY_ONLY refinancing hypothesis; no independent validation",
+      "population": {
+        "development": {
+          "facilities": 42609,
+          "intervals": 1568661,
+          "defaults": 1904,
+          "payoffs": 25822
+        },
+        "exploratory": {
+          "facilities": 5619,
+          "intervals": 248939,
+          "defaults": 280,
+          "payoffs": 3823
+        }
+      },
+      "vintages": [
+        2006,
+        2008,
+        2010,
+        2014
+      ],
+      "development_window": [
+        "2010-09",
+        "2017-12"
+      ],
+      "purge_window": [
+        "2018-01",
+        "2018-12"
+      ],
+      "evaluation_window": [
+        "2019-01",
+        "2026-02"
+      ],
+      "unit": "monthly risk interval; facility entry for CIF",
+      "bootstrap": {
+        "draws": 1000,
+        "facility_seed": 61201,
+        "calendar_seed": 61202,
+        "minimum_valid": 950,
+        "calendar_blocks": "Years, not independent months",
+        "no_refits": true,
+        "independent_validation": false
+      },
+      "prior_exposure": "Hypothesis generated from Tasks10/11 inspected outcomes; no independent validation available.",
+      "future_macro_path": "Historical rolling PIT rate path, NOT known-at-entry prospective forecast",
+      "experiment_id": "B12",
+      "claim_ids": [
+        "REFI_DEVELOPMENT_P0_JOINT_LOG_LOSS",
+        "REFI_DEVELOPMENT_P0_PAYOFF_BRIER",
+        "REFI_DEVELOPMENT_P0_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P0_DEFAULT_BRIER",
+        "REFI_DEVELOPMENT_P0_DEFAULT_AUC",
+        "REFI_EXPLORATORY_P0_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P0_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P0_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P0_DEFAULT_BRIER",
+        "REFI_EXPLORATORY_P0_DEFAULT_AUC",
+        "REFI_DEVELOPMENT_P1_JOINT_LOG_LOSS",
+        "REFI_DEVELOPMENT_P1_PAYOFF_BRIER",
+        "REFI_DEVELOPMENT_P1_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P1_DEFAULT_BRIER",
+        "REFI_DEVELOPMENT_P1_DEFAULT_AUC",
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P1_DEFAULT_BRIER",
+        "REFI_EXPLORATORY_P1_DEFAULT_AUC",
+        "REFI_DEVELOPMENT_P2_JOINT_LOG_LOSS",
+        "REFI_DEVELOPMENT_P2_PAYOFF_BRIER",
+        "REFI_DEVELOPMENT_P2_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P2_DEFAULT_BRIER",
+        "REFI_DEVELOPMENT_P2_DEFAULT_AUC",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P2_DEFAULT_BRIER",
+        "REFI_EXPLORATORY_P2_DEFAULT_AUC",
+        "REFI_DEVELOPMENT_LINEAR_JOINT_LOG_LOSS",
+        "REFI_DEVELOPMENT_LINEAR_PAYOFF_BRIER",
+        "REFI_DEVELOPMENT_LINEAR_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_LINEAR_DEFAULT_BRIER",
+        "REFI_DEVELOPMENT_LINEAR_DEFAULT_AUC",
+        "REFI_EXPLORATORY_LINEAR_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_LINEAR_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_LINEAR_PAYOFF_AUC",
+        "REFI_EXPLORATORY_LINEAR_DEFAULT_BRIER",
+        "REFI_EXPLORATORY_LINEAR_DEFAULT_AUC",
+        "REFI_DEVELOPMENT_P3_JOINT_LOG_LOSS",
+        "REFI_DEVELOPMENT_P3_PAYOFF_BRIER",
+        "REFI_DEVELOPMENT_P3_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P3_DEFAULT_BRIER",
+        "REFI_DEVELOPMENT_P3_DEFAULT_AUC",
+        "REFI_EXPLORATORY_P3_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P3_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P3_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P3_DEFAULT_BRIER",
+        "REFI_EXPLORATORY_P3_DEFAULT_AUC",
+        "REFI_PRESPEC",
+        "REFI_PRESPEC_HASH",
+        "REFI_GAP",
+        "REFI_PAIRED",
+        "REFI_CAL",
+        "REFI_CALENDAR",
+        "REFI_GROUPS",
+        "REFI_CIF",
+        "REFI_DECISION",
+        "REFI_LIMITS"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    },
+    {
+      "placement": "SUPPLEMENT",
+      "description": "Proposed external replication awaiting provenance closure and protocol freeze; no results",
+      "population": null,
+      "unit": null,
+      "protocol_status": "DRAFT_NOT_YET_AUTHORIZED",
+      "task13a_authorized": false,
+      "experiment_id": "B13_13S",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE",
+        "R_FANNIE_SEALED",
+        "R_FANNIE_RESULT"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/fannie_source_provenance_closure.json",
+          "json_pointer": "",
+          "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+          "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+          "role": "evidence",
+          "evidence_level": 1
+        },
+        {
+          "path": "docs/track_b/fannie_external_replication_protocol.json",
+          "json_pointer": "",
+          "sha256_lf": "fd718fa4e1c01a4200051c6dc598cd894f73678dc98cd79f7b7a10ff6908706a",
+          "source_commit": "f855163e3dfbfea1798dddb1ce5a05c7d0bfb88c",
+          "role": "evidence",
+          "evidence_level": 1
+        }
+      ]
+    }
+  ]
+}

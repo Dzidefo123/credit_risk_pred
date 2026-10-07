@@ -1,0 +1,1231 @@
+{
+  "figures": [
+    {
+      "figure_id": "F1",
+      "purpose": "Research/data/validation architecture",
+      "claim_ids": [
+        "PIT_SUPPORT",
+        "PD_SAMPLE",
+        "MACRO_LEDGER"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_support_eligibility.json",
+          "json_pointer": "/macro_support/designs",
+          "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+          "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/sample_expansion_feasibility.json",
+          "json_pointer": "/sample",
+          "sha256_lf": "d0c4ff78d79cb0ce28aa5be64b920fb792aeafb107b11676c32f7be8c4c68075",
+          "source_commit": "a8d29f1f8797875e3e3ea63fe0f14cf4e76b0cd0",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/ledger",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "PIT_SUPPORT",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_support_eligibility.json",
+              "json_pointer": "/macro_support/designs",
+              "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+              "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_support_eligibility.json",
+              "json_pointer": "/finalized_validation_design",
+              "sha256_lf": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+              "source_commit": "1978ec4655a585f4ab0d3bcc2bd6a8442b1c0090",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "PD_SAMPLE",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/sample_expansion_feasibility.json",
+              "json_pointer": "/sample",
+              "sha256_lf": "d0c4ff78d79cb0ce28aa5be64b920fb792aeafb107b11676c32f7be8c4c68075",
+              "source_commit": "a8d29f1f8797875e3e3ea63fe0f14cf4e76b0cd0",
+              "role": "point_estimate",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_LEDGER",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/ledger",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F2",
+      "purpose": "Competing-risk state diagram and descriptive net-risk/CIF contrast",
+      "claim_ids": [
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/protocol",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/horizon_results/60/observed/naive_net_default",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/survival_competing_risk_validation.json",
+          "json_pointer": "/horizon_results/60/observed/default_cif",
+          "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+          "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "SURV_DESIGN",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "SURV_60_NAIVE_NET_DEFAULT",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/horizon_results/60/observed/naive_net_default",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "SURV_60_DEFAULT_CIF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/horizon_results/60/observed/default_cif",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/uncertainty/intervals/60/default_cif",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "uncertainty",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/survival_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+              "source_commit": "33494664727f44d68f3432cec2334b05468186f9",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F3",
+      "purpose": "Development versus temporal model scores",
+      "claim_ids": [
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/development/M0/scores/joint_log_loss",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/development/M1/scores/joint_log_loss",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/development/M2/scores/joint_log_loss",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M1/scores/joint_log_loss",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M2/scores/joint_log_loss",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/paired_facility/intervals/joint_log_loss/delta",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/paired_calendar/intervals/joint_log_loss/delta",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/development/M0/scores/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/development/M1/scores/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/development/M2/scores/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M1/scores/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M2/scores/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/paired_facility/intervals/joint_log_loss/delta",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/paired_facility/intervals/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "uncertainty",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/paired_calendar/intervals/joint_log_loss/delta",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/paired_calendar/intervals/joint_log_loss",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "uncertainty",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F4",
+      "purpose": "Temporal macro support/extrapolation",
+      "claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/macro_shift/multivariate/evaluation_outside_reference_months",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/macro_shift/distinct_month_weighted/unemployment_level",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/macro_shift/distinct_month_weighted/mortgage_30y_level",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/macro_shift/distinct_month_weighted/hpi_yoy",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "DIAG_SUPPORT",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/macro_shift/multivariate/evaluation_outside_reference_months",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/macro_shift/distinct_month_weighted/unemployment_level",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/macro_shift/distinct_month_weighted/mortgage_30y_level",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "DIAG_RANGE_HPI_YOY",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/macro_shift/distinct_month_weighted/hpi_yoy",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F5",
+      "purpose": "Payoff discrimination versus calibration; annual panels",
+      "claim_ids": [
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "DIAG_ANNUAL"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M1/scores/payoff_auc",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M2/scores/payoff_auc",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M1/scores/payoff_brier",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M2/scores/payoff_brier",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M1/calibration/payoff",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/primary/M2/calibration/payoff",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/annual_calibration",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "MACRO_PRIMARY_M1_PAYOFF_AUC",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M1/scores/payoff_auc",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_PRIMARY_M2_PAYOFF_AUC",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M2/scores/payoff_auc",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M1/scores/payoff_brier",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M2/scores/payoff_brier",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_CAL_M1_PAYOFF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M1/calibration/payoff",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_CAL_M2_PAYOFF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/primary/M2/calibration/payoff",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "DIAG_ANNUAL",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/annual_calibration",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F6",
+      "purpose": "Observed versus modeled conditional CIF, rolling historical PIT",
+      "claim_ids": [
+        "MACRO_CIF_24_OBSERVED_PAYOFF",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "DIAG_CIF_COMPONENTS"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/cif/horizons/24/models/M1/payoff/observed_default_cif",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/cif/horizons/24/models/M1/payoff/mean_predicted_cif",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_competing_risk_validation.json",
+          "json_pointer": "/cif/horizons/24/models/M2/payoff/mean_predicted_cif",
+          "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+          "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/macro_signal_attribution_stability.json",
+          "json_pointer": "/cif/horizons",
+          "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+          "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "MACRO_CIF_24_OBSERVED_PAYOFF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/cif/horizons/24/models/M1/payoff/observed_default_cif",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_CIF_24_M1_PAYOFF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/cif/horizons/24/models/M1/payoff/mean_predicted_cif",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "MACRO_CIF_24_M2_PAYOFF",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/cif/horizons/24/models/M2/payoff/mean_predicted_cif",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_competing_risk_validation.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+              "source_commit": "3108a9134fc17c3b359999f11b5767cf1332b35f",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "DIAG_CIF_COMPONENTS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/cif/horizons",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/macro_signal_attribution_stability.json",
+              "json_pointer": "/protocol",
+              "sha256_lf": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+              "source_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F7",
+      "purpose": "Exploratory refinancing-gap shift and P1/P2 comparison",
+      "claim_ids": [
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PAIRED",
+        "REFI_DECISION",
+        "REFI_GAP"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/metrics/P1/joint_log_loss",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/metrics/P2/joint_log_loss",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/metrics/P1/payoff_auc",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/metrics/P2/payoff_auc",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/paired",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/decision",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+          "json_pointer": "/gap_shift",
+          "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+          "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+          "role": "point_estimate",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "MAIN_TEXT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": [
+        {
+          "claim_id": "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/metrics/P1/joint_log_loss",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/metrics/P2/joint_log_loss",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/metrics/P1/payoff_auc",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/metrics/P2/payoff_auc",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_PAIRED",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/paired",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_DECISION",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/decision",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        },
+        {
+          "claim_id": "REFI_GAP",
+          "source_artifacts": [
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/gap_shift",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "point_estimate",
+              "evidence_level": 1
+            },
+            {
+              "path": "reports/track_b/refinancing_incentive_payoff_research.json",
+              "json_pointer": "/prespecification",
+              "sha256_lf": "777f9e9b2e4dea1664aa2f98e589cae4d27f00255cb33c89c427dffc492d5195",
+              "source_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+              "role": "scope",
+              "evidence_level": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "figure_id": "F8",
+      "purpose": "Freddie evidence to proposed Fannie extension",
+      "claim_ids": [
+        "FANNIE_PROPOSED",
+        "FANNIE_PROVENANCE"
+      ],
+      "source_artifacts": [
+        {
+          "path": "reports/track_b/fannie_source_provenance_closure.json",
+          "json_pointer": "/protocol_status",
+          "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+          "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+          "role": "method_or_status",
+          "evidence_level": 1
+        },
+        {
+          "path": "reports/track_b/fannie_source_provenance_closure.json",
+          "json_pointer": "/decision",
+          "sha256_lf": "2939db61cefa70093e7362a93220ccdcd979247ca4e58e628153d03b5220274e",
+          "source_commit": "aa6eb3a001429d362c7fd76a45b9affc4995846f",
+          "role": "method_or_status",
+          "evidence_level": 1
+        }
+      ],
+      "data_needed": "Only pinned aggregate values and documented design; each quantitative cell must use a claim JSON pointer",
+      "can_generate_from_existing_frozen_artifacts": true,
+      "requires_raw_data": false,
+      "requires_new_calculation": false,
+      "main_or_supplement": "SUPPLEMENT",
+      "status": "PLAN_ONLY_NOT_GENERATED",
+      "scope": "Redrawing/formatting frozen values permitted in Task 15; new curves, bins, bootstrap or outcome metrics prohibited",
+      "result_cells": []
+    }
+  ],
+  "raw_only_candidates": [
+    {
+      "purpose": "New borrower-level curves, new calibration bins or new uncertainty bands",
+      "requires_raw_data": true,
+      "requires_new_calculation": true,
+      "status": "DO_NOT_GENERATE"
+    }
+  ]
+}
