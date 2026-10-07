@@ -1,0 +1,2655 @@
+{
+  "version": "task13-v1",
+  "classifications": [
+    "DIRECTLY_COMPATIBLE",
+    "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+    "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+    "PROVIDER_SPECIFIC",
+    "UNAVAILABLE",
+    "SEMANTICS_UNRESOLVED"
+  ],
+  "scope": "Documentation semantics only; no loan-value interpretation",
+  "fields": [
+    {
+      "canonical": "loan_id",
+      "freddie": {
+        "field": "loan_id",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 20
+          },
+          {
+            "file": "performance",
+            "position": 1
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Loan Identifier",
+        "positions": [
+          2
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Loan Identifier; provider meaning preserved",
+      "units": {
+        "freddie": "facility ID",
+        "fannie": "facility ID",
+        "canonical": "facility ID"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Namespace provider; private12-character ID; NOT borrower identity",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Namespace provider; private12-character ID; NOT borrower identity; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "Namespace provider; private12-character ID; NOT borrower identity",
+      "citations": [
+        "layout:positions 2",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Namespace provider; private12-character ID; NOT borrower identity"
+    },
+    {
+      "canonical": "origination_month",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Origination Date",
+        "positions": [
+          14
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Origination Date; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "MMYYYY->YYYY-MM; Freddie has no explicit note month; no fabrication",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "MMYYYY->YYYY-MM; Freddie has no explicit note month; no fabrication; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "MMYYYY->YYYY-MM; Freddie has no explicit note month; no fabrication",
+      "citations": [
+        "layout:positions 14",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MMYYYY->YYYY-MM; Freddie has no explicit note month; no fabrication"
+    },
+    {
+      "canonical": "first_payment_month",
+      "freddie": {
+        "field": "first_payment_month",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 2
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "First Payment Date",
+        "positions": [
+          15
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "First Payment Date; provider meaning preserved",
+      "units": {
+        "freddie": "calendar month",
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "MMYYYY->YYYY-MM; shared scheduled-first-payment clock",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "MMYYYY->YYYY-MM; shared scheduled-first-payment clock; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "MMYYYY->YYYY-MM; shared scheduled-first-payment clock",
+      "citations": [
+        "layout:positions 15",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MMYYYY->YYYY-MM; shared scheduled-first-payment clock"
+    },
+    {
+      "canonical": "orig_upb",
+      "freddie": {
+        "field": "orig_upb",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 11
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Original UPB",
+        "positions": [
+          10
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Original UPB; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Rounded dollars; retain precision difference; log1p only after nonnegative gate",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Rounded dollars; retain precision difference; log1p only after nonnegative gate; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Rounded dollars; retain precision difference; log1p only after nonnegative gate",
+      "citations": [
+        "layout:positions 10",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Rounded dollars; retain precision difference; log1p only after nonnegative gate"
+    },
+    {
+      "canonical": "orig_interest_rate",
+      "freddie": {
+        "field": "orig_interest_rate",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 13
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Original Interest Rate",
+        "positions": [
+          8
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Original Interest Rate; provider meaning preserved",
+      "units": {
+        "freddie": "percent",
+        "fannie": "percent",
+        "canonical": "percent"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "No fraction conversion; valid(0,100); blank unknown",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "No fraction conversion; valid(0,100); blank unknown; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "No fraction conversion; valid(0,100); blank unknown",
+      "citations": [
+        "layout:positions 8",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "No fraction conversion; valid(0,100); blank unknown"
+    },
+    {
+      "canonical": "original_loan_term",
+      "freddie": {
+        "field": "original_loan_term",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 22
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Original Loan Term",
+        "positions": [
+          13
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Original Loan Term; provider meaning preserved",
+      "units": {
+        "freddie": "months",
+        "fannie": "months",
+        "canonical": "months"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Retain months; product-population difference separate",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Retain months; product-population difference separate; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "Retain months; product-population difference separate",
+      "citations": [
+        "layout:positions 13",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Retain months; product-population difference separate"
+    },
+    {
+      "canonical": "orig_credit_score",
+      "freddie": {
+        "field": "orig_credit_score",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 1
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Borrower/Co-Borrower Origination FICO; Origination Classic FICO",
+        "positions": [
+          24,
+          25,
+          111
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Borrower/Co-Borrower Origination FICO; Origination Classic FICO; provider meaning preserved",
+      "units": {
+        "freddie": "FICO points",
+        "fannie": "FICO points",
+        "canonical": "FICO points"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Legacy min available24/25;111 isolated by activity regime;24/25 cease March2026,111 starts December 2025; no future backfill; not VantageScore",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Legacy min available24/25;111 isolated by activity regime;24/25 cease March2026,111 starts December 2025; no future backfill; not VantageScore; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Legacy min available24/25;111 isolated by activity regime;24/25 cease March2026,111 starts December 2025; no future backfill; not VantageScore",
+      "citations": [
+        "layout:positions 24,25,111",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Legacy min available24/25;111 isolated by activity regime;24/25 cease March2026,111 starts December 2025; no future backfill; not VantageScore"
+    },
+    {
+      "canonical": "orig_ltv",
+      "freddie": {
+        "field": "orig_ltv",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 12
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Original LTV",
+        "positions": [
+          20
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Original LTV; provider meaning preserved",
+      "units": {
+        "freddie": "percent",
+        "fannie": "percent",
+        "canonical": "percent"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Blank unknown or>97 Primary; do not infer masked value",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Blank unknown or>97 Primary; do not infer masked value; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Blank unknown or>97 Primary; do not infer masked value",
+      "citations": [
+        "layout:positions 20",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Blank unknown or>97 Primary; do not infer masked value"
+    },
+    {
+      "canonical": "orig_cltv",
+      "freddie": {
+        "field": "orig_cltv",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 9
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Original CLTV",
+        "positions": [
+          21
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Original CLTV; provider meaning preserved",
+      "units": {
+        "freddie": "percent",
+        "fannie": "percent",
+        "canonical": "percent"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Includes drawn subordinate HELOC; valuation differences preserved",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Includes drawn subordinate HELOC; valuation differences preserved; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Includes drawn subordinate HELOC; valuation differences preserved",
+      "citations": [
+        "layout:positions 21",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Includes drawn subordinate HELOC; valuation differences preserved"
+    },
+    {
+      "canonical": "orig_dti",
+      "freddie": {
+        "field": "orig_dti",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 10
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "DTI",
+        "positions": [
+          23
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "DTI; provider meaning preserved",
+      "units": {
+        "freddie": "percent",
+        "fannie": "percent",
+        "canonical": "percent"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Blank outside allowable range/unknown/HARP; Freddie999 distinct",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Blank outside allowable range/unknown/HARP; Freddie999 distinct; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Blank outside allowable range/unknown/HARP; Freddie999 distinct",
+      "citations": [
+        "layout:positions 23",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Blank outside allowable range/unknown/HARP; Freddie999 distinct"
+    },
+    {
+      "canonical": "loan_purpose",
+      "freddie": {
+        "field": "loan_purpose",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 21
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Loan Purpose",
+        "positions": [
+          27
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Loan Purpose; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Current glossary labels R Refinance, not explicitly No Cash Out. Preserve sourceR separately; conceptual category comparison, no silent equivalence.",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Current glossary labels R Refinance, not explicitly No Cash Out. Preserve sourceR separately; conceptual category comparison, no silent equivalence.; current glossary reviewed 2026-10-07",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "P purchase/C explicit cashout retained;R retained as REFINANCE_OTHER_THAN_EXPLICIT_CASHOUT, not asserted identical to FreddieN;U REFINANCE_UNSPECIFIED; blank MISSING",
+      "citations": [
+        "layout:positions 27",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Current glossary labels R Refinance, not explicitly No Cash Out. Preserve sourceR separately; conceptual category comparison, no silent equivalence."
+    },
+    {
+      "canonical": "occupancy_status",
+      "freddie": {
+        "field": "occupancy_status",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 8
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Occupancy Status",
+        "positions": [
+          30
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Occupancy Status; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "P/S/I retained,U->UNKNOWN,blank->MISSING; Freddie9 distinct",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "P/S/I retained,U->UNKNOWN,blank->MISSING; Freddie9 distinct; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "P/S/I retained,U->UNKNOWN,blank->MISSING; Freddie9 distinct",
+      "citations": [
+        "layout:positions 30",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "P/S/I retained,U->UNKNOWN,blank->MISSING; Freddie9 distinct"
+    },
+    {
+      "canonical": "property_type",
+      "freddie": {
+        "field": "property_type",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 18
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Property Type",
+        "positions": [
+          28
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Property Type; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "CO/CP/PU/MH/SF retained; blank unknown",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "CO/CP/PU/MH/SF retained; blank unknown; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "CO/CP/PU/MH/SF retained; blank unknown",
+      "citations": [
+        "layout:positions 28",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "CO/CP/PU/MH/SF retained; blank unknown"
+    },
+    {
+      "canonical": "number_units",
+      "freddie": {
+        "field": "number_units",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 7
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Number of Units",
+        "positions": [
+          29
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Number of Units; provider meaning preserved",
+      "units": {
+        "freddie": "units",
+        "fannie": "units",
+        "canonical": "units"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "1-4; Freddie99 versus Fannie blank explicitly missing",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "1-4; Freddie99 versus Fannie blank explicitly missing; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "1-4; Freddie99 versus Fannie blank explicitly missing",
+      "citations": [
+        "layout:positions 29",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "1-4; Freddie99 versus Fannie blank explicitly missing"
+    },
+    {
+      "canonical": "channel",
+      "freddie": {
+        "field": "channel",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 14
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Channel",
+        "positions": [
+          4
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Channel; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "R/C/B retained; unknown provider categories distinct",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "R/C/B retained; unknown provider categories distinct; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "R/C/B retained; unknown provider categories distinct",
+      "citations": [
+        "layout:positions 4",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "R/C/B retained; unknown provider categories distinct"
+    },
+    {
+      "canonical": "seller_name",
+      "freddie": {
+        "field": "seller_name",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 24
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Seller Name",
+        "positions": [
+          5
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Seller Name; provider meaning preserved",
+      "units": {
+        "freddie": "entity label",
+        "fannie": "entity label",
+        "canonical": "entity label"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Other threshold based on acquisition-quarter originalUPB; not shared counterparty key",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Other threshold based on acquisition-quarter originalUPB; not shared counterparty key; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Other threshold based on acquisition-quarter originalUPB; not shared counterparty key",
+      "citations": [
+        "layout:positions 5",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Other threshold based on acquisition-quarter originalUPB; not shared counterparty key"
+    },
+    {
+      "canonical": "servicer_name",
+      "freddie": {
+        "field": "servicer_name",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 34
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Servicer Name",
+        "positions": [
+          6
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Servicer Name; provider meaning preserved",
+      "units": {
+        "freddie": "entity label",
+        "fannie": "entity label",
+        "canonical": "entity label"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Blank preDecember2001; Other uses quarter-endUPB; excluded predictors due time/grouping risk",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Blank preDecember2001; Other uses quarter-endUPB; excluded predictors due time/grouping risk; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Blank preDecember2001; Other uses quarter-endUPB; excluded predictors due time/grouping risk",
+      "citations": [
+        "layout:positions 6",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Blank preDecember2001; Other uses quarter-endUPB; excluded predictors due time/grouping risk"
+    },
+    {
+      "canonical": "property_state",
+      "freddie": {
+        "field": "property_state",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 17
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Property State",
+        "positions": [
+          31
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Property State; provider meaning preserved",
+      "units": {
+        "freddie": "state code",
+        "fannie": "state code",
+        "canonical": "state code"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Two-letter code; blank unknown",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Two-letter code; blank unknown; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "Two-letter code; blank unknown",
+      "citations": [
+        "layout:positions 31",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Two-letter code; blank unknown"
+    },
+    {
+      "canonical": "msa",
+      "freddie": {
+        "field": "msa",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 5
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "MSA or MSDA",
+        "positions": [
+          32
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "MSA or MSDA; provider meaning preserved",
+      "units": {
+        "freddie": "geographic code",
+        "fannie": "geographic code",
+        "canonical": "geographic code"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "00000 nonMSA; enhanced MSDA December 2025; version geography",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "00000 nonMSA; enhanced MSDA December 2025; version geography; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "00000 nonMSA; enhanced MSDA December 2025; version geography",
+      "citations": [
+        "layout:positions 32",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "00000 nonMSA; enhanced MSDA December 2025; version geography"
+    },
+    {
+      "canonical": "postal_prefix",
+      "freddie": {
+        "field": "postal_prefix",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 19
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Zip Code Short",
+        "positions": [
+          33
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Zip Code Short; provider meaning preserved",
+      "units": {
+        "freddie": "ZIP prefix",
+        "fannie": "ZIP prefix",
+        "canonical": "ZIP prefix"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "First3 digits; normalize Freddie masked suffix; no row-level disclosure",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "First3 digits; normalize Freddie masked suffix; no row-level disclosure; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "First3 digits; normalize Freddie masked suffix; no row-level disclosure",
+      "citations": [
+        "layout:positions 33",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "First3 digits; normalize Freddie masked suffix; no row-level disclosure"
+    },
+    {
+      "canonical": "number_of_borrowers",
+      "freddie": {
+        "field": "number_of_borrowers",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 23
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Number of Borrowers",
+        "positions": [
+          22
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Number of Borrowers; provider meaning preserved",
+      "units": {
+        "freddie": "persons",
+        "fannie": "persons",
+        "canonical": "persons"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Provider sentinel normalization; not borrower identity",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Provider sentinel normalization; not borrower identity; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "Provider sentinel normalization; not borrower identity",
+      "citations": [
+        "layout:positions 22",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Provider sentinel normalization; not borrower identity"
+    },
+    {
+      "canonical": "amortization_type",
+      "freddie": {
+        "field": "amortization_type",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 16
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Amortization Type",
+        "positions": [
+          35
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Amortization Type; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "FRM retained; ARM excluded from Primary",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "FRM retained; ARM excluded from Primary; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "FRM retained; ARM excluded from Primary",
+      "citations": [
+        "layout:positions 35",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "FRM retained; ARM excluded from Primary"
+    },
+    {
+      "canonical": "reporting_month",
+      "freddie": {
+        "field": "reporting_month",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 2
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Monthly Reporting Period",
+        "positions": [
+          3
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Monthly Reporting Period; provider meaning preserved",
+      "units": {
+        "freddie": "calendar month",
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "MMYYYY->YYYY-MM; servicer cutoff, NOT disclosure date",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "MMYYYY->YYYY-MM; servicer cutoff, NOT disclosure date; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "MMYYYY->YYYY-MM; servicer cutoff, NOT disclosure date",
+      "citations": [
+        "layout:positions 3",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MMYYYY->YYYY-MM; servicer cutoff, NOT disclosure date"
+    },
+    {
+      "canonical": "current_upb",
+      "freddie": {
+        "field": "current_principal_balance",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 3
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Current Actual UPB",
+        "positions": [
+          12
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Current Actual UPB; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "First6 months masked; includes interest/noninterest/deferral amounts; not full EAD",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "First6 months masked; includes interest/noninterest/deferral amounts; not full EAD; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "First6 months masked; includes interest/noninterest/deferral amounts; not full EAD",
+      "citations": [
+        "layout:positions 12",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "First6 months masked; includes interest/noninterest/deferral amounts; not full EAD"
+    },
+    {
+      "canonical": "provider_loan_age",
+      "freddie": {
+        "field": "loan_age",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 5
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Loan Age",
+        "positions": [
+          16
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Loan Age; provider meaning preserved",
+      "units": {
+        "freddie": "months",
+        "fannie": "months",
+        "canonical": "months"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Audit only; derive common clock from firstpayment; FAQ/glossary conventions not naive note-age; negative1 possible",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Audit only; derive common clock from firstpayment; FAQ/glossary conventions not naive note-age; negative1 possible; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Audit only; derive common clock from firstpayment; FAQ/glossary conventions not naive note-age; negative1 possible",
+      "citations": [
+        "layout:positions 16",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Audit only; derive common clock from firstpayment; FAQ/glossary conventions not naive note-age; negative1 possible"
+    },
+    {
+      "canonical": "remaining_legal_term",
+      "freddie": {
+        "field": "remaining_legal_months",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 6
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Remaining Months to Legal Maturity",
+        "positions": [
+          17
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Remaining Months to Legal Maturity; provider meaning preserved",
+      "units": {
+        "freddie": "months",
+        "fannie": "months",
+        "canonical": "months"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Contractual basis; modification may change legal term",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Contractual basis; modification may change legal term; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Contractual basis; modification may change legal term",
+      "citations": [
+        "layout:positions 17",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Contractual basis; modification may change legal term"
+    },
+    {
+      "canonical": "remaining_amortization_term",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Remaining Months To Maturity",
+        "positions": [
+          18
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Remaining Months To Maturity; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "months",
+        "canonical": "months"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Reflects prepayments; blank modified; never substitute for legal term",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Reflects prepayments; blank modified; never substitute for legal term; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "Reflects prepayments; blank modified; never substitute for legal term",
+      "citations": [
+        "layout:positions 18",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Reflects prepayments; blank modified; never substitute for legal term"
+    },
+    {
+      "canonical": "current_interest_rate",
+      "freddie": {
+        "field": "current_interest_rate",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 11
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Current Interest Rate",
+        "positions": [
+          9
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Current Interest Rate; provider meaning preserved",
+      "units": {
+        "freddie": "percent",
+        "fannie": "percent",
+        "canonical": "percent"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Modified terms reflected; t0 row only; Freddie also provides current rate",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Modified terms reflected; t0 row only; Freddie also provides current rate; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "DIRECTLY_COMPATIBLE",
+      "transformation": "Modified terms reflected; t0 row only; Freddie also provides current rate",
+      "citations": [
+        "layout:positions 9",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Modified terms reflected; t0 row only; Freddie also provides current rate"
+    },
+    {
+      "canonical": "modification_flag",
+      "freddie": {
+        "field": "modification_flag",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 8
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Modification Flag",
+        "positions": [
+          42
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Modification Flag; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Y persists after first legal modification; deferrals not legal mods; Y/N/blank",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Y persists after first legal modification; deferrals not legal mods; Y/N/blank; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Y persists after first legal modification; deferrals not legal mods; Y/N/blank",
+      "citations": [
+        "layout:positions 42",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Y persists after first legal modification; deferrals not legal mods; Y/N/blank"
+    },
+    {
+      "canonical": "termination_code",
+      "freddie": {
+        "field": "termination_code",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 9
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Zero Balance Code",
+        "positions": [
+          44
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Zero Balance Code; provider meaning preserved",
+      "units": {
+        "freddie": "event category",
+        "fannie": "event category",
+        "canonical": "event category"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Source-specific mapping;06 repurchase;15 nonperforming note sale;97/98 CRT-only reject",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Source-specific mapping;06 repurchase;15 nonperforming note sale;97/98 CRT-only reject; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Source-specific mapping;06 repurchase;15 nonperforming note sale;97/98 CRT-only reject",
+      "citations": [
+        "layout:positions 44",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Source-specific mapping;06 repurchase;15 nonperforming note sale;97/98 CRT-only reject"
+    },
+    {
+      "canonical": "termination_month",
+      "freddie": {
+        "field": "termination_month",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 10
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Zero Balance Effective Date",
+        "positions": [
+          45
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Zero Balance Effective Date; provider meaning preserved",
+      "units": {
+        "freddie": "calendar month",
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "MMYYYY->YYYY-MM; report date alignment; conflict ambiguous, no backdating",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "MMYYYY->YYYY-MM; report date alignment; conflict ambiguous, no backdating; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "MMYYYY->YYYY-MM; report date alignment; conflict ambiguous, no backdating",
+      "citations": [
+        "layout:positions 45",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MMYYYY->YYYY-MM; report date alignment; conflict ambiguous, no backdating"
+    },
+    {
+      "canonical": "upb_at_removal",
+      "freddie": {
+        "field": "removal_upb",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 27
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "UPB at Time of Removal",
+        "positions": [
+          46
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "UPB at Time of Removal; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Populated on zero/liquidation; not first default exposure; informational only",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Populated on zero/liquidation; not first default exposure; informational only; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Populated on zero/liquidation; not first default exposure; informational only",
+      "citations": [
+        "layout:positions 46",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Populated on zero/liquidation; not first default exposure; informational only"
+    },
+    {
+      "canonical": "repurchase_date",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Repurchase Date",
+        "positions": [
+          47
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Repurchase Date; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "CRT-only NA SF;06+45 identify SF repurchase exit",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "CRT-only NA SF;06+45 identify SF repurchase exit; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "UNAVAILABLE",
+      "transformation": "CRT-only NA SF;06+45 identify SF repurchase exit",
+      "citations": [
+        "layout:positions 47",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "CRT-only NA SF;06+45 identify SF repurchase exit"
+    },
+    {
+      "canonical": "last_paid_installment_month",
+      "freddie": {
+        "field": "last_paid_due_month",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 13
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Last Paid Installment Date",
+        "positions": [
+          51
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Last Paid Installment Date; provider meaning preserved",
+      "units": {
+        "freddie": "calendar month",
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "MMYYYY->YYYY-MM; not exact DPD",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "MMYYYY->YYYY-MM; not exact DPD; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "COMPATIBLE_AFTER_DOCUMENTED_TRANSFORMATION",
+      "transformation": "MMYYYY->YYYY-MM; not exact DPD",
+      "citations": [
+        "layout:positions 51",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MMYYYY->YYYY-MM; not exact DPD"
+    },
+    {
+      "canonical": "foreclosure_month",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Foreclosure Date",
+        "positions": [
+          52
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Foreclosure Date; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Completion/liquidation date; not REO sale; not augmenting primary default",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Completion/liquidation date; not REO sale; not augmenting primary default; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "Completion/liquidation date; not REO sale; not augmenting primary default",
+      "citations": [
+        "layout:positions 52",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Completion/liquidation date; not REO sale; not augmenting primary default"
+    },
+    {
+      "canonical": "reo_disposition_month",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Disposition Date",
+        "positions": [
+          53
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Disposition Date; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "calendar month",
+        "canonical": "calendar month"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "End of Fannie property interest; no direct FreddieR state equivalent",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "End of Fannie property interest; no direct FreddieR state equivalent; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "End of Fannie property interest; no direct FreddieR state equivalent",
+      "citations": [
+        "layout:positions 53",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "End of Fannie property interest; no direct FreddieR state equivalent"
+    },
+    {
+      "canonical": "foreclosure_costs",
+      "freddie": {
+        "field": "legal_costs",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 18
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Foreclosure Costs",
+        "positions": [
+          54
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Foreclosure Costs; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Aggregate title/bankruptcy/foreclosure expenses; informational only",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Aggregate title/bankruptcy/foreclosure expenses; informational only; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Aggregate title/bankruptcy/foreclosure expenses; informational only",
+      "citations": [
+        "layout:positions 54",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Aggregate title/bankruptcy/foreclosure expenses; informational only"
+    },
+    {
+      "canonical": "preservation_costs",
+      "freddie": {
+        "field": "preservation_costs",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 19
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Property Preservation and Repair Costs",
+        "positions": [
+          55
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Property Preservation and Repair Costs; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Aggregate expenses; no timed workout cash flows",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Aggregate expenses; no timed workout cash flows; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Aggregate expenses; no timed workout cash flows",
+      "citations": [
+        "layout:positions 55",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Aggregate expenses; no timed workout cash flows"
+    },
+    {
+      "canonical": "asset_recovery_costs",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Asset Recovery Costs",
+        "positions": [
+          56
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Asset Recovery Costs; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Eviction/relocation/deed-in-lieu expenses; separate bucket",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Eviction/relocation/deed-in-lieu expenses; separate bucket; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "Eviction/relocation/deed-in-lieu expenses; separate bucket",
+      "citations": [
+        "layout:positions 56",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Eviction/relocation/deed-in-lieu expenses; separate bucket"
+    },
+    {
+      "canonical": "misc_holding_costs",
+      "freddie": {
+        "field": "misc_expenses",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 21
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Miscellaneous Holding Expenses and Credits",
+        "positions": [
+          57
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Miscellaneous Holding Expenses and Credits; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Preserve credits/signs; not Freddie total expenses",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Preserve credits/signs; not Freddie total expenses; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Preserve credits/signs; not Freddie total expenses",
+      "citations": [
+        "layout:positions 57",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Preserve credits/signs; not Freddie total expenses"
+    },
+    {
+      "canonical": "holding_taxes",
+      "freddie": {
+        "field": "taxes_insurance",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 20
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Associated Taxes for Holding Property",
+        "positions": [
+          58
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Associated Taxes for Holding Property; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Tax-only versus Freddie tax/insurance grouping",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Tax-only versus Freddie tax/insurance grouping; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Tax-only versus Freddie tax/insurance grouping",
+      "citations": [
+        "layout:positions 58",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Tax-only versus Freddie tax/insurance grouping"
+    },
+    {
+      "canonical": "net_sale_proceeds",
+      "freddie": {
+        "field": "net_sale_proceeds",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 15
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Net Sales Proceeds",
+        "positions": [
+          59
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Net Sales Proceeds; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Net of selling expenses; aggregate post-disposition",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Net of selling expenses; aggregate post-disposition; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Net of selling expenses; aggregate post-disposition",
+      "citations": [
+        "layout:positions 59",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Net of selling expenses; aggregate post-disposition"
+    },
+    {
+      "canonical": "credit_enhancement_proceeds",
+      "freddie": {
+        "field": "mi_recoveries",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 14
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Credit Enhancement Proceeds",
+        "positions": [
+          60
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Credit Enhancement Proceeds; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "MI plus lender recourse/indemnification; not purely MI",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "MI plus lender recourse/indemnification; not purely MI; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "MI plus lender recourse/indemnification; not purely MI",
+      "citations": [
+        "layout:positions 60",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "MI plus lender recourse/indemnification; not purely MI"
+    },
+    {
+      "canonical": "make_whole_proceeds",
+      "freddie": {
+        "field": "non_mi_recoveries",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 16
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Repurchase Make Whole Proceeds",
+        "positions": [
+          61
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Repurchase Make Whole Proceeds; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Representation/warranty recoveries; bulk settlements possible",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Representation/warranty recoveries; bulk settlements possible; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Representation/warranty recoveries; bulk settlements possible",
+      "citations": [
+        "layout:positions 61",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Representation/warranty recoveries; bulk settlements possible"
+    },
+    {
+      "canonical": "other_foreclosure_proceeds",
+      "freddie": {
+        "field": "non_mi_recoveries",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 16
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Other Foreclosure Proceeds",
+        "positions": [
+          62
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Other Foreclosure Proceeds; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Redemption proceeds; not all nonMI recoveries",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Redemption proceeds; not all nonMI recoveries; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Redemption proceeds; not all nonMI recoveries",
+      "citations": [
+        "layout:positions 62",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Redemption proceeds; not all nonMI recoveries"
+    },
+    {
+      "canonical": "modification_noninterest_upb",
+      "freddie": {
+        "field": "non_interest_upb",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 12
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Modification Related Non-Interest Bearing UPB",
+        "positions": [
+          63
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Modification Related Non-Interest Bearing UPB; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "Excludes payment deferrals 108",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Excludes payment deferrals 108; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "Excludes payment deferrals 108",
+      "citations": [
+        "layout:positions 63",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Excludes payment deferrals 108"
+    },
+    {
+      "canonical": "principal_forgiveness",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Principal Forgiveness Amount",
+        "positions": [
+          64
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Principal Forgiveness Amount; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "Agreed principal reduction; informational only",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Agreed principal reduction; informational only; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "Agreed principal reduction; informational only",
+      "citations": [
+        "layout:positions 64",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Agreed principal reduction; informational only"
+    },
+    {
+      "canonical": "net_credit_event_loss",
+      "freddie": {
+        "field": "actual_loss",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 22
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Current/Cumulative Credit Event Net Gain or Loss",
+        "positions": [
+          77,
+          78
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Current/Cumulative Credit Event Net Gain or Loss; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "event",
+      "missing": {
+        "note": "CRT-only NA SF; do not claim SF net-loss support from these positions",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "CRT-only NA SF; do not claim SF net-loss support from these positions; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "UNAVAILABLE",
+      "transformation": "CRT-only NA SF; do not claim SF net-loss support from these positions",
+      "citations": [
+        "layout:positions 77,78",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "CRT-only NA SF; do not claim SF net-loss support from these positions"
+    },
+    {
+      "canonical": "borrower_assistance",
+      "freddie": {
+        "field": "assistance_plan",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 30
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Borrower Assistance Plan",
+        "positions": [
+          102
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Borrower Assistance Plan; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "April2020 onward;F/R/T/O/N/7/9;7 NA distinct9 unavailable",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "April2020 onward;F/R/T/O/N/7/9;7 NA distinct9 unavailable; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "April2020 onward;F/R/T/O/N/7/9;7 NA distinct9 unavailable",
+      "citations": [
+        "layout:positions 102",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "April2020 onward;F/R/T/O/N/7/9;7 NA distinct9 unavailable"
+    },
+    {
+      "canonical": "alternative_resolution",
+      "freddie": {
+        "field": "payment_deferral_flag",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 25
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Alternative Delinquency Resolution",
+        "positions": [
+          106
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Alternative Delinquency Resolution; provider meaning preserved",
+      "units": {
+        "freddie": "category",
+        "fannie": "category",
+        "canonical": "category"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "July2020 onward;P/C/D/7/9; not equivalent binary Freddie flag",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "July2020 onward;P/C/D/7/9; not equivalent binary Freddie flag; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "July2020 onward;P/C/D/7/9; not equivalent binary Freddie flag",
+      "citations": [
+        "layout:positions 106",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "July2020 onward;P/C/D/7/9; not equivalent binary Freddie flag"
+    },
+    {
+      "canonical": "total_deferral_amount",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Total Deferral Amount",
+        "positions": [
+          108
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Total Deferral Amount; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "July2020 onward; separate63 modification amount",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "July2020 onward; separate63 modification amount; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "PROVIDER_SPECIFIC",
+      "transformation": "July2020 onward; separate63 modification amount",
+      "citations": [
+        "layout:positions 108",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "July2020 onward; separate63 modification amount"
+    },
+    {
+      "canonical": "interest_bearing_upb",
+      "freddie": {
+        "field": "interest_bearing_upb",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 32
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Interest Bearing UPB",
+        "positions": [
+          110
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Interest Bearing UPB; provider meaning preserved",
+      "units": {
+        "freddie": "USD",
+        "fannie": "USD",
+        "canonical": "USD"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "CRT-only NA SF; no unmasking through this field",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "CRT-only NA SF; no unmasking through this field; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "UNAVAILABLE",
+      "transformation": "CRT-only NA SF; no unmasking through this field",
+      "citations": [
+        "layout:positions 110",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "CRT-only NA SF; no unmasking through this field"
+    },
+    {
+      "canonical": "orig_vantagescore",
+      "freddie": {
+        "field": "vantage_score",
+        "positions": [
+          {
+            "file": "origination",
+            "position": 31
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Origination VantageScore4.0",
+        "positions": [
+          114
+        ],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "Origination VantageScore4.0; provider meaning preserved",
+      "units": {
+        "freddie": "VantageScore4 points",
+        "fannie": "VantageScore4 points",
+        "canonical": "VantageScore4 points"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "SF May2026 activity onward; absent inspected 113; never substitute FICO",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "SF May2026 activity onward; absent inspected 113; never substitute FICO; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "SF May2026 activity onward; absent inspected 113; never substitute FICO",
+      "citations": [
+        "layout:positions 114",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "SF May2026 activity onward; absent inspected 113; never substitute FICO"
+    },
+    {
+      "canonical": "borrower_id",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "No applicable borrower identifier",
+        "positions": [],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "No applicable borrower identifier; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "borrower ID",
+        "canonical": "borrower ID"
+      },
+      "frequency": "static",
+      "missing": {
+        "note": "Mortgage identity cannot establish borrower independence",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Origination/static definition retained; later source corrections not historically verified",
+      "availability": "Mortgage identity cannot establish borrower independence; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "UNAVAILABLE",
+      "transformation": "Mortgage identity cannot establish borrower independence",
+      "citations": [
+        "layout:positions 0",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "Mortgage identity cannot establish borrower independence"
+    },
+    {
+      "canonical": "historical_cell_disclosure_time",
+      "freddie": {
+        "field": null,
+        "positions": [],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "No cell-level release history",
+        "positions": [],
+        "layout": "glossary-2026-09-10; SF applicability ONLY;113 archive adapter unvalidated"
+      },
+      "description": "No cell-level release history; provider meaning preserved",
+      "units": {
+        "freddie": null,
+        "fannie": "timestamp",
+        "canonical": "timestamp"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "General release lag only; corrections not reconstructible",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "General release lag only; corrections not reconstructible; reviewed 2026-10-07; actual source-release compatibility unverified",
+      "classification": "SEMANTICS_UNRESOLVED",
+      "transformation": "General release lag only; corrections not reconstructible",
+      "citations": [
+        "layout:positions 0",
+        "faq:Q11/Q15/Q24/Q27/Q28",
+        "FM_GUIDE/FM_CHANGES:frozen matching field"
+      ],
+      "notes": "General release lag only; corrections not reconstructible"
+    },
+    {
+      "canonical": "delinquency_state",
+      "freddie": {
+        "field": "delinquency_state",
+        "positions": [
+          {
+            "file": "performance",
+            "position": 4
+          }
+        ],
+        "layout": "Standard Release47 July2026"
+      },
+      "fannie": {
+        "fields": "Current Loan Delinquency Status",
+        "positions": [
+          40
+        ],
+        "layout": "glossary-2026-09-10;SF only"
+      },
+      "description": "Monthly delinquency bands, not exact DPD",
+      "units": {
+        "freddie": "months delinquent",
+        "fannie": "months delinquent",
+        "canonical": "months delinquent"
+      },
+      "frequency": "monthly",
+      "missing": {
+        "note": "XX unknown; blank after removal; numeric99 capped; no FreddieR equivalent",
+        "states": [
+          "TRUE_MISSING",
+          "NOT_APPLICABLE",
+          "NOT_DISCLOSED",
+          "STRUCTURAL_ABSENCE",
+          "UNKNOWN_CODE",
+          "PARSER_FAILURE"
+        ]
+      },
+      "modification_behavior": "Monthly terms reflect modified contract where applicable; origination predictor never overwritten by current terms",
+      "availability": "Enhanced SF October2020 release; historical records revised; reviewed 2026-10-07",
+      "classification": "CONCEPTUALLY_SIMILAR_NOT_IDENTICAL",
+      "transformation": "00-02 at-risk;03-99 severe research proxy;XX/blank unknown; no exact day precision",
+      "citations": [
+        "layout:40/41",
+        "faq:Q28",
+        "FM_GUIDE:monthly delinquency"
+      ],
+      "notes": "FreddieR REO is separate; Fannie foreclosure/disposition dates not equivalent event state"
+    }
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "version": "task13-draft-v1",
+  "base_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+  "status": "DRAFT_NOT_YET_AUTHORIZED",
+  "outcome_access_authorized": false,
+  "questions": [
+    "Does unchanged M2 improve temporal competing-risk probability prediction over M1?",
+    "Does original-coupon-proxy P2 improve payoff probabilities over P1?"
+  ],
+  "frozen_freddie_conclusions": [
+    "NO RELIABLE TEMPORAL MACRO INCREMENT DEMONSTRATED",
+    "MACRO FAILURE MECHANISMS PARTIALLY IDENTIFIED",
+    "REFINANCING INCENTIVE HYPOTHESIS MIXED EXPLORATORILY"
+  ],
+  "replication_type": "CONCEPTUAL_REPLICATION_ONLY where material semantic differences persist",
+  "mapping_file": "docs/track_b/freddie_fannie_field_crosswalk.json",
+  "events": {
+    "states": [
+      "AT_RISK",
+      "DEFAULT_PROXY",
+      "PAYOFF_OR_MATURITY",
+      "ADMINISTRATIVE_EXIT",
+      "AMBIGUOUS_EXIT"
+    ],
+    "termination_mapping": {
+      "": "AT_RISK_CONDITIONAL_ON_KNOWN_DELINQUENCY",
+      "01": "PAYOFF_OR_MATURITY",
+      "02": "DEFAULT_PROXY",
+      "03": "DEFAULT_PROXY",
+      "06": "ADMINISTRATIVE_EXIT",
+      "09": "DEFAULT_PROXY",
+      "15": "AMBIGUOUS_EXIT_UNLESS_KNOWN_SEVERE_DEFAULT",
+      "16": "ADMINISTRATIVE_EXIT",
+      "96": "ADMINISTRATIVE_EXIT"
+    },
+    "delinquency": "00-02 active;03-99 severe proxy;XX/blank unknown;99 capped; no FreddieR direct equivalent",
+    "precedence": "Date conflict first ambiguous; severe plus01 ambiguous; severe or02/03/09 default;01 payoff;06/16/96 administrative;15 without severe ambiguous;unknown delinquency ambiguous unless explicit event",
+    "unknown_code": "STOP including CRT-only97/98",
+    "definition": "First 90+DPD month-band proxy or02/03/09; not regulatory adjudication",
+    "first_event": "Absorbing first default/payoff; no cure reentry; no addition of future foreclosure dates"
+  },
+  "population": {
+    "provider": "Fannie Primary",
+    "inclusions": "Selected conventional fully documented fully amortizing fixed-rate mortgages; notes since1999/acquisitions since2000",
+    "vintage_basis": "Origination-year from note month14; NOT archive acquisition quarter",
+    "coverage_gate": "Freeze complete acquisition-quarter coverage or explicitly named bounded acquisition population per target note-year before sampling; four quarters alone do not prove complete origination-year coverage",
+    "term_gate": "Resolve official page <=30 years versus FAQ>=5,<35 wording; any common-term restriction must be explicitly accepted before seal",
+    "harp": "Separate HARP refinance products excluded; retain original Primary facilities even if later HARP payoff; no future-based exclusions",
+    "identity": "Provider-prefixed private mortgage ID; not borrower identity"
+  },
+  "candidate_vintages": [
+    2006,
+    2008,
+    2010,
+    2014,
+    2018,
+    2020,
+    2022
+  ],
+  "candidate_basis": "Supported in official historical scope; overlap improves economic comparability; actual eligible universe not verified",
+  "sampling": {
+    "target_per_supported_vintage": 20000,
+    "algorithm": "SHA256(UTF8(salt:provider:origination_year:loan_id)); ascending digest bytes then loan_id for ties",
+    "salt": "track-b-fannie-external-v1",
+    "provider": "FANNIE_PRIMARY",
+    "identifier_only": true,
+    "eligible": "Predeclared source/static gates before performance decoding; no outcome/modification/future followup filtering",
+    "shortfall": "STOP for explicit pre-outcome amendment",
+    "dedup": "Monthly repeated origination descriptors expected; consistent facility records deduplicated; conflicting static values/duplicate loan-month STOP",
+    "cost": "Streaming top-k or external sort privately; one inspected quarter uncompressed5.714GB; avoid full pandas materialization",
+    "freeze_archive_hashes": true
+  },
+  "static_extraction": {
+    "rule": "Origination fields from earliest source reporting record per facility; later corrected/static copies audit separately; no future111 backfill into early t0",
+    "fico": "Legacy min available24/25, missingness retained;111 only at eligible activity regime; score-regime mismatch gate; never VantageScore substitution",
+    "asof": "Nominal t0 only; historical mortgage disclosure time UNVERIFIED"
+  },
+  "macro": {
+    "source_run": "task9_api_v5",
+    "primary_window": [
+      "2010-09",
+      "2026-02"
+    ],
+    "reduced_window": [
+      "2006-02",
+      "2026-02"
+    ],
+    "refinancing_window": [
+      "2010-09",
+      "2026-02"
+    ],
+    "market_rate_only_support": [
+      "2010-07",
+      "2026-03"
+    ],
+    "assessment": "End of monthm-1",
+    "no_reacquisition": true,
+    "no_revised_backfill": true
+  },
+  "models": {
+    "M0": [
+      "duration_band",
+      "cohort"
+    ],
+    "M1": [
+      "duration_band",
+      "cohort",
+      "orig_credit_score",
+      "orig_ltv",
+      "orig_dti",
+      "orig_upb",
+      "orig_interest_rate",
+      "original_loan_term",
+      "loan_purpose",
+      "occupancy_status"
+    ],
+    "M2": [
+      "duration_band",
+      "cohort",
+      "orig_credit_score",
+      "orig_ltv",
+      "orig_dti",
+      "orig_upb",
+      "orig_interest_rate",
+      "original_loan_term",
+      "loan_purpose",
+      "occupancy_status",
+      "unemployment_level",
+      "unemployment_change_3m",
+      "treasury_10y_level",
+      "mortgage_30y_level",
+      "hpi_yoy",
+      "cpi_yoy",
+      "gdp_qoq"
+    ],
+    "P0": [
+      "duration_band",
+      "cohort"
+    ],
+    "P1": [
+      "duration_band",
+      "cohort",
+      "orig_credit_score",
+      "orig_ltv",
+      "orig_dti",
+      "orig_upb",
+      "orig_interest_rate",
+      "original_loan_term",
+      "loan_purpose",
+      "occupancy_status"
+    ],
+    "P2": [
+      "duration_band",
+      "cohort",
+      "orig_credit_score",
+      "orig_ltv",
+      "orig_dti",
+      "orig_upb",
+      "orig_interest_rate",
+      "original_loan_term",
+      "loan_purpose",
+      "occupancy_status",
+      "REFI_POS",
+      "REFI_NEG"
+    ]
+  },
+  "predictor_mapping": {
+    "REFI_NEG": {
+      "classification": "TRANSFORMED_REPLICATION",
+      "rule": "min(REFI_GAP, 0);percent minus percent equals percentage points; original coupon proxy"
+    },
+    "REFI_POS": {
+      "classification": "TRANSFORMED_REPLICATION",
+      "rule": "max(REFI_GAP, 0);percent minus percent equals percentage points; original coupon proxy"
+    },
+    "cohort": {
+      "classification": "PROXY_REPLICATION",
+      "rule": "Provider origination-year vintage, not quarterly acquisition package; coverage gate first"
+    },
+    "cpi_yoy": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "duration_band": {
+      "classification": "TRANSFORMED_REPLICATION",
+      "rule": "First-payment proxy, frozen bounds12/24/36/60/84/120/180/240; no provider-age substitution"
+    },
+    "gdp_qoq": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "hpi_yoy": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "loan_purpose": {
+      "classification": "PROXY_REPLICATION",
+      "canonical_field": "loan_purpose",
+      "positions": [
+        27
+      ],
+      "rule": "P purchase/C explicit cashout retained;R retained as REFINANCE_OTHER_THAN_EXPLICIT_CASHOUT, not asserted identical to FreddieN;U REFINANCE_UNSPECIFIED; blank MISSING"
+    },
+    "mortgage_30y_level": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "occupancy_status": {
+      "classification": "TRANSFORMED_REPLICATION",
+      "canonical_field": "occupancy_status",
+      "positions": [
+        30
+      ],
+      "rule": "P/S/I retained,U->UNKNOWN,blank->MISSING; Freddie9 distinct"
+    },
+    "orig_credit_score": {
+      "classification": "PROXY_REPLICATION",
+      "canonical_field": "orig_credit_score",
+      "positions": [
+        24,
+        25,
+        111
+      ],
+      "rule": "Legacy min available24/25;111 isolated by activity regime;24/25 cease March2026,111 starts December 2025; no future backfill; not VantageScore"
+    },
+    "orig_dti": {
+      "classification": "PROXY_REPLICATION",
+      "canonical_field": "orig_dti",
+      "positions": [
+        23
+      ],
+      "rule": "Blank outside allowable range/unknown/HARP; Freddie999 distinct"
+    },
+    "orig_interest_rate": {
+      "classification": "EXACT_REPLICATION",
+      "canonical_field": "orig_interest_rate",
+      "positions": [
+        8
+      ],
+      "rule": "No fraction conversion; valid(0,100); blank unknown"
+    },
+    "orig_ltv": {
+      "classification": "PROXY_REPLICATION",
+      "canonical_field": "orig_ltv",
+      "positions": [
+        20
+      ],
+      "rule": "Blank unknown or>97 Primary; do not infer masked value"
+    },
+    "orig_upb": {
+      "classification": "PROXY_REPLICATION",
+      "canonical_field": "orig_upb",
+      "positions": [
+        10
+      ],
+      "rule": "Rounded dollars; retain precision difference; log1p only after nonnegative gate"
+    },
+    "original_loan_term": {
+      "classification": "EXACT_REPLICATION",
+      "canonical_field": "original_loan_term",
+      "positions": [
+        13
+      ],
+      "rule": "Retain months; product-population difference separate"
+    },
+    "treasury_10y_level": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "unemployment_change_3m": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    },
+    "unemployment_level": {
+      "classification": "EXACT_REPLICATION",
+      "source": "Task9 task9_api_v5",
+      "rule": "Frozen PIT definition at previous-month-end assessment; same freshness and support"
+    }
+  },
+  "estimator": {
+    "solver": "lbfgs",
+    "C": 1.0,
+    "penalty": "L2",
+    "max_iter": 3000,
+    "tol": 1e-08,
+    "random_state": 61010,
+    "class_weights": null,
+    "thread_limit": 1
+  },
+  "preprocessing": {
+    "numeric_imputation": "Development risk-row median; one missing indicator per numeric",
+    "all_missing_numeric": "STOP",
+    "original_upb": "log1p after nonnegative check",
+    "numeric_scaling": "Development risk-row mean / population SD; constants scale1",
+    "categorical": "Development-only sorted vocabulary; missing explicit token; drop first",
+    "unknown_category": "All-zero reference encoding, separately counted, no evaluation fit",
+    "duration": "Task9A bands, reference0-12; no knot/band changes",
+    "cohort": "Task9A vintage indicators, reference2006; unrepresented effects zero and flagged"
+  },
+  "validation": {
+    "development": [
+      "2010-09",
+      "2017-12"
+    ],
+    "reduced_development": [
+      "2006-02",
+      "2017-12"
+    ],
+    "purge": [
+      "2018-01",
+      "2018-12"
+    ],
+    "evaluation": [
+      "2019-01",
+      "2026-02"
+    ],
+    "development_vintages": [
+      2006,
+      2008,
+      2010,
+      2014
+    ],
+    "unseen_vintages": [
+      2018,
+      2020,
+      2022
+    ],
+    "facility_roles": "SHA256(track-b-fannie-role-v1:FANNIE_PRIMARY:vintage:loan_id); integer digest modulo10;0-6 development,7-9 sealed temporal evaluation. Facility-disjoint; same70/30 allocation as frozen Freddie architecture.",
+    "temporal_seen": "Primary evaluation sealed-role facilities2006/2008/2010/2014; unseen2018/2020/2022 separately with zero unestimated cohort effects",
+    "family": "Discrete-time multinomial logistic; none/default/payoff classes; independently refit identical family on Fannie development, NOT transport Freddie coefficients",
+    "entry": "Six contiguous known active observations including t0 and five earlier months; nonnegative firstpayment proxy clock at t0; consecutive t0/target; left truncation at first supported target month; no manufactured exposure",
+    "ledger": "New Fannie-only namespace; seal protocol/source/software/roles before any outcome analysis; only development outcomes for training, evaluation once; old ledgers untouched",
+    "no_evaluation_refit": true,
+    "calendar_basis": "TARGET_RISK_MONTH m; interval(t0=m-1,m], macro known at end of m-1"
+  },
+  "censoring": {
+    "administrative": "06/16/96 absent earlier default; informative censoring limitation",
+    "ambiguous": "15 absent known severe, unknown/gap/date conflict; end prefix, no reentry",
+    "end_of_data": "Common analytical cutoff2026-02; record archive performance cutoff separately",
+    "payoff": "01 includes maturity and unobserved refinance purpose; competing cause, not censoring"
+  },
+  "cif": {
+    "horizons": [
+      12,
+      24,
+      36,
+      60
+    ],
+    "landmarks": "First eligible evaluation interval per facility",
+    "future_macro": "Historical rolling PIT paths, NOT entry-time known forecasts",
+    "late_landmarks": "Exclude per-horizon solely if full calendar path exceeds2026-02",
+    "observed_reference": "Aalen-Johansen, payoff competing event not censoring",
+    "ipcw": "Task6 pooled censor KM, conditional independent censoring assumed",
+    "minimum_at_risk": 200,
+    "minimum_censor_survival": 0.1,
+    "minimum_default_events": 20,
+    "prediction_tolerance": 1e-10
+  },
+  "metrics": [
+    "joint_log_loss",
+    "payoff_brier",
+    "default_brier",
+    "payoff_calibration",
+    "CIF_calibration",
+    "cause_auc_secondary",
+    "probability_conservation"
+  ],
+  "success": {
+    "macro": {
+      "primary": "M2-M1 paired temporal joint log loss, smaller better",
+      "positive": "Both facility and calendar95 CI upper<0; cause Brier and absolute mean calibration error degradation<=1e-4",
+      "mixed": "Any paired proper-score improvement but positive criterion not satisfied",
+      "negative": "No paired proper-score improvement demonstrated",
+      "no_retuning": true
+    },
+    "refinancing": {
+      "joint_score": "P2-P1 jointLL facility AND year-block95CI upper<0",
+      "payoff_brier": "P2-P1 facility95CI upper<=0.0001",
+      "calibration": "P2 absolute mean payoff error improves by>=0.0001",
+      "payoff_cif": "Absolute mean payoff CIF error no worse than P1 at every supported horizon",
+      "default": "Default Brier degradation<=0.0001 and default CIF mean error degradation<=0.001",
+      "stability": "No supported annual/vintage/duration payoff Brier degradation>0.0001",
+      "positive": "All gates satisfied: supported EXPLORATORILY only",
+      "mixed": "Any jointLL or payoffBrier point improvement but not all gates",
+      "negative": "Neither proper-score point improvement",
+      "sensitivity_selection": false
+    }
+  },
+  "bootstrap": {
+    "macro": {
+      "unit": "facility",
+      "replicates": 1000,
+      "seed": 61035,
+      "minimum_valid": 950,
+      "interval": "Percentile95 paired fixed-model differences",
+      "auc_min_events": 20,
+      "calendar_sensitivity": "1000 calendar-year block resamples, seed61036",
+      "no_model_refitting": true
+    },
+    "refinancing": {
+      "draws": 1000,
+      "facility_seed": 61201,
+      "calendar_seed": 61202,
+      "minimum_valid": 950,
+      "calendar_blocks": "Years, not independent months",
+      "no_refits": true,
+      "interpretation": "Bootstrap uncertainty alone is not independent validation; source freshness and sealing established separately"
+    }
+  },
+  "suppression": {
+    "minimum_events": 20,
+    "minimum_facilities": 100
+  },
+  "sensitivities": {
+    "macro": [
+      "fixed reduced",
+      "fixed mortgage-Treasury rate representation",
+      "fixed leave-vintage-out with support gate"
+    ],
+    "refinancing": [
+      "LINEAR",
+      "P3"
+    ],
+    "current_rate": "Not primary; stronger current-coupon formulation requires a separate pre-outcome protocol extension; not authorized here",
+    "no_algorithm_search": true,
+    "no_primary_promotion": true
+  },
+  "quality_gates": [
+    "Matching official release/hash/layout",
+    "Exact field count/delimiter/encoding",
+    "Valid private ID",
+    "Consistent repeated static descriptors",
+    "Unique loan-month",
+    "Ordering/gaps",
+    "Impossible dates",
+    "Finite rate(0,100)",
+    "Nonnegative balance with masking preserved",
+    "Unknown termination STOP",
+    "Date conflict censoring/audit",
+    "Six missingness states retained"
+  ],
+  "release_adapters": {
+    "documentation_validated": {
+      "glossary-2026-09-10": 114
+    },
+    "archive_113": "UNVALIDATED_SOURCE_CLARIFICATION_REQUIRED; no ordinal-prefix assumption",
+    "legacy_two_file": "PreOctober2020; separate versioned official adapter needed"
+  },
+  "licensed_governance": {
+    "private_roots": [
+      "data/track_b/fannie/raw",
+      "data/track_b/fannie/interim",
+      "data/track_b/fannie/processed",
+      "data/track_b/fannie/registry"
+    ],
+    "public": "Code/docs/hash provenance; aggregates only after applicable terms review and non-reconstruction check",
+    "no_rows": true,
+    "no_ids": true,
+    "no_archive_commits": true,
+    "missing_states": [
+      "TRUE_MISSING",
+      "NOT_APPLICABLE",
+      "NOT_DISCLOSED",
+      "STRUCTURAL_ABSENCE",
+      "UNKNOWN_CODE",
+      "PARSER_FAILURE"
+    ]
+  },
+  "pre_activation_gates": [
+    "Feasibility accepted",
+    "Official matching113 layout/release established and114 drift explained",
+    "Accepted terms version/receipt and intended publication conditions established",
+    "Acquisition-quarter coverage for note-year vintage frozen",
+    "No outcome-informed amendment",
+    "Final protocol and adapter/config/source hashes sealed before broader acquisition/outcome access"
+  ],
+  "prohibited": [
+    "LGD/EAD/ECL/IFRS9",
+    "causal refinancing attribution",
+    "regulatory PD",
+    "universal mortgage validity",
+    "unsealed outcome access",
+    "model feature calibration search"
+  ],
+  "mapping_sha256_lf": "9b2fd684c2d7b5a267ec56d60b3136edb14e0f546211186444e7b43a8e20e025",
+  "frozen_specifications": {
+    "macro_competing_risk_protocol.json": "6c9433e241623c8b73f3cee5d4ff324b9139914b4e12c8f96ea8994bfebcbfe5",
+    "refinancing_incentive_prespecification.json": "61e314dcfa685dd43b1d7f6b2749d67c095c3cbb921c16bad10fd07ea334577d",
+    "pit_macro_feature_registry.json": "631eef9e95c276cdb8969748363a4a1789da9a7ada7d4108a5bda3c4842c9e82"
+  }
+}

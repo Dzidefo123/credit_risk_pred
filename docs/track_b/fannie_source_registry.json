@@ -1,0 +1,131 @@
+{
+  "version": "task13-v1",
+  "sources": [
+    {
+      "id": "dataset",
+      "url": "https://capitalmarkets.fanniemae.com/credit-risk-transfer/fannie-mae-single-family-loan-performance-data",
+      "resolved_url": "https://capitalmarkets.fanniemae.com/credit-risk-transfer/fannie-mae-single-family-loan-performance-data",
+      "private_path": "data/track_b/fannie/documentation/dataset.html",
+      "sha256": "a714c39f033f79e2b4dd03ecb3d14659faf193bced1b3aabf3a3a8bf249e6b51",
+      "bytes": 115741,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_at": "2026-10-07T16:01:58.720507+00:00",
+      "version": "2026-07-31",
+      "stored_bytes": "PRIVATE_DOCUMENTATION_ONLY"
+    },
+    {
+      "id": "faq",
+      "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/sf-loan-performance-dataset-faqs.pdf",
+      "resolved_url": "https://capitalmarkets.fanniemae.com/media/8921/display",
+      "private_path": "data/track_b/fannie/documentation/faq.pdf",
+      "sha256": "845d2d777d2f7fa448c223d2ca8b0a9357dcd99728452aa225a6c7b1d4485bf7",
+      "bytes": 329195,
+      "content_type": "application/pdf",
+      "retrieved_at": "2026-10-07T16:02:00.693769+00:00",
+      "version": "2026-03-10",
+      "stored_bytes": "PRIVATE_DOCUMENTATION_ONLY"
+    },
+    {
+      "id": "layout",
+      "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/crt-file-layout-and-glossary.pdf",
+      "resolved_url": "https://capitalmarkets.fanniemae.com/media/6931/display",
+      "private_path": "data/track_b/fannie/documentation/layout.pdf",
+      "sha256": "43782608d9400314a8e8d58f78eab9a134d9cd67acbb7e226684ac2f092cc78b",
+      "bytes": 445805,
+      "content_type": "application/pdf",
+      "retrieved_at": "2026-10-07T16:02:02.480572+00:00",
+      "version": "2026-09-10;114 positions",
+      "stored_bytes": "PRIVATE_DOCUMENTATION_ONLY"
+    },
+    {
+      "id": "legal",
+      "url": "https://www.fanniemae.com/about-us/legal-disclosure",
+      "resolved_url": "https://www.fanniemae.com/about-us/legal-disclosure",
+      "private_path": "data/track_b/fannie/documentation/legal.html",
+      "sha256": "1d281d79b47f5590c18b67824c7a1bac947065ee7bff0a0874ebbf0aadc985e6",
+      "bytes": 152902,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieved_at": "2026-10-07T16:02:02.673323+00:00",
+      "version": "2026-10-07;section7.4.1",
+      "stored_bytes": "PRIVATE_DOCUMENTATION_ONLY"
+    },
+    {
+      "id": "schedule",
+      "url": "https://capitalmarkets.fanniemae.com/media/document/pdf/disclosure-timing-guide.pdf",
+      "resolved_url": "https://capitalmarkets.fanniemae.com/media/20971/display",
+      "private_path": "data/track_b/fannie/documentation/schedule.pdf",
+      "sha256": "04e6d68aeea04bca0280360443a8f028f8273adc7100bafb683012fab62b4c7b",
+      "bytes": 59886,
+      "content_type": "application/pdf",
+      "retrieved_at": "2026-10-07T16:02:02.981832+00:00",
+      "version": "2021",
+      "stored_bytes": "PRIVATE_DOCUMENTATION_ONLY"
+    },
+    {
+      "id": "terms",
+      "url": "https://www.fanniemae.com/media/document/pdf/loan-performance-royalty-free-license.pdf",
+      "version": "v2.0 effective2015-10-28;footer2017-04-20",
+      "retrieved_at": "2026-10-07T16:23:12.033030+00:00",
+      "method": "Official web PDF extraction; direct byte download403",
+      "sha256": null,
+      "locators": [
+        "3.2(a)",
+        "3.2(b)",
+        "3.2(c)",
+        "4.2",
+        "4.3"
+      ]
+    },
+    {
+      "id": "sample_metadata",
+      "url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/xls/sf-loan-performance-data-sample.csv",
+      "version": "Official dataset-page link metadata; file NOT acquired",
+      "retrieved_at": "2026-10-07T16:23:12.033030+00:00",
+      "sha256": null
+    },
+    {
+      "id": "FM_GUIDE",
+      "reviewed_on": "2026-10-06",
+      "sha256": "4693ae754109c213feb84e97702fa675ed3926c2a5f4b6f7ba3c347db2aaf03e",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/general_user_guide_july_2026.pdf",
+      "version": "Release 47, July 2026",
+      "method": "Previously frozen official documentation"
+    },
+    {
+      "id": "FM_CHANGES",
+      "reviewed_on": "2026-10-06",
+      "sha256": "e513ccc06fca13880a541442b393a655e1b5904fd1a97e79cf7f56808f1fa2f0",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/disclosure-changes-summary.pdf",
+      "version": "v1.2, June 2026, effective July 2026",
+      "method": "Previously frozen official documentation"
+    },
+    {
+      "id": "FM_PAGE",
+      "reviewed_on": "2026-10-06",
+      "url": "https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset",
+      "version": "page reviewed 2026-10-06",
+      "method": "Previously frozen official documentation"
+    }
+  ],
+  "private_archive": {
+    "name": "2010Q1.zip",
+    "sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+    "bytes": 364466968,
+    "obtained": "User manual authenticated Data Dynamics download",
+    "release_date": "UNVERIFIED",
+    "retrieval_date": "USER_DOWNLOAD_TIME_NOT_RECORDED",
+    "file_version": "UNVERIFIED_113_POSITION_LAYOUT",
+    "terms_acceptance": "Authenticated manual acquisition reported; signed/versioned receipt not captured",
+    "authorization": "Task13 source/schema validation ONLY"
+  },
+  "licensing": {
+    "raw_and_derived_loan_records": "PRIVATE_NON_COMMITTABLE",
+    "research_exception": "3.2(b) describes non-commercial research publication excluding reconstructible data and identification",
+    "privacy": "3.2(c) prohibits identification of individuals, not a blanket prohibition of macro association",
+    "commercial_external_data_distribution": "3.2(a) describes prior written permission",
+    "aggregate_publication": "LEGAL_OR_LICENSE_REVIEW_REQUIRED: establish applicable accepted terms, commercial scope and non-reconstruction before publication",
+    "notices": "Retain original notices; no logos"
+  },
+  "historical_disclosure": "UNVERIFIED at cell level; general lag cannot reconstruct corrections",
+  "no_loan_data_downloaded_by_task13": true
+}

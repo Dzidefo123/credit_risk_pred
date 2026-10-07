@@ -1,0 +1,16 @@
+{
+  "contracts": {
+    "status": "PASSED",
+    "crosswalk_fields": 56,
+    "models": 6
+  },
+  "preservation": {
+    "status": "PASSED",
+    "public": 478,
+    "private": 325
+  },
+  "governance": {
+    "status": "PASSED",
+    "task13_paths_checked": 10
+  }
+}

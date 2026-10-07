@@ -1,0 +1,36 @@
+{
+  "scope": "SCHEMA_ONLY_BOUNDED_PREFIX",
+  "archive_name": "2010Q1.zip",
+  "archive_bytes": 364466968,
+  "archive_sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+  "outcome_values_interpreted": false,
+  "full_member_crc_verified": false,
+  "full_population_schema_validated": false,
+  "members": [
+    {
+      "name": "2010Q1.csv",
+      "compressed_bytes": 364466690,
+      "uncompressed_bytes": 5714098123,
+      "compression_method": 8,
+      "zip_timestamp": [
+        2026,
+        5,
+        4,
+        8,
+        47,
+        40
+      ],
+      "timestamp_is_release_proof": false,
+      "records_structurally_checked": 512,
+      "field_counts": [
+        113
+      ],
+      "delimiter": "pipe",
+      "encoding": "UTF-8 compatible; ASCII prefix",
+      "line_endings": [
+        "LF"
+      ],
+      "header": "Not interpreted; official FAQ documents headerless files"
+    }
+  ]
+}

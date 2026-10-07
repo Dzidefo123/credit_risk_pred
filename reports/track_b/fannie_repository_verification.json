@@ -1,0 +1,69 @@
+{
+  "task": "Track B Task13",
+  "base_commit": "eaa1cadfbee95f29eed724e756c9846ea6c649cc",
+  "verified_at": "2026-10-07T16:41:41.365137+00:00",
+  "decision": "FANNIE EXTERNAL REPLICATION REQUIRES SOURCE CLARIFICATION",
+  "checks": {
+    "targeted": {
+      "command": "python -m pytest tests/test_fannie_feasibility.py -q",
+      "passed": 66,
+      "exit_code": 0
+    },
+    "full": {
+      "command": "python -m pytest --strict-config --strict-markers -q",
+      "passed": 1068,
+      "warnings": 4,
+      "seconds": 72.76,
+      "exit_code": 0
+    },
+    "lint": {
+      "command": "ruff check src tests scripts api",
+      "status": "PASSED"
+    },
+    "format": {
+      "command": "ruff format --check src tests scripts api",
+      "files": 236,
+      "status": "PASSED"
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "report_local_links": "PASSED",
+    "git_diff_whitespace": "PASSED"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "public": 478,
+    "private": 325
+  },
+  "prior_chain": "reports/track_b/fannie_prior_preservation_check.json",
+  "track_a_tag": {
+    "object_sha": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "commit_sha": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  },
+  "fannie_archive_hash_unchanged": true,
+  "contracts": {
+    "status": "PASSED",
+    "crosswalk_fields": 56,
+    "models": 6
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical results; NOT newly evaluated"
+  },
+  "fresh_evidence": {
+    "outcomes_interpreted": false,
+    "loan_values_interpreted": false,
+    "replication_sample_created": false,
+    "research_models_fitted": false,
+    "broader_loan_data_acquired": false,
+    "locked_holdout_accessed": false,
+    "frozen_models_regenerated": false,
+    "protocol_status": "DRAFT_NOT_YET_AUTHORIZED"
+  },
+  "modified_preexisting_files": [],
+  "intended_commit": "docs: add Fannie external replication feasibility",
+  "push": false
+}

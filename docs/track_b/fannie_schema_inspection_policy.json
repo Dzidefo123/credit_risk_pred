@@ -1,0 +1,16 @@
+{
+  "version": "task13-schema-only-v1",
+  "status": "SCHEMA_ONLY_AUTHORIZED",
+  "authorized_archive": "2010Q1.zip",
+  "authorization": "User explicitly authorized this manually obtained archive for Task13 source/schema validation only.",
+  "maximum_records_per_member": 512,
+  "maximum_record_bytes": 65536,
+  "maximum_members": 1,
+  "allowed_member": "2010Q1.csv",
+  "documentation_layout": "2026-09-10; 114 positions; empirical field count must be recorded separately",
+  "procedure": "Hash archive bytes; inspect ZIP metadata; count delimiters and verify encoding in at most 512 lines; discard opaque field contents. Never extract or rename archive.",
+  "field_value_interpretation": false,
+  "outcome_values_interpreted": false,
+  "prohibited": ["event counts", "outcome distributions", "samples", "model fitting", "broader acquisition"],
+  "limitation": "Bounded prefix cannot establish whole-file integrity, release identity, code support or longitudinal quality. Coding semantics come exclusively from official documentation and synthetic tests."
+}
