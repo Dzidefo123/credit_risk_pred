@@ -1,0 +1,102 @@
+{
+  "version": "task13t-session-v1",
+  "base_commit": "9d375694f6decd67e618c113642a326c4a597705",
+  "amends": "reports/track_b/fannie_provenance_final_assessment.json",
+  "decision": "FANNIE SOURCE PROVENANCE STILL REQUIRES PROVIDER CONFIRMATION",
+  "observed_at": "2026-10-07T21:11:46.352158+00:00",
+  "source_page": "https://datadynamics.fanniemae.com/data-dynamics/#/resources/HP",
+  "authenticated_portal_observed": true,
+  "provider_response_artifact": "reports/track_b/fannie_provider_response_evidence.json",
+  "evidence_type": "PROVIDER_DIRECTED_DOCUMENTARY_INFERENCE",
+  "direct_archive_confirmation": false,
+  "release_identity_status": "RELEASE_IDENTITY_PARTIALLY_SUPPORTED",
+  "physical_113_status": "YES_BY_DOCUMENTED_VERSION_RECONSTRUCTION",
+  "exact_archive_binding": "PARTIALLY_SUPPORTED",
+  "acceptance_status": "ACCEPTANCE_EVIDENCED_WITH_MATERIAL_LIMITATIONS",
+  "acceptance_scope": "Current authenticated application exposes terms notice and deems use review/agreement. Historical accepted document/version and applicability to SFLPD research remain unverified.",
+  "historical_acceptance_version_status": "ACCEPTANCE_VERSION_UNRESOLVED",
+  "portal_notice": {
+    "observed_directly": true,
+    "application_subject_to_terms": true,
+    "use_deemed_review_and_agreement": true,
+    "accepted_historical_version_not_established": true,
+    "saved_image": "portal_terms_notice.jpg"
+  },
+  "terms_modal": {
+    "control_observed": true,
+    "clicked": true,
+    "opened_as": "Embedded PDF modal titled CRT Terms",
+    "fresh_document_download_succeeded": false,
+    "viewer": "Blank in available browser; download event did not occur; unsupported asset export",
+    "current_view_title": "CRT Terms",
+    "current_view_version": null,
+    "current_view_effective_date": null,
+    "saved_page": "crt_terms_modal.jpg",
+    "prior_user_document": {
+      "filename": "crt terms.pdf",
+      "sha256": "cfff52a66a805a8a24b189eb79ba9ee68a053fa69324ef29fdf9ee3ab84111f9",
+      "bytes": 121408,
+      "title": "Fannie Mae CRT Click-Through Usage Agreement",
+      "dated_as_of": "2017-10-20",
+      "status": "PREVIOUS_USER_DOWNLOAD; current modal binary identity NOT_VERIFIED"
+    }
+  },
+  "fresh_resource_downloads": [
+    {
+      "filename": "crt-file-layout-and-glossary.xlsx",
+      "sha256": "debc2a9ae2573ae73b57e4e52d99ca6825b90062208ffcab792a95190ddc43e5",
+      "bytes": 41690,
+      "source_url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/xls/crt-file-layout-and-glossary.xlsx",
+      "acquisition": "DOWNLOADED_FROM_OBSERVED_AUTHENTICATED_RESOURCES_LINK",
+      "matches_prior_user_download": true
+    },
+    {
+      "filename": "data-dynamics-data-refresh-calendar.pdf",
+      "sha256": "b148824cf8b0818f9ff1f53b0f9cb4f5d5afab6ff47d92e59383dcb26a37e233",
+      "bytes": 90606,
+      "source_url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/data-dynamics-data-refresh-calendar.pdf",
+      "acquisition": "DOWNLOADED_FROM_OBSERVED_AUTHENTICATED_RESOURCES_LINK",
+      "matches_prior_user_download": true
+    }
+  ],
+  "archive_sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+  "no_position_114_padding": true,
+  "archive_publication_cycle": "UNRESOLVED; quarterly cadence plus width does not distinguish specific pre-October refreshes",
+  "seven_vintage_coverage": "Historical scope unchanged; no new quarterly package inventory verified",
+  "publication_review_status": "PUBLICATION_REVIEW_REQUIRED",
+  "readiness_matrix": {
+    "Schema reconciled": "PASS",
+    "Provider response obtained": "PASS_WITH_MATERIAL_LIMITATION",
+    "Governing documentation identified": "PASS_WITH_MATERIAL_LIMITATION",
+    "113-field layout documented": "PASS_WITH_MATERIAL_LIMITATION",
+    "Exact archive release binding": "PASS_WITH_MATERIAL_LIMITATION",
+    "Applicable terms document identified": "PASS_WITH_MATERIAL_LIMITATION",
+    "Acceptance provenance": "PASS_WITH_MATERIAL_LIMITATION",
+    "Private-data governance": "PASS",
+    "Seven-vintage source availability": "PASS_WITH_MATERIAL_LIMITATION",
+    "Fresh-evidence protection": "PASS",
+    "Protocol status": "FAIL",
+    "Publication review": "FAIL",
+    "Task 13A authorization": "FAIL"
+  },
+  "task13a_authorized": false,
+  "protocol_status": "DRAFT_NOT_YET_AUTHORIZED",
+  "task14_preserved": true,
+  "prior_task13t_preserved": true,
+  "scope": {
+    "outcome_access": false,
+    "new_quarterly_archive": false,
+    "sample_creation": false,
+    "model_fitting": false,
+    "email_sent": false,
+    "task13a_started": false,
+    "task15_started": false
+  },
+  "remaining_limitations": [
+    "Current CRT PDF viewer was blank; no fresh terms binary obtained",
+    "Prior October 20, 2017 terms PDF is user-provided and not byte-bound to current modal",
+    "Exact archive publication and historical accepted terms/version remain unverified",
+    "No external replication or publication permission established"
+  ],
+  "next_step": "Continue with separately authorized Task 15 under frozen Task 14; Fannie closure remains pending. Do not email again under current instruction."
+}

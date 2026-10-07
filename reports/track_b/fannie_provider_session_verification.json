@@ -1,0 +1,62 @@
+{
+  "task": "Task 13T authenticated-session amendment",
+  "base_commit": "9d375694f6decd67e618c113642a326c4a597705",
+  "verified_at": "2026-10-07T22:32:05.450607+00:00",
+  "decision": "FANNIE SOURCE PROVENANCE STILL REQUIRES PROVIDER CONFIRMATION",
+  "acceptance_status": "ACCEPTANCE_EVIDENCED_WITH_MATERIAL_LIMITATIONS",
+  "historical_accepted_version": "ACCEPTANCE_VERSION_UNRESOLVED",
+  "checks": {
+    "new_regression_tests": 12,
+    "targeted_combined_passed": 32,
+    "full_pytest": {
+      "passed": 1197,
+      "warnings": 4,
+      "seconds": 113.94,
+      "exit_code": 0
+    },
+    "lint": "PASSED",
+    "format": {
+      "status": "PASSED",
+      "files": 247
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "paper_evidence_contract": "PASSED",
+    "identifier_and_private_path_guard": "PASSED",
+    "whitespace_diff": "PASSED"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "prior_public_lf_hashes": 542,
+    "private_byte_hashes": 366,
+    "git_refs": 2,
+    "seven_freddie_archives": "PASSED",
+    "fannie_archive_hash_and_directory": "PASSED",
+    "three_original_provider_documents": "PASSED",
+    "task14_and_prior_task13t_unchanged": true,
+    "consumed_ledgers_unchanged": true,
+    "archive_member_bodies_opened": false,
+    "models_loaded_or_regenerated": false
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical evidence; not newly evaluated"
+  },
+  "scope": {
+    "raw_documents_or_screenshots_committed": false,
+    "email_sent": false,
+    "new_quarterly_archive": false,
+    "outcomes_inspected": false,
+    "sample_created": false,
+    "task13a_authorized": false,
+    "task13a_started": false,
+    "task15_started": false
+  },
+  "new_files": 6,
+  "modified_preexisting_files": [],
+  "intended_commit": "docs: incorporate Fannie provider provenance evidence",
+  "push": false
+}

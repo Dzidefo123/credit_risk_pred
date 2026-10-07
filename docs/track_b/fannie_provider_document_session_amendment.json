@@ -1,0 +1,50 @@
+{
+  "version": "task13t-session-v1",
+  "base_commit": "9d375694f6decd67e618c113642a326c4a597705",
+  "amends": "docs/track_b/fannie_provider_document_registry.json",
+  "observed_at": "2026-10-07T21:11:46.352158+00:00",
+  "fresh_authenticated_resource_downloads": [
+    {
+      "filename": "crt-file-layout-and-glossary.xlsx",
+      "sha256": "debc2a9ae2573ae73b57e4e52d99ca6825b90062208ffcab792a95190ddc43e5",
+      "bytes": 41690,
+      "source_url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/xls/crt-file-layout-and-glossary.xlsx",
+      "acquisition": "DOWNLOADED_FROM_OBSERVED_AUTHENTICATED_RESOURCES_LINK",
+      "matches_prior_user_download": true
+    },
+    {
+      "filename": "data-dynamics-data-refresh-calendar.pdf",
+      "sha256": "b148824cf8b0818f9ff1f53b0f9cb4f5d5afab6ff47d92e59383dcb26a37e233",
+      "bytes": 90606,
+      "source_url": "https://capitalmarkets.fanniemae.com/resources/file/credit-risk/pdf/data-dynamics-data-refresh-calendar.pdf",
+      "acquisition": "DOWNLOADED_FROM_OBSERVED_AUTHENTICATED_RESOURCES_LINK",
+      "matches_prior_user_download": true
+    }
+  ],
+  "third_resource": {
+    "control_observed": true,
+    "clicked": true,
+    "opened_as": "Embedded PDF modal titled CRT Terms",
+    "fresh_document_download_succeeded": false,
+    "viewer": "Blank in available browser; download event did not occur; unsupported asset export",
+    "current_view_title": "CRT Terms",
+    "current_view_version": null,
+    "current_view_effective_date": null,
+    "saved_page": "crt_terms_modal.jpg",
+    "prior_user_document": {
+      "filename": "crt terms.pdf",
+      "sha256": "cfff52a66a805a8a24b189eb79ba9ee68a053fa69324ef29fdf9ee3ab84111f9",
+      "bytes": 121408,
+      "title": "Fannie Mae CRT Click-Through Usage Agreement",
+      "dated_as_of": "2017-10-20",
+      "status": "PREVIOUS_USER_DOWNLOAD; current modal binary identity NOT_VERIFIED"
+    },
+    "classification": "CURRENT_CONTROL_AND_MODAL_OBSERVED; prior terms PDF identity not bound to current modal"
+  },
+  "private_screenshot_hashes": {
+    "portal_terms_notice.jpg": "2c1a5239aeb7a90fcc7b6ea602385d1cd760937e5e2545dd9a87ea2187521fd8",
+    "crt_terms_control.jpg": "e9514405f0c842b274acddcd315e4d826ef1b848bfd93f6e1ad49c77e356631b",
+    "crt_terms_modal.jpg": "f67d3f6edb4836076da36d371789c0d68e3f097d1f3a8efc8460741c8e9f2d28"
+  },
+  "raw_documents_or_screenshots_committed": false
+}
