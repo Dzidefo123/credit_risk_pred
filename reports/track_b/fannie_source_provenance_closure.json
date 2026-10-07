@@ -1,0 +1,133 @@
+{
+  "version": "task13s-v1",
+  "base_commit": "d539f4ebd4999f11145eca1613c23c8ca47c620a",
+  "reviewed_at": "2026-10-07T17:30:28.935325+00:00",
+  "decision": "FANNIE SOURCE PROVENANCE REQUIRES PROVIDER CONFIRMATION",
+  "archive_sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+  "archive_structural_identity": {
+    "scope": "SCHEMA_ONLY_BOUNDED_PREFIX",
+    "archive_name": "2010Q1.zip",
+    "archive_bytes": 364466968,
+    "archive_sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+    "outcome_values_interpreted": false,
+    "full_member_crc_verified": false,
+    "full_population_schema_validated": false,
+    "members": [
+      {
+        "name": "2010Q1.csv",
+        "compressed_bytes": 364466690,
+        "uncompressed_bytes": 5714098123,
+        "compression_method": 8,
+        "zip_timestamp": [
+          2026,
+          5,
+          4,
+          8,
+          47,
+          40
+        ],
+        "timestamp_is_release_proof": false,
+        "records_structurally_checked": 512,
+        "field_counts": [
+          113
+        ],
+        "delimiter": "pipe",
+        "encoding": "UTF-8 compatible; ASCII prefix",
+        "line_endings": [
+          "LF"
+        ],
+        "header": "Not interpreted; official FAQ documents headerless files"
+      }
+    ]
+  },
+  "download_date": "UNVERIFIED",
+  "portal_label": "USER_ATTESTED Primary 2010 Q1 Acquisition and Performance; exact provider release label unavailable",
+  "acquisition_route": "USER_ATTESTED_AUTHENTICATED_MANUAL_DATA_DYNAMICS_DOWNLOAD",
+  "release_identity_status": "RELEASE_IDENTITY_PARTIALLY_SUPPORTED",
+  "provider_release": null,
+  "layout_id": "fannie-sflpd-2026-04-113-reconstructed",
+  "layout_binding_status": "CANDIDATE_ONLY_NOT_ARCHIVE_BOUND",
+  "layout_ordering_sha256": "c8b352a5adcf6b1516a3d62e4096c2d6e6ee9788a0446caf353c4157cdec1c99",
+  "layout_evidence": {
+    "documentary_ordering_verified": true,
+    "archive_value_ordering_verified": false,
+    "provider_release_verified": false,
+    "observed_prefix_width": 113,
+    "full_member_schema_verified": false,
+    "sources": [
+      {
+        "title": "Classic FICO disclosure enhancement",
+        "url": "https://capitalmarkets.fanniemae.com/credit-risk-transfer/single-family-credit-risk-transfer/enhance-credit-risk-transfer-disclosures",
+        "publication_date": "2025-11-17",
+        "reviewed_at": "2026-10-07T17:30:28.935325+00:00",
+        "scope": "SF April 2026 publication; physical positions 111 through 113; only 111 disclosed for SF"
+      },
+      {
+        "title": "Credit score disclosure changes",
+        "url": "https://capitalmarkets.fanniemae.com/credit-risk-transfer/single-family-credit-risk-transfer/crt-disclosure-updates-credit-score-changes",
+        "publication_date": "2026-08-17",
+        "reviewed_at": "2026-10-07T17:30:28.935325+00:00",
+        "scope": "SF October 2026 update; October 26 date applies to CRT files, not an exact SF release date"
+      }
+    ],
+    "prior_registry": "docs/track_b/fannie_release_layout_registry.json",
+    "prior_reconciliation": "reports/track_b/fannie_release_layout_reconciliation.json",
+    "no_position_114_padding": true,
+    "zip_timestamp_is_release_proof": false
+  },
+  "license": {
+    "document_status": "LICENSE_DOCUMENT_IDENTIFIED",
+    "title": "Fannie Mae Loan Performance Data Royalty-free - Internal Use Only Terms and Conditions",
+    "version": "2.0",
+    "effective_date": "2015-10-28",
+    "footer_date": "2017-04-20",
+    "retrieval_date": "2026-10-07",
+    "retrieval_method": "Official PDF reviewed through web text extraction; no local binary retrieval claimed",
+    "official_source": "https://www.fanniemae.com/media/document/pdf/loan-performance-royalty-free-license.pdf",
+    "applicable_accepted_document_verified": false,
+    "acceptance_evidence_status": "ACCEPTANCE_USER_ATTESTED_ONLY",
+    "acceptance_scope": "User attests authenticated manual acquisition; acceptance of a specific terms version has NOT been expressly attested or independently evidenced",
+    "additional_statuses": [
+      "LICENSE_VERSION_UNRESOLVED",
+      "LEGAL_OR_LICENSE_REVIEW_REQUIRED"
+    ],
+    "legal_conclusion": null
+  },
+  "remaining_questions": [
+    "Which provider release produced this exact archive hash, and which full layout governs it?",
+    "Are exactly 113 physical positions expected for that release?",
+    "What was the actual download date and precise portal release label?",
+    "Which terms version applied during download, and is non-sensitive evidence of its acceptance available?",
+    "Seven-vintage acquisition-quarter coverage remains to be defined before population acquisition; documentary temporal scope is not package verification."
+  ],
+  "readiness_matrix": {
+    "Schema reconciled": "PASS",
+    "Release identity": "MATERIAL_LIMITATION",
+    "License document identified": "MATERIAL_LIMITATION",
+    "Acceptance provenance": "MATERIAL_LIMITATION",
+    "Private-data governance": "PASS",
+    "Seven-vintage documentation support": "MATERIAL_LIMITATION",
+    "Fresh-evidence protection": "PASS",
+    "Protocol frozen": "FAIL",
+    "Task 13A authorization": "NO"
+  },
+  "task13a_readiness": "NOT_READY_PROVIDER_CONFIRMATION_AND_ACCEPTANCE_PROVENANCE_REQUIRED",
+  "protocol_status": "DRAFT_NOT_YET_AUTHORIZED",
+  "scope": {
+    "loan_values_interpreted": false,
+    "outcome_analysis": false,
+    "additional_performance_archives_acquired": false,
+    "sample_creation": false,
+    "models_fitted": false,
+    "model_artifacts_changed": false,
+    "holdout_consumed": false,
+    "task13a_authorized": false
+  },
+  "repository_boundary": {
+    "loan_level_data": "PRIVATE_NON_COMMITTABLE",
+    "public_evidence": "Code, schemas, hashes and official documentation references; aggregate evidence only where permitted",
+    "private_paths_in_public_artifacts": false,
+    "credentials_stored": false
+  },
+  "next_task": "Obtain provider confirmation and non-sensitive terms acceptance evidence; Task 13A is not recommended for execution yet"
+}
