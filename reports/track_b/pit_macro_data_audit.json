@@ -1,0 +1,4717 @@
+{
+  "task": 9,
+  "decision": "PIT MACRO SUPPORT INSUFFICIENT",
+  "engine_version": "pit-macro-v1.0.0",
+  "registry_sha256_lf": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+  "feature_registry_sha256_lf": "631eef9e95c276cdb8969748363a4a1789da9a7ada7d4108a5bda3c4842c9e82",
+  "protocol_sha256_lf": "4109cc4d4f5742b50d8dcb40e45b4adefd87aeaf0085b6850fa6d2489f18d2cc",
+  "series_registry": {
+    "version": "1.0.0",
+    "task": 9,
+    "base_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+    "frozen_at": "2026-10-07T08:51:39.479978+00:00",
+    "series": [
+      {
+        "feature_family": "labor",
+        "provider": "BLS",
+        "series_id": "UNRATE",
+        "series_name": "U-3 unemployment; CPS/LNS14000000",
+        "definition": "U-3 unemployment; CPS/LNS14000000",
+        "geography": "US",
+        "frequency": "M",
+        "units": "Percent",
+        "seasonal_adjustment": "SA",
+        "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+        "publication_source": "https://fred.stlouisfed.org/series/UNRATE",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=UNRATE",
+        "transformation": [
+          "level",
+          "change_3m_pp"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 62,
+        "known_limitations": "Seasonal revisions/population-control breaks; not payroll survey",
+        "historical_vintage_support_hint": "1960-03-15",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Official series citation requested; preserve provider notes"
+      },
+      {
+        "feature_family": "interest_rates",
+        "provider": "Federal Reserve Board",
+        "series_id": "DGS10",
+        "series_name": "10-year constant-maturity market Treasury yield, investment basis",
+        "definition": "10-year constant-maturity market Treasury yield, investment basis",
+        "geography": "US",
+        "frequency": "D",
+        "units": "Percent",
+        "seasonal_adjustment": "NSA",
+        "reference_period_definition": "Native daily/weekly observation date; no invented release date",
+        "publication_source": "https://fred.stlouisfed.org/series/DGS10",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=DGS10",
+        "transformation": [
+          "latest_released_level"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 7,
+        "known_limitations": "Trading date is not guaranteed publication date; holidays/missing values",
+        "historical_vintage_support_hint": "2005-06-28",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Official series citation requested; preserve provider notes"
+      },
+      {
+        "feature_family": "interest_rates",
+        "provider": "Freddie Mac",
+        "series_id": "MORTGAGE30US",
+        "series_name": "US 30-year fixed mortgage average, Primary Mortgage Market Survey",
+        "definition": "US 30-year fixed mortgage average, Primary Mortgage Market Survey",
+        "geography": "US",
+        "frequency": "W",
+        "units": "Percent",
+        "seasonal_adjustment": "NSA",
+        "reference_period_definition": "Native daily/weekly observation date; no invented release date",
+        "publication_source": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=MORTGAGE30US",
+        "transformation": [
+          "latest_released_level",
+          "spread_to_DGS10_pp"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 14,
+        "known_limitations": "2022-11-17 methodology break; survey/application mix; copyright terms; pre-Jun2010 archive gap must be resolved",
+        "historical_vintage_support_hint": "2010-06-17",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Freddie PMMS copyright: citation required, raw values stay private"
+      },
+      {
+        "feature_family": "housing",
+        "provider": "FHFA",
+        "series_id": "USSTHPI",
+        "series_name": "National all-transactions repeat-sales house price index; includes refinancings",
+        "definition": "National all-transactions repeat-sales house price index; includes refinancings",
+        "geography": "US",
+        "frequency": "Q",
+        "units": "Index 1980:Q1=100",
+        "seasonal_adjustment": "NSA",
+        "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+        "publication_source": "https://fred.stlouisfed.org/series/USSTHPI",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=USSTHPI",
+        "transformation": [
+          "growth_12m_pct"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 183,
+        "known_limitations": "Not monthly purchase-only HPI; pre-Aug2010 vintage gap; revisions",
+        "historical_vintage_support_hint": "2010-08-25",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Official series citation requested; preserve provider notes"
+      },
+      {
+        "feature_family": "economic_activity",
+        "provider": "BEA",
+        "series_id": "GDPC1",
+        "series_name": "Real GDP quarterly chain-weighted level at annual rate",
+        "definition": "Real GDP quarterly chain-weighted level at annual rate",
+        "geography": "US",
+        "frequency": "Q",
+        "units": "Billions of Chained 2017 Dollars",
+        "seasonal_adjustment": "SA",
+        "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+        "publication_source": "https://fred.stlouisfed.org/series/GDPC1",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=GDPC1",
+        "transformation": [
+          "growth_3m_pct_nonannualized"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 183,
+        "known_limitations": "Advance/second/third plus annual/comprehensive revisions; base-year changes",
+        "historical_vintage_support_hint": "1991-12-04",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [
+          {
+            "start": "2003-12-10",
+            "end": "2009-07-30",
+            "units": "Billions of Chained 2000 Dollars"
+          },
+          {
+            "start": "2009-07-31",
+            "end": "2013-07-30",
+            "units": "Billions of Chained 2005 Dollars"
+          },
+          {
+            "start": "2013-07-31",
+            "end": "2018-07-26",
+            "units": "Billions of Chained 2009 Dollars"
+          },
+          {
+            "start": "2018-07-27",
+            "end": "2023-09-27",
+            "units": "Billions of Chained 2012 Dollars"
+          },
+          {
+            "start": "2023-09-28",
+            "end": "9999-12-31",
+            "units": "Billions of Chained 2017 Dollars"
+          }
+        ],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Official series citation requested; preserve provider notes"
+      },
+      {
+        "feature_family": "prices",
+        "provider": "BLS",
+        "series_id": "CPIAUCSL",
+        "series_name": "All-items CPI-U US city average",
+        "definition": "All-items CPI-U US city average",
+        "geography": "US",
+        "frequency": "M",
+        "units": "Index 1982-1984=100",
+        "seasonal_adjustment": "SA",
+        "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+        "publication_source": "https://fred.stlouisfed.org/series/CPIAUCSL",
+        "vintage_source": "https://alfred.stlouisfed.org/series?seid=CPIAUCSL",
+        "transformation": [
+          "growth_12m_pct"
+        ],
+        "intended_role": "primary_prespecified",
+        "freshness_days": 62,
+        "known_limitations": "SA history revised; do not substitute published NSA headline YoY",
+        "historical_vintage_support_hint": "1972-07-21",
+        "hint_is_certified_observation_coverage": false,
+        "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+        "units_by_availability": [],
+        "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+        "license_access_notes": "Official series citation requested; preserve provider notes"
+      }
+    ],
+    "reserve_not_acquired": [
+      "PAYEMS",
+      "FEDFUNDS"
+    ],
+    "feature_selection_uses_outcomes": false,
+    "metadata_sources": [
+      "https://alfred.stlouisfed.org/help",
+      "https://alfred.stlouisfed.org/help/downloaddata",
+      "https://alfred.stlouisfed.org/series?seid=GDPC1"
+    ],
+    "predictor_downloads_before_freeze": false
+  },
+  "features": [
+    {
+      "name": "unemployment_level",
+      "series_id": "UNRATE",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "unemployment_change_3m",
+      "series_id": "UNRATE",
+      "transformation": "difference",
+      "lag_months": 3,
+      "units": "percentage_points",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "treasury_10y_level",
+      "series_id": "DGS10",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 7,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "mortgage_30y_level",
+      "series_id": "MORTGAGE30US",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 14,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "mortgage_treasury_spread",
+      "series_id": "MORTGAGE30US",
+      "transformation": "spread",
+      "lag_months": 0,
+      "units": "percentage_points",
+      "secondary_series": "DGS10",
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 14,
+      "limitations": "Native rate dates can differ; each operand must pass freshness"
+    },
+    {
+      "name": "hpi_yoy",
+      "series_id": "USSTHPI",
+      "transformation": "growth_pct",
+      "lag_months": 12,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 183,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "cpi_yoy",
+      "series_id": "CPIAUCSL",
+      "transformation": "growth_pct",
+      "lag_months": 12,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "gdp_qoq",
+      "series_id": "GDPC1",
+      "transformation": "growth_pct",
+      "lag_months": 3,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 183,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    }
+  ],
+  "acquisition": {
+    "registry_sha256_lf": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+    "protocol_sha256_lf": "4109cc4d4f5742b50d8dcb40e45b4adefd87aeaf0085b6850fa6d2489f18d2cc",
+    "api_key_configured": false,
+    "requests": [
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "UNRATE"
+        },
+        "retrieved_at": "2026-10-07T08:58:39.983342+00:00",
+        "series": "UNRATE",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      },
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "DGS10"
+        },
+        "retrieved_at": "2026-10-07T08:58:55.201096+00:00",
+        "series": "DGS10",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      },
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "MORTGAGE30US"
+        },
+        "retrieved_at": "2026-10-07T08:59:10.265411+00:00",
+        "series": "MORTGAGE30US",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      },
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "USSTHPI"
+        },
+        "retrieved_at": "2026-10-07T08:59:25.350278+00:00",
+        "series": "USSTHPI",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      },
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "GDPC1"
+        },
+        "retrieved_at": "2026-10-07T08:59:40.451574+00:00",
+        "series": "GDPC1",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      },
+      {
+        "provider": "Federal Reserve Bank of St. Louis / ALFRED",
+        "endpoint": "https://alfred.stlouisfed.org/series/downloaddata",
+        "parameters": {
+          "seid": "CPIAUCSL"
+        },
+        "retrieved_at": "2026-10-07T08:59:55.533068+00:00",
+        "series": "CPIAUCSL",
+        "license_access_notes": "Official source; registry retains terms; raw stays ignored",
+        "response_status": null,
+        "error_type": "TimeoutError"
+      }
+    ],
+    "series": [
+      {
+        "series_id": "UNRATE",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      },
+      {
+        "series_id": "DGS10",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      },
+      {
+        "series_id": "MORTGAGE30US",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      },
+      {
+        "series_id": "USSTHPI",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      },
+      {
+        "series_id": "GDPC1",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      },
+      {
+        "series_id": "CPIAUCSL",
+        "provenance": "INSUFFICIENT_PROVENANCE",
+        "normalized_versions": 0,
+        "exact_provider_dates_certified": false,
+        "status": "NO_PREDICTOR_OBSERVATIONS",
+        "reason": "API key absent; public ALFRED form supplied no dated observation export",
+        "export_form_response_status": null,
+        "form_error": "TimeoutError",
+        "form_content_hash": null,
+        "metadata_html_is_predictor_data": false
+      }
+    ],
+    "requested_series": [
+      "UNRATE",
+      "DGS10",
+      "MORTGAGE30US",
+      "USSTHPI",
+      "GDPC1",
+      "CPIAUCSL"
+    ],
+    "models_fitted": false,
+    "outcome_selection": false,
+    "normalized_versions_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "source_hashes": [],
+  "metadata_extraction": {
+    "raw_path": "data/track_b/macro/raw/task9_metadata_web_extraction.json",
+    "transport": "Web extraction JSON, NOT original HTTP bytes; not predictor data",
+    "sha256": "6f020cc2bf7e4b1c030984b18fffeadbbbe57793b73d9dfe8ee3b6c692f5f0ef"
+  },
+  "release_lags": {
+    "UNRATE": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "DGS10": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "MORTGAGE30US": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "USSTHPI": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "GDPC1": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "CPIAUCSL": {
+      "count": 0,
+      "median": null,
+      "minimum": null,
+      "maximum": null,
+      "quantiles": null,
+      "evidence_quality": "UNMEASURED_EXACT_PROVIDER_DATES",
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    }
+  },
+  "revision_analysis": {
+    "certified_initial_comparisons": 0,
+    "current_revised_shadow_acquired": false,
+    "measured_revision_magnitude": null,
+    "reason": "No certified paired initial/current responses; current browser metadata tables excluded"
+  },
+  "normalized_version_rows": 0,
+  "unique_reporting_months": 243,
+  "assessment_dates": [
+    {
+      "reporting_month": "2006-01",
+      "t0": "2005-12-31"
+    },
+    {
+      "reporting_month": "2006-02",
+      "t0": "2006-01-31"
+    },
+    {
+      "reporting_month": "2006-03",
+      "t0": "2006-02-28"
+    },
+    {
+      "reporting_month": "2006-04",
+      "t0": "2006-03-31"
+    },
+    {
+      "reporting_month": "2006-05",
+      "t0": "2006-04-30"
+    },
+    {
+      "reporting_month": "2006-06",
+      "t0": "2006-05-31"
+    },
+    {
+      "reporting_month": "2006-07",
+      "t0": "2006-06-30"
+    },
+    {
+      "reporting_month": "2006-08",
+      "t0": "2006-07-31"
+    },
+    {
+      "reporting_month": "2006-09",
+      "t0": "2006-08-31"
+    },
+    {
+      "reporting_month": "2006-10",
+      "t0": "2006-09-30"
+    },
+    {
+      "reporting_month": "2006-11",
+      "t0": "2006-10-31"
+    },
+    {
+      "reporting_month": "2006-12",
+      "t0": "2006-11-30"
+    },
+    {
+      "reporting_month": "2007-01",
+      "t0": "2006-12-31"
+    },
+    {
+      "reporting_month": "2007-02",
+      "t0": "2007-01-31"
+    },
+    {
+      "reporting_month": "2007-03",
+      "t0": "2007-02-28"
+    },
+    {
+      "reporting_month": "2007-04",
+      "t0": "2007-03-31"
+    },
+    {
+      "reporting_month": "2007-05",
+      "t0": "2007-04-30"
+    },
+    {
+      "reporting_month": "2007-06",
+      "t0": "2007-05-31"
+    },
+    {
+      "reporting_month": "2007-07",
+      "t0": "2007-06-30"
+    },
+    {
+      "reporting_month": "2007-08",
+      "t0": "2007-07-31"
+    },
+    {
+      "reporting_month": "2007-09",
+      "t0": "2007-08-31"
+    },
+    {
+      "reporting_month": "2007-10",
+      "t0": "2007-09-30"
+    },
+    {
+      "reporting_month": "2007-11",
+      "t0": "2007-10-31"
+    },
+    {
+      "reporting_month": "2007-12",
+      "t0": "2007-11-30"
+    },
+    {
+      "reporting_month": "2008-01",
+      "t0": "2007-12-31"
+    },
+    {
+      "reporting_month": "2008-02",
+      "t0": "2008-01-31"
+    },
+    {
+      "reporting_month": "2008-03",
+      "t0": "2008-02-29"
+    },
+    {
+      "reporting_month": "2008-04",
+      "t0": "2008-03-31"
+    },
+    {
+      "reporting_month": "2008-05",
+      "t0": "2008-04-30"
+    },
+    {
+      "reporting_month": "2008-06",
+      "t0": "2008-05-31"
+    },
+    {
+      "reporting_month": "2008-07",
+      "t0": "2008-06-30"
+    },
+    {
+      "reporting_month": "2008-08",
+      "t0": "2008-07-31"
+    },
+    {
+      "reporting_month": "2008-09",
+      "t0": "2008-08-31"
+    },
+    {
+      "reporting_month": "2008-10",
+      "t0": "2008-09-30"
+    },
+    {
+      "reporting_month": "2008-11",
+      "t0": "2008-10-31"
+    },
+    {
+      "reporting_month": "2008-12",
+      "t0": "2008-11-30"
+    },
+    {
+      "reporting_month": "2009-01",
+      "t0": "2008-12-31"
+    },
+    {
+      "reporting_month": "2009-02",
+      "t0": "2009-01-31"
+    },
+    {
+      "reporting_month": "2009-03",
+      "t0": "2009-02-28"
+    },
+    {
+      "reporting_month": "2009-04",
+      "t0": "2009-03-31"
+    },
+    {
+      "reporting_month": "2009-05",
+      "t0": "2009-04-30"
+    },
+    {
+      "reporting_month": "2009-06",
+      "t0": "2009-05-31"
+    },
+    {
+      "reporting_month": "2009-07",
+      "t0": "2009-06-30"
+    },
+    {
+      "reporting_month": "2009-08",
+      "t0": "2009-07-31"
+    },
+    {
+      "reporting_month": "2009-09",
+      "t0": "2009-08-31"
+    },
+    {
+      "reporting_month": "2009-10",
+      "t0": "2009-09-30"
+    },
+    {
+      "reporting_month": "2009-11",
+      "t0": "2009-10-31"
+    },
+    {
+      "reporting_month": "2009-12",
+      "t0": "2009-11-30"
+    },
+    {
+      "reporting_month": "2010-01",
+      "t0": "2009-12-31"
+    },
+    {
+      "reporting_month": "2010-02",
+      "t0": "2010-01-31"
+    },
+    {
+      "reporting_month": "2010-03",
+      "t0": "2010-02-28"
+    },
+    {
+      "reporting_month": "2010-04",
+      "t0": "2010-03-31"
+    },
+    {
+      "reporting_month": "2010-05",
+      "t0": "2010-04-30"
+    },
+    {
+      "reporting_month": "2010-06",
+      "t0": "2010-05-31"
+    },
+    {
+      "reporting_month": "2010-07",
+      "t0": "2010-06-30"
+    },
+    {
+      "reporting_month": "2010-08",
+      "t0": "2010-07-31"
+    },
+    {
+      "reporting_month": "2010-09",
+      "t0": "2010-08-31"
+    },
+    {
+      "reporting_month": "2010-10",
+      "t0": "2010-09-30"
+    },
+    {
+      "reporting_month": "2010-11",
+      "t0": "2010-10-31"
+    },
+    {
+      "reporting_month": "2010-12",
+      "t0": "2010-11-30"
+    },
+    {
+      "reporting_month": "2011-01",
+      "t0": "2010-12-31"
+    },
+    {
+      "reporting_month": "2011-02",
+      "t0": "2011-01-31"
+    },
+    {
+      "reporting_month": "2011-03",
+      "t0": "2011-02-28"
+    },
+    {
+      "reporting_month": "2011-04",
+      "t0": "2011-03-31"
+    },
+    {
+      "reporting_month": "2011-05",
+      "t0": "2011-04-30"
+    },
+    {
+      "reporting_month": "2011-06",
+      "t0": "2011-05-31"
+    },
+    {
+      "reporting_month": "2011-07",
+      "t0": "2011-06-30"
+    },
+    {
+      "reporting_month": "2011-08",
+      "t0": "2011-07-31"
+    },
+    {
+      "reporting_month": "2011-09",
+      "t0": "2011-08-31"
+    },
+    {
+      "reporting_month": "2011-10",
+      "t0": "2011-09-30"
+    },
+    {
+      "reporting_month": "2011-11",
+      "t0": "2011-10-31"
+    },
+    {
+      "reporting_month": "2011-12",
+      "t0": "2011-11-30"
+    },
+    {
+      "reporting_month": "2012-01",
+      "t0": "2011-12-31"
+    },
+    {
+      "reporting_month": "2012-02",
+      "t0": "2012-01-31"
+    },
+    {
+      "reporting_month": "2012-03",
+      "t0": "2012-02-29"
+    },
+    {
+      "reporting_month": "2012-04",
+      "t0": "2012-03-31"
+    },
+    {
+      "reporting_month": "2012-05",
+      "t0": "2012-04-30"
+    },
+    {
+      "reporting_month": "2012-06",
+      "t0": "2012-05-31"
+    },
+    {
+      "reporting_month": "2012-07",
+      "t0": "2012-06-30"
+    },
+    {
+      "reporting_month": "2012-08",
+      "t0": "2012-07-31"
+    },
+    {
+      "reporting_month": "2012-09",
+      "t0": "2012-08-31"
+    },
+    {
+      "reporting_month": "2012-10",
+      "t0": "2012-09-30"
+    },
+    {
+      "reporting_month": "2012-11",
+      "t0": "2012-10-31"
+    },
+    {
+      "reporting_month": "2012-12",
+      "t0": "2012-11-30"
+    },
+    {
+      "reporting_month": "2013-01",
+      "t0": "2012-12-31"
+    },
+    {
+      "reporting_month": "2013-02",
+      "t0": "2013-01-31"
+    },
+    {
+      "reporting_month": "2013-03",
+      "t0": "2013-02-28"
+    },
+    {
+      "reporting_month": "2013-04",
+      "t0": "2013-03-31"
+    },
+    {
+      "reporting_month": "2013-05",
+      "t0": "2013-04-30"
+    },
+    {
+      "reporting_month": "2013-06",
+      "t0": "2013-05-31"
+    },
+    {
+      "reporting_month": "2013-07",
+      "t0": "2013-06-30"
+    },
+    {
+      "reporting_month": "2013-08",
+      "t0": "2013-07-31"
+    },
+    {
+      "reporting_month": "2013-09",
+      "t0": "2013-08-31"
+    },
+    {
+      "reporting_month": "2013-10",
+      "t0": "2013-09-30"
+    },
+    {
+      "reporting_month": "2013-11",
+      "t0": "2013-10-31"
+    },
+    {
+      "reporting_month": "2013-12",
+      "t0": "2013-11-30"
+    },
+    {
+      "reporting_month": "2014-01",
+      "t0": "2013-12-31"
+    },
+    {
+      "reporting_month": "2014-02",
+      "t0": "2014-01-31"
+    },
+    {
+      "reporting_month": "2014-03",
+      "t0": "2014-02-28"
+    },
+    {
+      "reporting_month": "2014-04",
+      "t0": "2014-03-31"
+    },
+    {
+      "reporting_month": "2014-05",
+      "t0": "2014-04-30"
+    },
+    {
+      "reporting_month": "2014-06",
+      "t0": "2014-05-31"
+    },
+    {
+      "reporting_month": "2014-07",
+      "t0": "2014-06-30"
+    },
+    {
+      "reporting_month": "2014-08",
+      "t0": "2014-07-31"
+    },
+    {
+      "reporting_month": "2014-09",
+      "t0": "2014-08-31"
+    },
+    {
+      "reporting_month": "2014-10",
+      "t0": "2014-09-30"
+    },
+    {
+      "reporting_month": "2014-11",
+      "t0": "2014-10-31"
+    },
+    {
+      "reporting_month": "2014-12",
+      "t0": "2014-11-30"
+    },
+    {
+      "reporting_month": "2015-01",
+      "t0": "2014-12-31"
+    },
+    {
+      "reporting_month": "2015-02",
+      "t0": "2015-01-31"
+    },
+    {
+      "reporting_month": "2015-03",
+      "t0": "2015-02-28"
+    },
+    {
+      "reporting_month": "2015-04",
+      "t0": "2015-03-31"
+    },
+    {
+      "reporting_month": "2015-05",
+      "t0": "2015-04-30"
+    },
+    {
+      "reporting_month": "2015-06",
+      "t0": "2015-05-31"
+    },
+    {
+      "reporting_month": "2015-07",
+      "t0": "2015-06-30"
+    },
+    {
+      "reporting_month": "2015-08",
+      "t0": "2015-07-31"
+    },
+    {
+      "reporting_month": "2015-09",
+      "t0": "2015-08-31"
+    },
+    {
+      "reporting_month": "2015-10",
+      "t0": "2015-09-30"
+    },
+    {
+      "reporting_month": "2015-11",
+      "t0": "2015-10-31"
+    },
+    {
+      "reporting_month": "2015-12",
+      "t0": "2015-11-30"
+    },
+    {
+      "reporting_month": "2016-01",
+      "t0": "2015-12-31"
+    },
+    {
+      "reporting_month": "2016-02",
+      "t0": "2016-01-31"
+    },
+    {
+      "reporting_month": "2016-03",
+      "t0": "2016-02-29"
+    },
+    {
+      "reporting_month": "2016-04",
+      "t0": "2016-03-31"
+    },
+    {
+      "reporting_month": "2016-05",
+      "t0": "2016-04-30"
+    },
+    {
+      "reporting_month": "2016-06",
+      "t0": "2016-05-31"
+    },
+    {
+      "reporting_month": "2016-07",
+      "t0": "2016-06-30"
+    },
+    {
+      "reporting_month": "2016-08",
+      "t0": "2016-07-31"
+    },
+    {
+      "reporting_month": "2016-09",
+      "t0": "2016-08-31"
+    },
+    {
+      "reporting_month": "2016-10",
+      "t0": "2016-09-30"
+    },
+    {
+      "reporting_month": "2016-11",
+      "t0": "2016-10-31"
+    },
+    {
+      "reporting_month": "2016-12",
+      "t0": "2016-11-30"
+    },
+    {
+      "reporting_month": "2017-01",
+      "t0": "2016-12-31"
+    },
+    {
+      "reporting_month": "2017-02",
+      "t0": "2017-01-31"
+    },
+    {
+      "reporting_month": "2017-03",
+      "t0": "2017-02-28"
+    },
+    {
+      "reporting_month": "2017-04",
+      "t0": "2017-03-31"
+    },
+    {
+      "reporting_month": "2017-05",
+      "t0": "2017-04-30"
+    },
+    {
+      "reporting_month": "2017-06",
+      "t0": "2017-05-31"
+    },
+    {
+      "reporting_month": "2017-07",
+      "t0": "2017-06-30"
+    },
+    {
+      "reporting_month": "2017-08",
+      "t0": "2017-07-31"
+    },
+    {
+      "reporting_month": "2017-09",
+      "t0": "2017-08-31"
+    },
+    {
+      "reporting_month": "2017-10",
+      "t0": "2017-09-30"
+    },
+    {
+      "reporting_month": "2017-11",
+      "t0": "2017-10-31"
+    },
+    {
+      "reporting_month": "2017-12",
+      "t0": "2017-11-30"
+    },
+    {
+      "reporting_month": "2018-01",
+      "t0": "2017-12-31"
+    },
+    {
+      "reporting_month": "2018-02",
+      "t0": "2018-01-31"
+    },
+    {
+      "reporting_month": "2018-03",
+      "t0": "2018-02-28"
+    },
+    {
+      "reporting_month": "2018-04",
+      "t0": "2018-03-31"
+    },
+    {
+      "reporting_month": "2018-05",
+      "t0": "2018-04-30"
+    },
+    {
+      "reporting_month": "2018-06",
+      "t0": "2018-05-31"
+    },
+    {
+      "reporting_month": "2018-07",
+      "t0": "2018-06-30"
+    },
+    {
+      "reporting_month": "2018-08",
+      "t0": "2018-07-31"
+    },
+    {
+      "reporting_month": "2018-09",
+      "t0": "2018-08-31"
+    },
+    {
+      "reporting_month": "2018-10",
+      "t0": "2018-09-30"
+    },
+    {
+      "reporting_month": "2018-11",
+      "t0": "2018-10-31"
+    },
+    {
+      "reporting_month": "2018-12",
+      "t0": "2018-11-30"
+    },
+    {
+      "reporting_month": "2019-01",
+      "t0": "2018-12-31"
+    },
+    {
+      "reporting_month": "2019-02",
+      "t0": "2019-01-31"
+    },
+    {
+      "reporting_month": "2019-03",
+      "t0": "2019-02-28"
+    },
+    {
+      "reporting_month": "2019-04",
+      "t0": "2019-03-31"
+    },
+    {
+      "reporting_month": "2019-05",
+      "t0": "2019-04-30"
+    },
+    {
+      "reporting_month": "2019-06",
+      "t0": "2019-05-31"
+    },
+    {
+      "reporting_month": "2019-07",
+      "t0": "2019-06-30"
+    },
+    {
+      "reporting_month": "2019-08",
+      "t0": "2019-07-31"
+    },
+    {
+      "reporting_month": "2019-09",
+      "t0": "2019-08-31"
+    },
+    {
+      "reporting_month": "2019-10",
+      "t0": "2019-09-30"
+    },
+    {
+      "reporting_month": "2019-11",
+      "t0": "2019-10-31"
+    },
+    {
+      "reporting_month": "2019-12",
+      "t0": "2019-11-30"
+    },
+    {
+      "reporting_month": "2020-01",
+      "t0": "2019-12-31"
+    },
+    {
+      "reporting_month": "2020-02",
+      "t0": "2020-01-31"
+    },
+    {
+      "reporting_month": "2020-03",
+      "t0": "2020-02-29"
+    },
+    {
+      "reporting_month": "2020-04",
+      "t0": "2020-03-31"
+    },
+    {
+      "reporting_month": "2020-05",
+      "t0": "2020-04-30"
+    },
+    {
+      "reporting_month": "2020-06",
+      "t0": "2020-05-31"
+    },
+    {
+      "reporting_month": "2020-07",
+      "t0": "2020-06-30"
+    },
+    {
+      "reporting_month": "2020-08",
+      "t0": "2020-07-31"
+    },
+    {
+      "reporting_month": "2020-09",
+      "t0": "2020-08-31"
+    },
+    {
+      "reporting_month": "2020-10",
+      "t0": "2020-09-30"
+    },
+    {
+      "reporting_month": "2020-11",
+      "t0": "2020-10-31"
+    },
+    {
+      "reporting_month": "2020-12",
+      "t0": "2020-11-30"
+    },
+    {
+      "reporting_month": "2021-01",
+      "t0": "2020-12-31"
+    },
+    {
+      "reporting_month": "2021-02",
+      "t0": "2021-01-31"
+    },
+    {
+      "reporting_month": "2021-03",
+      "t0": "2021-02-28"
+    },
+    {
+      "reporting_month": "2021-04",
+      "t0": "2021-03-31"
+    },
+    {
+      "reporting_month": "2021-05",
+      "t0": "2021-04-30"
+    },
+    {
+      "reporting_month": "2021-06",
+      "t0": "2021-05-31"
+    },
+    {
+      "reporting_month": "2021-07",
+      "t0": "2021-06-30"
+    },
+    {
+      "reporting_month": "2021-08",
+      "t0": "2021-07-31"
+    },
+    {
+      "reporting_month": "2021-09",
+      "t0": "2021-08-31"
+    },
+    {
+      "reporting_month": "2021-10",
+      "t0": "2021-09-30"
+    },
+    {
+      "reporting_month": "2021-11",
+      "t0": "2021-10-31"
+    },
+    {
+      "reporting_month": "2021-12",
+      "t0": "2021-11-30"
+    },
+    {
+      "reporting_month": "2022-01",
+      "t0": "2021-12-31"
+    },
+    {
+      "reporting_month": "2022-02",
+      "t0": "2022-01-31"
+    },
+    {
+      "reporting_month": "2022-03",
+      "t0": "2022-02-28"
+    },
+    {
+      "reporting_month": "2022-04",
+      "t0": "2022-03-31"
+    },
+    {
+      "reporting_month": "2022-05",
+      "t0": "2022-04-30"
+    },
+    {
+      "reporting_month": "2022-06",
+      "t0": "2022-05-31"
+    },
+    {
+      "reporting_month": "2022-07",
+      "t0": "2022-06-30"
+    },
+    {
+      "reporting_month": "2022-08",
+      "t0": "2022-07-31"
+    },
+    {
+      "reporting_month": "2022-09",
+      "t0": "2022-08-31"
+    },
+    {
+      "reporting_month": "2022-10",
+      "t0": "2022-09-30"
+    },
+    {
+      "reporting_month": "2022-11",
+      "t0": "2022-10-31"
+    },
+    {
+      "reporting_month": "2022-12",
+      "t0": "2022-11-30"
+    },
+    {
+      "reporting_month": "2023-01",
+      "t0": "2022-12-31"
+    },
+    {
+      "reporting_month": "2023-02",
+      "t0": "2023-01-31"
+    },
+    {
+      "reporting_month": "2023-03",
+      "t0": "2023-02-28"
+    },
+    {
+      "reporting_month": "2023-04",
+      "t0": "2023-03-31"
+    },
+    {
+      "reporting_month": "2023-05",
+      "t0": "2023-04-30"
+    },
+    {
+      "reporting_month": "2023-06",
+      "t0": "2023-05-31"
+    },
+    {
+      "reporting_month": "2023-07",
+      "t0": "2023-06-30"
+    },
+    {
+      "reporting_month": "2023-08",
+      "t0": "2023-07-31"
+    },
+    {
+      "reporting_month": "2023-09",
+      "t0": "2023-08-31"
+    },
+    {
+      "reporting_month": "2023-10",
+      "t0": "2023-09-30"
+    },
+    {
+      "reporting_month": "2023-11",
+      "t0": "2023-10-31"
+    },
+    {
+      "reporting_month": "2023-12",
+      "t0": "2023-11-30"
+    },
+    {
+      "reporting_month": "2024-01",
+      "t0": "2023-12-31"
+    },
+    {
+      "reporting_month": "2024-02",
+      "t0": "2024-01-31"
+    },
+    {
+      "reporting_month": "2024-03",
+      "t0": "2024-02-29"
+    },
+    {
+      "reporting_month": "2024-04",
+      "t0": "2024-03-31"
+    },
+    {
+      "reporting_month": "2024-05",
+      "t0": "2024-04-30"
+    },
+    {
+      "reporting_month": "2024-06",
+      "t0": "2024-05-31"
+    },
+    {
+      "reporting_month": "2024-07",
+      "t0": "2024-06-30"
+    },
+    {
+      "reporting_month": "2024-08",
+      "t0": "2024-07-31"
+    },
+    {
+      "reporting_month": "2024-09",
+      "t0": "2024-08-31"
+    },
+    {
+      "reporting_month": "2024-10",
+      "t0": "2024-09-30"
+    },
+    {
+      "reporting_month": "2024-11",
+      "t0": "2024-10-31"
+    },
+    {
+      "reporting_month": "2024-12",
+      "t0": "2024-11-30"
+    },
+    {
+      "reporting_month": "2025-01",
+      "t0": "2024-12-31"
+    },
+    {
+      "reporting_month": "2025-02",
+      "t0": "2025-01-31"
+    },
+    {
+      "reporting_month": "2025-03",
+      "t0": "2025-02-28"
+    },
+    {
+      "reporting_month": "2025-04",
+      "t0": "2025-03-31"
+    },
+    {
+      "reporting_month": "2025-05",
+      "t0": "2025-04-30"
+    },
+    {
+      "reporting_month": "2025-06",
+      "t0": "2025-05-31"
+    },
+    {
+      "reporting_month": "2025-07",
+      "t0": "2025-06-30"
+    },
+    {
+      "reporting_month": "2025-08",
+      "t0": "2025-07-31"
+    },
+    {
+      "reporting_month": "2025-09",
+      "t0": "2025-08-31"
+    },
+    {
+      "reporting_month": "2025-10",
+      "t0": "2025-09-30"
+    },
+    {
+      "reporting_month": "2025-11",
+      "t0": "2025-10-31"
+    },
+    {
+      "reporting_month": "2025-12",
+      "t0": "2025-11-30"
+    },
+    {
+      "reporting_month": "2026-01",
+      "t0": "2025-12-31"
+    },
+    {
+      "reporting_month": "2026-02",
+      "t0": "2026-01-31"
+    },
+    {
+      "reporting_month": "2026-03",
+      "t0": "2026-02-28"
+    }
+  ],
+  "month_table_sha256": "7650443c5c26596eb52d5e1ae289de71fadb0c1cc3eb9861735c4203407ff94f",
+  "availability_matrix": {
+    "2006-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2006-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2007-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2008-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2009-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2010-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2011-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2012-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2013-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2014-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2015-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2016-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2017-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2018-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2019-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2020-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2021-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2022-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2023-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2024-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-04": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-05": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-06": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-07": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-08": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-09": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-10": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-11": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2025-12": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2026-01": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2026-02": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    },
+    "2026-03": {
+      "unemployment_level": "UNAVAILABLE",
+      "unemployment_change_3m": "UNAVAILABLE",
+      "treasury_10y_level": "UNAVAILABLE",
+      "mortgage_30y_level": "UNAVAILABLE",
+      "mortgage_treasury_spread": "UNAVAILABLE",
+      "hpi_yoy": "UNAVAILABLE",
+      "cpi_yoy": "UNAVAILABLE",
+      "gdp_qoq": "UNAVAILABLE"
+    }
+  },
+  "feature_coverage": {
+    "unemployment_level": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "unemployment_change_3m": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "treasury_10y_level": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "mortgage_30y_level": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "mortgage_treasury_spread": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "hpi_yoy": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "cpi_yoy": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    },
+    "gdp_qoq": {
+      "months_in_scope": 243,
+      "months_populated": 0,
+      "months_unavailable": 243,
+      "stale_months": 0,
+      "provenance_unavailable_months": 243,
+      "availability_states": {
+        "UNAVAILABLE": 243
+      }
+    }
+  },
+  "vintage_join_coverage": {
+    "2006": {
+      "unique_reporting_months": 243,
+      "rows_retained": 1280801,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1280801
+        }
+      }
+    },
+    "2008": {
+      "unique_reporting_months": 219,
+      "rows_retained": 1016145,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1016145
+        }
+      }
+    },
+    "2010": {
+      "unique_reporting_months": 195,
+      "rows_retained": 1400360,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1400360
+        }
+      }
+    },
+    "2014": {
+      "unique_reporting_months": 147,
+      "rows_retained": 1352589,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1352589
+        }
+      }
+    },
+    "2018": {
+      "unique_reporting_months": 99,
+      "rows_retained": 819246,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 819246
+        }
+      }
+    },
+    "2020": {
+      "unique_reporting_months": 75,
+      "rows_retained": 1034572,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 1034572
+        }
+      }
+    },
+    "2022": {
+      "unique_reporting_months": 51,
+      "rows_retained": 837950,
+      "facilities_retained": 20000,
+      "coverage": {
+        "unemployment_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "unemployment_change_3m": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "treasury_10y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "mortgage_30y_level": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "mortgage_treasury_spread": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "hpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "cpi_yoy": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        },
+        "gdp_qoq": {
+          "months_populated": 0,
+          "rows_populated": 0,
+          "rows_unavailable": 837950
+        }
+      }
+    }
+  },
+  "common_support_windows": [
+    {
+      "first_reporting_month": "2006-01",
+      "last_reporting_month": "2026-03",
+      "months": 243,
+      "status": "NO_MACRO_SUPPORT"
+    }
+  ],
+  "primary_complete_support_intervals": [],
+  "combined_horizon_support": {
+    "2006": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      }
+    },
+    "2008": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      }
+    },
+    "2010": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      }
+    },
+    "2014": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      }
+    },
+    "2018": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      }
+    },
+    "2020": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      }
+    },
+    "2022": {
+      "12": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "24": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "36": {
+        "mortgage_status": "SUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "OUTCOME_SUPPORTED_MACRO_UNAVAILABLE",
+        "analysis_population_dropped": false
+      },
+      "60": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      },
+      "84": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      },
+      "120": {
+        "mortgage_status": "UNSUPPORTED",
+        "macro_status": "NOT_ESTABLISHED",
+        "combined_status": "MORTGAGE_HORIZON_UNSUPPORTED",
+        "analysis_population_dropped": false
+      }
+    }
+  },
+  "future_model_spec": {
+    "version": "1.0.0",
+    "status": "PRESPECIFIED_NOT_FITTED",
+    "hazards": [
+      "default",
+      "payoff_maturity"
+    ],
+    "geography": "US",
+    "vintages": [
+      2006,
+      2008,
+      2010,
+      2014,
+      2018,
+      2020,
+      2022
+    ],
+    "duration_clock": "Elapsed monthly reference clock fixed from first-payment proxy or approved risk-entry clock; never assume provider age is immutable",
+    "duration_bands_months": [
+      0,
+      12,
+      24,
+      36,
+      60,
+      84,
+      120,
+      180,
+      240
+    ],
+    "duration_top_band": ">240",
+    "cohort_representation": "Seven archive-vintage indicators with 2006 reference and intercept; no quarter indicators",
+    "macro_feature_registry": "pit_macro_feature_registry.json",
+    "interactions": [],
+    "unrestricted_period_fixed_effects": false,
+    "unrestricted_apc_identified": false,
+    "causal_interpretation": false,
+    "loan_state": "Task10 must freeze lagged state and operational-knowledge eligibility; not automatically certified by retrospective disclosure",
+    "prediction_boundary": "Monthly conditional hazards. Prospective multi-month CIF additionally requires future macro and loan-state paths; no future observed states",
+    "validation_required": [
+      "new sealed facility-separated development/evaluation protocol",
+      "future-calendar and held-out-vintage evaluation",
+      "calendar-block uncertainty",
+      "rank and conditioning of actually constructed design",
+      "no reuse of consumed evaluation ledgers"
+    ],
+    "fitting_performed": false
+  },
+  "pandemic": {
+    "calendar_year_indicators": [
+      2020,
+      2021
+    ],
+    "outcome_tuned_boundaries": false,
+    "causal_effect_estimated": false,
+    "interpretation": "Calendar covariates, not full forbearance policy"
+  },
+  "mortgage_rows_retained": 7741663,
+  "mortgage_facilities_retained": 140000,
+  "borrower_uniqueness_claimed": false,
+  "mortgage_month_projection_sha256": "a252dc5d16f8f106597ccab18b3e19297b23f10afbfef8dd97dbb10ee5bd1931",
+  "models_fitted": false,
+  "predictions_regenerated": false,
+  "macro_imputed": false,
+  "current_revised_used_in_features": false,
+  "limitations": [
+    "Official metadata feasibility is distinct from acquired, certified observation coverage.",
+    "No exact provider publication lag is inferred from archive dates or historical average lags.",
+    "Earliest retained archive values are not certified initial releases; initial-release sensitivity unavailable without independent evidence.",
+    "HPI/PMMS pre2010 vintage hints are not backfilled; no alternate series introduced.",
+    "GDP rebasing and PMMS 2022-11-17 measurement change remain explicit; unlike regimes cannot enter paired transformations.",
+    "Macro date-only evidence supports end-of-day use; intraday timing is unsupported.",
+    "PIT macro data do not certify the operational knowledge time of retrospective mortgage disclosures.",
+    "Monthly aggregate join retains all facilities; expanded 7.7-million-row panel is not materialized or modified.",
+    "Multiple vintages and macro variables do not identify unrestricted APC or causal macro coefficients.",
+    "No validated numeric vintage payload acquired; all empirical macro features remain unavailable. Synthetic tests are not empirical coverage evidence."
+  ],
+  "next_task": "Track B Task 9A \u2014 Obtain and certify authoritative ALFRED real-time exports, then rerun the PIT coverage gates without changing mortgage samples"
+}

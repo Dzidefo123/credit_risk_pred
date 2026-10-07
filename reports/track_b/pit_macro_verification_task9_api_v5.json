@@ -1,0 +1,93 @@
+{
+  "task": 9,
+  "acquisition_run": "task9_api_v5",
+  "decision": "PIT MACRO SUPPORT INSUFFICIENT",
+  "decision_scope": "Full frozen January2006-March2026 window, no analysis restriction authorized",
+  "targeted_tests": {
+    "passed": 98,
+    "new_pit_tests": 38,
+    "seconds": 3.84
+  },
+  "full_tests": {
+    "passed": 881,
+    "warnings": 4,
+    "seconds": 92.67
+  },
+  "lint": "PASSED",
+  "format_files": 193,
+  "configuration": "PASSED",
+  "governance": "PASSED",
+  "repository_hygiene": "PASSED",
+  "preservation": {
+    "status": "PASSED",
+    "base_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+    "prior_tracked_byte_hashes": 371,
+    "prior_public_lf_hashes": 371,
+    "prior_private_byte_hashes": 51,
+    "prior_preservation": {
+      "status": "PASSED",
+      "preexisting_tracked_files": 321,
+      "retained_private_byte_hashes": 17,
+      "track_a_artifacts": 12,
+      "track_a_tag": [
+        "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+        "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+      ],
+      "source_hashes": {
+        "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+        "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+        "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+        "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+        "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+        "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+        "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+      },
+      "original_2010_source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "original_2010_location_status": "Old path absent; byte-identical source verified in user-supplied directory",
+      "consumed_ledger_byte_hashes": {
+        "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+        "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+      },
+      "ledger_check": "Byte hashing against retained public serialization; no consumption API",
+      "locked_holdout_scored": false,
+      "model_artifacts_regenerated": false,
+      "retained_historical_metrics": {
+        "auc": 0.868152,
+        "brier": 0.048545,
+        "log_loss": 0.17603
+      },
+      "metrics_status": "Retained historical evidence; not newly evaluated"
+    },
+    "acquisition_manifest_sha256": "3c3f696a902c96bef52dd94e639c3bc0a0376383d1de5b544498ffb7f1651d6d",
+    "normalized_versions": 0,
+    "frozen_series_registry_sha256": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+    "model_or_holdout_loaded": false
+  },
+  "raw_and_normalized_hashes": "PASSED",
+  "series_registry_sha256_lf": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+  "requests": 20,
+  "normalized_version_segment_rows": 20009,
+  "acquisition_manifest_sha256": "1216ee0e7ebbe44833b0ddc696eb8a77491fb153bffd1c8a9e3668e468c69e25",
+  "prior_runs_preserved": [
+    "task9_v1",
+    "task9_api_v2",
+    "task9_api_v3",
+    "task9_api_v4"
+  ],
+  "credential_scan": {
+    "status": "PASSED",
+    "files_scanned": 117
+  },
+  "commit_created": false,
+  "push_performed": false,
+  "models_fitted": false,
+  "frozen_models_regenerated": false,
+  "locked_holdout_consumed": false,
+  "next_task": "Track B Task 9A - Prespecify macro-support eligibility and resolve remaining historical coverage gaps without changing mortgage samples",
+  "new_public_hygiene": {
+    "status": "PASSED",
+    "files": 24,
+    "local_links": 6
+  },
+  "preservation_scope": "Prior artifacts and original failed-run evidence; latest acquisition hashes checked separately"
+}

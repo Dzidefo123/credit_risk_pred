@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "task": 9,
+  "registry_sha256_lf": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+  "prior_task7_protocol_sha256_lf": "ee40e5aee66d785429300bb042d68dd000e25445e129067c4ba062f5186cdacd",
+  "knowledge_time": "End-of-day date resolution; reference complete and documented publication/revision/archive bounds <=t0. Unknown exact provider dates remain null.",
+  "mortgage_month_mapping": "For reporting/risk month m use t0=end of m-1. Prevents a macro release during the outcome month entering that month hazard. No claim mortgage loan state was operationally known then.",
+  "assessment_window": [
+    "2005-12-31",
+    "2026-02-28"
+  ],
+  "reporting_month_window": [
+    "2006-01",
+    "2026-03"
+  ],
+  "reference_acquisition_window": [
+    "2004-01-01",
+    "2026-03-31"
+  ],
+  "warmup_basis": "12-month growth plus quarterly release/freshness margin, including first December2005 assessment; January2004 bounded warmup",
+  "real_time_request": [
+    "1776-07-04",
+    "2026-03-31"
+  ],
+  "representation": "LATEST_KNOWN_AS_OF_T0",
+  "initial_release": "Only certified initial release; earliest retrieved version is not necessarily initial",
+  "current_revised": "DESCRIPTIVE_ONLY NOT_PIT_VALID; optional and not acquired by default",
+  "provenance_classes": [
+    "VINTAGE_AWARE_AVAILABLE",
+    "RELEASE_DATE_RECONSTRUCTABLE",
+    "CURRENT_REVISED_ONLY",
+    "INSUFFICIENT_PROVENANCE"
+  ],
+  "geography": "US national only",
+  "network_limits": {
+    "timeout_seconds": 15,
+    "max_response_bytes": 16000000,
+    "max_requests": 36,
+    "max_attempts_per_request": 1,
+    "max_observation_rows_per_series": 100000
+  },
+  "staleness_basis": "Days since completed reference endpoint for current operand; exact lag denominator exempt from current freshness cap, still knowledge-time constrained",
+  "raw_policy": "Exclusive creation, hash verification, no overwrite; no API keys in URLs/logs/manifests",
+  "join_policy": "One feature vector per unique month, normalized lineage; deterministic left join retains every row and reports unavailability. No empirical mortgage panel rewrite.",
+  "blocked_actions": [
+    "fit_models",
+    "outcome_feature_selection",
+    "lag_tuning",
+    "metrics",
+    "scenario_weights",
+    "ECL",
+    "holdout_consumption",
+    "model_regeneration",
+    "sample_dropping",
+    "statistical_imputation"
+  ],
+  "future_design_file": "pit_macro_future_model_spec.json"
+}

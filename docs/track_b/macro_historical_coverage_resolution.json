@@ -1,0 +1,52 @@
+{
+  "version": "macro-support-v1.0.0",
+  "investigation_date": "2026-10-07",
+  "admitted_to_frozen_features": false,
+  "api_reacquisition": false,
+  "complete_pre2010_extension_status": "UNAVAILABLE",
+  "classification_vocabulary": [
+    "PIT_AVAILABLE_FROM_EXISTING_API",
+    "PIT_RECONSTRUCTED_AUTHORITATIVELY",
+    "HISTORICAL_VALUE_KNOWN_BUT_RELEASE_PROVENANCE_INSUFFICIENT",
+    "CURRENT_REVISED_ONLY",
+    "UNAVAILABLE"
+  ],
+  "existing_api": {
+    "classification": "PIT_AVAILABLE_FROM_EXISTING_API",
+    "source_run": "task9_api_v5",
+    "qualification": "Only individual cells passing frozen selector, operand and freshness rules; not universal historical coverage."
+  },
+  "fhfa": {
+    "release_url": "https://www.fhfa.gov/reports/house-price-index/2008/Q2",
+    "document_url": "https://www.fhfa.gov/document/d/hpi/2q-2008-june-2008-hpi",
+    "publication_date": "2008-08-26",
+    "raw_document_path": "data/track_b/macro_support/raw/fhfa_2008q2.pdf",
+    "raw_document_sha256": "eb091fa542152d6449e17264156117faeb5b9a92920742173279524f5315d8a7",
+    "raw_document_bytes": 1639640,
+    "printed_page": 52,
+    "index": "National all-transactions HPI, 1980Q1=100",
+    "values": {"2007Q2": 387.45, "2008Q2": 380.82},
+    "yoy_formula": "100 * (380.82 / 387.45 - 1)",
+    "isolated_pair_classification": "PIT_RECONSTRUCTED_AUTHORITATIVELY",
+    "scope": "One paired historical publication snapshot only, knowable no earlier than 2008-08-26; not a complete release chain or certified semantic bridge to frozen USSTHPI versions.",
+    "full_extension_classification": "UNAVAILABLE",
+    "additional_release_consulted": "https://www.fhfa.gov/news/news-release/record-home-price-declines-in-fourth-quarter"
+  },
+  "freddie_pmms": {
+    "urls_consulted": ["https://www.freddiemac.com/pmms/archive", "https://www.freddiemac.com/pmms/pmms_archives"],
+    "classification": "HISTORICAL_VALUE_KNOWN_BUT_RELEASE_PROVENANCE_INSUFFICIENT",
+    "finding": "Official compiled history includes earlier values, but the bounded investigation did not establish a complete pre2010 date-specific publication/revision chain. This is not proof such releases do not exist.",
+    "admission": "No current compiled history backfill, fixed-lag reconstruction or zero-revision assumption."
+  },
+  "march_2026": {
+    "classification": "SOURCE_OBSERVATION_MISSING",
+    "t0": "2026-02-28",
+    "current_unemployment_reference": "2026-01-31",
+    "required_change_operand": "2025-10-31",
+    "api_missing_token": ".",
+    "bls_url": "https://www.bls.gov/cps/methods/2025-federal-government-shutdown-impact-cps.htm",
+    "dated_release_url": "https://www.bls.gov/news.release/archives/empsit_12162025.htm",
+    "finding": "October 2025 CPS estimates were not collected during the appropriations lapse and were not collected retroactively. Not a later revision or ordinary release lag.",
+    "treatment": "Retain missingness; no interpolation; reporting boundary stays 2026-03 and eligible windows end where frozen operands require."
+  }
+}

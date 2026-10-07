@@ -1,0 +1,67 @@
+{
+  "task": 9,
+  "decision": "PIT MACRO SUPPORT INSUFFICIENT",
+  "base_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+  "targeted_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_pit_macro.py tests/test_track_b_macro.py -q",
+    "passed": 91,
+    "new_pit_macro_tests": 31,
+    "elapsed_seconds": 1.30
+  },
+  "full_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest --strict-config --strict-markers -q",
+    "passed": 874,
+    "warnings": 4,
+    "elapsed_seconds": 68.42,
+    "warnings_summary": [
+      "Starlette httpx deprecation",
+      "Intentional duplicate ZIP member fixture: annual acquisition",
+      "Intentional duplicate ZIP member fixture: multi-vintage acquisition",
+      "Optional MLflow SQLAlchemy noload deprecation"
+    ]
+  },
+  "lint": {"status": "PASSED", "command": "ruff check src tests scripts api"},
+  "format": {
+    "status": "PASSED",
+    "command": "ruff format --check src tests scripts api",
+    "files": 193
+  },
+  "configuration": {"status": "PASSED", "command": "python -m credit_risk.cli check-config --config-dir configs"},
+  "governance": {"status": "PASSED", "command": "python scripts/check_governance.py"},
+  "repository_hygiene": {
+    "status": "PASSED",
+    "command": "python scripts/check_repository.py",
+    "tracked_files": 371,
+    "scope_note": "Existing tracked repository; untracked Task9 artifacts separately inspected"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "evidence": "pit_macro_preservation_check.json",
+    "prior_tracked_byte_hashes": 371,
+    "prior_public_lf_hashes": 371,
+    "prior_private_byte_hashes": 51,
+    "source_archives": 7,
+    "consumed_ledger_api_called": false,
+    "model_or_holdout_loaded": false,
+    "combined_sample_sha256": "93fdaf807fe2f9b168dca275be21644004a2ff3c14ae847d17e9330963bf2b8b",
+    "combined_manifest_sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f"
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.176030,
+    "status": "Historical retained results, not newly evaluated"
+  },
+  "report_generation": {"status": "PASSED", "command": "python scripts/report_track_b_pit_macro.py"},
+  "acquisition": {
+    "requests": 6,
+    "timeout_errors": 6,
+    "validated_numeric_versions": 0,
+    "observation_payload_hashes": [],
+    "manifest_sha256": "3c3f696a902c96bef52dd94e639c3bc0a0376383d1de5b544498ffb7f1651d6d"
+  },
+  "commit_created": false,
+  "push_performed": false,
+  "hosted_ci_verified": false,
+  "next_task": "Track B Task 9A — Obtain and certify authoritative ALFRED real-time exports, then rerun the PIT coverage gates without changing mortgage samples"
+}

@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "series_registry_sha256_lf": "0e06c5afad76edc0c6ea0ade459181265a6cc319398c51cd9129f11b0030aea1",
+  "features": [
+    {
+      "name": "unemployment_level",
+      "series_id": "UNRATE",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "unemployment_change_3m",
+      "series_id": "UNRATE",
+      "transformation": "difference",
+      "lag_months": 3,
+      "units": "percentage_points",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "treasury_10y_level",
+      "series_id": "DGS10",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 7,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "mortgage_30y_level",
+      "series_id": "MORTGAGE30US",
+      "transformation": "level",
+      "lag_months": 0,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 14,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "mortgage_treasury_spread",
+      "series_id": "MORTGAGE30US",
+      "transformation": "spread",
+      "lag_months": 0,
+      "units": "percentage_points",
+      "secondary_series": "DGS10",
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 14,
+      "limitations": "Native rate dates can differ; each operand must pass freshness"
+    },
+    {
+      "name": "hpi_yoy",
+      "series_id": "USSTHPI",
+      "transformation": "growth_pct",
+      "lag_months": 12,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 183,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "cpi_yoy",
+      "series_id": "CPIAUCSL",
+      "transformation": "growth_pct",
+      "lag_months": 12,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 62,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    },
+    {
+      "name": "gdp_qoq",
+      "series_id": "GDPC1",
+      "transformation": "growth_pct",
+      "lag_months": 3,
+      "units": "Percent",
+      "secondary_series": null,
+      "role": "primary",
+      "pit_rule": "LATEST_KNOWN_AS_OF_T0",
+      "freshness_days": 183,
+      "limitations": "Both operands selected in same t0 information set and matching measurement regime; no current-revised operand"
+    }
+  ]
+}

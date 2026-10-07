@@ -1,0 +1,132 @@
+{
+  "version": "macro-support-validation-v1.0.0",
+  "basis": "Structural fixed-effect estimability and frozen support, no performance search",
+  "candidate_dates_and_facility_roles_unchanged": true,
+  "finalized_after_support_counts": true,
+  "seen_development_vintages": [
+    "2006",
+    "2008",
+    "2010",
+    "2014"
+  ],
+  "unseen_temporal_vintages": [
+    "2018",
+    "2020",
+    "2022"
+  ],
+  "primary_temporal_seen_vintage_counts": {
+    "facilities": 5619,
+    "intervals": 248939,
+    "defaults": 280,
+    "payoffs": 3823
+  },
+  "external_unseen_vintage_counts": {
+    "facilities": 17352,
+    "intervals": 652508,
+    "defaults": 588,
+    "payoffs": 7323
+  },
+  "by_vintage": {
+    "2006": {
+      "development": {
+        "facilities": 6479,
+        "intervals": 225384,
+        "defaults": 772,
+        "payoffs": 4865
+      },
+      "temporal_evaluation": {
+        "facilities": 300,
+        "intervals": 14117,
+        "defaults": 30,
+        "payoffs": 173
+      }
+    },
+    "2008": {
+      "development": {
+        "facilities": 8810,
+        "intervals": 286145,
+        "defaults": 691,
+        "payoffs": 7158
+      },
+      "temporal_evaluation": {
+        "facilities": 361,
+        "intervals": 17040,
+        "defaults": 29,
+        "payoffs": 222
+      }
+    },
+    "2010": {
+      "development": {
+        "facilities": 13797,
+        "intervals": 669060,
+        "defaults": 296,
+        "payoffs": 9232
+      },
+      "temporal_evaluation": {
+        "facilities": 1554,
+        "intervals": 69156,
+        "defaults": 62,
+        "payoffs": 1131
+      }
+    },
+    "2014": {
+      "development": {
+        "facilities": 13523,
+        "intervals": 388072,
+        "defaults": 145,
+        "payoffs": 4567
+      },
+      "temporal_evaluation": {
+        "facilities": 3404,
+        "intervals": 148626,
+        "defaults": 159,
+        "payoffs": 2297
+      }
+    },
+    "2018": {
+      "development": {},
+      "temporal_evaluation": {
+        "facilities": 5768,
+        "intervals": 184349,
+        "defaults": 320,
+        "payoffs": 4477
+      }
+    },
+    "2020": {
+      "development": {},
+      "temporal_evaluation": {
+        "facilities": 5683,
+        "intervals": 261306,
+        "defaults": 74,
+        "payoffs": 1879
+      }
+    },
+    "2022": {
+      "development": {},
+      "temporal_evaluation": {
+        "facilities": 5901,
+        "intervals": 206853,
+        "defaults": 194,
+        "payoffs": 967
+      }
+    }
+  },
+  "eligibility_subject_files_sha256": {
+    "eligibility_primary_2006.jsonl": "cdd5a0603cda6a6c9f325dc28f476109363034f3ba56d05b9da06124830c6dfd",
+    "eligibility_primary_2008.jsonl": "8313a576350a02a55e57bde5e7fe6f2955b14c0619dd13b8dcc992f1ec3ee10a",
+    "eligibility_primary_2010.jsonl": "31749b54cc80b1149fd339a2db71d2d8a68c45b70d3a8f7dc52320e7382ae52d",
+    "eligibility_primary_2014.jsonl": "7192243b6c866db489ec58776e62a9e2e890f13d722d2ba4b47e1b3e3cfcc125",
+    "eligibility_primary_2018.jsonl": "2f01b75790435f58912aa9a8fea265f8a2f344760a08e47198fe48374e012713",
+    "eligibility_primary_2020.jsonl": "0cb86f070a929c44fcc8c7d66e48ab95c0a90a936b560e3be4980db9b3e8fafe",
+    "eligibility_primary_2022.jsonl": "68b9ffc277e9fdfb4713c45e67da58afa10b97105b765b5942e1d114a1e585f4"
+  },
+  "primary_temporal_metric_population": "Seen development vintages in evaluation hash role",
+  "unseen_temporal_handling": "Separate extrapolation sensitivity; unseen vintage effect fixed to zero relative to 2006 reference, flagged UNSEEN_VINTAGE. Never pool with primary temporal metrics.",
+  "leave_vintage_out_handling": "Held-out vintage coefficient is unestimated, explicitly fixed to zero relative to training 2006 reference. If 2006 is held out, use 2008 training reference. Report restriction and cause/event feasibility for each fold; no learned held-out fixed-effect claim. This tests conditional extrapolation, not an estimated unseen-cohort effect.",
+  "full_population_primary_cohort_design": "Six vintage indicators, reference 2006",
+  "temporal_seen_vintage_feasibility_passed": true,
+  "uncertainty": "Facility and calendar-block dependence; borrower clustering unavailable",
+  "task10_new_sealed_ledger_required": true,
+  "virgin_holdout_claim": false,
+  "model_fitting_performed": false
+}

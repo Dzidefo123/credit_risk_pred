@@ -1,0 +1,144 @@
+{
+  "task": "Track B Task9A",
+  "status": "PASSED",
+  "targeted_tests": {
+    "passed": 128,
+    "new_task9a_tests": 30,
+    "command": "pytest tests/test_macro_support.py tests/test_pit_macro.py tests/test_track_b_macro.py -q",
+    "seconds": 1.48
+  },
+  "full_suite": {
+    "passed": 911,
+    "warnings": 4,
+    "seconds": 65.56,
+    "command": "pytest --strict-config --strict-markers -q",
+    "real_holdout_consumed": false
+  },
+  "lint": "PASSED",
+  "format_check": {
+    "status": "PASSED",
+    "python_files": 201
+  },
+  "configuration": "PASSED",
+  "governance": {
+    "status": "PASSED",
+    "local_links": 67
+  },
+  "preservation": {
+    "status": "PASSED",
+    "prior_public_lf_hashes": 395,
+    "task9_private_byte_hashes": 94,
+    "older_private_byte_hashes": 51,
+    "prior_tracked_byte_hashes": 371,
+    "source_and_frozen_artifact_checks": {
+      "status": "PASSED",
+      "preexisting_tracked_files": 321,
+      "retained_private_byte_hashes": 17,
+      "track_a_artifacts": 12,
+      "track_a_tag": [
+        "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+        "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+      ],
+      "source_hashes": {
+        "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+        "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+        "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+        "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+        "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+        "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+        "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+      },
+      "original_2010_source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "original_2010_location_status": "Old path absent; byte-identical source verified in user-supplied directory",
+      "consumed_ledger_byte_hashes": {
+        "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+        "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+      },
+      "ledger_check": "Byte hashing against retained public serialization; no consumption API",
+      "locked_holdout_scored": false,
+      "model_artifacts_regenerated": false,
+      "retained_historical_metrics": {
+        "auc": 0.868152,
+        "brier": 0.048545,
+        "log_loss": 0.17603
+      },
+      "metrics_status": "Retained historical evidence; not newly evaluated"
+    },
+    "locked_holdout_consumed": false,
+    "models_loaded_or_regenerated": false,
+    "task9_original_decision_preserved": true,
+    "replacement_credentials_accessed": false
+  },
+  "recomputed_seven_sample_identities": {
+    "status": "PASSED",
+    "facilities": 140000,
+    "samples": {
+      "2006": "1b39c08d96da214fd5e33273c6d38e0a88940f59afe96537625bbeaaf20af371",
+      "2008": "91286c8885dbc90b8c91bb7a8300eda1df0cf63e45f43f72f7ea1e697c27e26d",
+      "2010": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "2014": "d26b2ba3e08837f82c940ecefbaa18c4bd201d64a0a114760eafeeb80a8126f5",
+      "2018": "b3e2952bb5bc0d0a551105cecfa964b18481b3764442edb8362245f4f17f921e",
+      "2020": "978c32ebac99980286cf83e86051316dad6080f9cc167c017900e15cd7e2a3f1",
+      "2022": "8b0e0fee2f6921c2c6a04363b01cb234be7ccb7cd93a350765e6faac5db66f59"
+    },
+    "combined_sample_sha256": "93fdaf807fe2f9b168dca275be21644004a2ff3c14ae847d17e9330963bf2b8b"
+  },
+  "actual_second_full_canonical_pass": {
+    "status": "PASSED",
+    "counts_sha256": "00654865d0a7d45ba5b19c2d181057f4f417465f215304d725c1277071295447",
+    "interval_key_sha256": {
+      "PRIMARY": "f0a223b77c654bf9371197c1216cc4aeaf3fb502a7315d9ab867ec35b548203f",
+      "REDUCED": "cb47f5902cca9e6496c19648076f9a819a8173ebc3438d04d81b05dce9a7c246"
+    },
+    "facility_files_sha256": {
+      "eligibility_primary_2006.jsonl": "cdd5a0603cda6a6c9f325dc28f476109363034f3ba56d05b9da06124830c6dfd",
+      "eligibility_primary_2008.jsonl": "8313a576350a02a55e57bde5e7fe6f2955b14c0619dd13b8dcc992f1ec3ee10a",
+      "eligibility_primary_2010.jsonl": "31749b54cc80b1149fd339a2db71d2d8a68c45b70d3a8f7dc52320e7382ae52d",
+      "eligibility_primary_2014.jsonl": "7192243b6c866db489ec58776e62a9e2e890f13d722d2ba4b47e1b3e3cfcc125",
+      "eligibility_primary_2018.jsonl": "2f01b75790435f58912aa9a8fea265f8a2f344760a08e47198fe48374e012713",
+      "eligibility_primary_2020.jsonl": "0cb86f070a929c44fcc8c7d66e48ab95c0a90a936b560e3be4980db9b3e8fafe",
+      "eligibility_primary_2022.jsonl": "68b9ffc277e9fdfb4713c45e67da58afa10b97105b765b5942e1d114a1e585f4",
+      "eligibility_reduced_2006.jsonl": "0aa0422962eee68e422889717fb188e3bca4e0ecf008bf58f5e8d24222f749d5",
+      "eligibility_reduced_2008.jsonl": "41e273b472f25e94f544e6284c95be10a172e057f20a9fece06651fbda1a680c",
+      "eligibility_reduced_2010.jsonl": "b1ec25f8008ba0fce653b8ada8d46fdeabcf42cbde1895aa2054da47e8925336",
+      "eligibility_reduced_2014.jsonl": "7192243b6c866db489ec58776e62a9e2e890f13d722d2ba4b47e1b3e3cfcc125",
+      "eligibility_reduced_2018.jsonl": "2f01b75790435f58912aa9a8fea265f8a2f344760a08e47198fe48374e012713",
+      "eligibility_reduced_2020.jsonl": "0cb86f070a929c44fcc8c7d66e48ab95c0a90a936b560e3be4980db9b3e8fafe",
+      "eligibility_reduced_2022.jsonl": "68b9ffc277e9fdfb4713c45e67da58afa10b97105b765b5942e1d114a1e585f4"
+    },
+    "actual_second_full_canonical_pass": true,
+    "no_predictions_created": true
+  },
+  "source_report_hashes_lf": {
+    "reports/track_b/MACRO_SUPPORT_ELIGIBILITY.md": "e30b55e4d82d63ac8f5f3ee535a75451abbd86a28280edf4011707785cc4652e",
+    "reports/track_b/macro_support_eligibility.json": "db443e566cc385b10f06b14c2d1d92f7fbc378cae189ee75dc26d440f4515bbe",
+    "docs/track_b/macro_support_eligibility_spec.json": "f1bd2f1082574b26f3ca969764e51d7228445c247fa89e80c2ded4bac74a95fe",
+    "docs/track_b/macro_support_validation_design.json": "d84574ac769cd95ef97768ea3ce3f04e699f0d434b30cc168f3e9d4f3ba3d078"
+  },
+  "public_credential_pattern_scan": "PASSED",
+  "new_local_document_links_checked": 9,
+  "task9_dependency_files_preserved": 24,
+  "api_reacquisition": false,
+  "replacement_credential_accessed": false,
+  "models_fitted": false,
+  "predictions_created": false,
+  "hosted_ci": "NOT_RUN_NO_PUSH_AUTHORIZED",
+  "task10_implemented": false,
+  "repository_hygiene": {
+    "status": "passed",
+    "tracked_files": 410,
+    "preserved_v1_files": 6,
+    "frozen_training_sources": 4,
+    "current_document_links": 56,
+    "history_rewritten": false,
+    "original_data_or_model_loaded": false
+  },
+  "git_diff_check": "PASSED",
+  "commit_scope": {
+    "new_files": 39,
+    "unchanged_task9_dependencies": 24,
+    "task9a_files": 15,
+    "prior_tracked_files_modified": 0,
+    "private_files_staged": 0
+  }
+}

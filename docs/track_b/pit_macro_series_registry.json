@@ -1,0 +1,203 @@
+{
+  "version": "1.0.0",
+  "task": 9,
+  "base_commit": "7e0f6d0b9fdfde67af0a7da3204b76a40aa8b8c2",
+  "frozen_at": "2026-10-07T08:51:39.479978+00:00",
+  "series": [
+    {
+      "feature_family": "labor",
+      "provider": "BLS",
+      "series_id": "UNRATE",
+      "series_name": "U-3 unemployment; CPS/LNS14000000",
+      "definition": "U-3 unemployment; CPS/LNS14000000",
+      "geography": "US",
+      "frequency": "M",
+      "units": "Percent",
+      "seasonal_adjustment": "SA",
+      "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+      "publication_source": "https://fred.stlouisfed.org/series/UNRATE",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=UNRATE",
+      "transformation": [
+        "level",
+        "change_3m_pp"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 62,
+      "known_limitations": "Seasonal revisions/population-control breaks; not payroll survey",
+      "historical_vintage_support_hint": "1960-03-15",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Official series citation requested; preserve provider notes"
+    },
+    {
+      "feature_family": "interest_rates",
+      "provider": "Federal Reserve Board",
+      "series_id": "DGS10",
+      "series_name": "10-year constant-maturity market Treasury yield, investment basis",
+      "definition": "10-year constant-maturity market Treasury yield, investment basis",
+      "geography": "US",
+      "frequency": "D",
+      "units": "Percent",
+      "seasonal_adjustment": "NSA",
+      "reference_period_definition": "Native daily/weekly observation date; no invented release date",
+      "publication_source": "https://fred.stlouisfed.org/series/DGS10",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=DGS10",
+      "transformation": [
+        "latest_released_level"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 7,
+      "known_limitations": "Trading date is not guaranteed publication date; holidays/missing values",
+      "historical_vintage_support_hint": "2005-06-28",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Official series citation requested; preserve provider notes"
+    },
+    {
+      "feature_family": "interest_rates",
+      "provider": "Freddie Mac",
+      "series_id": "MORTGAGE30US",
+      "series_name": "US 30-year fixed mortgage average, Primary Mortgage Market Survey",
+      "definition": "US 30-year fixed mortgage average, Primary Mortgage Market Survey",
+      "geography": "US",
+      "frequency": "W",
+      "units": "Percent",
+      "seasonal_adjustment": "NSA",
+      "reference_period_definition": "Native daily/weekly observation date; no invented release date",
+      "publication_source": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=MORTGAGE30US",
+      "transformation": [
+        "latest_released_level",
+        "spread_to_DGS10_pp"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 14,
+      "known_limitations": "2022-11-17 methodology break; survey/application mix; copyright terms; pre-Jun2010 archive gap must be resolved",
+      "historical_vintage_support_hint": "2010-06-17",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Freddie PMMS copyright: citation required, raw values stay private"
+    },
+    {
+      "feature_family": "housing",
+      "provider": "FHFA",
+      "series_id": "USSTHPI",
+      "series_name": "National all-transactions repeat-sales house price index; includes refinancings",
+      "definition": "National all-transactions repeat-sales house price index; includes refinancings",
+      "geography": "US",
+      "frequency": "Q",
+      "units": "Index 1980:Q1=100",
+      "seasonal_adjustment": "NSA",
+      "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+      "publication_source": "https://fred.stlouisfed.org/series/USSTHPI",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=USSTHPI",
+      "transformation": [
+        "growth_12m_pct"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 183,
+      "known_limitations": "Not monthly purchase-only HPI; pre-Aug2010 vintage gap; revisions",
+      "historical_vintage_support_hint": "2010-08-25",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Official series citation requested; preserve provider notes"
+    },
+    {
+      "feature_family": "economic_activity",
+      "provider": "BEA",
+      "series_id": "GDPC1",
+      "series_name": "Real GDP quarterly chain-weighted level at annual rate",
+      "definition": "Real GDP quarterly chain-weighted level at annual rate",
+      "geography": "US",
+      "frequency": "Q",
+      "units": "Billions of Chained 2017 Dollars",
+      "seasonal_adjustment": "SA",
+      "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+      "publication_source": "https://fred.stlouisfed.org/series/GDPC1",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=GDPC1",
+      "transformation": [
+        "growth_3m_pct_nonannualized"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 183,
+      "known_limitations": "Advance/second/third plus annual/comprehensive revisions; base-year changes",
+      "historical_vintage_support_hint": "1991-12-04",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [
+        {
+          "start": "2003-12-10",
+          "end": "2009-07-30",
+          "units": "Billions of Chained 2000 Dollars"
+        },
+        {
+          "start": "2009-07-31",
+          "end": "2013-07-30",
+          "units": "Billions of Chained 2005 Dollars"
+        },
+        {
+          "start": "2013-07-31",
+          "end": "2018-07-26",
+          "units": "Billions of Chained 2009 Dollars"
+        },
+        {
+          "start": "2018-07-27",
+          "end": "2023-09-27",
+          "units": "Billions of Chained 2012 Dollars"
+        },
+        {
+          "start": "2023-09-28",
+          "end": "9999-12-31",
+          "units": "Billions of Chained 2017 Dollars"
+        }
+      ],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Official series citation requested; preserve provider notes"
+    },
+    {
+      "feature_family": "prices",
+      "provider": "BLS",
+      "series_id": "CPIAUCSL",
+      "series_name": "All-items CPI-U US city average",
+      "definition": "All-items CPI-U US city average",
+      "geography": "US",
+      "frequency": "M",
+      "units": "Index 1982-1984=100",
+      "seasonal_adjustment": "SA",
+      "reference_period_definition": "Inclusive month/quarter end normalized from native start label",
+      "publication_source": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "vintage_source": "https://alfred.stlouisfed.org/series?seid=CPIAUCSL",
+      "transformation": [
+        "growth_12m_pct"
+      ],
+      "intended_role": "primary_prespecified",
+      "freshness_days": 62,
+      "known_limitations": "SA history revised; do not substitute published NSA headline YoY",
+      "historical_vintage_support_hint": "1972-07-21",
+      "hint_is_certified_observation_coverage": false,
+      "availability_rule": "Public vintage evidence establishes a conservative publication/revision upper bound; unknown exact dates stay null. All required bounds and completed reference period <= end-of-day t0.",
+      "units_by_availability": [],
+      "metadata_verification": "Official FRED/ALFRED metadata inspected 2026-10-07; acquired response metadata must also match",
+      "license_access_notes": "Official series citation requested; preserve provider notes"
+    }
+  ],
+  "reserve_not_acquired": [
+    "PAYEMS",
+    "FEDFUNDS"
+  ],
+  "feature_selection_uses_outcomes": false,
+  "metadata_sources": [
+    "https://alfred.stlouisfed.org/help",
+    "https://alfred.stlouisfed.org/help/downloaddata",
+    "https://alfred.stlouisfed.org/series?seid=GDPC1"
+  ],
+  "predictor_downloads_before_freeze": false
+}

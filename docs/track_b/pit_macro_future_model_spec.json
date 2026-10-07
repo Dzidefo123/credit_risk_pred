@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "status": "PRESPECIFIED_NOT_FITTED",
+  "hazards": [
+    "default",
+    "payoff_maturity"
+  ],
+  "geography": "US",
+  "vintages": [
+    2006,
+    2008,
+    2010,
+    2014,
+    2018,
+    2020,
+    2022
+  ],
+  "duration_clock": "Elapsed monthly reference clock fixed from first-payment proxy or approved risk-entry clock; never assume provider age is immutable",
+  "duration_bands_months": [
+    0,
+    12,
+    24,
+    36,
+    60,
+    84,
+    120,
+    180,
+    240
+  ],
+  "duration_top_band": ">240",
+  "cohort_representation": "Seven archive-vintage indicators with 2006 reference and intercept; no quarter indicators",
+  "macro_feature_registry": "pit_macro_feature_registry.json",
+  "interactions": [],
+  "unrestricted_period_fixed_effects": false,
+  "unrestricted_apc_identified": false,
+  "causal_interpretation": false,
+  "loan_state": "Task10 must freeze lagged state and operational-knowledge eligibility; not automatically certified by retrospective disclosure",
+  "prediction_boundary": "Monthly conditional hazards. Prospective multi-month CIF additionally requires future macro and loan-state paths; no future observed states",
+  "validation_required": [
+    "new sealed facility-separated development/evaluation protocol",
+    "future-calendar and held-out-vintage evaluation",
+    "calendar-block uncertainty",
+    "rank and conditioning of actually constructed design",
+    "no reuse of consumed evaluation ledgers"
+  ],
+  "fitting_performed": false
+}
