@@ -1,0 +1,266 @@
+{
+  "status": "PASSED",
+  "bindings": 123,
+  "used_claims": 116,
+  "body_word_count": 7857,
+  "abstract_word_count": 238,
+  "citation_gaps": 6,
+  "language_flags": [
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "The central question is whether the frozen PIT macro feature set improves temporal competing-risk probability quality relative to a mortgage baseline in the evaluated Freddie population. The analysis proceeds from an expanded default-prediction benchmark to a conditional-entry competing-risk foundation and then to a multi-vintage macro model ladder. It evaluates development fit separately from temporal performance. It reports default and payoff discrimination alongside joint log loss, cause-specific Brier scores, calibration diagnostics and cumulative incidence. These measurements are complementary: none is treated as a substitute for the others or as a declaration of production readiness.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "Three bodies of literature are required to position the study. Mortgage performance research provides the economic and empirical context for default and payoff. Competing-risk methods provide the distinction between cause-specific event probabilities, event-free survival and cumulative incidence. Validation and probability-calibration research provide the framework for interpreting temporal shift and the coexistence of ranking gains with proper-score deterioration. This internal draft identifies those connections without claiming a complete literature review or asserting that the observed pattern is unprecedented.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "These are monthly cause probabilities, not continuous-time hazard rates. The multinomial representation also assigns $h_0=1-h_D-h_P$ to no event. With class logits $\\eta_0,\\eta_D,\\eta_P$, the probabilities follow the fitted softmax representation $h_c=\\exp(\\eta_c)/\\sum_{b\\in\\{0,D,P\\}}\\exp(\\eta_b)$. Default and payoff probabilities consequently share a normalization; the system is not implemented as unrelated binary models whose probabilities are allowed to sum above one.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "Cause",
+      "context": "For the multinomial target, joint log loss averages the negative logarithm of the predicted probability assigned to the observed class. Cause-specific Brier scores average squared errors between the event indicator and the corresponding predicted probability. These are proper scoring rules for the respective probability objects. AUC instead assesses pairwise ranking of an event against its defined comparison observations. It does not assess whether a probability magnitude is accurate. The expanded binary PD benchmark additionally reports average precision. These metrics address different targets and should not be compared across experiments as if they shared a single scale and population.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "**Table T5. Frozen macro development and temporal comparison.** Joint loss targets all event classes; cause-specific AUC and Brier target the indicated cause on monthly risk intervals.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "**Table T5. Frozen macro development and temporal comparison.** Joint loss targets all event classes; cause-specific AUC and Brier target the indicated cause on monthly risk intervals.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "mechanism",
+      "context": "The combined diagnostics are consistent with support extrapolation, unstable payoff mappings and composition changes as plausible contributors. They do not establish a unique causal mechanism, unrestricted macro identification or an independently validated corrective model. The frozen hypothesis assessment does not support pandemic-only or global-intercept-dominance explanations. Partial support for default mapping instability and macro correlation changes remains weaker than an identified contribution to the primary score difference. These distinctions constrain the discussion and the design of any later experiment.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "For model-risk practice, the study suggests a layered monitoring and validation perspective. Development metrics should be accompanied by temporal assessment; cause-specific ranking should be accompanied by proper scores and calibration; and coherent incidence curves should be accompanied by observed horizon comparisons. Shared national inputs require calendar-level support diagnostics in addition to facility-level uncertainty. These are implications of this study, not statements of a regulatory requirement. The work neither implements institution-specific monitoring thresholds nor evaluates the business consequences of a lending decision or deployed portfolio intervention.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "mechanism",
+      "context": "Age, period and cohort identification is structurally constrained. The proxy identity $\\mathrm{period}=\\mathrm{cohort\\ proxy}+\\mathrm{age\\ proxy}$ links the clocks, and the frozen design avoids unrestricted simultaneous coefficient interpretations. The cohort proxy here refers to the scheduled first-payment clock, not a reconstructed exact origination date. Duration bands and cohort reference restrictions are predictive choices, not a causal identification strategy. Effects for unrepresented vintages or unsupported duration categories follow documented encoding restrictions rather than being estimated from nonexistent development observations. The unseen-vintage supplement is consequently informative only with its support qualifications. These restrictions cannot be erased by describing a large interval count or a plausible economic mechanism.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "causal",
+      "term": "cause",
+      "context": "The macro CIF comparisons condition on subsequently realized rolling PIT information. They evaluate a retrospective sequential mapping rather than prospective macro forecasts available at entry. Horizon eligibility and duration support also differ across comparisons; the sixty-month nonparametric foundation does not validate a structural forecast beyond its training-time support. Apparent agreement in one default curve can coexist with offsetting cause errors. The exploratory original-coupon gap does not establish current refinancing eligibility, transaction costs or a behavioral cutoff. No causal or policy interpretation follows from those limitations.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "external",
+      "term": "cross-provider validation",
+      "context": "| Temporal comparison | Evaluated Freddie calendar transport | Completed cross-provider validation |",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "regulatory",
+      "context": "The default proxy is the first observed composite adverse mortgage event under the frozen protocol. Qualifying states include numeric delinquency bands from 03 through 99, the REO state RA, or credit-related termination codes 02, 03 and 09. These codes represent the source's monthly state semantics; they are not exact daily days-past-due measurements or an independently validated regulatory default definition. Incident-risk eligibility excludes an already observed qualifying event, and event timing follows the first qualifying reporting/event month without automatic backdating.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "regulatory",
+      "context": "For model-risk practice, the study suggests a layered monitoring and validation perspective. Development metrics should be accompanied by temporal assessment; cause-specific ranking should be accompanied by proper scores and calibration; and coherent incidence curves should be accompanied by observed horizon comparisons. Shared national inputs require calendar-level support diagnostics in addition to facility-level uncertainty. These are implications of this study, not statements of a regulatory requirement. The work neither implements institution-specific monitoring thresholds nor evaluates the business consequences of a lending decision or deployed portfolio intervention.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "regulatory",
+      "context": "The research default proxy is constructed from monthly delinquency and termination semantics. It is not established as equivalent to a regulatory, contractual or accounting default. Likewise, payoff/maturity is not a directly observed voluntary-refinancing event, and monthly reporting does not establish exact day-level event order. Ambiguity handling and censoring remove observations whose targets cannot be reliably assigned under the contract. The resulting probabilities apply to the specified research risk set. They cannot be transferred directly into regulatory PD, LGD, EAD, impairment staging or a production credit policy.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "regulatory",
+      "context": "The research default proxy is constructed from monthly delinquency and termination semantics. It is not established as equivalent to a regulatory, contractual or accounting default. Likewise, payoff/maturity is not a directly observed voluntary-refinancing event, and monthly reporting does not establish exact day-level event order. Ambiguity handling and censoring remove observations whose targets cannot be reliably assigned under the contract. The resulting probabilities apply to the specified research risk set. They cannot be transferred directly into regulatory PD, LGD, EAD, impairment staging or a production credit policy.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "Regulatory",
+      "context": "| Default proxy | Defined monthly composite research endpoint | Regulatory default equivalence |",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "IFRS 9",
+      "context": "The analysis uses mortgage-level records without establishing borrower identity or attempting to link records to individuals. The manuscript does not claim that the data are anonymous, that an ethics review has approved the work, or that an institutional review exemption has been obtained. **[ETHICS AND AUTHOR REVIEW REQUIRED]**. Its technical scope is credit-risk research, not an IFRS 9 production model, an IRB model, a regulatory PD/LGD/EAD implementation or a validated bank model. Institutional use would require data, policy and validation evidence absent from this study.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "IRB",
+      "context": "The analysis uses mortgage-level records without establishing borrower identity or attempting to link records to individuals. The manuscript does not claim that the data are anonymous, that an ethics review has approved the work, or that an institutional review exemption has been obtained. **[ETHICS AND AUTHOR REVIEW REQUIRED]**. Its technical scope is credit-risk research, not an IFRS 9 production model, an IRB model, a regulatory PD/LGD/EAD implementation or a validated bank model. Institutional use would require data, policy and validation evidence absent from this study.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "regulatory",
+      "context": "The analysis uses mortgage-level records without establishing borrower identity or attempting to link records to individuals. The manuscript does not claim that the data are anonymous, that an ethics review has approved the work, or that an institutional review exemption has been obtained. **[ETHICS AND AUTHOR REVIEW REQUIRED]**. Its technical scope is credit-risk research, not an IFRS 9 production model, an IRB model, a regulatory PD/LGD/EAD implementation or a validated bank model. Institutional use would require data, policy and validation evidence absent from this study.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    },
+    {
+      "kind": "regulatory",
+      "term": "validated bank",
+      "context": "The analysis uses mortgage-level records without establishing borrower identity or attempting to link records to individuals. The manuscript does not claim that the data are anonymous, that an ethics review has approved the work, or that an institutional review exemption has been obtained. **[ETHICS AND AUTHOR REVIEW REQUIRED]**. Its technical scope is credit-risk research, not an IFRS 9 production model, an IRB model, a regulatory PD/LGD/EAD implementation or a validated bank model. Institutional use would require data, policy and validation evidence absent from this study.",
+      "disposition": "RETAIN_NONCAUSAL_METHOD_OR_EXPLICIT_BOUNDARY",
+      "author_review_required": true
+    }
+  ],
+  "evidence_queries": [],
+  "decision": "ARXIV MANUSCRIPT V0.1 READY WITH MATERIAL GAPS",
+  "task": "Track B Task 15 - Manuscript Draft v0.1",
+  "base_commit": "1a3206094147a2ba487bda5af044fc42e8d71649",
+  "verified_at": "2026-10-07T23:00:55.132615+00:00",
+  "working_title": "Temporal Transport of Mortgage Competing-Risk Probabilities with Point-in-Time Macroeconomic Information",
+  "draft_status": "v0.1 INTERNAL DRAFT; not an arXiv submission",
+  "claim_class_counts": {
+    "SUPPORTED_METHODOLOGICAL": 19,
+    "EXPLORATORY_DIAGNOSTIC": 32,
+    "PROPOSED_EXTERNAL_REPLICATION": 1,
+    "LIMITATION": 7,
+    "SUPPORTED_EMPIRICAL": 49,
+    "EXPLORATORY_HYPOTHESIS": 8
+  },
+  "primary_claims_used": 15,
+  "unsupported_claims_used": 0,
+  "prohibited_claims_used": 0,
+  "checks": {
+    "new_regression_tests": 25,
+    "targeted_passed": 25,
+    "full_pytest": {
+      "passed": 1222,
+      "warnings": 4,
+      "seconds": 112.62,
+      "exit_code": 0
+    },
+    "lint": "PASSED",
+    "format": {
+      "status": "PASSED",
+      "files": 250
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "numeric_traceability": "PASSED",
+    "abstract_primary_claim_gate": "PASSED",
+    "private_data_boundary": "PASSED",
+    "whitespace_diff": "PASSED"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "prior_public_lf_hashes": 548,
+    "private_byte_hashes": 366,
+    "git_refs": 2,
+    "seven_freddie_archives": "PASSED",
+    "fannie_archive": "PASSED; no member body access",
+    "task14_and_task13t_unchanged": true,
+    "consumed_ledgers_unchanged": true,
+    "model_artifacts_regenerated": false,
+    "model_predictions_recomputed": false
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical evidence; not newly evaluated"
+  },
+  "scope": {
+    "new_empirical_data": false,
+    "model_fitting": false,
+    "resampling": false,
+    "new_headline_scores": false,
+    "figures_generated": false,
+    "arxiv_submission": false,
+    "push": false,
+    "task13a_authorized": false
+  },
+  "publication_review_flags": [
+    "PUBLICATION TERMS REVIEW REQUIRED",
+    "ETHICS AND AUTHOR REVIEW REQUIRED",
+    "Author metadata and acknowledgments pending",
+    "Literature coverage/novelty unresolved"
+  ],
+  "figures": {
+    "placeholders": 8,
+    "generated": 0
+  },
+  "tables": {
+    "populated": 8,
+    "proposed_extension_placeholder": 1
+  },
+  "appendix_placeholders": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "modified_preexisting_files": [],
+  "new_files": 14,
+  "intended_commit": "paper: draft Track B arXiv manuscript v0.1",
+  "draft_hashes_lf": {
+    "paper/main.md": "1485b300b454282fc027bab49ef85880cdd13663637b596b13f19ba5dd836b4d",
+    "paper/main.source.md": "6a9a976eaf07f7465b8ebe7ee4d677387d3112fc9553656570afcb652e7b658e",
+    "docs/paper/manuscript_numeric_bindings.json": "e9cda2b7dd3ff2884879566f6ae87af6ce670488c95b54727989c239220d7f65"
+  },
+  "files_created": [
+    "docs/paper/citation_gaps.json",
+    "docs/paper/manuscript_claim_usage.json",
+    "docs/paper/manuscript_numeric_bindings.json",
+    "docs/paper/manuscript_terminology.json",
+    "docs/paper/notation_registry.json",
+    "docs/paper/task15_preservation_manifest.json",
+    "paper/README.md",
+    "paper/main.md",
+    "paper/main.source.md",
+    "reports/paper/TASK15_MANUSCRIPT_DRAFT_VERIFICATION.md",
+    "reports/paper/task15_verification.json",
+    "scripts/build_manuscript.py",
+    "scripts/check_manuscript.py",
+    "tests/test_manuscript.py"
+  ]
+}

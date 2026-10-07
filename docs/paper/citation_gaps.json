@@ -1,0 +1,59 @@
+{
+  "gaps": [
+    {
+      "gap_id": "CG01",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "mortgage default prediction and longitudinal mortgage validation",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "mortgage default prediction and longitudinal mortgage validation",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    },
+    {
+      "gap_id": "CG02",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "mortgage payoff, prepayment and refinancing incentive modeling",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "mortgage payoff, prepayment and refinancing incentive modeling",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    },
+    {
+      "gap_id": "CG03",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "Aalen\u2013Johansen, competing-risk estimands and conditional entry",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "Aalen\u2013Johansen, competing-risk estimands and conditional entry",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    },
+    {
+      "gap_id": "CG04",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "IPCW competing-risk discrimination and integrated Brier evaluation",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "IPCW competing-risk discrimination and integrated Brier evaluation",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    },
+    {
+      "gap_id": "CG05",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "temporal dataset shift and probability calibration in credit risk",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "temporal dataset shift and probability calibration in credit risk",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    },
+    {
+      "gap_id": "CG06",
+      "section": "2. Related work and citation gaps",
+      "claim_or_topic": "vintage-aware macroeconomic information in credit-risk modeling",
+      "required_literature_type": "Original scholarly methodology/empirical work",
+      "suggested_search_terms": "vintage-aware macroeconomic information in credit-risk modeling",
+      "priority": "HIGH",
+      "status": "UNRESOLVED; no search or citation fabrication in Task 15"
+    }
+  ],
+  "novelty_established": false
+}

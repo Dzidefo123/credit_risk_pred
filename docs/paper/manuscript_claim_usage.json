@@ -1,0 +1,702 @@
+{
+  "used_claims": [
+    {
+      "claim_id": "COHORT_COMPONENTS",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "COHORT_HASH",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "COHORT_RECOVERY",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "COHORT_ROWS",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "DIAG_ANNUAL",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_ASSESSMENT",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_CIF_COMPONENTS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_COEFFICIENTS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_COMPOSITION",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_NO_EVENT",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_ORACLE",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_PAYOFF_VARIANCE",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_RANGE_HPI_YOY",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_SUPPORT",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_SURVIVORS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "FANNIE_PROPOSED",
+      "claim_class": "PROPOSED_EXTERNAL_REPLICATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "FANNIE_PROVENANCE",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_ACTUAL_FEATURES",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_CAL_M1_PAYOFF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_CAL_M2_PAYOFF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M1_DEFAULT",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M1_PAYOFF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M2_DEFAULT",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M2_PAYOFF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_OBSERVED_PAYOFF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_CIF_24_SUPPORT",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_DESIGN_COUNTS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MACRO_LEDGER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_LIMITS",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M0_DEFAULT_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M0_PAYOFF_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_DEFAULT_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_PAYOFF_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_DEFAULT_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_PAYOFF_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_RATE_SENS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MACRO_UNSEEN",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "MECHANISM_1",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_2",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_3",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_4",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_5",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_6",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_7",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "MECHANISM_8",
+      "claim_class": "EXPLORATORY_HYPOTHESIS",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "PD_CALIBRATION_INTERCEPT",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "PD_CALIBRATION_SLOPE",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "PD_CHAMPION",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_COUNTS",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_DISTRESS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "PD_FEATURES",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_HAZARD",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "PD_LIMITS",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_AVERAGE_PRECISION",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_MEAN_PROBABILITY",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_OBSERVED_RATE",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_LOGISTIC_ROC_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_PAIRED",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_SAMPLE",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_XGBOOST_AVERAGE_PRECISION",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_XGBOOST_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_XGBOOST_LOG_LOSS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PD_XGBOOST_ROC_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_APC",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_COUNTS",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_FEATURES",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_GAPS",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_PROVENANCE",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_RATES",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_RELEASES",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_SERIES",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "PIT_SUPPORT",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "REFI_CAL",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_CIF",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_DECISION",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_DEVELOPMENT_P1_JOINT_LOG_LOSS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_DEVELOPMENT_P2_JOINT_LOG_LOSS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P1_PAYOFF_BRIER",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_EXPLORATORY_P2_PAYOFF_BRIER",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_GAP",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_LIMITS",
+      "claim_class": "LIMITATION",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "REFI_PAIRED",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "REFI_PRESPEC",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_12_IPCW_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_24_IPCW_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_36_IPCW_BRIER",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_60_DEFAULT_CIF",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_60_NAIVE_NET_DEFAULT",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "PRIMARY",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_COUNTS",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_DESIGN",
+      "claim_class": "SUPPORTED_METHODOLOGICAL",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_EXACT"
+    },
+    {
+      "claim_id": "SURV_DURATION",
+      "claim_class": "EXPLORATORY_DIAGNOSTIC",
+      "claim_strength": "CONTEXTUAL",
+      "verification_status": "VERIFIED_WITH_QUALIFICATION"
+    },
+    {
+      "claim_id": "SURV_IBS",
+      "claim_class": "SUPPORTED_EMPIRICAL",
+      "claim_strength": "SECONDARY",
+      "verification_status": "VERIFIED_EXACT"
+    }
+  ],
+  "unsupported_or_prohibited_used": [],
+  "unclassified_governance_statements": "Author/publication/ethics review flags are not findings"
+}

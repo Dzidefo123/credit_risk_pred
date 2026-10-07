@@ -1,0 +1,66 @@
+{
+  "symbols": [
+    {
+      "symbol": "i",
+      "meaning": "Mortgage facility, not uniquely linked borrower"
+    },
+    {
+      "symbol": "e_i",
+      "meaning": "Eligible conditional calendar entry"
+    },
+    {
+      "symbol": "k,K",
+      "meaning": "Monthly relative interval index and horizon after entry"
+    },
+    {
+      "symbol": "t",
+      "meaning": "Calendar reporting interval; not the model duration proxy"
+    },
+    {
+      "symbol": "Y_it",
+      "meaning": "No endpoint / research default proxy / payoff-maturity"
+    },
+    {
+      "symbol": "x_it",
+      "meaning": "Frozen static/duration inputs and permitted PIT information"
+    },
+    {
+      "symbol": "h_D,h_P,h_0",
+      "meaning": "Joint monthly conditional cause/no-event probabilities"
+    },
+    {
+      "symbol": "S_i",
+      "meaning": "Conditional event-free survival, initialized at entry"
+    },
+    {
+      "symbol": "F_D,F_P",
+      "meaning": "Cause cumulative incidence from joint probability recursion"
+    },
+    {
+      "symbol": "eta_c",
+      "meaning": "Multinomial class logit; probabilities use joint softmax"
+    },
+    {
+      "symbol": "G,G+,G-",
+      "meaning": "Original-coupon proxy minus PIT market rate and asymmetric terms"
+    },
+    {
+      "symbol": "b",
+      "meaning": "Original principal balance for frozen log1p preprocessing"
+    },
+    {
+      "symbol": "r_i^orig",
+      "meaning": "Original coupon proxy, not verified current contract rate"
+    },
+    {
+      "symbol": "m_t^PIT",
+      "meaning": "Vintage-aware market mortgage rate in the assessment information set"
+    },
+    {
+      "symbol": "period / cohort proxy / age proxy",
+      "meaning": "Frozen first-payment proxy clock identity; not exact origination or causal APC identification"
+    }
+  ],
+  "conditional_entry": true,
+  "prospective_macro_forecast_claim": false
+}

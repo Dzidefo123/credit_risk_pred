@@ -1,0 +1,26 @@
+{
+  "approved_terms": {
+    "facility": "Mortgage record key; not a borrower identity",
+    "mortgage": "Selected provider mortgage facility",
+    "research default proxy": "Frozen composite monthly adverse endpoint",
+    "payoff": "Verified payoff/maturity, not observed voluntary refinancing",
+    "competing risk": "Joint probability system with default and payoff exits",
+    "temporal evaluation": "Frozen later calendar comparison with documented prior exposure",
+    "PIT macro": "Vintage-aware macro information, not verified mortgage knowledge time",
+    "development": "Earlier fit population; not independent validation",
+    "calibration": "Probability agreement diagnostics; no evaluation correction applied",
+    "proper scoring": "Joint log loss or cause-specific Brier on their defined targets",
+    "conditional entry": "Risk after eligible observed entry, not origination lifetime",
+    "external replication": "Proposed Fannie extension; no outcome results"
+  },
+  "prohibited_substitutions": [
+    "borrower uniqueness",
+    "regulatory default equivalence",
+    "virgin holdout",
+    "causal macro explanation",
+    "completed external confirmation",
+    "sealed Fannie protocol"
+  ],
+  "fannie_protocol": "DRAFT_NOT_YET_AUTHORIZED",
+  "task13a_authorized": false
+}
