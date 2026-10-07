@@ -1,0 +1,226 @@
+{
+  "2006": {
+    "12": {
+      "at_risk": 18537,
+      "known_status": 19967,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 16021,
+      "known_status": 19957,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 12350,
+      "known_status": 19949,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 7014,
+      "known_status": 19941,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 3270,
+      "known_status": 19934,
+      "status": "SUPPORTED"
+    },
+    "120": {
+      "at_risk": 1555,
+      "known_status": 19927,
+      "status": "SUPPORTED"
+    }
+  },
+  "2008": {
+    "12": {
+      "at_risk": 17013,
+      "known_status": 19962,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 13139,
+      "known_status": 19951,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 9503,
+      "known_status": 19944,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 4372,
+      "known_status": 19930,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 2433,
+      "known_status": 19925,
+      "status": "SUPPORTED"
+    },
+    "120": {
+      "at_risk": 1246,
+      "known_status": 19914,
+      "status": "SUPPORTED"
+    }
+  },
+  "2010": {
+    "12": {
+      "at_risk": 18823,
+      "known_status": 19974,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 15668,
+      "known_status": 19966,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 12087,
+      "known_status": 19961,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 8955,
+      "known_status": 19956,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 6306,
+      "known_status": 19954,
+      "status": "SUPPORTED"
+    },
+    "120": {
+      "at_risk": 3766,
+      "known_status": 19940,
+      "status": "SUPPORTED"
+    }
+  },
+  "2014": {
+    "12": {
+      "at_risk": 18423,
+      "known_status": 19969,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 15941,
+      "known_status": 19963,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 13445,
+      "known_status": 19950,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 10347,
+      "known_status": 19945,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 5658,
+      "known_status": 19937,
+      "status": "SUPPORTED"
+    },
+    "120": {
+      "at_risk": 3557,
+      "known_status": 19881,
+      "status": "SUPPORTED"
+    }
+  },
+  "2018": {
+    "12": {
+      "at_risk": 17979,
+      "known_status": 19957,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 12098,
+      "known_status": 19950,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 6753,
+      "known_status": 19948,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 4263,
+      "known_status": 19946,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 3602,
+      "known_status": 19922,
+      "status": "SUPPORTED"
+    },
+    "120": {
+      "at_risk": 0,
+      "known_status": 16529,
+      "status": "UNSUPPORTED"
+    }
+  },
+  "2020": {
+    "12": {
+      "at_risk": 17611,
+      "known_status": 19965,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 15193,
+      "known_status": 19961,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 14381,
+      "known_status": 19960,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 13033,
+      "known_status": 19947,
+      "status": "SUPPORTED"
+    },
+    "84": {
+      "at_risk": 0,
+      "known_status": 7256,
+      "status": "UNSUPPORTED"
+    },
+    "120": {
+      "at_risk": 0,
+      "known_status": 7256,
+      "status": "UNSUPPORTED"
+    }
+  },
+  "2022": {
+    "12": {
+      "at_risk": 19123,
+      "known_status": 19898,
+      "status": "SUPPORTED"
+    },
+    "24": {
+      "at_risk": 17971,
+      "known_status": 19880,
+      "status": "SUPPORTED"
+    },
+    "36": {
+      "at_risk": 16656,
+      "known_status": 19864,
+      "status": "SUPPORTED"
+    },
+    "60": {
+      "at_risk": 0,
+      "known_status": 4144,
+      "status": "UNSUPPORTED"
+    },
+    "84": {
+      "at_risk": 0,
+      "known_status": 4144,
+      "status": "UNSUPPORTED"
+    },
+    "120": {
+      "at_risk": 0,
+      "known_status": 4144,
+      "status": "UNSUPPORTED"
+    }
+  }
+}

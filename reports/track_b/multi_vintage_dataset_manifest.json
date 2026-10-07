@@ -1,0 +1,231 @@
+{
+  "protocol_sha256_lf": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+  "protocol_version": "1.0.0",
+  "sources": [
+    {
+      "vintage": 2006,
+      "sha256": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+      "bytes": 1108764398,
+      "status": "DATA_QUALITY_STOP"
+    },
+    {
+      "vintage": 2008,
+      "sha256": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+      "bytes": 918708188,
+      "status": "DATA_QUALITY_STOP"
+    },
+    {
+      "vintage": 2010,
+      "sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "bytes": 1882675775,
+      "status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2014,
+      "sha256": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+      "bytes": 1190876663,
+      "status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2018,
+      "sha256": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+      "bytes": 841692351,
+      "status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2020,
+      "sha256": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+      "bytes": 3255236870,
+      "status": "DATA_QUALITY_STOP"
+    },
+    {
+      "vintage": 2022,
+      "sha256": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31",
+      "bytes": 1035368752,
+      "status": "DATA_QUALITY_STOP"
+    }
+  ],
+  "samples": [
+    {
+      "vintage": 2010,
+      "facilities": 20000,
+      "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832"
+    },
+    {
+      "vintage": 2014,
+      "facilities": 20000,
+      "sample_sha256": "d26b2ba3e08837f82c940ecefbaa18c4bd201d64a0a114760eafeeb80a8126f5"
+    },
+    {
+      "vintage": 2018,
+      "facilities": 20000,
+      "sample_sha256": "b3e2952bb5bc0d0a551105cecfa964b18481b3764442edb8362245f4f17f921e"
+    }
+  ],
+  "combined_sample_sha256": "2c341be575da55444fa0461044214f73970cbde587ab99d6af7063c12a21b77d",
+  "combined_manifest_sha256": "545103ee3ce64a8385644f9e77a0b94c29e4fe2e68d313755f45e835dcc34cd5",
+  "manifest_hash_mode": "LF-normalized UTF-8; raw archives and canonical CSVs use byte hashes",
+  "harmonization_version": "multivintage-r47-v1.0.0",
+  "per_vintage": [
+    {
+      "vintage": 2010,
+      "facilities": 20000,
+      "rows": 1400360,
+      "calendar": {
+        "first": "2010-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2010": 91536,
+          "2011": 225390,
+          "2012": 193918,
+          "2013": 150014,
+          "2014": 129498,
+          "2015": 112687,
+          "2016": 95630,
+          "2017": 80364,
+          "2018": 70072,
+          "2019": 61932,
+          "2020": 51357,
+          "2021": 37761,
+          "2022": 29582,
+          "2023": 25563,
+          "2024": 22458,
+          "2025": 18684,
+          "2026": 3914
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 26.0,
+        "median": 53.0,
+        "p75": 107.0,
+        "maximum": 194.0
+      },
+      "events": {
+        "payoff": 18147,
+        "active_or_unknown": 1168,
+        "default": 623,
+        "ambiguous": 33,
+        "administrative": 29
+      },
+      "canonical_output_sha256": {
+        "origination.csv": "ff7350fc30e0a5103f64246d252c47d058a406555e66f219b258a5b0d07575de",
+        "monthly.csv": "b6aa2cd80583efb883b7280ab76601daaaeaae45dbb01c14b27ae00b1384ad3a"
+      }
+    },
+    {
+      "vintage": 2014,
+      "facilities": 20000,
+      "rows": 1352589,
+      "calendar": {
+        "first": "2014-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2014": 97137,
+          "2015": 219770,
+          "2016": 194852,
+          "2017": 164799,
+          "2018": 145014,
+          "2019": 130440,
+          "2020": 108534,
+          "2021": 77141,
+          "2022": 59555,
+          "2023": 53125,
+          "2024": 48130,
+          "2025": 43771,
+          "2026": 10321
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 27.0,
+        "median": 64.0,
+        "p75": 92.0,
+        "maximum": 146.0
+      },
+      "events": {
+        "payoff": 16018,
+        "active_or_unknown": 3121,
+        "default": 800,
+        "administrative": 33,
+        "ambiguous": 28
+      },
+      "canonical_output_sha256": {
+        "origination.csv": "35bf341d656a7c1050ecbf2529c4c4bb500fbdccdf073bc267d879bd33f3f7e6",
+        "monthly.csv": "c132a5ec970828cbf3301a8b12454274a1d7c5e96892f2a0163d40a43fd67945"
+      }
+    },
+    {
+      "vintage": 2018,
+      "facilities": 20000,
+      "rows": 819246,
+      "calendar": {
+        "first": "2018-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2018": 105693,
+          "2019": 221554,
+          "2020": 158613,
+          "2021": 93938,
+          "2022": 65831,
+          "2023": 58418,
+          "2024": 53782,
+          "2025": 49640,
+          "2026": 11777
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 18.0,
+        "median": 29.0,
+        "p75": 55.0,
+        "maximum": 98.0
+      },
+      "events": {
+        "payoff": 15488,
+        "active_or_unknown": 3410,
+        "default": 1051,
+        "administrative": 42,
+        "ambiguous": 9
+      },
+      "canonical_output_sha256": {
+        "origination.csv": "f871f62b1504e6f7bb808120848e9e15954f782d0c171095634b2a35e2ea22db",
+        "monthly.csv": "ee3d2cc5249f99d4941d4881154fd4fd151c70b8de82cac514bef7e5c657749d"
+      }
+    }
+  ],
+  "harmonization_code_sha256": {
+    "src/credit_risk/track_b/multivintage/audit.py": "8429540cb20eda088ff49d229440e38c6c95056cf00b401ff0abd97593a0abeb",
+    "src/credit_risk/track_b/multivintage/core.py": "e4de41da8a20847ee6d452c290dc0b36382d6542ee9c49adbfe9cc8a8581b898",
+    "src/credit_risk/track_b/multivintage/reader.py": "c15f40c824d8e97eb4a0a10506ff1c80396c78ba0fc5c9c430a0b6bd686577da",
+    "src/credit_risk/track_b/multivintage/schema.py": "12acae189ad5466791365dbb5bbd153430103c57918a7836c27207752c65ece8",
+    "src/credit_risk/track_b/multivintage/study.py": "e03985e6810ae271b3d41084ba4e723025fb8469bd345b85afc397bc8136deb6",
+    "src/credit_risk/track_b/multivintage/__init__.py": "5e57927a955a603743bcff205c8dd60552fd1ff920db84c8b92dc6831aa1bd2c"
+  },
+  "schema_version": "track-b-multivintage-r47-canonical-v1",
+  "schema_registry_sha256": "6f7abf83247a4da238dfd0e37e3117e64f042075643b7e59e60c97e979bdba36",
+  "harmonization_sha256": "221846d328269a32e88bc554fe2da85f4caed4d1c87de4179d4d68569f6b29ae",
+  "canonical_rows": 3572195,
+  "facilities": 60000,
+  "incomplete_vintages": [
+    2006,
+    2008,
+    2020,
+    2022
+  ],
+  "limitations": [
+    "Current-release retrospective disclosure: operational knowledge time and historical revisions remain unverified.",
+    "ZIP timestamps and matching field counts do not independently attest the exact source release.",
+    "Facility identity is not borrower identity; cross-facility or cross-vintage borrower independence is not established.",
+    "First payment month is not exact origination or accounting recognition; no fabricated daily dates or exact DPD.",
+    "Monthly research default is a proxy; payoff includes maturity, not uniquely voluntary prepayment.",
+    "Loss amounts are signed aggregate disclosures, not timed recovery cash flows, accounting LGD or ECL.",
+    "Modification and assistance disclosures do not identify every intervention or pandemic forbearance.",
+    "Natural follow-up is unequal; no outcome extrapolation, adaptive replacement or global truncation.",
+    "Overlap does not identify unrestricted age, period and cohort effects or causal macro coefficients."
+  ],
+  "decision": "STOP \u2014 HARMONIZATION INVALID"
+}

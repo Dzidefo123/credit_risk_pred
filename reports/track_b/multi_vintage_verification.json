@@ -1,0 +1,19 @@
+{
+  "targeted_tests": 48,
+  "targeted_passed": 48,
+  "full_tests": 784,
+  "full_passed": 784,
+  "full_warnings": 4,
+  "lint": "PASSED",
+  "format": "173 files formatted",
+  "governance": "PASSED",
+  "repository_audit": "PASSED",
+  "public_file_hygiene": "PASSED",
+  "preexisting_tracked_files_preserved": 321,
+  "frozen_processing_code_unchanged": true,
+  "frozen_protocol_unchanged": true,
+  "private_task8_bytes": 3183734177,
+  "reporting_gate": "Nonzero exit observed as expected; regression tests verify SystemExit(2)",
+  "commit_created": false,
+  "pushed": false
+}

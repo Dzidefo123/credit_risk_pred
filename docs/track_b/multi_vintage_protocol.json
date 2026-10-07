@@ -1,0 +1,71 @@
+{
+  "id": "track_b_multivintage_v1",
+  "version": "1.0.0",
+  "vintages": [
+    2006,
+    2008,
+    2010,
+    2014,
+    2018,
+    2020,
+    2022
+  ],
+  "n_per_vintage": 20000,
+  "namespace": "track-b-multivintage-v1:{vintage}:{loan_id}",
+  "sampling": "All eligible Standard FRM origination IDs; SHA256 namespace identifier-only rank, digest then ID, first min(N,eligible). No outcomes/credit/geography/history in selection.",
+  "existing_2010_sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+  "base_event_protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "source_release_adapter": "Pinned official R47 July2026 31 origination/35 performance positions; fail closed on differences. Archive timestamps are not release proof.",
+  "layout_sha256": "ce054271c42b7ad5f173a045c73368d997a2ac99253dcb312a45ccef43a4b13e",
+  "limits": {
+    "chunk_bytes": 1048576,
+    "free_disk_reserve_bytes": 8589934592,
+    "max_compression_ratio": 128,
+    "max_line_bytes": 65536,
+    "max_malformed_rows": 0,
+    "max_peak_memory_bytes": 2147483648,
+    "max_quarter_compressed_bytes": 4294967296,
+    "max_quarter_declared_bytes": 4294967296,
+    "max_retained_performance_rows": 6000000,
+    "max_temporary_bytes": 4294967296,
+    "max_text_compressed_bytes": 4294967296,
+    "max_text_declared_bytes": 17179869184,
+    "max_total_text_bytes": 68719476736,
+    "max_universe_ids": 8000000,
+    "max_cache_bytes": 4294967296
+  },
+  "horizons": [
+    12,
+    24,
+    36,
+    60,
+    84,
+    120
+  ],
+  "horizon_origin": "First observed reporting month, conditional on active known state. No inferred origination date. horizon h means h monthly intervals from that boundary.",
+  "horizon_support_rule": {
+    "supported_min_at_risk": 1000,
+    "supported_min_known": 10000,
+    "limited_min_at_risk": 100,
+    "limited_min_known": 2000,
+    "rule": "Both risk support and known cause/status count must meet threshold; otherwise UNSUPPORTED. No future outcomes extrapolated."
+  },
+  "endpoint_count_rule": "First observed default/payoff/administrative/ambiguous category across sorted complete retained source history; active_or_unknown otherwise, exactly as Task4/6 descriptive endpoints. Distinct from gap/unknown-censored analytical follow-up.",
+  "risk_rule": "First contiguous active known prefix from first observed month through first clinical endpoint, ambiguity, admin, unknown or gap. Never re-enter. Preserve/quarantine later raw rows. Duplicate months stop analytical prefix.",
+  "missing_states": [
+    "MISSING_IN_SOURCE",
+    "STRUCTURALLY_UNAVAILABLE",
+    "NOT_APPLICABLE",
+    "PARSER_FAILURE"
+  ],
+  "future_constraints": [
+    "smooth duration basis",
+    "parsimonious cohort representation",
+    "national macro replacing unrestricted period FE",
+    "prespecified interactions only"
+  ],
+  "models_permitted": false,
+  "macro_joins_permitted": false,
+  "record_authorization": "User supplied seven local Standard archives in response to explicit official-source acquisition instructions; no authentication automated; exact download times unknown.",
+  "raw_redistribution": false
+}

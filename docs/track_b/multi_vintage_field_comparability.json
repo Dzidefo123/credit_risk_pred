@@ -1,0 +1,2742 @@
+{
+  "schema_version": "track-b-multivintage-r47-canonical-v1",
+  "allowed_statuses": [
+    "EXACT",
+    "PARTIAL",
+    "SEMANTICALLY_INCOMPATIBLE",
+    "TRANSFORMABLE",
+    "UNAVAILABLE"
+  ],
+  "fields": [
+    {
+      "field": "orig_credit_score",
+      "kind": "origination",
+      "definition": "Provider origination credit score; do not equate to VantageScore or time-current score.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "first_payment_month",
+      "kind": "origination",
+      "definition": "First scheduled payment month; not exact origination, recognition or observation entry.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "first_time_buyer",
+      "kind": "origination",
+      "definition": "Official pinned R47 first time buyer",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "maturity_month",
+      "kind": "origination",
+      "definition": "Disclosed scheduled maturity month; not observed payoff date.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "msa",
+      "kind": "origination",
+      "definition": "Official pinned R47 msa",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "mi_percentage",
+      "kind": "origination",
+      "definition": "Official pinned R47 mi percentage",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "number_units",
+      "kind": "origination",
+      "definition": "Official pinned R47 number units",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "occupancy_status",
+      "kind": "origination",
+      "definition": "Official pinned R47 occupancy status",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "orig_cltv",
+      "kind": "origination",
+      "definition": "Official pinned R47 orig cltv",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "orig_dti",
+      "kind": "origination",
+      "definition": "Official pinned R47 orig dti",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "orig_upb",
+      "kind": "origination",
+      "definition": "Official pinned R47 orig upb",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "orig_ltv",
+      "kind": "origination",
+      "definition": "Official pinned R47 orig ltv",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "orig_interest_rate",
+      "kind": "origination",
+      "definition": "Official pinned R47 orig interest rate",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "channel",
+      "kind": "origination",
+      "definition": "Official pinned R47 channel",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "prepayment_penalty",
+      "kind": "origination",
+      "definition": "Official pinned R47 prepayment penalty",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "amortization_type",
+      "kind": "origination",
+      "definition": "Official pinned R47 amortization type",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "property_state",
+      "kind": "origination",
+      "definition": "Official pinned R47 property state",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "property_type",
+      "kind": "origination",
+      "definition": "Official pinned R47 property type",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "postal_prefix",
+      "kind": "origination",
+      "definition": "Coarsened source postal geography; private only, no public facility geography.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "loan_id",
+      "kind": "origination",
+      "definition": "Source mortgage facility identifier; combine with vintage. Never a borrower identifier.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "loan_purpose",
+      "kind": "origination",
+      "definition": "Official pinned R47 loan purpose",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "original_loan_term",
+      "kind": "origination",
+      "definition": "Official pinned R47 original loan term",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "number_of_borrowers",
+      "kind": "origination",
+      "definition": "Official pinned R47 number of borrowers",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "seller_name",
+      "kind": "origination",
+      "definition": "Official pinned R47 seller name",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "super_conforming",
+      "kind": "origination",
+      "definition": "Official pinned R47 super conforming",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "pre_harp_loan_id",
+      "kind": "origination",
+      "definition": "Source linkage field; not general borrower linkage.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "special_program",
+      "kind": "origination",
+      "definition": "Official pinned R47 special program",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "harp_indicator",
+      "kind": "origination",
+      "definition": "Official pinned R47 harp indicator",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "valuation_method",
+      "kind": "origination",
+      "definition": "Official pinned R47 valuation method",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "interest_only",
+      "kind": "origination",
+      "definition": "Official pinned R47 interest only",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "vantage_score",
+      "kind": "origination",
+      "definition": "Separate disclosed VantageScore field; absence is not a substitute score.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "loan_id",
+      "kind": "performance",
+      "definition": "Source mortgage facility identifier; combine with vintage. Never a borrower identifier.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "reporting_month",
+      "kind": "performance",
+      "definition": "Official pinned R47 reporting month",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "current_principal_balance",
+      "kind": "performance",
+      "definition": "Official pinned R47 current principal balance",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "delinquency_state",
+      "kind": "performance",
+      "definition": "Monthly categorical state; XX unknown, RA REO, numeric bands. Not exact daily DPD.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "loan_age",
+      "kind": "performance",
+      "definition": "Provider mortgage age in monthly intervals; audited against first-payment proxy, not overwritten.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "remaining_legal_months",
+      "kind": "performance",
+      "definition": "Official pinned R47 remaining legal months",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "defect_month",
+      "kind": "performance",
+      "definition": "Official pinned R47 defect month",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "modification_flag",
+      "kind": "performance",
+      "definition": "Disclosed modification indicator; absence does not prove no historical intervention.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "termination_code",
+      "kind": "performance",
+      "definition": "Provider zero-balance code; 01 combines payoff/maturity, 02/03/09 research-default causes, 15/16/96 administrative.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "termination_month",
+      "kind": "performance",
+      "definition": "Reported zero-balance month; missing without termination is NOT_APPLICABLE. Mismatch with reporting month is ambiguous.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "current_interest_rate",
+      "kind": "performance",
+      "definition": "Official pinned R47 current interest rate",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "non_interest_upb",
+      "kind": "performance",
+      "definition": "Official pinned R47 non interest upb",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "last_paid_due_month",
+      "kind": "performance",
+      "definition": "Official pinned R47 last paid due month",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "mi_recoveries",
+      "kind": "performance",
+      "definition": "Official pinned R47 mi recoveries",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "net_sale_proceeds",
+      "kind": "performance",
+      "definition": "Aggregate sale proceeds; alpha disclosure codes preserved in raw cache, not guessed as zero.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "non_mi_recoveries",
+      "kind": "performance",
+      "definition": "Official pinned R47 non mi recoveries",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "total_expenses",
+      "kind": "performance",
+      "definition": "Official pinned R47 total expenses",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "legal_costs",
+      "kind": "performance",
+      "definition": "Official pinned R47 legal costs",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "preservation_costs",
+      "kind": "performance",
+      "definition": "Official pinned R47 preservation costs",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "taxes_insurance",
+      "kind": "performance",
+      "definition": "Official pinned R47 taxes insurance",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "misc_expenses",
+      "kind": "performance",
+      "definition": "Official pinned R47 misc expenses",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "actual_loss",
+      "kind": "performance",
+      "definition": "Signed provider actual-loss disclosure; aggregate audit only, not discounted workout cash flow.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "cumulative_modification_costs",
+      "kind": "performance",
+      "definition": "Official pinned R47 cumulative modification costs",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "rate_step_indicator",
+      "kind": "performance",
+      "definition": "Official pinned R47 rate step indicator",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "payment_deferral_flag",
+      "kind": "performance",
+      "definition": "Disclosed deferral flag; reporting scope may depend on servicing regime.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "estimated_ltv",
+      "kind": "performance",
+      "definition": "Official pinned R47 estimated ltv",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "removal_upb",
+      "kind": "performance",
+      "definition": "Official pinned R47 removal upb",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "delinquent_accrued_interest",
+      "kind": "performance",
+      "definition": "Official pinned R47 delinquent accrued interest",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "disaster_flag",
+      "kind": "performance",
+      "definition": "Official pinned R47 disaster flag",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "assistance_plan",
+      "kind": "performance",
+      "definition": "Disclosed assistance plan; no inference of complete forbearance coverage.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "period_modification_costs",
+      "kind": "performance",
+      "definition": "Official pinned R47 period modification costs",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "interest_bearing_upb",
+      "kind": "performance",
+      "definition": "Official pinned R47 interest bearing upb",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "mi_cancelled",
+      "kind": "performance",
+      "definition": "Official pinned R47 mi cancelled",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "servicer_name",
+      "kind": "performance",
+      "definition": "Official pinned R47 servicer name",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Pinned field positions; explicit type normalization only."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "bankruptcy_cramdown_costs",
+      "kind": "performance",
+      "definition": "Official pinned R47 bankruptcy cramdown costs",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Disclosure/semantic limitation or entirely nonobserved field; see missingness and definition."
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Validation incomplete; does not establish source unavailability or equivalence."
+        }
+      }
+    },
+    {
+      "field": "vintage",
+      "kind": "derived_or_prohibited",
+      "definition": "Prespecified archive vintage; not inferred borrower cohort.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "EXACT",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "EXACT",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "EXACT",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "research_key",
+      "kind": "derived_or_prohibited",
+      "definition": "Composite (vintage, source_facility_id); private identity only.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "event_category",
+      "kind": "derived_or_prohibited",
+      "definition": "Unchanged Task2 default/payoff/administrative/ambiguous/unknown categories.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "analytical_prefix",
+      "kind": "derived_or_prohibited",
+      "definition": "First contiguous known active history; stops at gap, duplicate, unknown or endpoint; no re-entry.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "post_research_endpoint",
+      "kind": "derived_or_prohibited",
+      "definition": "Quarantine flag after first observed research endpoint; raw observations retained.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "post_source_termination",
+      "kind": "derived_or_prohibited",
+      "definition": "Quarantine flag after first source termination; raw observations retained.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "pandemic_regime",
+      "kind": "derived_or_prohibited",
+      "definition": "Calendar flag for 2020/2021; not actual forbearance or causal treatment.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "TRANSFORMABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "months_since_first_payment_proxy",
+      "kind": "derived_or_prohibited",
+      "definition": "Reporting month minus scheduled first-payment month; not exact mortgage age.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "PARTIAL",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "borrower_id",
+      "kind": "derived_or_prohibited",
+      "definition": "No usable borrower linkage supplied; do not assume independence.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "exact_origination_date",
+      "kind": "derived_or_prohibited",
+      "definition": "Not supplied by first-payment month.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "timed_recovery_cashflows",
+      "kind": "derived_or_prohibited",
+      "definition": "Aggregate loss disclosures cannot supply timed recovery cash flows.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "UNAVAILABLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    },
+    {
+      "field": "exact_days_past_due",
+      "kind": "derived_or_prohibited",
+      "definition": "Monthly delinquency bands cannot be harmonized to exact daily DPD.",
+      "vintages": {
+        "2006": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2008": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2010": {
+          "status": "SEMANTICALLY_INCOMPATIBLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2014": {
+          "status": "SEMANTICALLY_INCOMPATIBLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2018": {
+          "status": "SEMANTICALLY_INCOMPATIBLE",
+          "reason": "Applied/unsupported as explicitly defined"
+        },
+        "2020": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        },
+        "2022": {
+          "status": "PARTIAL",
+          "reason": "Not certified for stopped vintage"
+        }
+      }
+    }
+  ]
+}

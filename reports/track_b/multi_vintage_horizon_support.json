@@ -1,0 +1,212 @@
+{
+  "origin": "First observed reporting month, conditional on active known state. No inferred origination date. horizon h means h monthly intervals from that boundary.",
+  "rule": {
+    "supported_min_at_risk": 1000,
+    "supported_min_known": 10000,
+    "limited_min_at_risk": 100,
+    "limited_min_known": 2000,
+    "rule": "Both risk support and known cause/status count must meet threshold; otherwise UNSUPPORTED. No future outcomes extrapolated."
+  },
+  "matrix": {
+    "2006": {
+      "12": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "24": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "36": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "60": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "84": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "120": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      }
+    },
+    "2008": {
+      "12": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "24": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "36": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "60": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "84": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "120": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      }
+    },
+    "2010": {
+      "12": {
+        "at_risk": 18823,
+        "known_status": 19974,
+        "status": "SUPPORTED"
+      },
+      "24": {
+        "at_risk": 15668,
+        "known_status": 19966,
+        "status": "SUPPORTED"
+      },
+      "36": {
+        "at_risk": 12087,
+        "known_status": 19961,
+        "status": "SUPPORTED"
+      },
+      "60": {
+        "at_risk": 8955,
+        "known_status": 19956,
+        "status": "SUPPORTED"
+      },
+      "84": {
+        "at_risk": 6306,
+        "known_status": 19954,
+        "status": "SUPPORTED"
+      },
+      "120": {
+        "at_risk": 3766,
+        "known_status": 19940,
+        "status": "SUPPORTED"
+      }
+    },
+    "2014": {
+      "12": {
+        "at_risk": 18423,
+        "known_status": 19969,
+        "status": "SUPPORTED"
+      },
+      "24": {
+        "at_risk": 15941,
+        "known_status": 19963,
+        "status": "SUPPORTED"
+      },
+      "36": {
+        "at_risk": 13445,
+        "known_status": 19950,
+        "status": "SUPPORTED"
+      },
+      "60": {
+        "at_risk": 10347,
+        "known_status": 19945,
+        "status": "SUPPORTED"
+      },
+      "84": {
+        "at_risk": 5658,
+        "known_status": 19937,
+        "status": "SUPPORTED"
+      },
+      "120": {
+        "at_risk": 3557,
+        "known_status": 19881,
+        "status": "SUPPORTED"
+      }
+    },
+    "2018": {
+      "12": {
+        "at_risk": 17979,
+        "known_status": 19957,
+        "status": "SUPPORTED"
+      },
+      "24": {
+        "at_risk": 12098,
+        "known_status": 19950,
+        "status": "SUPPORTED"
+      },
+      "36": {
+        "at_risk": 6753,
+        "known_status": 19948,
+        "status": "SUPPORTED"
+      },
+      "60": {
+        "at_risk": 4263,
+        "known_status": 19946,
+        "status": "SUPPORTED"
+      },
+      "84": {
+        "at_risk": 3602,
+        "known_status": 19922,
+        "status": "SUPPORTED"
+      },
+      "120": {
+        "at_risk": 0,
+        "known_status": 16529,
+        "status": "UNSUPPORTED"
+      }
+    },
+    "2020": {
+      "12": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "24": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "36": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "60": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "84": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "120": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      }
+    },
+    "2022": {
+      "12": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "24": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "36": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "60": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "84": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      },
+      "120": {
+        "status": null,
+        "reason": "Vintage stopped before usable follow-up; not inferred as unsupported"
+      }
+    }
+  }
+}

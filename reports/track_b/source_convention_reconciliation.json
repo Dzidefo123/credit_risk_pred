@@ -1,0 +1,1314 @@
+{
+  "task": "Track B Task 8A",
+  "evidence_version": "source-convention-review-v1.0.0",
+  "decision": "SOURCE CONVENTIONS UNRESOLVED",
+  "amendment": null,
+  "parser_version": "multivintage-r47-v1.0.0",
+  "parser_changed": false,
+  "prefix_rule": "PREFIX_STRICT",
+  "prefix_reason": "Retain the prespecified cohort gate: both official guides describe member and embedded quarters as origination quarters. Three isolated adjacent-quarter discrepancies are temporally coherent but their placement is unexplained. Do not infer acquisition-quarter grouping, rewrite IDs, discard exceptions, or claim these are documented legitimate crossings.",
+  "rate_classification": "MALFORMED_ISOLATED_VALUE",
+  "rate_reason": "One nonnumeric dot among 12,169,807 aligned origination records, only in 2006Q3; no documented enumeration, recurrence, blank rates, other rate tokens, or dots elsewhere in numeric origination fields. Malformed means a token violates documented numeric format; its underlying provider meaning remains unknown. Alignment alone is insufficient evidence for an empirical missing rule.",
+  "sources": [
+    {
+      "file": "disclosure-changes-summary.pdf",
+      "bytes": 182219,
+      "sha256": "e513ccc06fca13880a541442b393a655e1b5904fd1a97e79cf7f56808f1fa2f0",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/disclosure-changes-summary.pdf",
+      "version_date": "v1.2, June 2026, effective July 2026 Release 47",
+      "location": "Origination fields 13 and 20; disclosure changes",
+      "finding": "No new dot-rate enumeration or identifier-quarter exception established."
+    },
+    {
+      "file": "file_layout.xlsx",
+      "bytes": 12380,
+      "sha256": "c25f52e9f84f433f12c30683eb174232a36e3a0030b625be208856141cc85e9a",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/file_layout.xlsx",
+      "version_date": "Pre-July-2026 layout, linked with January guide; workbook has no release attestation",
+      "location": "Origination rows 13 and 20",
+      "finding": "Same rate and identifier formats; 32 origination fields, so do not apply this historical column map to the supplied archives."
+    },
+    {
+      "file": "file_layout_july_2026.xlsx",
+      "bytes": 13597,
+      "sha256": "ce054271c42b7ad5f173a045c73368d997a2ac99253dcb312a45ccef43a4b13e",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/file_layout_july_2026.xlsx",
+      "version_date": "July 2026, Release 47",
+      "location": "Origination rows 13 and 20",
+      "finding": "Rate Numeric - 6,3, length 6; identifier PYYQnXXXXXXX, length 12; 31 origination fields."
+    },
+    {
+      "file": "general_user_guide_july_2026.pdf",
+      "bytes": 388038,
+      "sha256": "4693ae754109c213feb84e97702fa675ed3926c2a5f4b6f7ba3c347db2aaf03e",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/general_user_guide_july_2026.pdf",
+      "version_date": "Release 47, July 2026",
+      "location": "pp. 3, 4, 6, 7-8, 16",
+      "finding": "Identifier includes origination year/quarter; quarterly files group originations; scheduled first payment is not an origination date; no dot-rate enumeration."
+    },
+    {
+      "file": "release-47-sample-files.zip",
+      "bytes": 44145,
+      "sha256": "c1374946c9414c8182f2f7c637776808b5c109a43d19a4ca928f9a1a4933fa06",
+      "url": "https://www.freddiemac.com/fmac-resources/research/docs/release-47-sample-files.zip",
+      "version_date": "Official Release 47 illustrative sample",
+      "location": "Sample Files/origination_sample_file.txt",
+      "finding": "1,000 origination rows; numeric original rates throughout; zero blank, dot, other nonnumeric rates. Performance sample payload not opened."
+    },
+    {
+      "file": "release_notes.pdf",
+      "bytes": 602990,
+      "sha256": "3e4aee17551a50c60daf5be9c98769d74f05d9bac60e8328314fc3cd6a92ef97",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/release_notes.pdf",
+      "version_date": "Release 47, July 2026; release table July 29, 2026",
+      "location": "Release table and Release 47/earlier release summaries",
+      "finding": "Origination and performance cutoff March 31, 2026; no dot-rate or file-quarter exception identified in reviewed notes."
+    },
+    {
+      "file": "user_guide.pdf",
+      "bytes": 528043,
+      "sha256": "5ac153ec13ee306064747059b624c3da2f5b7ab793d2292e79c35a169bbdcbf4",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/user_guide.pdf",
+      "version_date": "January 2026, pre-July layout",
+      "location": "pp. 2-3, 7-8, 15",
+      "finding": "Same origination-quarter grouping and identifier meaning; original rate numeric literal decimal; special mortgages can have reset scheduled dates."
+    },
+    {
+      "file": "rpl_loan_id_match_faq.pdf",
+      "bytes": 298224,
+      "sha256": "75e5fe1767f79e1f630b3d88effd8a1bac2fa7e12f325b307ac20a3fa31173a1",
+      "url": "https://www.freddiemac.com/fmac-resources/research/pdf/rpl_loan_id_match_faq.pdf",
+      "version_date": "Release 47, July 2026",
+      "location": "pp. 1-2",
+      "finding": "Explains matching reperforming-loan identifiers; does not resolve origination rate or quarter exceptions. No RPL records acquired."
+    }
+  ],
+  "total_origination_rows": 12169807,
+  "vintage_summary": [
+    {
+      "vintage": 2006,
+      "rows": 1193544,
+      "prefix_mismatches": 0,
+      "rate_counts": {
+        "numeric": 1193543,
+        "blank": 0,
+        "dot": 1,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 99.99991621590826,
+        "blank": 0.0,
+        "dot": 8.378409174693183e-05,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 3.0,
+      "numeric_rate_max": 10.97,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2008,
+      "rows": 1233146,
+      "prefix_mismatches": 1,
+      "rate_counts": {
+        "numeric": 1233146,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 2.625,
+      "numeric_rate_max": 10.5,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2010,
+      "rows": 1820190,
+      "prefix_mismatches": 0,
+      "rate_counts": {
+        "numeric": 1820190,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 2.375,
+      "numeric_rate_max": 7.25,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2014,
+      "rows": 1142999,
+      "prefix_mismatches": 0,
+      "rate_counts": {
+        "numeric": 1142999,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 2.25,
+      "numeric_rate_max": 7.0,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2018,
+      "rows": 1285434,
+      "prefix_mismatches": 0,
+      "rate_counts": {
+        "numeric": 1285434,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 0.0,
+      "numeric_rate_max": 7.0,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2020,
+      "rows": 3913741,
+      "prefix_mismatches": 1,
+      "rate_counts": {
+        "numeric": 3913741,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 1.5,
+      "numeric_rate_max": 7.125,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    },
+    {
+      "vintage": 2022,
+      "rows": 1580753,
+      "prefix_mismatches": 1,
+      "rate_counts": {
+        "numeric": 1580753,
+        "blank": 0,
+        "dot": 0,
+        "other_nonnumeric": 0
+      },
+      "rate_percentages": {
+        "numeric": 100.0,
+        "blank": 0.0,
+        "dot": 0.0,
+        "other_nonnumeric": 0.0
+      },
+      "numeric_rate_min": 1.75,
+      "numeric_rate_max": 9.5,
+      "duplicate_identifiers": 0,
+      "wrong_field_count": 0,
+      "malformed_identifiers": 0,
+      "wrong_product": 0,
+      "dot_other_numeric_fields": {}
+    }
+  ],
+  "prefix_matrix": [
+    {
+      "archive_vintage": 2006,
+      "member": "orig_2006Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2006Q1",
+      "count": 298574,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2006,
+      "member": "orig_2006Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2006Q2",
+      "count": 308208,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2006,
+      "member": "orig_2006Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2006Q3",
+      "count": 283975,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2006,
+      "member": "orig_2006Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2006Q4",
+      "count": 302787,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2008,
+      "member": "orig_2008Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2008Q1",
+      "count": 421635,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2008,
+      "member": "orig_2008Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2008Q2",
+      "count": 370982,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2008,
+      "member": "orig_2008Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2008Q3",
+      "count": 221752,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2008,
+      "member": "orig_2008Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2008Q4",
+      "count": 218776,
+      "percentage": 99.99954291356039,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2008,
+      "member": "orig_2008Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2009Q1",
+      "count": 1,
+      "percentage": 0.0004570864396165959,
+      "mismatch": true
+    },
+    {
+      "archive_vintage": 2010,
+      "member": "orig_2010Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2010Q1",
+      "count": 360856,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2010,
+      "member": "orig_2010Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2010Q2",
+      "count": 363854,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2010,
+      "member": "orig_2010Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2010Q3",
+      "count": 503408,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2010,
+      "member": "orig_2010Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2010Q4",
+      "count": 592072,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2014,
+      "member": "orig_2014Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2014Q1",
+      "count": 221854,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2014,
+      "member": "orig_2014Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2014Q2",
+      "count": 290992,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2014,
+      "member": "orig_2014Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2014Q3",
+      "count": 326457,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2014,
+      "member": "orig_2014Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2014Q4",
+      "count": 303696,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2018,
+      "member": "orig_2018Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2018Q1",
+      "count": 296816,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2018,
+      "member": "orig_2018Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2018Q2",
+      "count": 364502,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2018,
+      "member": "orig_2018Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2018Q3",
+      "count": 336669,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2018,
+      "member": "orig_2018Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2018Q4",
+      "count": 287447,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2020,
+      "member": "orig_2020Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2020Q1",
+      "count": 517072,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2020,
+      "member": "orig_2020Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2020Q2",
+      "count": 926253,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2020,
+      "member": "orig_2020Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2020Q3",
+      "count": 1187782,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2020,
+      "member": "orig_2020Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2020Q4",
+      "count": 1282633,
+      "percentage": 99.99992203543646,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2020,
+      "member": "orig_2020Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2020Q3",
+      "count": 1,
+      "percentage": 7.796456354657681e-05,
+      "mismatch": true
+    },
+    {
+      "archive_vintage": 2022,
+      "member": "orig_2022Q1.txt",
+      "member_quarter": 1,
+      "embedded_quarter": "2022Q1",
+      "count": 583706,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2022,
+      "member": "orig_2022Q2.txt",
+      "member_quarter": 2,
+      "embedded_quarter": "2022Q2",
+      "count": 437886,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2022,
+      "member": "orig_2022Q3.txt",
+      "member_quarter": 3,
+      "embedded_quarter": "2022Q3",
+      "count": 336779,
+      "percentage": 100.0,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2022,
+      "member": "orig_2022Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2022Q4",
+      "count": 222381,
+      "percentage": 99.99955032331754,
+      "mismatch": false
+    },
+    {
+      "archive_vintage": 2022,
+      "member": "orig_2022Q4.txt",
+      "member_quarter": 4,
+      "embedded_quarter": "2022Q3",
+      "count": 1,
+      "percentage": 0.00044967668246530745,
+      "mismatch": true
+    }
+  ],
+  "member_census": [
+    {
+      "vintage": 2006,
+      "members": [
+        {
+          "member": "orig_2006Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 298574,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2006Q1": 298574
+          },
+          "rate_tokens": {
+            "numeric": 298574
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 3.5,
+          "numeric_rate_max": 10.65,
+          "prefix_percentages": {
+            "2006Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2006Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 308208,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2006Q2": 308208
+          },
+          "rate_tokens": {
+            "numeric": 308208
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 3.25,
+          "numeric_rate_max": 10.05,
+          "prefix_percentages": {
+            "2006Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2006Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 283975,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2006Q3": 283975
+          },
+          "rate_tokens": {
+            "numeric": 283974,
+            "dot": 1
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 3.5,
+          "numeric_rate_max": 10.62,
+          "prefix_percentages": {
+            "2006Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2006Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 302787,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2006Q4": 302787
+          },
+          "rate_tokens": {
+            "numeric": 302787
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 3.0,
+          "numeric_rate_max": 10.97,
+          "prefix_percentages": {
+            "2006Q4": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2008,
+      "members": [
+        {
+          "member": "orig_2008Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 421635,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2008Q1": 421635
+          },
+          "rate_tokens": {
+            "numeric": 421635
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.75,
+          "numeric_rate_max": 9.0,
+          "prefix_percentages": {
+            "2008Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2008Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 370982,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2008Q2": 370982
+          },
+          "rate_tokens": {
+            "numeric": 370982
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.625,
+          "numeric_rate_max": 9.625,
+          "prefix_percentages": {
+            "2008Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2008Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 221752,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2008Q3": 221752
+          },
+          "rate_tokens": {
+            "numeric": 221752
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.625,
+          "numeric_rate_max": 10.5,
+          "prefix_percentages": {
+            "2008Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2008Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 218777,
+            "wrong_product": 0,
+            "prefix_mismatch": 1,
+            "mismatch_term_incoherent": 0,
+            "adjacent_boundary_mismatch": 1
+          },
+          "embedded_quarters": {
+            "2008Q4": 218776,
+            "2009Q1": 1
+          },
+          "rate_tokens": {
+            "numeric": 218777
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.875,
+          "numeric_rate_max": 8.625,
+          "prefix_percentages": {
+            "2008Q4": 99.99954291356039,
+            "2009Q1": 0.0004570864396165959
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2010,
+      "members": [
+        {
+          "member": "orig_2010Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 360856,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2010Q1": 360856
+          },
+          "rate_tokens": {
+            "numeric": 360856
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.625,
+          "numeric_rate_max": 7.25,
+          "prefix_percentages": {
+            "2010Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2010Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 363854,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2010Q2": 363854
+          },
+          "rate_tokens": {
+            "numeric": 363854
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.625,
+          "numeric_rate_max": 6.875,
+          "prefix_percentages": {
+            "2010Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2010Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 503408,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2010Q3": 503408
+          },
+          "rate_tokens": {
+            "numeric": 503408
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.375,
+          "numeric_rate_max": 7.25,
+          "prefix_percentages": {
+            "2010Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2010Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 592072,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2010Q4": 592072
+          },
+          "rate_tokens": {
+            "numeric": 592072
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.5,
+          "numeric_rate_max": 6.5,
+          "prefix_percentages": {
+            "2010Q4": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2014,
+      "members": [
+        {
+          "member": "orig_2014Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 221854,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2014Q1": 221854
+          },
+          "rate_tokens": {
+            "numeric": 221854
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.5,
+          "numeric_rate_max": 6.125,
+          "prefix_percentages": {
+            "2014Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2014Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 290992,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2014Q2": 290992
+          },
+          "rate_tokens": {
+            "numeric": 290992
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.375,
+          "numeric_rate_max": 6.0,
+          "prefix_percentages": {
+            "2014Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2014Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 326457,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2014Q3": 326457
+          },
+          "rate_tokens": {
+            "numeric": 326457
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.375,
+          "numeric_rate_max": 6.0,
+          "prefix_percentages": {
+            "2014Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2014Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 303696,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2014Q4": 303696
+          },
+          "rate_tokens": {
+            "numeric": 303696
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.25,
+          "numeric_rate_max": 7.0,
+          "prefix_percentages": {
+            "2014Q4": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2018,
+      "members": [
+        {
+          "member": "orig_2018Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 296816,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2018Q1": 296816
+          },
+          "rate_tokens": {
+            "numeric": 296816
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 0.0,
+          "numeric_rate_max": 6.625,
+          "prefix_percentages": {
+            "2018Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2018Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 364502,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2018Q2": 364502
+          },
+          "rate_tokens": {
+            "numeric": 364502
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.5,
+          "numeric_rate_max": 6.625,
+          "prefix_percentages": {
+            "2018Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2018Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 336669,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2018Q3": 336669
+          },
+          "rate_tokens": {
+            "numeric": 336669
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.5,
+          "numeric_rate_max": 6.75,
+          "prefix_percentages": {
+            "2018Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2018Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 287447,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2018Q4": 287447
+          },
+          "rate_tokens": {
+            "numeric": 287447
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.375,
+          "numeric_rate_max": 7.0,
+          "prefix_percentages": {
+            "2018Q4": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2020,
+      "members": [
+        {
+          "member": "orig_2020Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 517072,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2020Q1": 517072
+          },
+          "rate_tokens": {
+            "numeric": 517072
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.0,
+          "numeric_rate_max": 6.5,
+          "prefix_percentages": {
+            "2020Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2020Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 926253,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2020Q2": 926253
+          },
+          "rate_tokens": {
+            "numeric": 926253
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 1.75,
+          "numeric_rate_max": 7.125,
+          "prefix_percentages": {
+            "2020Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2020Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 1187782,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2020Q3": 1187782
+          },
+          "rate_tokens": {
+            "numeric": 1187782
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 1.75,
+          "numeric_rate_max": 6.25,
+          "prefix_percentages": {
+            "2020Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2020Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 1282634,
+            "wrong_product": 0,
+            "prefix_mismatch": 1,
+            "mismatch_term_incoherent": 0,
+            "adjacent_boundary_mismatch": 1
+          },
+          "embedded_quarters": {
+            "2020Q4": 1282633,
+            "2020Q3": 1
+          },
+          "rate_tokens": {
+            "numeric": 1282634
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 1.5,
+          "numeric_rate_max": 6.5,
+          "prefix_percentages": {
+            "2020Q4": 99.99992203543646,
+            "2020Q3": 7.796456354657681e-05
+          }
+        }
+      ]
+    },
+    {
+      "vintage": 2022,
+      "members": [
+        {
+          "member": "orig_2022Q1.txt",
+          "quarter": 1,
+          "counts": {
+            "rows": 583706,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2022Q1": 583706
+          },
+          "rate_tokens": {
+            "numeric": 583706
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 1.75,
+          "numeric_rate_max": 6.99,
+          "prefix_percentages": {
+            "2022Q1": 100.0
+          }
+        },
+        {
+          "member": "orig_2022Q2.txt",
+          "quarter": 2,
+          "counts": {
+            "rows": 437886,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2022Q2": 437886
+          },
+          "rate_tokens": {
+            "numeric": 437886
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 1.75,
+          "numeric_rate_max": 7.75,
+          "prefix_percentages": {
+            "2022Q2": 100.0
+          }
+        },
+        {
+          "member": "orig_2022Q3.txt",
+          "quarter": 3,
+          "counts": {
+            "rows": 336779,
+            "wrong_product": 0,
+            "prefix_mismatch": 0
+          },
+          "embedded_quarters": {
+            "2022Q3": 336779
+          },
+          "rate_tokens": {
+            "numeric": 336779
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.0,
+          "numeric_rate_max": 8.0,
+          "prefix_percentages": {
+            "2022Q3": 100.0
+          }
+        },
+        {
+          "member": "orig_2022Q4.txt",
+          "quarter": 4,
+          "counts": {
+            "rows": 222382,
+            "wrong_product": 0,
+            "prefix_mismatch": 1,
+            "mismatch_term_incoherent": 0,
+            "adjacent_boundary_mismatch": 1
+          },
+          "embedded_quarters": {
+            "2022Q4": 222381,
+            "2022Q3": 1
+          },
+          "rate_tokens": {
+            "numeric": 222382
+          },
+          "rate_other_tokens": {},
+          "numeric_rate_min": 2.49,
+          "numeric_rate_max": 9.5,
+          "prefix_percentages": {
+            "2022Q4": 99.99955032331754,
+            "2022Q3": 0.00044967668246530745
+          }
+        }
+      ]
+    }
+  ],
+  "mismatch_contexts": [
+    {
+      "adjacent_boundary": true,
+      "embedded_quarter": "2009Q1",
+      "first_payment_minus_embedded_quarter_start": 2,
+      "first_payment_month": "200903",
+      "maturity_month": "203902",
+      "member": "2008Q4",
+      "quarter_delta": 1,
+      "scheduled_term_coherent": true,
+      "term": 360,
+      "count": 1
+    },
+    {
+      "adjacent_boundary": true,
+      "embedded_quarter": "2020Q3",
+      "first_payment_minus_embedded_quarter_start": 5,
+      "first_payment_month": "202012",
+      "maturity_month": "205011",
+      "member": "2020Q4",
+      "quarter_delta": -1,
+      "scheduled_term_coherent": true,
+      "term": 360,
+      "count": 1
+    },
+    {
+      "adjacent_boundary": true,
+      "embedded_quarter": "2022Q3",
+      "first_payment_minus_embedded_quarter_start": 5,
+      "first_payment_month": "202212",
+      "maturity_month": "205211",
+      "member": "2022Q4",
+      "quarter_delta": -1,
+      "scheduled_term_coherent": true,
+      "term": 360,
+      "count": 1
+    }
+  ],
+  "dot_contexts": [
+    {
+      "embedded_quarter": "2006Q3",
+      "quarter_delta": 0,
+      "adjacent_boundary": false,
+      "first_payment_month": "200609",
+      "maturity_month": "203608",
+      "term": 360,
+      "scheduled_term_coherent": true,
+      "first_payment_minus_embedded_quarter_start": 2,
+      "member": "2006Q3",
+      "line": 107274,
+      "columns": 31,
+      "delimiter_count": 30,
+      "rate_position": 13,
+      "ltv_neighbor_numeric": true,
+      "channel_neighbor_recognized": true,
+      "amortization_frm": true
+    }
+  ],
+  "origination_census_sha256": "a207e7d84ab7bc4efa1884ecbc4fff0a57626cd4c66276b25aaa4731ee908541",
+  "individual_census_sha256": {
+    "2006": "b39496892c78a8b6b7dc229c0a5748ae6916ea27a212794e88fc834b34223517",
+    "2008": "9872c8a250b1e6a9dd1303bafc28fadd1451a1a841ace920e12a3788f44e4271",
+    "2010": "9e72d93c2c94398a7bf8ce42a4f9bf1a62c00ed1f21af15db166aa9acebc6217",
+    "2014": "136b2c7555bbc1e61999049aa8a41e58b49adf245e591f105e77bfe4d786dab6",
+    "2018": "5ea778b32ce47d6a6333dc98bf10cce2a3445b7cb5c2f85f8b59f3ac27c2ec94",
+    "2020": "404bd6b5fdb4a7459e3768b7fa5dc63066fb43c847f73a1793848dd751e459a7",
+    "2022": "8ebb3216c155acb0b636722496d1a6894d0a52721abdc27ab30f606dbb17ea15"
+  },
+  "source_archive_sha256": {
+    "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+    "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+    "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+    "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+    "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+    "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+    "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+  },
+  "original_task8_evidence_sha256_lf": {
+    "docs/track_b/MULTI_VINTAGE_FIELD_COMPARABILITY.md": "dabe91a5832bb000e17728d0e454f0c6a2764eb286ad80406968c2ed2b510e0e",
+    "docs/track_b/multi_vintage_field_comparability.json": "221846d328269a32e88bc554fe2da85f4caed4d1c87de4179d4d68569f6b29ae",
+    "docs/track_b/multi_vintage_preservation_manifest.json": "677a2b6367b4ee3b6e556d82f670c82ea264dc6cab1718971eb4ed18e49587c2",
+    "docs/track_b/multi_vintage_protocol.json": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+    "docs/track_b/multi_vintage_schema_registry.json": "6f7abf83247a4da238dfd0e37e3117e64f042075643b7e59e60c97e979bdba36",
+    "reports/track_b/MULTI_VINTAGE_DATA_AUDIT.md": "78f8546976bc0357b0587cec4475ba4a2cb329f6f4c38ed7620f4db6a153d5b6",
+    "reports/track_b/multi_vintage_data_audit.json": "b5f33f1f5cd4de26f6920da114edd598a68cfb6a8ac1fbe6018d4d7b16f67afb",
+    "reports/track_b/multi_vintage_dataset_manifest.json": "3e536efbe0b7976b92c060e59bcbb71a2027376708dc8d9483abb09f07b24505",
+    "reports/track_b/multi_vintage_diagnostics.png": "72c3f614dbb9a35f87b7b299ac1d14cd9c62576b63e6fd43a350d5f34eb4e8d0",
+    "reports/track_b/multi_vintage_horizon_support.json": "ccc6143d5e9daa4433cb8fb20d5620acbbdf21ad32cc0a3d75de34bb9fd29878",
+    "reports/track_b/multi_vintage_verification.json": "550a14c17e8aced1cf6cfd4d695fd32930da4ecd7b031cf29ccd2f7917a015de",
+    "scripts/report_track_b_multivintage.py": "70dd20c4bfe15c9602eb3e218e4796a13cbe8fac5a5f23a397494f97a8124d4e",
+    "scripts/run_track_b_multivintage.py": "3e9e3d5f66b7c6198b141af1b21e5c18b4f9b0107e99009cc6f1da6fec9039ee",
+    "src/credit_risk/track_b/multivintage/__init__.py": "5e57927a955a603743bcff205c8dd60552fd1ff920db84c8b92dc6831aa1bd2c",
+    "src/credit_risk/track_b/multivintage/audit.py": "8429540cb20eda088ff49d229440e38c6c95056cf00b401ff0abd97593a0abeb",
+    "src/credit_risk/track_b/multivintage/core.py": "e4de41da8a20847ee6d452c290dc0b36382d6542ee9c49adbfe9cc8a8581b898",
+    "src/credit_risk/track_b/multivintage/reader.py": "c15f40c824d8e97eb4a0a10506ff1c80396c78ba0fc5c9c430a0b6bd686577da",
+    "src/credit_risk/track_b/multivintage/reporting.py": "39bacdc5abdee2f8ddb84afb415e84b2bf7a47911cab46505b236815544889ac",
+    "src/credit_risk/track_b/multivintage/schema.py": "12acae189ad5466791365dbb5bbd153430103c57918a7836c27207752c65ece8",
+    "src/credit_risk/track_b/multivintage/study.py": "e03985e6810ae271b3d41084ba4e723025fb8469bd345b85afc397bc8136deb6",
+    "tests/test_track_b_multivintage.py": "cea48e607949fbe6f885557e3042916da84bb315a99c9f84b07b2a4e5c4301ff"
+  },
+  "source_code_sha256_lf": {
+    "src/credit_risk/track_b/reconciliation/evidence.py": "0c1e835330b1b38cf47595b66928943c1fb3fda5d0cae687267316d0b19ad3f2",
+    "src/credit_risk/track_b/reconciliation/__init__.py": "110993a698bc328a4a1f0b98eb4af89786f78ece8c2208ab057d05daf997111e"
+  },
+  "origination_gate_rerun": false,
+  "recovered_vintages": [],
+  "new_samples_frozen": false,
+  "new_performance_accessed": false,
+  "models_fitted": false,
+  "macro_acquired": false,
+  "source_archives_downloaded_again": false,
+  "public_documentation_downloaded": true,
+  "official_sample_performance_opened": false,
+  "seven_vintage_event_horizon_apc_recomputed": false,
+  "task8_new_decision": null,
+  "original_task8_decision": "STOP — HARMONIZATION INVALID",
+  "next_task": "Obtain authoritative Freddie Mac clarification of the isolated dot-rate token and three quarter-placement discrepancies, using the retained source hashes and private record references, before reconsidering a parser amendment.",
+  "tests": {
+    "targeted": "69 passed, 1 warning",
+    "new_regression_cases": 21,
+    "full": "805 passed, 4 warnings",
+    "full_seconds": 68.07,
+    "lint": "passed",
+    "format": "passed; 177 files formatted",
+    "governance": "passed",
+    "repository_hygiene": "passed",
+    "configuration": "valid"
+  },
+  "preservation_report": "source_convention_preservation.json",
+  "completion_commit_created": false,
+  "pushed": false,
+  "resource_observations": {
+    "origination_census_seconds": 170.596,
+    "private_identifier_database_bytes": 562311168,
+    "largest_annual_origination_rows": 3913741,
+    "prespecified_max_universe_ids": 8000000,
+    "all_vintages_within_universe_cap": true
+  }
+}

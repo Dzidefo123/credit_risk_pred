@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "failures": [],
+  "baseline_sha256": "6e5f7bc71718a5775002202d70dfd3c227fd71f227376dd4736c2d7c4752e8d7",
+  "public_files_byte_verified": 342,
+  "track_a_private_files_byte_verified": 17,
+  "completed": {
+    "2010": {
+      "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "panels_byte_unchanged": true,
+      "event_counts_retained": {
+        "payoff": 18147,
+        "active_or_unknown": 1168,
+        "default": 623,
+        "ambiguous": 33,
+        "administrative": 29
+      }
+    },
+    "2014": {
+      "sample_sha256": "d26b2ba3e08837f82c940ecefbaa18c4bd201d64a0a114760eafeeb80a8126f5",
+      "panels_byte_unchanged": true,
+      "event_counts_retained": {
+        "payoff": 16018,
+        "active_or_unknown": 3121,
+        "default": 800,
+        "administrative": 33,
+        "ambiguous": 28
+      }
+    },
+    "2018": {
+      "sample_sha256": "b3e2952bb5bc0d0a551105cecfa964b18481b3764442edb8362245f4f17f921e",
+      "panels_byte_unchanged": true,
+      "event_counts_retained": {
+        "payoff": 15488,
+        "active_or_unknown": 3410,
+        "default": 1051,
+        "administrative": 42,
+        "ambiguous": 9
+      }
+    }
+  },
+  "consumed_ledger_byte_hashes": {
+    "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+    "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+  },
+  "source_archive_sha256": {
+    "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+    "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+    "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+    "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+    "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+    "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+    "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+  },
+  "track_a_tag_object": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+  "track_a_tag_commit": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c",
+  "stopped_vintages_have_no_sample_or_performance": true,
+  "opaque_hashing_only": true,
+  "locked_holdout_evaluated": false,
+  "models_regenerated": false,
+  "historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "retained historical results; not newly evaluated"
+  }
+}

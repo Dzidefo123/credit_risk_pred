@@ -1,0 +1,105 @@
+{
+  "status": "PASSED",
+  "preexisting_tracked_files": 321,
+  "retained_private_byte_hashes": 17,
+  "track_a_artifacts": 12,
+  "track_a_tag": [
+    "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  ],
+  "source_hashes": {
+    "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+    "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+    "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+    "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+    "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+    "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+    "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+  },
+  "original_2010_source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "original_2010_location_status": "Old path absent; byte-identical source verified in user-supplied directory",
+  "consumed_ledger_byte_hashes": {
+    "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+    "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+  },
+  "ledger_check": "Byte hashing against retained public serialization; no consumption API",
+  "locked_holdout_scored": false,
+  "model_artifacts_regenerated": false,
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603
+  },
+  "metrics_status": "Retained historical evidence; not newly evaluated",
+  "recovered_frozen_sample_checks": [
+    {
+      "vintage": 2006,
+      "sample_sha256": "1b39c08d96da214fd5e33273c6d38e0a88940f59afe96537625bbeaaf20af371",
+      "symmetric_difference": 0,
+      "quarantined_records_selected": 0,
+      "canonical_panel_hashes": {
+        "origination.csv": "2417e56d0f4c0a721686d222aeeb3409f0dd7a3460405ebb91d8b835c8cb2b13",
+        "monthly.csv": "984968a3c2dfd555dd289a0983481720cf2c522fdeb2b70a276c3f06b74f6a35"
+      }
+    },
+    {
+      "vintage": 2008,
+      "sample_sha256": "91286c8885dbc90b8c91bb7a8300eda1df0cf63e45f43f72f7ea1e697c27e26d",
+      "symmetric_difference": 0,
+      "quarantined_records_selected": 0,
+      "canonical_panel_hashes": {
+        "origination.csv": "e4eedbbef3f54365cfe740aec93e1f8354d2a89e8c3e34ebd0e1b99e3b225193",
+        "monthly.csv": "44d7c67bb3a051082ed351bdb67cc5823ec20cbb815a0e41c1abf2d4fd8ad784"
+      }
+    },
+    {
+      "vintage": 2020,
+      "sample_sha256": "978c32ebac99980286cf83e86051316dad6080f9cc167c017900e15cd7e2a3f1",
+      "symmetric_difference": 0,
+      "quarantined_records_selected": 0,
+      "canonical_panel_hashes": {
+        "origination.csv": "960f2921127b193c468293b8092f1d08c17b78ee9e4546dafb4686a16afe27e9",
+        "monthly.csv": "708c85f6cc5430e1c7974787d356fe86bc606f389ed172b749ef763bcf2ca0c0"
+      }
+    },
+    {
+      "vintage": 2022,
+      "sample_sha256": "8b0e0fee2f6921c2c6a04363b01cb234be7ccb7cd93a350765e6faac5db66f59",
+      "symmetric_difference": 0,
+      "quarantined_records_selected": 0,
+      "canonical_panel_hashes": {
+        "origination.csv": "c1816c98ef2441eab8e39a9465513ada4ece0d89559df2d35d3a4584e791efb8",
+        "monthly.csv": "69a3531c5ad25fe0162fd810216bc3a827c072b2d41dd3069da6f7f75cee6da5"
+      }
+    }
+  ],
+  "preexisting_public_files_byte_verified": 352,
+  "old_completed_panels_and_samples_unchanged": true,
+  "execution_attestation_unchanged": true,
+  "checks": {
+    "targeted": "107 passed, 1 warning",
+    "full_pytest": "843 passed, 4 warnings in 73.17s",
+    "lint": "PASSED",
+    "formatting": "185 files already formatted",
+    "governance": "PASSED: 7 evidence files, 8 documents, 67 local links",
+    "repository_hygiene": "PASSED",
+    "configuration": "VALID: 0.12.0"
+  },
+  "resources": {
+    "recovery_total_wall_seconds": 2650.498643,
+    "timing_scope": "All four origination gates, ranking, source verification and recovery performance/audits; excludes reporting and final verification",
+    "peak_process_memory_bytes": 167235584,
+    "current_recovery_directory_bytes": 3966448927,
+    "zip_temporary_materialization_peak_bytes": 0,
+    "sqlite_temporary_sort_spill": "Not instrumented"
+  },
+  "public_evidence_review": {
+    "files_staged": 47,
+    "tracked_files_after_staging": 371,
+    "private_data_paths_staged": false,
+    "licensed_facility_identifiers_in_public_evidence": false,
+    "whitespace_check": "PASSED"
+  },
+  "recovery_report_sha256_lf": "78bd708563787f8496d851fef63392d9608dad0a6691186c94bc7761a01c26a7",
+  "dataset_manifest_sha256_lf": "da68e46945740cb680b2651b258bc16d66b90f34c028e521c390d9c2e53c1c9f"
+}

@@ -1,0 +1,347 @@
+{
+  "complete": true,
+  "components": [
+    {
+      "vintage": 2006,
+      "source_sha256": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+      "eligible_universe_count": 1193543,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 1,
+      "sample_size": 20000,
+      "sample_sha256": "1b39c08d96da214fd5e33273c6d38e0a88940f59afe96537625bbeaaf20af371",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+      "performance_row_count": 1280801,
+      "calendar": {
+        "first": "2006-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2006": 99141,
+          "2007": 219833,
+          "2008": 199320,
+          "2009": 165135,
+          "2010": 130930,
+          "2011": 103527,
+          "2012": 80668,
+          "2013": 56663,
+          "2014": 43888,
+          "2015": 36302,
+          "2016": 30070,
+          "2017": 25061,
+          "2018": 20802,
+          "2019": 16874,
+          "2020": 13519,
+          "2021": 10262,
+          "2022": 8044,
+          "2023": 7152,
+          "2024": 6460,
+          "2025": 5777,
+          "2026": 1373
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 29.0,
+        "median": 50.0,
+        "p75": 79.25,
+        "maximum": 241.0
+      },
+      "event_counts": {
+        "payoff": 16750,
+        "default": 2876,
+        "active_or_unknown": 290,
+        "administrative": 38,
+        "ambiguous": 46
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2008,
+      "source_sha256": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+      "eligible_universe_count": 1233145,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 1,
+      "sample_size": 20000,
+      "sample_sha256": "91286c8885dbc90b8c91bb7a8300eda1df0cf63e45f43f72f7ea1e697c27e26d",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+      "performance_row_count": 1016145,
+      "calendar": {
+        "first": "2008-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2008": 123697,
+          "2009": 208737,
+          "2010": 167208,
+          "2011": 125377,
+          "2012": 93677,
+          "2013": 62660,
+          "2014": 46613,
+          "2015": 37810,
+          "2016": 30878,
+          "2017": 25226,
+          "2018": 20663,
+          "2019": 17407,
+          "2020": 14380,
+          "2021": 11417,
+          "2022": 8958,
+          "2023": 7394,
+          "2024": 6601,
+          "2025": 6018,
+          "2026": 1424
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 19.0,
+        "median": 38.0,
+        "p75": 61.0,
+        "maximum": 218.0
+      },
+      "event_counts": {
+        "payoff": 17625,
+        "default": 1956,
+        "active_or_unknown": 344,
+        "administrative": 39,
+        "ambiguous": 36
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2010,
+      "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "eligible_universe_count": null,
+      "eligible_universe_status": "inherited 2010 sample; full universe not reconstructed",
+      "quarantine_count": 0,
+      "sample_size": 20000,
+      "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+      "performance_row_count": 1400360,
+      "calendar": {
+        "first": "2010-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2010": 91536,
+          "2011": 225390,
+          "2012": 193918,
+          "2013": 150014,
+          "2014": 129498,
+          "2015": 112687,
+          "2016": 95630,
+          "2017": 80364,
+          "2018": 70072,
+          "2019": 61932,
+          "2020": 51357,
+          "2021": 37761,
+          "2022": 29582,
+          "2023": 25563,
+          "2024": 22458,
+          "2025": 18684,
+          "2026": 3914
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 26.0,
+        "median": 53.0,
+        "p75": 107.0,
+        "maximum": 194.0
+      },
+      "event_counts": {
+        "payoff": 18147,
+        "active_or_unknown": 1168,
+        "default": 623,
+        "ambiguous": 33,
+        "administrative": 29
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2014,
+      "source_sha256": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+      "eligible_universe_count": 1142999,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 0,
+      "sample_size": 20000,
+      "sample_sha256": "d26b2ba3e08837f82c940ecefbaa18c4bd201d64a0a114760eafeeb80a8126f5",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+      "performance_row_count": 1352589,
+      "calendar": {
+        "first": "2014-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2014": 97137,
+          "2015": 219770,
+          "2016": 194852,
+          "2017": 164799,
+          "2018": 145014,
+          "2019": 130440,
+          "2020": 108534,
+          "2021": 77141,
+          "2022": 59555,
+          "2023": 53125,
+          "2024": 48130,
+          "2025": 43771,
+          "2026": 10321
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 27.0,
+        "median": 64.0,
+        "p75": 92.0,
+        "maximum": 146.0
+      },
+      "event_counts": {
+        "payoff": 16018,
+        "active_or_unknown": 3121,
+        "default": 800,
+        "administrative": 33,
+        "ambiguous": 28
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2018,
+      "source_sha256": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+      "eligible_universe_count": 1285434,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 0,
+      "sample_size": 20000,
+      "sample_sha256": "b3e2952bb5bc0d0a551105cecfa964b18481b3764442edb8362245f4f17f921e",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "257a95b8d4b5ef019ae7d8d4053b32644cd6e58d71292840f3ad7845202ff083",
+      "performance_row_count": 819246,
+      "calendar": {
+        "first": "2018-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2018": 105693,
+          "2019": 221554,
+          "2020": 158613,
+          "2021": 93938,
+          "2022": 65831,
+          "2023": 58418,
+          "2024": 53782,
+          "2025": 49640,
+          "2026": 11777
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 18.0,
+        "median": 29.0,
+        "p75": 55.0,
+        "maximum": 98.0
+      },
+      "event_counts": {
+        "payoff": 15488,
+        "active_or_unknown": 3410,
+        "default": 1051,
+        "administrative": 42,
+        "ambiguous": 9
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2020,
+      "source_sha256": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+      "eligible_universe_count": 3913740,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 1,
+      "sample_size": 20000,
+      "sample_sha256": "978c32ebac99980286cf83e86051316dad6080f9cc167c017900e15cd7e2a3f1",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+      "performance_row_count": 1034572,
+      "calendar": {
+        "first": "2020-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2020": 86697,
+          "2021": 215516,
+          "2022": 187127,
+          "2023": 176555,
+          "2024": 168728,
+          "2025": 160934,
+          "2026": 39015
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 28.0,
+        "median": 63.0,
+        "p75": 67.0,
+        "maximum": 74.0
+      },
+      "event_counts": {
+        "payoff": 6913,
+        "active_or_unknown": 12686,
+        "default": 352,
+        "administrative": 28,
+        "ambiguous": 21
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    },
+    {
+      "vintage": 2022,
+      "source_sha256": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31",
+      "eligible_universe_count": 1580752,
+      "eligible_universe_status": "full gate certified",
+      "quarantine_count": 1,
+      "sample_size": 20000,
+      "sample_sha256": "8b0e0fee2f6921c2c6a04363b01cb234be7ccb7cd93a350765e6faac5db66f59",
+      "parser_version": "multivintage-r47-v1.0.0",
+      "harmonization_version": "historical-anomaly-quarantine-v1.1.0",
+      "source_protocol_sha256": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+      "performance_row_count": 837950,
+      "calendar": {
+        "first": "2022-01",
+        "last": "2026-03",
+        "source_rows_by_year": {
+          "2022": 130802,
+          "2023": 230885,
+          "2024": 220101,
+          "2025": 206782,
+          "2026": 49380
+        }
+      },
+      "followup": {
+        "n": 20000,
+        "minimum": 0.0,
+        "p25": 40.0,
+        "median": 44.0,
+        "p75": 47.0,
+        "maximum": 50.0
+      },
+      "event_counts": {
+        "active_or_unknown": 15703,
+        "payoff": 3492,
+        "administrative": 86,
+        "default": 678,
+        "ambiguous": 41
+      },
+      "harmonization_status": "READY_WITH_LIMITATIONS"
+    }
+  ],
+  "frozen_facilities": 140000,
+  "combined_sample_sha256": "93fdaf807fe2f9b168dca275be21644004a2ff3c14ae847d17e9330963bf2b8b",
+  "key_definition": "archive_vintage:immutable source facility ID; no borrower uniqueness claim",
+  "quarantine_policy_sha256_lf": "9dff75a335b75113b34b1ee173b36891e4c0837028ca01e11ba9880f9161a4b5",
+  "protocol_sha256_lf": "b499c3be74199c7dba2e325224973f72edf7c11f687c067b7b1a224eeb47c1dc",
+  "schema_sha256_lf": "86bea052cee37bed413c8c8be00d5327e85125ead6a2f38a488c6d352f6ebcf6"
+}
