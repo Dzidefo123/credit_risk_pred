@@ -1,0 +1,136 @@
+{
+  "$defs": {
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "format": "date",
+          "title": "Start",
+          "type": "string"
+        },
+        "end": {
+          "format": "date",
+          "title": "End",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "source": {
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "series": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Series",
+      "type": "array"
+    },
+    "geography": {
+      "const": "US",
+      "title": "Geography",
+      "type": "string"
+    },
+    "acquisition_time": {
+      "format": "date-time",
+      "title": "Acquisition Time",
+      "type": "string"
+    },
+    "source_url": {
+      "pattern": "^https://",
+      "title": "Source Url",
+      "type": "string"
+    },
+    "source_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Hash",
+      "type": "string"
+    },
+    "vintage_coverage": {
+      "$ref": "#/$defs/Coverage"
+    },
+    "reference_coverage": {
+      "$ref": "#/$defs/Coverage"
+    },
+    "release_coverage": {
+      "$ref": "#/$defs/Coverage"
+    },
+    "units": {
+      "minLength": 1,
+      "title": "Units",
+      "type": "string"
+    },
+    "seasonal_adjustment": {
+      "enum": [
+        "SA",
+        "NSA"
+      ],
+      "title": "Seasonal Adjustment",
+      "type": "string"
+    },
+    "license": {
+      "minLength": 1,
+      "title": "License",
+      "type": "string"
+    },
+    "parser_version": {
+      "minLength": 1,
+      "title": "Parser Version",
+      "type": "string"
+    },
+    "vintage_status": {
+      "enum": [
+        "VINTAGE-AWARE AVAILABLE",
+        "RELEASE-DATE RECONSTRUCTABLE"
+      ],
+      "title": "Vintage Status",
+      "type": "string"
+    },
+    "date_evidence": {
+      "minLength": 1,
+      "title": "Date Evidence",
+      "type": "string"
+    },
+    "raw_path": {
+      "minLength": 1,
+      "title": "Raw Path",
+      "type": "string"
+    },
+    "complete_revision_history": {
+      "title": "Complete Revision History",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source",
+    "series",
+    "geography",
+    "acquisition_time",
+    "source_url",
+    "source_hash",
+    "vintage_coverage",
+    "reference_coverage",
+    "release_coverage",
+    "units",
+    "seasonal_adjustment",
+    "license",
+    "parser_version",
+    "vintage_status",
+    "date_evidence",
+    "raw_path",
+    "complete_revision_history"
+  ],
+  "title": "AcquisitionManifest",
+  "type": "object"
+}

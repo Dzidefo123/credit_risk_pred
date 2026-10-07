@@ -1,0 +1,17 @@
+{
+  "tracked_files_byte_unchanged": 305,
+  "local_private_files_byte_unchanged": 17,
+  "frozen_track_a_artifacts": 12,
+  "track_a_tag_unchanged": true,
+  "sample_and_panel_unchanged": true,
+  "locked_prediction_or_consumed_ledger_access": false,
+  "model_fit": false,
+  "mortgage_macro_join": false,
+  "raw_macroeconomic_predictor_acquisition": false,
+  "metrics_status": "Retained historical results only; no re-evaluation",
+  "retained_track_a_xgboost": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603
+  }
+}

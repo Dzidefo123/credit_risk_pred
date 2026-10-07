@@ -1,0 +1,309 @@
+{
+  "base_commit": "33494664727f44d68f3432cec2334b05468186f9",
+  "evidence": {
+    "docs/track_b/ANNUAL_BUNDLE_ACQUISITION_AMENDMENT.md": {
+      "sha256": "c2e547b819f94faf66ea4c1ce3b2c613f407b36d39056859b78d5f9e86338dd3",
+      "mode": "LF"
+    },
+    "docs/track_b/DATASET_COMPARATIVE_ASSESSMENT.md": {
+      "sha256": "abff8551518be2562d58208d2388ebe04b6036d304357ecb337402f4208e8b2b",
+      "mode": "LF"
+    },
+    "docs/track_b/DATASET_SEARCH_STRATEGY.md": {
+      "sha256": "ddc6743efb32802969da19ffc5edf3a54ab0c4fbdca2d0549d7a79c5f41cefce",
+      "mode": "LF"
+    },
+    "docs/track_b/DATASET_SELECTION_DECISION.md": {
+      "sha256": "7b23fea7a7b02d302a231faf4f6ab2049a56ced4faf9e07e7f2112991b0ee553",
+      "mode": "LF"
+    },
+    "docs/track_b/DATASET_SUITABILITY_FRAMEWORK.md": {
+      "sha256": "f9fa70187761ad083ebe1b4a4e74d45ab1e97eef4ae2cf72c02627ec7904443e",
+      "mode": "LF"
+    },
+    "docs/track_b/EXPANDED_PD_DESIGN.md": {
+      "sha256": "01060ca4338bc36623dfc986d65c27d6eaa711d5c662e563ae7e64a4bafe4eae",
+      "mode": "LF"
+    },
+    "docs/track_b/FIELD_DICTIONARY_COMPARISON.md": {
+      "sha256": "0a241f753f83aa14c29b6cde01ce0654d4a70cccf7219783653bd06e8dbcfb7d",
+      "mode": "LF"
+    },
+    "docs/track_b/LONGITUDINAL_DATA_CONTRACT.md": {
+      "sha256": "1fee9a31f30cb1ceb1e6c270a2f3a71286edfe58addbcf4818976a9ceabe9a30",
+      "mode": "LF"
+    },
+    "docs/track_b/MORTGAGE_RESEARCH_DESIGN.md": {
+      "sha256": "4421259d7679e1d32eb9b390213cea53007e892ec5490a443c3744271d73d7d5",
+      "mode": "LF"
+    },
+    "docs/track_b/PANEL_ENGINEERING.md": {
+      "sha256": "803ee85a1b7e05d85c6a01a50cb89083884f07e342b9401c1214b66d6f67bed2",
+      "mode": "LF"
+    },
+    "docs/track_b/PD_COHORT_DESIGN.md": {
+      "sha256": "0333bac863deffbd389869a78c086cc0fb57723cc35b2726dd35226460effb07",
+      "mode": "LF"
+    },
+    "docs/track_b/SAMPLE_EXPANSION_AMENDMENT.md": {
+      "sha256": "e2d9431ca7100c61211606d140e9d18aab6c6f68805e3c8c06b472247e4f8ce1",
+      "mode": "LF"
+    },
+    "docs/track_b/SURVIVAL_COMPETING_RISK_PROTOCOL.md": {
+      "sha256": "a264c1d26b0bef9d9e22af72dcdf3e73e5b2096e968d19db09956a37f93c882d",
+      "mode": "LF"
+    },
+    "docs/track_b/annual_bundle_acquisition_amendment.json": {
+      "sha256": "4b142d00c097c222446848a138d07f7364a817f40be4ea218423655b39890f41",
+      "mode": "LF"
+    },
+    "docs/track_b/expanded_pd_design.json": {
+      "sha256": "b8c5b3dbac018c3e8a994445e9a233894131c855d97dd10b3a25e4534a685a63",
+      "mode": "LF"
+    },
+    "docs/track_b/expanded_pd_feature_registry.json": {
+      "sha256": "0c90dbc9e2175bb1f14f5378d46b63bfc089c9331590330f9f72c207dd47f33c",
+      "mode": "LF"
+    },
+    "docs/track_b/field_dictionary_comparison.json": {
+      "sha256": "1810b423360a9d288451b4715fb150446a6cbe8a2a7c7afaaae46f42ebdc8fbe",
+      "mode": "LF"
+    },
+    "docs/track_b/mortgage_research_protocol.json": {
+      "sha256": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+      "mode": "LF"
+    },
+    "docs/track_b/pd_feature_registry.json": {
+      "sha256": "d2d3bd32b97d07e8ff17f73b090c9a4ae908488d04dea098d030b175adda9acf",
+      "mode": "LF"
+    },
+    "docs/track_b/sample_expansion_amendment.json": {
+      "sha256": "3a61eea974b2f2df1f49bfa5d2cbe0d5dfa77916d6d7f4c072fbe475e2d24f16",
+      "mode": "LF"
+    },
+    "docs/track_b/survival_competing_risk_protocol.json": {
+      "sha256": "acafe5ffb93ad235c8819f3b1da5119614296c460b012dd9b287b1b631a44ba2",
+      "mode": "LF"
+    },
+    "docs/track_b/survival_feature_registry.json": {
+      "sha256": "311ff9173974594939d637b80839adb4ca0bb980560fe6c80e480e8c6d96a811",
+      "mode": "LF"
+    },
+    "reports/holdout_registry.json": {
+      "sha256": "b18b7eec19dba48af83e8cc37635cafc17c2ff2f29fe4497657ad693c74ee2fa",
+      "mode": "LF"
+    },
+    "reports/phase4_experiment.json": {
+      "sha256": "ece04bf356e2134a3783ddfac623d43d0fdff328faf7bffc45342a7236c63cc7",
+      "mode": "LF"
+    },
+    "reports/phase5_validation_summary.json": {
+      "sha256": "df9011cd49dddc7afaa969662a1e8c0be96cfd8732eea124e1bfd4ec29deeaa0",
+      "mode": "LF"
+    },
+    "reports/track_b/EXPANDED_PD_VALIDATION.md": {
+      "sha256": "3d1150a2eb33156b7047af245cfcbd784cca84ebcc2717a684dbba506587ffae",
+      "mode": "LF"
+    },
+    "reports/track_b/FREDDIE_2010_DATA_AUDIT.md": {
+      "sha256": "f903faa271f12fc2e40f040ec24e548f8b2b8bffa1e11e181d4c3b54d751b280",
+      "mode": "LF"
+    },
+    "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.json": {
+      "sha256": "9c2ee2d380bd9ed734e38ba769fa1f0b02b0c0c25d51fff8a544c8e36c1632ef",
+      "mode": "LF"
+    },
+    "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.md": {
+      "sha256": "ce95d2cb1724b80dd2fa097de3bd4ddcf04033f04e09a1db3206ebb0e883e8eb",
+      "mode": "LF"
+    },
+    "reports/track_b/PD_BASELINE_VALIDATION.md": {
+      "sha256": "57c67240501352d1bb46ca3a8c8744aeb372e3a9207d7d17cc5bc22180a7c7fb",
+      "mode": "LF"
+    },
+    "reports/track_b/SAMPLE_EXPANSION_FEASIBILITY.md": {
+      "sha256": "31ee8aa461b6f6a725f0af9bf0e205b73d4f559b6364280e7ff34f915f407ef4",
+      "mode": "LF"
+    },
+    "reports/track_b/SURVIVAL_COMPETING_RISK_VALIDATION.md": {
+      "sha256": "3e3f2b41c26c061feb307f0ca039c658069c2f6203b221cc5daece35cd840538",
+      "mode": "LF"
+    },
+    "reports/track_b/expanded_pd_diagnostics.png": {
+      "sha256": "9eb8a29b84cacbc6eea1b184fd9c8c5b26b83db49c2aa110e1b894dd9a8033b9",
+      "mode": "bytes"
+    },
+    "reports/track_b/expanded_pd_validation.json": {
+      "sha256": "50ce093c6ead68b12e433904c778d547f5aa75f60763b4819997449a6188bd6e",
+      "mode": "LF"
+    },
+    "reports/track_b/freddie_2010_data_audit.json": {
+      "sha256": "511a807bc7be47b33966376bb9d6dd3fd694cd1f8706d75bbb5f91d8deb86d8d",
+      "mode": "LF"
+    },
+    "reports/track_b/pd_baseline_validation.json": {
+      "sha256": "8dd5123a250787e33ea29b69fa7a93cc4c0bd1a9a326f23ec2a67296b7cf33cb",
+      "mode": "LF"
+    },
+    "reports/track_b/sample_expansion_feasibility.json": {
+      "sha256": "d0c4ff78d79cb0ce28aa5be64b920fb792aeafb107b11676c32f7be8c4c68075",
+      "mode": "LF"
+    },
+    "reports/track_b/survival_competing_risk_diagnostics.png": {
+      "sha256": "69c2f819abeef7e8a045732984105b90296d2e0d198defe4c798ea221af386f6",
+      "mode": "bytes"
+    },
+    "reports/track_b/survival_competing_risk_validation.json": {
+      "sha256": "7fc948c0ed9cba4322666ce945fd5b41a62173e31838b24f7dc97b8f0e6f5661",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/__init__.py": {
+      "sha256": "e771d981989c57bba27a43df59b531d5897de6e1c23230a07ae64c992fc6630b",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/__init__.py": {
+      "sha256": "0062f3155a03325267a04dcaf3e561e73defca9576f5b09b7d72d4206f2b52b0",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/annual.py": {
+      "sha256": "defe599dc038ec9e73047b5ee68ac1c497fbaab8ebf17617f83242d2254bc078",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/annual_report.py": {
+      "sha256": "974c4af2933df381afbc2cab1473f3e222394d5a7405f1b400fceb2449cbd953",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/annual_run.py": {
+      "sha256": "6bd48667bb13cd76cec4b2d35e9e6db1e9e53fd0f69a4c3cf4c4b95f686c6f5b",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/freddie.py": {
+      "sha256": "7114f5bff4f35fa4af6c8a23714bd200aaec6642e25ee761b4c4e5b293024bdd",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/panel.py": {
+      "sha256": "46457dd6b17ac933feb78a9b5dc3e2e9545ed3a5413306c2e3739296b0b60d6f",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/preflight.py": {
+      "sha256": "22281a2f9ed3ce2290ef58449979633b76bf97e00087cc75d5cdacf24aa2e0a4",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/sampling.py": {
+      "sha256": "7073cb727aa18302a8e83ec9fa543c713ae51b877ad9fd2c504d6a26000f86be",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/schemas.py": {
+      "sha256": "7449719e03f083e6ccfacfdcdcb8e63720eab9e94849c599f717e046e4318f82",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/data/workflow.py": {
+      "sha256": "66f875e2300c2da66af45f0807a170aaf4805290aa7203289463d270eb827e72",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expanded_pd/__init__.py": {
+      "sha256": "efd07b7065c222d07eb41ec325cd5a06e550c412dacea957ca871c641b47ec7a",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expanded_pd/audit.py": {
+      "sha256": "01a8122e4ae7e23875a68b094c7f1cc057a61d075d9594f7e7a3ab4a94841406",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expanded_pd/core.py": {
+      "sha256": "edf6da1cb5deb10af1620c4380efb753274e837b894c714422d4f07450d2541a",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expanded_pd/reporting.py": {
+      "sha256": "356d3a0fed69449f6f4257572f65810a36eeda816dc02885e25c01ebdabc22c8",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expanded_pd/study.py": {
+      "sha256": "a97abeba02622aeed40981eb343ed557ec66e42cbac2be043c3ddb4b4bbca9eb",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expansion/__init__.py": {
+      "sha256": "1e5f25453365baab26201ca32ffd72c3a74534481b59a91ca46e8e26f74035b6",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expansion/empirical.py": {
+      "sha256": "a65ccd89c08929450050289f1de35b33249d0586570457f8bb80dd75a71eb59f",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expansion/planning.py": {
+      "sha256": "af585a79867f53cd3c1363bf71cfaa71b5126308906018370cf7982ac141e151",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/expansion/reporting.py": {
+      "sha256": "c01e1ef643871e1be6f590625f1148a9012987920ac70e6758ff69e9cae3a8d2",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/pd/__init__.py": {
+      "sha256": "e16a57f102f384b95d23d818b77cce2be61e823d3d2a46270f46fd374bcf8acb",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/pd/baseline.py": {
+      "sha256": "d1dacf0d51d5530923b6451967527ae3d09136c8d4295d9acbd7c59a064f21ea",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/pd/research.py": {
+      "sha256": "636e282306b22399f994addf003fd157b53d7f1a641c8a761ba9ba9979791ebe",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/__init__.py": {
+      "sha256": "eaea7fbedba7c56934d4b2250480d3e8edc15ea61e77307f7c0b738b05c88761",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/audit.py": {
+      "sha256": "c6983ae265f3d3ec535c66f61448e4861877912f853a9f68803557e83c9a0d9d",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/ledger.py": {
+      "sha256": "532d4c061c5bbfa082d85b365f8c39cc4fb7aa49a140831da4db49bf2c04342b",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/math.py": {
+      "sha256": "089101a22b2aa13787c0d6ed6fdd012afe5890adab842db25d504746fd6c9813",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/models.py": {
+      "sha256": "b6d075ddd7332d13146111600e3ae9b0882532aedb686d9400c94841403cc1b7",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/reporting.py": {
+      "sha256": "efe208224cbab761f609639263272b578be14128eb6e797442d157f3d3f1095f",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/risk.py": {
+      "sha256": "9efbce564a15e4a942dc5f19949e40d4ac7d53febcd5a513821ff37c63b9ec92",
+      "mode": "LF"
+    },
+    "src/credit_risk/track_b/survival/study.py": {
+      "sha256": "91e1f23608ed8f8fcaf4e818729fe06b78501197548120abb9cd07f63106617d",
+      "mode": "LF"
+    }
+  },
+  "private_byte_hashes": {
+    "data/track_b/manifests/annual_2010_v1/selected_ids.txt": "6b37111a0a1fb6dc3b4c5c2fe036e1bcdf2ba7c3f274c73d9d65fdf232fffd2c",
+    "data/track_b/manifests/expansion_v1/selected_ids.txt": "570b450c75b9a4cb65ee295b210b4a5f9918569ce0daa4c64690be90621f3ee7",
+    "data/track_b/processed/annual_2010_v1/panel.csv": "26a3b6eae7055ed6329b583e6b1e629d754a899ded29640f226530d9d8994172",
+    "data/track_b/processed/expansion_v1/panel.csv": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+    "artifacts/phase4-origination-001/test_consumption.json": "07379a470cf63ba5edda21a9d321639935033d460e6cc89282561b2d72fee0ee",
+    "artifacts/phase4-origination-001/development_predictions.csv": "cdc1f428c2806527740cca9527658e3524a6e7ab87bc2d75faef9af172c69b5a",
+    "artifacts/phase4-origination-001/logistic_coefficients.csv": "b07d3009dfe4043e0239f6cddb1bb93e45b703319b97ed4de1469dd8c5bb9eb1",
+    "artifacts/phase4-origination-001/logistic_regression.joblib": "00d6f7254d6d9c5e11367a388546761d4d9927bb5841b3b3ffe283c80b2a83b3",
+    "artifacts/phase4-origination-001/split_assignments.csv": "efbdc36ee1286f0c06f302197174efbf9884ecb0f8e8c4b9d010569265db04e2",
+    "artifacts/phase4-origination-001/xgboost.joblib": "ee2563cf382b469919f68caf537aa67824eef03e25ea7010b43cc37ce3b15587",
+    "artifacts/phase4-origination-001/xgboost_importance.csv": "6db98b483c192639f011257282075ae9720ba2415e3e0e7e54d288d204c316df",
+    "artifacts/phase5-validation-001/calibration.png": "7f65dfd121223025fbcb7a70cf8b57eb8ea89c8bdf7bb759f76781d21fe60413",
+    "artifacts/phase5-validation-001/discrimination.png": "9ecb61ab61d8e6a0d5152e341c6f9656f39329c841418f49da81542699e3c63a",
+    "artifacts/phase5-validation-001/logistic_regression_selected.joblib": "4687a557b52a0242bc38bfb17c14afff0fefbf0e6b2bbba7a6038fa56ed135b3",
+    "artifacts/phase5-validation-001/selection.json": "7bd1c00846f90aab0452a3ed5e128cba950ece2ad7bad0f8e9ee9c34cf237c12",
+    "artifacts/phase5-validation-001/test_predictions.csv": "2f26e3009cd428ce18a0f325e0fa19aacc6777c7c3f3f2ec26ab104dc1871c60",
+    "artifacts/phase5-validation-001/xgboost_selected.joblib": "17030fc4d0a5cf0e905f11933e97542b0afcccba789fdfcc481c0bc9347d7d75"
+  },
+  "track_a_tag": [
+    "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  ],
+  "locked_predictions_and_consumed_ledgers_accessed": false
+}

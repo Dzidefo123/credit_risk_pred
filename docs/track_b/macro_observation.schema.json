@@ -1,0 +1,124 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "series_id": {
+      "minLength": 1,
+      "title": "Series Id",
+      "type": "string"
+    },
+    "geography": {
+      "const": "US",
+      "title": "Geography",
+      "type": "string"
+    },
+    "reference_period": {
+      "format": "date",
+      "title": "Reference Period",
+      "type": "string"
+    },
+    "release_date": {
+      "format": "date",
+      "title": "Release Date",
+      "type": "string"
+    },
+    "vintage_date": {
+      "format": "date",
+      "title": "Vintage Date",
+      "type": "string"
+    },
+    "revision_date": {
+      "format": "date",
+      "title": "Revision Date",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "type": "number"
+    },
+    "revision_sequence": {
+      "minimum": 0,
+      "title": "Revision Sequence",
+      "type": "integer"
+    },
+    "source": {
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "frequency": {
+      "enum": [
+        "D",
+        "W",
+        "M",
+        "Q"
+      ],
+      "title": "Frequency",
+      "type": "string"
+    },
+    "units": {
+      "minLength": 1,
+      "title": "Units",
+      "type": "string"
+    },
+    "seasonal_adjustment": {
+      "enum": [
+        "SA",
+        "NSA"
+      ],
+      "title": "Seasonal Adjustment",
+      "type": "string"
+    },
+    "transformation": {
+      "const": "level",
+      "default": "level",
+      "title": "Transformation",
+      "type": "string"
+    },
+    "retrieved_at": {
+      "format": "date-time",
+      "title": "Retrieved At",
+      "type": "string"
+    },
+    "source_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Hash",
+      "type": "string"
+    },
+    "representation": {
+      "default": "vintage",
+      "enum": [
+        "vintage",
+        "current_revised"
+      ],
+      "title": "Representation",
+      "type": "string"
+    },
+    "date_evidence": {
+      "default": "exact",
+      "enum": [
+        "exact",
+        "conservative_upper_bound"
+      ],
+      "title": "Date Evidence",
+      "type": "string"
+    }
+  },
+  "required": [
+    "series_id",
+    "geography",
+    "reference_period",
+    "release_date",
+    "vintage_date",
+    "revision_date",
+    "value",
+    "revision_sequence",
+    "source",
+    "frequency",
+    "units",
+    "seasonal_adjustment",
+    "retrieved_at",
+    "source_hash"
+  ],
+  "title": "Observation",
+  "type": "object"
+}

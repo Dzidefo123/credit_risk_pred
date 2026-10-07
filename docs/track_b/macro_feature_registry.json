@@ -1,0 +1,277 @@
+{
+  "version": "1.0.0",
+  "candidate_count": 8,
+  "scientific_status": "Hypotheses only; no coefficients or fitted features",
+  "series": [
+    {
+      "series_id": "UNRATE",
+      "definition": "U-3 unemployment; CPS/LNS14000000",
+      "source": "BLS",
+      "source_url": "https://fred.stlouisfed.org/series/UNRATE",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=UNRATE",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/UNRATE",
+      "frequency": "M",
+      "geography": "US",
+      "units": "Percent",
+      "seasonal_adjustment": "SA",
+      "reference_history_start": "1948-01-01",
+      "alfred_metadata_history_start": "1960-03-15",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary",
+      "release_lag": {
+        "n": 3,
+        "median_days": 4,
+        "range_days": [
+          2,
+          6
+        ],
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": null
+      },
+      "transformation": [
+        "level",
+        "change_3m_pp"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Seasonal revisions/population-control breaks; not payroll survey",
+      "default_rationale": "Reduced repayment capacity",
+      "payoff_rationale": "Income conditions affect transactions; sign uncertain",
+      "freshness_days": 62
+    },
+    {
+      "series_id": "PAYEMS",
+      "definition": "Total nonfarm employees; CES0000000001",
+      "source": "BLS",
+      "source_url": "https://fred.stlouisfed.org/series/PAYEMS",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/PAYEMS",
+      "frequency": "M",
+      "geography": "US",
+      "units": "Thousands of Persons",
+      "seasonal_adjustment": "SA",
+      "reference_history_start": "1939-01-01",
+      "alfred_metadata_history_start": "1955-05-06",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "reserve",
+      "release_lag": {
+        "n": 3,
+        "median_days": 4,
+        "range_days": [
+          2,
+          6
+        ],
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": null
+      },
+      "transformation": [
+        "growth_12m_pct"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Two monthly revisions and annual benchmark; jobs not persons",
+      "default_rationale": "Employment/income conditions",
+      "payoff_rationale": "Hiring and mobility affect payoff",
+      "freshness_days": 62
+    },
+    {
+      "series_id": "FEDFUNDS",
+      "definition": "Monthly average effective overnight federal funds rate; not FOMC target",
+      "source": "Federal Reserve Board",
+      "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=FEDFUNDS",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/FEDFUNDS",
+      "frequency": "M",
+      "geography": "US",
+      "units": "Percent",
+      "seasonal_adjustment": "NSA",
+      "reference_history_start": "1954-07-01",
+      "alfred_metadata_history_start": "1996-12-03",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "reserve",
+      "release_lag": {
+        "n": 0,
+        "median_days": null,
+        "range_days": null,
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+      },
+      "transformation": [
+        "level"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Completed monthly average unavailable within reference month",
+      "default_rationale": "Funding/payment environment; fixed mortgage coupon not mechanically reset",
+      "payoff_rationale": "Rate regime influences refinancing opportunities",
+      "freshness_days": 62
+    },
+    {
+      "series_id": "DGS10",
+      "definition": "10-year constant-maturity market Treasury yield, investment basis",
+      "source": "Federal Reserve Board",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=DGS10",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/DGS10",
+      "frequency": "D",
+      "geography": "US",
+      "units": "Percent",
+      "seasonal_adjustment": "NSA",
+      "reference_history_start": "1962-01-02",
+      "alfred_metadata_history_start": "2005-06-28",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary",
+      "release_lag": {
+        "n": 0,
+        "median_days": null,
+        "range_days": null,
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+      },
+      "transformation": [
+        "latest_released_level"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Trading date is not guaranteed publication date; holidays/missing values",
+      "default_rationale": "Long-term financing environment",
+      "payoff_rationale": "Mortgage financing spreads and refinancing environment",
+      "freshness_days": 7
+    },
+    {
+      "series_id": "MORTGAGE30US",
+      "definition": "US 30-year fixed mortgage average, Primary Mortgage Market Survey",
+      "source": "Freddie Mac",
+      "source_url": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=MORTGAGE30US",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/MORTGAGE30US",
+      "frequency": "W",
+      "geography": "US",
+      "units": "Percent",
+      "seasonal_adjustment": "NSA",
+      "reference_history_start": "1971-04-02",
+      "alfred_metadata_history_start": "2010-06-17",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary_conditional",
+      "release_lag": {
+        "n": 0,
+        "median_days": null,
+        "range_days": null,
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+      },
+      "transformation": [
+        "latest_released_level",
+        "spread_to_DGS10_pp"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "2022-11-17 methodology break; survey/application mix; copyright terms; pre-Jun2010 archive gap must be resolved",
+      "default_rationale": "Housing financing affordability; existing fixed coupon not repriced",
+      "payoff_rationale": "Market rate versus current coupon is a future refinancing hypothesis",
+      "freshness_days": 14
+    },
+    {
+      "series_id": "USSTHPI",
+      "definition": "National all-transactions repeat-sales house price index; includes refinancings",
+      "source": "FHFA",
+      "source_url": "https://fred.stlouisfed.org/series/USSTHPI",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=USSTHPI",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/USSTHPI",
+      "frequency": "Q",
+      "geography": "US",
+      "units": "Index 1980:Q1=100",
+      "seasonal_adjustment": "NSA",
+      "reference_history_start": "1975-01-01",
+      "alfred_metadata_history_start": "2010-08-25",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary_conditional",
+      "release_lag": {
+        "n": 0,
+        "median_days": null,
+        "range_days": null,
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+      },
+      "transformation": [
+        "growth_12m_pct"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Not monthly purchase-only HPI; pre-Aug2010 vintage gap; revisions",
+      "default_rationale": "Equity and default incentives; proxy not current property valuation",
+      "payoff_rationale": "Equity/mobility/refinancing conditions",
+      "freshness_days": 183
+    },
+    {
+      "series_id": "GDPC1",
+      "definition": "Real GDP quarterly chain-weighted level at annual rate",
+      "source": "BEA",
+      "source_url": "https://fred.stlouisfed.org/series/GDPC1",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=GDPC1",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/GDPC1",
+      "frequency": "Q",
+      "geography": "US",
+      "units": "Billions of Chained 2017 Dollars",
+      "seasonal_adjustment": "SA",
+      "reference_history_start": "1947-01-01",
+      "alfred_metadata_history_start": "1991-12-04",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary",
+      "release_lag": {
+        "n": 1,
+        "median_days": 30,
+        "range_days": [
+          30,
+          30
+        ],
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": null
+      },
+      "transformation": [
+        "growth_3m_pct_nonannualized"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "Advance/second/third plus annual/comprehensive revisions; base-year changes",
+      "default_rationale": "Broad household income/activity conditions",
+      "payoff_rationale": "Transaction and refinancing activity",
+      "freshness_days": 183
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "definition": "All-items CPI-U US city average",
+      "source": "BLS",
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "vintage_url": "https://alfred.stlouisfed.org/series?seid=CPIAUCSL",
+      "reference_metadata_url": "https://fred.stlouisfed.org/data/CPIAUCSL",
+      "frequency": "M",
+      "geography": "US",
+      "units": "Index 1982-1984=100",
+      "seasonal_adjustment": "SA",
+      "reference_history_start": "1947-01-01",
+      "alfred_metadata_history_start": "1972-07-21",
+      "vintage_status": "VINTAGE-AWARE AVAILABLE",
+      "vintage_coverage_verified": "Official archive metadata exists; NOT completeness-certified. Per-observation vintage coverage must pass acquisition gate.",
+      "role": "primary",
+      "release_lag": {
+        "n": 3,
+        "median_days": 15,
+        "range_days": [
+          15,
+          17
+        ],
+        "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+        "unmeasured_reason": null
+      },
+      "transformation": [
+        "growth_12m_pct"
+      ],
+      "allowed_use": "latest_known as-of inside verified coverage; first_release sensitivity only with initial revision certified; current history descriptive only",
+      "leakage_risk": "SA history revised; do not substitute published NSA headline YoY",
+      "default_rationale": "Real income/payment burden; rates endogenous",
+      "payoff_rationale": "Indirect rate/income channel; sign uncertain",
+      "freshness_days": 62
+    }
+  ]
+}

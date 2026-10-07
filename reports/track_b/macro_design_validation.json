@@ -1,0 +1,48 @@
+{
+  "task": 7,
+  "decision": "MACRO DESIGN READY WITH MATERIAL IDENTIFICATION LIMITATIONS",
+  "targeted_tests": {
+    "passed": 60,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_track_b_macro.py -q"
+  },
+  "complete_pytest": {
+    "passed": 736,
+    "warnings": 3,
+    "seconds": 60.14
+  },
+  "lint": "passed",
+  "format": {
+    "status": "passed",
+    "files": 163
+  },
+  "governance": "passed",
+  "repository_hygiene": {
+    "status": "passed",
+    "staged_tracked_files": 321
+  },
+  "preservation": {
+    "tracked_files_byte_unchanged": 305,
+    "local_private_files_byte_unchanged": 17,
+    "frozen_track_a_artifacts": 12,
+    "track_a_tag_unchanged": true,
+    "sample_and_panel_unchanged": true,
+    "locked_prediction_or_consumed_ledger_access": false,
+    "model_fit": false,
+    "mortgage_macro_join": false,
+    "raw_macroeconomic_predictor_acquisition": false,
+    "metrics_status": "Retained historical results only; no re-evaluation",
+    "retained_track_a_xgboost": {
+      "auc": 0.868152,
+      "brier": 0.048545,
+      "log_loss": 0.17603
+    }
+  },
+  "source_probe_limitation": "All16 direct HTTP requests timed out/disconnected. Definitions and source feasibility verified with official web sources; a three-page extracted response is privately hashed and is NOT original agency HTTP/API data.",
+  "real_macro_vintage_completeness_certified": false,
+  "geography": "national_US_only",
+  "preferred_strategy": "A: constrained multi-vintage national-macro predictive competing risks",
+  "next_task": "Track B Task 8 — Multi-Vintage Mortgage Cohort Acquisition and Harmonization",
+  "next_task_implemented": false,
+  "pushed": false,
+  "whitespace_check": "passed"
+}

@@ -1,0 +1,202 @@
+{
+  "$defs": {
+    "ScenarioPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "series_id": {
+          "minLength": 1,
+          "title": "Series Id",
+          "type": "string"
+        },
+        "geography": {
+          "const": "US",
+          "title": "Geography",
+          "type": "string"
+        },
+        "period_end": {
+          "format": "date",
+          "title": "Period End",
+          "type": "string"
+        },
+        "horizon": {
+          "minimum": 1,
+          "title": "Horizon",
+          "type": "integer"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "units": {
+          "minLength": 1,
+          "title": "Units",
+          "type": "string"
+        },
+        "frequency": {
+          "const": "M",
+          "title": "Frequency",
+          "type": "string"
+        },
+        "source_kind": {
+          "enum": [
+            "forecast",
+            "hypothetical",
+            "observed"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "source_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "original_reference_period": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Reference Period"
+        },
+        "observed_release_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed Release Date"
+        }
+      },
+      "required": [
+        "series_id",
+        "geography",
+        "period_end",
+        "horizon",
+        "value",
+        "units",
+        "frequency",
+        "source_kind",
+        "source_hash"
+      ],
+      "title": "ScenarioPoint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "scenario_name": {
+      "minLength": 1,
+      "title": "Scenario Name",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "forecast",
+        "hypothetical",
+        "historical_replay"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "forecast_origin": {
+      "format": "date",
+      "title": "Forecast Origin",
+      "type": "string"
+    },
+    "publication_date": {
+      "format": "date",
+      "title": "Publication Date",
+      "type": "string"
+    },
+    "provider": {
+      "minLength": 1,
+      "title": "Provider",
+      "type": "string"
+    },
+    "provenance": {
+      "minLength": 1,
+      "title": "Provenance",
+      "type": "string"
+    },
+    "consistency_review": {
+      "minLength": 1,
+      "title": "Consistency Review",
+      "type": "string"
+    },
+    "conversion_rule": {
+      "minLength": 1,
+      "title": "Conversion Rule",
+      "type": "string"
+    },
+    "horizon": {
+      "minimum": 1,
+      "title": "Horizon",
+      "type": "integer"
+    },
+    "paths": {
+      "items": {
+        "$ref": "#/$defs/ScenarioPoint"
+      },
+      "minItems": 1,
+      "title": "Paths",
+      "type": "array"
+    },
+    "scenario_probability": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scenario Probability"
+    },
+    "probability_evidence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Probability Evidence"
+    }
+  },
+  "required": [
+    "scenario_name",
+    "kind",
+    "as_of",
+    "forecast_origin",
+    "publication_date",
+    "provider",
+    "provenance",
+    "consistency_review",
+    "conversion_rule",
+    "horizon",
+    "paths"
+  ],
+  "title": "Scenario",
+  "type": "object"
+}

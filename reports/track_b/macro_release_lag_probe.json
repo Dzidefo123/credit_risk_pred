@@ -1,0 +1,161 @@
+{
+  "observations": [
+    {
+      "series_id": "UNRATE",
+      "reference_period_end": "2014-03-31",
+      "release_date": "2014-04-04",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_04042014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "UNRATE",
+      "reference_period_end": "2014-04-30",
+      "release_date": "2014-05-02",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_05022014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "UNRATE",
+      "reference_period_end": "2014-05-31",
+      "release_date": "2014-06-06",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_06062014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "PAYEMS",
+      "reference_period_end": "2014-03-31",
+      "release_date": "2014-04-04",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_04042014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "PAYEMS",
+      "reference_period_end": "2014-04-30",
+      "release_date": "2014-05-02",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_05022014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "PAYEMS",
+      "reference_period_end": "2014-05-31",
+      "release_date": "2014-06-06",
+      "evidence": "https://www.bls.gov/news.release/archives/empsit_06062014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "reference_period_end": "2014-03-31",
+      "release_date": "2014-04-15",
+      "evidence": "https://www.bls.gov/news.release/archives/cpi_04152014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "reference_period_end": "2014-04-30",
+      "release_date": "2014-05-15",
+      "evidence": "https://www.bls.gov/news.release/archives/cpi_05152014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "reference_period_end": "2014-05-31",
+      "release_date": "2014-06-17",
+      "evidence": "https://www.bls.gov/news.release/archives/cpi_06172014.htm",
+      "kind": "documented_agency_first_release"
+    },
+    {
+      "series_id": "GDPC1",
+      "reference_period_end": "2014-03-31",
+      "release_date": "2014-04-30",
+      "evidence": "https://www.bea.gov/news/2014/gross-domestic-product-1st-quarter-2014-advance-estimate",
+      "kind": "documented_agency_first_release"
+    }
+  ],
+  "scope": "Publication-date evidence only; no macro values parsed or mortgage join",
+  "family_only_benchmark": {
+    "source": "FHFA quarterly HPI release",
+    "reference_period_end": "2014-03-31",
+    "release_date": "2014-05-27",
+    "lag_days": 57,
+    "url": "https://www.fhfa.gov/news/news-release/fhfa-house-price-index-rises-for-eleventh-consecutive-quarter",
+    "limitation": "Release-family benchmark; not certified USSTHPI first-value/version chronology"
+  },
+  "series": [
+    {
+      "series_id": "UNRATE",
+      "n": 3,
+      "median_days": 4,
+      "range_days": [
+        2,
+        6
+      ],
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": null
+    },
+    {
+      "series_id": "PAYEMS",
+      "n": 3,
+      "median_days": 4,
+      "range_days": [
+        2,
+        6
+      ],
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": null
+    },
+    {
+      "series_id": "FEDFUNDS",
+      "n": 0,
+      "median_days": null,
+      "range_days": null,
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+    },
+    {
+      "series_id": "DGS10",
+      "n": 0,
+      "median_days": null,
+      "range_days": null,
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+    },
+    {
+      "series_id": "MORTGAGE30US",
+      "n": 0,
+      "median_days": null,
+      "range_days": null,
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+    },
+    {
+      "series_id": "USSTHPI",
+      "n": 0,
+      "median_days": null,
+      "range_days": null,
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": "Exact historical per-version agency calendar not acquired; no invented median"
+    },
+    {
+      "series_id": "GDPC1",
+      "n": 1,
+      "median_days": 30,
+      "range_days": [
+        30,
+        30
+      ],
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": null
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "n": 3,
+      "median_days": 15,
+      "range_days": [
+        15,
+        17
+      ],
+      "scope": "Small documented 2014 agency-release probe, NOT full-history estimate",
+      "unmeasured_reason": null
+    }
+  ]
+}

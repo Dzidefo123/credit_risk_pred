@@ -1,0 +1,137 @@
+{
+  "protocol_version": "1.0.0",
+  "task": 7,
+  "base_commit": "33494664727f44d68f3432cec2334b05468186f9",
+  "decision": "MACRO DESIGN READY WITH MATERIAL IDENTIFICATION LIMITATIONS",
+  "approved_candidate_series": [
+    "UNRATE",
+    "PAYEMS",
+    "FEDFUNDS",
+    "DGS10",
+    "MORTGAGE30US",
+    "USSTHPI",
+    "GDPC1",
+    "CPIAUCSL"
+  ],
+  "primary_series": [
+    "UNRATE",
+    "DGS10",
+    "MORTGAGE30US",
+    "USSTHPI",
+    "GDPC1",
+    "CPIAUCSL"
+  ],
+  "reserve_series": [
+    "PAYEMS",
+    "FEDFUNDS"
+  ],
+  "prohibited_data_representations": [
+    "current_revised_as_predictor",
+    "future_releases",
+    "future_revisions",
+    "future_reference_periods",
+    "future_forecasts",
+    "backfilled_initial_vintages",
+    "interpolated_unreleased_quarters"
+  ],
+  "as_of_rule": "Date resolution at end of t0: reference_period_end, release_date, vintage_date, revision_date <= t0. Intraday use unsupported. Conservative proven upper bounds allowed; arbitrary fixed lags are not dates.",
+  "revision_rule": "Newest complete eligible reference period, latest value version known by t0; first-release sensitivity requires revision_sequence=0 and complete initial-release evidence.",
+  "geography": "national_US_only",
+  "transformations": {
+    "UNRATE": [
+      "level",
+      "change_3m_pp"
+    ],
+    "PAYEMS": [
+      "growth_12m_pct"
+    ],
+    "FEDFUNDS": [
+      "level"
+    ],
+    "DGS10": [
+      "latest_released_level"
+    ],
+    "MORTGAGE30US": [
+      "latest_released_level",
+      "spread_to_DGS10_pp"
+    ],
+    "USSTHPI": [
+      "growth_12m_pct"
+    ],
+    "GDPC1": [
+      "growth_3m_pct_nonannualized"
+    ],
+    "CPIAUCSL": [
+      "growth_12m_pct"
+    ]
+  },
+  "transformation_rule": "Both operands selected under same t0 and revision policy. Exact lag-period end; missing returns unavailable. Preserve all source/date/hash lineage. No future interpolation.",
+  "freshness_days": {
+    "UNRATE": 62,
+    "PAYEMS": 62,
+    "FEDFUNDS": 62,
+    "DGS10": 7,
+    "MORTGAGE30US": 14,
+    "USSTHPI": 183,
+    "GDPC1": 183,
+    "CPIAUCSL": 62
+  },
+  "scenario_schema": "macro_scenario.schema.json",
+  "scenario_governance": {
+    "kinds": [
+      "forecast",
+      "hypothetical",
+      "historical_replay"
+    ],
+    "names": [
+      "baseline",
+      "adverse",
+      "research_downside",
+      "upside"
+    ],
+    "weights": "Optional; defensible source/method, all-or-none across set, sum1. No fabricated weights. Historical replay descriptive and unweighted.",
+    "paths": "Monthly future period-end, complete1..H for each variable, consistent units; preserve source-native conversion rule. Historical replay retains original dates.",
+    "official_label": "Only actual cited official provider release; research downside is not regulatory"
+  },
+  "identification_strategy": "A: prespecified multi-origination-vintage national-macro predictive competing-risk design with explicit constrained duration/cohort representation",
+  "proposed_vintages": [
+    2006,
+    2008,
+    2010,
+    2014,
+    2018,
+    2020,
+    2022
+  ],
+  "vintage_choice_basis": "Housing contraction, recovery, different rate regimes, pandemic cohort and post-low-rate originations; no performance-based selection",
+  "apc_caveat": "Even multiple vintages do not identify unrestricted age+period+cohort; impose disclosed constraints and test overlap/conditioning. No causal macro coefficients.",
+  "future_acquisition_gate": [
+    "Separate user authorization and terms/resource budget",
+    "Same source release layout/schema and immutable hashes",
+    "Small deterministic pilot per new vintage; no whole-history extraction",
+    "Initial macro/version release coverage incl pre2010 HPI established or explicitly excluded",
+    "No evaluation artifacts or consumed ledger reuse",
+    "No performance-based cohort selection"
+  ],
+  "future_modeling_gate": [
+    "Multiple cohorts and age/calendar support matrix",
+    "Event/state/censor and pandemic harmonization approved",
+    "Macro per-version dates and raw hashes certified",
+    "Feature registry/frequency/units harmonization and staleness diagnostics",
+    "New development and future-calendar plus facility-separated evaluation protocol sealed",
+    "Effective calendar sample size and calendar-block uncertainty",
+    "Future-state distribution and payoff dynamics for prospective CIF",
+    "Independent review of identification restrictions before fitting"
+  ],
+  "task6_integration": "New separately authorized competing-hazard study; no Task6 refit. Monthly joint hazards with loan state X(t), known macro M(t). Scenarios alone do not supply future loan states.",
+  "prohibited_actions": [
+    "model_fit",
+    "mortgage_macro_join",
+    "prediction_regeneration",
+    "consumed_ledger_access",
+    "stress_ECL",
+    "LGD_EAD_claim",
+    "additional_mortgage_download"
+  ],
+  "next_task": "Track B Task 8 — Multi-Vintage Mortgage Cohort Acquisition and Harmonization"
+}

@@ -1,0 +1,114 @@
+{
+  "purpose": "Bounded official metadata feasibility probe; failed direct HTTP acquisition and separately retained extracted web metadata. No mortgage join/model access.",
+  "entries": [
+    {
+      "series_id": "UNRATE",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=UNRATE",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "UNRATE",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/UNRATE",
+      "error": "RemoteDisconnected: Remote end closed connection without response"
+    },
+    {
+      "series_id": "PAYEMS",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "PAYEMS",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/PAYEMS",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "FEDFUNDS",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=FEDFUNDS",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "FEDFUNDS",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/FEDFUNDS",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "DGS10",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=DGS10",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "DGS10",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/DGS10",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "MORTGAGE30US",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=MORTGAGE30US",
+      "error": "RemoteDisconnected: Remote end closed connection without response"
+    },
+    {
+      "series_id": "MORTGAGE30US",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/MORTGAGE30US",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "USSTHPI",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=USSTHPI",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "USSTHPI",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/USSTHPI",
+      "error": "RemoteDisconnected: Remote end closed connection without response"
+    },
+    {
+      "series_id": "GDPC1",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=GDPC1",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "GDPC1",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/GDPC1",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "purpose": "vintage_metadata",
+      "url": "https://alfred.stlouisfed.org/series?seid=CPIAUCSL",
+      "error": "TimeoutError: The read operation timed out"
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "purpose": "reference_metadata",
+      "url": "https://fred.stlouisfed.org/data/CPIAUCSL",
+      "error": "TimeoutError: The read operation timed out"
+    }
+  ],
+  "web_capture": {
+    "raw_path": "data/track_b/macro/raw/task7_metadata/web_extracted_metadata.json",
+    "source_hash": "8cd2c4a236488bdec7bf98ab61044791f82d7202608ce2616b73ca80674e4710",
+    "retrieved_at": "2026-10-07T00:18:52.860289+00:00",
+    "bytes": 10769,
+    "transport": "Web tool extracted response JSON; NOT original agency HTML or observation API bytes",
+    "source_urls": [
+      "https://alfred.stlouisfed.org/series?seid=MORTGAGE30US",
+      "https://alfred.stlouisfed.org/series?seid=USSTHPI",
+      "https://fred.stlouisfed.org/data/GDPC1"
+    ],
+    "scope": "Metadata proof only; current observations embedded in page extraction are descriptive and unused"
+  }
+}
