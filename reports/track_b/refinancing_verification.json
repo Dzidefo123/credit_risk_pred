@@ -1,0 +1,131 @@
+{
+  "status": "PASSED",
+  "base_commit": "472558bc5207d04b9ffa7084e246458278eb3009",
+  "validation_evidence_status": "EXPLORATORY_ONLY",
+  "prespecification_sha256": "b40b0be9d4108b3e84de62b164fb355cacd2bdcd4617d3c014a1dc02b53bb3b9",
+  "scientific_binding_unchanged": true,
+  "baseline_parity": {
+    "coefficient_max_abs": 0.0,
+    "intercept_max_abs": 0.0,
+    "prediction_max_abs": 0.0,
+    "cached_probability_comparison": true,
+    "new_task10_outcome_evaluation": false
+  },
+  "report_sections": 23,
+  "report_lines": 230,
+  "local_report_links": 9,
+  "rendering": {
+    "scientific_results_changed": false,
+    "model_or_prediction_regeneration": false,
+    "original_draft_sha256": "4b93945e34e4fe187fbf0c57d9eafd8c0369b752609024d1ba3d06b08e8bb96f",
+    "compact_report_sha256": "41b2388086273bcc136987b3063e9f5114ffce63429a0f7873c8cf36e3e2a03e",
+    "renderer_sha256": "1e36d369fedecad2bfbc35f41070aa8cc089fdf15c44513a9f7f5b60f5fd8e00",
+    "detailed_evidence_sha256": "747c0510e65e2a6ed6114605991bd5f4fb4556f611a3f4de408ffd6e833cd813",
+    "reason": "Compact editorial presentation of identical frozen scientific aggregates"
+  },
+  "availability_clarification": {
+    "path": "docs/track_b/refinancing_evidence_availability_clarification.json",
+    "sha256": "c200ea7fd8db619592f16581ff8547be9e3de163fa015150302a42cf055f8827"
+  },
+  "probability_conservation_max_residual": 5.329070518200751e-15,
+  "model_hashes": {
+    "P0": "45685a0fccdf4336ce3f752a0be9132f961abb3a359f78794c8da1b613b3e257",
+    "P1": "6eda9f52347cda98d015dd3315e62e9c7317185293c18ae583906b5fd011d698",
+    "P2": "f4110f185909a7cfb0e7e3993082f0e7cd05ce6ecf6d510088e48cd9115d754e",
+    "LINEAR": "cb7d3b25a3ebf98da124b0b815b7b672f8f89539da787ab6d3b94566570cab98",
+    "P3": "72fca615125ae478617f0b6f609f91b1575af1f84440de4ead92db83e20b09fe"
+  },
+  "private_predictions_and_cif_not_tracked": true,
+  "preserved": {
+    "status": "PASSED",
+    "public": 460,
+    "private": 280,
+    "earlier": {
+      "status": "PASSED",
+      "public_lf_hashes": 435,
+      "private_byte_hashes": 248,
+      "task10_ledger_unchanged": true,
+      "task10_ledger_api_called": false,
+      "old_models_mutated": false,
+      "earlier": {
+        "status": "PASSED",
+        "prior_public_lf_hashes": 410,
+        "prior_private_byte_hashes": 184,
+        "task9a_and_earlier": {
+          "status": "PASSED",
+          "prior_public_lf_hashes": 395,
+          "task9_private_byte_hashes": 94,
+          "older_private_byte_hashes": 51,
+          "prior_tracked_byte_hashes": 371,
+          "source_and_frozen_artifact_checks": {
+            "status": "PASSED",
+            "preexisting_tracked_files": 321,
+            "retained_private_byte_hashes": 17,
+            "track_a_artifacts": 12,
+            "track_a_tag": [
+              "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+              "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+            ],
+            "source_hashes": {
+              "2006": "4cb95fcea313bcbf8369332d5acab5014f65162c421b2a798353cc6d0d5b6d9a",
+              "2008": "7db4997b124bac4bddd628acea9aa396cfc13ac03cc16c314cbc0be939f14fb5",
+              "2010": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+              "2014": "42336e0c5a3eb12aa75baa0aaae6217fc4fc39abfc28314ef2f5a9217571ef42",
+              "2018": "fa01833bff413aefcca5835f76865d8e5ca2972ef85d454732ac077aff4d1c37",
+              "2020": "1b17c691b717c6f4d27a1e0a68e6a9dce0fea7350dceb837602289b82e9978f0",
+              "2022": "103730da79901ef080720fe49d9208b5b0f8c40857c5a7de07c0e457ca243b31"
+            },
+            "original_2010_source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+            "original_2010_location_status": "Old path absent; byte-identical source verified in user-supplied directory",
+            "consumed_ledger_byte_hashes": {
+              "expanded_pd_v1": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+              "survival_v1": "e8a6f0e8d45bc2cd9f9a257be6a63726742e54a2c01200d35487a3f9b2119a26"
+            },
+            "ledger_check": "Byte hashing against retained public serialization; no consumption API",
+            "locked_holdout_scored": false,
+            "model_artifacts_regenerated": false,
+            "retained_historical_metrics": {
+              "auc": 0.868152,
+              "brier": 0.048545,
+              "log_loss": 0.17603
+            },
+            "metrics_status": "Retained historical evidence; not newly evaluated"
+          },
+          "locked_holdout_consumed": false,
+          "models_loaded_or_regenerated": false,
+          "task9_original_decision_preserved": true,
+          "replacement_credentials_accessed": false
+        },
+        "prior_ledgers_reused": false,
+        "prior_models_regenerated": false,
+        "retained_metrics_only": {
+          "auc": 0.868152,
+          "brier": 0.048545,
+          "log_loss": 0.17603
+        }
+      }
+    }
+  },
+  "new_regression_tests": 36,
+  "targeted_tests": {
+    "passed": 129,
+    "seconds": 3.64
+  },
+  "full_pytest": {
+    "passed": 1002,
+    "warnings": 4,
+    "seconds": 88.31
+  },
+  "lint": "PASSED",
+  "format": "PASSED",
+  "configuration": "PASSED",
+  "governance": "PASSED",
+  "frozen_track_a_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "retained_historical": true,
+    "newly_evaluated": false
+  },
+  "pushed": false
+}

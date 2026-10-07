@@ -1,0 +1,18 @@
+{
+  "validation_status": "EXPLORATORY_ONLY",
+  "specification_changed": false,
+  "interpretation": "accessible=False in the later-period candidate means no established independent admissible validation population, not absence of later raw records",
+  "latest_source_month": "2026-03",
+  "latest_frozen_macro_table_month": "2026-03",
+  "modeled_exploratory_cutoff": "2026-02",
+  "prior_audit": {
+    "path": "reports/track_b/multi_vintage_recovery_audit.json",
+    "sha256": "fd4abc8d893fd9313285144f83bfff621851b5c2e2dd07771d049ef036045aae",
+    "endpoint_count_rule": "First observed endpoints across complete retained source histories; prior outcome summaries encompass the released records"
+  },
+  "march_2026": "Source month already lies in the previously ingested and outcome-audited samples; no untouched status established. A single later month from these facilities is not assumed independent or adequate for 12/24/36/60-month validation.",
+  "unselected_raw_records": "Potential future population only; no provenance/population overlap/untouched-outcome seal established for Task12",
+  "no_new_outcomes_inspected_in_clarification": true,
+  "no_new_fit_or_window_change": true,
+  "note": "Clarification supplements the initial availability audit without modifying it or the hashed prespecification."
+}

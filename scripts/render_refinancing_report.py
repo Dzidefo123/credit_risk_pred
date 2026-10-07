@@ -1,0 +1,345 @@
+"""Compact editorial rendering of frozen Task12 aggregates; no fitting or rescoring."""
+
+from pathlib import Path
+
+from credit_risk.track_b.data.schemas import digest
+from credit_risk.track_b.macro_support.study import immutable_json, read_json
+from credit_risk.track_b.refinancing.audit import PRIVATE
+from credit_risk.track_b.refinancing.reporting import LIMITATIONS, SECTIONS
+
+
+def table(headers, rows):
+    return "\n".join(
+        [
+            "| " + " | ".join(headers) + " |",
+            "|" + "|".join(["---"] * len(headers)) + "|",
+            *["| " + " | ".join(str(v) for v in row) + " |" for row in rows],
+        ]
+    )
+
+
+def metrics(values):
+    return table(
+        ["Model", "Joint LL", "Payoff Brier", "Default Brier", "Payoff AUC"],
+        [
+            [
+                n,
+                f"{v['joint_log_loss']:.8f}",
+                f"{v['payoff_brier']:.8f}",
+                f"{v['default_brier']:.8f}",
+                f"{v['payoff_auc']:.6f}",
+            ]
+            for n, v in values.items()
+        ],
+    )
+
+
+def bins(values):
+    return table(
+        ["Gap bin (pp)", "Intervals", "Facilities", "Payoffs", "Observed", "P1", "P2"],
+        [
+            [
+                label,
+                v["counts"]["intervals"],
+                v["counts"]["facilities"],
+                v["counts"]["payoffs"],
+                f"{v['observed_payoff']:.4%}",
+                f"{v['models']['P1']['mean_payoff']:.4%}",
+                f"{v['models']['P2']['mean_payoff']:.4%}",
+            ]
+            for i, label in enumerate(["<-1", "[-1,0)", "[0,1)", "[1,2)", ">=2"])
+            if (v := values.get(str(i))) and v["status"] == "SUPPORTED"
+        ],
+    )
+
+
+def groups(values, prefix):
+    def difference(cell):
+        scores = cell["models"]
+        delta = scores["P2"]["scores"]["payoff_brier"] - scores["P1"]["scores"]["payoff_brier"]
+        return f"{delta:+.8f}"
+
+    return table(
+        ["Cell", "Facilities", "Payoffs", "Observed", "P1 mean", "P2 mean", "P2-P1 Brier"],
+        [
+            [
+                n.removeprefix(prefix),
+                v["counts"]["facilities"],
+                v["counts"]["payoffs"],
+                f"{v['observed_payoff']:.4%}",
+                f"{v['models']['P1']['mean_payoff']:.4%}",
+                f"{v['models']['P2']['mean_payoff']:.4%}",
+                difference(v),
+            ]
+            for n, v in values.items()
+            if n.startswith(prefix) and v["status"] == "SUPPORTED"
+        ],
+    )
+
+
+def render(root):
+    private = root / PRIVATE
+    report = root / "reports/track_b/REFINANCING_INCENTIVE_PAYOFF_RESEARCH.md"
+    evidence = read_json(root / "reports/track_b/refinancing_incentive_payoff_research.json")
+    audit = evidence["validation_evidence_audit"]
+    spec = evidence["prespecification"]
+    shift = evidence["gap_shift"]
+    paired_rows = []
+    for unit, v in evidence["paired"].items():
+        for name, x in v["intervals"].items():
+            paired_rows.append(
+                [
+                    unit,
+                    name,
+                    f"{x['delta']:+.8f}",
+                    f"[{x['lower']:+.8f}, {x['upper']:+.8f}]",
+                    x["valid_replicates"],
+                ]
+            )
+    cal_rows = [
+        [
+            n,
+            f"{v['payoff']['mean_predicted']:.4%}",
+            f"{v['payoff']['absolute_mean_rate_error']:.4%}",
+            f"{v['payoff']['intercept']:.4f}",
+            f"{v['payoff']['slope']:.4f}",
+        ]
+        for n, v in evidence["calibration"].items()
+    ]
+    cif_rows = [
+        [
+            h,
+            f"{v['observed']['payoff_cif']:.4%}",
+            f"{v['models']['P1']['payoff']['mean_predicted_cif']:.4%}",
+            f"{v['models']['P2']['payoff']['mean_predicted_cif']:.4%}",
+            f"{v['models']['P1']['default']['mean_predicted_cif']:.4%}",
+            f"{v['models']['P2']['default']['mean_predicted_cif']:.4%}",
+            f"{v['observed']['default_cif']:.4%}",
+        ]
+        for h, v in evidence["cif"].items()
+        if v["status"] == "SUPPORTED"
+    ]
+    content = {
+        "Executive Summary": (
+            "**" + evidence["decision"]["verdict"] + ".** Evidence status: **EXPLORATORY_ONLY**. "
+            "P2 slightly improves payoff Brier and AUC, but worsens joint log loss and pooled "
+            "payoff calibration. It underpredicts payoff severely after2022, and CIF improvements "
+            "are uneven across horizons. The prespecified success criteria fail. No promotion."
+        ),
+        "Research Motivation": (
+            "Test whether original borrower coupon relative to the PIT market rate captures "
+            "payoff behavior more reliably than absolute macro-rate coefficients. Payoff remains "
+            "a research endpoint combining payoff/maturity; observed exits do not "
+            "identify refinancing."
+        ),
+        "Post-Validation Boundary": (
+            "NEW HYPOTHESIS GENERATED BY POST-VALIDATION DIAGNOSIS. Task10 remains "
+            "NO RELIABLE TEMPORAL MACRO INCREMENT DEMONSTRATED; Task11 remains "
+            "MACRO FAILURE MECHANISMS PARTIALLY IDENTIFIED. No old model, prediction, metric "
+            "or consumed ledger was changed. No Task10 ledger API was called."
+        ),
+        "Validation Evidence Audit": (
+            "Seen and unseen cohorts were previously inspected. No admissible independent "
+            "validation population was established; no new independent ledger was created. "
+            "March2026 exists in source releases and the frozen macro table, but was within "
+            "prior complete-source outcome audits. It is not assumed virgin or independent. "
+            "Unselected raw records require their own future overlap/provenance/"
+            "untouchedness audit. "
+            "[Coverage clarification](../../docs/track_b/"
+            "refinancing_evidence_availability_clarification.json)."
+        ),
+        "PIT Rate Construction": (
+            "Task9 task9_api_v5 MORTGAGE30US only; target-month interval assessment is the "
+            "previous month-end. Each used rate was checked against frozen rows and for vintage "
+            "representation, archive bounds, reference period and publication/revision upper "
+            "bounds at t0. No current-revised history or future weekly rate was substituted.\n\n"
+            "Macro table SHA256: `" + audit["macro_table_sha256"] + "`."
+        ),
+        "Contract Rate Semantics": (
+            "orig_interest_rate is the original coupon in percent, with harmonized nominal "
+            "origination semantics across seven vintages. Both modeled populations have zero "
+            "missing original coupons. Current interest rate exists in monthly data, but "
+            "historical release/modification timing is unverified. Original coupon is explicitly "
+            "ORIGINAL_CONTRACT_RATE_PROXY_GAP, including modified loans. Blank flags do not prove "
+            "no intervention. The t0 audit matched every modeled interval.\n\n"
+            + table(
+                ["Population", "Intervals", "Modified by t0", "Coupon differs"],
+                [
+                    [
+                        n,
+                        v["matched_t0_intervals"],
+                        v.get("modified_by_t0", 0),
+                        v.get("current_original_differ", 0),
+                    ]
+                    for n, v in audit["modification_audit"].items()
+                ],
+            )
+        ),
+        "Refinancing Incentive Definition": (
+            "REFI_GAP = original coupon minus PIT market mortgage rate, percentage points. "
+            "6.50 minus4.00 equals+2.50. Primary: REFI_POS=max(gap,0) and REFI_NEG=min(gap,0). "
+            "Linear gap is the only alternative representation. No redundant triple, threshold "
+            "search or outcome-driven winsorization. Missing/nonfinite or invalid percentage "
+            "rates stop construction.\n\nPrespecification SHA256: `"
+            + evidence["prespecification_sha256"]
+            + "`."
+        ),
+        "Population": table(
+            ["Population", "Facilities", "Intervals", "Defaults", "Payoffs"],
+            [
+                [n, *[v[k] for k in ["facilities", "intervals", "defaults", "payoffs"]]]
+                for n, v in evidence["counts"].items()
+            ],
+        )
+        + (
+            "\n\nExact Task10 primary risk membership and first-event exits. Development2010-09 "
+            "to2017-12; purge2018; exploratory2019-01 to2026-02. Facility-disjoint frozen roles, "
+            "vintages2006/2008/2010/2014. Previously inspected unseen cohorts are audited only."
+        ),
+        "Model Ladder": table(["Model", "Prespecified predictors"], spec["model_ladder"].items())
+        + (
+            "\n\nSame multinomial logistic family, C1 L2, lbfgs, max3000, tol1e-8, seed61010, "
+            "one thread. Exact frozen static features, duration bands and cohort encoding. "
+            "Development-only imputation/scaling/categories; no unrestricted calendar effects. "
+            "P1's coefficients/intercept/cached probabilities match frozen Task10 M1 exactly."
+        ),
+        "Development": metrics({n: v["development"] for n, v in evidence["development"].items()})
+        + "\n\nIn-sample diagnostics, not validation. Development bins:\n\n"
+        + bins(evidence["development_refi_bins"]),
+        "Independent Validation / Exploratory Evaluation": (
+            "EXPLORATORY_ONLY throughout. All five models frozen before one exploratory scoring "
+            "session. No retuning, validation recalibration, replacement sensitivity selection "
+            "or new independent-evidence claim."
+        ),
+        "Payoff Proper Scores": metrics(evidence["metrics"])
+        + "\n\n"
+        + table(["Resampling unit", "Metric", "P2-P1", "95% interval", "Valid/1000"], paired_rows)
+        + (
+            "\n\nSeeds61201/61202, minimum950 valid draws. Fixed models. Facility resampling "
+            "conditions on realized calendar; eight coarse year blocks include partial2026. "
+            "Monthly observations are not treated as independent macro realizations. "
+            "AUC improvement is insufficient. Both log-loss intervals are adverse; the tiny "
+            "Brier benefit does not survive the calendar interval as a clear improvement."
+        ),
+        "Payoff Calibration": (
+            "Observed monthly payoff1.5357%. P2 worsens pooled underprediction and calibration "
+            "slope despite higher AUC. Diagnostic intercepts/slopes are never applied.\n\n"
+            + table(
+                ["Model", "Predicted payoff", "Absolute mean error", "Intercept", "Slope"], cal_rows
+            )
+        ),
+        "Refinancing-Incentive Stability": table(
+            ["Measure", "Development", "Exploratory"],
+            [
+                [k, f"{shift['development'][k]:.4f}", f"{shift['evaluation'][k]:.4f}"]
+                for k in ["mean", "median", "minimum", "maximum"]
+            ],
+        )
+        + (
+            f"\n\nPSI={shift['psi']:.4f}; KS distance={shift['ks_distance']:.4f}; "
+            f"outside development range={shift['outside_development_range']['fraction']:.2%}. "
+            "Quantiles and development-decile PSI bins are in JSON. Economic relationship "
+            "bins were frozen at-1/0/1/2pp before outcomes. Observed bin rates "
+            "confound composition. "
+            "Positive conditional payoff slopes on both sides of parity are consistent with "
+            "refinancing incentives, but do not establish causal effects or transport.\n\n"
+            + bins(evidence["exploratory_refi_bins"])
+        ),
+        "Calendar Stability": groups(evidence["groups"], "year:")
+        + (
+            "\n\nP2 reduces underprediction in2020–21, then worsens it after2022. In2023 "
+            "observed payoff0.8738% versus P2 prediction0.0491%. No causal pandemic inference. "
+            "2026 is January–February only. Annual refi bins, pooled regimes and diagnostic "
+            "calibration are in JSON."
+        ),
+        "Vintage Stability": groups(evidence["groups"], "vintage:")
+        + (
+            "\n\nOnly2014 improves payoff Brier; other seen vintages worsen it. The tolerance "
+            "gate passes, which does not establish uniform benefit or unseen-vintage transport."
+        ),
+        "Duration Stability": groups(evidence["groups"], "duration:")
+        + (
+            "\n\nSparse cells (<100 facilities or<20 payoffs) suppressed. Benefits concentrate "
+            "in37–60 and61–84 month bands. Older supported bands worsen slightly. "
+            "Sparse default cause metrics are separately suppressed."
+        ),
+        "Competing-Risk CIF": table(
+            [
+                "Months",
+                "AJ payoff",
+                "P1 payoff",
+                "P2 payoff",
+                "P1 default",
+                "P2 default",
+                "AJ default",
+            ],
+            cif_rows,
+        )
+        + (
+            "\n\nAll four horizons supported; one first landmark per facility, minimum200 "
+            "at risk and censor survival0.1. AJ treats payoff as competing, not censoring. "
+            "IPCW Brier and mean curves are in JSON. Conservation holds to numerical precision. "
+            "P2 improves payoff mean calibration at24/36months but worsens12/60months. "
+            "These use historical rolling PIT paths, not macro forecasts known at entry."
+        ),
+        "Default Consequences": (
+            "Default Brier rises by0.00002084. Default CIF remains substantially underpredicted "
+            "although60-month mean improves modestly. Joint default/payoff hazard changes "
+            "prevent attributing the change solely to payoff competition. Passing the "
+            "prespecified degradation tolerance is not proof of accurate default PD."
+        ),
+        "Sensitivity Analyses": (
+            "LINEAR worsens joint log loss and pooled payoff calibration despite a tiny payoff "
+            "Brier improvement. P3 adds only the five frozen non-rate context terms and worsens "
+            "joint log loss and payoff Brier. Neither replaces P2. Burnout was excluded before "
+            "fitting, with no additional path-dependence model or interaction search."
+        ),
+        "Model-Risk Interpretation": (
+            "Borrower-relative rates are economically interpretable, but this experiment "
+            "does not establish reliable temporal payoff probabilities. Negative incentive "
+            "extrapolation still produces severe underprediction. Improved ranking and tiny "
+            "squared-error gains do not overcome adverse joint log loss, calibration and CIF. "
+            "Prespecified gates:\n\n"
+            + table(["Gate", "Pass"], evidence["decision"]["gates"].items())
+        ),
+        "Limitations": "\n".join("- " + x for x in LIMITATIONS)
+        + (
+            "\n\nFannie Mae is feasible in principle, subject to a separate access and "
+            "harmonization contract. No external data acquired. "
+            "[Feasibility note](../../docs/track_b/"
+            "REFINANCING_EXTERNAL_REPLICATION_FEASIBILITY.md)."
+        ),
+        "Decision": "**"
+        + evidence["decision"]["verdict"]
+        + ".**\n\nExactly one next task: "
+        + evidence["next_task"]
+        + ". No next-task implementation.\n\n"
+        + "[Detailed aggregate JSON](refinancing_incentive_payoff_research.json), "
+        + "[findings](REFINANCING_INCENTIVE_FINDINGS.md) and "
+        + "[prespecification](../../docs/track_b/refinancing_incentive_prespecification.json).",
+    }
+    text = "# Refinancing Incentive Payoff Research\n\nEXPLORATORY HYPOTHESIS DEVELOPMENT\n\n"
+    text += "\n\n".join("## " + s + "\n\n" + content[s] for s in SECTIONS) + "\n"
+    draft = private / "initial_detailed_report_draft.md"
+    if not draft.exists():
+        draft.write_bytes(report.read_bytes())
+    report.write_text(text, encoding="utf-8", newline="\n")
+    immutable_json(
+        private / "compact_report_rendering_v2.json",
+        dict(
+            scientific_results_changed=False,
+            model_or_prediction_regeneration=False,
+            original_draft_sha256=digest(draft),
+            compact_report_sha256=digest(report),
+            renderer_sha256=digest(Path(__file__)),
+            detailed_evidence_sha256=digest(
+                root / "reports/track_b/refinancing_incentive_payoff_research.json"
+            ),
+            reason="Compact editorial presentation of identical frozen scientific aggregates",
+        ),
+    )
+    print("Task12 compact23-section report written; scientific evidence unchanged")
+
+
+if __name__ == "__main__":
+    render(Path(__file__).resolve().parents[1])
