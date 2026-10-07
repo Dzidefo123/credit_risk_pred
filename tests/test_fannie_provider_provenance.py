@@ -188,7 +188,7 @@ def test_task14_and_all_prior_public_files_preserved():
     manifest = read("docs/track_b/fannie_provider_preservation_manifest.json")
     assert len(manifest["public_lf_hashes"]) == 534
     for name, expected in manifest["public_lf_hashes"].items():
-        assert provider.digest(ROOT / name, normalize=True) == expected, name
+        assert provider.preserved_public_digest(ROOT / name) == expected, name
     assert len([n for n in manifest["public_lf_hashes"] if n.startswith("docs/paper/")]) == 20
 
 

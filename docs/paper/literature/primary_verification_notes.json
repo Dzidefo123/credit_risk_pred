@@ -1,0 +1,212 @@
+{
+  "fallback": [
+    {
+      "reference_id": "Deng1996",
+      "title": "Mortgage default and low downpayment loans: The costs of public subsidy",
+      "authors": [
+        "Yongheng Deng",
+        "John M. Quigley",
+        "Robert Van Order"
+      ],
+      "year": 1996,
+      "venue": "Regional Science and Urban Economics",
+      "volume": "26",
+      "issue": "3-4",
+      "pages": "263-285",
+      "doi": "10.1016/0166-0462(95)02116-7",
+      "url": "https://www.sciencedirect.com/science/article/pii/0166046295021167",
+      "notes": "Publisher incorrectly exposes affiliation Freddie Mac as author; NBER original author title page establishes the three human authors. DOI/pagination confirmed by publisher."
+    },
+    {
+      "reference_id": "Bhattacharya2019",
+      "title": "A Bayesian approach to modeling mortgage default and prepayment",
+      "authors": [
+        "Arnab Bhattacharya",
+        "Simon P. Wilson",
+        "Refik Soyer"
+      ],
+      "year": 2019,
+      "venue": "European Journal of Operational Research",
+      "volume": "274",
+      "issue": "3",
+      "pages": "1112-1124",
+      "doi": "10.1016/j.ejor.2018.10.047",
+      "url": "https://www.tcd.ie/research/profiles/?profile=swilson",
+      "notes": "Institutional author record and publisher author page verify published edition; preprint used for specific content."
+    },
+    {
+      "reference_id": "Bellotti2009",
+      "title": "Credit scoring with macroeconomic variables using survival analysis",
+      "authors": [
+        "Tony Bellotti",
+        "Jonathan Crook"
+      ],
+      "year": 2009,
+      "venue": "Journal of the Operational Research Society",
+      "volume": "60",
+      "issue": "12",
+      "pages": "1699-1707",
+      "doi": "10.1057/jors.2008.130",
+      "url": "https://www.research.ed.ac.uk/en/publications/credit-scoring-with-macroeconomic-variables-using-survival-analys/",
+      "notes": "Institutional accepted-manuscript record verifies publication/DOI and peer review."
+    },
+    {
+      "reference_id": "Breeden2022",
+      "title": "Multihorizon discrete time survival models",
+      "authors": [
+        "Joseph L. Breeden",
+        "Jonathan Crook"
+      ],
+      "year": 2022,
+      "venue": "Journal of the Operational Research Society",
+      "volume": "73",
+      "issue": "1",
+      "pages": "56-69",
+      "doi": "10.1080/01605682.2020.1777907",
+      "url": "https://www.research.ed.ac.uk/en/publications/multihorizon-discrete-time-survival-models/",
+      "notes": "Institutional record verifies issue2022 versus online2020; accepted manuscript read."
+    }
+  ],
+  "additional": [
+    {
+      "reference_id": "Ovadia2019",
+      "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+      "authors": [
+        "Yaniv Ovadia",
+        "Emily Fertig",
+        "Jie Ren",
+        "Zachary Nado",
+        "D. Sculley",
+        "Sebastian Nowozin",
+        "Joshua Dillon",
+        "Balaji Lakshminarayanan",
+        "Jasper Snoek"
+      ],
+      "year": 2019,
+      "venue": "Advances in Neural Information Processing Systems",
+      "volume": "32",
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/8558cb408c1d76621371888657d2eb1d-Abstract.html",
+      "publication_type": "PEER_REVIEWED",
+      "buckets": [
+        "L6",
+        "L7"
+      ],
+      "notes": "Conference proceedings abstract and paper: accuracy and calibration under shift; post-hoc calibration not uniformly robust. Not mortgage evidence."
+    },
+    {
+      "reference_id": "Roschewitz2025",
+      "title": "Where are we with calibration under dataset shift in image classification?",
+      "authors": [
+        "Mélanie Roschewitz",
+        "Raghav Mehta",
+        "Fabio de Sousa Ribeiro",
+        "Ben Glocker"
+      ],
+      "year": 2025,
+      "venue": "Transactions on Machine Learning Research",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://openreview.net/pdf/499e52462720d28f164e28bdbb0ce7fdc9d72b7d.pdf",
+      "publication_type": "PEER_REVIEWED",
+      "buckets": [
+        "L6",
+        "L7"
+      ],
+      "notes": "Final PDF explicitly labeled Published in TMLR10/2025; author names cross-checked against arXiv2507.07780. Prefer final to anonymous submission/preprint; image domain, not mortgage."
+    },
+    {
+      "reference_id": "Aalen1978",
+      "title": "An Empirical Transition Matrix for Non-Homogeneous Markov Chains Based on Censored Observations",
+      "authors": [
+        "Odd O. Aalen",
+        "Søren Johansen"
+      ],
+      "year": 1978,
+      "venue": "Scandinavian Journal of Statistics",
+      "volume": "5",
+      "issue": "3",
+      "pages": "141-150",
+      "doi": null,
+      "url": "https://www.jstor.org/stable/4615704",
+      "publication_type": "PEER_REVIEWED",
+      "buckets": [
+        "L8"
+      ],
+      "notes": "Publisher issue metadata verified; no DOI asserted. Estimator attribution only; conditional-entry implementation applicability remains author review and is supported by modern competing-risk references."
+    },
+    {
+      "reference_id": "OPSurv2024",
+      "title": "OPSurv: Orthogonal Polynomials Quadrature Algorithm for Survival Analysis",
+      "authors": [
+        "Lilian W. Bialokozowicz",
+        "Hoang M. Le",
+        "Tristan Sylvain",
+        "Peter A. I. Forsyth",
+        "Vineel Nagisetty",
+        "Greg Mori"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2402.01955",
+      "publication_type": "PREPRINT",
+      "buckets": [
+        "L3",
+        "L8"
+      ],
+      "notes": "arXiv abstract and indexed PDF inspected: single/competing-risk CIF estimator; Freddie delinquency benchmark mentioned in PDF. No peer-reviewed edition verified."
+    },
+    {
+      "reference_id": "Graf1999",
+      "title": "Assessment and comparison of prognostic classification schemes for survival data",
+      "authors": [
+        "Erika Graf",
+        "Claudia Schmoor",
+        "Willi Sauerbrei",
+        "Martin Schumacher"
+      ],
+      "year": 1999,
+      "venue": "Statistics in Medicine",
+      "volume": "18",
+      "issue": "17-18",
+      "pages": "2529-2545",
+      "doi": "10.1002/(SICI)1097-0258(19990915/30)18:17/18<2529::AID-SIM274>3.0.CO;2-5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10474158/",
+      "publication_type": "PEER_REVIEWED",
+      "buckets": [
+        "L7",
+        "L8"
+      ],
+      "notes": "PubMed abstract and DOI verified, author full names cross-check bibliographic index; survival probability prediction error under censoring. Gerds/Heyard provide competing-risk extension."
+    },
+    {
+      "reference_id": "Brier1950",
+      "title": "Verification of forecasts expressed in terms of probability",
+      "authors": [
+        "Glenn W. Brier"
+      ],
+      "year": 1950,
+      "venue": "Monthly Weather Review",
+      "volume": "78",
+      "issue": "1",
+      "pages": "1-3",
+      "doi": "10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2",
+      "url": "https://journals.ametsoc.org/view/journals/mwre/78/1/1520-0493_1950_078_0001_vofeit_2_0_co_2.xml",
+      "publication_type": "PEER_REVIEWED",
+      "buckets": [
+        "L7"
+      ],
+      "notes": "Publisher metadata; historical attribution only, no full text acquired. Gneiting supports score propriety."
+    }
+  ],
+  "verification_date": "2026-10-07",
+  "note": "Selected metadata and original review notes only; no copyrighted full texts redistributed. DOI retrieval returned21successes and4HTTP429s; fallback sources verified independently."
+}

@@ -6,6 +6,53 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# Task 16V permits only these additive literature files; frozen hashes remain pinned.
+POST_FREEZE_ALLOWED_FILES = {
+    "docs/paper/literature/" + name
+    for name in (
+        "task16_reference_specs.json",
+        "crossref_metadata.json",
+        "primary_verification_notes.json",
+        "reference_registry.json",
+        "citation_gap_resolution.json",
+        "novelty_dimensions.json",
+        "task16_preservation_manifest.json",
+    )
+}
+
+
+def check_paper_files(root):
+    for path in (root / "docs/paper").iterdir():
+        if path.is_dir():
+            if path != root / "docs/paper/literature" or path.is_symlink():
+                raise ValueError("Unreviewed paper directory")
+            for addition in path.iterdir():
+                name = addition.relative_to(root).as_posix()
+                if (
+                    name not in POST_FREEZE_ALLOWED_FILES
+                    or not addition.is_file()
+                    or addition.is_symlink()
+                ):
+                    raise ValueError("Unreviewed post-freeze paper file")
+                check_public_text(addition.read_text(encoding="utf-8"))
+            continue
+        if path.suffix not in {".json", ".md"}:
+            raise ValueError("Unreviewed paper file type")
+        check_public_text(path.read_text(encoding="utf-8"))
+
+
+def check_frozen_hash(root, name, expected):
+    actual = digest(root / name)
+    if actual == expected:
+        return
+    if name == "scripts/check_paper_evidence.py":
+        amendments = read(root, "reports/paper/task16_compatibility_amendment.json")
+        approved = amendments["approved_code_hashes"][name]
+        if expected == approved["original_sha256_lf"] and actual == approved["amended_sha256_lf"]:
+            return
+    raise ValueError("Paper evidence freeze changed: " + name)
+
+
 CLASSES = {
     "SUPPORTED_EMPIRICAL",
     "SUPPORTED_METHODOLOGICAL",
@@ -167,8 +214,7 @@ def verify(root=ROOT):
         "audit_report_hashes_lf",
     ]:
         for name, expected in manifest.get(group, {}).items():
-            if digest(root / name) != expected:
-                raise ValueError("Paper evidence freeze changed: " + name)
+            check_frozen_hash(root, name, expected)
     for filename, key in [
         ("figure_registry.json", "figures"),
         ("table_registry.json", "tables"),
@@ -192,11 +238,7 @@ def verify(root=ROOT):
     boundaries = read(root, "docs/paper/generalization_boundaries.json")
     if len(boundaries["boundaries"]) < 11 or len(boundaries["regulatory_prohibited_claims"]) != 8:
         raise ValueError("Generalization/regulatory boundaries missing")
-    for path in (root / "docs/paper").iterdir():
-        if path.suffix not in {".json", ".md"}:
-            raise ValueError("Unreviewed paper file type")
-        text = path.read_text(encoding="utf-8")
-        check_public_text(text)
+    check_paper_files(root)
     if manifest["new_empirical_calculations"]:
         raise ValueError("New empirical calculations prohibited")
     conflicts = read(root, "docs/paper/evidence_conflicts.json")

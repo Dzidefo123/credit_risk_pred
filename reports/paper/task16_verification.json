@@ -1,0 +1,177 @@
+{
+  "task": "Track B Task 16",
+  "date": "2026-10-07",
+  "base_commit": "45990488607bcc7f0cbdce60fd72a4b12541dcd3",
+  "scientific_positioning_decision": "DISTINCTIVE COMBINATION PLAUSIBLE WITH MATERIAL LIMITATIONS",
+  "integration_status": "VERIFIED_READY_FOR_COMMIT",
+  "ready_to_commit": true,
+  "search": {
+    "type": "structured literature search",
+    "queries": 71,
+    "exhaustive": false,
+    "candidate_records": 41,
+    "retained_references": 31,
+    "excluded_or_deferred_records": 6,
+    "predecessor_version_records": 4,
+    "unique_screened_paper_count_not_asserted": true,
+    "peer_reviewed": 30,
+    "preprints": 1,
+    "closest_papers": 16,
+    "used_claims_mapped": 116
+  },
+  "citation_gaps": {
+    "resolved_contextual": [
+      "CG01",
+      "CG02",
+      "CG04",
+      "CG05"
+    ],
+    "partially_resolved": [
+      "CG03",
+      "CG06"
+    ]
+  },
+  "tests": {
+    "targeted": {
+      "passed": 138,
+      "failed": 0,
+      "seconds": 20.18,
+      "new_task16_tests": 43,
+      "new_task16v_tests": 11,
+      "includes": [
+        "literature",
+        "manuscript",
+        "Task 14",
+        "provider provenance",
+        "session-amendment preservation"
+      ]
+    },
+    "full_pytest": {
+      "passed": 1265,
+      "failed": 0,
+      "warnings": 4,
+      "seconds": 126.26,
+      "warning_status": "Same four known non-failing warnings"
+    },
+    "ruff_check": "PASSED",
+    "ruff_format": {
+      "status": "PASSED",
+      "files": 254
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED_ALL_581_STAGED_FILES",
+    "git_diff_check": "PASSED",
+    "new_public_text_scan": {
+      "status": "PASSED",
+      "files": 13
+    },
+    "task16_literature_validator": "PASSED",
+    "staged_diff_check": "PASSED"
+  },
+  "preservation": {
+    "prior_public_lf_files": 562,
+    "unchanged_except_exact_compatibility_addition": true,
+    "private_byte_hashes_checked": 366,
+    "frozen_git_refs": 2,
+    "task15_main_registries_reports_unchanged": true,
+    "numeric_bindings_unchanged": 123,
+    "abstract_unchanged": true,
+    "freddie_source_archives": 7,
+    "freddie_hash_chain": "PASSED",
+    "fannie_provider_documents": 3,
+    "fannie_archive_hash": "PASSED",
+    "fannie_member_bodies_opened": false,
+    "task13t_preservation": {
+      "public": 534,
+      "private": 360,
+      "git_refs": 2
+    },
+    "locked_holdout_consumed": false,
+    "models_loaded_or_regenerated": false,
+    "empirical_experiments_rerun": false,
+    "retained_historical_metrics": {
+      "auc": 0.868152,
+      "brier": 0.048545,
+      "log_loss": 0.17603,
+      "status": "Retained historical evidence, not newly evaluated"
+    },
+    "approved_engineering_code_exceptions": 6,
+    "compatibility_hash_record": "reports/paper/task16_compatibility_amendment.json",
+    "task14_scientific_evidence_registries_manifests_reports_unchanged": true,
+    "task13t_scientific_provenance_manifests_reports_unchanged": true,
+    "preservation_method": "Original scientific hashes unchanged; six original/amended code hash pairs explicitly pinned."
+  },
+  "fannie": {
+    "status": "DRAFT_NOT_YET_AUTHORIZED",
+    "task13a_authorized": false,
+    "publication_terms_review": "REQUIRED"
+  },
+  "limitations": [
+    "Bu 2026 full text unavailable; unverified comparison fields remain UNKNOWN.",
+    "Exact mortgage observed-macro PIT/revision precedent unresolved.",
+    "Conditional-entry/IPCW implementation review remains open.",
+    "Automated tests validate snapshots and consistency, not scientific truth or exhaustive novelty."
+  ],
+  "files_created": [
+    "docs/paper/literature/task16_reference_specs.json",
+    "docs/paper/literature/crossref_metadata.json",
+    "docs/paper/literature/primary_verification_notes.json",
+    "docs/paper/literature/reference_registry.json",
+    "docs/paper/literature/citation_gap_resolution.json",
+    "docs/paper/literature/novelty_dimensions.json",
+    "docs/paper/literature/task16_preservation_manifest.json",
+    "docs/paper/closest_paper_matrix.json",
+    "docs/paper/claim_literature_map.json",
+    "docs/paper/literature_search_log.json",
+    "paper/references.bib",
+    "paper/main_v0.2.md",
+    "scripts/acquire_literature_metadata.py",
+    "scripts/build_literature.py",
+    "scripts/check_literature.py",
+    "tests/test_literature.py",
+    "reports/paper/TASK16_NOVELTY_AUDIT.md",
+    "reports/paper/task16_verification.json",
+    "reports/paper/task16_compatibility_amendment.json"
+  ],
+  "existing_files_modified": [
+    "scripts/check_paper_evidence.py",
+    "scripts/check_manuscript.py",
+    "tests/test_manuscript.py",
+    "scripts/fannie_provider_provenance.py",
+    "tests/test_fannie_provider_provenance.py",
+    "tests/test_fannie_session_amendment.py"
+  ],
+  "commit": {
+    "message": "paper: ground literature and audit novelty",
+    "creation_gate": "ALL_REQUIRED_CHECKS_PASSED",
+    "sha_location": "Git history and final task response"
+  },
+  "pushed": false,
+  "task17_implemented": false,
+  "required_next_step": "Task 17 hostile scientific review, only when requested; not implemented here.",
+  "original_verification_failure": {
+    "passed": 1253,
+    "failed": 1,
+    "warnings": 4,
+    "seconds": 109.94,
+    "failing_test": "tests/test_paper_evidence.py::test_full_paper_evidence_contract",
+    "exception": "ValueError: Unreviewed paper file type",
+    "cause": "The unchanged Task 14 checker rejects the newly required docs/paper/literature/ directory."
+  },
+  "intermediate_compatibility_run": {
+    "passed": 1263,
+    "failed": 2,
+    "warnings": 4,
+    "seconds": 122.01,
+    "reason": "Two downstream preservation tests still pinned original Task 14 checker code; scientific artifact hashes unchanged."
+  },
+  "compatibility_amendment": {
+    "authorization": "Task 16V user-approved engineering compatibility amendment",
+    "allowed_literature_files": 7,
+    "broad_exclusion": false,
+    "frozen_evidence_mutation_regressions": 5,
+    "bibliography_allowance_retained": "Exact references.bib filename only; Task 16 verifies contents against verified registry.",
+    "scientific_conclusion_upgraded": false
+  }
+}

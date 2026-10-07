@@ -2,7 +2,6 @@
 
 import ast
 import copy
-import hashlib
 import importlib.util
 import json
 import re
@@ -125,11 +124,13 @@ def test_figure_plan_and_appendix_placeholders():
 def test_frozen_task14_task13t_and_all_prior_public_artifacts():
     manifest = read("docs/paper/task15_preservation_manifest.json")
     assert len(manifest["public_lf_hashes"]) == 548
+    compatibility_spec = importlib.util.spec_from_file_location(
+        "compatibility", ROOT / "scripts/check_literature.py"
+    )
+    compatibility = importlib.util.module_from_spec(compatibility_spec)
+    compatibility_spec.loader.exec_module(compatibility)
     for name, expected in manifest["public_lf_hashes"].items():
-        assert (
-            hashlib.sha256((ROOT / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
-            == expected
-        )
+        assert compatibility.preserved_digest(ROOT, name) == expected
 
 
 def test_no_fitting_scoring_or_provider_data_imports():

@@ -1,0 +1,1470 @@
+{
+  "search_type": "structured literature search",
+  "date": "2026-10-07",
+  "completeness_claim": false,
+  "queries": [
+    {
+      "query": "Deng Quigley Van Order 2000 mortgage terminations heterogeneity exercise mortgage options",
+      "search_source": "Web search",
+      "date": "2026-10-07",
+      "result_count": null,
+      "papers_screened": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "reason": "User-specified initial discovery"
+    },
+    {
+      "query": "Bhattacharya Wilson Soyer Bayesian mortgage default prepayment 2019",
+      "search_source": "Web search",
+      "date": "2026-10-07",
+      "result_count": null,
+      "papers_screened": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "reason": "User-specified initial discovery"
+    },
+    {
+      "query": "\"The joint model of default and prepayment\" Bu Wang Yang 2026",
+      "search_source": "Web search",
+      "date": "2026-10-07",
+      "result_count": null,
+      "papers_screened": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Bhattacharya2019",
+        "Deng2000"
+      ],
+      "reason": "User-specified initial discovery"
+    },
+    {
+      "query": "\"The joint model\" \"103227\" Freddie",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"competing\" \"calibration\" \"2022\" survival lending",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Freddie Mac\" \"deep\" \"mortgage\" Sirignano Sadhwani Giesecke",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"credit risk\" \"real-time\" \"vintage\" macroeconomic data",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Li2023",
+        "Bianchi2026",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.sciencedirect.com/science/article \"S016766872600017X\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Deep Learning for Mortgage Risk\" journal",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"credit scoring\" \"temporal\" \"calibration\" drift study",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Macroeconomic Fundamentals and the Shape of Sovereign Credit Risk\" authors",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "Sadhwani2021",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"Freddie\" \"survival\" \"Brier\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "papers_retained": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"ALFRED\" model",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "papers_retained": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"vintage-aware\" macroeconomic prediction",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "papers_retained": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Incorporating data drift to perform survival analysis on credit risk\" authors",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "papers_retained": [
+        "Peng2026",
+        "OPSurv2024",
+        "Bu2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Bu\" \"Wang\" \"Yang\" \"103227\" Freddie Mac time-varying",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.sciencedirect.com \"Bayesian approach to modeling mortgage\" ",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Mortgage default and low downpayment loans\" 1996",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage terminations\" \"2000\" doi Econometrica",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Deng2000",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Gneiting Raftery 2007 strictly proper scoring rules prediction estimation doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Graf Schmoor Sauerbrei Schumacher 1999 survival probability prediction error Brier",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Blanche Dartigues Jacqmin Gadda 2013 time dependent AUC competing risks",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Aalen Johansen 1978 empirical transition matrix doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Gneiting2007",
+        "Blanche2013",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Where are we with calibration under dataset shift\" 2025",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "papers_retained": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Ovadia 2019 Can You Trust Your Model Uncertainty Under Dataset Shift proceedings",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "papers_retained": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Gama Zliobaite Bifet Pechenizkiy Bouchachia 2014 survey concept drift adaptation doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "papers_retained": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Stanton 1995 Rational prepayment burnout mortgage empirical model doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "papers_retained": [
+        "Ovadia2019",
+        "Roschewitz2025",
+        "Gama2014",
+        "Stanton1995"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Rational Prepayment\" Stanton site:academic.oup.com",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Credit scoring with macroeconomic variables using survival analysis\" Bellotti Crook",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"OPSurv\" authors proceedings 2024 mortgage",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"The profitability of online loans\" site:sciencedirect.com",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Li2023",
+        "Bellotti2009",
+        "Stanton1995",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Graf Schmoor Sauerbrei Schumacher \"1999\" \"Assessment\" prediction models",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "papers_retained": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Gerds Scheike Andersen 2012 competing risks prediction performance Brier",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "papers_retained": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Croushore Stark 2001 real time data set macroeconomists doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "papers_retained": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Austin Lee Fine 2016 introduction analysis survival competing risks",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "papers_retained": [
+        "Croushore2001",
+        "Austin2016",
+        "Gerds2012",
+        "Heyard2020",
+        "Graf1999"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"10.1016/j.insmatheco.2026.103227\" \"Freddie\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"The joint model of default and prepayment for a mortgage loan\" \"time-varying\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"prepayment burnout\" \"Schwartz\" \"Torous\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"point-in-time\" \"log loss\" competing risk",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Bu2026",
+        "Stanton1995",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Validation of discrete time-to-event prediction models\" authors doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Prepayment and the Valuation of Mortgage-Backed Securities\" Schwartz Torous 1989 doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Aalen\" \"Johansen\" \"1978\" site:jstor.org",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"out-of-time\" \"macro\" \"calibration\" competing",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "papers_retained": [
+        "Heyard2020",
+        "Schwartz1989",
+        "Aalen1978"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"10.1016/j.insmatheco.2026.103227\" copula bilinear",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Assessment and comparison of prognostic classification schemes for survival data\" doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"A proportional hazards model for the subdistribution of a competing risk\" publisher",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Calibration: the Achilles heel\" Van Calster 2019",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "papers_retained": [
+        "VanCalster2019",
+        "Graf1999",
+        "Fine1999",
+        "Peng2026",
+        "Bianchi2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"release dates\" \"prediction\" macroeconomic",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Freddie Mac\" \"vintage\" \"macroeconomic\" model competing",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"AUC\" \"improved\" \"calibration\" \"temporal\" credit",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"PIT\" \"competing risks\" macro",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "papers_retained": [
+        "Breeden2022",
+        "Breeden2020",
+        "Peng2026"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "Breeden \"CECL\" \"procyclicality\" 2018 2020 publication",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Multihorizon discrete time survival models\" publication",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"credit\" \"ranking\" \"Brier\" \"out-of-time\" Bellotti",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"real-time macroeconomic\" prepayment",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2022",
+        "Chen2021"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Predicting mortgage early delinquency with machine learning methods\" authors doi",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Stabilizing machine learning models with Age-Period-Cohort inputs\" frontiers",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Current expected credit loss procyclicality: it depends on the model\" site:risk.net",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"discrete-time survival models\" Freddie 2025 Bellotti",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "papers_retained": [
+        "Breeden2020",
+        "Breeden2023",
+        "Chen2021",
+        "Wang2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Macroeconomic Fundamentals\" \"Bianchi\" \"Jiao\" \"real-time\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"OPSurv\" ICML proceedings",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Discrete-Time Survival Models with Neural Networks\" authors 2024",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"mortgage\" \"ranking\" \"calibration\" \"deterioration\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "papers_retained": [
+        "Wang2024",
+        "OPSurv2024"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.sciencedirect.com \"Mortgage default and low downpayment loans\" \"10.1016\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.tandfonline.com \"Credit scoring with macroeconomic variables\" \"1699\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.tandfonline.com \"Multihorizon discrete time survival models\" \"56\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "site.tara.tcd.ie \"A Bayesian approach\" \"274\"",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "papers_retained": [
+        "Deng1996",
+        "Breeden2022",
+        "Bhattacharya2019"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Verification of forecasts expressed in terms of probability\" Brier 1950 AMS",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "papers_retained": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Credit scoring with macroeconomic variables using survival analysis\" site:research.ed.ac.uk",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "papers_retained": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"Where are we with calibration under dataset shift\" site:openreview.net/forum",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "papers_retained": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    },
+    {
+      "query": "\"OPSurv\" site:proceedings.mlr.press",
+      "search_source": "Web search with primary publisher/institutional/arXiv follow-up",
+      "date": "2026-10-07",
+      "result_count": null,
+      "result_count_note": "Total not exposed",
+      "papers_screened": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "papers_retained": [
+        "Brier1950",
+        "Bellotti2009",
+        "Roschewitz2025"
+      ],
+      "reason": "Relevant domain/method/closest-work evidence",
+      "attribution": "Candidate union from combined four-query call and follow-up; no exact per-query attribution claimed"
+    }
+  ],
+  "recorded_screened_candidate_records": 41,
+  "retained_references": 31,
+  "screened_count_definition": "31 retained works +6 excluded/deferred candidates +4 predecessor versions; not all engine hits or41unique works",
+  "excluded_or_deferred": [
+    {
+      "title": "Adaptive Conformal Calibration for Temporal Drift in Credit Scoring Models",
+      "url": "https://freederia.com/adaptive-conformal-calibration-for-temporal-drift-in-credit-scoring-models/",
+      "reason": "Non-primary unverified source",
+      "status": "EXCLUDED"
+    },
+    {
+      "title": "Model drift: connecting changing data to financial and customer outcomes",
+      "url": "https://thefinancialcurrent.com/deep-dives/model-drift-psi-calibration-monitoring?version=2026-09-30-broader-finance-batch-4",
+      "reason": "Explicit AI-generated analysis",
+      "status": "EXCLUDED"
+    },
+    {
+      "title": "Dynamic credit risk engine",
+      "url": "https://github.com/toan-byte/dynamic-credit-risk-engine",
+      "reason": "Project README, not scholarly research",
+      "status": "EXCLUDED"
+    },
+    {
+      "title": "Consumer Credit Default Risk",
+      "url": "https://dhruv-mehndiratta.com/research/consumer-credit-default-risk/",
+      "reason": "Personal project; no verified scholarly publication",
+      "status": "EXCLUDED"
+    },
+    {
+      "title": "A multi-metric evaluation framework for machine learning credit scoring models aligned with Basel III and IFRS 9 regulatory validation requirements",
+      "url": "https://link.springer.com/article/10.1007/s44564-026-00017-y",
+      "reason": "DEFERRED: content and metadata not fully verified; no citation",
+      "status": "DEFERRED"
+    },
+    {
+      "title": "Credit Scoring with Drift Adaptation Using Local Regions of Competence",
+      "url": "https://www.researchgate.net/publication/365753388_Credit_Scoring_with_Drift_Adaptation_Using_Local_Regions_of_Competence",
+      "reason": "DEFERRED: primary publication and content not verified; no citation",
+      "status": "DEFERRED"
+    }
+  ],
+  "superseded_versions": [
+    {
+      "retained": "Sadhwani2021",
+      "url": "https://arxiv.org/abs/1607.02470",
+      "status": "SUPERSEDED_BIBLIOGRAPHY_EDITION",
+      "reason": "Verified final publication preferred; inspected author-version content qualified"
+    },
+    {
+      "retained": "Bhattacharya2019",
+      "url": "https://arxiv.org/abs/1706.07677",
+      "status": "SUPERSEDED_BIBLIOGRAPHY_EDITION",
+      "reason": "Verified final publication preferred; inspected author-version content qualified"
+    },
+    {
+      "retained": "Peng2026",
+      "url": "https://arxiv.org/abs/2601.20533",
+      "status": "SUPERSEDED_BIBLIOGRAPHY_EDITION",
+      "reason": "Verified final publication preferred; inspected author-version content qualified"
+    },
+    {
+      "retained": "Roschewitz2025",
+      "url": "https://arxiv.org/abs/2507.07780",
+      "status": "SUPERSEDED_BIBLIOGRAPHY_EDITION",
+      "reason": "Verified final publication preferred; inspected author-version content qualified"
+    }
+  ],
+  "access_limitations": [
+    "Bu publisher preview only; no inferred absence from missing full text",
+    "21DOI metadata records;4HTTP429 failures independently verified",
+    "No paid access or author contact"
+  ]
+}

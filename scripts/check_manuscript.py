@@ -147,6 +147,9 @@ def verify():
         if required.lower() not in main.lower():
             raise ValueError("Required scientific qualification missing")
     for path in (ROOT / "paper").iterdir():
+        # Task 16 validates this additive bibliography in check_literature.py.
+        if path.name == "references.bib":
+            continue
         if path.suffix != ".md":
             raise ValueError("Unreviewed paper artifact")
         text = path.read_text(encoding="utf-8")

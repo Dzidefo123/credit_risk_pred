@@ -1,0 +1,1799 @@
+{
+  "references": [
+    {
+      "reference_id": "Deng1996",
+      "title": "Mortgage default and low downpayment loans: The costs of public subsidy",
+      "authors": [
+        "Yongheng Deng",
+        "John M. Quigley",
+        "Robert Van Order"
+      ],
+      "year": 1996,
+      "venue": "Regional Science and Urban Economics",
+      "volume": "26",
+      "issue": "3-4",
+      "pages": "263-285",
+      "doi": "10.1016/0166-0462(95)02116-7",
+      "url": "https://www.sciencedirect.com/science/article/pii/0166046295021167",
+      "notes": "Publisher incorrectly exposes affiliation Freddie Mac as author; NBER original author title page establishes the three human authors. DOI/pagination confirmed by publisher. Institutional predecessor abstract: proportional competing hazards, equity and unemployment; published edition preferred.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/0166046295021167",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Deng1996"
+        },
+        {
+          "url": "https://www.nber.org/papers/w5184",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L1",
+        "L2",
+        "L4",
+        "L9"
+      ],
+      "citation_key": "Deng1996",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Deng2000",
+      "title": "Mortgage Terminations, Heterogeneity and the Exercise of Mortgage Options",
+      "authors": [
+        "Yongheng Deng",
+        "John M. Quigley",
+        "Robert Van Order"
+      ],
+      "year": 2000,
+      "venue": "Econometrica",
+      "volume": "68",
+      "issue": "2",
+      "pages": "275-307",
+      "doi": "10.1111/1468-0262.00110",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00110",
+      "notes": "Publisher abstract: dependent competing hazards and unobserved heterogeneity. Publisher corrects Crossref surname Order to Van Order.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1111/1468-0262.00110",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Deng2000"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00110",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L1",
+        "L2",
+        "L9"
+      ],
+      "citation_key": "Deng2000",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION",
+        "REFI_DEVELOPMENT_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PRESPEC",
+        "REFI_GAP",
+        "REFI_PAIRED",
+        "REFI_CAL",
+        "REFI_CIF",
+        "REFI_DECISION",
+        "REFI_LIMITS"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Bhattacharya2019",
+      "title": "A Bayesian approach to modeling mortgage default and prepayment",
+      "authors": [
+        "Arnab Bhattacharya",
+        "Simon P. Wilson",
+        "Refik Soyer"
+      ],
+      "year": 2019,
+      "venue": "European Journal of Operational Research",
+      "volume": "274",
+      "issue": "3",
+      "pages": "1112-1124",
+      "doi": "10.1016/j.ejor.2018.10.047",
+      "url": "https://www.tcd.ie/research/profiles/?profile=swilson",
+      "notes": "Institutional author record and publisher author page verify published edition; preprint used for specific content. Author preprint sections 4 and 6 read: Freddie data, loan categorization, fixed covariates and predictive assessment; preprint content may differ from final.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://www.tcd.ie/research/profiles/?profile=swilson",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Bhattacharya2019"
+        },
+        {
+          "url": "https://arxiv.org/html/1706.07677",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L2",
+        "L3"
+      ],
+      "citation_key": "Bhattacharya2019",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Bu2026",
+      "title": "The joint model of default and prepayment for a mortgage loan and its application in mortgage insurance",
+      "authors": [
+        "Lan Bu",
+        "Fang Wang",
+        "Jingping Yang"
+      ],
+      "year": 2026,
+      "venue": "Insurance: Mathematics and Economics",
+      "volume": "127",
+      "issue": null,
+      "pages": "103227",
+      "doi": "10.1016/j.insmatheco.2026.103227",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S016766872600017X",
+      "notes": "Publisher indexed preview read; full text not obtained. Freddie, bilinear subdistribution hazards, compatible copulas, static and varying house-price/interest covariates confirmed; evaluation and information-time details unknown.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.insmatheco.2026.103227",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Bu2026"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S016766872600017X",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L2",
+        "L4",
+        "L8"
+      ],
+      "citation_key": "Bu2026",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "PUBLISHER_INDEXED_PREVIEW_ONLY"
+    },
+    {
+      "reference_id": "Sadhwani2021",
+      "title": "Deep Learning for Mortgage Risk*",
+      "authors": [
+        "Apaar Sadhwani",
+        "Kay Giesecke",
+        "Justin Sirignano"
+      ],
+      "year": 2021,
+      "venue": "Journal of Financial Econometrics",
+      "volume": "19",
+      "issue": "2",
+      "pages": "313-368",
+      "doi": "10.1093/jjfinec/nbaa025",
+      "url": "https://academic.oup.com/jfec/article/19/2/313/6329869",
+      "notes": "Publisher sections introduction and implications read: CoreLogic multistate mortgage transition model, local macro variables and out-of-sample evaluation. Do not label this Freddie research.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1093/jjfinec/nbaa025",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Sadhwani2021"
+        },
+        {
+          "url": "https://academic.oup.com/jfec/article/19/2/313/6329869",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L4",
+        "L5",
+        "L9"
+      ],
+      "citation_key": "Sadhwani2021",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Li2023",
+      "title": "The profitability of online loans: A competing risks analysis on default and prepayment",
+      "authors": [
+        "Zhiyong Li",
+        "Aimin Li",
+        "Anthony Bellotti",
+        "Xiao Yao"
+      ],
+      "year": 2023,
+      "venue": "European Journal of Operational Research",
+      "volume": "306",
+      "issue": "2",
+      "pages": "968-985",
+      "doi": "10.1016/j.ejor.2022.08.013",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221722006567",
+      "notes": "Publisher preview: LendingClub, competing hazards, discrimination and calibration, out-of-time profitability evaluation. Exact risk-score temporal split requires full text.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.ejor.2022.08.013",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Li2023"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0377221722006567",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L2",
+        "L5",
+        "L7"
+      ],
+      "citation_key": "Li2023",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Bellotti2009",
+      "title": "Credit scoring with macroeconomic variables using survival analysis",
+      "authors": [
+        "Tony Bellotti",
+        "Jonathan Crook"
+      ],
+      "year": 2009,
+      "venue": "Journal of the Operational Research Society",
+      "volume": "60",
+      "issue": "12",
+      "pages": "1699-1707",
+      "doi": "10.1057/jors.2008.130",
+      "url": "https://www.research.ed.ac.uk/en/publications/credit-scoring-with-macroeconomic-variables-using-survival-analys/",
+      "notes": "Institutional accepted-manuscript record verifies publication/DOI and peer review. Author manuscript: credit cards, varying interest/unemployment predictors and independent test. No macro revision contract established.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://www.research.ed.ac.uk/en/publications/credit-scoring-with-macroeconomic-variables-using-survival-analys/",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Bellotti2009"
+        },
+        {
+          "url": "https://www.pure.ed.ac.uk/ws/files/8628798/Credit_scoring_with_macroeconomic_variables_v10_4_1.pdf",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L4",
+        "L5"
+      ],
+      "citation_key": "Bellotti2009",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS",
+        "PIT_SUPPORT",
+        "PIT_COUNTS",
+        "PIT_APC",
+        "PIT_RATES",
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Breeden2022",
+      "title": "Multihorizon discrete time survival models",
+      "authors": [
+        "Joseph L. Breeden",
+        "Jonathan Crook"
+      ],
+      "year": 2022,
+      "venue": "Journal of the Operational Research Society",
+      "volume": "73",
+      "issue": "1",
+      "pages": "56-69",
+      "doi": "10.1080/01605682.2020.1777907",
+      "url": "https://www.research.ed.ac.uk/en/publications/multihorizon-discrete-time-survival-models/",
+      "notes": "Institutional record verifies issue2022 versus online2020; accepted manuscript read. Institutional manuscript: combined Fannie/Freddie mortgages, lagged delinquency, multihorizon survival versus transition/vintage models.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://www.research.ed.ac.uk/en/publications/multihorizon-discrete-time-survival-models/",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Breeden2022"
+        },
+        {
+          "url": "https://www.research.ed.ac.uk/files/166849125/CrookJJORS2020MultihorizonDiscrete.pdf",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L4",
+        "L5"
+      ],
+      "citation_key": "Breeden2022",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Breeden2023",
+      "title": "Stabilizing machine learning models with Age-Period-Cohort inputs for scoring and stress testing",
+      "authors": [
+        "Joseph L. Breeden",
+        "Yevgeniya Leonova"
+      ],
+      "year": 2023,
+      "venue": "Frontiers in Applied Mathematics and Statistics",
+      "volume": "9",
+      "issue": null,
+      "pages": "1195810",
+      "doi": "10.3389/fams.2023.1195810",
+      "url": "https://www.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2023.1195810/full",
+      "notes": "Publisher sections abstract/data/methods: combined GSE panel and APC stabilization, explicit out-of-time assessment.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.3389/fams.2023.1195810",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Breeden2023"
+        },
+        {
+          "url": "https://www.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2023.1195810/full",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L4",
+        "L5",
+        "L10"
+      ],
+      "citation_key": "Breeden2023",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Chen2021",
+      "title": "Predicting mortgage early delinquency with machine learning methods",
+      "authors": [
+        "Shunqin Chen",
+        "Zhengfeng Guo",
+        "Xinlei Zhao"
+      ],
+      "year": 2021,
+      "venue": "European Journal of Operational Research",
+      "volume": "290",
+      "issue": "1",
+      "pages": "358-372",
+      "doi": "10.1016/j.ejor.2020.07.058",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0377221720306846",
+      "notes": "Publisher preview: early delinquency, multiple metrics and training/out-of-sample/out-of-time comparisons; dataset provider unknown from inspected preview.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.ejor.2020.07.058",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Chen2021"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0377221720306846",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L5",
+        "L7"
+      ],
+      "citation_key": "Chen2021",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_AVERAGE_PRECISION",
+        "PD_LOGISTIC_BRIER",
+        "PD_LOGISTIC_LOG_LOSS",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_XGBOOST_ROC_AUC",
+        "PD_XGBOOST_AVERAGE_PRECISION",
+        "PD_XGBOOST_BRIER",
+        "PD_XGBOOST_LOG_LOSS",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE",
+        "PD_COUNTS",
+        "PD_CHAMPION",
+        "PD_FEATURES",
+        "PD_HAZARD",
+        "PD_DISTRESS",
+        "PD_PAIRED",
+        "PD_LIMITS",
+        "PD_SAMPLE"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Peng2026",
+      "title": "Incorporating data drift to perform survival analysis on credit risk",
+      "authors": [
+        "Jianwei Peng",
+        "Stefan Lessmann"
+      ],
+      "year": 2026,
+      "venue": "Journal of the Operational Research Society",
+      "volume": null,
+      "issue": null,
+      "pages": "1-15",
+      "doi": "10.1080/01605682.2026.2715043",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/01605682.2026.2715043",
+      "notes": "Publisher and author revision read: Freddie default survival, simulated drift, landmark/balance marker/isotonic calibration. Macro and competing-risk extension future work. Final preferred to arXiv2601.20533.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1080/01605682.2026.2715043",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Peng2026"
+        },
+        {
+          "url": "https://www.tandfonline.com/doi/full/10.1080/01605682.2026.2715043",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L5",
+        "L6",
+        "L7",
+        "L10"
+      ],
+      "citation_key": "Peng2026",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_AVERAGE_PRECISION",
+        "PD_LOGISTIC_BRIER",
+        "PD_LOGISTIC_LOG_LOSS",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_XGBOOST_ROC_AUC",
+        "PD_XGBOOST_AVERAGE_PRECISION",
+        "PD_XGBOOST_BRIER",
+        "PD_XGBOOST_LOG_LOSS",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE",
+        "PD_COUNTS",
+        "PD_CHAMPION",
+        "PD_FEATURES",
+        "PD_HAZARD",
+        "PD_DISTRESS",
+        "PD_PAIRED",
+        "PD_LIMITS",
+        "PD_SAMPLE",
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+        "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Wang2024",
+      "title": "Discrete-Time Survival Models with Neural Networks for Age–Period–Cohort Analysis of Credit Risk",
+      "authors": [
+        "Hao Wang",
+        "Anthony Bellotti",
+        "Rong Qu",
+        "Ruibin Bai"
+      ],
+      "year": 2024,
+      "venue": "Risks",
+      "volume": "12",
+      "issue": "2",
+      "pages": "31",
+      "doi": "10.3390/risks12020031",
+      "url": "https://www.mdpi.com/2227-9091/12/2/31",
+      "notes": "Publisher/institutional abstract and setup: Freddie default discrete neural hazards/APC, within-quarter random splits, macro environment identification.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.3390/risks12020031",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Wang2024"
+        },
+        {
+          "url": "https://www.mdpi.com/2227-9091/12/2/31",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L3",
+        "L4",
+        "L5"
+      ],
+      "citation_key": "Wang2024",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_AVERAGE_PRECISION",
+        "PD_LOGISTIC_BRIER",
+        "PD_LOGISTIC_LOG_LOSS",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_XGBOOST_ROC_AUC",
+        "PD_XGBOOST_AVERAGE_PRECISION",
+        "PD_XGBOOST_BRIER",
+        "PD_XGBOOST_LOG_LOSS",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE",
+        "PD_COUNTS",
+        "PD_CHAMPION",
+        "PD_FEATURES",
+        "PD_HAZARD",
+        "PD_DISTRESS",
+        "PD_PAIRED",
+        "PD_LIMITS",
+        "PD_SAMPLE"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Bianchi2026",
+      "title": "Macroeconomic Fundamentals and the Shape of Sovereign Credit Risk",
+      "authors": [
+        "Daniele Bianchi",
+        "Teng Jiao"
+      ],
+      "year": 2026,
+      "venue": "Journal of Financial and Quantitative Analysis",
+      "volume": null,
+      "issue": null,
+      "pages": "1-46",
+      "doi": "10.1017/s0022109026103329",
+      "url": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/macroeconomic-fundamentals-and-the-shape-of-sovereign-credit-risk/5BD719BD35E94B78FC540582FD2BE63A",
+      "notes": "Publisher indexed appendix: OECD revision analysis data, real-time releases and daily forward-fill alignment; sovereign CDS, not mortgage event probabilities.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1017/S0022109026103329",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Bianchi2026"
+        },
+        {
+          "url": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/macroeconomic-fundamentals-and-the-shape-of-sovereign-credit-risk/5BD719BD35E94B78FC540582FD2BE63A",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L4",
+        "L5",
+        "L6"
+      ],
+      "citation_key": "Bianchi2026",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS",
+        "PIT_SUPPORT",
+        "PIT_COUNTS",
+        "PIT_APC",
+        "PIT_RATES"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Croushore2001",
+      "title": "A real-time data set for macroeconomists",
+      "authors": [
+        "Dean Croushore",
+        "Tom Stark"
+      ],
+      "year": 2001,
+      "venue": "Journal of Econometrics",
+      "volume": "105",
+      "issue": "1",
+      "pages": "111-130",
+      "doi": "10.1016/s0304-4076(01)00072-0",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0304407601000720",
+      "notes": "Publisher abstract/introduction: vintage snapshots and forecasting implications of revisions. Not credit-specific.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1016/S0304-4076%2801%2900072-0",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Croushore2001"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0304407601000720",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L4",
+        "L6"
+      ],
+      "citation_key": "Croushore2001",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS",
+        "PIT_SUPPORT",
+        "PIT_COUNTS",
+        "PIT_APC",
+        "PIT_RATES"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Stanton1995",
+      "title": "Rational Prepayment and the Valuation of Mortgage-Backed Securities",
+      "authors": [
+        "Richard Stanton"
+      ],
+      "year": 1995,
+      "venue": "Review of Financial Studies",
+      "volume": "8",
+      "issue": "3",
+      "pages": "677-708",
+      "doi": "10.1093/rfs/8.3.677",
+      "url": "https://academic.oup.com/rfs/article-abstract/8/3/677/1598001",
+      "notes": "Publisher abstract and author manuscript introduction: heterogeneous refinancing costs, selection/burnout and economic-environment instability.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1093/rfs/8.3.677",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Stanton1995"
+        },
+        {
+          "url": "https://academic.oup.com/rfs/article-abstract/8/3/677/1598001",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L1",
+        "L9"
+      ],
+      "citation_key": "Stanton1995",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "REFI_DEVELOPMENT_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PRESPEC",
+        "REFI_GAP",
+        "REFI_PAIRED",
+        "REFI_CAL",
+        "REFI_CIF",
+        "REFI_DECISION",
+        "REFI_LIMITS"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Schwartz1989",
+      "title": "Prepayment and the Valuation of Mortgage‐Backed Securities",
+      "authors": [
+        "EDUARDO S. SCHWARTZ",
+        "WALTER N. TOROUS"
+      ],
+      "year": 1989,
+      "venue": "The Journal of Finance",
+      "volume": "44",
+      "issue": "2",
+      "pages": "375-392",
+      "doi": "10.1111/j.1540-6261.1989.tb05062.x",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1989.tb05062.x",
+      "notes": "Publisher abstract: GNMA prepayment probability linked to economic state; author-hosted article provides rate-incentive and burnout context.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1111/j.1540-6261.1989.tb05062.x",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Schwartz1989"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1989.tb05062.x",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L1",
+        "L9"
+      ],
+      "citation_key": "Schwartz1989",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "REFI_DEVELOPMENT_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P1_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P1_PAYOFF_AUC",
+        "REFI_DEVELOPMENT_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_JOINT_LOG_LOSS",
+        "REFI_EXPLORATORY_P2_PAYOFF_BRIER",
+        "REFI_EXPLORATORY_P2_PAYOFF_AUC",
+        "REFI_PRESPEC",
+        "REFI_GAP",
+        "REFI_PAIRED",
+        "REFI_CAL",
+        "REFI_CIF",
+        "REFI_DECISION",
+        "REFI_LIMITS"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Gneiting2007",
+      "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "authors": [
+        "Tilmann Gneiting",
+        "Adrian E Raftery"
+      ],
+      "year": 2007,
+      "venue": "Journal of the American Statistical Association",
+      "volume": "102",
+      "issue": "477",
+      "pages": "359-378",
+      "doi": "10.1198/016214506000001437",
+      "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "notes": "Publisher/author abstract: strict propriety including logarithmic and quadratic scores. No new score claimed.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1198/016214506000001437",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Gneiting2007"
+        },
+        {
+          "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L7"
+      ],
+      "citation_key": "Gneiting2007",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PD_LOGISTIC_ROC_AUC",
+        "PD_LOGISTIC_AVERAGE_PRECISION",
+        "PD_LOGISTIC_BRIER",
+        "PD_LOGISTIC_LOG_LOSS",
+        "PD_LOGISTIC_MEAN_PROBABILITY",
+        "PD_LOGISTIC_OBSERVED_RATE",
+        "PD_XGBOOST_ROC_AUC",
+        "PD_XGBOOST_AVERAGE_PRECISION",
+        "PD_XGBOOST_BRIER",
+        "PD_XGBOOST_LOG_LOSS",
+        "PD_CALIBRATION_INTERCEPT",
+        "PD_CALIBRATION_SLOPE",
+        "PD_COUNTS",
+        "PD_CHAMPION",
+        "PD_FEATURES",
+        "PD_HAZARD",
+        "PD_DISTRESS",
+        "PD_PAIRED",
+        "PD_LIMITS",
+        "PD_SAMPLE",
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Blanche2013",
+      "title": "Estimating and comparing time‐dependent areas under receiver operating characteristic curves for censored event times with competing risks",
+      "authors": [
+        "Paul Blanche",
+        "Jean‐François Dartigues",
+        "Hélène Jacqmin‐Gadda"
+      ],
+      "year": 2013,
+      "venue": "Statistics in Medicine",
+      "volume": "32",
+      "issue": "30",
+      "pages": "5381-5397",
+      "doi": "10.1002/sim.5958",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/sim.5958/full",
+      "notes": "Publisher abstract: IPCW time-dependent AUC with alternative competing-event control definitions.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1002/sim.5958",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Blanche2013"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/sim.5958/full",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L7",
+        "L8"
+      ],
+      "citation_key": "Blanche2013",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Gerds2012",
+      "title": "Absolute risk regression for competing risks: interpretation, link functions, and prediction",
+      "authors": [
+        "Thomas A. Gerds",
+        "Thomas H. Scheike",
+        "Per K. Andersen"
+      ],
+      "year": 2012,
+      "venue": "Statistics in Medicine",
+      "volume": "31",
+      "issue": "29",
+      "pages": "3921-3930",
+      "doi": "10.1002/sim.5459",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547456/",
+      "notes": "Author article deposited in PMC: absolute-risk regression and competing-risk Brier prediction error.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1002/sim.5459",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Gerds2012"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547456/",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L7",
+        "L8"
+      ],
+      "citation_key": "Gerds2012",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Heyard2020",
+      "title": "Validation of discrete time‐to‐event prediction models in the presence of competing risks",
+      "authors": [
+        "Rachel Heyard",
+        "Jean‐François Timsit",
+        "Leonhard Held",
+        "COMBACTE‐MAGNET consortium"
+      ],
+      "year": 2020,
+      "venue": "Biometrical Journal",
+      "volume": "62",
+      "issue": "3",
+      "pages": "643-657",
+      "doi": "10.1002/bimj.201800293",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+      "notes": "Indexed article sections3/5: discrete competing-risk AUC, calibration slope/intercept and Brier error; clinical not mortgage. Online2019 versus issue2020.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1002/bimj.201800293",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Heyard2020"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L7",
+        "L8"
+      ],
+      "citation_key": "Heyard2020",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION",
+        "MACRO_ACTUAL_FEATURES",
+        "MACRO_DEVELOPMENT_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M0_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M0_DEFAULT_AUC",
+        "MACRO_PRIMARY_M0_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M1_DEFAULT_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_PRIMARY_M2_DEFAULT_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+        "MACRO_CAL_M1_PAYOFF",
+        "MACRO_CAL_M2_PAYOFF",
+        "MACRO_UNSEEN",
+        "MACRO_RATE_SENS",
+        "MACRO_DESIGN_COUNTS",
+        "MACRO_LEDGER",
+        "MACRO_LIMITS",
+        "MACRO_CIF_24_SUPPORT",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_OBSERVED_PAYOFF"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Austin2016",
+      "title": "Introduction to the Analysis of Survival Data in the Presence of Competing Risks",
+      "authors": [
+        "Peter C. Austin",
+        "Douglas S. Lee",
+        "Jason P. Fine"
+      ],
+      "year": 2016,
+      "venue": "Circulation",
+      "volume": "133",
+      "issue": "6",
+      "pages": "601-609",
+      "doi": "10.1161/circulationaha.115.017719",
+      "url": "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.115.017719",
+      "notes": "Author paper: CIF versus net Kaplan-Meier risk, competing-event hazard interpretation.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1161/CIRCULATIONAHA.115.017719",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Austin2016"
+        },
+        {
+          "url": "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.115.017719",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L8"
+      ],
+      "citation_key": "Austin2016",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Fine1999",
+      "title": "A Proportional Hazards Model for the Subdistribution of a Competing Risk",
+      "authors": [
+        "Jason P. Fine",
+        "Robert J. Gray"
+      ],
+      "year": 1999,
+      "venue": "Journal of the American Statistical Association",
+      "volume": "94",
+      "issue": "446",
+      "pages": "496-509",
+      "doi": "10.1080/01621459.1999.10474144",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1999.10474144",
+      "notes": "Publisher abstract: subdistribution hazard alternative. Our model does not fit Fine-Gray.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1080/01621459.1999.10474144",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Fine1999"
+        },
+        {
+          "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1999.10474144",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L8"
+      ],
+      "citation_key": "Fine1999",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "VanCalster2019",
+      "title": "Calibration: the Achilles heel of predictive analytics",
+      "authors": [
+        "Ben Van Calster",
+        "David J. McLernon",
+        "Maarten van Smeden",
+        "Laure Wynants",
+        "Ewout W. Steyerberg",
+        "On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative"
+      ],
+      "year": 2019,
+      "venue": "BMC Medicine",
+      "volume": "17",
+      "issue": "1",
+      "pages": "230",
+      "doi": "10.1186/s12916-019-1466-7",
+      "url": "https://link.springer.com/article/10.1186/s12916-019-1466-7",
+      "notes": "Publisher article: calibration assessment/validation and updating; clinical context, not direct mortgage replication.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1186/s12916-019-1466-7",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "VanCalster2019"
+        },
+        {
+          "url": "https://link.springer.com/article/10.1186/s12916-019-1466-7",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L7",
+        "L10"
+      ],
+      "citation_key": "VanCalster2019",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+        "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Gama2014",
+      "title": "A survey on concept drift adaptation",
+      "authors": [
+        "João Gama",
+        "Indrė Žliobaitė",
+        "Albert Bifet",
+        "Mykola Pechenizkiy",
+        "Abdelhamid Bouchachia"
+      ],
+      "year": 2014,
+      "venue": "ACM Computing Surveys",
+      "volume": "46",
+      "issue": "4",
+      "pages": "1-37",
+      "doi": "10.1145/2523813",
+      "url": "https://research.aalto.fi/fi/publications/a-survey-on-concept-drift-adaptation/",
+      "notes": "Institutional author publication verifies survey and terminology; general streaming context.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.1145/2523813",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Gama2014"
+        },
+        {
+          "url": "https://research.aalto.fi/fi/publications/a-survey-on-concept-drift-adaptation/",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L6",
+        "L10"
+      ],
+      "citation_key": "Gama2014",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+        "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Breeden2020",
+      "title": "Current expected credit loss procyclicality: it depends on the model",
+      "authors": [
+        "Joseph L. Breeden",
+        "Maxim Vaskouski"
+      ],
+      "year": 2020,
+      "venue": "The Journal of Credit Risk",
+      "volume": "16",
+      "issue": "1",
+      "pages": null,
+      "doi": "10.21314/jcr.2020.258",
+      "url": "https://www.risk.net/journal-of-credit-risk/7516241/current-expected-credit-loss-procyclicality-it-depends-on-the-model",
+      "notes": "Publisher abstract: GSE ECL, historical macro scenarios and model sensitivity; predecessor historical dated forecasts prevent a broad first-as-of-mortgage claim.",
+      "publication_type": "PEER_REVIEWED",
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://doi.org/10.21314/JCR.2020.258",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Breeden2020"
+        },
+        {
+          "url": "https://www.risk.net/journal-of-credit-risk/7516241/current-expected-credit-loss-procyclicality-it-depends-on-the-model",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "topics": [
+        "L4",
+        "L5",
+        "L10"
+      ],
+      "citation_key": "Breeden2020",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS",
+        "PIT_SUPPORT",
+        "PIT_COUNTS",
+        "PIT_APC",
+        "PIT_RATES"
+      ],
+      "quality": "CORE",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Ovadia2019",
+      "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+      "authors": [
+        "Yaniv Ovadia",
+        "Emily Fertig",
+        "Jie Ren",
+        "Zachary Nado",
+        "D. Sculley",
+        "Sebastian Nowozin",
+        "Joshua Dillon",
+        "Balaji Lakshminarayanan",
+        "Jasper Snoek"
+      ],
+      "year": 2019,
+      "venue": "Advances in Neural Information Processing Systems",
+      "volume": "32",
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/8558cb408c1d76621371888657d2eb1d-Abstract.html",
+      "publication_type": "PEER_REVIEWED",
+      "notes": "Conference proceedings abstract and paper: accuracy and calibration under shift; post-hoc calibration not uniformly robust. Not mortgage evidence.",
+      "topics": [
+        "L6",
+        "L7"
+      ],
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/8558cb408c1d76621371888657d2eb1d-Abstract.html",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Ovadia2019"
+        }
+      ],
+      "citation_key": "Ovadia2019",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "DIAG_SUPPORT",
+        "DIAG_COMPOSITION",
+        "DIAG_SURVIVORS",
+        "DIAG_PAYOFF_VARIANCE",
+        "DIAG_NO_EVENT",
+        "DIAG_ANNUAL",
+        "DIAG_COEFFICIENTS",
+        "DIAG_ORACLE",
+        "DIAG_CIF_COMPONENTS",
+        "DIAG_ASSESSMENT",
+        "DIAG_RANGE_UNEMPLOYMENT_LEVEL",
+        "DIAG_RANGE_MORTGAGE_30Y_LEVEL",
+        "DIAG_RANGE_HPI_YOY",
+        "DIAG_ZERO_UNEMPLOYMENT_LEVEL",
+        "DIAG_ZERO_UNEMPLOYMENT_CHANGE_3M"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Roschewitz2025",
+      "title": "Where are we with calibration under dataset shift in image classification?",
+      "authors": [
+        "Mélanie Roschewitz",
+        "Raghav Mehta",
+        "Fabio de Sousa Ribeiro",
+        "Ben Glocker"
+      ],
+      "year": 2025,
+      "venue": "Transactions on Machine Learning Research",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://openreview.net/pdf/499e52462720d28f164e28bdbb0ce7fdc9d72b7d.pdf",
+      "publication_type": "PEER_REVIEWED",
+      "notes": "Final PDF explicitly labeled Published in TMLR10/2025; author names cross-checked against arXiv2507.07780. Prefer final to anonymous submission/preprint; image domain, not mortgage.",
+      "topics": [
+        "L6",
+        "L7"
+      ],
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://openreview.net/pdf/499e52462720d28f164e28bdbb0ce7fdc9d72b7d.pdf",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Roschewitz2025"
+        }
+      ],
+      "citation_key": "Roschewitz2025",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Aalen1978",
+      "title": "An Empirical Transition Matrix for Non-Homogeneous Markov Chains Based on Censored Observations",
+      "authors": [
+        "Odd O. Aalen",
+        "Søren Johansen"
+      ],
+      "year": 1978,
+      "venue": "Scandinavian Journal of Statistics",
+      "volume": "5",
+      "issue": "3",
+      "pages": "141-150",
+      "doi": null,
+      "url": "https://www.jstor.org/stable/4615704",
+      "publication_type": "PEER_REVIEWED",
+      "notes": "Publisher issue metadata verified; no DOI asserted. Estimator attribution only; conditional-entry implementation applicability remains author review and is supported by modern competing-risk references.",
+      "topics": [
+        "L8"
+      ],
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://www.jstor.org/stable/4615704",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Aalen1978"
+        }
+      ],
+      "citation_key": "Aalen1978",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [
+        "SURV_COUNTS",
+        "SURV_DESIGN",
+        "SURV_60_NAIVE_NET_DEFAULT",
+        "SURV_60_DEFAULT_CIF",
+        "SURV_12_IPCW_BRIER",
+        "SURV_12_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_24_IPCW_BRIER",
+        "SURV_24_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_36_IPCW_BRIER",
+        "SURV_36_CUMULATIVE_DYNAMIC_AUC",
+        "SURV_IBS",
+        "SURV_DURATION"
+      ],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "OPSurv2024",
+      "title": "OPSurv: Orthogonal Polynomials Quadrature Algorithm for Survival Analysis",
+      "authors": [
+        "Lilian W. Bialokozowicz",
+        "Hoang M. Le",
+        "Tristan Sylvain",
+        "Peter A. I. Forsyth",
+        "Vineel Nagisetty",
+        "Greg Mori"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "url": "https://arxiv.org/abs/2402.01955",
+      "publication_type": "PREPRINT",
+      "notes": "arXiv abstract and indexed PDF inspected: single/competing-risk CIF estimator; Freddie delinquency benchmark mentioned in PDF. No peer-reviewed edition verified.",
+      "topics": [
+        "L3",
+        "L8"
+      ],
+      "peer_reviewed": false,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://arxiv.org/abs/2402.01955",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "OPSurv2024"
+        }
+      ],
+      "citation_key": "OPSurv2024",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Graf1999",
+      "title": "Assessment and comparison of prognostic classification schemes for survival data",
+      "authors": [
+        "Erika Graf",
+        "Claudia Schmoor",
+        "Willi Sauerbrei",
+        "Martin Schumacher"
+      ],
+      "year": 1999,
+      "venue": "Statistics in Medicine",
+      "volume": "18",
+      "issue": "17-18",
+      "pages": "2529-2545",
+      "doi": "10.1002/(SICI)1097-0258(19990915/30)18:17/18<2529::AID-SIM274>3.0.CO;2-5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10474158/",
+      "publication_type": "PEER_REVIEWED",
+      "notes": "PubMed abstract and DOI verified, author full names cross-check bibliographic index; survival probability prediction error under censoring. Gerds/Heyard provide competing-risk extension.",
+      "topics": [
+        "L7",
+        "L8"
+      ],
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10474158/",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Graf1999"
+        }
+      ],
+      "citation_key": "Graf1999",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    },
+    {
+      "reference_id": "Brier1950",
+      "title": "Verification of forecasts expressed in terms of probability",
+      "authors": [
+        "Glenn W. Brier"
+      ],
+      "year": 1950,
+      "venue": "Monthly Weather Review",
+      "volume": "78",
+      "issue": "1",
+      "pages": "1-3",
+      "doi": "10.1175/1520-0493(1950)078<0001:VOFEIT>2.0.CO;2",
+      "url": "https://journals.ametsoc.org/view/journals/mwre/78/1/1520-0493_1950_078_0001_vofeit_2_0_co_2.xml",
+      "publication_type": "PEER_REVIEWED",
+      "notes": "Publisher metadata; historical attribution only, no full text acquired. Gneiting supports score propriety.",
+      "topics": [
+        "L7"
+      ],
+      "peer_reviewed": true,
+      "verification_status": "VERIFIED_METADATA_CONTENT_SCOPE_LIMITED",
+      "verification_sources": [
+        {
+          "url": "https://journals.ametsoc.org/view/journals/mwre/78/1/1520-0493_1950_078_0001_vofeit_2_0_co_2.xml",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Brier1950"
+        }
+      ],
+      "citation_key": "Brier1950",
+      "relevance": "Context/method support within inspected content; no transfer of prior metrics to our experiments",
+      "closest_claim_ids": [],
+      "quality": "SUPPORTING",
+      "flags": [],
+      "year_policy": "Issue year when available; online-only year otherwise; dates retained in metadata",
+      "content_access": "SEE_SCOPED_REVIEW_NOTES; full-paper completeness not asserted"
+    }
+  ],
+  "verification_date": "2026-10-07"
+}

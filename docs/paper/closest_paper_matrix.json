@@ -1,0 +1,609 @@
+{
+  "unknown_policy": "UNKNOWN means not verified, not absent",
+  "papers": [
+    {
+      "dataset": "Mortgage portfolio",
+      "mortgage_data": "YES",
+      "Freddie_data": "UNKNOWN",
+      "competing_risk": "YES",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "YES",
+      "main_contribution": "Classical option-based competing hazards",
+      "paper": "Deng1996",
+      "year": 1996,
+      "title": "Mortgage default and low downpayment loans: The costs of public subsidy",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/0166046295021167",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Deng1996"
+        },
+        {
+          "url": "https://www.nber.org/papers/w5184",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher incorrectly exposes affiliation Freddie Mac as author; NBER original author title page establishes the three human authors. DOI/pagination confirmed by publisher. Institutional predecessor abstract: proportional competing hazards, equity and unemployment; published edition preferred."
+    },
+    {
+      "dataset": "Mortgage portfolio",
+      "mortgage_data": "YES",
+      "Freddie_data": "UNKNOWN",
+      "competing_risk": "YES",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "YES",
+      "main_contribution": "Dependent hazards and borrower heterogeneity",
+      "paper": "Deng2000",
+      "year": 2000,
+      "title": "Mortgage Terminations, Heterogeneity and the Exercise of Mortgage Options",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1111/1468-0262.00110",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Deng2000"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00110",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher abstract: dependent competing hazards and unobserved heterogeneity. Publisher corrects Crossref surname Order to Van Order."
+    },
+    {
+      "dataset": "Freddie Mac",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "YES",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "UNKNOWN",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Bayesian proportional competing hazards",
+      "paper": "Bhattacharya2019",
+      "year": 2019,
+      "title": "A Bayesian approach to modeling mortgage default and prepayment",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://www.tcd.ie/research/profiles/?profile=swilson",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Bhattacharya2019"
+        },
+        {
+          "url": "https://arxiv.org/html/1706.07677",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Institutional author record and publisher author page verify published edition; preprint used for specific content. Author preprint sections 4 and 6 read: Freddie data, loan categorization, fixed covariates and predictive assessment; preprint content may differ from final."
+    },
+    {
+      "dataset": "Freddie Mac",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "YES",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "YES",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Bilinear subdistributions and copula; mortgage insurance",
+      "paper": "Bu2026",
+      "year": 2026,
+      "title": "The joint model of default and prepayment for a mortgage loan and its application in mortgage insurance",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "HIGH",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.insmatheco.2026.103227",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Bu2026"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S016766872600017X",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher indexed preview read; full text not obtained. Freddie, bilinear subdistribution hazards, compatible copulas, static and varying house-price/interest covariates confirmed; evaluation and information-time details unknown."
+    },
+    {
+      "dataset": "CoreLogic",
+      "mortgage_data": "YES",
+      "Freddie_data": "NO",
+      "competing_risk": "MULTISTATE",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "YES",
+      "main_contribution": "Nonlinear multistate transition probabilities",
+      "paper": "Sadhwani2021",
+      "year": 2021,
+      "title": "Deep Learning for Mortgage Risk*",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1093/jjfinec/nbaa025",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Sadhwani2021"
+        },
+        {
+          "url": "https://academic.oup.com/jfec/article/19/2/313/6329869",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher sections introduction and implications read: CoreLogic multistate mortgage transition model, local macro variables and out-of-sample evaluation. Do not label this Freddie research."
+    },
+    {
+      "dataset": "LendingClub",
+      "mortgage_data": "NO",
+      "Freddie_data": "NO",
+      "competing_risk": "YES",
+      "default": "YES",
+      "prepayment": "YES",
+      "macro_covariates": "UNKNOWN",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "PROFIT_FORECAST_CONFIRMED; risk split UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "YES",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Competing-event probability and profitability assessment",
+      "paper": "Li2023",
+      "year": 2023,
+      "title": "The profitability of online loans: A competing risks analysis on default and prepayment",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "HIGH",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.ejor.2022.08.013",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Li2023"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0377221722006567",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher preview: LendingClub, competing hazards, discrimination and calibration, out-of-time profitability evaluation. Exact risk-score temporal split requires full text."
+    },
+    {
+      "dataset": "Credit cards",
+      "mortgage_data": "NO",
+      "Freddie_data": "NO",
+      "competing_risk": "UNKNOWN",
+      "default": "YES",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "INDEPENDENT_TEST; chronology UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Macro-conditioned credit survival",
+      "paper": "Bellotti2009",
+      "year": 2009,
+      "title": "Credit scoring with macroeconomic variables using survival analysis",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://www.research.ed.ac.uk/en/publications/credit-scoring-with-macroeconomic-variables-using-survival-analys/",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Bellotti2009"
+        },
+        {
+          "url": "https://www.pure.ed.ac.uk/ws/files/8628798/Credit_scoring_with_macroeconomic_variables_v10_4_1.pdf",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Institutional accepted-manuscript record verifies publication/DOI and peer review. Author manuscript: credit cards, varying interest/unemployment predictors and independent test. No macro revision contract established."
+    },
+    {
+      "dataset": "Fannie/Freddie",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "UNKNOWN",
+      "default": "DELINQUENCY",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Multihorizon lagged behavioral survival",
+      "paper": "Breeden2022",
+      "year": 2022,
+      "title": "Multihorizon discrete time survival models",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://www.research.ed.ac.uk/en/publications/multihorizon-discrete-time-survival-models/",
+          "kind": "PUBLISHER_OR_INSTITUTIONAL_METADATA",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "Breeden2022"
+        },
+        {
+          "url": "https://www.research.ed.ac.uk/files/166849125/CrookJJORS2020MultihorizonDiscrete.pdf",
+          "kind": "AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Institutional record verifies issue2022 versus online2020; accepted manuscript read. Institutional manuscript: combined Fannie/Freddie mortgages, lagged delinquency, multihorizon survival versus transition/vintage models."
+    },
+    {
+      "dataset": "Fannie/Freddie",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "UNKNOWN",
+      "default": "YES",
+      "prepayment": "DATA_PRESENT; joint fit UNKNOWN",
+      "macro_covariates": "ENVIRONMENT_APC",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "YES",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "YES",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "APC inputs stabilize temporal ML forecasts",
+      "paper": "Breeden2023",
+      "year": 2023,
+      "title": "Stabilizing machine learning models with Age-Period-Cohort inputs for scoring and stress testing",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.3389/fams.2023.1195810",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Breeden2023"
+        },
+        {
+          "url": "https://www.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2023.1195810/full",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher sections abstract/data/methods: combined GSE panel and APC stabilization, explicit out-of-time assessment."
+    },
+    {
+      "dataset": "Mortgage; provider not verified",
+      "mortgage_data": "YES",
+      "Freddie_data": "UNKNOWN",
+      "competing_risk": "UNKNOWN",
+      "default": "EARLY_DELINQUENCY",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "UNKNOWN",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "YES",
+      "proper_scores": "BRIER_IN_PREVIEW",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Mortgage ML metrics and out-of-time comparisons",
+      "paper": "Chen2021",
+      "year": 2021,
+      "title": "Predicting mortgage early delinquency with machine learning methods",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.ejor.2020.07.058",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Chen2021"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0377221720306846",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher preview: early delinquency, multiple metrics and training/out-of-sample/out-of-time comparisons; dataset provider unknown from inspected preview."
+    },
+    {
+      "dataset": "Freddie Mac",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "NO_IN_INSPECTED_MODEL",
+      "default": "YES",
+      "prepayment": "FUTURE_EXTENSION",
+      "macro_covariates": "FUTURE_EXTENSION",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "SIMULATED_DRIFT; not our natural holdout",
+      "proper_scores": "BRIER",
+      "calibration": "YES",
+      "CIF": "DEFAULT_SURVIVAL; competing CIF absent",
+      "distribution_shift_analysis": "YES",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Balance-based landmark survival/calibration under drift",
+      "paper": "Peng2026",
+      "year": 2026,
+      "title": "Incorporating data drift to perform survival analysis on credit risk",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "HIGH",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1080/01605682.2026.2715043",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Peng2026"
+        },
+        {
+          "url": "https://www.tandfonline.com/doi/full/10.1080/01605682.2026.2715043",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher and author revision read: Freddie default survival, simulated drift, landmark/balance marker/isotonic calibration. Macro and competing-risk extension future work. Final preferred to arXiv2601.20533."
+    },
+    {
+      "dataset": "Freddie Mac",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "UNKNOWN",
+      "default": "YES",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "YES",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "NO_FOR_DOCUMENTED_WITHIN_QUARTER_RANDOM_TEST",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Neural discrete hazards and APC decomposition",
+      "paper": "Wang2024",
+      "year": 2024,
+      "title": "Discrete-Time Survival Models with Neural Networks for Age–Period–Cohort Analysis of Credit Risk",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.3390/risks12020031",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Wang2024"
+        },
+        {
+          "url": "https://www.mdpi.com/2227-9091/12/2/31",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher/institutional abstract and setup: Freddie default discrete neural hazards/APC, within-quarter random splits, macro environment identification."
+    },
+    {
+      "dataset": "OECD sovereign CDS",
+      "mortgage_data": "NO",
+      "Freddie_data": "NO",
+      "competing_risk": "NO",
+      "default": "CDS_SPREAD; not default event",
+      "prepayment": "NO",
+      "macro_covariates": "YES",
+      "PIT_macro": "YES",
+      "revision_aware": "YES",
+      "temporal_holdout": "YES",
+      "proper_scores": "NOT_EVENT_PROBABILITY_SCORING",
+      "calibration": "UNKNOWN",
+      "CIF": "NO",
+      "distribution_shift_analysis": "YES",
+      "refinancing_incentive": "NO",
+      "main_contribution": "Real-time macro nonlinear sovereign credit prediction",
+      "paper": "Bianchi2026",
+      "year": 2026,
+      "title": "Macroeconomic Fundamentals and the Shape of Sovereign Credit Risk",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1017/S0022109026103329",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Bianchi2026"
+        },
+        {
+          "url": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/macroeconomic-fundamentals-and-the-shape-of-sovereign-credit-risk/5BD719BD35E94B78FC540582FD2BE63A",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher indexed appendix: OECD revision analysis data, real-time releases and daily forward-fill alignment; sovereign CDS, not mortgage event probabilities."
+    },
+    {
+      "dataset": "Fannie/Freddie",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "UNKNOWN",
+      "default": "LOSS_RESERVES",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "YES",
+      "PIT_macro": "HISTORICAL_FORECASTS",
+      "revision_aware": "OBSERVATION_REVISION_CONTRACT_UNKNOWN",
+      "temporal_holdout": "HISTORICAL_FORECAST_CYCLES",
+      "proper_scores": "UNKNOWN",
+      "calibration": "UNKNOWN",
+      "CIF": "UNKNOWN",
+      "distribution_shift_analysis": "MODEL_SCENARIO_SENSITIVITY",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "CECL procyclicality depends on model",
+      "paper": "Breeden2020",
+      "year": 2020,
+      "title": "Current expected credit loss procyclicality: it depends on the model",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "HIGH",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.21314/JCR.2020.258",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Breeden2020"
+        },
+        {
+          "url": "https://www.risk.net/journal-of-credit-risk/7516241/current-expected-credit-loss-procyclicality-it-depends-on-the-model",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Publisher abstract: GSE ECL, historical macro scenarios and model sensitivity; predecessor historical dated forecasts prevent a broad first-as-of-mortgage claim."
+    },
+    {
+      "dataset": "Clinical",
+      "mortgage_data": "NO",
+      "Freddie_data": "NO",
+      "competing_risk": "YES",
+      "default": "NO",
+      "prepayment": "NO",
+      "macro_covariates": "NO",
+      "PIT_macro": "NOT_APPLICABLE",
+      "revision_aware": "NOT_APPLICABLE",
+      "temporal_holdout": "INDEPENDENT_VALIDATION",
+      "proper_scores": "BRIER_ERROR",
+      "calibration": "YES",
+      "CIF": "YES",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "NO",
+      "main_contribution": "Discrete competing-risk validation methodology",
+      "paper": "Heyard2020",
+      "year": 2020,
+      "title": "Validation of discrete time‐to‐event prediction models in the presence of competing risks",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "HIGH",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://doi.org/10.1002/bimj.201800293",
+          "kind": "DOI_CONTENT_NEGOTIATION_CROSSREF",
+          "snapshot": "docs/paper/literature/crossref_metadata.json",
+          "reference_id": "Heyard2020"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+          "kind": "PUBLISHER_OR_AUTHOR_CONTENT"
+        }
+      ],
+      "content_scope": "Indexed article sections3/5: discrete competing-risk AUC, calibration slope/intercept and Brier error; clinical not mortgage. Online2019 versus issue2020."
+    },
+    {
+      "dataset": "Multiple; Freddie benchmark",
+      "mortgage_data": "YES",
+      "Freddie_data": "YES",
+      "competing_risk": "METHOD_SUPPORTS; mortgage task scope limited",
+      "default": "DELINQUENCY",
+      "prepayment": "UNKNOWN",
+      "macro_covariates": "UNKNOWN",
+      "PIT_macro": "UNKNOWN",
+      "revision_aware": "UNKNOWN",
+      "temporal_holdout": "UNKNOWN",
+      "proper_scores": "BRIER_IN_PDF",
+      "calibration": "UNKNOWN",
+      "CIF": "YES",
+      "distribution_shift_analysis": "UNKNOWN",
+      "refinancing_incentive": "UNKNOWN",
+      "main_contribution": "Functional CIF approximation",
+      "paper": "OPSurv2024",
+      "year": 2024,
+      "title": "OPSurv: Orthogonal Polynomials Quadrature Algorithm for Survival Analysis",
+      "overlap_with_us": "Shared domain/method or validation component as recorded; numeric results not comparable",
+      "difference_from_us": "Our frozen natural-calendar joint-probability evaluation; absence of full combination in prior work NOT established",
+      "threat_to_novelty": "COMPONENT_OVERLAP",
+      "verification_status": "VERIFIED_SCOPED; UNKNOWN cells unresolved",
+      "evidence_sources": [
+        {
+          "url": "https://arxiv.org/abs/2402.01955",
+          "kind": "PRIMARY_RECORD",
+          "snapshot": "docs/paper/literature/primary_verification_notes.json",
+          "reference_id": "OPSurv2024"
+        }
+      ],
+      "content_scope": "arXiv abstract and indexed PDF inspected: single/competing-risk CIF estimator; Freddie delinquency benchmark mentioned in PDF. No peer-reviewed edition verified."
+    }
+  ]
+}

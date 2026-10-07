@@ -1,6 +1,6 @@
 """Later portal observations amend, rather than rewrite, frozen Task 13T evidence."""
 
-import hashlib
+import importlib.util
 import json
 from pathlib import Path
 
@@ -39,9 +39,13 @@ def test_two_fresh_resources_and_prior_terms_separated():
 def test_original_task13t_and_task14_public_evidence_immutable():
     m = read("docs/track_b/fannie_session_preservation_manifest.json")
     assert len(m["public_lf_hashes"]) == 542
+    spec = importlib.util.spec_from_file_location(
+        "paper_compatibility", ROOT / "scripts/check_literature.py"
+    )
+    compatibility = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(compatibility)
     for name, expected in m["public_lf_hashes"].items():
-        actual = hashlib.sha256((ROOT / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
-        assert actual == expected, name
+        assert compatibility.preserved_digest(ROOT, name) == expected, name
 
 
 def test_width_does_not_identify_archive_release():

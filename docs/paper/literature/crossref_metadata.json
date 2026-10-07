@@ -1,0 +1,1928 @@
+{
+  "records": [
+    {
+      "reference_id": "Deng1996",
+      "crossref_url": "https://doi.org/10.1016/0166-0462%2895%2902116-7",
+      "retrieved_date": "2026-10-07",
+      "metadata": null,
+      "error": "HTTP Error 429: Too Many Requests",
+      "content_source": "https://www.nber.org/papers/w5184",
+      "content_review": "Institutional predecessor abstract: proportional competing hazards, equity and unemployment; published edition preferred.",
+      "buckets": [
+        "L1",
+        "L2",
+        "L4",
+        "L9"
+      ]
+    },
+    {
+      "reference_id": "Deng2000",
+      "crossref_url": "https://doi.org/10.1111/1468-0262.00110",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "7770f9f489cb0fed94bfd0a9520334fd415de3f3a4b3102bdb28519b3311df1e",
+      "metadata": {
+        "DOI": "10.1111/1468-0262.00110",
+        "title": "Mortgage Terminations, Heterogeneity and the Exercise of Mortgage Options",
+        "author": [
+          {
+            "given": "Yongheng",
+            "family": "Deng",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "John M.",
+            "family": "Quigley",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Robert",
+            "family": "Order",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Econometrica",
+        "volume": "68",
+        "issue": "2",
+        "page": "275-307",
+        "published": {
+          "date-parts": [
+            [
+              2000,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1111/1468-0262.00110"
+      },
+      "content_source": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00110",
+      "content_review": "Publisher abstract: dependent competing hazards and unobserved heterogeneity.",
+      "buckets": [
+        "L1",
+        "L2",
+        "L9"
+      ]
+    },
+    {
+      "reference_id": "Bhattacharya2019",
+      "crossref_url": "https://doi.org/10.1016/j.ejor.2018.10.047",
+      "retrieved_date": "2026-10-07",
+      "metadata": null,
+      "error": "HTTP Error 429: Too Many Requests",
+      "content_source": "https://arxiv.org/html/1706.07677",
+      "content_review": "Author preprint sections 4 and 6 read: Freddie data, loan categorization, fixed covariates and predictive assessment; preprint content may differ from final.",
+      "buckets": [
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "reference_id": "Bu2026",
+      "crossref_url": "https://doi.org/10.1016/j.insmatheco.2026.103227",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "04b0a368f502af2ef276ca1a1f9bab005065ca1539d1dc978210da59abc19706",
+      "metadata": {
+        "DOI": "10.1016/j.insmatheco.2026.103227",
+        "title": "The joint model of default and prepayment for a mortgage loan and its application in mortgage insurance",
+        "author": [
+          {
+            "given": "Lan",
+            "family": "Bu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fang",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jingping",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": "Insurance: Mathematics and Economics",
+        "volume": "127",
+        "page": "103227",
+        "article-number": "103227",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1016/j.insmatheco.2026.103227"
+      },
+      "content_source": "https://www.sciencedirect.com/science/article/abs/pii/S016766872600017X",
+      "content_review": "Publisher indexed preview read; full text not obtained. Freddie, bilinear subdistribution hazards, compatible copulas, static and varying house-price/interest covariates confirmed; evaluation and information-time details unknown.",
+      "buckets": [
+        "L2",
+        "L4",
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "Sadhwani2021",
+      "crossref_url": "https://doi.org/10.1093/jjfinec/nbaa025",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "60437e0eef405c054e9791025f871d9288663b19969fe20342b633b417dcbc60",
+      "metadata": {
+        "DOI": "10.1093/jjfinec/nbaa025",
+        "title": "Deep Learning for Mortgage Risk*",
+        "author": [
+          {
+            "given": "Apaar",
+            "family": "Sadhwani",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Google Brain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kay",
+            "family": "Giesecke",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Stanford University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Justin",
+            "family": "Sirignano",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University of Illinois"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of Financial Econometrics",
+        "volume": "19",
+        "issue": "2",
+        "page": "313-368",
+        "published": {
+          "date-parts": [
+            [
+              2020,
+              7,
+              28
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              3
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              7,
+              28
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1093/jjfinec/nbaa025"
+      },
+      "content_source": "https://academic.oup.com/jfec/article/19/2/313/6329869",
+      "content_review": "Publisher sections introduction and implications read: CoreLogic multistate mortgage transition model, local macro variables and out-of-sample evaluation. Do not label this Freddie research.",
+      "buckets": [
+        "L3",
+        "L4",
+        "L5",
+        "L9"
+      ]
+    },
+    {
+      "reference_id": "Li2023",
+      "crossref_url": "https://doi.org/10.1016/j.ejor.2022.08.013",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "8d5c478e68212a86514ae9c70d3e5d561b359ce2f5dfc30e247aac9d3ffd1fa3",
+      "metadata": {
+        "DOI": "10.1016/j.ejor.2022.08.013",
+        "title": "The profitability of online loans: A competing risks analysis on default and prepayment",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0001-9307-8453",
+            "authenticated-orcid": false,
+            "given": "Zhiyong",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Aimin",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6317-5877",
+            "authenticated-orcid": false,
+            "given": "Anthony",
+            "family": "Bellotti",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0622-1045",
+            "authenticated-orcid": false,
+            "given": "Xiao",
+            "family": "Yao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "European Journal of Operational Research",
+        "volume": "306",
+        "issue": "2",
+        "page": "968-985",
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              4
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              4
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1016/j.ejor.2022.08.013"
+      },
+      "content_source": "https://www.sciencedirect.com/science/article/pii/S0377221722006567",
+      "content_review": "Publisher preview: LendingClub, competing hazards, discrimination and calibration, out-of-time profitability evaluation. Exact risk-score temporal split requires full text.",
+      "buckets": [
+        "L2",
+        "L5",
+        "L7"
+      ]
+    },
+    {
+      "reference_id": "Bellotti2009",
+      "crossref_url": "https://doi.org/10.1057/jors.2008.130",
+      "retrieved_date": "2026-10-07",
+      "metadata": null,
+      "error": "HTTP Error 429: Too Many Requests",
+      "content_source": "https://www.pure.ed.ac.uk/ws/files/8628798/Credit_scoring_with_macroeconomic_variables_v10_4_1.pdf",
+      "content_review": "Author manuscript: credit cards, varying interest/unemployment predictors and independent test. No macro revision contract established.",
+      "buckets": [
+        "L4",
+        "L5"
+      ]
+    },
+    {
+      "reference_id": "Breeden2022",
+      "crossref_url": "https://doi.org/10.1080/01605682.2020.1777907",
+      "retrieved_date": "2026-10-07",
+      "metadata": null,
+      "error": "HTTP Error 429: Too Many Requests",
+      "content_source": "https://www.research.ed.ac.uk/files/166849125/CrookJJORS2020MultihorizonDiscrete.pdf",
+      "content_review": "Institutional manuscript: combined Fannie/Freddie mortgages, lagged delinquency, multihorizon survival versus transition/vintage models.",
+      "buckets": [
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    {
+      "reference_id": "Breeden2023",
+      "crossref_url": "https://doi.org/10.3389/fams.2023.1195810",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "357734b6a22e0f6c60815322ff5d7939b1f07ad7fb327cb21ef24c79861c64b6",
+      "metadata": {
+        "DOI": "10.3389/fams.2023.1195810",
+        "title": "Stabilizing machine learning models with Age-Period-Cohort inputs for scoring and stress testing",
+        "author": [
+          {
+            "given": "Joseph L.",
+            "family": "Breeden",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yevgeniya",
+            "family": "Leonova",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": "Frontiers in Applied Mathematics and Statistics",
+        "volume": "9",
+        "article-number": "1195810",
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              8
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              8
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.3389/fams.2023.1195810"
+      },
+      "content_source": "https://www.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2023.1195810/full",
+      "content_review": "Publisher sections abstract/data/methods: combined GSE panel and APC stabilization, explicit out-of-time assessment.",
+      "buckets": [
+        "L3",
+        "L4",
+        "L5",
+        "L10"
+      ]
+    },
+    {
+      "reference_id": "Chen2021",
+      "crossref_url": "https://doi.org/10.1016/j.ejor.2020.07.058",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "5545ad4d271dbb705cc6a42b08326fd12ba6913bdd6d9d20a1f2b05616b86c5a",
+      "metadata": {
+        "DOI": "10.1016/j.ejor.2020.07.058",
+        "title": "Predicting mortgage early delinquency with machine learning methods",
+        "author": [
+          {
+            "given": "Shunqin",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhengfeng",
+            "family": "Guo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xinlei",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "European Journal of Operational Research",
+        "volume": "290",
+        "issue": "1",
+        "page": "358-372",
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1016/j.ejor.2020.07.058"
+      },
+      "content_source": "https://www.sciencedirect.com/science/article/abs/pii/S0377221720306846",
+      "content_review": "Publisher preview: early delinquency, multiple metrics and training/out-of-sample/out-of-time comparisons; dataset provider unknown from inspected preview.",
+      "buckets": [
+        "L3",
+        "L5",
+        "L7"
+      ]
+    },
+    {
+      "reference_id": "Peng2026",
+      "crossref_url": "https://doi.org/10.1080/01605682.2026.2715043",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "8c4ef3efc2062dcb865dc6aeb44aa54eb65a7331c66f54ae17c20aa63326764f",
+      "metadata": {
+        "DOI": "10.1080/01605682.2026.2715043",
+        "title": "Incorporating data drift to perform survival analysis on credit risk",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0001-4383-8263",
+            "authenticated-orcid": false,
+            "given": "Jianwei",
+            "family": "Peng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Humboldt-Universität zu Berlin",
+                "place": [
+                  "Berlin"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-7685-262X",
+            "authenticated-orcid": false,
+            "given": "Stefan",
+            "family": "Lessmann",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Humboldt-Universität zu Berlin",
+                "place": [
+                  "Berlin"
+                ]
+              },
+              {
+                "name": "Bucharest University of Economic Studies",
+                "place": [
+                  "Romania"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of the Operational Research Society",
+        "page": "1-15",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              17
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              17
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1080/01605682.2026.2715043"
+      },
+      "content_source": "https://www.tandfonline.com/doi/full/10.1080/01605682.2026.2715043",
+      "content_review": "Publisher and author revision read: Freddie default survival, simulated drift, landmark/balance marker/isotonic calibration. Macro and competing-risk extension future work. Final preferred to arXiv2601.20533.",
+      "buckets": [
+        "L3",
+        "L5",
+        "L6",
+        "L7",
+        "L10"
+      ]
+    },
+    {
+      "reference_id": "Wang2024",
+      "crossref_url": "https://doi.org/10.3390/risks12020031",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "318b2a73a233e72dc530ec57689774f3c23973c6dc3cf13df4388fb5f714c06a",
+      "metadata": {
+        "DOI": "10.3390/risks12020031",
+        "title": "Discrete-Time Survival Models with Neural Networks for Age–Period–Cohort Analysis of Credit Risk",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-0543-1024",
+            "authenticated-orcid": false,
+            "given": "Hao",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-6317-5877",
+            "authenticated-orcid": false,
+            "given": "Anthony",
+            "family": "Bellotti",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rong",
+            "family": "Qu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, University of Nottingham, Nottingham NG7 2RD, UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ruibin",
+            "family": "Bai",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Risks",
+        "volume": "12",
+        "issue": "2",
+        "page": "31",
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              3
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              2,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.3390/risks12020031"
+      },
+      "content_source": "https://www.mdpi.com/2227-9091/12/2/31",
+      "content_review": "Publisher/institutional abstract and setup: Freddie default discrete neural hazards/APC, within-quarter random splits, macro environment identification.",
+      "buckets": [
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    {
+      "reference_id": "Bianchi2026",
+      "crossref_url": "https://doi.org/10.1017/S0022109026103329",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "be1b94550fcf18a50d110efaebdd06485331debf5ed6288d3dd09f97343d751d",
+      "metadata": {
+        "DOI": "10.1017/s0022109026103329",
+        "title": "Macroeconomic Fundamentals and the Shape of Sovereign Credit Risk",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-2321-2108",
+            "authenticated-orcid": false,
+            "given": "Daniele",
+            "family": "Bianchi",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/026zzn846",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "School of Economics and Finance, Queen Mary University of London"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Teng",
+            "family": "Jiao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "id": [
+                  {
+                    "id": "https://ror.org/026zzn846",
+                    "id-type": "ROR",
+                    "asserted-by": "publisher"
+                  }
+                ],
+                "name": "School of Economics and Finance, Queen Mary University of London"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of Financial and Quantitative Analysis",
+        "page": "1-46",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              29
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              29
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1017/S0022109026103329"
+      },
+      "content_source": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/macroeconomic-fundamentals-and-the-shape-of-sovereign-credit-risk/5BD719BD35E94B78FC540582FD2BE63A",
+      "content_review": "Publisher indexed appendix: OECD revision analysis data, real-time releases and daily forward-fill alignment; sovereign CDS, not mortgage event probabilities.",
+      "buckets": [
+        "L4",
+        "L5",
+        "L6"
+      ]
+    },
+    {
+      "reference_id": "Croushore2001",
+      "crossref_url": "https://doi.org/10.1016/S0304-4076%2801%2900072-0",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "71a30508319178266e5d6e6fefd9262d2d7b425561096b060dda1f0797e5dd8a",
+      "metadata": {
+        "DOI": "10.1016/s0304-4076(01)00072-0",
+        "title": "A real-time data set for macroeconomists",
+        "author": [
+          {
+            "given": "Dean",
+            "family": "Croushore",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Tom",
+            "family": "Stark",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of Econometrics",
+        "volume": "105",
+        "issue": "1",
+        "page": "111-130",
+        "published": {
+          "date-parts": [
+            [
+              2001,
+              11
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2001,
+              11
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1016/S0304-4076(01)00072-0"
+      },
+      "content_source": "https://www.sciencedirect.com/science/article/pii/S0304407601000720",
+      "content_review": "Publisher abstract/introduction: vintage snapshots and forecasting implications of revisions. Not credit-specific.",
+      "buckets": [
+        "L4",
+        "L6"
+      ]
+    },
+    {
+      "reference_id": "Stanton1995",
+      "crossref_url": "https://doi.org/10.1093/rfs/8.3.677",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "406517778acd1d1c1ccc8b4f36997dc1296a985a52d33ff7cdb8b7b77e42104e",
+      "metadata": {
+        "DOI": "10.1093/rfs/8.3.677",
+        "title": "Rational Prepayment and the Valuation of Mortgage-Backed Securities",
+        "author": [
+          {
+            "given": "Richard",
+            "family": "Stanton",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Review of Financial Studies",
+        "volume": "8",
+        "issue": "3",
+        "page": "677-708",
+        "published": {
+          "date-parts": [
+            [
+              1995,
+              7
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1995,
+              7
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              1995,
+              7,
+              1
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1093/rfs/8.3.677"
+      },
+      "content_source": "https://academic.oup.com/rfs/article-abstract/8/3/677/1598001",
+      "content_review": "Publisher abstract and author manuscript introduction: heterogeneous refinancing costs, selection/burnout and economic-environment instability.",
+      "buckets": [
+        "L1",
+        "L9"
+      ]
+    },
+    {
+      "reference_id": "Schwartz1989",
+      "crossref_url": "https://doi.org/10.1111/j.1540-6261.1989.tb05062.x",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "dd216ef2c4efbe86fbf44411c66181955c8c0f4d3470eca01b4f4ef14bac8b4c",
+      "metadata": {
+        "DOI": "10.1111/j.1540-6261.1989.tb05062.x",
+        "title": "Prepayment and the Valuation of Mortgage‐Backed Securities",
+        "author": [
+          {
+            "given": "EDUARDO S.",
+            "family": "SCHWARTZ",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "WALTER N.",
+            "family": "TOROUS",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "The Journal of Finance",
+        "volume": "44",
+        "issue": "2",
+        "page": "375-392",
+        "published": {
+          "date-parts": [
+            [
+              1989,
+              6
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1989,
+              6
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              4,
+              30
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1111/j.1540-6261.1989.tb05062.x"
+      },
+      "content_source": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1989.tb05062.x",
+      "content_review": "Publisher abstract: GNMA prepayment probability linked to economic state; author-hosted article provides rate-incentive and burnout context.",
+      "buckets": [
+        "L1",
+        "L9"
+      ]
+    },
+    {
+      "reference_id": "Gneiting2007",
+      "crossref_url": "https://doi.org/10.1198/016214506000001437",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "1403aa9241fa95628fc9d9ac25dca573202c2a7c512d1dbe6238b4eac110156f",
+      "metadata": {
+        "DOI": "10.1198/016214506000001437",
+        "title": "Strictly Proper Scoring Rules, Prediction, and Estimation",
+        "author": [
+          {
+            "given": "Tilmann",
+            "family": "Gneiting",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Adrian E",
+            "family": "Raftery",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of the American Statistical Association",
+        "volume": "102",
+        "issue": "477",
+        "page": "359-378",
+        "published": {
+          "date-parts": [
+            [
+              2007,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2007,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1198/016214506000001437"
+      },
+      "content_source": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "content_review": "Publisher/author abstract: strict propriety including logarithmic and quadratic scores. No new score claimed.",
+      "buckets": [
+        "L7"
+      ]
+    },
+    {
+      "reference_id": "Blanche2013",
+      "crossref_url": "https://doi.org/10.1002/sim.5958",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "2710bb154f01a00377a9375fda1a87736891a9a939a7257e5a1663b23df22748",
+      "metadata": {
+        "DOI": "10.1002/sim.5958",
+        "title": "Estimating and comparing time‐dependent areas under receiver operating characteristic curves for censored event times with competing risks",
+        "author": [
+          {
+            "given": "Paul",
+            "family": "Blanche",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University Bordeaux, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              },
+              {
+                "name": "INSERM, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jean‐François",
+            "family": "Dartigues",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University Bordeaux, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              },
+              {
+                "name": "INSERM, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hélène",
+            "family": "Jacqmin‐Gadda",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "University Bordeaux, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              },
+              {
+                "name": "INSERM, ISPED, Centre INSERM U897‐Epidémiologie‐Biostatistique F‐33000 Bordeaux France"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Statistics in Medicine",
+        "volume": "32",
+        "issue": "30",
+        "page": "5381-5397",
+        "published": {
+          "date-parts": [
+            [
+              2013,
+              9,
+              12
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              12,
+              30
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              9,
+              12
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1002/sim.5958"
+      },
+      "content_source": "https://onlinelibrary.wiley.com/doi/10.1002/sim.5958/full",
+      "content_review": "Publisher abstract: IPCW time-dependent AUC with alternative competing-event control definitions.",
+      "buckets": [
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "Gerds2012",
+      "crossref_url": "https://doi.org/10.1002/sim.5459",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "620c66c974b9f9739e1f98900fe0d9661759449ebc4bf8b0c3d05ce681460d3c",
+      "metadata": {
+        "DOI": "10.1002/sim.5459",
+        "title": "Absolute risk regression for competing risks: interpretation, link functions, and prediction",
+        "author": [
+          {
+            "given": "Thomas A.",
+            "family": "Gerds",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics University of Copenhagen  Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Thomas H.",
+            "family": "Scheike",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics University of Copenhagen  Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Per K.",
+            "family": "Andersen",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics University of Copenhagen  Denmark"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Statistics in Medicine",
+        "volume": "31",
+        "issue": "29",
+        "page": "3921-3930",
+        "published": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              2
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              12,
+              20
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              8,
+              2
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1002/sim.5459"
+      },
+      "content_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547456/",
+      "content_review": "Author article deposited in PMC: absolute-risk regression and competing-risk Brier prediction error.",
+      "buckets": [
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "Heyard2020",
+      "crossref_url": "https://doi.org/10.1002/bimj.201800293",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "efb6afe431dd9e47917bc828b788a39fe77bd812fbfd70f15badae018fbe86a9",
+      "metadata": {
+        "DOI": "10.1002/bimj.201800293",
+        "title": "Validation of discrete time‐to‐event prediction models in the presence of competing risks",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7531-4333",
+            "authenticated-orcid": false,
+            "given": "Rachel",
+            "family": "Heyard",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics at the Epidemiology Biostatistics and Prevention Institute University of Zurich Hirschengraben Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jean‐François",
+            "family": "Timsit",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "UMR 1137 IAME University Paris‐Diderot, Inserm Paris France"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8686-5325",
+            "authenticated-orcid": false,
+            "given": "Leonhard",
+            "family": "Held",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Department of Biostatistics at the Epidemiology Biostatistics and Prevention Institute University of Zurich Hirschengraben Switzerland"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "name": "COMBACTE‐MAGNET consortium",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": "Biometrical Journal",
+        "volume": "62",
+        "issue": "3",
+        "page": "643-657",
+        "published": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              31
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              5
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              7,
+              31
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1002/bimj.201800293"
+      },
+      "content_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+      "content_review": "Indexed article sections3/5: discrete competing-risk AUC, calibration slope/intercept and Brier error; clinical not mortgage. Online2019 versus issue2020.",
+      "buckets": [
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "Austin2016",
+      "crossref_url": "https://doi.org/10.1161/CIRCULATIONAHA.115.017719",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "abc4fb4d5d7b273e8343961b6a8ea46efd5a11c3847c4d503fd61b576b81e571",
+      "metadata": {
+        "DOI": "10.1161/circulationaha.115.017719",
+        "title": "Introduction to the Analysis of Survival Data in the Presence of Competing Risks",
+        "author": [
+          {
+            "given": "Peter C.",
+            "family": "Austin",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "From Institute for Clinical Evaluative Sciences, Toronto, Ontario, Canada (P.C.A., D.S.L.); Institute of Health Management, Policy and Evaluation, University of Toronto, Ontario, Canada (P.C.A., D.S.L.); Schulich Heart Research Program, Sunnybrook Research Institute, Toronto, Ontario, Canada (P.C.A.); Department of Medicine, University of Toronto, Ontario, Canada (D.S.L.); Peter Munk Cardiac Center, Department of Medicine, and the Joint Department of Medical Imaging, University Health Network,..."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Douglas S.",
+            "family": "Lee",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "From Institute for Clinical Evaluative Sciences, Toronto, Ontario, Canada (P.C.A., D.S.L.); Institute of Health Management, Policy and Evaluation, University of Toronto, Ontario, Canada (P.C.A., D.S.L.); Schulich Heart Research Program, Sunnybrook Research Institute, Toronto, Ontario, Canada (P.C.A.); Department of Medicine, University of Toronto, Ontario, Canada (D.S.L.); Peter Munk Cardiac Center, Department of Medicine, and the Joint Department of Medical Imaging, University Health Network,..."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jason P.",
+            "family": "Fine",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "From Institute for Clinical Evaluative Sciences, Toronto, Ontario, Canada (P.C.A., D.S.L.); Institute of Health Management, Policy and Evaluation, University of Toronto, Ontario, Canada (P.C.A., D.S.L.); Schulich Heart Research Program, Sunnybrook Research Institute, Toronto, Ontario, Canada (P.C.A.); Department of Medicine, University of Toronto, Ontario, Canada (D.S.L.); Peter Munk Cardiac Center, Department of Medicine, and the Joint Department of Medical Imaging, University Health Network,..."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Circulation",
+        "volume": "133",
+        "issue": "6",
+        "page": "601-609",
+        "published": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              9
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              9
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1161/CIRCULATIONAHA.115.017719"
+      },
+      "content_source": "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.115.017719",
+      "content_review": "Author paper: CIF versus net Kaplan-Meier risk, competing-event hazard interpretation.",
+      "buckets": [
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "Fine1999",
+      "crossref_url": "https://doi.org/10.1080/01621459.1999.10474144",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "6c17212d8de760f5f2402aef07ab37ed7bffd08d00272346f05f48abc1501694",
+      "metadata": {
+        "DOI": "10.1080/01621459.1999.10474144",
+        "title": "A Proportional Hazards Model for the Subdistribution of a Competing Risk",
+        "author": [
+          {
+            "given": "Jason P.",
+            "family": "Fine",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Wisconsin",
+                "place": [
+                  "USA"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Robert J.",
+            "family": "Gray",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Harvard University",
+                "place": [
+                  "USA"
+                ]
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "Journal of the American Statistical Association",
+        "volume": "94",
+        "issue": "446",
+        "page": "496-509",
+        "published": {
+          "date-parts": [
+            [
+              1999,
+              6
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              6
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              2,
+              17
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1080/01621459.1999.10474144"
+      },
+      "content_source": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1999.10474144",
+      "content_review": "Publisher abstract: subdistribution hazard alternative. Our model does not fit Fine-Gray.",
+      "buckets": [
+        "L8"
+      ]
+    },
+    {
+      "reference_id": "VanCalster2019",
+      "crossref_url": "https://doi.org/10.1186/s12916-019-1466-7",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "304d702b6e050d3870e1bfb78bf5ed3c5d117c2a3f3e7a98d6286bf674d36865",
+      "metadata": {
+        "DOI": "10.1186/s12916-019-1466-7",
+        "title": "Calibration: the Achilles heel of predictive analytics",
+        "author": [
+          {
+            "name": "On behalf of Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1613-7450",
+            "authenticated-orcid": false,
+            "given": "Ben",
+            "family": "Van Calster",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8905-2429",
+            "authenticated-orcid": false,
+            "given": "David J.",
+            "family": "McLernon",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-5529-1541",
+            "authenticated-orcid": false,
+            "given": "Maarten",
+            "family": "van Smeden",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Laure",
+            "family": "Wynants",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7787-0122",
+            "authenticated-orcid": false,
+            "given": "Ewout W.",
+            "family": "Steyerberg",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "BMC Medicine",
+        "volume": "17",
+        "issue": "1",
+        "article-number": "230",
+        "published": {
+          "date-parts": [
+            [
+              2019,
+              12
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              12
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              12,
+              16
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1186/s12916-019-1466-7"
+      },
+      "content_source": "https://link.springer.com/article/10.1186/s12916-019-1466-7",
+      "content_review": "Publisher article: calibration assessment/validation and updating; clinical context, not direct mortgage replication.",
+      "buckets": [
+        "L7",
+        "L10"
+      ]
+    },
+    {
+      "reference_id": "Gama2014",
+      "crossref_url": "https://doi.org/10.1145/2523813",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "8ee7141761dd257f4212c6c842c9710ced4e73727bc6c7b376ae20a7fa20c681",
+      "metadata": {
+        "DOI": "10.1145/2523813",
+        "title": "A survey on concept drift adaptation",
+        "author": [
+          {
+            "given": "João",
+            "family": "Gama",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "University of Porto, Portugal"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Indrė",
+            "family": "Žliobaitė",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Aalto University and HIIT, Finland"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Albert",
+            "family": "Bifet",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Yahoo! Research Barcelona, Spain"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Mykola",
+            "family": "Pechenizkiy",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Eindhoven University of Technology, the Netherlands"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Abdelhamid",
+            "family": "Bouchachia",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Bournemouth University, UK"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "container-title": "ACM Computing Surveys",
+        "volume": "46",
+        "issue": "4",
+        "page": "1-37",
+        "published": {
+          "date-parts": [
+            [
+              2014,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              4
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2014,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.1145/2523813"
+      },
+      "content_source": "https://research.aalto.fi/fi/publications/a-survey-on-concept-drift-adaptation/",
+      "content_review": "Institutional author publication verifies survey and terminology; general streaming context.",
+      "buckets": [
+        "L6",
+        "L10"
+      ]
+    },
+    {
+      "reference_id": "Breeden2020",
+      "crossref_url": "https://doi.org/10.21314/JCR.2020.258",
+      "retrieved_date": "2026-10-07",
+      "response_sha256": "91e7803b4e04167accf555747209cf6acbe126c7798083fe155b7265af65680d",
+      "metadata": {
+        "DOI": "10.21314/jcr.2020.258",
+        "title": "Current expected credit loss procyclicality: it depends on the model",
+        "author": [
+          {
+            "given": "Joseph L.",
+            "family": "Breeden",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Maxim",
+            "family": "Vaskouski",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "container-title": "The Journal of Credit Risk",
+        "volume": "16",
+        "issue": "1",
+        "published": {
+          "date-parts": [
+            [
+              2020,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              3
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2020,
+              3
+            ]
+          ]
+        },
+        "type": "journal-article",
+        "URL": "http://dx.doi.org/10.21314/JCR.2020.258"
+      },
+      "content_source": "https://www.risk.net/journal-of-credit-risk/7516241/current-expected-credit-loss-procyclicality-it-depends-on-the-model",
+      "content_review": "Publisher abstract: GSE ECL, historical macro scenarios and model sensitivity; predecessor historical dated forecasts prevent a broad first-as-of-mortgage claim.",
+      "buckets": [
+        "L4",
+        "L5",
+        "L10"
+      ]
+    }
+  ]
+}

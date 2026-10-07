@@ -1,0 +1,83 @@
+{
+  "decision": "DISTINCTIVE COMBINATION PLAUSIBLE WITH MATERIAL LIMITATIONS",
+  "dimensions": [
+    {
+      "id": "N1",
+      "dimension": "competing-risk formulation",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N2",
+      "dimension": "Freddie dataset use",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N3",
+      "dimension": "macro predictors",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N4",
+      "dimension": "PIT macro construction",
+      "classification": "INCREMENTAL",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N5",
+      "dimension": "temporal evaluation",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N6",
+      "dimension": "proper-score evaluation",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N7",
+      "dimension": "calibration evaluation",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N8",
+      "dimension": "ranking/probability divergence",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N9",
+      "dimension": "CIF propagation under temporal shift",
+      "classification": "POTENTIALLY_DISTINCTIVE",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N10",
+      "dimension": "diagnostic support analysis",
+      "classification": "INCREMENTAL",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N11",
+      "dimension": "refinancing-gap feature",
+      "classification": "ESTABLISHED",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    },
+    {
+      "id": "N12",
+      "dimension": "governance/reproducibility",
+      "classification": "INCREMENTAL",
+      "qualification": "Individual component not an invention; N9 refers to empirical pattern, not mathematical propagation"
+    }
+  ],
+  "combination": {
+    "classification": "DISTINCTIVE_COMBINATION",
+    "priority_established": false,
+    "qualification": "Plausible within scoped search; Bu full-text overlap and mortgage PIT prior unresolved"
+  },
+  "no_first_claim": true
+}

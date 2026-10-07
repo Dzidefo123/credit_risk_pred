@@ -1,0 +1,179 @@
+{
+  "entries": [
+    [
+      "Deng1996",
+      "10.1016/0166-0462(95)02116-7",
+      "L1 L2 L4 L9",
+      "https://www.nber.org/papers/w5184",
+      "Institutional predecessor abstract: proportional competing hazards, equity and unemployment; published edition preferred."
+    ],
+    [
+      "Deng2000",
+      "10.1111/1468-0262.00110",
+      "L1 L2 L9",
+      "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00110",
+      "Publisher abstract: dependent competing hazards and unobserved heterogeneity."
+    ],
+    [
+      "Bhattacharya2019",
+      "10.1016/j.ejor.2018.10.047",
+      "L2 L3",
+      "https://arxiv.org/html/1706.07677",
+      "Author preprint sections 4 and 6 read: Freddie data, loan categorization, fixed covariates and predictive assessment; preprint content may differ from final."
+    ],
+    [
+      "Bu2026",
+      "10.1016/j.insmatheco.2026.103227",
+      "L2 L4 L8",
+      "https://www.sciencedirect.com/science/article/abs/pii/S016766872600017X",
+      "Publisher indexed preview read; full text not obtained. Freddie, bilinear subdistribution hazards, compatible copulas, static and varying house-price/interest covariates confirmed; evaluation and information-time details unknown."
+    ],
+    [
+      "Sadhwani2021",
+      "10.1093/jjfinec/nbaa025",
+      "L3 L4 L5 L9",
+      "https://academic.oup.com/jfec/article/19/2/313/6329869",
+      "Publisher sections introduction and implications read: CoreLogic multistate mortgage transition model, local macro variables and out-of-sample evaluation. Do not label this Freddie research."
+    ],
+    [
+      "Li2023",
+      "10.1016/j.ejor.2022.08.013",
+      "L2 L5 L7",
+      "https://www.sciencedirect.com/science/article/pii/S0377221722006567",
+      "Publisher preview: LendingClub, competing hazards, discrimination and calibration, out-of-time profitability evaluation. Exact risk-score temporal split requires full text."
+    ],
+    [
+      "Bellotti2009",
+      "10.1057/jors.2008.130",
+      "L4 L5",
+      "https://www.pure.ed.ac.uk/ws/files/8628798/Credit_scoring_with_macroeconomic_variables_v10_4_1.pdf",
+      "Author manuscript: credit cards, varying interest/unemployment predictors and independent test. No macro revision contract established."
+    ],
+    [
+      "Breeden2022",
+      "10.1080/01605682.2020.1777907",
+      "L3 L4 L5",
+      "https://www.research.ed.ac.uk/files/166849125/CrookJJORS2020MultihorizonDiscrete.pdf",
+      "Institutional manuscript: combined Fannie/Freddie mortgages, lagged delinquency, multihorizon survival versus transition/vintage models."
+    ],
+    [
+      "Breeden2023",
+      "10.3389/fams.2023.1195810",
+      "L3 L4 L5 L10",
+      "https://www.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2023.1195810/full",
+      "Publisher sections abstract/data/methods: combined GSE panel and APC stabilization, explicit out-of-time assessment."
+    ],
+    [
+      "Chen2021",
+      "10.1016/j.ejor.2020.07.058",
+      "L3 L5 L7",
+      "https://www.sciencedirect.com/science/article/abs/pii/S0377221720306846",
+      "Publisher preview: early delinquency, multiple metrics and training/out-of-sample/out-of-time comparisons; dataset provider unknown from inspected preview."
+    ],
+    [
+      "Peng2026",
+      "10.1080/01605682.2026.2715043",
+      "L3 L5 L6 L7 L10",
+      "https://www.tandfonline.com/doi/full/10.1080/01605682.2026.2715043",
+      "Publisher and author revision read: Freddie default survival, simulated drift, landmark/balance marker/isotonic calibration. Macro and competing-risk extension future work. Final preferred to arXiv2601.20533."
+    ],
+    [
+      "Wang2024",
+      "10.3390/risks12020031",
+      "L3 L4 L5",
+      "https://www.mdpi.com/2227-9091/12/2/31",
+      "Publisher/institutional abstract and setup: Freddie default discrete neural hazards/APC, within-quarter random splits, macro environment identification."
+    ],
+    [
+      "Bianchi2026",
+      "10.1017/S0022109026103329",
+      "L4 L5 L6",
+      "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/macroeconomic-fundamentals-and-the-shape-of-sovereign-credit-risk/5BD719BD35E94B78FC540582FD2BE63A",
+      "Publisher indexed appendix: OECD revision analysis data, real-time releases and daily forward-fill alignment; sovereign CDS, not mortgage event probabilities."
+    ],
+    [
+      "Croushore2001",
+      "10.1016/S0304-4076(01)00072-0",
+      "L4 L6",
+      "https://www.sciencedirect.com/science/article/pii/S0304407601000720",
+      "Publisher abstract/introduction: vintage snapshots and forecasting implications of revisions. Not credit-specific."
+    ],
+    [
+      "Stanton1995",
+      "10.1093/rfs/8.3.677",
+      "L1 L9",
+      "https://academic.oup.com/rfs/article-abstract/8/3/677/1598001",
+      "Publisher abstract and author manuscript introduction: heterogeneous refinancing costs, selection/burnout and economic-environment instability."
+    ],
+    [
+      "Schwartz1989",
+      "10.1111/j.1540-6261.1989.tb05062.x",
+      "L1 L9",
+      "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1989.tb05062.x",
+      "Publisher abstract: GNMA prepayment probability linked to economic state; author-hosted article provides rate-incentive and burnout context."
+    ],
+    [
+      "Gneiting2007",
+      "10.1198/016214506000001437",
+      "L7",
+      "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "Publisher/author abstract: strict propriety including logarithmic and quadratic scores. No new score claimed."
+    ],
+    [
+      "Blanche2013",
+      "10.1002/sim.5958",
+      "L7 L8",
+      "https://onlinelibrary.wiley.com/doi/10.1002/sim.5958/full",
+      "Publisher abstract: IPCW time-dependent AUC with alternative competing-event control definitions."
+    ],
+    [
+      "Gerds2012",
+      "10.1002/sim.5459",
+      "L7 L8",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547456/",
+      "Author article deposited in PMC: absolute-risk regression and competing-risk Brier prediction error."
+    ],
+    [
+      "Heyard2020",
+      "10.1002/bimj.201800293",
+      "L7 L8",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+      "Indexed article sections3/5: discrete competing-risk AUC, calibration slope/intercept and Brier error; clinical not mortgage. Online2019 versus issue2020."
+    ],
+    [
+      "Austin2016",
+      "10.1161/CIRCULATIONAHA.115.017719",
+      "L8",
+      "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.115.017719",
+      "Author paper: CIF versus net Kaplan-Meier risk, competing-event hazard interpretation."
+    ],
+    [
+      "Fine1999",
+      "10.1080/01621459.1999.10474144",
+      "L8",
+      "https://www.tandfonline.com/doi/abs/10.1080/01621459.1999.10474144",
+      "Publisher abstract: subdistribution hazard alternative. Our model does not fit Fine-Gray."
+    ],
+    [
+      "VanCalster2019",
+      "10.1186/s12916-019-1466-7",
+      "L7 L10",
+      "https://link.springer.com/article/10.1186/s12916-019-1466-7",
+      "Publisher article: calibration assessment/validation and updating; clinical context, not direct mortgage replication."
+    ],
+    [
+      "Gama2014",
+      "10.1145/2523813",
+      "L6 L10",
+      "https://research.aalto.fi/fi/publications/a-survey-on-concept-drift-adaptation/",
+      "Institutional author publication verifies survey and terminology; general streaming context."
+    ],
+    [
+      "Breeden2020",
+      "10.21314/JCR.2020.258",
+      "L4 L5 L10",
+      "https://www.risk.net/journal-of-credit-risk/7516241/current-expected-credit-loss-procyclicality-it-depends-on-the-model",
+      "Publisher abstract: GSE ECL, historical macro scenarios and model sensitivity; predecessor historical dated forecasts prevent a broad first-as-of-mortgage claim."
+    ]
+  ]
+}

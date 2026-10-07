@@ -12,7 +12,26 @@ source = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(source)
 digest = source.digest
 verify_archive = source.verify_archive
-verify_preservation = source.verify_preservation
+
+
+def preserved_public_digest(path):
+    # Task 16V preserves original scientific hashes and pins approved checker changes.
+    spec = importlib.util.spec_from_file_location(
+        "paper_compatibility", ROOT / "scripts/check_literature.py"
+    )
+    compatibility = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(compatibility)
+    return compatibility.preserved_digest(ROOT, path.relative_to(ROOT).as_posix())
+
+
+def verify_preservation(root, manifest):
+    adjusted = dict(manifest)
+    adjusted["public_lf_hashes"] = dict(manifest["public_lf_hashes"])
+    for name, expected in manifest["public_lf_hashes"].items():
+        if preserved_public_digest(root / name) != expected:
+            raise ValueError("Frozen public evidence changed: " + name)
+        adjusted["public_lf_hashes"][name] = digest(root / name, normalize=True)
+    return source.verify_preservation(root, adjusted)
 
 
 def verify_documents(source_dir, registry):

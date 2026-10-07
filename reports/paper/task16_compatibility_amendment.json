@@ -1,0 +1,34 @@
+{
+  "task": "Task 16V",
+  "authorization": "User authorized engineering compatibility amendment; scientific freeze remains immutable.",
+  "base_commit": "45990488607bcc7f0cbdce60fd72a4b12541dcd3",
+  "original_failure": "Task 14 rejected required docs/paper/literature/ directory as Unreviewed paper file type.",
+  "scope": "Seven specifically named literature JSON files; public-text checks retained; all scientific hashes unchanged.",
+  "approved_code_hashes": {
+    "scripts/check_paper_evidence.py": {
+      "original_sha256_lf": "9c1c4bb7e6b0aef86500c07e8c50ad36f9ac9c47c56a0920fdadabbdf7c25607",
+      "amended_sha256_lf": "451443f7e104e25a0af6782924b81c52de356cc1ae66cef2a57351795134df72"
+    },
+    "scripts/check_manuscript.py": {
+      "original_sha256_lf": "7f0492511ab8bbdf6cca476c9f6abd363e5532fbd9f6ee69b429dba7bcd8e4f1",
+      "amended_sha256_lf": "3186d2204bb9303a81a11cfbf7a2465ac2b6b8fc7ac60125fd6e3a51a121ccbf"
+    },
+    "tests/test_manuscript.py": {
+      "original_sha256_lf": "0494aff8402cc324c22a3ccbcea80c3ea1e00e1f63412bea99ecd59f7a889d25",
+      "amended_sha256_lf": "c1a2e071229a409e0b16aac63f99684802f2b9c273c6c45ecf5bcc924e3b41f1"
+    },
+    "scripts/fannie_provider_provenance.py": {
+      "original_sha256_lf": "ab5b1c399a6888fcc2a3baebdc40f6ee07b8e63eb9121ea1a2c41788f1fea1e2",
+      "amended_sha256_lf": "c0821b6ab8f5e1c2f5ed8afbb8591448e069ee81fed59c2cc3e56e2e3be74790"
+    },
+    "tests/test_fannie_provider_provenance.py": {
+      "original_sha256_lf": "53b20c3abe29d17f6b839052abce4e56229e2f7cbc27b7c937acf2273bb20398",
+      "amended_sha256_lf": "8641b5e0c4d5fb4daa6dd2f2877f2359a4c56bb1a676c12dbd7ff13620a4c85d"
+    },
+    "tests/test_fannie_session_amendment.py": {
+      "original_sha256_lf": "f2a96ae4827b5d4a228840740760e0d5e6589aadb98313208f873e2a708e4966",
+      "amended_sha256_lf": "84e32d4c45a6cff5e556dab9c8b61be60042e1120c69e2dd9d10c662eab69a03"
+    }
+  },
+  "provenance_compatibility": "Task 13T adapter validates original public hashes with exact approved code exceptions; historical manifest and scientific assessment unchanged."
+}

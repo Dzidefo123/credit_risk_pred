@@ -1,0 +1,229 @@
+{
+  "gaps": [
+    {
+      "gap_id": "CG01",
+      "topic": "mortgage default prediction and longitudinal mortgage validation",
+      "status": "RESOLVED_CONTEXTUAL_SUPPORT",
+      "reference_ids": [
+        "Chen2021",
+        "Peng2026",
+        "Sadhwani2021"
+      ],
+      "citation_keys": [
+        "Chen2021",
+        "Peng2026",
+        "Sadhwani2021"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "No certification of implementation or transfer of prior empirical results",
+      "source_support": [
+        {
+          "reference_id": "Chen2021",
+          "citation_key": "Chen2021",
+          "supports": "Mortgage prediction comparison with probability metrics and temporal assessment."
+        },
+        {
+          "reference_id": "Peng2026",
+          "citation_key": "Peng2026",
+          "supports": "Freddie survival prediction and calibration under simulated drift."
+        },
+        {
+          "reference_id": "Sadhwani2021",
+          "citation_key": "Sadhwani2021",
+          "supports": "Large-scale mortgage transition prediction on CoreLogic, not Freddie."
+        }
+      ]
+    },
+    {
+      "gap_id": "CG02",
+      "topic": "mortgage payoff, prepayment and refinancing incentive modeling",
+      "status": "RESOLVED_CONTEXTUAL_SUPPORT",
+      "reference_ids": [
+        "Stanton1995",
+        "Schwartz1989",
+        "Deng2000"
+      ],
+      "citation_keys": [
+        "Stanton1995",
+        "Schwartz1989",
+        "Deng2000"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "No certification of implementation or transfer of prior empirical results",
+      "source_support": [
+        {
+          "reference_id": "Stanton1995",
+          "citation_key": "Stanton1995",
+          "supports": "Refinancing costs and heterogeneous exercise explain rate incentives and burnout."
+        },
+        {
+          "reference_id": "Schwartz1989",
+          "citation_key": "Schwartz1989",
+          "supports": "Mortgage prepayment valuation with economic conditioning."
+        },
+        {
+          "reference_id": "Deng2000",
+          "citation_key": "Deng2000",
+          "supports": "Default and prepayment exercise as dependent mortgage options."
+        }
+      ]
+    },
+    {
+      "gap_id": "CG03",
+      "topic": "Aalen–Johansen, competing-risk estimands and conditional entry",
+      "status": "PARTIALLY_RESOLVED",
+      "reference_ids": [
+        "Aalen1978",
+        "Austin2016",
+        "Heyard2020"
+      ],
+      "citation_keys": [
+        "Aalen1978",
+        "Austin2016",
+        "Heyard2020"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "Exact conditional-entry/IPCW implementation compatibility requires author review",
+      "source_support": [
+        {
+          "reference_id": "Aalen1978",
+          "citation_key": "Aalen1978",
+          "supports": "Foundational estimator attribution; full implementation equivalence not established."
+        },
+        {
+          "reference_id": "Austin2016",
+          "citation_key": "Austin2016",
+          "supports": "Competing-event CIF and interpretation of cause-specific versus net risk."
+        },
+        {
+          "reference_id": "Heyard2020",
+          "citation_key": "Heyard2020",
+          "supports": "Discrete-time competing-event prediction and assessment; does not certify our conditional-entry implementation."
+        }
+      ]
+    },
+    {
+      "gap_id": "CG04",
+      "topic": "IPCW competing-risk discrimination and integrated Brier evaluation",
+      "status": "RESOLVED_CONTEXTUAL_SUPPORT",
+      "reference_ids": [
+        "Blanche2013",
+        "Graf1999",
+        "Gerds2012",
+        "Heyard2020"
+      ],
+      "citation_keys": [
+        "Blanche2013",
+        "Graf1999",
+        "Gerds2012",
+        "Heyard2020"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "No certification of implementation or transfer of prior empirical results",
+      "source_support": [
+        {
+          "reference_id": "Blanche2013",
+          "citation_key": "Blanche2013",
+          "supports": "Competing-risk time-dependent AUC with censoring and alternative control definitions."
+        },
+        {
+          "reference_id": "Graf1999",
+          "citation_key": "Graf1999",
+          "supports": "Prediction error assessment with censored survival outcomes."
+        },
+        {
+          "reference_id": "Gerds2012",
+          "citation_key": "Gerds2012",
+          "supports": "Absolute-risk scoring with competing events."
+        },
+        {
+          "reference_id": "Heyard2020",
+          "citation_key": "Heyard2020",
+          "supports": "Discrete-time competing-risk scoring and calibration."
+        }
+      ]
+    },
+    {
+      "gap_id": "CG05",
+      "topic": "temporal dataset shift and probability calibration in credit risk",
+      "status": "RESOLVED_CONTEXTUAL_SUPPORT",
+      "reference_ids": [
+        "Peng2026",
+        "Gama2014",
+        "VanCalster2019",
+        "Ovadia2019",
+        "Roschewitz2025"
+      ],
+      "citation_keys": [
+        "Peng2026",
+        "Gama2014",
+        "VanCalster2019",
+        "Ovadia2019",
+        "Roschewitz2025"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "No certification of implementation or transfer of prior empirical results",
+      "source_support": [
+        {
+          "reference_id": "Peng2026",
+          "citation_key": "Peng2026",
+          "supports": "Credit survival discrimination/calibration under simulated drift."
+        },
+        {
+          "reference_id": "Gama2014",
+          "citation_key": "Gama2014",
+          "supports": "General concept-drift framework; support shift alone is not proof of concept drift."
+        },
+        {
+          "reference_id": "VanCalster2019",
+          "citation_key": "VanCalster2019",
+          "supports": "Calibration assessment distinct from ranking."
+        },
+        {
+          "reference_id": "Ovadia2019",
+          "citation_key": "Ovadia2019",
+          "supports": "Predictive uncertainty quality under dataset shift; general ML evidence."
+        },
+        {
+          "reference_id": "Roschewitz2025",
+          "citation_key": "Roschewitz2025",
+          "supports": "General calibration-under-shift evidence; published TMLR version verified."
+        }
+      ]
+    },
+    {
+      "gap_id": "CG06",
+      "topic": "vintage-aware macroeconomic information in credit-risk modeling",
+      "status": "PARTIALLY_RESOLVED",
+      "reference_ids": [
+        "Croushore2001",
+        "Bianchi2026",
+        "Breeden2020"
+      ],
+      "citation_keys": [
+        "Croushore2001",
+        "Bianchi2026",
+        "Breeden2020"
+      ],
+      "rationale": "Reference-specific support is recorded below; contextual support does not validate our code or transfer prior empirical findings.",
+      "residual": "Credit-wide vintage-aware prior exists; exact mortgage observed-macro revision literature remains incomplete",
+      "source_support": [
+        {
+          "reference_id": "Croushore2001",
+          "citation_key": "Croushore2001",
+          "supports": "Real-time macro vintages and revisions as an information-set issue."
+        },
+        {
+          "reference_id": "Bianchi2026",
+          "citation_key": "Bianchi2026",
+          "supports": "Credit-wide real-time macro precedent in sovereign CDS, not mortgage events."
+        },
+        {
+          "reference_id": "Breeden2020",
+          "citation_key": "Breeden2020",
+          "supports": "Historical macro forecast scenarios in mortgage loss modeling; not proof of the same observed-ALFRED contract."
+        }
+      ]
+    }
+  ]
+}
