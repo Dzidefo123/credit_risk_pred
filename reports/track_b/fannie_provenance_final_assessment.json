@@ -1,0 +1,253 @@
+{
+  "version": "task13t-v1",
+  "base_commit": "214fb861d94ea64e58730a97b27336f4ddb73eee",
+  "decision": "FANNIE SOURCE PROVENANCE STILL REQUIRES PROVIDER CONFIRMATION",
+  "archive_identity": {
+    "scope": "SCHEMA_ONLY_BOUNDED_PREFIX",
+    "archive_name": "2010Q1.zip",
+    "archive_bytes": 364466968,
+    "archive_sha256": "09735f1dd50b3a3046117a6cdab12fe003d7aebd43f9a058bdeafbd24789c415",
+    "outcome_values_interpreted": false,
+    "full_member_crc_verified": false,
+    "full_population_schema_validated": false,
+    "members": [
+      {
+        "name": "2010Q1.csv",
+        "compressed_bytes": 364466690,
+        "uncompressed_bytes": 5714098123,
+        "compression_method": 8,
+        "zip_timestamp": [
+          2026,
+          5,
+          4,
+          8,
+          47,
+          40
+        ],
+        "timestamp_is_release_proof": false,
+        "records_structurally_checked": 512,
+        "field_counts": [
+          113
+        ],
+        "delimiter": "pipe",
+        "encoding": "UTF-8 compatible; ASCII prefix",
+        "line_endings": [
+          "LF"
+        ],
+        "header": "Not interpreted; official FAQ documents headerless files"
+      }
+    ]
+  },
+  "evidence_type": "PROVIDER_DIRECTED_DOCUMENTARY_INFERENCE",
+  "release_identity_status": "RELEASE_IDENTITY_PARTIALLY_SUPPORTED",
+  "physical_113_status": "YES_BY_DOCUMENTED_VERSION_RECONSTRUCTION",
+  "exact_archive_binding": "PARTIALLY_SUPPORTED",
+  "provider_release": null,
+  "governing_archive_layout": "CANDIDATE_ONLY; fannie-sflpd-2026-04-113-reconstructed",
+  "layout_evidence": {
+    "current_downloaded_physical_width": 114,
+    "all_positions_sequential": true,
+    "byte_identical_to_task13r_xlsx": true,
+    "raw_name_whitespace_differences": [
+      27,
+      71,
+      86,
+      87,
+      88,
+      90,
+      108
+    ],
+    "normalized_names_match_task13r_registry": true,
+    "sf_flags_match_task13r_registry": true,
+    "field_113": {
+      "name": "Current Classic FICO",
+      "sf_applicability": "NOT_DISCLOSED",
+      "date_note_scope": "CRT December 2025 activity"
+    },
+    "field_114": {
+      "name": "Origination VantageScore 4.0",
+      "sf_applicability": "APPLICABLE",
+      "sf_activity_start": "2026-05",
+      "crt_activity_start": "2026-08"
+    },
+    "publication_timeline_evidence": {
+      "sf_113_enhancement": "2026-04; frozen November 2025 announcement",
+      "sf_114_enhancement": "2026-10; frozen August 2026 announcement",
+      "crt_114_publication_threshold": "2026-10-26; NOT an established exact SF date"
+    },
+    "prior_evidence_registry": "docs/track_b/fannie_release_layout_registry.json",
+    "candidate_113_layout_id": "fannie-sflpd-2026-04-113-reconstructed",
+    "no_position_114_padding": true
+  },
+  "refresh_calendar_evidence": {
+    "document_id": "calendar",
+    "page": 1,
+    "exact_report_label": "Single-Family Loan Performance Data Dashboard",
+    "frequency": "Quarterly",
+    "date_rule": "Between 20th and 31st of 1st month",
+    "calendar_month_interpretation": [
+      "January",
+      "April",
+      "July",
+      "October"
+    ],
+    "month_interpretation_is_inference": true,
+    "holiday_rule": "Following business day if scheduled refresh falls on weekend/holiday",
+    "variation_warning": true,
+    "exact_2026_publication_dates": null,
+    "archive_specific_receipt": false,
+    "scope_limitation": "Calendar names Data Dashboard; provider points to it for SFLPD timing; does not bind ZIP builds",
+    "metadata_modification_date": "2026-09-03; metadata only, NOT publication date",
+    "copyright_year": 2025
+  },
+  "terms_evidence": {
+    "document_id": "terms",
+    "title": "Fannie Mae CRT Click-Through Usage Agreement",
+    "dated_as_of": "2017-10-20",
+    "numbered_version": null,
+    "document_status": "LICENSE_DOCUMENT_IDENTIFIED",
+    "applicability_status": "APPLICABLE_SFLPD_TERMS_RELATIONSHIP_UNRESOLVED",
+    "prior_sflpd_document": "Royalty-free Internal Use Only Terms and Conditions v2.0 effective 2015-10-28",
+    "same_as_prior_sflpd_document": false,
+    "acceptance_condition": "Affirmative click acceptance or written indication; effectiveness conditional on acceptance",
+    "provider_directed_clickthrough": true,
+    "historical_accepted_version_bound": false,
+    "scope_summary": "CRT investments and asset-level information; separate conditions for Updated Credit Scores; no loan values read",
+    "clause_review": [
+      {
+        "pages": [
+          1
+        ],
+        "sections": [
+          "preamble",
+          "1"
+        ],
+        "issue": "CRT/investment purpose and affirmative acceptance; SFLPD research applicability must be clarified"
+      },
+      {
+        "pages": [
+          3,
+          4
+        ],
+        "sections": [
+          "13",
+          "14",
+          "15",
+          "16",
+          "19"
+        ],
+        "issue": "Updated Credit Scores have model-use and disclosure conditions; applicability to proposed SFLPD predictors not determined"
+      }
+    ],
+    "publication_permission_determined": false,
+    "legal_review_status": "LEGAL_OR_LICENSE_REVIEW_REQUIRED"
+  },
+  "acceptance_status": "ACCEPTANCE_VERSION_UNRESOLVED",
+  "acquisition_route_acceptance_evidence": "ACCEPTANCE_USER_ATTESTED_ONLY; no version-bound receipt",
+  "authenticated_portal_evidence": {
+    "evidence_status": "USER_ATTESTED_PORTAL_CONTEXT_IN_TASK_INSTRUCTIONS",
+    "authenticated_revisit": "USER_ATTESTED",
+    "crt_terms_link": "Provider email names bottom of left navigation; screenshot not supplied",
+    "use_subject_to_terms_notice": "USER_ATTESTED_SUMMARY; exact portal text/screenshot unavailable",
+    "deemed_review_and_agreement_notice": "USER_ATTESTED_SUMMARY; exact portal text/screenshot unavailable",
+    "independently_authenticated_portal_inspected": false,
+    "acceptance_receipt_present": false,
+    "accepted_document_version": null,
+    "portal_download_label": "USER_ATTESTED Primary Dataset / 2010 / Q1 / Acquisition and Performance; no new screenshot or release label",
+    "stored_personal_portal_information": false
+  },
+  "local_download_timing": {
+    "classification": "LOCAL_DOWNLOAD_TIMING_EVIDENCE",
+    "creation_time_utc": "2026-10-07T15:53:20.141546+00:00",
+    "last_write_time_utc": "2026-10-07T15:56:39.221349+00:00",
+    "receipt_status": "NOT_A_DOWNLOAD_RECEIPT; filesystem times may reflect copy/sync",
+    "timestamps_modified": false,
+    "provider_publication_proof": false
+  },
+  "seven_vintage_availability": [
+    {
+      "year": 2006,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2008,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2010,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2014,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2018,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2020,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    },
+    {
+      "year": 2022,
+      "provider_directed_documents_status": "NO_EXPLICIT_QUARTERLY_PACKAGE_INVENTORY",
+      "prior_documentary_scope": "WITHIN_OFFICIAL_PRIMARY_TEMPORAL_SCOPE; unchanged Task 13R qualification",
+      "downloadable_quarterly_coverage_verified": false
+    }
+  ],
+  "publication_review_status": "PUBLICATION_REVIEW_REQUIRED",
+  "remaining_limitations": [
+    "Exact publication/release and governing historical full layout for this ZIP hash",
+    "Exact accepted version and acceptance date",
+    "Relationship of CRT agreement and SFLPD royalty-free terms for proposed external replication",
+    "Exact seven-vintage quarterly download coverage",
+    "Email date unavailable; user supplied body, headers/identity excluded",
+    "Portal notice/label have no retained screenshot",
+    "Filesystem times establish local presence, not release identity",
+    "Current 114 glossary cannot identify this earlier archive publication"
+  ],
+  "readiness_matrix": {
+    "Schema reconciled": "PASS",
+    "Provider response obtained": "PASS_WITH_MATERIAL_LIMITATION",
+    "Governing documentation identified": "PASS_WITH_MATERIAL_LIMITATION",
+    "113-field layout documented": "PASS_WITH_MATERIAL_LIMITATION",
+    "Exact archive release binding": "PASS_WITH_MATERIAL_LIMITATION",
+    "Applicable terms document identified": "PASS_WITH_MATERIAL_LIMITATION",
+    "Acceptance provenance": "FAIL",
+    "Private-data governance": "PASS",
+    "Seven-vintage source availability": "PASS_WITH_MATERIAL_LIMITATION",
+    "Fresh-evidence protection": "PASS",
+    "Protocol status": "FAIL",
+    "Publication review": "FAIL",
+    "Task 13A authorization": "FAIL"
+  },
+  "task13a_authorized": false,
+  "protocol_status": "DRAFT_NOT_YET_AUTHORIZED",
+  "task14_frozen_status": "UNCHANGED; no retrospective amendment",
+  "task15_status": "Independently governed by Task 14; no drafting executed",
+  "freddie_publication_issue_discovered": false,
+  "scope": {
+    "outcomes_inspected": false,
+    "sample_created": false,
+    "new_quarterly_archives_acquired": false,
+    "models_fitted": false,
+    "loan_values_reinterpreted": false,
+    "holdout_consumed": false,
+    "model_artifacts_regenerated": false,
+    "task14_modified": false
+  },
+  "next_step": "Request archive-specific release confirmation, SFLPD/CRT terms clarification and version-bound acceptance evidence; do not start Task 13A or Task 15"
+}

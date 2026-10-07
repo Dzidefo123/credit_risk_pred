@@ -1,0 +1,46 @@
+{
+  "version": "task13t-v1",
+  "provider": "Fannie Mae",
+  "responding_organization": "Investor Relations",
+  "response_date": null,
+  "evidence_received_at": "2026-10-07T20:44:45.661492+00:00",
+  "response_evidence_status": "USER_SUPPLIED_EMAIL_BODY_TRANSCRIPTION; no independent email authentication performed",
+  "request_summary": [
+    "Which SF publication produced this archive?",
+    "Which glossary governs it and are 113 positions expected?",
+    "Which terms apply and how can acceptance/version evidence be obtained?"
+  ],
+  "request_artifact": "reports/track_b/FANNIE_SOURCE_PROVIDER_SUPPORT_REQUEST.md",
+  "provider_response_transcription": "Please refer to the Resources section of Data Dynamics, in which you will find the \"Single-Family Loan Performance Dataset and Credit Risk Transfer - Glossary and File Layout\". You will also not the Data Refresh Calendar, which notes the publication timing for the SFLPD.\nPlease also see the \"CRT Terms\" link on the bottom of the left hand rail in Data Dynamics for the click-through agreement.\n\nThe above resources should provide answers for your questions.",
+  "transcription_policy": "Body only; original typo retained; greeting, address, signature and personal identity omitted",
+  "provider_response_summary": "Directs to Data Dynamics Resources glossary, Data Refresh Calendar and CRT Terms click-through agreement; does not identify this ZIP release.",
+  "provider_directed_resources": [
+    "Single-Family Loan Performance Dataset and Credit Risk Transfer - Glossary and File Layout",
+    "Data Refresh Calendar",
+    "CRT Terms"
+  ],
+  "direct_confirmations": [
+    "Response identifies resources and CRT Terms as a click-through agreement"
+  ],
+  "archive_specific_direct_confirmation": false,
+  "documentary_inferences": [
+    "Glossary is byte-identical to prior current workbook; not new archive release evidence",
+    "Calendar supports general quarterly timing, not an archive receipt",
+    "CRT agreement title/date identified; historical acceptance/applicability unresolved"
+  ],
+  "unanswered_questions": [
+    "Exact publication/release and governing historical full layout for this ZIP hash",
+    "Exact accepted version and acceptance date",
+    "Relationship of CRT agreement and SFLPD royalty-free terms for proposed external replication",
+    "Exact seven-vintage quarterly download coverage"
+  ],
+  "sensitive_information_exclusion": {
+    "personal_names_stored": false,
+    "email_addresses_stored": false,
+    "email_headers_stored": false,
+    "account_ids_stored": false,
+    "tracking_ids_stored": false,
+    "session_information_stored": false
+  },
+  "support_message_sent_by_agent": false
+}

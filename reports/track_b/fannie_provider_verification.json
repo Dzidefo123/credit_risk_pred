@@ -1,0 +1,82 @@
+{
+  "task": "Track B Task 13T",
+  "base_commit": "214fb861d94ea64e58730a97b27336f4ddb73eee",
+  "verified_at": "2026-10-07T20:51:59.676200+00:00",
+  "decision": "FANNIE SOURCE PROVENANCE STILL REQUIRES PROVIDER CONFIRMATION",
+  "checks": {
+    "new_regression_tests": 20,
+    "combined_targeted_tests": 79,
+    "full_pytest": {
+      "passed": 1185,
+      "warnings": 4,
+      "seconds": 114.95,
+      "exit_code": 0
+    },
+    "lint": "PASSED",
+    "format": {
+      "status": "PASSED",
+      "files": 246
+    },
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "public_identifier_and_credential_scan": "PASSED",
+    "report_links": "PASSED",
+    "whitespace_diff": "PASSED",
+    "provider_document_hashes": "PASSED",
+    "current_glossary_normalized_names_and_sf_flags": "PASSED",
+    "pdf_visual_review": "PASSED; calendar and all four terms pages",
+    "task14_paper_contract": "PASSED; 258 claims, 31 data facts, frozen hashes unchanged"
+  },
+  "preservation": {
+    "status": "PASSED",
+    "public_lf_hashes": 534,
+    "private_byte_hashes": 360,
+    "git_refs": 2,
+    "provider_documents": 3,
+    "seven_freddie_source_archives": "PASSED",
+    "fannie_archive_hash_and_directory": "PASSED",
+    "archive_member_bodies_opened": false,
+    "prior_complete_chain": "PASSED; Tasks 2 through 13S, Task 14, Track A artifacts/tag and all consumed ledgers unchanged",
+    "source_documents_modified": false,
+    "models_loaded_or_regenerated": false,
+    "ledger_consumption_api_called": false
+  },
+  "track_a_tag": {
+    "object_sha": "20be4bf1bd291afb5dfad5b0befbe761651f1de1",
+    "commit_sha": "0d3dc5f9dd1be6a40fc03fa91a1fe8b367a28b8c"
+  },
+  "retained_historical_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "status": "Retained historical evidence; not newly evaluated"
+  },
+  "scope": {
+    "additional_archives_downloaded": false,
+    "outcomes_inspected": false,
+    "samples_created": false,
+    "models_fitted": false,
+    "loan_values_reinterpreted": false,
+    "task14_modified": false,
+    "task13a_started": false,
+    "task15_started": false,
+    "provider_message_sent": false
+  },
+  "provenance_status": {
+    "provider_email": "User-supplied body; date absent; no independent authentication",
+    "direct_archive_confirmation": false,
+    "evidence_type": "PROVIDER_DIRECTED_DOCUMENTARY_INFERENCE",
+    "release_identity": "RELEASE_IDENTITY_PARTIALLY_SUPPORTED",
+    "archive_specific_binding": "PARTIALLY_SUPPORTED",
+    "113_field_status": "YES_BY_DOCUMENTED_VERSION_RECONSTRUCTION",
+    "acceptance": "ACCEPTANCE_VERSION_UNRESOLVED",
+    "publication": "PUBLICATION_REVIEW_REQUIRED",
+    "protocol": "DRAFT_NOT_YET_AUTHORIZED",
+    "task13a_authorized": false
+  },
+  "modified_preexisting_files": [],
+  "new_files": 8,
+  "intended_commit": "docs: incorporate Fannie provider provenance evidence",
+  "push": false
+}
