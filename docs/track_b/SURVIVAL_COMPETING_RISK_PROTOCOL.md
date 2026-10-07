@@ -1,0 +1,55 @@
+# Task6 prespecified competing-risk protocol
+
+Frozen before Task6 risk construction or predictive results. Task2-5 definitions/sample/evidence remain immutable.
+
+**id**: track_b_survival_v1
+
+**source_sha256**: a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d
+
+**sample_sha256**: e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832
+
+**panel_sha256**: 7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad
+
+**task5_primary_cohort_sha256**: 1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374
+
+**origin**: First globally protocol-eligible t0 inside assigned calendar window, conditional on still active; one entry per facility. Relative time zero at this window entry. Mortgage age at entry records delayed observation; no exposure from origination is fabricated. Evaluation clock resets at conditional 2016+ entry, NOT origination lifetime.
+
+**origin_A_assessment**: Provider loan_age is an available monthly mortgage clock, not proof of exact origination date. An age-scale cohort would require left-truncated risk sets; early-development age support does not cover later evaluation age. Primary origin B avoids manufacturing pre-entry exposure but entry populations differ in seasoning and survival selection.
+
+**split**: {'salt': 'track-b-pd-v1:', 'development_end': '2014-12', 'evaluation_start': '2016-01', 'purged_year': '2015', 'assignment': 'SHA256(salt+ID) integer modulo10; 0..6 development,7..9 evaluation'}
+
+**risk_set**: One interval (t0,t0+1] from eligible current row to consecutive next month with category none/default/payoff. Stop at first endpoint; default/payoff each counted once. No missing/gap/pre-entry/post-event exposure. First-month admin/ambiguity/unknown censor at last known active boundary; record reason separately. Zero-duration entry/exit quarantined. Development interval endpoints must be <=2014-12; no 2015 intervals used.
+
+**events**: Unchanged Task2 event_category/protocol; default03..99,RA or credit term02/03/09; payoff01, ambiguous same-month/default-payoff conflicts or mismatched dates; admin15/16/96; unknown/gaps separately censor. Do not call payoff voluntary prepayment.
+
+**ambiguity**: Primary censor at last confirmed active boundary before ambiguous month; limited sensitivity excludes facilities with ambiguous endpoint entirely. No endpoint relabeling.
+
+**time**: Monthly reporting intervals; no artificial exact/day-level dates. Duration bands 1..12,13..24,25..36,37..60,61..120,121+; origin and bands fixed before predictive results.
+
+**models**: Structural and dynamic views of joint multinomial logistic cause-specific hazards with no-event reference. Two cause logits jointly fitted to ensure hD+hP<=1; no independent-logit rescaling. C=1,lbfgs,max_iter3000,tol1e-8,seed61006,L2,natural frequency. Structural static features + deterministic duration; dynamic adds current-state fields.
+
+**development**: Fixed hash task6-development-v1:ID modulo5: residue4 validation,0..3 training, same development calendar; no facility overlap. Fixed specifications/no search. Report development conditional likelihood, then refit development groups before model freeze. Preprocessors development only.
+
+**forecast**: Structural entry-time joint CIFs integrate hazards from static entry values and deterministic future duration. Dynamic model produces rolling next-month conditional probabilities using current observed state; no prospective 12+ dynamic CIF without a future-state distribution. No frozen-delinquency annual curve and no future observed state leakage. Transition matrix descriptive only, not a Markov forecast.
+
+**horizons**: [12, 24, 36, 60]
+
+**tail_rule**: {'minimum_at_risk': 200, 'minimum_censor_survival': 0.1, 'model_requires_horizon_within_maximum_development_duration': True, 'discrimination_minimum_default_facilities': 10, 'reliability_bin_minimum_default_facilities': 10}
+
+**nonparametric**: Monthly Aalen-Johansen for default/payoff CIF and event-free survival; generic entry<t<=exit risk sets. Event-free KM counts both events. Naive default KM treating payoff as censoring shown only as net-risk contrast, never default CIF. Event before censor at equal monthly boundaries.
+
+**metrics**: One-entry-per-facility cumulative/dynamic IPCW-AUC: cases default by horizon; controls event-free at horizon OR competing payoff before it. IPCW Brier divides weighted squared loss by original cohort size, not observed-label/weight sum. Marginal reverse-KM G(t-)=P(C>=t), re-estimated on evaluation for metric weighting only. Last-known censor boundary at horizon counts known event-free status. No binary recalibration intercept/slope as CIF calibration.
+
+**calibration**: Mean structural CIF vs AJ observed default/payoff CIF and differences, 3 development-CIF quantile groups; sparse groups flagged. Development AJ curve transported as reference, not fit to evaluation outcomes. Integrated Brier over months1..36 only when tail/censor/training support permits.
+
+**uncertainty**: {'replicates': 400, 'seed': 61006, 'unit': 'facility', 'reestimate_censoring_and_AJ_each_draw': True, 'models_fixed': True, 'scope': 'No model training, borrower clustering or future macro uncertainty'}
+
+**bridge**: Reuse Task5 cached frozen predictions at matched first eligible evaluation entry where primary known-label rows exist. Descriptive means/rank agreement/differences only; no new Task5 model predictions, selection or rewriting its consumed ledger.
+
+**evaluation**: Own protocol frozen before Task6 construction/aggregate audit. Count-audit access logged separately; model artifacts/specification frozen before Task6 predictive/nonparametric temporal metrics. Prior Task4/5 temporal outcomes already inspected; no claim of virgin outcomes. One consumed Task6 study; silent repeat prohibited.
+
+**omissions**: No Fine-Gray (unnecessary complexity with delayed-entry/censor conventions), macro joins, neural/boosted/forest survival, thresholds, lifetime/regulatory/IFRS9 claims.
+
+**knowledge_time**: UNVERIFIED
+
+**references**: ['https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4512205/', 'https://www.bmj.com/content/377/bmj-2021-069249']

@@ -1,0 +1,348 @@
+{
+  "schema_version": "2.0",
+  "historical_knowledge_time": "UNVERIFIED",
+  "selected": [
+    "orig_credit_score",
+    "orig_ltv",
+    "orig_dti",
+    "orig_interest_rate",
+    "original_loan_term",
+    "number_of_borrowers",
+    "loan_age",
+    "delinquency_state",
+    "loan_purpose",
+    "occupancy_status"
+  ],
+  "fields": {
+    "orig_credit_score": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Origination credit quality"
+    },
+    "orig_ltv": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Origination collateral leverage"
+    },
+    "orig_dti": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Origination debt affordability"
+    },
+    "orig_upb": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "orig_interest_rate": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Origination financing burden and embedded risk pricing"
+    },
+    "original_loan_term": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Contract structure"
+    },
+    "number_of_borrowers": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Origination joint repayment capacity; not borrower identity"
+    },
+    "occupancy_status": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Property occupancy and repayment incentives"
+    },
+    "property_state": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "property_type": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "loan_purpose": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Purchase/refinance purpose"
+    },
+    "amortization_type": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "vantage_score": {
+      "classification": "STATIC_AT_ORIGINATION",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "current_principal_balance": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "current_interest_rate": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "delinquency_state": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Current distress at the t0 reporting endpoint; future state forbidden"
+    },
+    "loan_age": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Deterministic mortgage seasoning clock"
+    },
+    "remaining_legal_months": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": true,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "non_interest_upb": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "modification_flag": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "assistance_plan": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "payment_deferral_flag": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "selected": false,
+      "timing": "Released nominal-time value; historical vintage UNVERIFIED",
+      "reason": "Excluded to limit dimensionality; vantage score entirely missing"
+    },
+    "outcome_status": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "binary_default_12m": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "event_offset": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "observed_followup_months": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "loan_id": {
+      "classification": "AUDIT",
+      "selected": false
+    },
+    "t0": {
+      "classification": "AUDIT",
+      "selected": false
+    },
+    "eligible": {
+      "classification": "AUDIT",
+      "selected": false
+    },
+    "eligibility_reason": {
+      "classification": "AUDIT",
+      "selected": false
+    },
+    "knowledge_time_status": {
+      "classification": "AUDIT",
+      "selected": false
+    },
+    "mi_recoveries": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "net_sale_proceeds": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "non_mi_recoveries": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "total_expenses": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "legal_costs": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "preservation_costs": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "taxes_insurance": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "misc_expenses": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "actual_loss": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "removal_upb": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "delinquent_accrued_interest": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "bankruptcy_cramdown_costs": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "termination_code": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "termination_month": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_delinquency": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_balance": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_payoff": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_macro": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "disposition_date": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_payment_status": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_modification": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_default": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "zero_balance_code_after_t0": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "outcome_window_summary": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "duration_band": {
+      "classification": "TIME_VARYING_KNOWN_AT_T0",
+      "reason": "Deterministic interval clock from research-window entry, no future observed covariate",
+      "selected": true
+    },
+    "event_code": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "exit_time": {
+      "classification": "OUTCOME",
+      "selected": false
+    },
+    "next_delinquency": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "next_balance": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "next_rate": {
+      "classification": "PROHIBITED",
+      "selected": false
+    },
+    "future_state_path": {
+      "classification": "PROHIBITED",
+      "selected": false
+    }
+  },
+  "reason": "Prespecified moderate dimension; no feature selection using temporal predictions",
+  "absent_candidates": [
+    "orig_cltv",
+    "number_units",
+    "channel",
+    "first_time_buyer",
+    "mi_percentage"
+  ],
+  "excluded_candidates_reason": "No rejoin to raw source. No geography (sparse events/high dimension), balance/remaining term (redundant with fixed term and age), VantageScore (unavailable), or retrospectively unverified modification timing. No macro series.",
+  "version": "survival_v1",
+  "structural": [
+    "orig_credit_score",
+    "orig_ltv",
+    "orig_dti",
+    "orig_interest_rate",
+    "original_loan_term",
+    "number_of_borrowers",
+    "loan_purpose",
+    "occupancy_status",
+    "duration_band"
+  ],
+  "dynamic": [
+    "orig_credit_score",
+    "orig_ltv",
+    "orig_dti",
+    "orig_interest_rate",
+    "original_loan_term",
+    "number_of_borrowers",
+    "loan_purpose",
+    "occupancy_status",
+    "delinquency_state",
+    "loan_age",
+    "current_principal_balance",
+    "current_interest_rate",
+    "remaining_legal_months",
+    "duration_band"
+  ]
+}

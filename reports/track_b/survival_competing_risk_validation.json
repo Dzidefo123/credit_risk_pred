@@ -1,0 +1,3983 @@
+{
+  "schema_version": "1.0",
+  "decision": "COMPETING-RISK SURVIVAL FOUNDATION ESTABLISHED WITH MATERIAL LIMITATIONS",
+  "protocol": {
+    "id": "track_b_survival_v1",
+    "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+    "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+    "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+    "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374",
+    "origin": "First globally protocol-eligible t0 inside assigned calendar window, conditional on still active; one entry per facility. Relative time zero at this window entry. Mortgage age at entry records delayed observation; no exposure from origination is fabricated. Evaluation clock resets at conditional 2016+ entry, NOT origination lifetime.",
+    "origin_A_assessment": "Provider loan_age is an available monthly mortgage clock, not proof of exact origination date. An age-scale cohort would require left-truncated risk sets; early-development age support does not cover later evaluation age. Primary origin B avoids manufacturing pre-entry exposure but entry populations differ in seasoning and survival selection.",
+    "split": {
+      "salt": "track-b-pd-v1:",
+      "development_end": "2014-12",
+      "evaluation_start": "2016-01",
+      "purged_year": "2015",
+      "assignment": "SHA256(salt+ID) integer modulo10; 0..6 development,7..9 evaluation"
+    },
+    "risk_set": "One interval (t0,t0+1] from eligible current row to consecutive next month with category none/default/payoff. Stop at first endpoint; default/payoff each counted once. No missing/gap/pre-entry/post-event exposure. First-month admin/ambiguity/unknown censor at last known active boundary; record reason separately. Zero-duration entry/exit quarantined. Development interval endpoints must be <=2014-12; no 2015 intervals used.",
+    "events": "Unchanged Task2 event_category/protocol; default03..99,RA or credit term02/03/09; payoff01, ambiguous same-month/default-payoff conflicts or mismatched dates; admin15/16/96; unknown/gaps separately censor. Do not call payoff voluntary prepayment.",
+    "ambiguity": "Primary censor at last confirmed active boundary before ambiguous month; limited sensitivity excludes facilities with ambiguous endpoint entirely. No endpoint relabeling.",
+    "time": "Monthly reporting intervals; no artificial exact/day-level dates. Duration bands 1..12,13..24,25..36,37..60,61..120,121+; origin and bands fixed before predictive results.",
+    "models": "Structural and dynamic views of joint multinomial logistic cause-specific hazards with no-event reference. Two cause logits jointly fitted to ensure hD+hP<=1; no independent-logit rescaling. C=1,lbfgs,max_iter3000,tol1e-8,seed61006,L2,natural frequency. Structural static features + deterministic duration; dynamic adds current-state fields.",
+    "development": "Fixed hash task6-development-v1:ID modulo5: residue4 validation,0..3 training, same development calendar; no facility overlap. Fixed specifications/no search. Report development conditional likelihood, then refit development groups before model freeze. Preprocessors development only.",
+    "forecast": "Structural entry-time joint CIFs integrate hazards from static entry values and deterministic future duration. Dynamic model produces rolling next-month conditional probabilities using current observed state; no prospective 12+ dynamic CIF without a future-state distribution. No frozen-delinquency annual curve and no future observed state leakage. Transition matrix descriptive only, not a Markov forecast.",
+    "horizons": [
+      12,
+      24,
+      36,
+      60
+    ],
+    "tail_rule": {
+      "minimum_at_risk": 200,
+      "minimum_censor_survival": 0.1,
+      "model_requires_horizon_within_maximum_development_duration": true,
+      "discrimination_minimum_default_facilities": 10,
+      "reliability_bin_minimum_default_facilities": 10
+    },
+    "nonparametric": "Monthly Aalen-Johansen for default/payoff CIF and event-free survival; generic entry<t<=exit risk sets. Event-free KM counts both events. Naive default KM treating payoff as censoring shown only as net-risk contrast, never default CIF. Event before censor at equal monthly boundaries.",
+    "metrics": "One-entry-per-facility cumulative/dynamic IPCW-AUC: cases default by horizon; controls event-free at horizon OR competing payoff before it. IPCW Brier divides weighted squared loss by original cohort size, not observed-label/weight sum. Marginal reverse-KM G(t-)=P(C>=t), re-estimated on evaluation for metric weighting only. Last-known censor boundary at horizon counts known event-free status. No binary recalibration intercept/slope as CIF calibration.",
+    "calibration": "Mean structural CIF vs AJ observed default/payoff CIF and differences, 3 development-CIF quantile groups; sparse groups flagged. Development AJ curve transported as reference, not fit to evaluation outcomes. Integrated Brier over months1..36 only when tail/censor/training support permits.",
+    "uncertainty": {
+      "replicates": 400,
+      "seed": 61006,
+      "unit": "facility",
+      "reestimate_censoring_and_AJ_each_draw": true,
+      "models_fixed": true,
+      "scope": "No model training, borrower clustering or future macro uncertainty"
+    },
+    "bridge": "Reuse Task5 cached frozen predictions at matched first eligible evaluation entry where primary known-label rows exist. Descriptive means/rank agreement/differences only; no new Task5 model predictions, selection or rewriting its consumed ledger.",
+    "evaluation": "Own protocol frozen before Task6 construction/aggregate audit. Count-audit access logged separately; model artifacts/specification frozen before Task6 predictive/nonparametric temporal metrics. Prior Task4/5 temporal outcomes already inspected; no claim of virgin outcomes. One consumed Task6 study; silent repeat prohibited.",
+    "omissions": "No Fine-Gray (unnecessary complexity with delayed-entry/censor conventions), macro joins, neural/boosted/forest survival, thresholds, lifetime/regulatory/IFRS9 claims.",
+    "knowledge_time": "UNVERIFIED",
+    "references": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC4512205/",
+      "https://www.bmj.com/content/377/bmj-2021-069249"
+    ]
+  },
+  "protocol_sha256_lf": "acafe5ffb93ad235c8819f3b1da5119614296c460b012dd9b287b1b631a44ba2",
+  "base_protocol_sha256_lf": "5fccc658726e339d3fca9c76d300b5e45c0b9fce3189b595a19e12cb425f47c5",
+  "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+  "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+  "survival_audit": {
+    "total_selected_facilities": 20000,
+    "raw_first_endpoints": {
+      "default": 623,
+      "payoff": 18147,
+      "administrative": 29,
+      "ambiguous": 33,
+      "active_or_unknown": 1168
+    },
+    "raw_calendar": {
+      "2013": {
+        "payoff": 2647,
+        "default": 74,
+        "ambiguous": 2
+      },
+      "2026": {
+        "active_or_unknown": 1168,
+        "ambiguous": 3,
+        "payoff": 25,
+        "default": 3
+      },
+      "2011": {
+        "payoff": 1575,
+        "default": 58,
+        "administrative": 11,
+        "ambiguous": 3
+      },
+      "2019": {
+        "payoff": 694,
+        "default": 11
+      },
+      "2021": {
+        "payoff": 855,
+        "default": 16
+      },
+      "2025": {
+        "payoff": 378,
+        "ambiguous": 15,
+        "default": 5
+      },
+      "2014": {
+        "payoff": 1231,
+        "default": 65,
+        "ambiguous": 2
+      },
+      "2018": {
+        "payoff": 691,
+        "default": 22,
+        "administrative": 3,
+        "ambiguous": 3
+      },
+      "2017": {
+        "payoff": 932,
+        "default": 26,
+        "ambiguous": 2
+      },
+      "2012": {
+        "payoff": 3635,
+        "default": 88,
+        "administrative": 9,
+        "ambiguous": 2
+      },
+      "2023": {
+        "payoff": 263,
+        "default": 13
+      },
+      "2010": {
+        "payoff": 586,
+        "default": 7,
+        "administrative": 4
+      },
+      "2015": {
+        "payoff": 1510,
+        "default": 49,
+        "ambiguous": 1
+      },
+      "2016": {
+        "payoff": 1421,
+        "default": 40
+      },
+      "2024": {
+        "payoff": 222,
+        "default": 8
+      },
+      "2020": {
+        "payoff": 1073,
+        "default": 129,
+        "administrative": 1
+      },
+      "2022": {
+        "payoff": 409,
+        "default": 9,
+        "administrative": 1
+      }
+    },
+    "flow": {
+      "global": {
+        "included": 19606,
+        "no_eligible_entry": 392,
+        "zero_duration_quarantined": 2
+      },
+      "development": {
+        "included": 13813,
+        "no_eligible_entry": 347,
+        "zero_duration_quarantined": 1
+      },
+      "evaluation": {
+        "included": 2423,
+        "no_eligible_entry": 3416
+      }
+    },
+    "global_cohort": {
+      "facilities": 19606,
+      "risk_intervals": null,
+      "default_facilities": 618,
+      "payoff_facilities": 17762,
+      "censored_facilities": 1226
+    },
+    "global_risk_intervals": 1254425,
+    "partitions": {
+      "development": {
+        "facilities": 13813,
+        "risk_intervals": 471976,
+        "default_facilities": 212,
+        "payoff_facilities": 6577,
+        "censored_facilities": 7024
+      },
+      "evaluation": {
+        "facilities": 2423,
+        "risk_intervals": 132409,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      }
+    },
+    "censor_reasons": {
+      "global": {
+        "observation_end": 1168,
+        "ambiguous": 32,
+        "administrative": 26
+      },
+      "development": {
+        "calendar_censor": 7001,
+        "ambiguous": 6,
+        "administrative": 17
+      },
+      "evaluation": {
+        "observation_end": 316,
+        "ambiguous": 8,
+        "administrative": 3
+      }
+    },
+    "delayed_entry_age": {
+      "global": {
+        "minimum": 5.0,
+        "median": 5.0,
+        "maximum": 106.0
+      },
+      "development": {
+        "minimum": 5.0,
+        "median": 5.0,
+        "maximum": 53.0
+      },
+      "evaluation": {
+        "minimum": 38.0,
+        "median": 63.0,
+        "maximum": 101.0
+      }
+    },
+    "survival_cohort_sha256": {
+      "global": "417f82da776b4846527a1324611eb9cc005a2d1ae86b090ae53915eed7288602",
+      "development": "97f45ead4dcdaafc6a6b12991d287245d1b2b3968b937b2a516434fae5b3ca52",
+      "evaluation": "a84470117d66e9c7e53c6fe73850bf5c33fa89239d2ed7004950db3a4cc3c692"
+    },
+    "risk_set_sha256": {
+      "development": "5bc01170d7eb5c98b62b3a994e14915c9e7c2b275e79deef3da39c5c560ccc4e",
+      "evaluation": "8909a2b6e02fe65c3afabb281ccbd631cfaf6fb84a1436eeb054a22a5f88f532"
+    },
+    "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374"
+  },
+  "model_specifications": {
+    "protocol_sha256_lf": "acafe5ffb93ad235c8819f3b1da5119614296c460b012dd9b287b1b631a44ba2",
+    "registry_sha256_lf": "311ff9173974594939d637b80839adb4ca0bb980560fe6c80e480e8c6d96a811",
+    "artifacts": {
+      "structural": {
+        "path": "data\\track_b\\models\\survival_v1\\structural.joblib",
+        "sha256": "8b76da1fdc7ad6b6228af85134ea01f961cd783bc1774d28868c6b259a9b7be7",
+        "view": "structural",
+        "preprocessing": "Development median/missing indicator/scaling; modal + reference OHE; current balance log1p in dynamic view",
+        "C": 1.0,
+        "seed": 61006
+      },
+      "dynamic": {
+        "path": "data\\track_b\\models\\survival_v1\\dynamic.joblib",
+        "sha256": "2a3d49809af3ac84271af9a7e6e6836a8f7ac759ce7f3c6fd8d1327de4eb2f97",
+        "view": "dynamic",
+        "preprocessing": "Development median/missing indicator/scaling; modal + reference OHE; current balance log1p in dynamic view",
+        "C": 1.0,
+        "seed": 61006
+      }
+    },
+    "max_training_duration": 54,
+    "model_forecast_duration": 54,
+    "risk_audit": {
+      "total_selected_facilities": 20000,
+      "raw_first_endpoints": {
+        "default": 623,
+        "payoff": 18147,
+        "administrative": 29,
+        "ambiguous": 33,
+        "active_or_unknown": 1168
+      },
+      "raw_calendar": {
+        "2013": {
+          "payoff": 2647,
+          "default": 74,
+          "ambiguous": 2
+        },
+        "2026": {
+          "active_or_unknown": 1168,
+          "ambiguous": 3,
+          "payoff": 25,
+          "default": 3
+        },
+        "2011": {
+          "payoff": 1575,
+          "default": 58,
+          "administrative": 11,
+          "ambiguous": 3
+        },
+        "2019": {
+          "payoff": 694,
+          "default": 11
+        },
+        "2021": {
+          "payoff": 855,
+          "default": 16
+        },
+        "2025": {
+          "payoff": 378,
+          "ambiguous": 15,
+          "default": 5
+        },
+        "2014": {
+          "payoff": 1231,
+          "default": 65,
+          "ambiguous": 2
+        },
+        "2018": {
+          "payoff": 691,
+          "default": 22,
+          "administrative": 3,
+          "ambiguous": 3
+        },
+        "2017": {
+          "payoff": 932,
+          "default": 26,
+          "ambiguous": 2
+        },
+        "2012": {
+          "payoff": 3635,
+          "default": 88,
+          "administrative": 9,
+          "ambiguous": 2
+        },
+        "2023": {
+          "payoff": 263,
+          "default": 13
+        },
+        "2010": {
+          "payoff": 586,
+          "default": 7,
+          "administrative": 4
+        },
+        "2015": {
+          "payoff": 1510,
+          "default": 49,
+          "ambiguous": 1
+        },
+        "2016": {
+          "payoff": 1421,
+          "default": 40
+        },
+        "2024": {
+          "payoff": 222,
+          "default": 8
+        },
+        "2020": {
+          "payoff": 1073,
+          "default": 129,
+          "administrative": 1
+        },
+        "2022": {
+          "payoff": 409,
+          "default": 9,
+          "administrative": 1
+        }
+      },
+      "flow": {
+        "global": {
+          "included": 19606,
+          "no_eligible_entry": 392,
+          "zero_duration_quarantined": 2
+        },
+        "development": {
+          "included": 13813,
+          "no_eligible_entry": 347,
+          "zero_duration_quarantined": 1
+        },
+        "evaluation": {
+          "included": 2423,
+          "no_eligible_entry": 3416
+        }
+      },
+      "global_cohort": {
+        "facilities": 19606,
+        "risk_intervals": null,
+        "default_facilities": 618,
+        "payoff_facilities": 17762,
+        "censored_facilities": 1226
+      },
+      "global_risk_intervals": 1254425,
+      "partitions": {
+        "development": {
+          "facilities": 13813,
+          "risk_intervals": 471976,
+          "default_facilities": 212,
+          "payoff_facilities": 6577,
+          "censored_facilities": 7024
+        },
+        "evaluation": {
+          "facilities": 2423,
+          "risk_intervals": 132409,
+          "default_facilities": 95,
+          "payoff_facilities": 2001,
+          "censored_facilities": 327
+        }
+      },
+      "censor_reasons": {
+        "global": {
+          "observation_end": 1168,
+          "ambiguous": 32,
+          "administrative": 26
+        },
+        "development": {
+          "calendar_censor": 7001,
+          "ambiguous": 6,
+          "administrative": 17
+        },
+        "evaluation": {
+          "observation_end": 316,
+          "ambiguous": 8,
+          "administrative": 3
+        }
+      },
+      "delayed_entry_age": {
+        "global": {
+          "minimum": 5.0,
+          "median": 5.0,
+          "maximum": 106.0
+        },
+        "development": {
+          "minimum": 5.0,
+          "median": 5.0,
+          "maximum": 53.0
+        },
+        "evaluation": {
+          "minimum": 38.0,
+          "median": 63.0,
+          "maximum": 101.0
+        }
+      },
+      "survival_cohort_sha256": {
+        "global": "417f82da776b4846527a1324611eb9cc005a2d1ae86b090ae53915eed7288602",
+        "development": "97f45ead4dcdaafc6a6b12991d287245d1b2b3968b937b2a516434fae5b3ca52",
+        "evaluation": "a84470117d66e9c7e53c6fe73850bf5c33fa89239d2ed7004950db3a4cc3c692"
+      },
+      "risk_set_sha256": {
+        "development": "5bc01170d7eb5c98b62b3a994e14915c9e7c2b275e79deef3da39c5c560ccc4e",
+        "evaluation": "8909a2b6e02fe65c3afabb281ccbd631cfaf6fb84a1436eeb054a22a5f88f532"
+      },
+      "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374"
+    },
+    "source_code_sha256_lf": {
+      "src\\credit_risk\\track_b\\survival\\ledger.py": "532d4c061c5bbfa082d85b365f8c39cc4fb7aa49a140831da4db49bf2c04342b",
+      "src\\credit_risk\\track_b\\survival\\math.py": "089101a22b2aa13787c0d6ed6fdd012afe5890adab842db25d504746fd6c9813",
+      "src\\credit_risk\\track_b\\survival\\models.py": "b6d075ddd7332d13146111600e3ae9b0882532aedb686d9400c94841403cc1b7",
+      "src\\credit_risk\\track_b\\survival\\reporting.py": "efe208224cbab761f609639263272b578be14128eb6e797442d157f3d3f1095f",
+      "src\\credit_risk\\track_b\\survival\\risk.py": "9efbce564a15e4a942dc5f19949e40d4ac7d53febcd5a513821ff37c63b9ec92",
+      "src\\credit_risk\\track_b\\survival\\study.py": "91e1f23608ed8f8fcaf4e818729fe06b78501197548120abb9cd07f63106617d",
+      "src\\credit_risk\\track_b\\survival\\__init__.py": "eaea7fbedba7c56934d4b2250480d3e8edc15ea61e77307f7c0b738b05c88761"
+    }
+  },
+  "development_validation": {
+    "structural": {
+      "validation_facilities": 2767,
+      "validation_intervals": 95397,
+      "metrics": {
+        "joint_log_loss": 0.07462959015789515,
+        "default_brier": 0.0004501743746640558,
+        "payoff_brier": 0.013522523131785895
+      },
+      "fixed_specification": true
+    },
+    "dynamic": {
+      "validation_facilities": 2767,
+      "validation_intervals": 95397,
+      "metrics": {
+        "joint_log_loss": 0.07130261777946467,
+        "default_brier": 0.0002756324699355635,
+        "payoff_brier": 0.013494435761252093
+      },
+      "fixed_specification": true
+    }
+  },
+  "evaluation_ledger": {
+    "state": "CONSUMED",
+    "protocol": {
+      "id": "track_b_survival_v1",
+      "source_sha256": "a82bc0f1efffccfb494b2b33f61877428bb4a6443c1a73d44bc7ee24d77aa45d",
+      "sample_sha256": "e719a6b4d23caca8ac55eeaa6fae54da23c95887dd83b3ac22cd925d63902832",
+      "panel_sha256": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+      "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374",
+      "origin": "First globally protocol-eligible t0 inside assigned calendar window, conditional on still active; one entry per facility. Relative time zero at this window entry. Mortgage age at entry records delayed observation; no exposure from origination is fabricated. Evaluation clock resets at conditional 2016+ entry, NOT origination lifetime.",
+      "origin_A_assessment": "Provider loan_age is an available monthly mortgage clock, not proof of exact origination date. An age-scale cohort would require left-truncated risk sets; early-development age support does not cover later evaluation age. Primary origin B avoids manufacturing pre-entry exposure but entry populations differ in seasoning and survival selection.",
+      "split": {
+        "salt": "track-b-pd-v1:",
+        "development_end": "2014-12",
+        "evaluation_start": "2016-01",
+        "purged_year": "2015",
+        "assignment": "SHA256(salt+ID) integer modulo10; 0..6 development,7..9 evaluation"
+      },
+      "risk_set": "One interval (t0,t0+1] from eligible current row to consecutive next month with category none/default/payoff. Stop at first endpoint; default/payoff each counted once. No missing/gap/pre-entry/post-event exposure. First-month admin/ambiguity/unknown censor at last known active boundary; record reason separately. Zero-duration entry/exit quarantined. Development interval endpoints must be <=2014-12; no 2015 intervals used.",
+      "events": "Unchanged Task2 event_category/protocol; default03..99,RA or credit term02/03/09; payoff01, ambiguous same-month/default-payoff conflicts or mismatched dates; admin15/16/96; unknown/gaps separately censor. Do not call payoff voluntary prepayment.",
+      "ambiguity": "Primary censor at last confirmed active boundary before ambiguous month; limited sensitivity excludes facilities with ambiguous endpoint entirely. No endpoint relabeling.",
+      "time": "Monthly reporting intervals; no artificial exact/day-level dates. Duration bands 1..12,13..24,25..36,37..60,61..120,121+; origin and bands fixed before predictive results.",
+      "models": "Structural and dynamic views of joint multinomial logistic cause-specific hazards with no-event reference. Two cause logits jointly fitted to ensure hD+hP<=1; no independent-logit rescaling. C=1,lbfgs,max_iter3000,tol1e-8,seed61006,L2,natural frequency. Structural static features + deterministic duration; dynamic adds current-state fields.",
+      "development": "Fixed hash task6-development-v1:ID modulo5: residue4 validation,0..3 training, same development calendar; no facility overlap. Fixed specifications/no search. Report development conditional likelihood, then refit development groups before model freeze. Preprocessors development only.",
+      "forecast": "Structural entry-time joint CIFs integrate hazards from static entry values and deterministic future duration. Dynamic model produces rolling next-month conditional probabilities using current observed state; no prospective 12+ dynamic CIF without a future-state distribution. No frozen-delinquency annual curve and no future observed state leakage. Transition matrix descriptive only, not a Markov forecast.",
+      "horizons": [
+        12,
+        24,
+        36,
+        60
+      ],
+      "tail_rule": {
+        "minimum_at_risk": 200,
+        "minimum_censor_survival": 0.1,
+        "model_requires_horizon_within_maximum_development_duration": true,
+        "discrimination_minimum_default_facilities": 10,
+        "reliability_bin_minimum_default_facilities": 10
+      },
+      "nonparametric": "Monthly Aalen-Johansen for default/payoff CIF and event-free survival; generic entry<t<=exit risk sets. Event-free KM counts both events. Naive default KM treating payoff as censoring shown only as net-risk contrast, never default CIF. Event before censor at equal monthly boundaries.",
+      "metrics": "One-entry-per-facility cumulative/dynamic IPCW-AUC: cases default by horizon; controls event-free at horizon OR competing payoff before it. IPCW Brier divides weighted squared loss by original cohort size, not observed-label/weight sum. Marginal reverse-KM G(t-)=P(C>=t), re-estimated on evaluation for metric weighting only. Last-known censor boundary at horizon counts known event-free status. No binary recalibration intercept/slope as CIF calibration.",
+      "calibration": "Mean structural CIF vs AJ observed default/payoff CIF and differences, 3 development-CIF quantile groups; sparse groups flagged. Development AJ curve transported as reference, not fit to evaluation outcomes. Integrated Brier over months1..36 only when tail/censor/training support permits.",
+      "uncertainty": {
+        "replicates": 400,
+        "seed": 61006,
+        "unit": "facility",
+        "reestimate_censoring_and_AJ_each_draw": true,
+        "models_fixed": true,
+        "scope": "No model training, borrower clustering or future macro uncertainty"
+      },
+      "bridge": "Reuse Task5 cached frozen predictions at matched first eligible evaluation entry where primary known-label rows exist. Descriptive means/rank agreement/differences only; no new Task5 model predictions, selection or rewriting its consumed ledger.",
+      "evaluation": "Own protocol frozen before Task6 construction/aggregate audit. Count-audit access logged separately; model artifacts/specification frozen before Task6 predictive/nonparametric temporal metrics. Prior Task4/5 temporal outcomes already inspected; no claim of virgin outcomes. One consumed Task6 study; silent repeat prohibited.",
+      "omissions": "No Fine-Gray (unnecessary complexity with delayed-entry/censor conventions), macro joins, neural/boosted/forest survival, thresholds, lifetime/regulatory/IFRS9 claims.",
+      "knowledge_time": "UNVERIFIED",
+      "references": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217187/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4512205/",
+        "https://www.bmj.com/content/377/bmj-2021-069249"
+      ]
+    },
+    "protocol_sha256": "c4c9220f9d6a6d99a7adf1c58aaf34a1a1fd1268b0c349811bd41bfeff33f153",
+    "created_at": "2026-10-06T22:32:52.855437+00:00",
+    "prior_access": "Task4/5 endpoints and evaluation outcomes previously inspected; Task6 protocol frozen before construction/count audit, metrics sealed",
+    "post_evaluation_model_change": false,
+    "specification": {
+      "protocol_sha256_lf": "acafe5ffb93ad235c8819f3b1da5119614296c460b012dd9b287b1b631a44ba2",
+      "registry_sha256_lf": "311ff9173974594939d637b80839adb4ca0bb980560fe6c80e480e8c6d96a811",
+      "artifacts": {
+        "structural": {
+          "path": "data\\track_b\\models\\survival_v1\\structural.joblib",
+          "sha256": "8b76da1fdc7ad6b6228af85134ea01f961cd783bc1774d28868c6b259a9b7be7",
+          "view": "structural",
+          "preprocessing": "Development median/missing indicator/scaling; modal + reference OHE; current balance log1p in dynamic view",
+          "C": 1.0,
+          "seed": 61006
+        },
+        "dynamic": {
+          "path": "data\\track_b\\models\\survival_v1\\dynamic.joblib",
+          "sha256": "2a3d49809af3ac84271af9a7e6e6836a8f7ac759ce7f3c6fd8d1327de4eb2f97",
+          "view": "dynamic",
+          "preprocessing": "Development median/missing indicator/scaling; modal + reference OHE; current balance log1p in dynamic view",
+          "C": 1.0,
+          "seed": 61006
+        }
+      },
+      "max_training_duration": 54,
+      "model_forecast_duration": 54,
+      "risk_audit": {
+        "total_selected_facilities": 20000,
+        "raw_first_endpoints": {
+          "default": 623,
+          "payoff": 18147,
+          "administrative": 29,
+          "ambiguous": 33,
+          "active_or_unknown": 1168
+        },
+        "raw_calendar": {
+          "2013": {
+            "payoff": 2647,
+            "default": 74,
+            "ambiguous": 2
+          },
+          "2026": {
+            "active_or_unknown": 1168,
+            "ambiguous": 3,
+            "payoff": 25,
+            "default": 3
+          },
+          "2011": {
+            "payoff": 1575,
+            "default": 58,
+            "administrative": 11,
+            "ambiguous": 3
+          },
+          "2019": {
+            "payoff": 694,
+            "default": 11
+          },
+          "2021": {
+            "payoff": 855,
+            "default": 16
+          },
+          "2025": {
+            "payoff": 378,
+            "ambiguous": 15,
+            "default": 5
+          },
+          "2014": {
+            "payoff": 1231,
+            "default": 65,
+            "ambiguous": 2
+          },
+          "2018": {
+            "payoff": 691,
+            "default": 22,
+            "administrative": 3,
+            "ambiguous": 3
+          },
+          "2017": {
+            "payoff": 932,
+            "default": 26,
+            "ambiguous": 2
+          },
+          "2012": {
+            "payoff": 3635,
+            "default": 88,
+            "administrative": 9,
+            "ambiguous": 2
+          },
+          "2023": {
+            "payoff": 263,
+            "default": 13
+          },
+          "2010": {
+            "payoff": 586,
+            "default": 7,
+            "administrative": 4
+          },
+          "2015": {
+            "payoff": 1510,
+            "default": 49,
+            "ambiguous": 1
+          },
+          "2016": {
+            "payoff": 1421,
+            "default": 40
+          },
+          "2024": {
+            "payoff": 222,
+            "default": 8
+          },
+          "2020": {
+            "payoff": 1073,
+            "default": 129,
+            "administrative": 1
+          },
+          "2022": {
+            "payoff": 409,
+            "default": 9,
+            "administrative": 1
+          }
+        },
+        "flow": {
+          "global": {
+            "included": 19606,
+            "no_eligible_entry": 392,
+            "zero_duration_quarantined": 2
+          },
+          "development": {
+            "included": 13813,
+            "no_eligible_entry": 347,
+            "zero_duration_quarantined": 1
+          },
+          "evaluation": {
+            "included": 2423,
+            "no_eligible_entry": 3416
+          }
+        },
+        "global_cohort": {
+          "facilities": 19606,
+          "risk_intervals": null,
+          "default_facilities": 618,
+          "payoff_facilities": 17762,
+          "censored_facilities": 1226
+        },
+        "global_risk_intervals": 1254425,
+        "partitions": {
+          "development": {
+            "facilities": 13813,
+            "risk_intervals": 471976,
+            "default_facilities": 212,
+            "payoff_facilities": 6577,
+            "censored_facilities": 7024
+          },
+          "evaluation": {
+            "facilities": 2423,
+            "risk_intervals": 132409,
+            "default_facilities": 95,
+            "payoff_facilities": 2001,
+            "censored_facilities": 327
+          }
+        },
+        "censor_reasons": {
+          "global": {
+            "observation_end": 1168,
+            "ambiguous": 32,
+            "administrative": 26
+          },
+          "development": {
+            "calendar_censor": 7001,
+            "ambiguous": 6,
+            "administrative": 17
+          },
+          "evaluation": {
+            "observation_end": 316,
+            "ambiguous": 8,
+            "administrative": 3
+          }
+        },
+        "delayed_entry_age": {
+          "global": {
+            "minimum": 5.0,
+            "median": 5.0,
+            "maximum": 106.0
+          },
+          "development": {
+            "minimum": 5.0,
+            "median": 5.0,
+            "maximum": 53.0
+          },
+          "evaluation": {
+            "minimum": 38.0,
+            "median": 63.0,
+            "maximum": 101.0
+          }
+        },
+        "survival_cohort_sha256": {
+          "global": "417f82da776b4846527a1324611eb9cc005a2d1ae86b090ae53915eed7288602",
+          "development": "97f45ead4dcdaafc6a6b12991d287245d1b2b3968b937b2a516434fae5b3ca52",
+          "evaluation": "a84470117d66e9c7e53c6fe73850bf5c33fa89239d2ed7004950db3a4cc3c692"
+        },
+        "risk_set_sha256": {
+          "development": "5bc01170d7eb5c98b62b3a994e14915c9e7c2b275e79deef3da39c5c560ccc4e",
+          "evaluation": "8909a2b6e02fe65c3afabb281ccbd631cfaf6fb84a1436eeb054a22a5f88f532"
+        },
+        "task5_primary_cohort_sha256": "1e3057b6869d77e6f0166530a9240d7168968fa523669e50ffc31afe6e766374"
+      },
+      "source_code_sha256_lf": {
+        "src\\credit_risk\\track_b\\survival\\ledger.py": "532d4c061c5bbfa082d85b365f8c39cc4fb7aa49a140831da4db49bf2c04342b",
+        "src\\credit_risk\\track_b\\survival\\math.py": "089101a22b2aa13787c0d6ed6fdd012afe5890adab842db25d504746fd6c9813",
+        "src\\credit_risk\\track_b\\survival\\models.py": "b6d075ddd7332d13146111600e3ae9b0882532aedb686d9400c94841403cc1b7",
+        "src\\credit_risk\\track_b\\survival\\reporting.py": "efe208224cbab761f609639263272b578be14128eb6e797442d157f3d3f1095f",
+        "src\\credit_risk\\track_b\\survival\\risk.py": "9efbce564a15e4a942dc5f19949e40d4ac7d53febcd5a513821ff37c63b9ec92",
+        "src\\credit_risk\\track_b\\survival\\study.py": "91e1f23608ed8f8fcaf4e818729fe06b78501197548120abb9cd07f63106617d",
+        "src\\credit_risk\\track_b\\survival\\__init__.py": "eaea7fbedba7c56934d4b2250480d3e8edc15ea61e77307f7c0b738b05c88761"
+      }
+    },
+    "specification_sha256": "4974e9edd318a00d0dee8cb91d4777485ef3318f5b3c09b458c6b7a2c076dd91",
+    "count_audit_access": true,
+    "accessed_at": "2026-10-06T22:37:13.006620+00:00",
+    "prediction_generation_count": 1,
+    "completed_at": "2026-10-06T22:37:35.335850+00:00",
+    "post_evaluation_diagnostic_supplement": {
+      "recorded_at": "2026-10-06T22:53:26.145669+00:00",
+      "purpose": "Duration-basis support warning review",
+      "models_modified": false,
+      "predictions_regenerated": false,
+      "primary_horizon_metrics_recomputed": false
+    }
+  },
+  "nonparametric_evaluation": [
+    {
+      "month": 1,
+      "at_risk": 2423.0,
+      "default_events": 2.0,
+      "payoff_events": 23.0,
+      "censored": 0.0,
+      "survival": 0.9896822121337185,
+      "default_cif": 0.0008254230293025176,
+      "payoff_cif": 0.009492364836978951,
+      "naive_net_default": 0.0008254230293025522,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 2,
+      "at_risk": 2398.0,
+      "default_events": 1.0,
+      "payoff_events": 36.0,
+      "censored": 0.0,
+      "survival": 0.974411886091622,
+      "default_cif": 0.0012381345439537764,
+      "payoff_cif": 0.02434997936442427,
+      "naive_net_default": 0.0012420929946781456,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 3,
+      "at_risk": 2361.0,
+      "default_events": 0.0,
+      "payoff_events": 35.0,
+      "censored": 0.0,
+      "survival": 0.9599669830788279,
+      "default_cif": 0.0012381345439537764,
+      "payoff_cif": 0.03879488237721833,
+      "naive_net_default": 0.0012420929946781456,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 4,
+      "at_risk": 2326.0,
+      "default_events": 0.0,
+      "payoff_events": 42.0,
+      "censored": 0.0,
+      "survival": 0.9426330994634751,
+      "default_cif": 0.0012381345439537764,
+      "payoff_cif": 0.056128765992571196,
+      "naive_net_default": 0.0012420929946781456,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 5,
+      "at_risk": 2284.0,
+      "default_events": 0.0,
+      "payoff_events": 33.0,
+      "censored": 0.0,
+      "survival": 0.9290136194799835,
+      "default_cif": 0.0012381345439537764,
+      "payoff_cif": 0.06974824597606273,
+      "naive_net_default": 0.0012420929946781456,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 6,
+      "at_risk": 2251.0,
+      "default_events": 4.0,
+      "payoff_events": 37.0,
+      "censored": 0.0,
+      "survival": 0.9120924473792819,
+      "default_cif": 0.0028889806025588116,
+      "payoff_cif": 0.08501857201815931,
+      "naive_net_default": 0.0030168738156560737,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 7,
+      "at_risk": 2210.0,
+      "default_events": 0.0,
+      "payoff_events": 49.0,
+      "censored": 0.0,
+      "survival": 0.8918695831613701,
+      "default_cif": 0.0028889806025588116,
+      "payoff_cif": 0.10524143623607099,
+      "naive_net_default": 0.0030168738156560737,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 8,
+      "at_risk": 2161.0,
+      "default_events": 1.0,
+      "payoff_events": 52.0,
+      "censored": 0.0,
+      "survival": 0.8699958728848535,
+      "default_cif": 0.0033016921172100704,
+      "payoff_cif": 0.12670243499793643,
+      "naive_net_default": 0.0034782264885779846,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 9,
+      "at_risk": 2108.0,
+      "default_events": 1.0,
+      "payoff_events": 38.0,
+      "censored": 0.0,
+      "survival": 0.8539001238134544,
+      "default_cif": 0.003714403631861329,
+      "payoff_cif": 0.14238547255468426,
+      "naive_net_default": 0.003950959777720087,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 10,
+      "at_risk": 2069.0,
+      "default_events": 1.0,
+      "payoff_events": 43.0,
+      "censored": 0.0,
+      "survival": 0.8357408171687989,
+      "default_cif": 0.004127115146512587,
+      "payoff_cif": 0.16013206768468838,
+      "naive_net_default": 0.004432375456899562,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 11,
+      "at_risk": 2025.0,
+      "default_events": 3.0,
+      "payoff_events": 30.0,
+      "censored": 0.0,
+      "survival": 0.8221213371853073,
+      "default_cif": 0.005365249690466364,
+      "payoff_cif": 0.17251341312422613,
+      "naive_net_default": 0.005907290456222736,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 12,
+      "at_risk": 1992.0,
+      "default_events": 1.0,
+      "payoff_events": 33.0,
+      "censored": 0.0,
+      "survival": 0.8080891456871645,
+      "default_cif": 0.005777961205117622,
+      "payoff_cif": 0.18613289310771766,
+      "naive_net_default": 0.006406332981094165,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 13,
+      "at_risk": 1958.0,
+      "default_events": 1.0,
+      "payoff_events": 16.0,
+      "censored": 0.0,
+      "survival": 0.8010730499380931,
+      "default_cif": 0.006190672719768881,
+      "payoff_cif": 0.1927362773421378,
+      "naive_net_default": 0.006913786335036365,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 14,
+      "at_risk": 1941.0,
+      "default_events": 0.0,
+      "payoff_events": 29.0,
+      "censored": 0.0,
+      "survival": 0.7891044160132066,
+      "default_cif": 0.006190672719768881,
+      "payoff_cif": 0.2047049112670243,
+      "naive_net_default": 0.006913786335036365,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 15,
+      "at_risk": 1912.0,
+      "default_events": 2.0,
+      "payoff_events": 15.0,
+      "censored": 0.0,
+      "survival": 0.7820883202641352,
+      "default_cif": 0.007016095749071399,
+      "payoff_cif": 0.2108955839867932,
+      "naive_net_default": 0.0079525794455646,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 16,
+      "at_risk": 1895.0,
+      "default_events": 1.0,
+      "payoff_events": 32.0,
+      "censored": 0.0,
+      "survival": 0.7684688402806437,
+      "default_cif": 0.007428807263722657,
+      "payoff_cif": 0.22410235245563348,
+      "naive_net_default": 0.008476087319208125,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 17,
+      "at_risk": 1862.0,
+      "default_events": 1.0,
+      "payoff_events": 22.0,
+      "censored": 0.0,
+      "survival": 0.7589764754436646,
+      "default_cif": 0.007841518778373916,
+      "payoff_cif": 0.23318200577796117,
+      "naive_net_default": 0.009008592105825164,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 18,
+      "at_risk": 1839.0,
+      "default_events": 1.0,
+      "payoff_events": 26.0,
+      "censored": 0.0,
+      "survival": 0.7478332645480806,
+      "default_cif": 0.008254230293025175,
+      "payoff_cif": 0.2439125051588939,
+      "naive_net_default": 0.009547467259655606,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 19,
+      "at_risk": 1812.0,
+      "default_events": 1.0,
+      "payoff_events": 21.0,
+      "censored": 0.0,
+      "survival": 0.738753611225753,
+      "default_cif": 0.008666941807676434,
+      "payoff_cif": 0.2525794469665703,
+      "naive_net_default": 0.010094074617680082,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 20,
+      "at_risk": 1790.0,
+      "default_events": 0.0,
+      "payoff_events": 25.0,
+      "censored": 0.0,
+      "survival": 0.7284358233594715,
+      "default_cif": 0.008666941807676434,
+      "payoff_cif": 0.26289723483285177,
+      "naive_net_default": 0.010094074617680082,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 21,
+      "at_risk": 1765.0,
+      "default_events": 0.0,
+      "payoff_events": 13.0,
+      "censored": 0.0,
+      "survival": 0.7230705736690052,
+      "default_cif": 0.008666941807676434,
+      "payoff_cif": 0.26826248452331813,
+      "naive_net_default": 0.010094074617680082,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 22,
+      "at_risk": 1752.0,
+      "default_events": 2.0,
+      "payoff_events": 13.0,
+      "censored": 0.0,
+      "survival": 0.7168799009492363,
+      "default_cif": 0.009492364836978951,
+      "payoff_cif": 0.2736277342137845,
+      "naive_net_default": 0.01122410421286546,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 23,
+      "at_risk": 1737.0,
+      "default_events": 1.0,
+      "payoff_events": 22.0,
+      "censored": 0.0,
+      "survival": 0.7073875361122574,
+      "default_cif": 0.00990507635163021,
+      "payoff_cif": 0.2827073875361122,
+      "naive_net_default": 0.011793347676185673,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 24,
+      "at_risk": 1714.0,
+      "default_events": 0.0,
+      "payoff_events": 14.0,
+      "censored": 0.0,
+      "survival": 0.7016095749071397,
+      "default_cif": 0.00990507635163021,
+      "payoff_cif": 0.28848534874122983,
+      "naive_net_default": 0.011793347676185673,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 25,
+      "at_risk": 1700.0,
+      "default_events": 1.0,
+      "payoff_events": 21.0,
+      "censored": 0.0,
+      "survival": 0.692529921584812,
+      "default_cif": 0.010317787866281469,
+      "payoff_cif": 0.29715229054890624,
+      "naive_net_default": 0.012374645706964449,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 26,
+      "at_risk": 1678.0,
+      "default_events": 0.0,
+      "payoff_events": 22.0,
+      "censored": 0.0,
+      "survival": 0.6834502682624843,
+      "default_cif": 0.010317787866281469,
+      "payoff_cif": 0.3062319438712339,
+      "naive_net_default": 0.012374645706964449,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 27,
+      "at_risk": 1656.0,
+      "default_events": 1.0,
+      "payoff_events": 24.0,
+      "censored": 0.0,
+      "survival": 0.6731324803962029,
+      "default_cif": 0.010730499380932727,
+      "payoff_cif": 0.3161370202228641,
+      "naive_net_default": 0.012971037829122123,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 1.0
+    },
+    {
+      "month": 28,
+      "at_risk": 1631.0,
+      "default_events": 0.0,
+      "payoff_events": 13.0,
+      "censored": 1.0,
+      "survival": 0.6677672307057365,
+      "default_cif": 0.010730499380932727,
+      "payoff_cif": 0.3215022699133305,
+      "naive_net_default": 0.012971037829122123,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 0.9993819530284301
+    },
+    {
+      "month": 29,
+      "at_risk": 1617.0,
+      "default_events": 0.0,
+      "payoff_events": 16.0,
+      "censored": 0.0,
+      "survival": 0.6611597627457539,
+      "default_cif": 0.010730499380932727,
+      "payoff_cif": 0.32810973787331305,
+      "naive_net_default": 0.012971037829122123,
+      "censor_survival_before": 0.9993819530284301,
+      "censor_survival_after": 0.9993819530284301
+    },
+    {
+      "month": 30,
+      "at_risk": 1601.0,
+      "default_events": 0.0,
+      "payoff_events": 18.0,
+      "censored": 1.0,
+      "survival": 0.6537263612907735,
+      "default_cif": 0.010730499380932727,
+      "payoff_cif": 0.33554313932829344,
+      "naive_net_default": 0.012971037829122123,
+      "censor_survival_before": 0.9993819530284301,
+      "censor_survival_after": 0.9987506315167255
+    },
+    {
+      "month": 31,
+      "at_risk": 1582.0,
+      "default_events": 1.0,
+      "payoff_events": 13.0,
+      "censored": 0.0,
+      "survival": 0.6479411722528021,
+      "default_cif": 0.01114372716935926,
+      "payoff_cif": 0.34091510057783836,
+      "naive_net_default": 0.013594949941745926,
+      "censor_survival_before": 0.9987506315167255,
+      "censor_survival_after": 0.9987506315167255
+    },
+    {
+      "month": 32,
+      "at_risk": 1568.0,
+      "default_events": 0.0,
+      "payoff_events": 16.0,
+      "censored": 0.0,
+      "survival": 0.6413295276379776,
+      "default_cif": 0.01114372716935926,
+      "payoff_cif": 0.34752674519266286,
+      "naive_net_default": 0.013594949941745926,
+      "censor_survival_before": 0.9987506315167255,
+      "censor_survival_after": 0.9987506315167255
+    },
+    {
+      "month": 33,
+      "at_risk": 1552.0,
+      "default_events": 3.0,
+      "payoff_events": 14.0,
+      "censored": 1.0,
+      "survival": 0.6343046552347266,
+      "default_cif": 0.012383410534638855,
+      "payoff_cif": 0.3533119342306343,
+      "naive_net_default": 0.015501660734384304,
+      "censor_survival_before": 0.9987506315167255,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 34,
+      "at_risk": 1534.0,
+      "default_events": 1.0,
+      "payoff_events": 8.0,
+      "censored": 0.0,
+      "survival": 0.6305831807255267,
+      "default_cif": 0.012796907702327725,
+      "payoff_cif": 0.35661991157214523,
+      "naive_net_default": 0.01614344583168914,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 35,
+      "at_risk": 1525.0,
+      "default_events": 0.0,
+      "payoff_events": 12.0,
+      "censored": 0.0,
+      "survival": 0.6256212147132603,
+      "default_cif": 0.012796907702327725,
+      "payoff_cif": 0.3615818775844117,
+      "naive_net_default": 0.01614344583168914,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 36,
+      "at_risk": 1513.0,
+      "default_events": 1.0,
+      "payoff_events": 10.0,
+      "censored": 0.0,
+      "survival": 0.6210727458686827,
+      "default_cif": 0.013210404870016595,
+      "payoff_cif": 0.3657168492613004,
+      "naive_net_default": 0.01679371453900458,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 37,
+      "at_risk": 1502.0,
+      "default_events": 0.0,
+      "payoff_events": 14.0,
+      "censored": 0.0,
+      "survival": 0.6152837855210385,
+      "default_cif": 0.013210404870016595,
+      "payoff_cif": 0.3715058096089446,
+      "naive_net_default": 0.01679371453900458,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 38,
+      "at_risk": 1488.0,
+      "default_events": 2.0,
+      "payoff_events": 19.0,
+      "censored": 0.0,
+      "survival": 0.6066003449995722,
+      "default_cif": 0.014037399205394336,
+      "payoff_cif": 0.37936225579503313,
+      "naive_net_default": 0.018115228363548952,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 39,
+      "at_risk": 1467.0,
+      "default_events": 2.0,
+      "payoff_events": 12.0,
+      "censored": 0.0,
+      "survival": 0.600811384651928,
+      "default_cif": 0.014864393540772076,
+      "payoff_cif": 0.3843242218072996,
+      "naive_net_default": 0.01945385790906562,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 40,
+      "at_risk": 1453.0,
+      "default_events": 0.0,
+      "payoff_events": 23.0,
+      "censored": 0.0,
+      "survival": 0.591300949795084,
+      "default_cif": 0.014864393540772076,
+      "payoff_cif": 0.3938346566641436,
+      "naive_net_default": 0.01945385790906562,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 41,
+      "at_risk": 1430.0,
+      "default_events": 0.0,
+      "payoff_events": 17.0,
+      "censored": 0.0,
+      "survival": 0.5842714979443732,
+      "default_cif": 0.014864393540772076,
+      "payoff_cif": 0.4008641085148544,
+      "naive_net_default": 0.01945385790906562,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 42,
+      "at_risk": 1413.0,
+      "default_events": 1.0,
+      "payoff_events": 15.0,
+      "censored": 0.0,
+      "survival": 0.5776555432613513,
+      "default_cif": 0.015277890708460947,
+      "payoff_cif": 0.4070665660301874,
+      "naive_net_default": 0.020147804223354937,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 43,
+      "at_risk": 1397.0,
+      "default_events": 0.0,
+      "payoff_events": 23.0,
+      "censored": 0.0,
+      "survival": 0.5681451084045073,
+      "default_cif": 0.015277890708460947,
+      "payoff_cif": 0.4165770008870314,
+      "naive_net_default": 0.020147804223354937,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 44,
+      "at_risk": 1374.0,
+      "default_events": 0.0,
+      "payoff_events": 27.0,
+      "censored": 0.0,
+      "survival": 0.5569806848769078,
+      "default_cif": 0.015277890708460947,
+      "payoff_cif": 0.4277414244146309,
+      "naive_net_default": 0.020147804223354937,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 45,
+      "at_risk": 1347.0,
+      "default_events": 0.0,
+      "payoff_events": 12.0,
+      "censored": 0.0,
+      "survival": 0.5520187188646414,
+      "default_cif": 0.015277890708460947,
+      "payoff_cif": 0.43270339042689737,
+      "naive_net_default": 0.020147804223354937,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 46,
+      "at_risk": 1335.0,
+      "default_events": 0.0,
+      "payoff_events": 15.0,
+      "censored": 0.0,
+      "survival": 0.5458162613493083,
+      "default_cif": 0.015277890708460947,
+      "payoff_cif": 0.4389058479422304,
+      "naive_net_default": 0.020147804223354937,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 47,
+      "at_risk": 1320.0,
+      "default_events": 1.0,
+      "payoff_events": 15.0,
+      "censored": 0.0,
+      "survival": 0.5392003066662864,
+      "default_cif": 0.015691387876149817,
+      "payoff_cif": 0.44510830545756347,
+      "naive_net_default": 0.020890116492882638,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 48,
+      "at_risk": 1304.0,
+      "default_events": 0.0,
+      "payoff_events": 9.0,
+      "censored": 0.0,
+      "survival": 0.5354788321570866,
+      "default_cif": 0.015691387876149817,
+      "payoff_cif": 0.4488297799667633,
+      "naive_net_default": 0.020890116492882638,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.9980999796395159
+    },
+    {
+      "month": 49,
+      "at_risk": 1295.0,
+      "default_events": 0.0,
+      "payoff_events": 22.0,
+      "censored": 1.0,
+      "survival": 0.5263818944679314,
+      "default_cif": 0.015691387876149817,
+      "payoff_cif": 0.45792671765591847,
+      "naive_net_default": 0.020890116492882638,
+      "censor_survival_before": 0.9980999796395159,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 50,
+      "at_risk": 1272.0,
+      "default_events": 0.0,
+      "payoff_events": 20.0,
+      "censored": 0.0,
+      "survival": 0.5181054495863602,
+      "default_cif": 0.015691387876149817,
+      "payoff_cif": 0.4662031625374897,
+      "naive_net_default": 0.020890116492882638,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 51,
+      "at_risk": 1252.0,
+      "default_events": 0.0,
+      "payoff_events": 30.0,
+      "censored": 0.0,
+      "survival": 0.5056907822640033,
+      "default_cif": 0.015691387876149817,
+      "payoff_cif": 0.4786178298598466,
+      "naive_net_default": 0.020890116492882638,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 52,
+      "at_risk": 1222.0,
+      "default_events": 3.0,
+      "payoff_events": 30.0,
+      "censored": 0.0,
+      "survival": 0.4920346482094108,
+      "default_cif": 0.016932854608385506,
+      "payoff_cif": 0.49103249718220343,
+      "naive_net_default": 0.02329382324453677,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 53,
+      "at_risk": 1189.0,
+      "default_events": 20.0,
+      "payoff_events": 41.0,
+      "censored": 0.0,
+      "survival": 0.4667914913206185,
+      "default_cif": 0.025209299489956753,
+      "payoff_cif": 0.5079992091894245,
+      "naive_net_default": 0.039722859018388124,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 54,
+      "at_risk": 1128.0,
+      "default_events": 6.0,
+      "payoff_events": 32.0,
+      "censored": 0.0,
+      "survival": 0.4510662460456331,
+      "default_cif": 0.027692232954428127,
+      "payoff_cif": 0.5212415209999386,
+      "naive_net_default": 0.0448307161512691,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 55,
+      "at_risk": 1090.0,
+      "default_events": 3.0,
+      "payoff_events": 32.0,
+      "censored": 0.0,
+      "survival": 0.43658246750288343,
+      "default_cif": 0.028933699686663816,
+      "payoff_cif": 0.5344838328104526,
+      "naive_net_default": 0.04745962243709134,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 56,
+      "at_risk": 1055.0,
+      "default_events": 2.0,
+      "payoff_events": 33.0,
+      "censored": 0.0,
+      "survival": 0.42209868896013375,
+      "default_cif": 0.02976134417482094,
+      "payoff_cif": 0.5481399668650452,
+      "naive_net_default": 0.04926538618602583,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 57,
+      "at_risk": 1020.0,
+      "default_events": 3.0,
+      "payoff_events": 28.0,
+      "censored": 0.0,
+      "survival": 0.4092701993936983,
+      "default_cif": 0.03100281090705663,
+      "payoff_cif": 0.559726989699245,
+      "naive_net_default": 0.052061664461949264,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 58,
+      "at_risk": 989.0,
+      "default_events": 0.0,
+      "payoff_events": 23.0,
+      "censored": 0.0,
+      "survival": 0.39975228777989136,
+      "default_cif": 0.03100281090705663,
+      "payoff_cif": 0.5692449013130518,
+      "naive_net_default": 0.052061664461949264,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 59,
+      "at_risk": 966.0,
+      "default_events": 0.0,
+      "payoff_events": 25.0,
+      "censored": 0.0,
+      "survival": 0.38940673167792733,
+      "default_cif": 0.03100281090705663,
+      "payoff_cif": 0.5795904574150159,
+      "naive_net_default": 0.052061664461949264,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    },
+    {
+      "month": 60,
+      "at_risk": 941.0,
+      "default_events": 0.0,
+      "payoff_events": 18.0,
+      "censored": 0.0,
+      "survival": 0.3819579312845132,
+      "default_cif": 0.03100281090705663,
+      "payoff_cif": 0.58703925780843,
+      "naive_net_default": 0.052061664461949264,
+      "censor_survival_before": 0.997315926238385,
+      "censor_survival_after": 0.997315926238385
+    }
+  ],
+  "nonparametric_development": [
+    {
+      "month": 1,
+      "at_risk": 13813.0,
+      "default_events": 1.0,
+      "payoff_events": 89.0,
+      "censored": 3.0,
+      "survival": 0.9934843987547962,
+      "default_cif": 7.239556939115326e-05,
+      "payoff_cif": 0.006443205675812641,
+      "naive_net_default": 7.239556939120373e-05,
+      "censor_survival_before": 1.0,
+      "censor_survival_after": 0.9997813889091307
+    },
+    {
+      "month": 2,
+      "at_risk": 13720.0,
+      "default_events": 2.0,
+      "payoff_events": 86.0,
+      "censored": 3.0,
+      "survival": 0.9871121956140949,
+      "default_cif": 0.0002172183680434559,
+      "payoff_cif": 0.012670586017861654,
+      "naive_net_default": 0.00021815761085342,
+      "censor_survival_before": 0.9997813889091307,
+      "censor_survival_after": 0.9995613665964306
+    },
+    {
+      "month": 3,
+      "at_risk": 13629.0,
+      "default_events": 5.0,
+      "payoff_events": 86.0,
+      "censored": 3.0,
+      "survival": 0.9805213078159525,
+      "default_cif": 0.0005793550602490818,
+      "payoff_cif": 0.018899337123798418,
+      "naive_net_default": 0.0005849423501553819,
+      "censor_survival_before": 0.9995613665964306,
+      "censor_survival_after": 0.999339865333335
+    },
+    {
+      "month": 4,
+      "at_risk": 13535.0,
+      "default_events": 2.0,
+      "payoff_events": 65.0,
+      "censored": 2.0,
+      "survival": 0.975667600566328,
+      "default_cif": 0.0007242418438199651,
+      "payoff_cif": 0.023608157589852123,
+      "naive_net_default": 0.0007326209696825181,
+      "censor_survival_before": 0.999339865333335,
+      "censor_survival_after": 0.9991914632149309
+    },
+    {
+      "month": 5,
+      "at_risk": 13466.0,
+      "default_events": 6.0,
+      "payoff_events": 85.0,
+      "censored": 0.0,
+      "survival": 0.969074272803701,
+      "default_cif": 0.0011589667512459244,
+      "payoff_cif": 0.029766760445053213,
+      "naive_net_default": 0.00117786115044749,
+      "censor_survival_before": 0.9991914632149309,
+      "censor_survival_after": 0.9991914632149309
+    },
+    {
+      "month": 6,
+      "at_risk": 13375.0,
+      "default_events": 3.0,
+      "payoff_events": 99.0,
+      "censored": 1.0,
+      "survival": 0.9616839493774596,
+      "default_cif": 0.001376329204958904,
+      "payoff_cif": 0.03693972141758154,
+      "naive_net_default": 0.0014018960227127897,
+      "censor_survival_before": 0.9991914632149309,
+      "censor_survival_after": 0.9991161832131819
+    },
+    {
+      "month": 7,
+      "at_risk": 13272.0,
+      "default_events": 4.0,
+      "payoff_events": 109.0,
+      "censored": 3.0,
+      "survival": 0.9534960134009939,
+      "default_cif": 0.001666167646603708,
+      "payoff_cif": 0.04483781895240245,
+      "naive_net_default": 0.0017028598876849266,
+      "censor_survival_before": 0.9991161832131819,
+      "censor_survival_after": 0.9988884038568752
+    },
+    {
+      "month": 8,
+      "at_risk": 13156.0,
+      "default_events": 3.0,
+      "payoff_events": 140.0,
+      "censored": 1.0,
+      "survival": 0.9431319262988092,
+      "default_cif": 0.0018835960473488418,
+      "payoff_cif": 0.05498447765384203,
+      "naive_net_default": 0.0019305044164426022,
+      "censor_survival_before": 0.9988884038568752,
+      "censor_survival_after": 0.9988116430481564
+    },
+    {
+      "month": 9,
+      "at_risk": 13012.0,
+      "default_events": 4.0,
+      "payoff_events": 133.0,
+      "censored": 1.0,
+      "survival": 0.9332019329155524,
+      "default_cif": 0.002173522861458528,
+      "payoff_cif": 0.0646245442229891,
+      "naive_net_default": 0.0022373195088445375,
+      "censor_survival_before": 0.9988116430481564,
+      "censor_survival_after": 0.9987340654448129
+    },
+    {
+      "month": 10,
+      "at_risk": 12874.0,
+      "default_events": 4.0,
+      "payoff_events": 159.0,
+      "censored": 0.0,
+      "survival": 0.921386497536864,
+      "default_cif": 0.00246347219590487,
+      "payoff_cif": 0.07615003026723122,
+      "naive_net_default": 0.002547328109276825,
+      "censor_survival_before": 0.9987340654448129,
+      "censor_survival_after": 0.9987340654448129
+    },
+    {
+      "month": 11,
+      "at_risk": 12711.0,
+      "default_events": 3.0,
+      "payoff_events": 164.0,
+      "censored": 0.0,
+      "survival": 0.9092811128237293,
+      "default_cif": 0.0026809341967396266,
+      "payoff_cif": 0.08803795297953125,
+      "naive_net_default": 0.0027827429480520305,
+      "censor_survival_before": 0.9987340654448129,
+      "censor_survival_after": 0.9987340654448129
+    },
+    {
+      "month": 12,
+      "at_risk": 12544.0,
+      "default_events": 6.0,
+      "payoff_events": 178.0,
+      "censored": 0.0,
+      "survival": 0.8959434434391975,
+      "default_cif": 0.00311585819840914,
+      "payoff_cif": 0.10094069836239349,
+      "naive_net_default": 0.00325972824319809,
+      "censor_survival_before": 0.9987340654448129,
+      "censor_survival_after": 0.9987340654448129
+    },
+    {
+      "month": 13,
+      "at_risk": 12360.0,
+      "default_events": 4.0,
+      "payoff_events": 203.0,
+      "censored": 1.0,
+      "survival": 0.8809385653815993,
+      "default_cif": 0.0034058075328554822,
+      "payoff_cif": 0.11565562708554536,
+      "naive_net_default": 0.0035822979104334074,
+      "censor_survival_before": 0.9987340654448129,
+      "censor_survival_after": 0.9986518854015771
+    },
+    {
+      "month": 14,
+      "at_risk": 12152.0,
+      "default_events": 8.0,
+      "payoff_events": 178.0,
+      "censored": 1.0,
+      "survival": 0.8674548118298402,
+      "default_cif": 0.003985753922178458,
+      "payoff_cif": 0.12855943424798155,
+      "naive_net_default": 0.004238267431229681,
+      "censor_survival_before": 0.9986518854015771,
+      "censor_survival_after": 0.9985684279483428
+    },
+    {
+      "month": 15,
+      "at_risk": 11965.0,
+      "default_events": 11.0,
+      "payoff_events": 224.0,
+      "censored": 0.0,
+      "survival": 0.850417462830257,
+      "default_cif": 0.004783246854073839,
+      "payoff_cif": 0.14479929031566932,
+      "naive_net_default": 0.005153719086746222,
+      "censor_survival_before": 0.9985684279483428,
+      "censor_survival_after": 0.9985684279483428
+    },
+    {
+      "month": 16,
+      "at_risk": 11730.0,
+      "default_events": 5.0,
+      "payoff_events": 207.0,
+      "censored": 1.0,
+      "survival": 0.8350475990519096,
+      "default_cif": 0.0051457436412990125,
+      "payoff_cif": 0.1598066573067915,
+      "naive_net_default": 0.005577779735046806,
+      "censor_survival_before": 0.9985684279483428,
+      "censor_survival_after": 0.9984817316097468
+    },
+    {
+      "month": 17,
+      "at_risk": 11517.0,
+      "default_events": 8.0,
+      "payoff_events": 218.0,
+      "censored": 0.0,
+      "survival": 0.8186613216024236,
+      "default_cif": 0.005725788860749849,
+      "payoff_cif": 0.17561288953682677,
+      "naive_net_default": 0.0062685306043808176,
+      "censor_survival_before": 0.9984817316097468,
+      "censor_survival_after": 0.9984817316097468
+    },
+    {
+      "month": 18,
+      "at_risk": 11291.0,
+      "default_events": 5.0,
+      "payoff_events": 259.0,
+      "censored": 2.0,
+      "survival": 0.799519829360546,
+      "default_cif": 0.006088317122906622,
+      "payoff_cif": 0.19439185351654759,
+      "naive_net_default": 0.006708585280403967,
+      "censor_survival_before": 0.9984817316097468,
+      "censor_survival_after": 0.9983006339890685
+    },
+    {
+      "month": 19,
+      "at_risk": 11025.0,
+      "default_events": 2.0,
+      "payoff_events": 270.0,
+      "censored": 0.0,
+      "survival": 0.7797947142960501,
+      "default_cif": 0.006233354733674975,
+      "payoff_cif": 0.21397193097027525,
+      "naive_net_default": 0.006888774199173997,
+      "censor_survival_before": 0.9983006339890685,
+      "censor_survival_after": 0.9983006339890685
+    },
+    {
+      "month": 20,
+      "at_risk": 10753.0,
+      "default_events": 4.0,
+      "payoff_events": 251.0,
+      "censored": 3.0,
+      "survival": 0.7613024189230851,
+      "default_cif": 0.006523429955211681,
+      "payoff_cif": 0.23217415112170356,
+      "naive_net_default": 0.007258200861798736,
+      "censor_survival_before": 0.9983006339890685,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 21,
+      "at_risk": 10495.0,
+      "default_events": 10.0,
+      "payoff_events": 211.0,
+      "censored": 0.0,
+      "survival": 0.7452711817070774,
+      "default_cif": 0.007248825304352306,
+      "payoff_cif": 0.24747999298857074,
+      "naive_net_default": 0.008204119679462551,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 22,
+      "at_risk": 10274.0,
+      "default_events": 7.0,
+      "payoff_events": 235.0,
+      "censored": 0.0,
+      "survival": 0.7277166142578744,
+      "default_cif": 0.007756602048750743,
+      "payoff_cif": 0.2645267836933754,
+      "naive_net_default": 0.008879861470609596,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 23,
+      "at_risk": 10032.0,
+      "default_events": 6.0,
+      "payoff_events": 209.0,
+      "censored": 0.0,
+      "survival": 0.712120614251351,
+      "default_cif": 0.008191839258235117,
+      "payoff_cif": 0.27968754649041444,
+      "naive_net_default": 0.009472636673079293,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 24,
+      "at_risk": 9817.0,
+      "default_events": 2.0,
+      "payoff_events": 224.0,
+      "censored": 0.0,
+      "survival": 0.6957266793607728,
+      "default_cif": 0.008336918328063242,
+      "payoff_cif": 0.2959364023111644,
+      "naive_net_default": 0.00967443505615495,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 25,
+      "at_risk": 9591.0,
+      "default_events": 3.0,
+      "payoff_events": 194.0,
+      "censored": 0.0,
+      "survival": 0.6814363909827025,
+      "default_cif": 0.00855453693280543,
+      "payoff_cif": 0.3100090720844925,
+      "naive_net_default": 0.009984202201899106,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 26,
+      "at_risk": 9394.0,
+      "default_events": 3.0,
+      "payoff_events": 230.0,
+      "censored": 0.0,
+      "survival": 0.6645346793477259,
+      "default_cif": 0.008772155537547618,
+      "payoff_cif": 0.3266931651147269,
+      "naive_net_default": 0.01030036649755528,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 27,
+      "at_risk": 9161.0,
+      "default_events": 7.0,
+      "payoff_events": 170.0,
+      "censored": 0.0,
+      "survival": 0.6516951816679368,
+      "default_cif": 0.009279932281946054,
+      "payoff_cif": 0.3390248860501175,
+      "naive_net_default": 0.011056604619432475,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 28,
+      "at_risk": 8984.0,
+      "default_events": 6.0,
+      "payoff_events": 164.0,
+      "censored": 0.0,
+      "survival": 0.6393634607325462,
+      "default_cif": 0.009715169491430429,
+      "payoff_cif": 0.35092136977602373,
+      "naive_net_default": 0.01171707438482461,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 29,
+      "at_risk": 8814.0,
+      "default_events": 2.0,
+      "payoff_events": 171.0,
+      "censored": 0.0,
+      "survival": 0.6268141211924134,
+      "default_cif": 0.009860248561258554,
+      "payoff_cif": 0.3633256302463284,
+      "naive_net_default": 0.011941327374526245,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 30,
+      "at_risk": 8641.0,
+      "default_events": 6.0,
+      "payoff_events": 138.0,
+      "censored": 0.0,
+      "survival": 0.6163684281647884,
+      "default_cif": 0.010295485770742928,
+      "payoff_cif": 0.37333608606446905,
+      "naive_net_default": 0.012627399823982643,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 31,
+      "at_risk": 8497.0,
+      "default_events": 4.0,
+      "payoff_events": 127.0,
+      "censored": 0.0,
+      "survival": 0.6068657490910463,
+      "default_cif": 0.010585643910399178,
+      "payoff_cif": 0.382548606998555,
+      "naive_net_default": 0.013092209804058452,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 32,
+      "at_risk": 8366.0,
+      "default_events": 6.0,
+      "payoff_events": 147.0,
+      "censored": 0.0,
+      "survival": 0.5957672002491947,
+      "default_cif": 0.011020881119883552,
+      "payoff_cif": 0.39321191863092214,
+      "naive_net_default": 0.01380000884077559,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.9980153508968637
+    },
+    {
+      "month": 33,
+      "at_risk": 8213.0,
+      "default_events": 6.0,
+      "payoff_events": 112.0,
+      "censored": 4.0,
+      "survival": 0.5872075351293353,
+      "default_cif": 0.011456118329367927,
+      "payoff_cif": 0.40133634654129713,
+      "naive_net_default": 0.014520476385759817,
+      "censor_survival_before": 0.9980153508968637,
+      "censor_survival_after": 0.997522199395494
+    },
+    {
+      "month": 34,
+      "at_risk": 8091.0,
+      "default_events": 4.0,
+      "payoff_events": 78.0,
+      "censored": 2.0,
+      "survival": 0.5812563525955811,
+      "default_cif": 0.011746419916380329,
+      "payoff_cif": 0.40699722748803896,
+      "naive_net_default": 0.015007674271615312,
+      "censor_survival_before": 0.997522199395494,
+      "censor_survival_after": 0.9972730990834962
+    },
+    {
+      "month": 35,
+      "at_risk": 8007.0,
+      "default_events": 6.0,
+      "payoff_events": 99.0,
+      "censored": 5.0,
+      "survival": 0.5736340324978496,
+      "default_cif": 0.012181981064822128,
+      "payoff_cif": 0.4141839864373286,
+      "naive_net_default": 0.01574577267980448,
+      "censor_survival_before": 0.9972730990834962,
+      "censor_survival_after": 0.9966420733311021
+    },
+    {
+      "month": 36,
+      "at_risk": 7897.0,
+      "default_events": 6.0,
+      "payoff_events": 69.0,
+      "censored": 4.0,
+      "survival": 0.5681860709381005,
+      "default_cif": 0.012617817989602056,
+      "payoff_cif": 0.4191961110722978,
+      "naive_net_default": 0.01649359151783425,
+      "censor_survival_before": 0.9966420733311021,
+      "censor_survival_after": 0.9961324123373251
+    },
+    {
+      "month": 37,
+      "at_risk": 7818.0,
+      "default_events": 2.0,
+      "payoff_events": 72.0,
+      "censored": 1.0,
+      "survival": 0.5628079986370748,
+      "default_cif": 0.012763171295035186,
+      "payoff_cif": 0.42442883006789045,
+      "naive_net_default": 0.01674519203164393,
+      "censor_survival_before": 0.9961324123373251,
+      "censor_survival_after": 0.9960037795361452
+    },
+    {
+      "month": 38,
+      "at_risk": 7743.0,
+      "default_events": 2.0,
+      "payoff_events": 81.0,
+      "censored": 3.0,
+      "survival": 0.5567750574144379,
+      "default_cif": 0.012908543372689086,
+      "payoff_cif": 0.4303163992128734,
+      "naive_net_default": 0.01699916460247386,
+      "censor_survival_before": 0.9960037795361452,
+      "censor_survival_after": 0.9956136997269274
+    },
+    {
+      "month": 39,
+      "at_risk": 7657.0,
+      "default_events": 7.0,
+      "payoff_events": 93.0,
+      "censored": 6.0,
+      "survival": 0.5495036057047025,
+      "default_cif": 0.013417544992370562,
+      "payoff_cif": 0.4370788493029273,
+      "naive_net_default": 0.01789782019184083,
+      "censor_survival_before": 0.9956136997269274,
+      "censor_survival_after": 0.9948232164401256
+    },
+    {
+      "month": 40,
+      "at_risk": 7551.0,
+      "default_events": 5.0,
+      "payoff_events": 73.0,
+      "censored": 11.0,
+      "survival": 0.5438273666310742,
+      "default_cif": 0.013781406471449296,
+      "payoff_cif": 0.4423912268974768,
+      "naive_net_default": 0.018548132852288512,
+      "censor_survival_before": 0.9948232164401256,
+      "censor_survival_after": 0.9933588707448437
+    },
+    {
+      "month": 41,
+      "at_risk": 7462.0,
+      "default_events": 2.0,
+      "payoff_events": 74.0,
+      "censored": 124.0,
+      "survival": 0.5382885191553356,
+      "default_cif": 0.01392716561554768,
+      "payoff_cif": 0.44778431522911705,
+      "naive_net_default": 0.01881118615358779,
+      "censor_survival_before": 0.9933588707448437,
+      "censor_survival_after": 0.9766818466489379
+    },
+    {
+      "month": 42,
+      "at_risk": 7262.0,
+      "default_events": 7.0,
+      "payoff_events": 67.0,
+      "censored": 908.0,
+      "survival": 0.5328033428378618,
+      "default_cif": 0.014446033645578987,
+      "payoff_cif": 0.45275062351655954,
+      "naive_net_default": 0.019756975426091894,
+      "censor_survival_before": 0.9766818466489379,
+      "censor_survival_after": 0.8533057869999068
+    },
+    {
+      "month": 43,
+      "at_risk": 6280.0,
+      "default_events": 1.0,
+      "payoff_events": 64.0,
+      "censored": 908.0,
+      "survival": 0.5272886585568967,
+      "default_cif": 0.01453087494220922,
+      "payoff_cif": 0.45818046650089445,
+      "naive_net_default": 0.019913065079686487,
+      "censor_survival_before": 0.8533057869999068,
+      "censor_survival_after": 0.7286393904438464
+    },
+    {
+      "month": 44,
+      "at_risk": 5307.0,
+      "default_events": 2.0,
+      "payoff_events": 51.0,
+      "censored": 857.0,
+      "survival": 0.5220227269753034,
+      "default_cif": 0.014729589341514627,
+      "payoff_cif": 0.4632476836831823,
+      "naive_net_default": 0.02028242137699965,
+      "censor_survival_before": 0.7286393904438464,
+      "censor_survival_after": 0.6097882374917382
+    },
+    {
+      "month": 45,
+      "at_risk": 4397.0,
+      "default_events": 3.0,
+      "payoff_events": 54.0,
+      "censored": 796.0,
+      "survival": 0.5152555458432606,
+      "default_cif": 0.015085756769516881,
+      "payoff_cif": 0.4696586973872229,
+      "naive_net_default": 0.020950866393117162,
+      "censor_survival_before": 0.6097882374917382,
+      "censor_survival_after": 0.49794689255085717
+    },
+    {
+      "month": 46,
+      "at_risk": 3544.0,
+      "default_events": 0.0,
+      "payoff_events": 45.0,
+      "censored": 641.0,
+      "survival": 0.5087130798266278,
+      "default_cif": 0.015085756769516881,
+      "payoff_cif": 0.4762011634038557,
+      "naive_net_default": 0.020950866393117162,
+      "censor_survival_before": 0.49794689255085717,
+      "censor_survival_after": 0.40672541266371814
+    },
+    {
+      "month": 47,
+      "at_risk": 2858.0,
+      "default_events": 2.0,
+      "payoff_events": 32.0,
+      "censored": 503.0,
+      "survival": 0.5026612097377177,
+      "default_cif": 0.01544174912768807,
+      "payoff_cif": 0.4818970411345947,
+      "naive_net_default": 0.02163599524798554,
+      "censor_survival_before": 0.40672541266371814,
+      "censor_survival_after": 0.33428104914748225
+    },
+    {
+      "month": 48,
+      "at_risk": 2321.0,
+      "default_events": 0.0,
+      "payoff_events": 39.0,
+      "censored": 429.0,
+      "survival": 0.49421494210317607,
+      "default_cif": 0.01544174912768807,
+      "payoff_cif": 0.4903433087691363,
+      "naive_net_default": 0.02163599524798554,
+      "censor_survival_before": 0.33428104914748225,
+      "censor_survival_after": 0.2714385556837356
+    },
+    {
+      "month": 49,
+      "at_risk": 1853.0,
+      "default_events": 2.0,
+      "payoff_events": 18.0,
+      "censored": 331.0,
+      "survival": 0.48888072794124215,
+      "default_cif": 0.01597517054388146,
+      "payoff_cif": 0.4951441015148768,
+      "naive_net_default": 0.022691973666498222,
+      "censor_survival_before": 0.2714385556837356,
+      "censor_survival_after": 0.2224226462831265
+    },
+    {
+      "month": 50,
+      "at_risk": 1502.0,
+      "default_events": 0.0,
+      "payoff_events": 14.0,
+      "censored": 369.0,
+      "survival": 0.48432391689518534,
+      "default_cif": 0.01597517054388146,
+      "payoff_cif": 0.4997009125609337,
+      "naive_net_default": 0.022691973666498222,
+      "censor_survival_before": 0.2224226462831265,
+      "censor_survival_after": 0.16726541746694792
+    },
+    {
+      "month": 51,
+      "at_risk": 1119.0,
+      "default_events": 1.0,
+      "payoff_events": 9.0,
+      "censored": 367.0,
+      "survival": 0.47999573175760546,
+      "default_cif": 0.016407989057639447,
+      "payoff_cif": 0.5035962791847556,
+      "naive_net_default": 0.023565349918806988,
+      "censor_survival_before": 0.16726541746694792,
+      "censor_survival_after": 0.11191247949546922
+    },
+    {
+      "month": 52,
+      "at_risk": 742.0,
+      "default_events": 0.0,
+      "payoff_events": 7.0,
+      "censored": 353.0,
+      "survival": 0.4754674701372507,
+      "default_cif": 0.016407989057639447,
+      "payoff_cif": 0.5081245408051104,
+      "naive_net_default": 0.023565349918806988,
+      "censor_survival_before": 0.11191247949546922,
+      "censor_survival_after": 0.05816403696227107
+    },
+    {
+      "month": 53,
+      "at_risk": 382.0,
+      "default_events": 2.0,
+      "payoff_events": 3.0,
+      "censored": 373.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.05816403696227107,
+      "censor_survival_after": 0.0006171250606076488
+    },
+    {
+      "month": 54,
+      "at_risk": 4.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 4.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0006171250606076488,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 55,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 56,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 57,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 58,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 59,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    },
+    {
+      "month": 60,
+      "at_risk": 0.0,
+      "default_events": 0.0,
+      "payoff_events": 0.0,
+      "censored": 0.0,
+      "survival": 0.46924407393126577,
+      "default_cif": 0.01889734754003343,
+      "payoff_cif": 0.5118585785287013,
+      "naive_net_default": 0.0286775732176614,
+      "censor_survival_before": 0.0,
+      "censor_survival_after": 0.0
+    }
+  ],
+  "horizon_results": {
+    "12": {
+      "month": 12,
+      "status": "SUPPORTED",
+      "observed": {
+        "month": 12,
+        "at_risk": 1992.0,
+        "default_events": 1.0,
+        "payoff_events": 33.0,
+        "censored": 0.0,
+        "survival": 0.8080891456871645,
+        "default_cif": 0.005777961205117622,
+        "payoff_cif": 0.18613289310771766,
+        "naive_net_default": 0.006406332981094165,
+        "censor_survival_before": 1.0,
+        "censor_survival_after": 1.0
+      },
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": null,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      },
+      "metrics": {
+        "ipcw_brier": 0.005669906025085174,
+        "cumulative_dynamic_auc": 0.7665302733795885,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 14,
+        "observed_default_cif": 0.005777961205117622,
+        "mean_predicted_cif": 0.0032852705525462404,
+        "calibration_difference": -0.002492690652571382,
+        "at_risk": 1992.0,
+        "censor_survival": 1.0,
+        "known_status_facilities": 2423,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "transported_development_AJ_reference": {
+        "ipcw_brier": 0.005751663161848108,
+        "cumulative_dynamic_auc": 0.5,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 14,
+        "observed_default_cif": 0.005777961205117622,
+        "mean_predicted_cif": 0.003115858198409147,
+        "calibration_difference": -0.0026621030067084752,
+        "at_risk": 1992.0,
+        "censor_survival": 1.0,
+        "known_status_facilities": 2423,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "mean_survival": 0.902492611660161,
+      "mean_payoff_cif": 0.09422211778729263,
+      "payoff_calibration_difference": -0.09191077532042503
+    },
+    "24": {
+      "month": 24,
+      "status": "SUPPORTED",
+      "observed": {
+        "month": 24,
+        "at_risk": 1714.0,
+        "default_events": 0.0,
+        "payoff_events": 14.0,
+        "censored": 0.0,
+        "survival": 0.7016095749071397,
+        "default_cif": 0.00990507635163021,
+        "payoff_cif": 0.28848534874122983,
+        "naive_net_default": 0.011793347676185673,
+        "censor_survival_before": 1.0,
+        "censor_survival_after": 1.0
+      },
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": null,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      },
+      "metrics": {
+        "ipcw_brier": 0.009742135998954354,
+        "cumulative_dynamic_auc": 0.7449110740586355,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 24,
+        "observed_default_cif": 0.00990507635163021,
+        "mean_predicted_cif": 0.00859201553273719,
+        "calibration_difference": -0.0013130608188930207,
+        "at_risk": 1714.0,
+        "censor_survival": 1.0,
+        "known_status_facilities": 2423,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "transported_development_AJ_reference": {
+        "ipcw_brier": 0.009809424933685463,
+        "cumulative_dynamic_auc": 0.5,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 24,
+        "observed_default_cif": 0.00990507635163021,
+        "mean_predicted_cif": 0.008336918328063261,
+        "calibration_difference": -0.0015681580235669488,
+        "at_risk": 1714.0,
+        "censor_survival": 1.0,
+        "known_status_facilities": 2423,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "mean_survival": 0.7122474817388986,
+      "mean_payoff_cif": 0.2791605027283641,
+      "payoff_calibration_difference": -0.009324846012865706
+    },
+    "36": {
+      "month": 36,
+      "status": "SUPPORTED",
+      "observed": {
+        "month": 36,
+        "at_risk": 1513.0,
+        "default_events": 1.0,
+        "payoff_events": 10.0,
+        "censored": 0.0,
+        "survival": 0.6210727458686827,
+        "default_cif": 0.013210404870016595,
+        "payoff_cif": 0.3657168492613004,
+        "naive_net_default": 0.01679371453900458,
+        "censor_survival_before": 0.9980999796395159,
+        "censor_survival_after": 0.9980999796395159
+      },
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": null,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      },
+      "metrics": {
+        "ipcw_brier": 0.013113590867837121,
+        "cumulative_dynamic_auc": 0.7465265814351377,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 32,
+        "observed_default_cif": 0.013210404870016595,
+        "mean_predicted_cif": 0.012886780769551322,
+        "calibration_difference": -0.00032362410046527304,
+        "at_risk": 1513.0,
+        "censor_survival": 0.9980999796395159,
+        "known_status_facilities": 2420,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "transported_development_AJ_reference": {
+        "ipcw_brier": 0.013036241232397676,
+        "cumulative_dynamic_auc": 0.5,
+        "auc_status": "estimated",
+        "default_facilities_by_horizon": 32,
+        "observed_default_cif": 0.013210404870016595,
+        "mean_predicted_cif": 0.012617817989602102,
+        "calibration_difference": -0.0005925868804144939,
+        "at_risk": 1513.0,
+        "censor_survival": 0.9980999796395159,
+        "known_status_facilities": 2420,
+        "ipcw_weight_sum": 2423.0,
+        "cohort_size": 2423.0,
+        "controls": "All non-defaults including prior competing payoff; not survivor-only controls"
+      },
+      "mean_survival": 0.5866549737675048,
+      "mean_payoff_cif": 0.40045824546294395,
+      "payoff_calibration_difference": 0.03474139620164357
+    },
+    "60": {
+      "month": 60,
+      "status": "INSUFFICIENT TRAINING-TIME SUPPORT",
+      "observed": {
+        "month": 60,
+        "at_risk": 941.0,
+        "default_events": 0.0,
+        "payoff_events": 18.0,
+        "censored": 0.0,
+        "survival": 0.3819579312845132,
+        "default_cif": 0.03100281090705663,
+        "payoff_cif": 0.58703925780843,
+        "naive_net_default": 0.052061664461949264,
+        "censor_survival_before": 0.997315926238385,
+        "censor_survival_after": 0.997315926238385
+      },
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": null,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      }
+    }
+  },
+  "uncertainty": {
+    "requested_draws": 400,
+    "valid_draws": 400,
+    "failed_draws": 0,
+    "seed": 61006,
+    "unit": "facility",
+    "models_fixed": true,
+    "intervals": {
+      "12": {
+        "default_cif": {
+          "lower": 0.0028889806025588116,
+          "upper": 0.008677259595542705,
+          "valid_draws": 400
+        },
+        "payoff_cif": {
+          "lower": 0.17002682624845236,
+          "upper": 0.2018262484523318,
+          "valid_draws": 400
+        },
+        "survival": {
+          "lower": 0.7928085018572016,
+          "upper": 0.8241952125464301,
+          "valid_draws": 400
+        },
+        "brier": {
+          "lower": 0.0029205828700518575,
+          "upper": 0.008635393107059791,
+          "valid_draws": 400
+        },
+        "auc": {
+          "lower": 0.6727447577716618,
+          "upper": 0.8563345512000929,
+          "valid_draws": 400
+        },
+        "calibration_difference": {
+          "lower": -0.005553933243804396,
+          "upper": 0.00025109938700739945,
+          "valid_draws": 400
+        },
+        "payoff_calibration_difference": {
+          "lower": -0.10817414147085161,
+          "upper": -0.07619514492191279,
+          "valid_draws": 400
+        }
+      },
+      "24": {
+        "default_cif": {
+          "lower": 0.006190672719768881,
+          "upper": 0.014032191498142797,
+          "valid_draws": 400
+        },
+        "payoff_cif": {
+          "lower": 0.2711411473380107,
+          "upper": 0.30459141560049524,
+          "valid_draws": 400
+        },
+        "survival": {
+          "lower": 0.6855138258357407,
+          "upper": 0.7197688815517952,
+          "valid_draws": 400
+        },
+        "brier": {
+          "lower": 0.0061467746660956455,
+          "upper": 0.013768710595425534,
+          "valid_draws": 400
+        },
+        "auc": {
+          "lower": 0.659398338054375,
+          "upper": 0.8266367469102172,
+          "valid_draws": 400
+        },
+        "calibration_difference": {
+          "lower": -0.005314074338125217,
+          "upper": 0.0022935216168594365,
+          "valid_draws": 400
+        },
+        "payoff_calibration_difference": {
+          "lower": -0.02474493574891843,
+          "upper": 0.009318443156133088,
+          "valid_draws": 400
+        }
+      },
+      "36": {
+        "default_cif": {
+          "lower": 0.008668187667162255,
+          "upper": 0.017766405217171346,
+          "valid_draws": 400
+        },
+        "payoff_cif": {
+          "lower": 0.3467299225319914,
+          "upper": 0.38311756149695414,
+          "valid_draws": 400
+        },
+        "survival": {
+          "lower": 0.6037736438726535,
+          "upper": 0.6400807613847715,
+          "valid_draws": 400
+        },
+        "brier": {
+          "lower": 0.008657862648867996,
+          "upper": 0.017812343593093218,
+          "valid_draws": 400
+        },
+        "auc": {
+          "lower": 0.6659420446806117,
+          "upper": 0.8196628242467136,
+          "valid_draws": 400
+        },
+        "calibration_difference": {
+          "lower": -0.0053139240688497525,
+          "upper": 0.004282684031393232,
+          "valid_draws": 400
+        },
+        "payoff_calibration_difference": {
+          "lower": 0.017338672661085696,
+          "upper": 0.054584363711143266,
+          "valid_draws": 400
+        }
+      },
+      "60": {
+        "default_cif": {
+          "lower": 0.024391891649462327,
+          "upper": 0.03928379856598325,
+          "valid_draws": 400
+        },
+        "payoff_cif": {
+          "lower": 0.5666665236010542,
+          "upper": 0.6056545957621521,
+          "valid_draws": 400
+        },
+        "survival": {
+          "lower": 0.36423855302577485,
+          "upper": 0.4020262259459637,
+          "valid_draws": 400
+        },
+        "brier": null,
+        "auc": null,
+        "calibration_difference": null,
+        "payoff_calibration_difference": null
+      }
+    }
+  },
+  "integrated_brier_1_36": 0.007377594568089904,
+  "integrated_brier_interval": {
+    "lower": 0.00486875919774281,
+    "upper": 0.010106038750180563,
+    "valid_draws": 400
+  },
+  "reliability": {
+    "12": [
+      {
+        "group": 0,
+        "facilities": 802,
+        "default_facilities_by_horizon": 1,
+        "at_risk": 674.0,
+        "mean_predicted": 0.0003427263000855102,
+        "observed_default_cif": 0.0012468827930174563,
+        "support": "sparse"
+      },
+      {
+        "group": 1,
+        "facilities": 760,
+        "default_facilities_by_horizon": 2,
+        "at_risk": 625.0,
+        "mean_predicted": 0.001358649245674146,
+        "observed_default_cif": 0.002631578947368421,
+        "support": "sparse"
+      },
+      {
+        "group": 2,
+        "facilities": 861,
+        "default_facilities_by_horizon": 11,
+        "at_risk": 693.0,
+        "mean_predicted": 0.007726795156142402,
+        "observed_default_cif": 0.012775842044134726,
+        "support": "descriptive"
+      }
+    ],
+    "24": [
+      {
+        "group": 0,
+        "facilities": 799,
+        "default_facilities_by_horizon": 2,
+        "at_risk": 588.0,
+        "mean_predicted": 0.0008704219078521363,
+        "observed_default_cif": 0.0025031289111389233,
+        "support": "sparse"
+      },
+      {
+        "group": 1,
+        "facilities": 767,
+        "default_facilities_by_horizon": 5,
+        "at_risk": 543.0,
+        "mean_predicted": 0.003513324440645423,
+        "observed_default_cif": 0.006518904823989568,
+        "support": "sparse"
+      },
+      {
+        "group": 2,
+        "facilities": 857,
+        "default_facilities_by_horizon": 17,
+        "at_risk": 583.0,
+        "mean_predicted": 0.020336367194251262,
+        "observed_default_cif": 0.019836639439906645,
+        "support": "descriptive"
+      }
+    ],
+    "36": [
+      {
+        "group": 0,
+        "facilities": 799,
+        "default_facilities_by_horizon": 2,
+        "at_risk": 522.0,
+        "mean_predicted": 0.0012750591280689093,
+        "observed_default_cif": 0.0025031289111389233,
+        "support": "sparse"
+      },
+      {
+        "group": 1,
+        "facilities": 765,
+        "default_facilities_by_horizon": 6,
+        "at_risk": 487.0,
+        "mean_predicted": 0.005195970921203652,
+        "observed_default_cif": 0.007843137254901964,
+        "support": "sparse"
+      },
+      {
+        "group": 2,
+        "facilities": 859,
+        "default_facilities_by_horizon": 24,
+        "at_risk": 504.0,
+        "mean_predicted": 0.030536647039086148,
+        "observed_default_cif": 0.027965912533047067,
+        "support": "descriptive"
+      }
+    ]
+  },
+  "monthly_current_state": {
+    "structural": {
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": 132409,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      },
+      "metrics": {
+        "joint_log_loss": 0.08743364538018916,
+        "default_brier": 0.0007169720517410267,
+        "payoff_brier": 0.014955718243224066
+      }
+    },
+    "dynamic": {
+      "effective_sample": {
+        "facilities": 2423,
+        "risk_intervals": 132409,
+        "default_facilities": 95,
+        "payoff_facilities": 2001,
+        "censored_facilities": 327
+      },
+      "metrics": {
+        "joint_log_loss": 0.09843385429093048,
+        "default_brier": 0.0005358659876751825,
+        "payoff_brier": 0.016520158241498564
+      }
+    }
+  },
+  "monthly_uncertainty": {
+    "unit": "facility, all monthly intervals retained",
+    "draws": 400,
+    "seed": 61006,
+    "valid_draws": 400,
+    "failed_draws": 0,
+    "intervals": {
+      "structural": {
+        "joint_log_loss": {
+          "lower": 0.08423491076798358,
+          "upper": 0.09075810507132315
+        },
+        "default_brier": {
+          "lower": 0.0005786681988632664,
+          "upper": 0.000866396964687274
+        },
+        "payoff_brier": {
+          "lower": 0.014312999643075959,
+          "upper": 0.015615321005274707
+        }
+      },
+      "dynamic": {
+        "joint_log_loss": {
+          "lower": 0.09628450030258995,
+          "upper": 0.10053239964767431
+        },
+        "default_brier": {
+          "lower": 0.00042694286663558077,
+          "upper": 0.000645585652501467
+        },
+        "payoff_brier": {
+          "lower": 0.015989740332365387,
+          "upper": 0.017074765089861086
+        }
+      }
+    }
+  },
+  "transition_diagnostics": {
+    "development": [
+      {
+        "current": "00",
+        "next": "00",
+        "count": 461768,
+        "probability": 0.9834308739468596
+      },
+      {
+        "current": "00",
+        "next": "01",
+        "count": 1208,
+        "probability": 0.002572686924446489
+      },
+      {
+        "current": "00",
+        "next": "02",
+        "count": 7,
+        "probability": 1.4907954032388595e-05
+      },
+      {
+        "current": "00",
+        "next": "default",
+        "count": 3,
+        "probability": 6.389123156737969e-06
+      },
+      {
+        "current": "00",
+        "next": "payoff/maturity",
+        "count": 6562,
+        "probability": 0.013975142051504852
+      },
+      {
+        "current": "01",
+        "next": "00",
+        "count": 905,
+        "probability": 0.4619703930576825
+      },
+      {
+        "current": "01",
+        "next": "01",
+        "count": 714,
+        "probability": 0.36447166921898927
+      },
+      {
+        "current": "01",
+        "next": "02",
+        "count": 324,
+        "probability": 0.16539050535987748
+      },
+      {
+        "current": "01",
+        "next": "default",
+        "count": 1,
+        "probability": 0.0005104645227156713
+      },
+      {
+        "current": "01",
+        "next": "payoff/maturity",
+        "count": 15,
+        "probability": 0.007656967840735069
+      },
+      {
+        "current": "02",
+        "next": "00",
+        "count": 65,
+        "probability": 0.13859275053304904
+      },
+      {
+        "current": "02",
+        "next": "01",
+        "count": 44,
+        "probability": 0.09381663113006397
+      },
+      {
+        "current": "02",
+        "next": "02",
+        "count": 152,
+        "probability": 0.32409381663113007
+      },
+      {
+        "current": "02",
+        "next": "default",
+        "count": 208,
+        "probability": 0.44349680170575695
+      }
+    ],
+    "evaluation": [
+      {
+        "current": "00",
+        "next": "00",
+        "count": 128683,
+        "probability": 0.9806735305100633
+      },
+      {
+        "current": "00",
+        "next": "01",
+        "count": 550,
+        "probability": 0.004191466174867969
+      },
+      {
+        "current": "00",
+        "next": "payoff/maturity",
+        "count": 1986,
+        "probability": 0.015135003315068701
+      },
+      {
+        "current": "01",
+        "next": "00",
+        "count": 412,
+        "probability": 0.4387646432374867
+      },
+      {
+        "current": "01",
+        "next": "01",
+        "count": 348,
+        "probability": 0.3706070287539936
+      },
+      {
+        "current": "01",
+        "next": "02",
+        "count": 166,
+        "probability": 0.17678381256656017
+      },
+      {
+        "current": "01",
+        "next": "payoff/maturity",
+        "count": 13,
+        "probability": 0.013844515441959531
+      },
+      {
+        "current": "02",
+        "next": "00",
+        "count": 45,
+        "probability": 0.17928286852589642
+      },
+      {
+        "current": "02",
+        "next": "01",
+        "count": 25,
+        "probability": 0.099601593625498
+      },
+      {
+        "current": "02",
+        "next": "02",
+        "count": 84,
+        "probability": 0.3346613545816733
+      },
+      {
+        "current": "02",
+        "next": "default",
+        "count": 95,
+        "probability": 0.3784860557768924
+      },
+      {
+        "current": "02",
+        "next": "payoff/maturity",
+        "count": 2,
+        "probability": 0.00796812749003984
+      }
+    ]
+  },
+  "cause_logits": {
+    "structural": [
+      {
+        "cause": "default",
+        "feature": "orig_credit_score",
+        "log_odds": -0.37033004178902146,
+        "odds_ratio": 0.6905063970590046,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_ltv",
+        "log_odds": 0.3469099459731645,
+        "odds_ratio": 1.4146893211637919,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_dti",
+        "log_odds": 0.3572555854202828,
+        "odds_ratio": 1.4294011572663528,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_interest_rate",
+        "log_odds": 0.5689421374616054,
+        "odds_ratio": 1.7663974570234413,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "original_loan_term",
+        "log_odds": 0.24371777061848565,
+        "odds_ratio": 1.2759841594462773,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "number_of_borrowers",
+        "log_odds": -0.20003357742068215,
+        "odds_ratio": 0.8187032626725914,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "missingindicator_orig_ltv",
+        "log_odds": -0.03793861580495825,
+        "odds_ratio": 0.9627720380639301,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "missingindicator_orig_dti",
+        "log_odds": 0.47774041276921686,
+        "odds_ratio": 1.6124268636274328,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "loan_purpose_N",
+        "log_odds": -0.5983756702104271,
+        "odds_ratio": 0.5497038115808454,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "loan_purpose_P",
+        "log_odds": -0.5333012577664346,
+        "odds_ratio": 0.586665036821878,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "occupancy_status_P",
+        "log_odds": 0.6447206503170673,
+        "odds_ratio": 1.905454666760733,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "occupancy_status_S",
+        "log_odds": 0.16680094886538843,
+        "odds_ratio": 1.1815190591908187,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_13_24",
+        "log_odds": 0.6318695465750866,
+        "odds_ratio": 1.881124143054343,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_25_36",
+        "log_odds": 0.6089518904356722,
+        "odds_ratio": 1.8385034355649232,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_37_60",
+        "log_odds": 0.34983258327014366,
+        "odds_ratio": 1.418829992830786,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_credit_score",
+        "log_odds": 0.19346673368787418,
+        "odds_ratio": 1.2134490189062506,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_ltv",
+        "log_odds": -0.12585449140473054,
+        "odds_ratio": 0.8817431386548988,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_dti",
+        "log_odds": 0.03313657849498561,
+        "odds_ratio": 1.0336917096586486,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_interest_rate",
+        "log_odds": 0.2111307488264522,
+        "odds_ratio": 1.2350738289586212,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "original_loan_term",
+        "log_odds": -0.1105097273713671,
+        "odds_ratio": 0.8953776204764966,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "number_of_borrowers",
+        "log_odds": 0.09160054777009918,
+        "odds_ratio": 1.0959269641653344,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "missingindicator_orig_ltv",
+        "log_odds": 0.007152809012277139,
+        "odds_ratio": 1.0071784514526931,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "missingindicator_orig_dti",
+        "log_odds": -0.26104042877388267,
+        "odds_ratio": 0.770249778731452,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "loan_purpose_N",
+        "log_odds": 0.28316984750206065,
+        "odds_ratio": 1.3273305864572278,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "loan_purpose_P",
+        "log_odds": 0.25649348718412845,
+        "odds_ratio": 1.292390348671895,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "occupancy_status_P",
+        "log_odds": 0.5336316427388338,
+        "odds_ratio": 1.7051134408393993,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "occupancy_status_S",
+        "log_odds": 0.18913506677485203,
+        "odds_ratio": 1.208204129697905,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_13_24",
+        "log_odds": 0.8672555617005946,
+        "odds_ratio": 2.3803691047795037,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_25_36",
+        "log_odds": 0.6833145177579942,
+        "odds_ratio": 1.9804310395532152,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_37_60",
+        "log_odds": 0.2151029378477808,
+        "odds_ratio": 1.239989532250419,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      }
+    ],
+    "dynamic": [
+      {
+        "cause": "default",
+        "feature": "orig_credit_score",
+        "log_odds": 0.03382868966055086,
+        "odds_ratio": 1.0344073868681811,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_ltv",
+        "log_odds": 0.29685698270830757,
+        "odds_ratio": 1.3456228383518127,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_dti",
+        "log_odds": 0.3157556940518637,
+        "odds_ratio": 1.371295199125764,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "orig_interest_rate",
+        "log_odds": -0.11634176369024563,
+        "odds_ratio": 0.8901709431979927,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "original_loan_term",
+        "log_odds": 0.2290445971740285,
+        "odds_ratio": 1.2573981141619535,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "number_of_borrowers",
+        "log_odds": -0.01572809096979772,
+        "odds_ratio": 0.9843949495442654,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "loan_age",
+        "log_odds": -0.17653096280536593,
+        "odds_ratio": 0.8381728265713119,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "current_principal_balance",
+        "log_odds": -0.21853018082410142,
+        "odds_ratio": 0.8036992227737417,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "current_interest_rate",
+        "log_odds": 0.13631448097374746,
+        "odds_ratio": 1.1460422454112895,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "remaining_legal_months",
+        "log_odds": -0.0497736863298585,
+        "odds_ratio": 0.9514447250847331,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "missingindicator_orig_ltv",
+        "log_odds": -0.019432624814200425,
+        "odds_ratio": 0.9807549715111183,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "missingindicator_orig_dti",
+        "log_odds": 0.4035400411107148,
+        "odds_ratio": 1.497115177133374,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "loan_purpose_N",
+        "log_odds": 0.005614226018292867,
+        "odds_ratio": 1.0056300153195912,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "loan_purpose_P",
+        "log_odds": -0.13715943824096405,
+        "odds_ratio": 0.8718312118154754,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "occupancy_status_P",
+        "log_odds": -0.11294565529301057,
+        "odds_ratio": 0.8931991994458528,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "occupancy_status_S",
+        "log_odds": -0.508182467712093,
+        "odds_ratio": 0.6015879913623183,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_13_24",
+        "log_odds": 0.17229001264609642,
+        "odds_ratio": 1.1880223247560637,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_25_36",
+        "log_odds": -0.1945648229843672,
+        "odds_ratio": 0.8231928147119905,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "duration_band_37_60",
+        "log_odds": -0.15722421484045077,
+        "odds_ratio": 0.8545124429658663,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "delinquency_state_01",
+        "log_odds": 1.0641670492808413,
+        "odds_ratio": 2.898423734173406,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "default",
+        "feature": "delinquency_state_02",
+        "log_odds": 10.301868656690168,
+        "odds_ratio": 29788.23085371325,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_credit_score",
+        "log_odds": 0.19895958006517492,
+        "odds_ratio": 1.2201326472210716,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_ltv",
+        "log_odds": -0.1986206146876924,
+        "odds_ratio": 0.8198608775128444,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_dti",
+        "log_odds": -0.0007491178415894723,
+        "odds_ratio": 0.9992511626771292,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "orig_interest_rate",
+        "log_odds": -0.11523333958723463,
+        "odds_ratio": 0.8911581771631178,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "original_loan_term",
+        "log_odds": 0.19546933030937225,
+        "odds_ratio": 1.215881502640792,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "number_of_borrowers",
+        "log_odds": 0.04125348189081409,
+        "odds_ratio": 1.0421162296610678,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "loan_age",
+        "log_odds": 0.17621132074570148,
+        "odds_ratio": 1.1926900721773317,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "current_principal_balance",
+        "log_odds": 0.3242613411495544,
+        "odds_ratio": 1.383008696977114,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "current_interest_rate",
+        "log_odds": 0.376973280275684,
+        "odds_ratio": 1.4578653550904266,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "remaining_legal_months",
+        "log_odds": -0.4257123996875412,
+        "odds_ratio": 0.653304205598244,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "missingindicator_orig_ltv",
+        "log_odds": 0.008652501202657575,
+        "odds_ratio": 1.0086900422878344,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "missingindicator_orig_dti",
+        "log_odds": -0.24354258036468318,
+        "odds_ratio": 0.7838460988689268,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "loan_purpose_N",
+        "log_odds": 0.2479821849423524,
+        "odds_ratio": 1.2814371031148073,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "loan_purpose_P",
+        "log_odds": 0.33202961375777623,
+        "odds_ratio": 1.3937941233829214,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "occupancy_status_P",
+        "log_odds": 0.4333422910040033,
+        "odds_ratio": 1.5424040813960946,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "occupancy_status_S",
+        "log_odds": 0.072053436379197,
+        "odds_ratio": 1.0747127712886229,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_13_24",
+        "log_odds": 0.7019068930945493,
+        "odds_ratio": 2.0175963821761482,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_25_36",
+        "log_odds": 0.35285449425323157,
+        "odds_ratio": 1.4231240556392752,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "duration_band_37_60",
+        "log_odds": -0.30218753363807127,
+        "odds_ratio": 0.7391994271324863,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "delinquency_state_01",
+        "log_odds": -0.348261021720721,
+        "odds_ratio": 0.7059145931227069,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      },
+      {
+        "cause": "payoff_maturity",
+        "feature": "delinquency_state_02",
+        "log_odds": -0.03200416273862805,
+        "odds_ratio": 0.9685025504478282,
+        "interpretation": "Conditional cause vs no-event odds; not proportional-hazard ratio or causal CIF effect"
+      }
+    ]
+  },
+  "ambiguity_sensitivity": {
+    "treatment": "Exclude ambiguous endpoint facilities; primary censored before ambiguous month. No relabeling or refitting",
+    "facilities": 2415,
+    "curves_at_horizons": {
+      "12": {
+        "month": 12,
+        "at_risk": 1984.0,
+        "default_events": 1.0,
+        "payoff_events": 33.0,
+        "censored": 0.0,
+        "survival": 0.8074534161490685,
+        "default_cif": 0.005797101449275363,
+        "payoff_cif": 0.1867494824016563,
+        "naive_net_default": 0.0064299777127410085,
+        "censor_survival_before": 1.0,
+        "censor_survival_after": 1.0
+      },
+      "24": {
+        "month": 24,
+        "at_risk": 1706.0,
+        "default_events": 0.0,
+        "payoff_events": 14.0,
+        "censored": 0.0,
+        "survival": 0.7006211180124226,
+        "default_cif": 0.009937888198757766,
+        "payoff_cif": 0.28944099378881993,
+        "naive_net_default": 0.011840369555951802,
+        "censor_survival_before": 1.0,
+        "censor_survival_after": 1.0
+      },
+      "36": {
+        "month": 36,
+        "at_risk": 1506.0,
+        "default_events": 1.0,
+        "payoff_events": 10.0,
+        "censored": 0.0,
+        "survival": 0.6198258998975744,
+        "default_cif": 0.013253641133527455,
+        "payoff_cif": 0.36692045896889836,
+        "naive_net_default": 0.01686510689544718,
+        "censor_survival_before": 0.9987443557132998,
+        "censor_survival_after": 0.9987443557132998
+      },
+      "60": {
+        "month": 60,
+        "at_risk": 934.0,
+        "default_events": 0.0,
+        "payoff_events": 18.0,
+        "censored": 0.0,
+        "survival": 0.3800731417090547,
+        "default_cif": 0.031093536110578635,
+        "payoff_cif": 0.5888333221803671,
+        "naive_net_default": 0.05233927122988702,
+        "censor_survival_before": 0.9979554581179496,
+        "censor_survival_after": 0.9979554581179496
+      }
+    }
+  },
+  "task5_bridge": {
+    "matched_facilities": 2423,
+    "task5_mean_pd": 0.004670686104194372,
+    "task6_mean_default_cif": 0.00328527055254624,
+    "mean_difference": -0.0013854155516481326,
+    "rank_spearman": 0.9810269409007855,
+    "cached_Task5_scores_only": true,
+    "Task5_ledger_unchanged": true,
+    "interpretation": "One conditional window-entry per facility, explicit payoff, risk-set selection and censoring differ from repeated Task5 landmarks; no forced equality"
+  },
+  "preservation": {
+    "previous_file_sha256": {
+      ".dockerignore": "dbe9970ebe60c67057306de378787e5ae2aba3a4b7611adffde996a1618dd9e8",
+      ".gitattributes": "a32e8395c132d43683f8a916d528db4f979838ba8b44a981544b3a255292aaae",
+      ".github/workflows/ci.yml": "cd89b8270db53b4a9e7ca468999d5dd37d754a0ac7b8ad09abf784fc63474bcb",
+      ".gitignore": "7496dd6d0137e3301255c59c39d51db74eff3d86133c5299e29bc21f4264d5c2",
+      ".python-version": "ceba8fa5c10f40fbed8feb7eb5238b63dda568908acfd874ee413747b29936c8",
+      "Dockerfile": "027286b78221c5226185c38019ab4c5b00a5546da0ba64cf6f0f6c3eea6e92ea",
+      "Makefile": "4ca2b06c3694650c3c91cc371a9c61f558f411fe07559312476956b8ac261975",
+      "README.md": "44b70c4091bed4ff8296b2208843a58bedc9f568258aee41895b449980bef555",
+      "api/main.py": "b4492dc8b977594e78b92bb32aa8d71b2cd44a46fc3ffab864b8b66d2fdb3091",
+      "api/schemas.py": "f3849fc1bfbf4c41ee26f7abe9d412e1e42b1f451112172ce081fb3e42b9acd4",
+      "app.py": "16f392b4a88c298124734c6138032da304f9cf6e796602e0f26caf9526c8a232",
+      "configs/credit_strategy.yaml": "23481c9279ed9611ecb1b290bfd25ff1dbce7b991212853f4f5c44cdc2d894c5",
+      "configs/decision_policy.yaml": "ec968d785f046f2928131904e703ea3d2150ad929eba99d266291f3152044867",
+      "configs/development.yaml": "5d69ad1b2c5a20b1ee3c11d08df6c1d216c1575f61a9006fc3cf633cd5ca3be8",
+      "configs/expected_loss.yaml": "3dff4b671c0c4200e0556ca2d601c5bf43002645e5de270f49e9b069d5a2e22e",
+      "configs/model.yaml": "f33d4f59254ac2a2144345ef25f074a6b4c5758ce057f412f2085c6b59eaa98e",
+      "configs/monitoring.yaml": "89f820bd23082cab2d7d7224a8f52f0af36fbbfceffe57e0a891d6eda952d5c4",
+      "configs/portfolio.yaml": "7d1ed62996a264085d9062a7597ed4ad8546d1b671070347b93eb0ee8ca89c89",
+      "configs/reject_inference.yaml": "18e21d9e53586c640820e6f4584d50e9348478674d57d3ed27723e13aa38c41f",
+      "configs/serving.container.yaml": "fb047bbd0071903661178515308caadc03b294d51c2c6bbbc78d1202a2d8f8e0",
+      "configs/serving.yaml": "b662354b1902b1be4b2eb519c1166bbf2528accabc3897b347b661be9ef4c19d",
+      "configs/synthetic_portfolio.yaml": "60b16657df0aa1ff13c88add4e5325aeeba3a3a8cdc29bea26df553727d8feed",
+      "configs/target.yaml": "c17e83d7744cdb8f6b5ae0326898d73be8a0eacd5e1283d7134b30034ee12590",
+      "configs/tracking.yaml": "25cc4ad9a979893723338e59330cad5dce34db97355d111dda211f8813390e77",
+      "configs/validation.yaml": "2d9715d087d680fbc06e5694e078770738aec851ad1fdb8b16431617025e851f",
+      "credit_risk(1).ipynb": "0bc38570343da2df50dbeef7442df24d6c4ef3535343a77bce4e15b492becf84",
+      "data/README.md": "012ac4faedc8509e2e4a875df7bb300ba11c5eeaa3a5ee1044f31b6392b539b1",
+      "docs/DATA_DICTIONARY.md": "ef4a51a90988f64be93254209a1876b3f2b155628d9ee936913abf486ef8f801",
+      "docs/HOLDOUT_REGISTRY.md": "a8d2a872ea7fc3771421218a63c8bd8cc98b05e9936a36d2cc74d4ef0140a048",
+      "docs/REPOSITORY_AUDIT.md": "d86202d4e74b5986998456d1746924cdef2ed9a6ee99749a108e4a629d749fd6",
+      "docs/TARGET_DEFINITION.md": "e395d39191921f592d3d6142450dcfe1d6ebef1b241fa173413f5ae46861d716",
+      "docs/api_tracking.md": "b17e4cf4142bf63a10d9500ebfc67faffc775d285c05bbb7f7d5229dd48da74d",
+      "docs/architecture.md": "491e5f5fa75d5607a13e0d915a2d36a57e4b6c832a863339dfe7093c47021d08",
+      "docs/calibration_validation.md": "1617be8e704e932e309b4479c92d34b6d628b50b8473ebbb690b5ca3fd75f3d3",
+      "docs/credit_strategy.md": "dfc15b923eb25cfc824dadd893d23ab7ae567799104697dd17d1a919ded99b16",
+      "docs/data_contracts.md": "f0edb6ccd49efaa83eb60aa7bd0e0d0654fb35c55688b892f6d7b37445401568",
+      "docs/expected_loss.md": "fbc7c42366d228cb7e9be7cc850159186bc14ddf8105a4a194986831cfc4d680",
+      "docs/history/README.md": "7631827e3698cef001529295e53bd093ed5c2413ab79358be2586a4a4ff8748a",
+      "docs/history/README_v1.md": "de5efdfaac9233d2847623b07b9d0b952ea8f4881ab0190bb424f51750b4062f",
+      "docs/model_governance.md": "8b4b273842622d130b235357f1ce889a67eeeca1ba80ef30f7870f4110bdb579",
+      "docs/monitoring.md": "7b0491d42c8be6c69b0efad35e3cc4e8493cb3c2aade562c757653d516eee8df",
+      "docs/pd_modeling.md": "c1328f91b7a7001c4709b2d7f75e59ffb6be5c3a7e147e66ca583cd3b553904c",
+      "docs/portfolio_analytics.md": "b6edb690e798d0775bf6cc30ac5f56bd05a807b42bea5b98419979672306c3d9",
+      "docs/reject_inference.md": "1f388593d8b051df0ad89e16486801ad7029932627c89033030d0f07bcd2250e",
+      "docs/testing_ci_docker.md": "703b244d984848732898136cd30ca5d31ce7ad63ee91a54b07ea1cb3d1567cff",
+      "docs/track_b/ANNUAL_BUNDLE_ACQUISITION_AMENDMENT.md": "a54cf1754dc785c02bb77d6cbaedebe08b2d3fb28e6db681dbface4adacebe2c",
+      "docs/track_b/DATASET_COMPARATIVE_ASSESSMENT.md": "a98ce48c3bd8953725d2d4ea8225e19421912050e22424d21fdccfe7f1bb2022",
+      "docs/track_b/DATASET_SEARCH_STRATEGY.md": "ed7003dab5ea6052d7223750a4a0bfececf49442108abcb00510233998868942",
+      "docs/track_b/DATASET_SELECTION_DECISION.md": "e443c2e1daa6b5946e731de424017af17117d03ce967a73bbebeeadf97b2d875",
+      "docs/track_b/DATASET_SUITABILITY_FRAMEWORK.md": "c1bc14e02eac7cdd711c5cbebd36a372340f84f7dc9bcd806fa2e90e100369ab",
+      "docs/track_b/EXPANDED_PD_DESIGN.md": "4a66850e69bdfa983407beb8421eb8542b27df646e7b9c45da51b15dba98a257",
+      "docs/track_b/FIELD_DICTIONARY_COMPARISON.md": "1c717bc291d7003f6383a8fcfcedfed2767c6140765cf318415e224a62b6e369",
+      "docs/track_b/LONGITUDINAL_DATA_CONTRACT.md": "2174c4e984052bd0decd7d33d19b1eec1e33793b4bb67cd17f6e0fefd4b25c00",
+      "docs/track_b/MORTGAGE_RESEARCH_DESIGN.md": "1e314248e8fca328e6661dae57284469561fd1f143aa9ddd875e032eae93d5c9",
+      "docs/track_b/PANEL_ENGINEERING.md": "6c24191ee0ac1a1f47c01f7f66532150b08201ee387bef2f4f53d7ef51a8ae65",
+      "docs/track_b/PD_COHORT_DESIGN.md": "7f9b36969b7bf56e9062079921f3d4918e38e3439d39a8cbccbaa59d17114762",
+      "docs/track_b/SAMPLE_EXPANSION_AMENDMENT.md": "87890329944f5addb8af3593bff4f98704a42bf085e8a50f52119ef9a0f41354",
+      "docs/track_b/annual_bundle_acquisition_amendment.json": "ce4daee66263a308e0bc8521a4d561a587cb806d0d69bdb0db517a433396f372",
+      "docs/track_b/expanded_pd_design.json": "e63f08e16a9b4a38fe295b4a513028208c4519554965c8c80fb9c8b040fb3349",
+      "docs/track_b/expanded_pd_feature_registry.json": "ad30b55ab427f07421f24cff12a48b2e13d2da89f6c78cdfd59e31473fb6a28e",
+      "docs/track_b/field_dictionary_comparison.json": "a37af0abc0fdee1e5e040a37300df628d71d1479ae805be58da99342099faa36",
+      "docs/track_b/mortgage_research_protocol.json": "ce3cc22db877e35f75c202c7a0d2dca9736638d3095402cb5cf4873371e91b7a",
+      "docs/track_b/pd_feature_registry.json": "bd3b0aeec7577ec5211f151bc3f11ef6bcaf67b008538f78685eba722c05763d",
+      "docs/track_b/sample_expansion_amendment.json": "78ec14bd89b533d5faa1e29cb8463e1e0b29ba12e61d8650caf3c9224860a78a",
+      "main.py": "b62bc5092ae72347ded775167e835a406ae2208acb7bab010c586ecabfc4f854",
+      "pyproject.toml": "b1ccf8345f3cc49de5e066c0f61348e15f540677d3960f3da3efa6f8f520c2da",
+      "reports/baseline/Baseline_Model_Report.md": "03636b350d9608c66afed189a14852c01eb8c1d5d8c26af705a67e9c56bb2248",
+      "reports/credit_policy.md": "98478055c986f44e3e21897d5d29dac872a96452cccbb3dd87c152b0ea767ff8",
+      "reports/data/DATASET_SUITABILITY.md": "a0c1b3dc41c53e761547163966d6305fe6287d0ba4d86d20fa6620e98e7747a7",
+      "reports/data/DATA_AUDIT.md": "05c9e43f472821f69208e914176564d6a19925a82cd744ed1225d0a06e41d889",
+      "reports/data/LEAKAGE_REVIEW.md": "d1839750ae30d9bae0b04095dc7e64b305015e29a7c1193f2ad5076eac70fc57",
+      "reports/data/TRAINING_DATA_AUDIT.json": "fc1507b36191379a5a38c675b920923bab70cb1ab5fe6f1b5768aa888e68c4eb",
+      "reports/figures/phase10_monitoring.png": "c1065d6faab572856b3d314e0b2a6f6056286eab4a237e64377c57fc911e648c",
+      "reports/figures/phase5_calibration.png": "7f65dfd121223025fbcb7a70cf8b57eb8ea89c8bdf7bb759f76781d21fe60413",
+      "reports/figures/phase5_discrimination.png": "9ecb61ab61d8e6a0d5152e341c6f9656f39329c841418f49da81542699e3c63a",
+      "reports/figures/phase6_roll_rates.png": "44581b0f5f8808ba028dc48983b723c55ad87514ceabac9fce660a766eb27192",
+      "reports/figures/phase6_vintages.png": "00e48ffeee98b5afae23c76ef8c3ea37b33178cf1423eccdcd5019eff48b4b24",
+      "reports/figures/phase7_expected_loss.png": "a5a3e90fd95de3c4fb852f20e881d50bd123a8d83090b27535a1b9c8e2df20ec",
+      "reports/figures/phase8_policy_comparison.png": "64384446f2e254de1a3488148c1b77c852c68d10c4b2ff01448c492d92e85ebd",
+      "reports/figures/phase9_reject_inference.png": "49a23a85d9a051ccbf8628bd75acb1c48cba1b958a878c30c381fc1927d589cc",
+      "reports/final_repository_audit.md": "988d6646138d09fad82f9e5fd5add270ec358bd8b7e77d5c1d3fbac9ec2e3876",
+      "reports/governance_register.json": "b016c61938fac4fdc7f72b80b4cf43fa2a1b32956f2f3a4c92dd607f812149c7",
+      "reports/holdout_registry.json": "5937d349ae1c33791f81b626090b4ff22b071c575761f51e5bb50fdb08a5cd77",
+      "reports/model_card.md": "183e86dc219581321967c057603bc391bad0f2058e71382ee2239472cee8ed7b",
+      "reports/model_risk_register.md": "d847e827abadbbc1f26f188c8b784f1f935647a4cbae770adc47f218df753f7a",
+      "reports/model_validation/CALIBRATION_STUDY.md": "b420d1742b557560da863350d71ee9e5c27c16b879c833c558d5eb7d0dec77fb",
+      "reports/model_validation/EXPLAINABILITY_STABILITY.md": "75e73a46225e1caa0a74d1be2a6a119d69105cb3bd365500f3a9915f412775f8",
+      "reports/model_validation/MODEL_DEVELOPMENT_VALIDATION_REPORT.md": "ef7f1795e1962e478ec9d179367adb1b7ac63cbd0210eb1fead79d16a7232604",
+      "reports/model_validation/PD_DIAGNOSTICS.md": "e56489ca3a28efb439ad595061b8728cd37c14db8f035c7967a40ffc4c73dad6",
+      "reports/model_validation/calibration_comparison.png": "8df111642fc1d536cd7950e037466a57362d584d4887311a2b8976be4e2f60cf",
+      "reports/model_validation/calibration_study.json": "10a7198a612c19003518abfa153889f26c6c4bc674165b8098a69dfdbb29782f",
+      "reports/model_validation/cross_model_ranks.png": "b0a7aae24aa26aa29e2ba694f65bcf52def12f84f6bff89620613f444586dd7a",
+      "reports/model_validation/explainability_stability.json": "a2a99a2179972cdc55acca88dfd8015c3d02facba8ad7cd2f20eaa5a493b103e",
+      "reports/model_validation/logistic_coefficient_stability.png": "c73f2144fe05b4c114a9d0a8ff7b2a29dafd12a6b807e0eda0609bd2aea26c92",
+      "reports/model_validation/logistic_coefficients.png": "5cc108ce85129f388a3f02f8a605f18b4e8653349f19e2d9a73151ab08198882",
+      "reports/model_validation/model_validation_manifest.json": "50ff2e06188324a77e9d46ae34ba437d32ac220f5bee726ff9e451f324656ae7",
+      "reports/model_validation/pd_diagnostics.json": "1a4764eacabaf7983008fbf26139a14d6ac41d4a5396441c3f58a4fde0a38b18",
+      "reports/model_validation/pd_diagnostics.png": "eaf1f230d91cd8e428428fd884eccfd1189543b175d03a6236f980278e1a3e45",
+      "reports/model_validation/shap_dependence.png": "bc7cb31cb769a600e38b846e361b9d1e94fcc78b460f8d0fd7a32242c39044fb",
+      "reports/model_validation/xgboost_shap_stability.png": "b7af621cb0d504a987b09e4df67b3e69919fc377f7481a66bc474f14252a0655",
+      "reports/model_validation/xgboost_shap_summary.png": "f1a29b1e65a199c07a9541280bb70a0824b281f53c9fe7353cb2e2b4e7381f45",
+      "reports/monitoring_report.md": "823db689c53230653be70c38a2c768fd407f328219d839411b63dffb6acee551",
+      "reports/phase10_monitoring_summary.json": "ea6d97521f138d3fa5815e02f53ddcb3bb864cff494aee789a1d88471ea2bb2d",
+      "reports/phase11_api_tracking_report.md": "82f4045607cac37ce1a1bc4233ee05fceba40c474c9a68a50de959d8f815ee14",
+      "reports/phase11_integration_summary.json": "5cba423484deec21f9ba3ee29b4fbe830e761886d0ed90a52544a4113dcbecd9",
+      "reports/phase12_engineering_report.md": "7749f67d1889cd0c057713d35f3cabac2ef69d7f398cef418f7eb5c309fd2ab1",
+      "reports/phase13_governance_report.md": "634904ff2bffa8e13c6de20fcc0ec412c5bbcc8c9801453735504aa0401a738d",
+      "reports/phase1_audit.md": "4511e6ba303fb308ae28293c239140fbde5cf6252600bfea154ec93eddf7ce9a",
+      "reports/phase1_inventory.json": "3f1d5fce8c80935cec148740929013377f7b34447aebebfcc73252bd64f0b4f9",
+      "reports/phase2_architecture.md": "b0d81fd76e516390dbb7b51515bda2af42bd1dea187c289f78c7ce6012d60d71",
+      "reports/phase3_data.md": "da68f3dea4981d4040d963b326314620fa43a7691425938735e8901a2838384b",
+      "reports/phase3_demo_summary.json": "b27f6ea30bebe5c6db251c7d5d152ff308ce5b91863dcc71b2354ee377a84d97",
+      "reports/phase4_experiment.json": "7894e7dd967c33c8f1a75112bfc48169bf54e9e7b034533d9476c5fc879726a0",
+      "reports/phase4_modeling.md": "f427af319831db7d5726afede9a9613b8c1c7a7c0fce5459737cd80deaaa2ddb",
+      "reports/phase5_validation_summary.json": "1b8f6d29b7b0cb571b7c4e5d3d3cf0f964ae873a1b629ed03240c1c92f6d2215",
+      "reports/phase6_portfolio_report.md": "7b49c9baa327aaf9be4d926d0b01eb5e5b5b49eb2f9501bc5121b5522cc1aa34",
+      "reports/phase6_portfolio_summary.json": "925eca176a4104040b8a3bc72ef4b9c9e2cc0a6e9f420c866fb17143c6c2f940",
+      "reports/phase7_expected_loss_report.md": "28f1e2fe0949ebc83738849d1a4a854db8b512ee5b2673368e33840bc4ef88ed",
+      "reports/phase7_expected_loss_summary.json": "d48bfeb02bf247cde4a5f0c2dfc8f31fec9a191b45da121c637ae88a8e8183a1",
+      "reports/phase8_policy_summary.json": "7ef8ede2b1b18e5b5239ce5e33c06c8a09a74920a29b3bf774db418104e3ab6e",
+      "reports/phase9_reject_summary.json": "f5ef52ba7b168911b2522aba42ad44f8b32b071ab94516cbf9275c7e766d9fe6",
+      "reports/reject_inference_report.md": "0167542e5e4ed97451ea66c81b37b22d74ca7715e9a18a88c63441cbcdf57d41",
+      "reports/track_b/EXPANDED_PD_VALIDATION.md": "684868c71b77593cd0b93895eac4f3f5dffd00dfd6a0f603f70bdb7f69fc7a83",
+      "reports/track_b/FREDDIE_2010_DATA_AUDIT.md": "fe6a78b39452ed871589d528a4ffdf2234151d36004ea0b24adec616349d1a11",
+      "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.json": "b56e4ac042b0fca85bd3b947f0442ac876cd3adb461b805f59faba1c009b3a1d",
+      "reports/track_b/FREDDIE_2010_INITIAL_PREFLIGHT_STOP.md": "a248829a23b01e84bc1c36daef25a389161dcfc9a587e21b62790408742a2670",
+      "reports/track_b/PD_BASELINE_VALIDATION.md": "77e566d8125ed5c529c875675f7946f6fe884e6cdbd5241f8b6469b91a5409c6",
+      "reports/track_b/SAMPLE_EXPANSION_FEASIBILITY.md": "a5b2dcdabdf077fe52f9daf31bef66c876965deba5bf61fb1e1047a9452fce19",
+      "reports/track_b/expanded_pd_diagnostics.png": "9eb8a29b84cacbc6eea1b184fd9c8c5b26b83db49c2aa110e1b894dd9a8033b9",
+      "reports/track_b/expanded_pd_validation.json": "1091e3f2406b2fea8c82de9daa1bb17891ec7fe09dfcc795d7dbd732787366de",
+      "reports/track_b/freddie_2010_data_audit.json": "4d2818aa5e95542a0c0264865fd3718bd30e4f85354b305df835e28a9c424dc3",
+      "reports/track_b/pd_baseline_validation.json": "4dc9a587f7d96c8affed8a586e2bf88e96033124b8ec7f112f63b8fe42e7b936",
+      "reports/track_b/sample_expansion_feasibility.json": "11b5311fd61bb652d03ec49ad931ce898c3f70dd90192229b3cc9bf8759ff8f4",
+      "reports/validation_report.md": "5ac24938888cf7d579a78ccf6965e2cf0689addf22cb1addec0fb1832860bb68",
+      "scripts/build_track_b_panel.py": "31a5c7eabbd9bc558df82ff93b123e6d93cbea68d5051605dda3b02ab4ad69e3",
+      "scripts/calibration_study.py": "e11ce8345fe6f4e97ab79f0d296334ec4a0950bd7cd7888734afd51f304448bf",
+      "scripts/check_governance.py": "ecdaaadb539f75f70e10321f7e15ecb4e7a0c5eac6304314040bb18f04c85083",
+      "scripts/check_phase1.py": "f62c535d3279df61550a0ccb12b8b16e4ee921354e8dacc59e205d7e9499abea",
+      "scripts/check_phase11.py": "60321fc13604e80884fca6254e47aa9479c2446951382bc7db78170d89d6a646",
+      "scripts/check_release.py": "d959a59d9e45648c6f804ead049b9bf3a3943fd8a05687ec2f17e0b2a521edd7",
+      "scripts/check_repository.py": "b4d810a4bfb08b17402f4b167cb4f2cb6dadef789ed66cfcb8921be3db2b12da",
+      "scripts/compare_policies.py": "5e3d512a4019d9066713fb7460a38a303cd378f97e928ace279429db9a09dfdf",
+      "scripts/expected_loss.py": "e3f1bb058064fc7fbec64f8cb3b3b83d1654e982a626a343542c3145ab4402af",
+      "scripts/explainability_study.py": "a470650f318d0a017c522a53eec1421c934b836991b20b091804e0223644c602",
+      "scripts/generate_model_validation_report.py": "881ad72847572bffa2c41a95ebbfe660046079d11641782ae1c5a83a47acc523",
+      "scripts/make_monitoring_demo.py": "b0dcac185bddd9f5fdc8116f5c47cbc68bd0ae7663ee0f3cbbb0aa4984f0941e",
+      "scripts/monitor.py": "2da46d3ebb26ffb294254cc8061dadf3265c87c0413352adc828c40eaf0add36",
+      "scripts/pd_diagnostics.py": "c10fa1a10235a4eebad35155f06d77e800121a60f22745d815ed37a749fc96e8",
+      "scripts/portfolio.py": "d1f6f5db12b3eff7d0db721a94e18cfbe58d8e481f1b518eef336c8b5cd2efaf",
+      "scripts/reject_inference.py": "711337d1db5a43b78062d067524a3ac4d484c55b11fc1fe570e51e5a2d1a6a19",
+      "scripts/run_track_b_expanded_pd.py": "a42ace0f9143b5814af85940129b300d72fde30d3bb42a20650daa45d5c3b50a",
+      "scripts/run_track_b_expansion.py": "5f19b2c4598a21eb85b2b68e6f99a51dd413215e4defeae589c32eea82132a17",
+      "scripts/run_track_b_pd_baseline.py": "86fb5e2c1a2b2cfa602b53dd6b072c2a1fa4f04fc2ca259f6d3f7b7f1a8b3861",
+      "scripts/smoke_container.py": "c8ad4f57760d4d332bbad5560091ceb7080c7a8d88273a0dbb9726e5483a72d8",
+      "scripts/smoke_installed.py": "83db0a56ff4e95d5f7d88bc4edbfe715da085b82ca742d993348930017d1cc43",
+      "scripts/train.py": "3e3f028c6acbe6fcd875e44824006f9a0c06144008f3caaf8600adc2dcb6165d",
+      "scripts/validate.py": "b179ac67b68cb290487e2a6290c95432350836582ee4a5409e3d1c5cfc77262f",
+      "sql/delinquency_analysis.sql": "af0f1c5c554e0a6c021a69aa87b100fb1161e743031427cd99ddcc4e887279f4",
+      "sql/portfolio_snapshot.sql": "3f07b805e78e3b75d869c0ab3375f901894ed621addfa7758f585338a50eed57",
+      "sql/roll_rates.sql": "88458828e4bf27f06da93811bd7e8ba3324dead5996ffdbe927eba1940bc915f",
+      "sql/vintage_analysis.sql": "2dac93db9cf479f06654829e7c713acac6baf737ed95e83326071a77474f62e6",
+      "src/credit_risk/__init__.py": "188ab448b072aed14ced4f7746195b26a990a51fa58a6beec4af649c89dd79de",
+      "src/credit_risk/api/__init__.py": "4afcdf5f8a5a4bc75d07cad4d6822ea8016d847fec237accd7debbca40aae2d4",
+      "src/credit_risk/api/main.py": "b7d401e80e70a689e9bf2878c4cf24f0023d104356faeb169f6a1dc0e578611b",
+      "src/credit_risk/api/schemas.py": "af6ba373158bf46b75dc74f013ab53f9357444215470294e7a6372f8075598b8",
+      "src/credit_risk/api/service.py": "02c5c42c0cee7b52b7a86a3253383b0c76c543a05d4dacc5865f0f80e4b8f856",
+      "src/credit_risk/api/settings.py": "acadb851068dbfa83dccb96a299a314f524f126001a5caf5d695d95b56212d2b",
+      "src/credit_risk/cli.py": "b421ba4f861b159870c5b9e168c2c9bab0c130e4df007f23b393e9441a1a1c87",
+      "src/credit_risk/data/__init__.py": "8736139787021faa75693500b5e19094c4c6306c442404f25580daad58eb4981",
+      "src/credit_risk/data/audit.py": "41cfe9d6c8ec8e3b0774b2294d27b0dca6812246027b0a4aa1c0bff70431a2e3",
+      "src/credit_risk/data/loaders.py": "1cfd7ac9053b13cf69bd07cd29eaab187023e5312886aaddbdebe0d8e654f1d8",
+      "src/credit_risk/data/synthetic_portfolio.py": "938692a1864a1442d42f794543be80ff5fa57fd1178b88ee380d3daa9b32045e",
+      "src/credit_risk/data/targets.py": "ab22fd57eb4b43baa55e13e8d982c8151c56ced0e59122398ccc2a85d1a1632e",
+      "src/credit_risk/data/validation.py": "02d3bad035c7cb7fd5aee1a1b6da28a7ad3b7f3f2933781883294cbc5af45091",
+      "src/credit_risk/decisioning/__init__.py": "5ca5388307ad2448d5ffaff18707ff29e477a57faaca2d849092200cc74f64cb",
+      "src/credit_risk/decisioning/policy.py": "201b76da51bcbe731dac81306fb41aa541b915a3d1d9908a6e32ef1aaeb1481a",
+      "src/credit_risk/decisioning/reject_inference.py": "6edaec71df62070e42841bf152e37b1eaf30ed4d64879875aef2ae047c998c43",
+      "src/credit_risk/decisioning/reject_runner.py": "1c0d4976caa1821f1e49d8b40353e2d9fc4badde74ad1f240eac0508e659d206",
+      "src/credit_risk/decisioning/reject_settings.py": "4918fbf3e6905c1dc22b742f15e34a7a9180f57472561987fd07a5504f954b47",
+      "src/credit_risk/decisioning/runner.py": "ab32a89418069aa3648f577e93ed6772cf3ec7d0cd2d8f4e274f460a5d7d4a4c",
+      "src/credit_risk/decisioning/settings.py": "b89ab8b81b9045446de647995c1602382de39f48e2d63e5a4a4a07c8fc530bde",
+      "src/credit_risk/explainability/__init__.py": "87062768eaef21a3cfa25ee87a9aac6136629ab628aaee7e6242ae5b6b920df6",
+      "src/credit_risk/explainability/logistic.py": "042c2d6436376acd69deb45b8c8fe72caf65d864a33d009b84ee7c3364eb4349",
+      "src/credit_risk/explainability/reporting.py": "fecb77e147830cbfa08cd1acc4ebe32494f3b762e67d5ca8dabca01deba7bf4b",
+      "src/credit_risk/explainability/stability.py": "212b4e2708f65d8e25d4d409075fbdf901a46c2eeb5cf0dc576b8ed7265a71ea",
+      "src/credit_risk/explainability/study.py": "58b92fd0cc81623f7132be67854d01941154954d91f4b9b9658c1e11d1c85227",
+      "src/credit_risk/explainability/xgboost.py": "654e5251c5d7076cf0b30a31d1fd1d4a2842d08d4c122bd654ff546d603fa561",
+      "src/credit_risk/features/__init__.py": "08a7d5214d2d52481a035a5a944975133fe64c311ef6afc916de4d7153905bf3",
+      "src/credit_risk/features/origination.py": "6cbb3d9442caf77aad9f70e099503566c8a9d39afbb52c7caec87ef3f86d6cf7",
+      "src/credit_risk/models/__init__.py": "2abb4cca8b5108f5ce7a1186eb5a5911967d0254032133d03c7f2a02ebfd2403",
+      "src/credit_risk/models/calibration.py": "307cc6f3f5f887392fde6ee06250bb88e16c41c05db456049c079d7a35988344",
+      "src/credit_risk/models/pd.py": "dce0e3d2bb5993714446c5f0fa60428bf02a9a8c02fb610877ac7cd3dbe24ff3",
+      "src/credit_risk/models/transition_pd.py": "f4bb904d3d7aac1a9716fc258965a7e1d5624df08fad0f335dd9a733493f3de4",
+      "src/credit_risk/monitoring/__init__.py": "29b1c1962f9e3f3e84347a69f29cff80c0be88870edd433c93ad4cff72f91fcc",
+      "src/credit_risk/monitoring/demo.py": "e086633061f552cccf6780fca2282ca67740a0b28180a126639359ec923af898",
+      "src/credit_risk/monitoring/drift.py": "b94ba87bc59414044d333b0ea955f67eb4fa034fa1fb2c4c5addadf2126408a6",
+      "src/credit_risk/monitoring/runner.py": "a947401cf517af0ccb2331f6bb2b4383364c3611e7398e343c825ecaf92fd291",
+      "src/credit_risk/monitoring/settings.py": "f63678bc3ab930700702b4fc34a2200dec6d683d108a6a10b28cfd73346cdea1",
+      "src/credit_risk/portfolio/__init__.py": "2f285a5908dc19cfce595f9cdadfde0f105c8a1aa9443f03c4f29b1e94508964",
+      "src/credit_risk/portfolio/common.py": "ec524340bd7f5817b878d035229ba053cec0c6ccf1c9ccc8f0fe4a5997291071",
+      "src/credit_risk/portfolio/expected_loss.py": "1ea03c26d9e28b06db52befaa92bb159baa0bbdddf02ad0eda7a9f9182063243",
+      "src/credit_risk/portfolio/loss_plots.py": "f600c1cf143949b6eb22413bb4be88c89c6ba2f12e2d265b698df2318f6144d4",
+      "src/credit_risk/portfolio/loss_runner.py": "b8093fd120ee426e750e3eee321673d3e9c383911163d83afed3e9cdec843827",
+      "src/credit_risk/portfolio/loss_settings.py": "1312d8d1270733e47de6e1cc182fad00ca4209349a039a0a7c93e9d0a96302bc",
+      "src/credit_risk/portfolio/plots.py": "4410fc388d0163bfc2e5f569f3bcd4af7a1b8276901b5c19f9766ecbf2c83dd6",
+      "src/credit_risk/portfolio/roll_rates.py": "a78abdd29b05f159ead0b7d9382d9276246ebe029cd9c7fd836138864da4425d",
+      "src/credit_risk/portfolio/runner.py": "afabd8b82a1dd18219e742ee2ea4da683f490c828d4533200820bfb2e444d518",
+      "src/credit_risk/portfolio/settings.py": "13f2e8c065838a5c624a9552e697461e816983cd4257f8be161655e38137086d",
+      "src/credit_risk/portfolio/vintage.py": "2be2b4cea32e8ac9ac152a3b0ea6594f9db1eec90a153aff2353928d0d73ad10",
+      "src/credit_risk/reporting/__init__.py": "b2de00f14c6314168f192df9d159df480dde2cc93fa4978b7649afc15cdf6bc4",
+      "src/credit_risk/reporting/evidence.py": "ca0152013aa9230c3c68e2754661ce2a567bd9f013350eec2d572613b5f27e9f",
+      "src/credit_risk/reporting/mdvr.py": "8ac1fbd76f7d89f9954aa028228dc8a43f0a53aa796c0d5fd4d237f283a6c2e5",
+      "src/credit_risk/track_b/__init__.py": "d20b21b36ce2ce7f3c8da86f8379e9f65c325a17a7ed9b664e50c48cf44f58a8",
+      "src/credit_risk/track_b/data/__init__.py": "91f1c8c2f021965b0b48b2f5fd1c7fce6e93e09ee1fca32f033116ac025b8cbf",
+      "src/credit_risk/track_b/data/annual.py": "429bae05a953620ae09ad0a33f2078c6544696c30cc6de4c5291b27237d3425b",
+      "src/credit_risk/track_b/data/annual_report.py": "44a473d3c445fb0402f6006e4f2ff3166c07392590012a7ed2bff6fef28016bb",
+      "src/credit_risk/track_b/data/annual_run.py": "8fc934b23aa4de68f72653bcbf5203f69d23ca0bf26bb359b8d19f25c7191b19",
+      "src/credit_risk/track_b/data/freddie.py": "4bf917befa33efa1344fc90d2ac112901264f1fd7b1a6def4d95e71407883199",
+      "src/credit_risk/track_b/data/panel.py": "00dbc085228634c80ffa6f11d7f3102174ae6893896fb47b3559718d122e61c2",
+      "src/credit_risk/track_b/data/preflight.py": "cbcb0bc46f200871f79af38600c6a845ef443cf4a56ac3da84e2981fa7e7f0fd",
+      "src/credit_risk/track_b/data/sampling.py": "8fdaa7abea1a8b37b778c7d0b1c30f2bee43924c0e75de5833d487aed83d2606",
+      "src/credit_risk/track_b/data/schemas.py": "a51bcceabd4c0ab0bbae045983d318cf248f2558768e524bb8f36770c9bcc7ac",
+      "src/credit_risk/track_b/data/workflow.py": "5b95dfe7a2dca27bab7a39e3c1748e7f6a353bc3a308664853886bc084304b13",
+      "src/credit_risk/track_b/expanded_pd/__init__.py": "efd07b7065c222d07eb41ec325cd5a06e550c412dacea957ca871c641b47ec7a",
+      "src/credit_risk/track_b/expanded_pd/audit.py": "01a8122e4ae7e23875a68b094c7f1cc057a61d075d9594f7e7a3ab4a94841406",
+      "src/credit_risk/track_b/expanded_pd/core.py": "edf6da1cb5deb10af1620c4380efb753274e837b894c714422d4f07450d2541a",
+      "src/credit_risk/track_b/expanded_pd/reporting.py": "356d3a0fed69449f6f4257572f65810a36eeda816dc02885e25c01ebdabc22c8",
+      "src/credit_risk/track_b/expanded_pd/study.py": "97b8c516d1db8501ff5b013c82b1e0c420e8a71ecde602735c4aa50e002a6dfe",
+      "src/credit_risk/track_b/expansion/__init__.py": "1e5f25453365baab26201ca32ffd72c3a74534481b59a91ca46e8e26f74035b6",
+      "src/credit_risk/track_b/expansion/empirical.py": "a65ccd89c08929450050289f1de35b33249d0586570457f8bb80dd75a71eb59f",
+      "src/credit_risk/track_b/expansion/planning.py": "15ad427bb4122a4c046c96a86678b4b9f04138234ada12cf37c62f5b8006f8e7",
+      "src/credit_risk/track_b/expansion/reporting.py": "4f904ac6de1b4121d5179a62c2860cfda29996c7945c9e495481efd1e4569440",
+      "src/credit_risk/track_b/pd/__init__.py": "096972b347d02e213092d55e735d94737c71070bcba6a9b32b115d53b4ceef85",
+      "src/credit_risk/track_b/pd/baseline.py": "56a18b5fe4b88f0be78bead6352b10d19f1feeaccf4feeeb18a83acef0afdc1a",
+      "src/credit_risk/track_b/pd/research.py": "f86c48b7a81d1890bf128b43536c314f64a57b1ed36ade9cc72f371537aa61c3",
+      "src/credit_risk/tracking/__init__.py": "a427a3c4c14774113d05113ccbda19b36e92dfdebc8637a0a9c293b8d39029f9",
+      "src/credit_risk/tracking/mlflow.py": "c1dae1368eb16814c1cd93e70535670bc19740867789a9c88ed759fa732512b7",
+      "src/credit_risk/tracking/settings.py": "11bb3027458b58237146cb61e1eccf55aa45375b44327f6276b827c74d4138a3",
+      "src/credit_risk/utils/__init__.py": "b61c1d0d0b8a7529569d88b65eb78820b8be98d2a1330e59a865b7d1c693c78a",
+      "src/credit_risk/utils/config.py": "9b26248bfb20abd4280d1acd7d0bb37114c0544f0c2d2251f874a7a2ff660bc4",
+      "src/credit_risk/utils/logging.py": "195019874818e1a01f8e979ca03e34373b8314733c08b26b44fe895fcadf2e3d",
+      "src/credit_risk/validation/__init__.py": "f01d34aa46303eff440136c3dd8f1e0e3ed7123e62a373df30e87b8abcbd6113",
+      "src/credit_risk/validation/backtesting.py": "ff53898a9d52d218bfb4bdfc146fcd33780c2509edb3b7344e8be9c8bb033e60",
+      "src/credit_risk/validation/calibration.py": "9af17172c833cf2cfb4f274f5662be9e0423a1923d4571dc7464e909062de5da",
+      "src/credit_risk/validation/calibration_study.py": "38005e1ae57713ea900fbacfe9f41a767512367ed348b96a77eb9faab211e448",
+      "src/credit_risk/validation/diagnostics.py": "8c2f3456f1c6d2818905d350d1065c9ff0fb0b306d4d3b67eede31cc34c49e4e",
+      "src/credit_risk/validation/holdout_registry.py": "9edb283232c509aecd015fcaaafb7d1ffbdfec09f48fad2226c4a446b84c619b",
+      "src/credit_risk/validation/metrics.py": "3195821b50e0f72d218fe7e0b2dda436a985aba991f00a6987e3f412f2ccc91a",
+      "src/credit_risk/validation/pd_diagnostics.py": "47ed5fc40767f5efae97a62848118e1b20d33737472898a88607394b87396657",
+      "src/credit_risk/validation/plots.py": "b6d17313a14df1b518cab9e1cb0aa46192b3058f25b49618ac4c67d70d90d5f7",
+      "src/credit_risk/validation/runner.py": "5fa59d5ff13c7dc75fe61c79c46a98803a09aa50bed209aa6e787a6dcf31afcd",
+      "src/credit_risk/validation/settings.py": "8c02424076d20415b26329b69606bdd5903ea7c1de499fab55fa9270b4d8f8bb",
+      "src/credit_risk/validation/stability.py": "bac2e3f39a34e5dbfad997a5252d874a160f2e025865ab656d6b7957cb8f82d0",
+      "src/credit_risk/validation/thresholds.py": "5344476e206333b660b5e6eea19dfe52a2d2eb17f36820ba779e20e06d3667ae",
+      "templates/home.html": "6dd921c3581ccafb7f326bfe8f5f750938c6f61e1c1b3d83ed52f38b051131ef",
+      "templates/result.html": "b4c9301d0a88395e4d0f357f79db7579be28d71c2a4a6e8c526554e1c507ee6b",
+      "tests/test_api.py": "711aa1f556c3b412cc3ca7e45d053ed612c87ae67743ddb07fe1177e333f08fa",
+      "tests/test_calibration.py": "6b635d8ee78909f87b61e0873b194e587dbeb9661935f857f441ee2f9e394e8c",
+      "tests/test_calibration_study.py": "4a3d7eaf2afeda7439ce91c96a0f235336b929015ebf44b480ef86734d9e73de",
+      "tests/test_config.py": "17e385e897a59953e0a7b4791eaeda8057cbac02ca3c3e8a6e9d15c2e9fff48d",
+      "tests/test_container_smoke.py": "50f262efe76ac05bd77647b0e77ff6f433670dacda3af86a35e9237741a8492d",
+      "tests/test_credit_strategy.py": "4d3fdfedbf0291ceb8a9fc6f82996aa0af0e9458ba1c75ac88d0b05e0039f8c3",
+      "tests/test_data.py": "9759eb08bdea9cb40425728d66f71e0363a468a44f304dcb67dec7abb53d5ebf",
+      "tests/test_data_audit.py": "34db98e64f85e12af2314be729ef6976c242ed550f533e80b158e83c4ba79941",
+      "tests/test_expected_loss.py": "2059142ac709201cf9ea18dcec4dbac2f9c9eb93a60c19e953702697dc41ff64",
+      "tests/test_explainability.py": "0fe892cd637f10334b008a0bbc552e7e2d0b327f102ccb3421639256a9f93ffc",
+      "tests/test_holdout_registry.py": "d76019ced907be6fdf754bdc18015f9490587bebe47d135180cf4d3d6215735c",
+      "tests/test_metrics.py": "a9d0af513d0058299893c85a7e81660910660a720ace12b329ac14c55f622bac",
+      "tests/test_model_validation_report.py": "cebd773d6e775141bca7181f71f1aa97658b6d1898323db52a6ae9fca7e9fda0",
+      "tests/test_monitoring.py": "c432b504f48ea6d6ca0411bc2955ee186c8504984282e5704e5bfbc7bf537980",
+      "tests/test_pd.py": "d951bc88b47b90fe3b8439a6de93b1af0298cd586c94668801f1c5ff6a84be4e",
+      "tests/test_pd_diagnostics.py": "1299e4dea05192b9f7cfa9c0bf9b1b3280abcb9d94fca8d0c1e31fb45a5a0f63",
+      "tests/test_portfolio.py": "4eb223cb913e1a1558d52e038ca37c19c2aded6b91a778e282a779da58ffb980",
+      "tests/test_reject_inference.py": "0af3dfe5e21962165c4b0dee4128efcb5759a7bd443bae2595f060c5bcfc1b31",
+      "tests/test_release.py": "049491ef56c798dd5cfdf8e95a2deeef60e412dd6bad92d679cd330ea28e60a3",
+      "tests/test_serving_integration.py": "25f5a4f60c703166f5fa7ce854a6005663f8265c0fa120acd317b09ee016edc8",
+      "tests/test_targets.py": "31a14aacd5f3f1bbc44a689132028b59ad5bd943793a29f0e9423d72cf6d30c5",
+      "tests/test_track_b_annual.py": "89f4eb4dccce73f073badfbacb9213a72026ffa6e169c75f6e63dc6407b1f6ce",
+      "tests/test_track_b_dataset_comparison.py": "7ffc50df6d218436992dd2f9f38060163d29b0d08d9ed7f46f74965fddc82729",
+      "tests/test_track_b_expanded_pd.py": "fe461207e046aa54039b9fbb685cac8842f1f54885e3b219cd4300439d80734b",
+      "tests/test_track_b_expansion.py": "0388614eacfd1880302f075983f8848655b86abbdc1d8df9a63bc8c5d600b11d",
+      "tests/test_track_b_panel.py": "31bec0e16f5949f653e29a095d0b477d4a65eaf008b4a8dc16ec86316521bfea",
+      "tests/test_track_b_pd_baseline.py": "450cbc35b471748f5e2503d572ac78d7e75808d85cd903144b0f9e338cf82dcc",
+      "tests/test_track_b_preflight.py": "de69b7e4449b2a29cea593836384d30449f9da00cbf24e36f74b970355d2ce2e",
+      "tests/test_tracking.py": "31dc99cf6acaf89f09aaa3b19f04f5c3842c529ab38d9ba6eb186b95a384677d",
+      "tests/test_validation.py": "8b058d32bdd2f03a856219165ddb117aa4aaea89964bd5f5d72d3d5c31c7a2c6",
+      "uv.lock": "ae21727ef6def2de31a8186b00bb0465eb07bad06360eec276d2cf2131376040",
+      "data\\track_b\\manifests\\freddie_2010_manifest.json": "58e6efe1ab096250637a73e7d5faa480c3805f7b74c91a3a9c929a7ce5e39a5b",
+      "data\\track_b\\manifests\\annual_2010_v1\\panel_manifest.json": "f89a8ff09223c6d632a63ecd87f22e627751736ca73b7c8c7db21733efcc050e",
+      "data\\track_b\\manifests\\annual_2010_v1\\run_audit.json": "4d2818aa5e95542a0c0264865fd3718bd30e4f85354b305df835e28a9c424dc3",
+      "data\\track_b\\manifests\\annual_2010_v1\\sample_manifest.json": "5065b3fa9df503bb415e457219395cde772d8e9dd4422d9e4f4bc7999ea3db01",
+      "data\\track_b\\manifests\\annual_2010_v1\\selected_ids.txt": "6b37111a0a1fb6dc3b4c5c2fe036e1bcdf2ba7c3f274c73d9d65fdf232fffd2c",
+      "data\\track_b\\manifests\\annual_2010_v1\\source_manifest.json": "312d8fe1dddcfbfa17d1514062617643af27e8c6c61e71305759f54b5bafa9ea",
+      "data\\track_b\\manifests\\expansion_v1\\panel_manifest.json": "f9af8f49d275e9313427ef298efd8ba652381e4464884a4dcda60b1c6bc6a166",
+      "data\\track_b\\manifests\\expansion_v1\\phase_a_test_attestation.json": "a434d60ff6cfb626768d57ea27efca3d58bfaf18e74cb650670f8a941af68068",
+      "data\\track_b\\manifests\\expansion_v1\\sample_manifest.json": "b1143e54eeb2c49a842b50fbb28474f1266916c7efc420b6710f4a7bd47aec59",
+      "data\\track_b\\manifests\\expansion_v1\\scan_started.json": "86ebbbbc0f6ed451c00418fe66b41e63d0acd943bd216c1beb29248225893b07",
+      "data\\track_b\\manifests\\expansion_v1\\selected_ids.txt": "570b450c75b9a4cb65ee295b210b4a5f9918569ce0daa4c64690be90621f3ee7",
+      "data\\track_b\\models\\expanded_pd_v1\\evaluation_ledger.json": "0a28b295dad7540cacedb2042af02cb3392c25c251fc994866463832eb9ec642",
+      "data\\track_b\\models\\expanded_pd_v1\\frozen_model_specifications.json": "0df7e13d9a4a3eb00e634bcc9ce0a96f783a1a02bccae763ccc8dfa01840fa75",
+      "data\\track_b\\models\\expanded_pd_v1\\hazard.joblib": "5b9b13b982cbc5b2568b86a1c80b7ea5d81266b60de1bf1b0a5f74029aba045c",
+      "data\\track_b\\models\\expanded_pd_v1\\logistic.joblib": "39ed38441fef44aea1204144ce2d50ec7d710c8765182a2c6cdd0525c65a6e64",
+      "data\\track_b\\models\\expanded_pd_v1\\prefit_cohort_audit.json": "6a43ea5f96bdf76c9e830c2d3bac87ec97b26ff026fc7d3208cd6ac485613304",
+      "data\\track_b\\models\\expanded_pd_v1\\static_logistic.joblib": "5cc2bc73944eb7f8b25695019a837fc47ae8156779ea3d49a6e6db505fc9c867",
+      "data\\track_b\\models\\expanded_pd_v1\\static_xgboost.joblib": "c2da921280ae50db9ec5ae225ab712a94878ba9f0d96eede4f264fe58f087869",
+      "data\\track_b\\models\\expanded_pd_v1\\temporal_predictions.npz": "9529c94b7244138e387e6172abe9cc5b58271820046450d8f3bbeda4ed6006af",
+      "data\\track_b\\models\\expanded_pd_v1\\xgboost.joblib": "3f49da294ac64469356b5e1d6d6ca79742b6ea2e531f97be292cd2c6d49def21",
+      "data\\track_b\\processed\\annual_2010_v1\\panel.csv": "26a3b6eae7055ed6329b583e6b1e629d754a899ded29640f226530d9d8994172",
+      "data\\track_b\\processed\\expansion_v1\\panel.csv": "7583f24d1dfcd9d11e13fe0a76af154285edc21e844cf15e65500b2881211dad",
+      "data\\track_b\\processed\\expansion_v1\\retained_performance.sqlite": "8eaa8e15c688a50bc8bc511c6c7d92e20ef2fbebed10f4771eed471589a2c7fc"
+    },
+    "unchanged": true,
+    "authorized_historical_test_updates": [
+      "tests/test_track_b_documentation.py",
+      "tests/test_track_b_research_design.py"
+    ]
+  },
+  "resources": {
+    "runtime_seconds": 289.18799999996554,
+    "peak_working_set_bytes": 1363537920,
+    "source_performance_rescanned": false
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "credit-risk-lab": "0.12.0"
+  },
+  "limitations": [
+    "Conditional calendar-window entry differs in mortgage seasoning/survival selection between development and evaluation",
+    "No pre-entry exposure fabricated; this is not origination-lifetime default incidence",
+    "Historical operational knowledge time UNVERIFIED",
+    "Dynamic current-state predictions are next-month only; multi-month dynamic CIF not identified without future-state assumptions",
+    "Training follow-up does not support unrestricted long-horizon extrapolation; tail rules applied",
+    "Marginal IPCW requires noninformative censoring; informative censoring not ruled out",
+    "Facility bootstrap conditions on fitted models and does not identify borrower dependence or future macro uncertainty",
+    "Task4/5 outcomes already inspected; Task6 has its own versioned sealed predictive protocol, not virgin data",
+    "No regulatory lifetime PD/IFRS9/IRB/production/causal/fairness/external-vintage validity",
+    "Later-duration categories were unseen during development; full-period updated-state scores are exploratory outside the trained time basis",
+    "Unobserved history before first servicing record cannot establish first-ever default; endpoints are first observed research events",
+    "At36 months structural Brier did not improve on the transported development AJ reference; payoff CIF is materially miscalibrated at12 and36 months"
+  ],
+  "next_task": "Vintage-aware macroeconomic data provenance and identification design, before any stress-model fitting",
+  "time_support_audit": {
+    "recorded_at": "2026-10-06T22:53:26.145669+00:00",
+    "models_modified": false,
+    "predictions_regenerated": false,
+    "primary_horizon_metrics_recomputed": false,
+    "source_sha256_lf": "c6983ae265f3d3ec535c66f61448e4861877912f853a9f68803557e83c9a0d9d",
+    "maximum_development_duration": 54,
+    "all_intervals": 132409,
+    "supported_intervals": 91930,
+    "outside_training_duration_intervals": 40479,
+    "unseen_duration_band_intervals": 34418,
+    "supported_facilities": 2423,
+    "supported_default_events": 67,
+    "supported_payoff_events": 1262,
+    "supported_time_monthly_metrics": {
+      "structural": {
+        "joint_log_loss": 0.08112018495796487,
+        "default_brier": 0.0007284174282218424,
+        "payoff_brier": 0.013608294871985626
+      },
+      "dynamic": {
+        "joint_log_loss": 0.08576972492088852,
+        "default_brier": 0.0005441267412849004,
+        "payoff_brier": 0.01433076465452465
+      }
+    },
+    "supported_time_monthly_uncertainty": {
+      "unit": "facility, all monthly intervals retained",
+      "draws": 400,
+      "seed": 61006,
+      "valid_draws": 400,
+      "failed_draws": 0,
+      "intervals": {
+        "structural": {
+          "joint_log_loss": {
+            "lower": 0.077838665021228,
+            "upper": 0.08474715205322837
+          },
+          "default_brier": {
+            "lower": 0.0005616634117328265,
+            "upper": 0.0009251165480918454
+          },
+          "payoff_brier": {
+            "lower": 0.012893556478157767,
+            "upper": 0.01433059168920997
+          }
+        },
+        "dynamic": {
+          "joint_log_loss": {
+            "lower": 0.08286601980130129,
+            "upper": 0.08869375779598711
+          },
+          "default_brier": {
+            "lower": 0.0004245998739650706,
+            "upper": 0.0006998522148698042
+          },
+          "payoff_brier": {
+            "lower": 0.013635428747075089,
+            "upper": 0.015056741958624055
+          }
+        }
+      }
+    },
+    "interpretation": "All-period monthly scores include time extrapolation; bands61+ were unseen in development and encoded as reference by the frozen pipeline. Supported-duration subset is a new descriptive diagnostic using cached scores, not a model revision or primary CIF reevaluation."
+  }
+}
