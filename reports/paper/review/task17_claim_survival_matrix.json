@@ -1,0 +1,231 @@
+{
+  "version": "task17-v1",
+  "base_commit": "a4479ba4be115bc9a1d4b53ab77e258b40bd57c7",
+  "legend": [
+    "SURVIVES",
+    "SURVIVES_WITH_NARROWER_LANGUAGE",
+    "REQUIRES_NEW_ANALYSIS",
+    "NOT_SUPPORTED_AFTER_REVIEW"
+  ],
+  "note": "No PRIMARY claim is NOT_SUPPORTED: every recorded number is a verified property of its frozen artifact. The review attacks interpretation, scope and selective reporting, not arithmetic.",
+  "counts": {
+    "SURVIVES": 7,
+    "SURVIVES_WITH_NARROWER_LANGUAGE": 11,
+    "REQUIRES_NEW_ANALYSIS": 1
+  },
+  "claims": [
+    {
+      "claim_id": "SURV_60_NAIVE_NET_DEFAULT",
+      "experiment_id": "B6",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Descriptive estimand correctly stated; add the frozen interval.",
+      "findings": [],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "SURV_60_DEFAULT_CIF",
+      "experiment_id": "B6",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Descriptive estimand correctly stated; add the frozen interval.",
+      "findings": [],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M1_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Fit statistic; define the weighting unit.",
+      "findings": [
+        "F9_INTERVAL_WEIGHTING",
+        "F10_JOINT_LOSS_INSENSITIVITY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M2_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "'Improved development fit' must become 'changed in-sample fit' absent a complexity-adjusted comparison.",
+      "findings": [
+        "F7_COLLINEARITY_BREAKDOWN",
+        "F10_JOINT_LOSS_INSENSITIVITY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Must be accompanied by the statement that M0 and M1 are near-identical on this metric and that the cohort is a seasoned survivor population.",
+      "findings": [
+        "F9_INTERVAL_WEIGHTING",
+        "F10_JOINT_LOSS_INSENSITIVITY",
+        "F11_DISTRESS_STATE_OMITTED"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Survives as a measurement. The generalisation to 2019-2026 does not: 89.3% of the gap is 2020, 2021 reverses, and the unseen-vintage population reverses the sign of the primary metric.",
+      "findings": [
+        "F1_CALENDAR_CONCENTRATION",
+        "F3_UNSEEN_VINTAGE_REVERSAL",
+        "F4_UNCERTAINTY_ASYMMETRY",
+        "F7_COLLINEARITY_BREAKDOWN"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Must be labelled conditional facility-composition uncertainty, not uncertainty about macro transport.",
+      "findings": [
+        "F4_UNCERTAINTY_ASYMMETRY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Promote to primary; state the eight-block coverage limitation and the single-block dominance.",
+      "findings": [
+        "F1_CALENDAR_CONCENTRATION",
+        "F4_UNCERTAINTY_ASYMMETRY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M1_PAYOFF_AUC",
+      "experiment_id": "B10",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Development statistic; define pooling.",
+      "findings": [
+        "F2_BETWEEN_PERIOD_AUC"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M2_PAYOFF_AUC",
+      "experiment_id": "B10",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Development statistic; define pooling.",
+      "findings": [
+        "F2_BETWEEN_PERIOD_AUC"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_PAYOFF_AUC",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Must be described as pooled across-period ranking and noted as near chance.",
+      "findings": [
+        "F2_BETWEEN_PERIOD_AUC"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_PAYOFF_AUC",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "REQUIRES_NEW_ANALYSIS",
+      "rationale": "The number survives; 'improved payoff ranking' as facility-level discrimination is not supported. Frozen per-year and CIF-level AUCs contradict it. Needs a within-calendar-period or calendar-stratified AUC, or restatement as across-period ranking.",
+      "findings": [
+        "F2_BETWEEN_PERIOD_AUC"
+      ],
+      "requires_new_experiment": true
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M1_PAYOFF_BRIER",
+      "experiment_id": "B10",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Label the Brier variant.",
+      "findings": [],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_DEVELOPMENT_M2_PAYOFF_BRIER",
+      "experiment_id": "B10",
+      "severity": "MINOR",
+      "verdict": "SURVIVES",
+      "rationale": "Label the Brier variant.",
+      "findings": [],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M1_PAYOFF_BRIER",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Needs a base-rate reference so the scale is interpretable.",
+      "findings": [
+        "F10_JOINT_LOSS_INSENSITIVITY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "The value survives; 'payoff Brier worsened' as a robust finding does not, because the frozen calendar-block interval includes zero and the study's own decision rule requires that interval.",
+      "findings": [
+        "F1_CALENDAR_CONCENTRATION",
+        "F4_UNCERTAINTY_ASYMMETRY"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_CIF_24_OBSERVED_PAYOFF",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Requires publication of the landmark entry-month distribution and the calendar span of the path.",
+      "findings": [
+        "F6_CIF_COHORT_IS_SINGLE_PATH"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M1_PAYOFF",
+      "experiment_id": "B10",
+      "severity": "MODERATE",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Must be reported with the companion default CIF miss and the mean-of-individual versus cohort-estimator distinction.",
+      "findings": [
+        "F6_CIF_COHORT_IS_SINGLE_PATH",
+        "F13_DEFAULT_CIF_UNIVERSAL_MISS"
+      ],
+      "requires_new_experiment": false
+    },
+    {
+      "claim_id": "MACRO_CIF_24_M2_PAYOFF",
+      "experiment_id": "B10",
+      "severity": "MAJOR",
+      "verdict": "SURVIVES_WITH_NARROWER_LANGUAGE",
+      "rationale": "Survives as a measurement but must be reframed as the consequence of the monthly payoff calibration result and shown alongside the 12, 36 and 60-month horizons.",
+      "findings": [
+        "F1_CALENDAR_CONCENTRATION",
+        "F5_HORIZON_SELECTION",
+        "F6_CIF_COHORT_IS_SINGLE_PATH"
+      ],
+      "requires_new_experiment": false
+    }
+  ]
+}
