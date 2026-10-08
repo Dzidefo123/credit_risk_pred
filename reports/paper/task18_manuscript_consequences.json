@@ -1,0 +1,290 @@
+{
+  "version": "task18-v1",
+  "base_commit": "b64c20f2ab7f8779e2b1eb233deebd35da2c2645",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "applied": false,
+  "note": "Evidence for Task 19. Task 18 created and edited no manuscript version.",
+  "count": 11,
+  "all_preprint_blockers_resolved": true,
+  "findings": [
+    {
+      "finding_id": "T18-F01",
+      "source_analysis": "SA01",
+      "verified_result": "Pooled temporal payoff AUC gain +0.0604 decomposes into a within-calendar-year gain of +0.0064 (pair-weighted) or +0.0058 (equal-weighted) and a solved between-year gain of +0.0717. 82.81% of the case-control pairs entering the pooled statistic cross year boundaries. Facility-level horizon AUC gaps are -0.0006, +0.0002, +0.0017 and +0.0031 at 12/24/36/60 months.",
+      "affected_task17_change_ids": [
+        "CH03"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M1_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M2_PAYOFF_AUC",
+        "MACRO_DEVELOPMENT_M1_PAYOFF_AUC"
+      ],
+      "required_manuscript_change": "Restate the payoff AUC result as predominantly across-period ranking. Report the within-year and between-year components and the 82.81% between-year pair share. Report the facility-level horizon AUCs. Remove any phrasing implying improved ordering of mortgages.",
+      "allowed_language": [
+        "M2 ranks calendar periods more sharply than M1; within calendar years its payoff ordering of risk intervals is almost unchanged.",
+        "Within-period payoff discrimination improves by 0.6 AUC points against a pooled gain of 6.0 points.",
+        "Calendar-period ranking can be useful predictive information, but it is not facility-level discrimination."
+      ],
+      "prohibited_language": [
+        "improved payoff ranking (unqualified)",
+        "ordered payoff-prone observations more effectively",
+        "facility-level discrimination improvement",
+        "a facility-level ranking gain was structurally unavailable by construction"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "Calendar-month granularity unexecuted; requires local frozen arrays."
+    },
+    {
+      "finding_id": "T18-F02",
+      "source_analysis": "SA01",
+      "verified_result": "Task 17's structural argument is refuted. In a multinomial softmax with a no-event reference, a month-constant shift is not a monotone transform of a single cause probability because the competing-cause constant enters each facility's own normalizer. Worked counterexample supplied. M2 is additionally a joint refit, so its non-macro coefficients differ from M1's.",
+      "affected_task17_change_ids": [
+        "CH03"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_PAYOFF_AUC"
+      ],
+      "required_manuscript_change": "Do not use the structural argument. The between-period conclusion must rest on the SA01 decomposition alone. Task 17's report must be annotated as containing a refuted structural claim.",
+      "allowed_language": [
+        "The gain is empirically between-period, as the decomposition shows."
+      ],
+      "prohibited_language": [
+        "Month-constant terms cannot change within-month ranking.",
+        "structurally unavailable by construction",
+        "A within-month gain was unavailable because interactions are prohibited."
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None. Task 17 requires an erratum annotation."
+    },
+    {
+      "finding_id": "T18-F03",
+      "source_analysis": "SA01",
+      "verified_result": "The pooled AUC gain and the probability deterioration share one cause. M2's 2020 mean predicted monthly payoff probability is 0.10048 against an observed 0.02212, a 4.54x over-prediction, and its across-year predicted spread ratio is 56x against M1's 1.44x. Because AUC is scale-free, that exaggerated spread raises between-year concordance while destroying calibration. M2's across-year ORDERING of yearly rates is in fact slightly worse than M1's, 0.786 against 0.821 of year-pairs ordered correctly.",
+      "affected_task17_change_ids": [
+        "CH03",
+        "CH09"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_PAYOFF_AUC",
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_CAL_M2_PAYOFF"
+      ],
+      "required_manuscript_change": "Reframe the central ranking-versus-probability contrast. These are not two independent properties moving in opposite directions; they are two readings of a single 2020 payoff over-prediction. This strengthens the methodological message and makes it precise.",
+      "allowed_language": [
+        "The ranking gain and the probability failure are two readings of one phenomenon: a scale-free metric rewards an exaggerated between-period spread that proper scores penalise.",
+        "Selecting on AUC alone would reward precisely the behaviour that destroys the probability estimates."
+      ],
+      "prohibited_language": [
+        "ranking and probability quality diverged independently",
+        "an economically plausible predictor improved ranking without improving probabilities (as two separate effects)"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F04",
+      "source_analysis": "SA02",
+      "verified_result": "The per-year decomposition reconciles to the frozen paired delta to 2.7e-15. Calendar 2020 contributes +0.01440 of +0.01612, i.e. 89.34%, on 20.81% of evaluation intervals. 2021 reverses sign at -0.00608. Six of the seven non-2020 years retain positive deltas.",
+      "affected_task17_change_ids": [
+        "CH01"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "required_manuscript_change": "Add the per-year decomposition table to the main text with weights, deltas and contributions.",
+      "allowed_language": [
+        "The deterioration is highly concentrated in calendar 2020, which supplies 89.3% of the aggregate difference.",
+        "The deterioration is not exclusive to 2020: six of seven remaining years retain positive differences.",
+        "2021 is the one evaluation year in which the macro-augmented model scores better."
+      ],
+      "prohibited_language": [
+        "COVID caused the failure.",
+        "The deterioration is purely a pandemic artifact.",
+        "Macro augmentation worsened temporal probability quality across 2019-2026 (unqualified)"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F05",
+      "source_analysis": "SA02",
+      "verified_result": "Two distinct quantities have been called ex-2020. The contribution residual is +0.00172, which is what Task 17 reported. The renormalised ex-2020 evaluation delta is +0.00217. Relative deterioration is 18.1% full period against 2.8% excluding 2020. The seven-block year sensitivity interval is [-0.00151, +0.00671] and includes zero.",
+      "affected_task17_change_ids": [
+        "CH01"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "required_manuscript_change": "Report the renormalised ex-2020 evaluation delta of +0.00217 and the 2.8% relative figure, and state which of the two quantities is being used. The seven-block interval may be reported as sensitivity only, with its coverage limitation.",
+      "allowed_language": [
+        "Excluding calendar 2020 the difference falls to +0.00217, a 2.8% relative deterioration against 18.1% for the full period.",
+        "A seven-block year-level sensitivity interval includes zero; with seven blocks, one of them partial, this is sensitivity information rather than inference."
+      ],
+      "prohibited_language": [
+        "The result survives exclusion of 2020 (as a robustness claim)",
+        "The ex-2020 difference is statistically significant.",
+        "ex-2020 residual of +0.00172 (without saying which quantity that is)"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F06",
+      "source_analysis": "SA03",
+      "verified_result": "On the unseen-vintage population the primary decision metric reverses: M2 joint log loss 0.069811 against M1 0.070631, a delta of -0.000819, on 17,352 facilities and 652,508 intervals. Payoff AUC rises 0.552 to 0.737. M2's payoff calibration slope is better there, 0.529 against 0.347. Payoff Brier still favours M1 at +0.000465, an order of magnitude smaller than the seen population's +0.004698, and default AUC still favours M1.",
+      "affected_task17_change_ids": [
+        "CH02"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS",
+        "MACRO_UNSEEN",
+        "MACRO_LIMITS"
+      ],
+      "required_manuscript_change": "Report the unseen-vintage comparison in full, including the reversal and the metrics that still favour M1. Restate the study-level conclusion as population-dependent transport. Candidate explanations must be labelled as hypotheses.",
+      "allowed_language": [
+        "Transport behaviour is population-dependent: severe joint-loss deterioration in the seasoned seen-vintage cohort, slight joint-loss improvement with persistent but much smaller cause-Brier deterioration in the younger unseen cohort.",
+        "The deterioration cannot be stated at study level; it is a property of the evaluated seen-vintage survivor cohort."
+      ],
+      "prohibited_language": [
+        "Macro augmentation worsened temporal probability quality in this study (unqualified)",
+        "The unseen-vintage population confirms the primary finding.",
+        "Younger loans explain the reversal (as a demonstrated cause)"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "Per-year decomposition of the unseen-vintage population not frozen."
+    },
+    {
+      "finding_id": "T18-F07",
+      "source_analysis": "SA06",
+      "verified_result": "At least 99.93% of CIF landmark entries occur in calendar 2019 (5,615 of 5,619 facilities carry risk intervals in the 2019 cell), and zero truncation at the 60-month horizon bounds every entry at or before 2021-02. The cohort is effectively synchronised.",
+      "affected_task17_change_ids": [
+        "CH06"
+      ],
+      "affected_claim_ids": [
+        "MACRO_CIF_24_OBSERVED_PAYOFF",
+        "MACRO_CIF_24_M1_PAYOFF",
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_24_SUPPORT"
+      ],
+      "required_manuscript_change": "Replace 'historical rolling macro paths' with language naming a single realised trajectory. State the entry concentration and the calendar span of the paths. Retain the correct existing statement that these are retrospective evaluations, not forecasts.",
+      "allowed_language": [
+        "a single historical macro path observed from a cohort entering within one twelve-month window",
+        "the realised 2019-2021 macro trajectory",
+        "retrospective sequential mapping, not a prospective forecast"
+      ],
+      "prohibited_language": [
+        "historical rolling macro paths (plural, implying dispersion)",
+        "averaged over diverse historical paths",
+        "each interval uses information available at its own assessment date (as evidence of path diversity)"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "Entry histogram, median entry and modal shares unquantified; requires local arrays."
+    },
+    {
+      "finding_id": "T18-F08",
+      "source_analysis": "SA06",
+      "verified_result": "Every 24-month path spans approximately 2019-01 to 2021-02, so calendar 2020 lies entirely within it. The 24-month CIF comparison and the 2020 calendar deterioration are not statistically independent.",
+      "affected_task17_change_ids": [
+        "CH05",
+        "CH06"
+      ],
+      "affected_claim_ids": [
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_PRIMARY_M2_JOINT_LOG_LOSS"
+      ],
+      "required_manuscript_change": "Remove the 24-month CIF from the abstract as an independent third finding. Present it as the cumulative-incidence consequence of the same 2020 over-prediction, and state the non-independence explicitly.",
+      "allowed_language": [
+        "The cumulative-incidence discrepancy is the consequence of the same monthly over-prediction, propagated through the survival recursion over the same calendar period.",
+        "The CIF comparison and the 2020 calendar result are two views of one period in one cohort."
+      ],
+      "prohibited_language": [
+        "These results demonstrate (three findings presented as mutually corroborating)",
+        "independent corroboration from cumulative incidence"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F09",
+      "source_analysis": "SA06",
+      "verified_result": "All four frozen horizons: observed payoff CIF 0.1330/0.3367/0.5056/0.6094 against M2 0.1222/0.7581/0.8079/0.8187 and M1 0.1385/0.2587/0.3536/0.4860. At 12 months M2 shows no qualitative failure. Observed default CIF 0.0061/0.0360/0.0417/0.0467 against M1 0.0060/0.0107/0.0144/0.0193: all models under-predict default incidence from 24 months onward.",
+      "affected_task17_change_ids": [
+        "CH05",
+        "CH11"
+      ],
+      "affected_claim_ids": [
+        "MACRO_CIF_24_M2_PAYOFF",
+        "MACRO_CIF_12_M2_PAYOFF",
+        "MACRO_CIF_24_M1_DEFAULT",
+        "MACRO_CIF_24_M2_DEFAULT"
+      ],
+      "required_manuscript_change": "Present all four horizons and both causes in one table.",
+      "allowed_language": [
+        "At the shortest horizon the macro model does not fail; the discrepancy emerges from 24 months onward as the monthly error compounds.",
+        "All three models under-predict observed default incidence beyond 12 months, by roughly a factor of 3.4 at 24 months; this is a baseline limitation, not specific to macro augmentation."
+      ],
+      "prohibited_language": [
+        "The 24-month comparison characterises the models' cumulative-incidence behaviour.",
+        "M1 provides an acceptable cumulative-incidence baseline."
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F10",
+      "source_analysis": "SA02 / frozen intervals",
+      "verified_result": "Payoff Brier: facility interval [+0.004562, +0.004822] excludes zero; calendar interval [-0.0000474, +0.013215] includes zero. Task 17's quoted values verified exactly. The frozen decision rule treats both intervals as co-primary. Classification ROBUST_FACILITY_ONLY.",
+      "affected_task17_change_ids": [
+        "CH04"
+      ],
+      "affected_claim_ids": [
+        "MACRO_PRIMARY_M2_PAYOFF_BRIER",
+        "MACRO_DELTA_FACILITY_JOINT_LOG_LOSS",
+        "MACRO_DELTA_CALENDAR_JOINT_LOG_LOSS"
+      ],
+      "required_manuscript_change": "Report both intervals side by side wherever the payoff Brier difference appears. Label the facility interval as conditional on the realised calendar. State that the deterioration is robust under facility resampling only.",
+      "allowed_language": [
+        "The payoff Brier deterioration is robust under facility resampling and not separable from zero under calendar-block resampling.",
+        "Facility resampling estimates uncertainty conditional on the realised calendar path and facility composition; neither resampling unit establishes macroeconomic sampling uncertainty."
+      ],
+      "prohibited_language": [
+        "payoff Brier worsened (as a robust finding)",
+        "the facility interval establishes the precision of the macro effect"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "None."
+    },
+    {
+      "finding_id": "T18-F11",
+      "source_analysis": "PIT terminology review",
+      "verified_result": "release_lags records count 0 and evidence_quality UNMEASURED_EXACT_PROVIDER_DATES for all six series. ALFRED vintagedates and real-time observation pulls with output_type=1 are documented, so vintage and revision control is established.",
+      "affected_task17_change_ids": [
+        "CH07",
+        "CH13"
+      ],
+      "affected_claim_ids": [
+        "PIT_FEATURES",
+        "PIT_SERIES",
+        "PIT_PROVENANCE",
+        "PIT_RELEASES",
+        "PIT_GAPS"
+      ],
+      "required_manuscript_change": "Adopt VINTAGE_AND_REVISION_AWARE in the title, abstract and section 4.4, or define POINT_IN_TIME explicitly at first use as ALFRED vintage-date availability with a statement that provider release lags were not measured.",
+      "allowed_language": [
+        "vintage-aware and revision-aware observed macroeconomic inputs",
+        "availability governed by ALFRED vintage dates; exact provider release lags were not measured"
+      ],
+      "prohibited_language": [
+        "point-in-time macroeconomic information (unqualified)",
+        "verified availability at the assessment date",
+        "fully reconstructed information set"
+      ],
+      "preprint_blocking_resolved": true,
+      "residual": "CG06 remains PARTIALLY_RESOLVED."
+    }
+  ]
+}

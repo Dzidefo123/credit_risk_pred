@@ -1,0 +1,157 @@
+{
+  "version": "task18-v1",
+  "task": 18,
+  "label": "FROZEN_ARRAY_SENSITIVITY_CLOSURE",
+  "base_commit": "b64c20f2ab7f8779e2b1eb233deebd35da2c2645",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "analyses_executed": [
+    "SA01",
+    "SA02",
+    "SA03",
+    "SA06"
+  ],
+  "analyses_not_executed": [
+    "SA04",
+    "SA05",
+    "SA07",
+    "SA08",
+    "SA09",
+    "SA10",
+    "SA11"
+  ],
+  "statuses": {
+    "SA01": "QUALIFIED",
+    "SA02": "CONFIRMED",
+    "SA03": "CONFIRMED",
+    "SA06": "QUALIFIED"
+  },
+  "headline_findings": {
+    "SA01": {
+      "interpretation": "WITHIN_PERIOD_GAIN_NEGLIGIBLE",
+      "pooled_payoff_auc_gain": 0.060442253166786086,
+      "within_year_gain_pair_weighted": 0.006357109017379847,
+      "within_year_gain_equal_weighted": 0.005765444950120879,
+      "between_year_gain_solved": 0.07167308184678411,
+      "within_share_of_pooled_gain": 0.10517657241926204,
+      "between_year_pair_share": 0.8280538711513751,
+      "structural_claim_verdict": "TASK17_STRUCTURAL_CLAIM_REFUTED"
+    },
+    "SA02": {
+      "reconciles": true,
+      "calendar_2020_share_of_delta": 0.8933748276719601,
+      "contribution_residual": 0.001718972262324113,
+      "renormalised_ex_2020_delta": 0.002170746390760932,
+      "full_period_relative_deterioration": 0.1807331827915973,
+      "ex_2020_relative_deterioration": 0.027972658238205817,
+      "ex_2020_interval": [
+        -0.0015110500018038842,
+        0.006707840036604442
+      ],
+      "ex_2020_interval_includes_zero": true
+    },
+    "SA03": {
+      "reversal_confirmed": true,
+      "seen_delta": 0.01612163642779664,
+      "unseen_delta": -0.00081923310209428,
+      "study_level_classification": "C. MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS"
+    },
+    "SA06": {
+      "path_classification": "SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH",
+      "share_entering_2019_at_least": 0.99928812956042,
+      "entry_bound": "2019-01 to 2021-02",
+      "cif_independent_of_2020": false
+    }
+  },
+  "payoff_brier_uncertainty": {
+    "facility": {
+      "delta": 0.004697658763666197,
+      "lower": 0.004562480802523502,
+      "upper": 0.0048216635534249295,
+      "excludes_zero": true
+    },
+    "calendar": {
+      "delta": 0.004697658763666197,
+      "lower": -4.738299084767613e-05,
+      "upper": 0.013214850850784124,
+      "includes_zero": true
+    },
+    "task17_quoted_values_verified": true,
+    "frozen_decision_rule": "Both facility and calendar95 CI upper<0; cause Brier and absolute mean calibration error degradation<=1e-4",
+    "classification": "ROBUST_FACILITY_ONLY",
+    "classification_reason": "The facility interval excludes zero; the calendar interval does not. The frozen decision rule treats facility and calendar intervals as co-primary, so a difference robust under only one resampling unit cannot be reported as robust.",
+    "joint_log_loss_for_comparison": {
+      "facility": [
+        0.01540973362343688,
+        0.016783525058395806
+      ],
+      "calendar": [
+        5.3258694600802695e-05,
+        0.041502093619988564
+      ],
+      "calendar_lower_bound_note": "Lower bound +5.33e-05, preserving direction by a margin numerically indistinguishable from zero on eight blocks."
+    }
+  },
+  "uncertainty_hierarchy": {
+    "level_1_facility": {
+      "estimates": "Uncertainty conditional on the realised calendar path and on facility composition.",
+      "frozen_evidence": "paired_facility records conditional_on_realized_calendar = true.",
+      "clusters": 5619,
+      "does_not_estimate": "Uncertainty about macroeconomic sampling or calendar variation."
+    },
+    "level_2_calendar_block": {
+      "estimates": "Sensitivity to calendar-period variation.",
+      "frozen_evidence": "paired_calendar records conditional_on_realized_calendar = false.",
+      "clusters": 8,
+      "limitation": "Eight blocks full period, seven ex-2020, one partial. Percentile coverage is weak."
+    },
+    "level_3_macro_sampling": {
+      "estimates": "Not estimated by any analysis in this study.",
+      "reason": "The study observes one realised national macro trajectory. Effective independent macro support is the number of distinct calendar months, 88 in development, not the interval count."
+    },
+    "verified_wording": "Facility resampling estimates uncertainty conditional on the realised calendar path and facility composition. Calendar-block resampling probes sensitivity to calendar-period variation but has very few independent blocks. Neither establishes broad macroeconomic sampling uncertainty.",
+    "checked_against": [
+      "docs/paper/statistical_unit_audit.json",
+      "reports/track_b/macro_competing_risk_validation.json#/paired_facility",
+      "#/paired_calendar"
+    ]
+  },
+  "pit_terminology": {
+    "evidence": "reports/track_b/pit_macro_data_audit_task9_api_v5.json#/release_lags",
+    "what_is_established": [
+      "ALFRED vintagedates were retrieved for all six series.",
+      "Real-time observation pulls used realtime_start/realtime_end with output_type=1, so retrieved values are vintage-specific rather than latest-revision.",
+      "Reference period, retained availability bounds, revisions and retrieval time are separated in the information contract."
+    ],
+    "what_is_not_established": {
+      "release_lag_counts": {
+        "UNRATE": 0,
+        "DGS10": 0,
+        "MORTGAGE30US": 0,
+        "USSTHPI": 0,
+        "GDPC1": 0,
+        "CPIAUCSL": 0
+      },
+      "evidence_quality": {
+        "UNRATE": "UNMEASURED_EXACT_PROVIDER_DATES",
+        "DGS10": "UNMEASURED_EXACT_PROVIDER_DATES",
+        "MORTGAGE30US": "UNMEASURED_EXACT_PROVIDER_DATES",
+        "USSTHPI": "UNMEASURED_EXACT_PROVIDER_DATES",
+        "GDPC1": "UNMEASURED_EXACT_PROVIDER_DATES",
+        "CPIAUCSL": "UNMEASURED_EXACT_PROVIDER_DATES"
+      },
+      "reason": "No certified initial provider release dates; do not recycle Task7 small probe as full-history evidence"
+    },
+    "verdict": "VINTAGE_AND_REVISION_AWARE",
+    "verdict_reason": "The acquisition contract demonstrably controls vintage and revision. It does not establish certified provider release timestamps, so availability at the assessment date is governed by ALFRED vintage dates rather than verified first-release dates. POINT_IN_TIME without qualification implies the latter and is not supported.",
+    "permitted_alternative": "POINT_IN_TIME may be retained only if defined explicitly at first use as ALFRED vintage-date availability, with a statement that exact provider release lags were not measured. Unqualified use is prohibited.",
+    "scope": "Terminology decision from Task 9/9A evidence only. No macro data was acquired."
+  },
+  "sa12_note": {
+    "status": "DOCUMENTARY_ONLY",
+    "action": "CG03's residual, the compatibility of the conditional-entry and IPCW implementation with Aalen1978/Austin2016/Heyard2020, requires author implementation review. No empirical computation performed in Task 18.",
+    "unchanged": "CG03 remains PARTIALLY_RESOLVED."
+  },
+  "preprint_analysis_gate": "PREPRINT_ANALYSIS_GAPS_PARTIALLY_CLOSED",
+  "preprint_gate_reason": "SA02 and SA03 are closed outright. SA01's scientific question is answered decisively at calendar-year granularity and the indefensible interpretation is confirmed as such, but the month-stratified computation specified in the brief was not possible here. SA06's inference is converted into a derivation with independent corroboration, but the literal entry histogram is unquantified. Both residual gaps require the local frozen arrays and neither blocks the manuscript changes the four analyses imply.",
+  "gate_caveat": "This gate concerns Task 17's quantitative preprint blockers only. It does not mean the manuscript is ready."
+}

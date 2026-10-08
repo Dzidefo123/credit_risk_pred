@@ -1,0 +1,158 @@
+{
+  "analysis_id": "SA06",
+  "label": "CIF_LANDMARK_ENTRY_DISTRIBUTION",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "task17_inference_being_resolved": "F6: that CIF landmark entry is concentrated at the start of the evaluation window, marked INFERRED and flagged for author confirmation.",
+  "method_specified": "Direct entry-timestamp histogram from frozen CIF cohort identifiers.",
+  "method_executed": "Derivation from the frozen per-horizon truncation counts plus the protocol exclusion rule, independently corroborated by frozen per-year facility counts. The entry-timestamp arrays are absent from this checkout.",
+  "cohort": {
+    "landmarks": 5619,
+    "unique_facilities": 5619,
+    "definition": "First eligible evaluation interval per facility",
+    "unique_default_facilities": 280,
+    "unique_payoff_facilities": 3823
+  },
+  "derivation_upper_bound": {
+    "protocol_rule": "Exclude per-horizon solely if full calendar path exceeds2026-02",
+    "evaluation_window": [
+      "2019-01",
+      "2026-02"
+    ],
+    "frozen_truncation_counts": {
+      "12": 0,
+      "24": 0,
+      "36": 0,
+      "60": 0
+    },
+    "argument": "Zero landmarks are excluded at the 60-month horizon. The frozen exclusion mask is entries[month] + h - 1 <= ordinal('2026-02'), so for h = 60 every entry satisfies entry <= 2021-03. Verified against src/credit_risk/track_b/macro_hazard/cif.py.",
+    "entry_bound": "2019-01 to 2021-03",
+    "permitted_entry_months": 27,
+    "evaluation_window_months": 86,
+    "share_of_window_permitted": 0.313953488372093,
+    "exclusion_mask_source": "src/credit_risk/track_b/macro_hazard/cif.py: mask = entries['month'] + h - 1 <= ordinal('2026-02')",
+    "per_horizon_latest_permitted_entry": {
+      "12": "2025-03",
+      "24": "2024-03",
+      "36": "2023-03",
+      "60": "2021-03"
+    }
+  },
+  "corroboration_lower_bound": {
+    "frozen_facility_counts_by_year": {
+      "2019": 5615,
+      "2020": 4844,
+      "2021": 3530,
+      "2022": 2546,
+      "2023": 2161,
+      "2024": 1932,
+      "2025": 1737,
+      "2026": 1532
+    },
+    "argument": "A facility's landmark is its first eligible evaluation interval, so any facility with a risk interval in calendar 2019 must have entered on or before 2019-12. The frozen 2019 cell contains 5615 facilities out of 5619 in the CIF cohort.",
+    "facilities_entering_in_2019_at_least": 5615,
+    "share_entering_in_2019_at_least": 0.99928812956042,
+    "facilities_possibly_entering_later_at_most": 4
+  },
+  "at_risk_decay": {
+    "12": {
+      "month_1": 5619.0,
+      "final_month": 12,
+      "final_at_risk": 4906.0
+    },
+    "24": {
+      "month_1": 5619.0,
+      "final_month": 24,
+      "final_at_risk": 3647.0
+    },
+    "36": {
+      "month_1": 5619.0,
+      "final_month": 36,
+      "final_at_risk": 2611.0
+    },
+    "60": {
+      "month_1": 5619.0,
+      "final_month": 60,
+      "final_at_risk": 1949.0
+    }
+  },
+  "entry_distribution_verdict": "At least 99.93% of CIF landmark entries occur in calendar 2019, and no entry is later than 2021-02. The cohort is effectively synchronised at the start of the evaluation window.",
+  "path_classification": "SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH",
+  "path_classification_justification": "With at least 99.93% of entries inside a single 12-month span, every 24-month path covers approximately 2019-01 to 2021-02 with at most twelve months of offset between facilities. This is one macro trajectory observed with small phase shifts, not an average over diverse historical paths.",
+  "manuscript_language_assessment": {
+    "current_phrase": "historical rolling macro paths",
+    "supported": false,
+    "problem": "The plural, combined with the word 'rolling', implies averaging over many entry dates and therefore many distinct macro trajectories. The cohort is synchronised within twelve months.",
+    "accurate_alternative": "'a single historical macro path, observed from a cohort entering within one twelve-month window' or 'the realised 2019-2021 macro trajectory'. The existing and correct statement that these are retrospective evaluations rather than prospective forecasts should be retained; only the plurality claim must change."
+  },
+  "cif_2020_calendar_alignment": {
+    "statement": "Entry concentrated in calendar 2019 means every 24-month path spans approximately 2019-01 to 2021-02, and calendar 2020 lies entirely inside that span.",
+    "consequence": "The 24-month CIF comparison and the 2020 calendar deterioration identified in SA02 are not statistically independent pieces of evidence. They are two views of the same calendar period in the same cohort.",
+    "scope": "This is a calendar-alignment statement only. No causal dependence is claimed.",
+    "manuscript_consequence": "The abstract currently presents the 24-month CIF discrepancy as a third finding alongside joint log loss and payoff AUC. It cannot be presented as independent corroboration."
+  },
+  "all_frozen_horizons": {
+    "12": {
+      "at_risk": 4906.0,
+      "observed_payoff_cif": 0.13298512775827143,
+      "M0_payoff": 0.13064660399127442,
+      "M1_payoff": 0.13845448776939223,
+      "M2_payoff": 0.12217294624864446,
+      "observed_default_cif": 0.006052444766914205,
+      "M0_default": 0.006219386942146399,
+      "M1_default": 0.005979276707492103,
+      "M2_default": 0.0064041378239923135
+    },
+    "24": {
+      "at_risk": 3647.0,
+      "observed_payoff_cif": 0.33673487196277013,
+      "M0_payoff": 0.2448599520913674,
+      "M1_payoff": 0.258686480614572,
+      "M2_payoff": 0.7581426348757327,
+      "observed_default_cif": 0.03597421509468338,
+      "M0_default": 0.011262713290235395,
+      "M1_default": 0.010678865499679224,
+      "M2_default": 0.012728175877114159
+    },
+    "36": {
+      "at_risk": 2611.0,
+      "observed_payoff_cif": 0.505579785497561,
+      "M0_payoff": 0.33644344050217684,
+      "M1_payoff": 0.35358170956058005,
+      "M2_payoff": 0.807916522782277,
+      "observed_default_cif": 0.04167362145872695,
+      "M0_default": 0.01525281498032126,
+      "M1_default": 0.014398174473094421,
+      "M2_default": 0.014884891828513075
+    },
+    "60": {
+      "at_risk": 1949.0,
+      "observed_payoff_cif": 0.6094393387347562,
+      "M0_payoff": 0.4659719969576462,
+      "M1_payoff": 0.4859859910078986,
+      "M2_payoff": 0.8186658155040163,
+      "observed_default_cif": 0.04666203068861972,
+      "M0_default": 0.020414856102776883,
+      "M1_default": 0.01934352954396965,
+      "M2_default": 0.016302582850030785
+    }
+  },
+  "horizon_observations": [
+    "At 12 months M2 is closer to the observed payoff CIF than M1 is at 24, 36 or 60 months: no qualitative M2 failure appears at the shortest horizon.",
+    "The dramatic M2 payoff over-prediction appears from 24 months onward, consistent with the propagation of a monthly over-prediction through the survival recursion.",
+    "All three models under-predict observed default CIF at every horizon beyond 12 months, by roughly a factor of 3.4 at 24 months. This is a baseline failure, not an M2-specific one.",
+    "Reporting the 24-month payoff comparison alone omits both the horizon at which M2 does not fail and the default comparison in which every model fails."
+  ],
+  "status": "QUALIFIED",
+  "status_reason": "Task 17's inference F6 is confirmed and strengthened from an inference to a derivation with independent corroboration, but the literal entry-month and entry-year histogram specified in the brief could not be produced because the cohort identifier arrays are absent. Median entry, modal month share and modal year share remain unquantified.",
+  "residual_gap": [
+    "entry month histogram",
+    "entry year histogram",
+    "earliest entry",
+    "latest entry",
+    "median entry",
+    "share entering in modal month",
+    "share entering in modal year"
+  ],
+  "derivation_correction_note": "An earlier draft of this derivation used entry + h <= cutoff and reported a bound of 2021-02 over 26 months. The frozen mask uses entry + h - 1 <= cutoff, giving 2021-03 over 27 months. Corrected against source before publication. The corroborating bound from per-year facility counts is unaffected and is far tighter.",
+  "landmark_definition_verified": "Landmark entry is the first row of each contiguous facility history: first_month = data['month'][starts] in cif.landmarks(). Confirms that presence in a calendar year implies entry on or before the end of that year."
+}

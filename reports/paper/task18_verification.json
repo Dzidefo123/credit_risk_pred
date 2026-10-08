@@ -1,0 +1,138 @@
+{
+  "version": "task18-v1",
+  "task": 18,
+  "label": "FROZEN_ARRAY_SENSITIVITY_CLOSURE",
+  "base_commit": "b64c20f2ab7f8779e2b1eb233deebd35da2c2645",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "registration_written_before_metrics": true,
+  "analyses_executed": [
+    "SA01",
+    "SA02",
+    "SA03",
+    "SA06"
+  ],
+  "analyses_not_executed": [
+    "SA04",
+    "SA05",
+    "SA07",
+    "SA08",
+    "SA09",
+    "SA10",
+    "SA11"
+  ],
+  "no_experiments_rerun": true,
+  "no_models_fitted": true,
+  "no_models_changed": true,
+  "no_predictions_regenerated": true,
+  "no_calibration_fitted": true,
+  "no_tuning_performed": true,
+  "no_features_cohorts_splits_or_labels_changed": true,
+  "no_protocol_changed": true,
+  "no_frozen_metrics_changed": true,
+  "no_new_fannie_outcomes": true,
+  "no_new_datasets_acquired": true,
+  "no_manuscript_version_created": true,
+  "no_manuscript_edited": true,
+  "no_invented_result": true,
+  "unknown_remains_unknown": true,
+  "frozen_prediction_arrays_absent_from_checkout": true,
+  "frozen_arrays_read": false,
+  "frozen_arrays_read_note": "The arrays are not present in this checkout, so none was opened. All Task 18 figures derive from frozen published aggregates. scripts/task18_local_closure.py is provided for execution on the machine holding the private artifacts; it was not run here.",
+  "input_hash_drift": {},
+  "input_hashes_stable": true,
+  "modified_tracked_files": [],
+  "tracked_files_unchanged": true,
+  "arithmetic_performed": [
+    {
+      "id": "SA01",
+      "description": "Exact Mann-Whitney within/between decomposition of frozen pooled and per-year payoff AUCs.",
+      "new_measurement": false
+    },
+    {
+      "id": "SA01-structural",
+      "description": "Closed-form softmax counterexample; arithmetic only, no data.",
+      "new_measurement": false
+    },
+    {
+      "id": "SA02",
+      "description": "Interval-weighted decomposition of frozen per-year joint log losses; reconciles to frozen delta at 2.7e-15.",
+      "new_measurement": false
+    },
+    {
+      "id": "SA02-block",
+      "description": "Percentile year-block resample of frozen per-year aggregates; validated against the frozen interval-level interval.",
+      "new_measurement": false
+    },
+    {
+      "id": "SA06",
+      "description": "Entry bound derived from frozen truncation counts and the protocol exclusion mask; corroborated by frozen per-year facility counts.",
+      "new_measurement": false
+    }
+  ],
+  "corrections_issued": [
+    {
+      "target": "Task 17 report",
+      "item": "Structural claim that month-constant terms make a within-month ranking gain unavailable by construction.",
+      "resolution": "REFUTED by closed-form counterexample; the empirical conclusion is unaffected and now rests on the SA01 decomposition."
+    },
+    {
+      "target": "Task 17 report",
+      "item": "The figure +0.00172 described as the ex-2020 residual delta.",
+      "resolution": "Correct as a contribution residual; the renormalised ex-2020 evaluation delta is +0.00217. Both now reported with definitions."
+    },
+    {
+      "target": "Task 18 internal draft",
+      "item": "Entry bound derived as 2021-02 over 26 months.",
+      "resolution": "Frozen mask uses entry + h - 1 <= cutoff; corrected to 2021-03 over 27 months before publication."
+    }
+  ],
+  "preserved": {
+    "track_a": true,
+    "track_b_empirical_artifacts": true,
+    "task10": true,
+    "task10_predictions_untouched": true,
+    "task11": true,
+    "task12": true,
+    "task13_13t": true,
+    "task14": true,
+    "task15": true,
+    "task16": true,
+    "task17": true,
+    "freddie_archives": true,
+    "fannie_archive": true,
+    "macro_evidence": true,
+    "experiment_hashes": true,
+    "numeric_bindings": 123
+  },
+  "outputs_created": [
+    "reports/paper/task18_analysis_registration.json",
+    "reports/paper/task18_results.json",
+    "reports/paper/task18_sa01_within_period_auc.json",
+    "reports/paper/task18_sa02_calendar_decomposition.json",
+    "reports/paper/task18_sa03_unseen_vintage.json",
+    "reports/paper/task18_sa06_cif_entry_distribution.json",
+    "reports/paper/task18_manuscript_consequences.json",
+    "reports/paper/TASK18_FROZEN_ARRAY_SENSITIVITY_CLOSURE.md",
+    "reports/paper/task18_verification.json",
+    "tests/test_frozen_array_sensitivity.py"
+  ],
+  "statuses": {
+    "SA01": "QUALIFIED",
+    "SA02": "CONFIRMED",
+    "SA03": "CONFIRMED",
+    "SA06": "QUALIFIED"
+  },
+  "preprint_analysis_gate": "PREPRINT_ANALYSIS_GAPS_PARTIALLY_CLOSED",
+  "input_hashes_sha256_lf": {
+    "reports/track_b/macro_competing_risk_validation.json": "ae401cada41ca6aa1fa6658de449ecf86baaae18346f060191a40e2daebd64bd",
+    "reports/track_b/macro_signal_attribution_stability.json": "69f3b8bb63b8c58b3f740c530269442ab4a3b001a9bd5806ce0690452c563d96",
+    "reports/track_b/pit_macro_data_audit_task9_api_v5.json": "2ba241a67c46b08d2dd60961dd5cdfede35200e3b427cd5e19ffaec08470ae00",
+    "docs/track_b/macro_competing_risk_protocol.json": "6c9433e241623c8b73f3cee5d4ff324b9139914b4e12c8f96ea8994bfebcbfe5",
+    "docs/paper/track_b_claim_evidence_registry.json": "c6d3911d1d59cf88ac4b3eb775a7040f31a7292857c029bdb83178c75450a8d2",
+    "docs/paper/experiment_design_freeze.json": "0ee92f1711272232ff17c262dd987b8c5cd2a7021488a18fc789054fe8502b3f",
+    "docs/paper/statistical_unit_audit.json": "67decc3a06ca38ba31523e59caafec7b58729da9a0ca806f9dd98312f44be6ad",
+    "reports/paper/review/task17_claim_survival_matrix.json": "1467cf726ebdac7e19e81a31eb2b645f54ecf14550f90c507e4ac3e5108f2344",
+    "reports/paper/TASK17_HOSTILE_SCIENTIFIC_REVIEW.md": "02b3333fa9305a8eb6ec812b61a16b743a247f452e3646e414c8dcbb4b10f571",
+    "paper/main_v0.2.md": "8da9a673d3bfe4076523f92a4ce7e18783ae4cbe068de2db6137e46efea1c835"
+  }
+}

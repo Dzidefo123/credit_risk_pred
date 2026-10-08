@@ -1,0 +1,261 @@
+{
+  "analysis_id": "SA01",
+  "label": "WITHIN_CALENDAR_PAYOFF_DISCRIMINATION",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "question": "Does the pooled temporal payoff AUC improvement represent observation-level ranking improvement within calendar periods, or primarily ranking between calendar periods?",
+  "method": "Exact Mann-Whitney decomposition of the frozen pooled payoff AUC into within-stratum and between-stratum components. Pooled AUC is the probability a random payoff interval outranks a random non-payoff interval, so pooled*total_pairs = within_pairs*within_AUC + between_pairs*between_AUC. The eight frozen per-year AUCs supply within_AUC; between_AUC is solved from the identity. No prediction array was read and nothing was fitted.",
+  "granularity_executed": "CALENDAR_YEAR",
+  "granularity_not_executed": "CALENDAR_MONTH",
+  "granularity_gap_reason": "Month-stratified AUC requires interval-level predictions with calendar identifiers. The frozen arrays are absent from this checkout and the published artifacts stratify at year granularity only.",
+  "eligibility": {
+    "rule": "Frozen non-null payoff_auc with payoff_status SUPPORTED.",
+    "eligible_strata": 8,
+    "total_strata": 8,
+    "excluded_single_class_or_sparse": 0,
+    "imputed_auc_count": 0,
+    "note": "All eight evaluation years carry SUPPORTED payoff AUC for both models. 2026 is partial (Jan-Feb) and retained, carrying 0.05% of within-year pairs."
+  },
+  "pair_structure": {
+    "total_case_control_pairs": 937078468,
+    "within_year_pairs": 161127015,
+    "between_year_pairs": 775951453,
+    "within_year_pair_share": 0.17194612884862487,
+    "between_year_pair_share": 0.8280538711513751,
+    "note": "82.81% of the case-control pairs entering the pooled AUC cross year boundaries, so the pooled statistic is predominantly a between-period quantity by construction."
+  },
+  "per_year": [
+    {
+      "year": "2019",
+      "intervals": 62976,
+      "payoffs": 738,
+      "controls": 62238,
+      "within_pairs": 45931644,
+      "observed_payoff_rate": 0.01171875,
+      "M1_payoff_auc": 0.539275798619357,
+      "M2_payoff_auc": 0.5462286305275726,
+      "gap": 0.0069528319082156065,
+      "M1_mean_predicted": 0.01244442131110801,
+      "M2_mean_predicted": 0.010458432084236724,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2020",
+      "intervals": 51809,
+      "payoffs": 1146,
+      "controls": 50663,
+      "within_pairs": 58059798,
+      "observed_payoff_rate": 0.022119708930880735,
+      "M1_payoff_auc": 0.5887458220230115,
+      "M2_payoff_auc": 0.5934892677373765,
+      "gap": 0.004743445714365024,
+      "M1_mean_predicted": 0.012818623886184204,
+      "M2_mean_predicted": 0.10047749480076125,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2021",
+      "intervals": 36397,
+      "payoffs": 951,
+      "controls": 35446,
+      "within_pairs": 33709146,
+      "observed_payoff_rate": 0.026128527076407396,
+      "M1_payoff_auc": 0.5650628319091797,
+      "M2_payoff_auc": 0.5606206398702596,
+      "gap": -0.004442192038920156,
+      "M1_mean_predicted": 0.011711399336580016,
+      "M2_mean_predicted": 0.024940646857894863,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2022",
+      "intervals": 28068,
+      "payoffs": 369,
+      "controls": 27699,
+      "within_pairs": 10220931,
+      "observed_payoff_rate": 0.01314664386489953,
+      "M1_payoff_auc": 0.4932883315619683,
+      "M2_payoff_auc": 0.5578696304671268,
+      "gap": 0.06458129890515851,
+      "M1_mean_predicted": 0.01019509189153411,
+      "M2_mean_predicted": 0.004644271835638036,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2023",
+      "intervals": 24719,
+      "payoffs": 216,
+      "controls": 24503,
+      "within_pairs": 5292648,
+      "observed_payoff_rate": 0.008738217565435495,
+      "M1_payoff_auc": 0.4938898260379304,
+      "M2_payoff_auc": 0.47993575238708497,
+      "gap": -0.013954073650845444,
+      "M1_mean_predicted": 0.010055134943484013,
+      "M2_mean_predicted": 0.0017946289803750298,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2024",
+      "intervals": 22138,
+      "payoffs": 190,
+      "controls": 21948,
+      "within_pairs": 4170120,
+      "observed_payoff_rate": 0.00858252778028729,
+      "M1_payoff_auc": 0.49316746280682566,
+      "M2_payoff_auc": 0.49553442107181567,
+      "gap": 0.0023669582649900045,
+      "M1_mean_predicted": 0.009768481162772567,
+      "M2_mean_predicted": 0.002060244919955751,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2025",
+      "intervals": 19781,
+      "payoffs": 187,
+      "controls": 19594,
+      "within_pairs": 3664078,
+      "observed_payoff_rate": 0.009453516000202214,
+      "M1_payoff_auc": 0.4814466285925136,
+      "M2_payoff_auc": 0.4770676279271347,
+      "gap": -0.004379000665378885,
+      "M1_mean_predicted": 0.0091222273325231,
+      "M2_mean_predicted": 0.002287616130061753,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": false
+    },
+    {
+      "year": "2026",
+      "intervals": 3051,
+      "payoffs": 26,
+      "controls": 3025,
+      "within_pairs": 78650,
+      "observed_payoff_rate": 0.008521796132415601,
+      "M1_payoff_auc": 0.48225683407501585,
+      "M2_payoff_auc": 0.47251112523839794,
+      "gap": -0.009745708836617906,
+      "M1_mean_predicted": 0.008927455203847417,
+      "M2_mean_predicted": 0.002798529421977879,
+      "M1_payoff_status": "SUPPORTED",
+      "M2_payoff_status": "SUPPORTED",
+      "partial": true
+    }
+  ],
+  "aggregates": {
+    "M1": {
+      "pooled": 0.5654257013618629,
+      "within_year_pair_weighted": 0.555552270362608,
+      "within_year_equal_weighted": 0.5171416919532252,
+      "between_year_solved": 0.5674759281622223
+    },
+    "M2": {
+      "pooled": 0.625867954528649,
+      "within_year_pair_weighted": 0.5619093793799879,
+      "within_year_equal_weighted": 0.5229071369033461,
+      "between_year_solved": 0.6391490100090064
+    }
+  },
+  "gains": {
+    "pooled": 0.060442253166786086,
+    "within_year_pair_weighted": 0.006357109017379847,
+    "within_year_equal_weighted": 0.005765444950120879,
+    "between_year_solved": 0.07167308184678411,
+    "within_share_of_pooled_gain": 0.10517657241926204
+  },
+  "within_year_gain_leave_one_year_out": {
+    "2019": 0.0061195774958700605,
+    "2020": 0.007266117411514114,
+    "2021": 0.009214127572640536,
+    "2022": 0.0024135607415271725,
+    "2023": 0.007046943630861621,
+    "2024": 0.006463121610554301,
+    "2025": 0.006606932525334534,
+    "2026": 0.006364973031548643
+  },
+  "per_year_gap_signs": {
+    "positive": 4,
+    "negative": 4
+  },
+  "between_year_mechanism": {
+    "across_year_rate_concordance_M1": 0.8214285714285714,
+    "across_year_rate_concordance_M2": 0.7857142857142857,
+    "M1_predicted_spread": [
+      0.008927455203847417,
+      0.012818623886184204
+    ],
+    "M2_predicted_spread": [
+      0.0017946289803750298,
+      0.10047749480076125
+    ],
+    "M1_spread_ratio": 1.4358653830780166,
+    "M2_spread_ratio": 55.987892706248466,
+    "finding": "AUC is scale-free. M2 inflates its 2020 mean predicted monthly payoff probability to 0.10048 against an observed 0.02212, a 4.54x over-prediction, and its across-year predicted spread is 56x against M1's 1.44x. That exaggerated spread separates 2020 intervals from other years and raises between-year concordance at interval level, even though M2's across-year ORDERING of yearly rates is slightly worse than M1's (0.786 vs 0.821 of year-pairs ordered correctly). The same 2020 over-prediction that destroys joint log loss and payoff Brier is what produces the pooled AUC gain.",
+    "consequence": "The pooled AUC gain and the probability deterioration are not two independent properties moving in opposite directions. They are two readings of one phenomenon."
+  },
+  "ex_2020_between_year_component": {
+    "status": "NOT_EXECUTABLE",
+    "reason": "Solving the between-year component ex-2020 requires a pooled ex-2020 payoff AUC, which is not frozen and cannot be derived from year aggregates."
+  },
+  "facility_level_contextual_check": {
+    "12": {
+      "M1_payoff_cumulative_dynamic_auc": 0.5448378291365172,
+      "M2_payoff_cumulative_dynamic_auc": 0.5442076505938699,
+      "gap": -0.0006301785426473527
+    },
+    "24": {
+      "M1_payoff_cumulative_dynamic_auc": 0.5906259386942968,
+      "M2_payoff_cumulative_dynamic_auc": 0.5908143599810217,
+      "gap": 0.00018842128672491576
+    },
+    "36": {
+      "M1_payoff_cumulative_dynamic_auc": 0.5962952752506401,
+      "M2_payoff_cumulative_dynamic_auc": 0.598024251442585,
+      "gap": 0.0017289761919448976
+    },
+    "60": {
+      "M1_payoff_cumulative_dynamic_auc": 0.5752886630298426,
+      "M2_payoff_cumulative_dynamic_auc": 0.5783675703948712,
+      "gap": 0.0030789073650285825
+    }
+  },
+  "structural_check": {
+    "task17_claim": "Task 17 asserted that because M2 adds only month-constant national terms and the protocol prohibits interactions, a facility-level ranking gain was 'structurally unavailable by construction'.",
+    "specification_verified": {
+      "M1_minus_M2_feature_difference": [
+        "unemployment_level",
+        "unemployment_change_3m",
+        "treasury_10y_level",
+        "mortgage_30y_level",
+        "hpi_yoy",
+        "cpi_yoy",
+        "gdp_qoq"
+      ],
+      "all_added_terms_are_month_constant": true,
+      "interactions_prohibited": true,
+      "period_fixed_effects_prohibited": true,
+      "source": "docs/track_b/macro_competing_risk_protocol.json#/ladder and #/prohibited"
+    },
+    "verdict": "TASK17_STRUCTURAL_CLAIM_REFUTED",
+    "mathematics": "The model is a multinomial softmax with no-event reference: h_P = exp(eta_P)/(1+exp(eta_D)+exp(eta_P)). A month-constant shift adds g_P to eta_P and g_D to eta_D for every facility, but each facility's own normalizer contains exp(eta_D,i + g_D), so the shift is NOT a monotone transform of h_P across facilities. Worked counterexample: facilities (a,b) = (0,0) and (-1,-10). At g=(0,0), h_P = 0.3333 and 0.2689 so the first ranks higher. At g=(0,+10), h_P = 0.0000454 and 0.1554 so the order reverses. Rank invariance under a shared additive shift holds for a single binary logit, not for the multinomial used here.",
+    "second_independent_route": "M2 is a joint refit, so its mortgage-characteristic coefficients differ from M1's. Within-month reordering is available through that channel alone, irrespective of the softmax argument.",
+    "consequence": "The empirical conclusion that the gain is predominantly between-period stands on the decomposition above and must rest on that evidence. The a-priori structural argument must be withdrawn from Task 17 and must not appear in the manuscript.",
+    "caveat": "Calendar-period ranking can still be useful predictive information; the issue is the interpretation of the phrase 'payoff ranking improved'."
+  },
+  "interpretation": "WITHIN_PERIOD_GAIN_NEGLIGIBLE",
+  "interpretation_justification": "At year granularity the within-period gain is +0.0064 pair-weighted and +0.0058 equal-weighted, against a pooled gain of +0.0604 and a solved between-year gain of +0.0717. Within-period movement accounts for 10.6% of the pooled gain. The within-year gain is small, positive and consistently signed under leave-one-year-out (+0.0024 to +0.0092), so it is negligible rather than absent or reversed. Per-year gaps are mixed, four positive and four negative. Facility-level horizon AUCs corroborate: gaps of -0.0006, +0.0002, +0.0017 and +0.0031 at 12, 24, 36 and 60 months.",
+  "interpretation_caveat": "Year strata still contain between-month variation, so a month-stratified estimate would be expected to be no larger; that expectation is not established here and the month-level analysis remains open.",
+  "status": "QUALIFIED",
+  "status_reason": "The scientific question is answered decisively at year granularity and the interpretation Task 17 attacked is confirmed as indefensible, but the brief's specified month-stratified rescoring could not be executed and Task 17's supporting structural argument is refuted rather than verified."
+}

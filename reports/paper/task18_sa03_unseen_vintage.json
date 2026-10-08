@@ -1,0 +1,213 @@
+{
+  "analysis_id": "SA03",
+  "label": "UNSEEN_VINTAGE_REVERSAL",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "method": "Complete reporting of the frozen unseen-vintage comparison. Nothing fitted, nothing changed.",
+  "populations": {
+    "seen_vintage_primary": {
+      "vintages": [
+        2006,
+        2008,
+        2010,
+        2014
+      ],
+      "facilities": 5619,
+      "intervals": 248939,
+      "defaults": 280,
+      "payoffs": 3823,
+      "payoff_rate_per_interval": 0.015357175854325758,
+      "default_rate_per_interval": 0.0011247735388990878
+    },
+    "unseen_vintage_supplement": {
+      "vintages": [
+        2018,
+        2020,
+        2022
+      ],
+      "facilities": 17352,
+      "intervals": 652508,
+      "defaults": 588,
+      "payoffs": 7323,
+      "payoff_rate_per_interval": 0.011222850907575079,
+      "default_rate_per_interval": 0.0009011383768474869
+    },
+    "size_ratios": {
+      "intervals": 2.621156186857021,
+      "facilities": 3.0880939668980245,
+      "payoffs": 1.9155113784985613,
+      "defaults": 2.1
+    },
+    "duration_and_encoding_note": "Unseen vintages 2018, 2020 and 2022 receive the frozen zero-reference cohort encoding because they are unrepresented in development, and their duration support differs from the seen vintages. The frozen artifacts do not publish a duration-band distribution for this population."
+  },
+  "metrics": {
+    "joint_log_loss": {
+      "seen_M1": 0.08920130868490905,
+      "seen_M2": 0.1053229451127057,
+      "seen_delta": 0.01612163642779664,
+      "unseen_M1": 0.07063050881494096,
+      "unseen_M2": 0.06981127571284668,
+      "unseen_delta": -0.00081923310209428,
+      "sign_reverses": true
+    },
+    "default_brier": {
+      "seen_M1": 0.0012230371359407337,
+      "seen_M2": 0.0012721818453947987,
+      "seen_delta": 4.914470945406504e-05,
+      "unseen_M1": 0.0008994550365703011,
+      "unseen_M2": 0.0009001708062067742,
+      "unseen_delta": 7.157696364731327e-07,
+      "sign_reverses": false
+    },
+    "payoff_brier": {
+      "seen_M1": 0.015127305620779442,
+      "seen_M2": 0.01982496438444564,
+      "seen_delta": 0.004697658763666197,
+      "unseen_M1": 0.011216839127697076,
+      "unseen_M2": 0.011681982857238942,
+      "unseen_delta": 0.0004651437295418656,
+      "sign_reverses": false
+    },
+    "default_auc": {
+      "seen_M1": 0.6935075818116951,
+      "seen_M2": 0.6228311232881749,
+      "seen_delta": -0.07067645852352022,
+      "unseen_M1": 0.7779348134823938,
+      "unseen_M2": 0.7364958311524389,
+      "unseen_delta": -0.04143898232995491,
+      "sign_reverses": false
+    },
+    "payoff_auc": {
+      "seen_M1": 0.5654257013618629,
+      "seen_M2": 0.625867954528649,
+      "seen_delta": 0.060442253166786086,
+      "unseen_M1": 0.5521968238737825,
+      "unseen_M2": 0.7373419228878022,
+      "unseen_delta": 0.18514509901401965,
+      "sign_reverses": false
+    }
+  },
+  "primary_decision_metric": {
+    "metric": "M2-M1 paired temporal joint log loss, smaller better",
+    "seen_delta": 0.01612163642779664,
+    "unseen_delta": -0.00081923310209428,
+    "reversal_confirmed": true,
+    "statement": "On the protocol's own primary decision metric the unseen-vintage population reverses sign: M2 is better than M1 by 0.000819, against being worse by 0.016122 on the seen-vintage population, with 2.62x the intervals and 3.09x the facilities."
+  },
+  "calibration": {
+    "seen": {
+      "M1": {
+        "default": {
+          "observed_rate": 0.0011247735388990878,
+          "mean_predicted": 0.0006492801756357517,
+          "intercept": -2.9347341733513144,
+          "slope": 0.48213492965871435
+        },
+        "payoff": {
+          "observed_rate": 0.015357175854325758,
+          "mean_predicted": 0.011379203594510124,
+          "intercept": -1.8625085814398148,
+          "slope": 0.5093891552136679
+        }
+      },
+      "M2": {
+        "default": {
+          "observed_rate": 0.0011247735388990878,
+          "mean_predicted": 0.0008860211797292679,
+          "intercept": -4.049006626803302,
+          "slope": 0.35012443892938916
+        },
+        "payoff": {
+          "observed_rate": 0.015357175854325758,
+          "mean_predicted": 0.028304723953973047,
+          "intercept": -3.042930052990562,
+          "slope": 0.24933504917576219
+        }
+      }
+    },
+    "unseen": {
+      "M1": {
+        "default": {
+          "observed_rate": 0.0009011383768474869,
+          "mean_predicted": 0.0008582808479624732,
+          "intercept": 0.10880802646862164,
+          "slope": 1.009132680556872
+        },
+        "payoff": {
+          "observed_rate": 0.011222850907575079,
+          "mean_predicted": 0.019066573979717148,
+          "intercept": -3.0889796522273234,
+          "slope": 0.34646126126339166
+        }
+      },
+      "M2": {
+        "default": {
+          "observed_rate": 0.0009011383768474869,
+          "mean_predicted": 0.0002579963022763944,
+          "intercept": -0.5800770592187786,
+          "slope": 0.7638521970231043
+        },
+        "payoff": {
+          "observed_rate": 0.011222850907575079,
+          "mean_predicted": 0.008423235928525197,
+          "intercept": -1.5988816899884044,
+          "slope": 0.5290941438129715
+        }
+      }
+    }
+  },
+  "calibration_finding": "The payoff calibration direction inverts between populations. On the seen vintages M1 under-predicts payoff (0.01138 against 0.01536) and M2 over-predicts heavily (0.02831), with slopes 0.509 and 0.249. On the unseen vintages M1 OVER-predicts (0.01907 against 0.01122) and M2 under-predicts mildly (0.00842), with slopes 0.347 and 0.529. M2's calibration slope is better than M1's on the unseen population and worse on the seen population.",
+  "metrics_favouring_M2_on_unseen": [
+    "joint_log_loss",
+    "payoff_auc",
+    "payoff_calibration_slope"
+  ],
+  "metrics_still_favouring_M1_on_unseen": [
+    "payoff_brier",
+    "default_auc",
+    "default_calibration_slope"
+  ],
+  "metrics_effectively_tied_on_unseen": [
+    "default_brier"
+  ],
+  "calendar_decomposition": {
+    "status": "NOT_EXECUTABLE",
+    "reason": "stability.calendar covers the seen-vintage evaluation population only. A per-year decomposition of the unseen-vintage population is not frozen and cannot be produced without scoring the prediction arrays."
+  },
+  "hypotheses_for_the_reversal": [
+    {
+      "hypothesis": "Younger loans with different seasoning at entry",
+      "status": "HYPOTHESIS",
+      "partial_support": "Vintages 2018, 2020 and 2022 are structurally younger than 2006-2014. Not demonstrated as the cause."
+    },
+    {
+      "hypothesis": "Different calendar exposure profile",
+      "status": "HYPOTHESIS_WITH_STRUCTURAL_COMPONENT",
+      "partial_support": "A 2022-vintage facility cannot contribute risk intervals during 2020, so the unseen population is demonstrably less exposed to the 2020 calendar cell as a seasoned cohort. The exact calendar distribution of unseen-vintage intervals is not frozen, so the magnitude of this effect is not established."
+    },
+    {
+      "hypothesis": "Zero-reference cohort encoding for unrepresented vintages",
+      "status": "HYPOTHESIS",
+      "partial_support": "Frozen encoding rule is documented; its quantitative effect is not isolated."
+    },
+    {
+      "hypothesis": "Duration-band support differences",
+      "status": "HYPOTHESIS",
+      "partial_support": "Not published for this population."
+    },
+    {
+      "hypothesis": "Burnout absent in young cohorts",
+      "status": "HYPOTHESIS",
+      "partial_support": "The seen cohort is selected for non-prepayment through 2019; the unseen cohort is not. Consistent with the lower unseen payoff rate of 1.12% against 1.54%, but not demonstrated."
+    },
+    {
+      "hypothesis": "Between-period AUC mechanism recurring",
+      "status": "HYPOTHESIS",
+      "partial_support": "SA01 established that M2's pooled payoff AUC gain on the seen population is predominantly between-period. The much larger unseen payoff AUC gain of +0.185 may share that mechanism, but no stratified decomposition is available for this population."
+    }
+  ],
+  "primary_result": "The sign reversal on the primary decision metric exists and applies to the unseen-vintage supplementary population comprising origination vintages 2018, 2020 and 2022, 17,352 facilities and 652,508 risk intervals, evaluated over the same 2019-01 to 2026-02 window.",
+  "study_level_classification": "C. MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS",
+  "study_level_justification": "Option A fails because the primary metric reverses. Option B overstates: deterioration is not wholly confined to the seen-vintage population, since payoff Brier and default AUC still favour M1 on the unseen vintages, though payoff Brier deterioration is an order of magnitude smaller there (+0.000465 against +0.004698). Option D is wrong because both population results are frozen, internally consistent and reportable. The evidence shows transport behaviour that differs by population: severe joint-loss deterioration in the seasoned seen-vintage cohort, slight joint-loss improvement with persistent but much smaller cause-Brier deterioration in the younger unseen cohort.",
+  "status": "CONFIRMED",
+  "status_reason": "The reversal is verified directly from the frozen artifact and fully reported; only the per-year decomposition of this population is unavailable."
+}

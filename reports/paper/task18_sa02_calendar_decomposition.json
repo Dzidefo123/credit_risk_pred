@@ -1,0 +1,173 @@
+{
+  "analysis_id": "SA02",
+  "label": "CALENDAR_CONCENTRATION_AND_EX_2020",
+  "registration_sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+  "method": "Independent interval-weighted decomposition of the frozen per-calendar-year joint log losses. Task 17 arithmetic was not relied upon; the decomposition was recomputed from stability.calendar and reconciled against the frozen paired delta.",
+  "reconciliation": {
+    "interval_total": 248939,
+    "frozen_split_count": 248939,
+    "reconstructed_delta": 0.016121636427799364,
+    "frozen_paired_delta": 0.01612163642779664,
+    "absolute_difference": 2.723515857283587e-15,
+    "tolerance": 1e-12,
+    "reconciles": true,
+    "note": "Agreement to 2.7e-15 confirms the per-year aggregates are the exact components of the frozen headline delta."
+  },
+  "per_year": [
+    {
+      "year": "2019",
+      "intervals": 62976,
+      "weight": 0.2529776370918177,
+      "M1": 0.0686674051798317,
+      "M2": 0.0688455343979757,
+      "delta": 0.00017812921814398808,
+      "contribution": 4.506270870307905e-05,
+      "share_of_delta": 0.0027951696408048945
+    },
+    {
+      "year": "2020",
+      "intervals": 51809,
+      "weight": 0.20811925813151014,
+      "M1": 0.13333429683800205,
+      "M2": 0.20253819605800713,
+      "delta": 0.06920389922000508,
+      "contribution": 0.01440266416547525,
+      "share_of_delta": 0.8933748276719601
+    },
+    {
+      "year": "2021",
+      "intervals": 36397,
+      "weight": 0.14620850891182177,
+      "M1": 0.1351262903331172,
+      "M2": 0.12904583542799983,
+      "delta": -0.006080454905117383,
+      "contribution": -0.0008890142451827852,
+      "share_of_delta": -0.055144169090044264
+    },
+    {
+      "year": "2022",
+      "intervals": 28068,
+      "weight": 0.11275051317792713,
+      "M1": 0.07658540120099545,
+      "M2": 0.08239403888161326,
+      "delta": 0.005808637680617804,
+      "contribution": 0.0006549268793543017,
+      "share_of_delta": 0.040624094352169966
+    },
+    {
+      "year": "2023",
+      "intervals": 24719,
+      "weight": 0.09929741824302339,
+      "M1": 0.05594296082425173,
+      "M2": 0.06343945556380803,
+      "delta": 0.0074964947395563045,
+      "contribution": 0.0007443825735103471,
+      "share_of_delta": 0.046172891743593104
+    },
+    {
+      "year": "2024",
+      "intervals": 22138,
+      "weight": 0.08892941644338573,
+      "M1": 0.05268810689323183,
+      "M2": 0.05887918734010519,
+      "delta": 0.006191080446873359,
+      "contribution": 0.0005505691712945035,
+      "share_of_delta": 0.034150948246489975
+    },
+    {
+      "year": "2025",
+      "intervals": 19781,
+      "weight": 0.07946123347486733,
+      "M1": 0.05937978732590453,
+      "M2": 0.06631838789327668,
+      "delta": 0.006938600567372152,
+      "contribution": 0.0005513497596728056,
+      "share_of_delta": 0.03419936692791837
+    },
+    {
+      "year": "2026",
+      "intervals": 3051,
+      "weight": 0.012256014525646845,
+      "M1": 0.05956208684092003,
+      "M2": 0.06459597569955008,
+      "delta": 0.005033888858630056,
+      "contribution": 6.169541497186179e-05,
+      "share_of_delta": 0.003826870507107903
+    }
+  ],
+  "concentration": {
+    "calendar_2020_contribution": 0.01440266416547525,
+    "calendar_2020_share_of_delta": 0.8933748276719601,
+    "calendar_2020_interval_weight": 0.20811925813151014,
+    "years_positive": 7,
+    "years_negative": 1,
+    "negative_year": "2021 (-0.00608), the only evaluation year in which M2 is better than M1 on joint log loss",
+    "largest_non_2020_delta": 0.0074964947395563045,
+    "note": "2020 carries 20.8% of evaluation intervals and 89.3% of the headline delta."
+  },
+  "two_ex_2020_quantities": {
+    "note": "Two distinct quantities have both been called 'ex-2020' and they are not interchangeable. Task 17 reported the first; the Task 18 brief asks for the second.",
+    "contribution_residual": {
+      "value": 0.001718972262324113,
+      "definition": "Full-period weighted mean minus 2020's contribution, still divided by the full interval total.",
+      "interpretation": "How much of the reported headline delta is attributable to non-2020 years.",
+      "task17_reported_value": "approximately +0.00172",
+      "verified": true
+    },
+    "renormalised_ex_2020_evaluation_delta": {
+      "value": 0.002170746390760932,
+      "definition": "Interval-weighted M2-M1 delta over the seven non-2020 years with weights renormalised to that subpopulation.",
+      "interpretation": "The difference that would be observed had the evaluation excluded calendar 2020.",
+      "intervals": 197130,
+      "share_of_evaluation": 0.7918807418684899
+    },
+    "correction": "Task 17's figure is arithmetically correct for the contribution residual but was described in the hostile review as 'the ex-2020 residual delta', which reads as the ex-2020 evaluation result. The ex-2020 evaluation delta is +0.00217, not +0.00172. The manuscript must state which quantity it reports."
+  },
+  "relative_magnitude": {
+    "full_period_M1": 0.08920130868490905,
+    "full_period_M2": 0.1053229451127057,
+    "full_period_relative_deterioration": 0.1807331827915973,
+    "ex_2020_M1": 0.07760243493040886,
+    "ex_2020_relative_deterioration": 0.027972658238205817,
+    "note": "18.1% relative deterioration full period against 2.8% excluding calendar 2020."
+  },
+  "year_block_sensitivity": {
+    "method": "Percentile resample of calendar-year blocks performed on frozen per-year aggregates, 20,000 draws, seed 61802. This is an aggregate-level approximation of the frozen interval-level calendar block bootstrap, not the same computation.",
+    "validation_full_period": {
+      "aggregate_method": [
+        -0.00029688855821329106,
+        0.04148405570058938
+      ],
+      "frozen_interval_level": [
+        5.3258694600802695e-05,
+        0.041502093619988564
+      ],
+      "verdict": "The aggregate method reproduces the frozen interval closely: upper bounds agree to 2e-05 and both lower bounds sit at zero to within 3e-04. The method is therefore adequate for sensitivity use ex-2020."
+    },
+    "ex_2020": {
+      "interval": [
+        -0.0015110500018038842,
+        0.006707840036604442
+      ],
+      "blocks": 7,
+      "includes_zero": true,
+      "coverage_caveat": "Only seven annual blocks remain, one of them a partial 2026. Percentile coverage is weak. This interval is sensitivity information and is explicitly not offered as frequentist inference."
+    }
+  },
+  "interpretation": {
+    "permitted_and_supported": [
+      "The temporal deterioration is highly concentrated in calendar 2020, which supplies 89.3% of the headline delta.",
+      "The deterioration is not exclusive to 2020: six of the seven remaining years retain positive deltas.",
+      "The full-period magnitude is not representative of a typical evaluation year: 18.1% relative deterioration full period against 2.8% excluding 2020.",
+      "2021 reverses sign, with M2 better than M1 on joint log loss."
+    ],
+    "prohibited_and_not_asserted": [
+      "COVID caused the failure.",
+      "The deterioration is exclusively a pandemic artifact.",
+      "Macroeconomic information inherently fails."
+    ],
+    "task11_distinction_preserved": "Task 11 recorded H7 'Pandemic alone explains failure' as NOT_SUPPORTED, and that remains correct: direction persists outside 2020. Task 18 adds the magnitude statement Task 11 did not make, namely that the deterioration is pandemic-DOMINATED. Pandemic-only explanation and pandemic-dominated magnitude are different claims and both findings stand together."
+  },
+  "status": "CONFIRMED",
+  "status_reason": "The per-year decomposition reconciles to the frozen delta to 2.7e-15, the 89.3% concentration is independently verified, and the ex-2020 quantity is computed under both definitions with the conflation corrected."
+}
