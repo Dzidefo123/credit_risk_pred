@@ -20,7 +20,7 @@
     {
       "analysis": "SA04 complexity adjustment",
       "class": "HIGH_VALUE_BEFORE_SUBMISSION",
-      "why": "The development 'improvement' is 0.00056 for seven parameters whose effective support is ~88 serially-dependent months. Section 4.1 disclaims a complexity-adjusted gain but a referee will ask for one number. Not an arXiv blocker because the development result carries no weight in the conclusion."
+      "why": "The development 'improvement' is 0.00056 for at least 14 added macro coefficients (seven predictors, two cause logits each) whose effective support is ~88 serially-dependent months. Section 4.1 disclaims a complexity-adjusted gain but a referee will ask for one number. Not an arXiv blocker because the development result carries no weight in the conclusion."
     },
     {
       "analysis": "SA05 facility-weighted rescoring",

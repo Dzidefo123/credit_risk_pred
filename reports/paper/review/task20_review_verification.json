@@ -75,11 +75,11 @@
   "findings": {
     "fatal_flaw": false,
     "major_concerns": 7,
-    "minor_concerns": 7,
+    "minor_concerns": 5,
     "claim_mismatches": {
       "VALUE_ERROR": 0,
       "SOURCE_ERROR": 0,
-      "INTERPRETATION_ERROR": 2,
+      "INTERPRETATION_ERROR": 1,
       "SCOPE_ERROR": 2
     },
     "major_concern_ids": [
@@ -98,8 +98,12 @@
       "M3",
       "M6",
       "resolution-dependence of the decomposition",
-      "Table F comparator mismatch",
       "default calibration collapse on unseen vintages"
+    ],
+    "minor_concerns_raised": 7,
+    "minor_concerns_withdrawn": [
+      "Table F comparator mismatch (T20-C01)",
+      "closure reproducibility disclosure (T20-C02)"
     ]
   },
   "decisions": {
@@ -141,5 +145,15 @@
     "tests/test_hostile_manuscript_review.py"
   ],
   "modified_tracked_files_before_commit": [],
-  "task21_not_started": true
+  "task21_not_started": true,
+  "corrections_round": {
+    "ledger": "reports/paper/review/task20_corrections.json",
+    "corrections": 4,
+    "raised_by": "User-side audit, 2026-10-09",
+    "upheld": 4,
+    "rejected": 0,
+    "pre_correction_commit": "ee5049a",
+    "decisions_changed": false,
+    "major_concerns_changed": false
+  }
 }

@@ -19,9 +19,9 @@
   "classification_tally": {
     "VALUE_ERROR": 0,
     "SOURCE_ERROR": 0,
-    "INTERPRETATION_ERROR": 2,
+    "INTERPRETATION_ERROR": 1,
     "SCOPE_ERROR": 2,
-    "NONE": 253
+    "NONE": 254
   },
   "non_value_findings": [
     {
@@ -29,12 +29,6 @@
       "locus": "section 4.4 and abstract sentence 7, bindings Q0167/Q0168",
       "finding": "The 1.81%/98.19% contribution shares are correct arithmetic but are presented as a property of the models rather than of the chosen stratum resolution. At month resolution the pair weights are 1.979%/98.021%. The share is not invariant; the within-stratum gain is.",
       "severity": "MAJOR"
-    },
-    {
-      "classification": "INTERPRETATION_ERROR",
-      "locus": "Table F, bindings Q0217-Q0244",
-      "finding": "Model columns are means of facility-level CIFs; the observed column is a cohort-level Aalen-Johansen estimate. Different functionals compared in adjacent columns without a note.",
-      "severity": "MODERATE"
     },
     {
       "classification": "SCOPE_ERROR",
@@ -45,7 +39,7 @@
     {
       "classification": "SCOPE_ERROR",
       "locus": "abstract sentence 9 and section 4.5",
-      "finding": "'other scores do not uniformly improve' omits that default calibration slope also degrades on unseen vintages (1.0091 -> 0.7639, M2 under-predicting default 3.5x). Default calibration is never reported anywhere in the manuscript.",
+      "finding": "'other scores do not uniformly improve' omits that default calibration also degrades on unseen vintages (slope 1.0091 -> 0.7639; M2 under-predicts default 3.5x). M1's values are weak-calibration evidence only, per T20-C04. Default calibration is never reported anywhere in the manuscript.",
       "severity": "MAJOR"
     }
   ],
@@ -2937,6 +2931,15 @@
       "displayed": "2020",
       "resolves": true,
       "classification": "NONE"
+    }
+  ],
+  "withdrawn_findings": [
+    {
+      "classification": "INTERPRETATION_ERROR",
+      "locus": "Table F, bindings Q0217-Q0244",
+      "finding": "Model columns are means of facility-level CIFs; the observed column is a cohort-level Aalen-Johansen estimate. Different functionals compared in adjacent columns without a note.",
+      "severity": "MODERATE",
+      "status": "WITHDRAWN_T20-C01"
     }
   ]
 }

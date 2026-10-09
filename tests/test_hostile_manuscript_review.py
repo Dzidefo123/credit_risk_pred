@@ -258,7 +258,9 @@ def test_estimand_audit_covers_every_headline_and_names_shifts():
     for row in audit["estimands"]:
         assert required <= set(row), row.get("id")
         assert row["nature"].isupper()
-    assert len(audit["estimand_shifts_found"]) >= 4
+    # Four shifts were raised; the Table F one was withdrawn after audit (T20-C01).
+    assert len(audit["estimand_shifts_found"]) + len(audit.get("withdrawn_shifts", [])) >= 4
+    assert len(audit["estimand_shifts_found"]) >= 3
     assert any("NOT stated" in s for s in audit["estimand_shifts_found"])
 
 
@@ -307,3 +309,61 @@ def test_prior_task_artifacts_untouched():
     assert read("reports/paper/task18_verification.json")["no_frozen_metrics_changed"] is True
     assert read("reports/paper/task19_verification.json")
     assert (ROOT / "reports/paper/TASK17_ERRATUM.md").is_file()
+
+
+# ------------------------------------------------- corrections round (2026-10-09)
+
+
+def test_corrections_ledger_records_all_four_and_none_rejected():
+    ledger = read("reports/paper/review/task20_corrections.json")
+    ids = [c["id"] for c in ledger["corrections"]]
+    assert ids == ["T20-C01", "T20-C02", "T20-C03", "T20-C04"]
+    assert all(c["audit_was_correct"] is True for c in ledger["corrections"])
+    assert ledger["pre_correction_commit"] == "ee5049a"
+    assert ledger["net_effect"]["major_concerns"].startswith("7")
+
+
+def test_table_f_and_reproducibility_minors_are_withdrawn(report_text):
+    """T20-C01 and T20-C02: both disclosures exist in the manuscript."""
+    manuscript = MANUSCRIPT.read_text(encoding="utf-8")
+    assert "Model columns are mean historical-path projections" in manuscript
+    assert "Aalen–Johansen" in manuscript
+    assert "private arrays and model artifacts are not distributed" in manuscript
+    assert "Withdrawn (T20-C01)" in report_text
+    assert "Withdrawn (T20-C02)" in report_text
+    audit = read("reports/paper/review/task20_claim_sample_audit.json")
+    assert not any(f["locus"].startswith("Table F") for f in audit["non_value_findings"])
+    assert audit["classification_tally"]["INTERPRETATION_ERROR"] == 1
+    assert sum(audit["classification_tally"].values()) == 257
+    estimands = read("reports/paper/review/task20_estimand_audit.json")
+    assert not any("Table F" in s for s in estimands["estimand_shifts_found"])
+
+
+def test_macro_coefficient_count_is_two_per_predictor(report_text):
+    """T20-C03: a three-class multinomial with a reference class has two logits per predictor."""
+    protocol = read("docs/track_b/macro_competing_risk_protocol.json")
+    assert "classes 0 none / 1 default / 2 payoff" in protocol["family"]
+    assert len(protocol["primary_macro"]) == 7
+    assert "at least 14" in report_text
+    for path in REVIEW.glob("task20_*.json"):
+        if path.name == "task20_corrections.json":
+            continue
+        assert "seven parameters" not in path.read_text(encoding="utf-8"), path.name
+
+
+def test_slope_near_one_is_not_called_complete_calibration(report_text):
+    """T20-C04: mean and slope establish weak calibration only."""
+    live = [
+        line for line in report_text.splitlines()
+        if "near-ideal" in line and "T20-C04" not in line
+    ]
+    assert not live, live
+    assert "weak-calibration evidence" in report_text
+
+
+def test_corrections_did_not_change_decisions(verification):
+    assert verification["decisions"]["preprint"] == "REQUIRES_MAJOR_REVISION"
+    assert verification["decisions"]["peer_review"] == "BORDERLINE"
+    assert verification["findings"]["major_concerns"] == 7
+    assert verification["findings"]["minor_concerns"] == 5
+    assert verification["corrections_round"]["decisions_changed"] is False

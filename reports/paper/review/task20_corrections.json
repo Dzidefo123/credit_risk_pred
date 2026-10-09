@@ -1,0 +1,66 @@
+{
+  "version": "task20-corrections-v1",
+  "task": 20,
+  "pre_correction_commit": "ee5049a",
+  "raised_by": "User-side audit, 2026-10-09; the audit also confirmed all 257 numeric bindings against frozen sources.",
+  "audit_conclusion_accepted": "The main disclosure concerns are justified; the review is a useful technical follow-up, not the independent cold read originally planned. This matches the review's own independence declaration.",
+  "corrections": [
+    {
+      "id": "T20-C01",
+      "severity": "MINOR",
+      "target": "minor 6, section 12, R9, estimand E7, claim-audit interpretation finding",
+      "wrong": "Table F compares a mean of facility CIFs with a cohort Aalen-Johansen estimate 'without a note'.",
+      "evidence": "paper/main_v0.3.md: Table F caption labels both quantities; section 3.6 names the Aalen-Johansen reference.",
+      "resolution": "WITHDRAWN",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T20-C02",
+      "severity": "MINOR",
+      "target": "minor 5, R9",
+      "wrong": "Section 8 should disclose that the local closure cannot be re-executed by readers.",
+      "evidence": "paper/main_v0.3.md sections 3.6 and 8 already disclose that private arrays are not distributed and that public verification is distinct from private-data reproduction.",
+      "resolution": "WITHDRAWN",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T20-C03",
+      "severity": "MODERATE",
+      "target": "minor 3, R9, estimand E1, triage SA04",
+      "wrong": "'Seven macro coefficients' / 'seven parameters'.",
+      "evidence": "docs/track_b/macro_competing_risk_protocol.json: three-class multinomial with no-event reference, seven primary macro predictors, so two cause-specific coefficients per predictor.",
+      "resolution": "CORRECTED to 'at least 14 macro coefficients'. 'At least' because the preprocessing contract adds one missing indicator per numeric; whether those are non-constant for macro features cannot be verified from public artifacts.",
+      "origin": "Error originated in Task 17 (reports/paper/review/task17_claim_attack_registry.json, build_task17_registries.py, reports/paper/TASK17_HOSTILE_SCIENTIFIC_REVIEW.md) and was carried into Task 20. Task 17 artifacts are part of the published record and are NOT edited here; flagged for the next erratum. paper/main_v0.3.md never makes the error.",
+      "effect": "Strengthens the effective-sample-size concern.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T20-C04",
+      "severity": "MODERATE",
+      "target": "M6",
+      "wrong": "M1's unseen-vintage default calibration described as 'near-ideal' from a slope of 1.0091.",
+      "evidence": "Van Calster et al. 2019 (VanCalster2019, already in the manuscript bibliography): mean and slope establish at most weak calibration; moderate and strong calibration require calibration-curve evidence.",
+      "resolution": "CORRECTED to weak-calibration evidence only. M6's substance unchanged.",
+      "audit_was_correct": true
+    }
+  ],
+  "net_effect": {
+    "major_concerns": "7 unchanged",
+    "minor_concerns": "7 -> 5",
+    "interpretation_errors": "2 -> 1",
+    "preprint_decision": "unchanged REQUIRES_MAJOR_REVISION",
+    "peer_review_decision": "unchanged BORDERLINE"
+  },
+  "files_amended": [
+    "reports/paper/review/TASK20_HOSTILE_MANUSCRIPT_REVIEW.md",
+    "reports/paper/review/task20_estimand_audit.json",
+    "reports/paper/review/task20_analysis_triage.json",
+    "reports/paper/review/task20_claim_sample_audit.json",
+    "reports/paper/review/task20_review_verification.json"
+  ],
+  "not_modified": [
+    "paper/main_v0.3.md",
+    "all Task 17/18/19 artifacts",
+    "all empirical artifacts"
+  ]
+}

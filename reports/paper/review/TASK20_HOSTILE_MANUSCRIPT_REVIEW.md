@@ -21,6 +21,21 @@ What is invalid: any claim from me that the paper does or does not communicate i
 
 ---
 
+## 0a. Corrections after audit (2026-10-09)
+
+A user-side audit of this review upheld its main disclosure concerns and found four of my interpretations wrong. All four were verified against the sources before amending; all four are accepted. Ledger: `task20_corrections.json`. The pre-correction review is preserved in history at `ee5049a`.
+
+| ID | Original statement | Correction |
+|---|---|---|
+| T20-C01 | Minor 6: Table F compares different functionals "without a note" | **Withdrawn.** The Table F caption states that the observed reference is entry-conditioned competing incidence and the model columns are mean historical-path projections, and §3.6 names the Aalen–Johansen reference. |
+| T20-C02 | Minor 5: §8 should disclose that the local closure cannot be re-executed | **Withdrawn.** §3.6 and §8 already disclose that private arrays are not distributed and that verifying public arithmetic is distinct from reproducing private-data processing. |
+| T20-C03 | "Seven macro coefficients" / "seven parameters" | **Corrected.** Seven macro *predictors* in a three-class multinomial with a reference class carry two cause-specific coefficients each: at least 14 macro coefficients. The error originated in my Task 17 report and was carried here; v0.3 never made it. The correction strengthens the effective-sample-size concern. |
+| T20-C04 | M6: M1's unseen-vintage default calibration is "near-ideal" | **Corrected.** A mean and slope close to observed values (0.000858 vs 0.000901; slope 1.0091) are weak-calibration evidence in the Van Calster et al. hierarchy [VanCalster2019], not complete calibration. M6's substance — default calibration is never reported, and M2 under-predicts unseen-vintage default incidence 3.5× with slope 0.7639 — is unaffected. |
+
+Net effect: major concerns unchanged at 7; minor concerns 7 → 5; interpretation errors in the claim audit 2 → 1. No decision changes.
+
+---
+
 ## 1. Summary
 
 The manuscript is a substantial improvement on what the evidence record implies it replaced, and its quantitative spine is the most rigorously verified I have examined. I attacked the numbers in two independent passes and they held completely: **143 of 143** headline statements re-derived from frozen artifacts, and **257 of 257** evidence bindings resolved against their own named artifact and pointer with exact values matching to 1×10⁻¹². Zero orphans, zero value errors, zero source errors. Every binding carries a source hash and commit.
@@ -122,7 +137,7 @@ This is also the concern my compromised independence most affects: these tokens 
 | Unseen | M1 | 0.000901 | 0.000858 | **1.0091** |
 | Unseen | M2 | 0.000901 | **0.000258** | 0.7639 |
 
-On unseen vintages M1's default calibration is near-ideal and **M2 under-predicts default incidence by a factor of 3.5**. §4.5 says "Default and payoff Brier still favor M1, as does default AUC" — and omits the most damaging item. The slight joint-loss reversal that motivates `MIXED_TEMPORAL_TRANSPORT` is accompanied by a default-calibration collapse the reader never sees.
+On unseen vintages M1's mean prediction and slope are close to observed values — weak-calibration evidence only, not complete calibration (corrected per T20-C04) — while **M2 under-predicts default incidence by a factor of 3.5**. §4.5 says "Default and payoff Brier still favor M1, as does default AUC" — and omits the most damaging item. The slight joint-loss reversal that motivates `MIXED_TEMPORAL_TRANSPORT` is accompanied by a default-calibration collapse the reader never sees.
 
 **Fix, manuscript-only:** add a default-calibration row set to §4.2 and §4.5.
 
@@ -138,10 +153,10 @@ Again a cold-reader judgment I am poorly placed to make, but the absence is obje
 
 1. **Title.** "Regime-Dependent" is not established — there is no regime model, change-point test or formal regime definition; the evidence is calendar-year concentration. "Transport" over-claims relative to the paper's own §4.5 concession that this "is not a controlled experiment that isolates a single population difference." Suggested: *Calendar- and Population-Dependent Behaviour of Vintage-Aware Macroeconomic Features in Mortgage Competing-Risk Models*. "Behaviour" or "sensitivity" is defensible where "transport" is not.
 2. **VIFs omitted.** §4.3 cites condition number 69.1 but not the development VIFs — unemployment 10.21, Treasury 11.56, mortgage rate 11.57, HPI growth 11.22. The VIFs are more interpretable and strengthen the paper's own instability argument.
-3. **Effective macro sample size never stated.** §3.4 says 88 distinct macro months and that rows do not create independent observations, but never draws the conclusion: seven macro coefficients on ~88 serially-dependent monthly observations.
+3. **Effective macro sample size never stated.** §3.4 says 88 distinct macro months and that rows do not create independent observations, but never draws the conclusion: at least 14 cause-specific macro coefficients — seven predictors, two cause logits each against the no-event reference — estimated from ~88 serially-dependent monthly observations. *(Corrected per T20-C03; originally stated as seven coefficients, an error carried from my Task 17 report.)*
 4. **"Interval" for the 8-block scheme.** With eight blocks, one partial, percentile coverage is poor. Recommend reserving "interval" for the 5,619-cluster facility scheme and using **"calendar-block sensitivity range"** for the other. The paper already says "sensitivity" in prose; Table G's "lower/upper" headers undo it.
-5. **22 of 257 statements rest on an unreproducible run.** The admitted local closure is correctly labelled, hash-verified, and reproduces the frozen pooled AUCs exactly — but no reader can re-execute it, and its first script version was defective. §8 should say so in one line.
-6. **Table F comparator mismatch.** Model columns are means of facility CIFs; the observed column is a cohort Aalen–Johansen estimate. Different functionals, adjacent columns, no note.
+5. ~~**22 of 257 statements rest on an unreproducible run.**~~ **Withdrawn (T20-C02).** §3.6 and §8 already disclose the private-data reproduction limit.
+6. ~~**Table F comparator mismatch.**~~ **Withdrawn (T20-C01).** The caption labels both quantities and §3.6 names the observed estimator.
 7. **Bu2026 comparison still incomplete** (§2, §6). Survivable for arXiv, not for a journal where the referee may be an author.
 
 ## 7. Statistical design
@@ -198,7 +213,7 @@ The measured entry distribution settles it: **5,564 of 5,619 landmarks (99.02%) 
 
 It earns main-text placement because it conveys magnitude that monthly scores cannot: observed 0.3367 against M2's 0.7581 at 24 months. Keep it, framed as consequence — which is what the paper does.
 
-Note the comparator mismatch (minor 6) and that the 12-month row shows **M1 closer than M2** (errors 0.00547 vs 0.01081); §4.6 states this correctly.
+The 12-month row shows **M1 closer than M2** (errors 0.00547 vs 0.01081); §4.6 states this correctly.
 
 ## 13. Uncertainty
 
@@ -268,7 +283,7 @@ Covered in minor 1. "Vintage-aware" is accurate and well-defended. "Regime-depen
 | R6 | Add default calibration to §4.2 and §4.5, including the unseen-population slope collapse | M6 |
 | R7 | Add three figures from existing frozen values | M7 |
 | R8 | Retitle: replace "Regime-Dependent" and "Transport" | minor 1 |
-| R9 | Add VIFs; state effective macro sample size; rename the 8-block output; note the Table F comparator mismatch; note the closure's unreproducibility | minors 2–6 |
+| R9 | Add VIFs; state effective macro sample size as at least 14 macro coefficients on ~88 months; rename the 8-block output | minors 2–4 |
 
 ## 21. Recommended additional analyses
 
@@ -299,7 +314,7 @@ Addressing M4 would move this most. A paper that confronts "is 2020 a failure ca
 - **Peer review:** BORDERLINE
 - **Fatal flaw:** NO
 - **Major concerns:** 7
-- **Minor concerns:** 7
-- **Claim mismatches:** 0 value errors, 0 source errors; 2 interpretation errors, 2 scope errors
+- **Minor concerns:** 5 (7 raised; 2 withdrawn after audit)
+- **Claim mismatches:** 0 value errors, 0 source errors; 1 interpretation error, 2 scope errors (1 interpretation error withdrawn after audit)
 - **Manuscript editing alone can resolve the issues:** YES for all seven major concerns
 - **Independence:** COMPROMISED AND DISCLOSED; §2 cold read not satisfiable by this reviewer and should be repeated by one with no project exposure

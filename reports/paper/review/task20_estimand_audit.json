@@ -24,7 +24,7 @@
       "metric": "joint log loss",
       "uncertainty_unit": "none reported",
       "nature": "DESCRIPTIVE_IN_SAMPLE",
-      "concern": "No complexity adjustment for seven added parameters. Manuscript states this correctly."
+      "concern": "No complexity adjustment for at least 14 added macro coefficients (seven predictors, two cause logits each). Manuscript states the absence of complexity adjustment correctly. Corrected per T20-C03."
     },
     {
       "id": "E2",
@@ -114,7 +114,7 @@
       "metric": "CIF",
       "uncertainty_unit": "NONE",
       "nature": "RETROSPECTIVE_DESCRIPTIVE",
-      "concern": "Comparator mismatch: a mean of individual CIFs against a cohort-level estimator. Not the same functional, and the manuscript does not note it. Same cohort and period as E3, so not independent."
+      "concern": "Same cohort and period as E3, so not independent. The observed and modelled quantities are labelled in the Table F caption and section 3.6 (an earlier version of this audit wrongly said they were not; withdrawn per T20-C01)."
     },
     {
       "id": "E8",
@@ -135,7 +135,9 @@
   "estimand_shifts_found": [
     "Interval -> case-control pair between sections 4.2 and 4.4 (stated by the manuscript).",
     "Full-primary population -> eligible-month subpopulation between the year and month decompositions (stated).",
-    "Mean-of-individual-CIF vs cohort-level Aalen-Johansen in Table F (NOT stated).",
     "Contribution share is resolution-dependent across the two decompositions (NOT stated)."
+  ],
+  "withdrawn_shifts": [
+    "Mean-of-individual-CIF vs cohort-level Aalen-Johansen in Table F: withdrawn per T20-C01; the caption and section 3.6 state it."
   ]
 }
