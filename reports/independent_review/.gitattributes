@@ -1,0 +1,4 @@
+# Preserve frozen report bytes across LF/CRLF checkouts.
+STAGE*.md -text
+# Stage 2 has a frozen whitespace-only line; preserve it exactly.
+STAGE2_EVIDENCE_VERIFICATION.md whitespace=-blank-at-eol

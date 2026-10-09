@@ -1,0 +1,66 @@
+{
+  "manuscript_version": "v0.3",
+  "review_target_commit": "1a42d505c6652fecf384d00b2d19d737c4b8524a",
+  "review_target_sha256": "dd7738c5726b27b703747b253f5e641bb9e3b32ba8507a18d2ba375ba765f17a",
+  "archive_starting_commit": "04393444e731182be989e21b3687eb0183730f13",
+  "task20_commits": [
+    "ee5049a64a14cf1946fddd6772237f874e48fae2",
+    "3de6cdf4b4e4a283473d17a4813e974e5db42077",
+    "04393444e731182be989e21b3687eb0183730f13"
+  ],
+  "stage1": {
+    "file": "STAGE1_PROVISIONAL_ASSESSMENT.md",
+    "sha256": "63aa6f5a6801474249ab934079d1ba333a3ab55cc1a2cf46b74165659362ff58",
+    "blind": true,
+    "inputs": [
+      "main_v0.3.md",
+      "references.bib"
+    ]
+  },
+  "stage2": {
+    "file": "STAGE2_EVIDENCE_VERIFICATION.md",
+    "sha256": "130836694c63c71e39c9164a85cf1e3c8f89fb753c020b46579529eb92584be9",
+    "blind": false,
+    "prior_review_narratives_withheld": true,
+    "contamination_disclosed": true,
+    "contamination_label": "REVIEW_CONTAMINATION_RISK",
+    "exposure": "Task 17/18 bare classification labels for one binding before detection; ignored thereafter; reviewer reasoning not exposed"
+  },
+  "stage3": {
+    "file": "STAGE3_REVIEW_RECONCILIATION.md",
+    "sha256": "3de060a2479533fbd917d04db889ba5db3bf61221e6bbb399252f9bce5bf483a",
+    "reconciliation": true,
+    "same_reviewer_as_stage1_stage2": true,
+    "package_manifest_self_reference_error_disclosed": true,
+    "package_manifest_issue": "The manifest hashed itself before being written. Stage 3 reports 60 other package files verified; Stage 1/2 unchanged.",
+    "package_verification_reported_by_reviewer_not_rerun_in_task20c": true
+  },
+  "final_status": {
+    "central_result_valid": "QUALIFIED",
+    "fatal_flaw": false,
+    "publication_status": "MAJOR_REVISION",
+    "minimum_new_analysis_required_for_arxiv": "NONE",
+    "p1_count": 7,
+    "p2_count": 10
+  },
+  "scientific_revision_principle": "Frozen empirical evidence controls revisions; reviewer narratives are advisory interpretation layers.",
+  "primary_evidence_sources": [
+    "Frozen Task 10 macro competing-risk validation",
+    "Frozen Task 11 diagnostics",
+    "Task 19 closure output",
+    "Target-construction code"
+  ],
+  "preservation": {
+    "source_reports_copied_byte_for_byte": true,
+    "expected_stage1_hash_verified": true,
+    "expected_stage2_hash_verified": true,
+    "stage3_hash_computed_from_source": true,
+    "manuscript_edited": false,
+    "empirical_artifacts_edited": false,
+    "task17_20_edited": false,
+    "new_analysis_run": false,
+    "stage2_original_whitespace_preserved": true,
+    "existing_tracked_files_raw_hashes_unchanged": 631,
+    "private_frozen_hashes_verified_unchanged": 366
+  }
+}
