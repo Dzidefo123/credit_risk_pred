@@ -74,24 +74,14 @@
   },
   "findings": {
     "fatal_flaw": false,
-    "major_concerns": 7,
+    "major_concerns": 5,
     "minor_concerns": 5,
     "claim_mismatches": {
       "VALUE_ERROR": 0,
       "SOURCE_ERROR": 0,
-      "INTERPRETATION_ERROR": 1,
-      "SCOPE_ERROR": 2
+      "INTERPRETATION_ERROR": 0,
+      "SCOPE_ERROR": 1
     },
-    "major_concern_ids": [
-      "M1 default-discrimination result buried",
-      "M2 no calendar-unit uncertainty for either AUC",
-      "M3 contribution share is resolution-dependent",
-      "M4 the 2020-is-the-point argument is not confronted",
-      "M5 internal process vocabulary in the manuscript",
-      "M6 default calibration never reported",
-      "M7 no figures"
-    ],
-    "all_major_concerns_resolvable_by_manuscript_editing": true,
     "new_relative_to_tasks_17_18": [
       "M1",
       "M2",
@@ -104,15 +94,36 @@
     "minor_concerns_withdrawn": [
       "Table F comparator mismatch (T20-C01)",
       "closure reproducibility disclosure (T20-C02)"
-    ]
+    ],
+    "moderate_concerns": 2,
+    "concern_ids": [
+      "M1 default-discrimination result buried",
+      "M2 no calendar-unit uncertainty for either AUC",
+      "M3 contribution share is resolution-dependent",
+      "M4 the 2020-is-the-point argument is not confronted",
+      "M5 internal process vocabulary in the manuscript",
+      "M6 default calibration never reported",
+      "M7 no figures"
+    ],
+    "concern_severity": {
+      "M1": "MAJOR",
+      "M2": "MODERATE",
+      "M3": "MODERATE",
+      "M4": "MAJOR",
+      "M5": "MAJOR",
+      "M6": "MAJOR",
+      "M7": "MAJOR"
+    },
+    "all_concerns_resolvable_by_manuscript_editing": true
   },
   "decisions": {
     "preprint": "REQUIRES_MAJOR_REVISION",
     "peer_review": "BORDERLINE",
     "calibrated_to_each_other": false,
-    "central_claim_classification": "B_SUPPORTED_WITH_IMPORTANT_QUALIFICATION_as_scoped_in_body; C_OVERSTATED_as_written_in_abstract_sentence_1",
-    "novelty": "DISTINCTIVE_COMBINATION",
-    "cif_placement": "B_SUPPORTING_RESULT"
+    "central_claim_classification": "B_SUPPORTED_WITH_IMPORTANT_QUALIFICATION (abstract sentence 1 no longer classed C, per T20-C13)",
+    "novelty": "DISTINCTIVE_COMBINATION on the brief's scale; not an upgrade of the frozen Task 16 conclusion 'distinctive combination plausible with material limitations'",
+    "cif_placement": "B_SUPPORTING_RESULT",
+    "decisions_are_reviewer_judgments_not_objective_gates": true
   },
   "terminology_recommendations": {
     "pooled_decomposition_statistic": "cross-period concordance",
@@ -122,16 +133,16 @@
       "calendar-regime separation (imports unestablished 'regime')",
       "temporal ordering (suggests sequence)"
     ],
-    "eight_block_resampling_output": "calendar-block sensitivity range, not confidence or bootstrap interval",
+    "eight_block_resampling_output": "calendar-block sensitivity range is a presentation choice; 'interval' is not mathematically wrong (T20-C14)",
     "title_terms_to_replace": {
-      "Regime-Dependent": "Calendar-Dependent",
-      "Transport": "Behaviour or Sensitivity"
+      "Regime-Dependent": "Calendar-Dependent (unestablished regime)",
+      "Transport": "terminology preference only: Behaviour or Sensitivity (T20-C12)"
     }
   },
   "triage_summary": {
-    "ARXIV_BLOCKER": 1,
+    "ARXIV_BLOCKER": 0,
     "HIGH_VALUE_BEFORE_SUBMISSION": 4,
-    "PEER_REVIEW_RESPONSE": 2,
+    "PEER_REVIEW_RESPONSE": 3,
     "FUTURE_WORK": 3,
     "UNNECESSARY": 0
   },
@@ -154,6 +165,27 @@
     "rejected": 0,
     "pre_correction_commit": "ee5049a",
     "decisions_changed": false,
-    "major_concerns_changed": false
-  }
+    "major_concerns_changed": true,
+    "round_two": {
+      "corrections": [
+        "T20-C05",
+        "T20-C06",
+        "T20-C07",
+        "T20-C08",
+        "T20-C09",
+        "T20-C10",
+        "T20-C11",
+        "T20-C12",
+        "T20-C13",
+        "T20-C14"
+      ],
+      "source": "Packaged user-side audit task20-review-audit.zip, 2026-10-09",
+      "upheld": 10,
+      "rejected": 0,
+      "decisions_changed": false,
+      "major_concerns": "7 -> 5 (M2, M3 to MODERATE)",
+      "arxiv_blockers": "1 -> 0"
+    }
+  },
+  "attestation_note": "The 143-statement pass is a reviewer attestation; its working file was not committed (T20-C14)."
 }

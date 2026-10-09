@@ -29,20 +29,39 @@ A user-side audit of this review upheld its main disclosure concerns and found f
 |---|---|---|
 | T20-C01 | Minor 6: Table F compares different functionals "without a note" | **Withdrawn.** The Table F caption states that the observed reference is entry-conditioned competing incidence and the model columns are mean historical-path projections, and §3.6 names the Aalen–Johansen reference. |
 | T20-C02 | Minor 5: §8 should disclose that the local closure cannot be re-executed | **Withdrawn.** §3.6 and §8 already disclose that private arrays are not distributed and that verifying public arithmetic is distinct from reproducing private-data processing. |
-| T20-C03 | "Seven macro coefficients" / "seven parameters" | **Corrected.** Seven macro *predictors* in a three-class multinomial with a reference class carry two cause-specific coefficients each: at least 14 macro coefficients. The error originated in my Task 17 report and was carried here; v0.3 never made it. The correction strengthens the effective-sample-size concern. |
+| T20-C03 | "Seven macro coefficients" / "seven parameters" | **Corrected.** Seven macro *predictors* in a three-class multinomial with a reference class carry two cause-specific coefficients each: at least 14 macro coefficients. The error originated in my Task 17 report and was carried here; v0.3 never made it. **Superseded by T20-C05.** |
 | T20-C04 | M6: M1's unseen-vintage default calibration is "near-ideal" | **Corrected.** A mean and slope close to observed values (0.000858 vs 0.000901; slope 1.0091) are weak-calibration evidence in the Van Calster et al. hierarchy [VanCalster2019], not complete calibration. M6's substance — default calibration is never reported, and M2 under-predicts unseen-vintage default incidence 3.5× with slope 0.7639 — is unaffected. |
 
-Net effect: major concerns unchanged at 7; minor concerns 7 → 5; interpretation errors in the claim audit 2 → 1. No decision changes.
+Net effect of round one: major concerns unchanged at 7; minor concerns 7 → 5; interpretation errors in the claim audit 2 → 1. No decision changes.
+
+### Second round (2026-10-09, full audit package)
+
+The packaged audit found further errors in the review, including in my round-one correction T20-C03. All factual points were verified against the repository before amending.
+
+| ID | Original statement | Correction |
+|---|---|---|
+| T20-C05 | T20-C03: "at least 14" coefficients, possibly more via macro missing indicators "not verifiable from public artifacts"; "~88 serially-dependent observations" as effective support; "strengthens the concern" | **Corrected.** Public code settles it: missing indicators are built only for mortgage numerics, and non-finite macro values are rejected. The frozen M2 feature order (37 features) has no macro `:missing` columns. Exactly **14 cause-versus-no-event macro contrasts** and **21 stored class coefficients**. Penalized effective degrees of freedom are not estimated. 88 distinct development months is not an estimated effective sample size, and the corrected count does not by itself quantify how much stronger any overfitting argument is. |
+| T20-C06 | M3: within-stratum gains are "resolution-free" | **Withdrawn.** +0.00636 within year and −0.00040 within supported months condition on different comparisons and populations; neither is invariant. |
+| T20-C07 | M3 and abstract audit set month 1.979%/98.021% beside year 1.81%/98.19% as if the same quantity | **Corrected.** At month level 1.979%/98.021% are *pair weights*; the *gain contributions* are −0.01633% and 100.01633%. Weights and contributions are reported separately below. |
+| T20-C08 | M2: missing calendar AUC intervals make the AUC claim "an internal inconsistency"; ARXIV_BLOCKER | **Downgraded to MODERATE.** The decomposition is an exact descriptive identity of a fixed dataset and needs no interval to be correct. Missing calendar uncertainty limits inferential and generalisation claims; disclosure is the required fix, a new interval is optional registered work. No arXiv blocker remains. |
+| T20-C09 | M4: 2020 is "the only period in which national macro variables moved substantially"; M2 is "never materially better" | **Premises withdrawn.** Frozen Task 11 summaries show 2022 mortgage rates of 3.11–7.08 and Treasury rates of 1.55–4.02, with 2023 mortgage rates reaching 7.79. No materiality threshold is registered; 2021's −0.00608 is −4.5% of that year's M1 score. The recommendation to discuss both readings stands, without those premises. |
+| T20-C10 | M6 presented default calibration as uniformly worse under M2 | **Corrected.** In seen vintages M2's absolute mean error improves (0.000475 → 0.000239) while its slope worsens (0.482 → 0.350). The full calibration vector should be reported, not a blanket claim either way. |
+| T20-C11 | §10: period ranking is economically "negligible" and "not actionable because the calendar is observed" | **Withdrawn.** Economic usefulness was not evaluated; an observed calendar does not make its association with risk automatically non-actionable. |
+| T20-C12 | §9, minor 1, §18: "'transport' is the wrong word", conflicts with §4.5 | **Softened.** Prediction-model validation literature uses transportability for performance assessment beyond the development setting; lack of causal attribution does not by itself rule the term out. It is a terminology preference, not a contradiction. Same-provider, non-virgin comparison must still not be called independent external validation. |
+| T20-C13 | Abstract sentence 1 TOO_BROAD; central claim "C — OVERSTATED as written" | **Reclassified.** "Can distinguish" is a modal statement of possibility that the study does demonstrate, a conceptual motivation rather than a universal assertion. Tighter wording is editorial, not a scope error. |
+| T20-C14 | Several statements of certainty | **Qualified.** "No target leakage" means none *identified*, not proof of an operationally available information set. The 143-statement pass is a reviewer attestation: its working file was not committed, so the sequence is not independently established. DISTINCTIVE_COMBINATION does not upgrade the frozen Task 16 conclusion. "Interval" for the 8-block scheme is a presentation choice, not a mathematical error. Decisions and blocker labels are this reviewer's judgments, not objective gates. |
+
+Net effect of round two: concerns M2 and M3 downgraded to MODERATE (major 7 → 5); arXiv blockers 1 → 0; claim-audit interpretation errors 1 → 0 and scope errors 2 → 1. Decisions unchanged, and labelled as judgments.
 
 ---
 
 ## 1. Summary
 
-The manuscript is a substantial improvement on what the evidence record implies it replaced, and its quantitative spine is the most rigorously verified I have examined. I attacked the numbers in two independent passes and they held completely: **143 of 143** headline statements re-derived from frozen artifacts, and **257 of 257** evidence bindings resolved against their own named artifact and pointer with exact values matching to 1×10⁻¹². Zero orphans, zero value errors, zero source errors. Every binding carries a source hash and commit.
+The manuscript is a substantial improvement on what the evidence record implies it replaced, and its quantitative spine is the most rigorously verified I have examined. I attacked the numbers in two passes and they held completely: **143 of 143** headline statements re-derived from frozen artifacts (a reviewer attestation — the working file for this pass was not committed, T20-C14), and **257 of 257** evidence bindings resolved against their own named artifact and pointer with exact values matching to 1×10⁻¹². Zero orphans, zero value errors, zero source errors. Every binding carries a source hash and commit.
 
 So this review cannot attack the arithmetic. It attacks emphasis, estimand discipline in three specific places, and one unexamined argument that I think is the paper's biggest missed opportunity.
 
-**Seven major concerns.** The most consequential: a robust 7-point fall in **default** discrimination is absent from the abstract and from the uncertainty table, while the payoff-AUC gain that the paper spends its longest results subsection dismantling is in both. For a credit-risk audience the loss-relevant event's discrimination is the headline, and it is buried.
+**Five major and two moderate concerns** (seven raised as major; M2 and M3 downgraded after audit, T20-C07/C08). The most consequential: a robust 7-point fall in **default** discrimination is absent from the abstract and from the uncertainty table, while the payoff-AUC gain that the paper spends its longest results subsection dismantling is in both. For a credit-risk audience the loss-relevant event's discrimination is the headline, and it is buried.
 
 **No fatal flaw.** I searched specifically and found none.
 
@@ -53,7 +72,7 @@ So this review cannot attack the arithmetic. It attacks emphasis, estimand disci
 | **Preprint** | **REQUIRES_MAJOR_REVISION** |
 | **Peer review** | **BORDERLINE** |
 
-These are not calibrated to each other. The preprint verdict is major-revision because the abstract omits a principal result and one claim rests on an uncertainty unit the paper itself disowns — but **every major concern is resolvable by manuscript text and by reporting frozen values that already exist.** No new computation is required for any of them. That is an unusually good position for a major-revision verdict.
+These are not calibrated to each other. These are this reviewer's judgments, not objective gates (T20-C14). The preprint verdict is major-revision because the abstract omits a principal result and default calibration is unreported — but **every major concern is resolvable by manuscript text and by reporting frozen values that already exist.** No new computation is required for any of them. That is an unusually good position for a major-revision verdict.
 
 The peer-review verdict is borderline rather than weak-reject because the contribution is real but narrow, the novelty is combinational, and two of the closest papers remain incompletely compared.
 
@@ -61,7 +80,7 @@ The peer-review verdict is borderline rather than weak-reject because the contri
 
 **Derived from the evidence, not the authors' wording:** in one frozen monthly competing-risk specification on one Freddie cohort, adding a national macro block raises a pooled payoff concordance statistic almost entirely through cross-period pairs while degrading probability quality, and the direction of that degradation does not hold across origination-vintage populations.
 
-**Central claim classification: B — SUPPORTED_WITH_IMPORTANT_QUALIFICATION**, provided the claim is read at the scope §§3–4 establish. As written in abstract sentence 1 it is **C — OVERSTATED**, because that sentence states a general capability with no population, model or period attached.
+**Central claim classification: B — SUPPORTED_WITH_IMPORTANT_QUALIFICATION**, read at the scope §§3–4 establish. *(Corrected per T20-C13: an earlier version classed abstract sentence 1 as C — OVERSTATED. Its "can distinguish" is a modal statement of possibility that the study demonstrates, not a universal assertion; tighter wording is editorial.)*
 
 The genuinely transferable contribution is methodological: pooled concordance can improve through period separation alone, so validation should report the stratified decomposition. That lesson generalises beyond mortgages.
 
@@ -85,34 +104,42 @@ I do not allege cherry-picking: this result *supports* the paper's thesis, so om
 
 **Fix, manuscript-only:** add default AUC to the abstract, add its interval to Table G, and give it a paragraph in §4.2.
 
-### M2. The headline discrimination claim has no calendar-unit uncertainty, which contradicts the paper's own argument — MAJOR
+### M2. No calendar-unit uncertainty is reported for either AUC — MODERATE *(downgraded from MAJOR, T20-C08)*
 
 §3.5 and §4.7 argue, correctly and repeatedly, that facility resampling "condition[s] on the realized shared calendar" and that calendar-dependent claims need calendar-block assessment. Table G applies both units to joint log loss and payoff Brier.
 
-**Neither AUC has any calendar-block interval frozen.** `paired_calendar` contains only `joint_log_loss`, `default_brier`, `payoff_brier`. So the pooled payoff-AUC gain — the subject of the abstract, §4.4 and §5's lead discussion — is supported *only* by the facility interval the paper itself says cannot speak to calendar questions. For a claim whose entire content is that the gain is **between-calendar-period**, that is an internal inconsistency.
+**Neither AUC has any calendar-block interval frozen.** `paired_calendar` contains only `joint_log_loss`, `default_brier`, `payoff_brier`. Facility AUC intervals exist but are also absent from Table G.
 
-I class this the one **ARXIV_BLOCKER**, and it is resolvable either way: compute the calendar-block AUC intervals, or state plainly in Table G and §4.4 that they do not exist and that the claim is correspondingly bounded. The second option is manuscript-only.
+The decomposition in §4.4 is an exact descriptive identity of a fixed observed dataset; it does not need an interval to be correct, and v0.3 does not claim it estimates macroeconomic sampling uncertainty. *(An earlier version called this an internal inconsistency and an arXiv blocker; withdrawn per T20-C08.)* What the absence limits is inference: any statement that the AUC pattern would recur over other calendar paths is unsupported.
 
-### M3. The 98.19% contribution share is resolution-dependent and is presented as a model property — MAJOR
+**Fix, manuscript-only:** state beside the AUC results and in Table G that calendar-block AUC uncertainty was not estimated, and report the existing facility AUC intervals labelled as conditional on the realized calendar. Computing calendar intervals is optional, separately registered work.
 
-The decomposition identity is exact and I verified it. But the within/between split depends on the stratum resolution chosen:
+### M3. Decomposition shares depend on resolution and population, and should be presented that way — MODERATE *(downgraded, T20-C06/C07)*
 
-| Resolution | Within-pair weight | Between-pair weight |
+The decomposition identity is exact and I verified it. v0.3 labels the year decomposition as year-stratified and defines the identity at a chosen resolution. The point is presentational: pair weights and gain contributions are different quantities, both depend on resolution, and the two decompositions are on different populations.
+
+| Quantity | Year, full primary population | Month, eligible-month subset |
 |---|---|---|
-| Calendar year | 17.195% | 82.805% |
-| Calendar month | 1.979% | 98.021% |
+| Within-pair weight | 17.195% | 1.979% |
+| Between-pair weight | 82.805% | 98.021% |
+| Within gain contribution | 1.808% | −0.016% |
+| Between gain contribution | 98.192% | 100.016% |
+| Within-stratum gain | +0.00636 | −0.00040 |
+| Pooled gain of that population | +0.06044 | +0.04831 |
 
-As strata get finer the between share rises **mechanically**, because within-stratum pairs become scarcer. "98.19% of the gain is between-year" is therefore partly a statement about how coarse a year is relative to this panel, not solely about the models. The abstract leads with it.
+The month between-contribution exceeds 100% because the within-month contribution is negative. *(Corrected per T20-C07: an earlier version set the month pair weights beside the year contribution shares as if they were the same quantity.)*
 
-The resolution-free, interpretable quantities are the **within-stratum gains**: +0.00636 at year level, −0.00040 at month level. Those carry the finding. Note also that the two decompositions are on different populations, with pooled gains of +0.06044 and +0.04831 — stated in §4.4, easily missed.
+Finer strata leave fewer within-stratum pairs, so pair weights shift with resolution. **Neither the contribution shares nor the within-stratum gains are resolution-free.** *(An earlier version called the within-stratum gains resolution-free; withdrawn per T20-C06.)* Because the populations also differ, these comparisons do not isolate resolution alone.
 
-**Fix, manuscript-only:** lead with the within-stratum gains; present the contribution shares as resolution-conditional; state the resolution dependence in one sentence.
+**Fix, manuscript-only:** report pair weights and gain contributions separately; name the resolution and population with every share; describe gains as "within-period gain at the stated resolution and population."
 
 ### M4. The paper does not confront the strongest argument against it — MAJOR
 
 §4.3 establishes that 2020 supplies 89.34% of the deterioration and that ex-2020 the difference is +0.00217 (2.8% relative, interval containing zero). §5 and §6 treat this as a **scope limitation** — "restrict generalization to other regimes."
 
-A hostile referee will invert it. The only period in which national macro variables moved substantially is the period in which the macro-augmented model failed catastrophically. Outside it, M2 is still *mildly worse* (positive in 6 of the 7 remaining years; better in 2021 alone, itself an unusual refinancing year). So across the evaluated calendar M2 is **never materially better and sometimes catastrophically worse**. On that reading the 2020 concentration is not mitigating — it is the indictment, because handling exactly such a period is the stated purpose of conditioning on macroeconomic information.
+A hostile referee can read it the other way. A model meant to respond to economic shocks failed badly in a shock period, and handling such periods is a stated purpose of macroeconomic conditioning. On that reading the concentration is not mitigating. Both readings are bounded model-risk interpretations; neither identifies a cause or a business consequence.
+
+*(Corrected per T20-C09.)* An earlier version rested this on two unsupported premises. "Only 2020 saw substantial macro movement" is false: frozen Task 11 summaries show 2022 mortgage rates of 3.11–7.08 and Treasury rates of 1.55–4.02, with 2023 mortgage rates reaching 7.79. "M2 is never materially better" has no registered materiality threshold; 2021's −0.00608 is −4.5% of that year's M1 score, and the unseen population has a countervailing joint-loss result. Descriptively, the large 2020 deterioration did not recur in the 2022–23 rate rise (deltas +0.00581 and +0.00750) — an observation, not an explanation.
 
 The manuscript never states this. Its careful hedging ("not disappearance outside the pandemic", "a dominant contribution in this observed calendar, not an estimate of a COVID effect") keeps it from overclaiming, but also keeps it from making the argument that would most strengthen it. The ex-2020 sensitivity is currently used in one direction only.
 
@@ -130,16 +157,16 @@ This is also the concern my compromised independence most affects: these tokens 
 
 §4.2 reports payoff calibration in detail (observed 1.536%, M1 1.138%, M2 2.830%, slopes 0.509 and 0.249). Default calibration appears nowhere, in either population. From the frozen artifacts:
 
-| Population | Model | Observed | Mean predicted | Slope |
-|---|---|---|---|---|
-| Seen | M1 | 0.001125 | 0.000649 | 0.4821 |
-| Seen | M2 | 0.001125 | 0.000886 | 0.3501 |
-| Unseen | M1 | 0.000901 | 0.000858 | **1.0091** |
-| Unseen | M2 | 0.000901 | **0.000258** | 0.7639 |
+| Population | Model | Observed | Mean predicted | Abs. mean error | Intercept | Slope |
+|---|---|---|---|---|---|---|
+| Seen | M1 | 0.001125 | 0.000649 | 0.000475 | −2.935 | 0.4821 |
+| Seen | M2 | 0.001125 | 0.000886 | **0.000239** | −4.049 | 0.3501 |
+| Unseen | M1 | 0.000901 | 0.000858 | 0.000043 | 0.109 | 1.0091 |
+| Unseen | M2 | 0.000901 | **0.000258** | 0.000643 | −0.580 | 0.7639 |
 
-On unseen vintages M1's mean prediction and slope are close to observed values — weak-calibration evidence only, not complete calibration (corrected per T20-C04) — while **M2 under-predicts default incidence by a factor of 3.5**. §4.5 says "Default and payoff Brier still favor M1, as does default AUC" — and omits the most damaging item. The slight joint-loss reversal that motivates `MIXED_TEMPORAL_TRANSPORT` is accompanied by a default-calibration collapse the reader never sees.
+On unseen vintages M1's mean prediction and slope are close to observed values — weak-calibration evidence only, not complete calibration (corrected per T20-C04) — while **M2 under-predicts default incidence by a factor of 3.5**. §4.5 says "Default and payoff Brier still favor M1, as does default AUC" — and omits the most damaging item. The slight unseen joint-loss advantage is therefore not a uniform default-risk improvement. Calibration is not uniformly worse under M2 either: in seen vintages its absolute mean error improves (0.000475 → 0.000239) while its slope worsens (0.482 → 0.350). *(Corrected per T20-C10.)*
 
-**Fix, manuscript-only:** add a default-calibration row set to §4.2 and §4.5.
+**Fix, manuscript-only:** report the full default calibration vector — mean, mean error, intercept and slope — for both populations in §4.2 and §4.5, keeping improvements and deteriorations visible.
 
 ### M7. No figures — MAJOR for presentation
 
@@ -151,10 +178,10 @@ Again a cold-reader judgment I am poorly placed to make, but the absence is obje
 
 ## 6. Minor concerns
 
-1. **Title.** "Regime-Dependent" is not established — there is no regime model, change-point test or formal regime definition; the evidence is calendar-year concentration. "Transport" over-claims relative to the paper's own §4.5 concession that this "is not a controlled experiment that isolates a single population difference." Suggested: *Calendar- and Population-Dependent Behaviour of Vintage-Aware Macroeconomic Features in Mortgage Competing-Risk Models*. "Behaviour" or "sensitivity" is defensible where "transport" is not.
+1. **Title.** "Regime-Dependent" is not established — there is no regime model, change-point test or formal regime definition; the evidence is calendar-year concentration. "Transport" is a terminology preference rather than an error: prediction-model validation uses transportability for performance beyond the development setting (T20-C12). If kept, it must not suggest independent external validation. Possible alternative: *Calendar- and Population-Dependent Behaviour of Vintage-Aware Macroeconomic Features in Mortgage Competing-Risk Models*.
 2. **VIFs omitted.** §4.3 cites condition number 69.1 but not the development VIFs — unemployment 10.21, Treasury 11.56, mortgage rate 11.57, HPI growth 11.22. The VIFs are more interpretable and strengthen the paper's own instability argument.
-3. **Effective macro sample size never stated.** §3.4 says 88 distinct macro months and that rows do not create independent observations, but never draws the conclusion: at least 14 cause-specific macro coefficients — seven predictors, two cause logits each against the no-event reference — estimated from ~88 serially-dependent monthly observations. *(Corrected per T20-C03; originally stated as seven coefficients, an error carried from my Task 17 report.)*
-4. **"Interval" for the 8-block scheme.** With eight blocks, one partial, percentile coverage is poor. Recommend reserving "interval" for the 5,619-cluster facility scheme and using **"calendar-block sensitivity range"** for the other. The paper already says "sensitivity" in prose; Table G's "lower/upper" headers undo it.
+3. **Effective macro sample size never stated.** §3.4 says 88 distinct macro months and that rows do not create independent observations, but does not state the parameter count: seven macro predictors give **14 cause-versus-no-event contrasts (21 stored class coefficients)**; the frozen specification has no macro missing indicators. 88 distinct months is not an estimated effective sample size, and penalized effective degrees of freedom are not estimated. *(Corrected per T20-C03 and T20-C05; originally "seven coefficients", carried from my Task 17 report.)*
+4. **"Interval" for the 8-block scheme.** A presentation choice, not a mathematical error (T20-C14); v0.3 already qualifies coverage and conditioning. With eight blocks, one partial, percentile coverage is poor, so consider reserving "interval" for the 5,619-cluster facility scheme and using **"calendar-block sensitivity range"** for the other. The paper already says "sensitivity" in prose; Table G's "lower/upper" headers undo it.
 5. ~~**22 of 257 statements rest on an unreproducible run.**~~ **Withdrawn (T20-C02).** §3.6 and §8 already disclose the private-data reproduction limit.
 6. ~~**Table F comparator mismatch.**~~ **Withdrawn (T20-C01).** The caption labels both quantities and §3.6 names the observed estimator.
 7. **Bu2026 comparison still incomplete** (§2, §6). Survivable for arXiv, not for a journal where the referee may be an author.
@@ -169,7 +196,7 @@ Pseudo-replication risk is **acknowledged and correctly handled in the text** (�
 
 **I tried to break this and could not.** Development 2010-09–2017-12, purge 2018, evaluation 2019-01–2026-02, with facility roles deterministically disjoint — so the split is both calendar-separated *and* facility-disjoint, which is stronger than most temporal validation and stronger than the paper claims for itself. No facility history bridges the purge because no facility appears on both sides.
 
-No target leakage: macro inputs are vintage-restricted, loan covariates are origination-only, current state is excluded from predictors while remaining in ascertainment (§3.3 states this distinction precisely). CIF paths use realized future macro and the paper says so four times.
+No target leakage identified — which is not proof of an operationally available historical information set; v0.3 keeps mortgage knowledge-time and macro-release limits (T20-C14). Macro inputs are vintage-restricted, loan covariates are origination-only, current state is excluded from predictors while remaining in ascertainment (§3.3 states this distinction precisely). CIF paths use realized future macro and the paper says so four times.
 
 "Vintage-aware" is **not** assumed to mean point-in-time safe — §3.4 is explicit that release lags were not certified. Correct.
 
@@ -179,7 +206,7 @@ Residual: horizon truncation and censoring depend on an unverified conditional-i
 
 Survivor conditioning is disclosed thoroughly (§3.1, §3.2, §5, §6). The seen cohort is 2006–2014 originations surviving unprepaid to 2019 — a burnout-selected population — and the paper says burnout is omitted.
 
-**"Transport" is the wrong word.** The two populations differ simultaneously in origination vintage, seasoning at entry, survivor selection, calendar exposure (a 2022-vintage facility cannot contribute intervals in 2020), cohort encoding (frozen zero-reference fallback) and duration support. Nothing can be attributed to any one of them. §4.5 concedes exactly this, which puts the title at odds with the results section. **"Population sensitivity" is defensible; "transport" is not.**
+The two populations differ simultaneously in origination vintage, seasoning at entry, survivor selection, calendar exposure (a 2022-vintage facility cannot contribute intervals in 2020), cohort encoding (frozen zero-reference fallback) and duration support, so no difference can be attributed to any one of them; §4.5 says so. Lack of causal attribution does not by itself rule out a scoped predictive transport comparison, so "transport" versus "population sensitivity" is a terminology choice. *(An earlier version called "transport" the wrong word and in conflict with §4.5; softened per T20-C12.)*
 
 `MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS` is justified as a *description* of divergent observed comparisons, and the paper is careful that it does not displace the original primary decision. But it inherits the "transport" problem and is an internal token (M5).
 
@@ -195,7 +222,7 @@ The decomposition is exact, verified, and the most distinctive methodological el
 | **"cross-period concordance"** | **Recommended** for the statistic — names the pair structure, implies no capability |
 | **"calendar-level separation"** | **Recommended** for the model behaviour producing it |
 
-Economic meaningfulness is negligible either way: an M1 baseline of 0.5654 barely ranks payoff at all, and ranking calendar periods is not actionable because the calendar is observed.
+Economic usefulness was not evaluated, and period-related risk information is not automatically non-actionable just because the calendar is observed. *(An earlier version called it negligible; withdrawn per T20-C11.)*
 
 ## 11. Probability quality
 
@@ -219,11 +246,11 @@ The 12-month row shows **M1 closer than M2** (errors 0.00547 vs 0.01081); §4.6 
 
 The hierarchy is correctly articulated: facility resampling conditions on the realized calendar and composition; calendar blocks probe period sensitivity; neither gives macroeconomic sampling uncertainty; training and selection uncertainty is unestimated. Stated in §3.5, §4.7 and §6.
 
-Three problems: no calendar unit for either AUC (M2); "interval" for an 8-block percentile output (minor 4); and no uncertainty at all attached to the unseen-vintage reversal, which the paper notes but which leaves its most interesting result as a bare point estimate.
+Three points: no calendar unit for either AUC, which limits inference (M2); "interval" for an 8-block percentile output, a presentation choice (minor 4); and no uncertainty at all attached to the unseen-vintage reversal, which the paper notes but which leaves its most interesting result as a bare point estimate.
 
 ## 14. Literature and novelty
 
-**Classification: DISTINCTIVE_COMBINATION.**
+**Classification: DISTINCTIVE_COMBINATION** on the brief's scale. This does not upgrade the frozen Task 16 conclusion, "distinctive combination plausible with material limitations", which stands given the closest-work gaps and this review's compromised independence (T20-C14).
 
 Every component is established: competing mortgage terminations (Deng1996, Deng2000, Bhattacharya2019, Bu2026); macro conditioning in credit survival (Bellotti2009, Breeden2022, Breeden2023); real-time/revision-aware macro in credit (Croushore2001, Bianchi2026); competing-risk scoring and calibration (Heyard2020, Blanche2013, Gerds2012, VanCalster2019); Freddie survival under drift with calibration (Peng2026). Pair-decomposition of a concordance statistic is itself not new.
 
@@ -235,7 +262,7 @@ Closest five: **Peng2026** (nearest neighbour — Freddie, survival, calibration
 
 **Genuinely scientifically useful, not merely elaborate engineering** — and I say that having just relied on it. The claim-evidence chain let me verify 257 statements in minutes rather than trusting a prose assertion. The frozen protocols, prediction hashes, consumption ledger, hostile review and correction ledgers materially reduce the risk that reported numbers drifted from the experiment.
 
-Two limits the paper should keep stating. First, as the integration record for the imported work honestly notes, registration-before-metrics chronology **is not independently provable** from a commit — a hash proves content, not ordering. So the freeze is weaker than prospective preregistration, and §3.6's "frozen but non-virgin" is the right framing. Second, the freeze constrained model and feature search but did **not** prevent reporting selection, which is what M1, M2 and M6 are.
+Two limits the paper should keep stating. First, as the integration record for the imported work honestly notes, registration-before-metrics chronology **is not independently provable** from a commit — a hash proves content, not ordering. So the freeze is weaker than prospective preregistration, and §3.6's "frozen but non-virgin" is the right framing. Second, the freeze constrained model and feature search but did **not** prevent reporting selection, which is what M1 and M6 are.
 
 §5's current treatment is about right in length. I would not expand it.
 
@@ -245,13 +272,13 @@ Two limits the paper should keep stating. First, as the integration record for t
 
 ## 17. Abstract audit
 
-Full sentence-level audit in `task20_abstract_audit.json`. Tally over 14 sentences: **GOOD 4, SUPPORTED 4, MISSING_QUALIFICATION 3, TOO_BROAD 2, AMBIGUOUS 1**.
+Full sentence-level audit in `task20_abstract_audit.json`. Tally over 14 sentences: **GOOD 4, SUPPORTED 5, MISSING_QUALIFICATION 3, TOO_BROAD 1, AMBIGUOUS 1** (sentence 1 reclassified per T20-C13).
 
-The abstract survives a reader who never reaches §6 on most counts. Two exceptions: sentence 1's unscoped general claim, and the **absence of the default-discrimination result** (M1) — a material omission rather than a wording problem.
+The abstract survives a reader who never reaches §6 on most counts. One material exception: the **absence of the default-discrimination result** (M1). Sentence 1 would benefit from design-specific wording, an editorial improvement.
 
 ## 18. Title audit
 
-Covered in minor 1. "Vintage-aware" is accurate and well-defended. "Regime-dependent" is inferred, not established. "Transport" conflicts with §4.5. Population generality is adequately bounded by "Mortgage Competing-Risk Models" being specification-level rather than universal.
+Covered in minor 1. "Vintage-aware" is accurate and well-defended. "Regime-dependent" is inferred, not established. "Transport" is a terminology choice (T20-C12). Population generality is adequately bounded by "Mortgage Competing-Risk Models" being specification-level rather than universal.
 
 ## 19. Fatal-flaw assessment
 
@@ -259,7 +286,7 @@ Covered in minor 1. "Vintage-aware" is accurate and well-defended. "Regime-depen
 
 | Candidate | Verdict |
 |---|---|
-| Target leakage | None. Macro vintage-restricted; covariates origination-only; current state excluded from predictors |
+| Target leakage | None identified. Macro vintage-restricted; covariates origination-only; current state excluded from predictors. Not proof of an operationally available information set (T20-C14) |
 | Invalid temporal ordering | None. Calendar-separated *and* facility-disjoint |
 | Incorrect competing-risk mathematics | None. Recursion standard; softmax guarantees coherence |
 | Invalid probability construction | None. Coherent monthly cause probabilities, shared denominator |
@@ -276,22 +303,22 @@ Covered in minor 1. "Vintage-aware" is accurate and well-defended. "Regime-depen
 | # | Revision | Concern |
 |---|---|---|
 | R1 | Add default AUC (−0.070676, facility interval excludes zero) to the abstract, Table G and §4.2 | M1 |
-| R2 | Either compute calendar-block AUC intervals or state in Table G and §4.4 that none exist and bound the claim | M2 |
-| R3 | Lead with within-stratum gains; present contribution shares as resolution-conditional; state the resolution dependence | M3 |
-| R4 | Add a §5 paragraph presenting both readings of the 2020 concentration without adjudicating | M4 |
+| R2 | State in Table G and §4.4 that calendar-block AUC uncertainty was not estimated, and bound inferential language; report facility AUC intervals labelled as calendar-conditional | M2 |
+| R3 | Report pair weights and gain contributions separately, naming resolution and population with each; describe gains as within-period at the stated resolution | M3 |
+| R4 | Add a §5 paragraph presenting both bounded readings of the 2020 concentration, without sole-macro-movement or materiality premises | M4 |
 | R5 | Remove all Task/CG identifiers and internal tokens from the manuscript; keep the substance | M5 |
-| R6 | Add default calibration to §4.2 and §4.5, including the unseen-population slope collapse | M6 |
+| R6 | Add the full default calibration vector for both populations to §4.2 and §4.5, keeping improvements and deteriorations visible | M6 |
 | R7 | Add three figures from existing frozen values | M7 |
 | R8 | Retitle: replace "Regime-Dependent" and "Transport" | minor 1 |
-| R9 | Add VIFs; state effective macro sample size as at least 14 macro coefficients on ~88 months; rename the 8-block output | minors 2–4 |
+| R9 | Add VIFs; state 14 cause-versus-no-event macro contrasts (21 stored coefficients) and 88 distinct months without presenting either as an effective sample size; optionally rename the 8-block output | minors 2–4 |
 
 ## 21. Recommended additional analyses
 
 Full triage in `task20_analysis_triage.json`.
 
-**ARXIV_BLOCKER (1):** calendar-block intervals for payoff and default AUC — or explicit disclosure of their absence.
+**ARXIV_BLOCKER (0).** *(Was 1; the calendar-AUC item is now disclosure via R2 plus optional analysis, T20-C08.)*
 **HIGH_VALUE_BEFORE_SUBMISSION (4):** SA04 complexity adjustment; SA05 facility-weighted rescoring; CG03 implementation review; CG06 Bu2026 full text.
-**PEER_REVIEW_RESPONSE (2):** SA08 support-restricted evaluation; maturity/refinancing separation.
+**PEER_REVIEW_RESPONSE (3):** calendar-block AUC intervals; SA08 support-restricted evaluation; maturity/refinancing separation.
 **FUTURE_WORK (3):** nonlinear baseline; current-state conditioning; Fannie replication.
 
 ## 22. Preprint readiness
@@ -313,8 +340,10 @@ Addressing M4 would move this most. A paper that confronts "is 2020 a failure ca
 - **Preprint:** REQUIRES_MAJOR_REVISION
 - **Peer review:** BORDERLINE
 - **Fatal flaw:** NO
-- **Major concerns:** 7
+- **Major concerns:** 5; **moderate:** 2 (M2, M3, downgraded after audit)
 - **Minor concerns:** 5 (7 raised; 2 withdrawn after audit)
-- **Claim mismatches:** 0 value errors, 0 source errors; 1 interpretation error, 2 scope errors (1 interpretation error withdrawn after audit)
-- **Manuscript editing alone can resolve the issues:** YES for all seven major concerns
+- **Claim mismatches:** 0 value errors, 0 source errors, 0 interpretation errors, 1 scope error (2 interpretation errors and 1 scope error withdrawn after audit)
+- **arXiv blockers:** 0 (was 1)
+- **Manuscript editing alone can resolve the issues:** YES for all seven concerns
+- **Decisions are reviewer judgments**, not objective gates
 - **Independence:** COMPROMISED AND DISCLOSED; §2 cold read not satisfiable by this reviewer and should be repeated by one with no project exposure

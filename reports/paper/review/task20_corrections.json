@@ -32,7 +32,8 @@
       "resolution": "CORRECTED to 'at least 14 macro coefficients'. 'At least' because the preprocessing contract adds one missing indicator per numeric; whether those are non-constant for macro features cannot be verified from public artifacts.",
       "origin": "Error originated in Task 17 (reports/paper/review/task17_claim_attack_registry.json, build_task17_registries.py, reports/paper/TASK17_HOSTILE_SCIENTIFIC_REVIEW.md) and was carried into Task 20. Task 17 artifacts are part of the published record and are NOT edited here; flagged for the next erratum. paper/main_v0.3.md never makes the error.",
       "effect": "Strengthens the effective-sample-size concern.",
-      "audit_was_correct": true
+      "audit_was_correct": true,
+      "superseded_by": "T20-C05"
     },
     {
       "id": "T20-C04",
@@ -45,11 +46,13 @@
     }
   ],
   "net_effect": {
-    "major_concerns": "7 unchanged",
+    "major_concerns": "7 -> 5 (M2, M3 downgraded to MODERATE)",
     "minor_concerns": "7 -> 5",
-    "interpretation_errors": "2 -> 1",
-    "preprint_decision": "unchanged REQUIRES_MAJOR_REVISION",
-    "peer_review_decision": "unchanged BORDERLINE"
+    "interpretation_errors": "2 -> 0",
+    "scope_errors": "2 -> 1",
+    "arxiv_blockers": "1 -> 0",
+    "preprint_decision": "unchanged REQUIRES_MAJOR_REVISION (reviewer judgment)",
+    "peer_review_decision": "unchanged BORDERLINE (reviewer judgment)"
   },
   "files_amended": [
     "reports/paper/review/TASK20_HOSTILE_MANUSCRIPT_REVIEW.md",
@@ -62,5 +65,100 @@
     "paper/main_v0.3.md",
     "all Task 17/18/19 artifacts",
     "all empirical artifacts"
-  ]
+  ],
+  "round_two": {
+    "source": "Packaged user-side audit (task20-review-audit.zip): AUDIT_TASK20.md, FOLLOWUP_CORRECTIONS.md, audit_task20_results.json, audit_task20.py",
+    "corrections": [
+      {
+        "id": "T20-C05",
+        "severity": "MODERATE",
+        "amends": "T20-C03",
+        "wrong": "'At least 14' coefficients, possibly more via macro missing indicators 'not verifiable from public artifacts'; 88 months presented as effective support; 'strengthens the concern'.",
+        "evidence": "src/credit_risk/track_b/macro_hazard/models.py builds ':missing' names only for mortgage NUMERIC columns and rejects non-finite macro values; reports/track_b/macro_competing_risk_validation.json#/development/M2/parameters has 37 features, all seven macro terms, six ':missing' columns all mortgage, coefficients 3x37.",
+        "resolution": "Exactly 14 cause-versus-no-event macro contrasts and 21 stored class coefficients. Penalized effective df not estimated. 88 distinct months is not an effective sample size; the corrected count does not quantify overfitting strength.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C06",
+        "severity": "MODERATE",
+        "target": "M3, abstract audit sentence 7, claim audit",
+        "wrong": "Within-stratum gains described as resolution-free.",
+        "evidence": "Year within gain +0.00635711 (full primary); month within gain -0.00039862 (eligible subset).",
+        "resolution": "WITHDRAWN",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C07",
+        "severity": "MODERATE",
+        "target": "M3, abstract audit, estimand E4",
+        "wrong": "Month pair weights 1.979%/98.021% juxtaposed with year contribution shares 1.81%/98.19% as the same quantity.",
+        "evidence": "reports/paper/task19_evidence/local_closure_output.json: within_pair_share 0.019793, within_contribution_share -0.000163.",
+        "resolution": "CORRECTED: weights and contributions reported separately for both resolutions.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C08",
+        "severity": "MODERATE",
+        "target": "M2, triage",
+        "wrong": "Missing calendar AUC intervals called an internal inconsistency and an arXiv blocker.",
+        "evidence": "The section 4.4 decomposition is an exact identity of a fixed observed dataset; v0.3 does not claim macro sampling uncertainty for it.",
+        "resolution": "M2 downgraded to MODERATE; disclosure required (R2); interval computation optional (PEER_REVIEW_RESPONSE). arXiv blockers 1 -> 0.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C09",
+        "severity": "MODERATE",
+        "target": "M4",
+        "wrong": "'Only 2020 saw substantial macro movement'; 'M2 is never materially better'.",
+        "evidence": "reports/track_b/macro_signal_attribution_stability.json#/macro_shift/regime_macro_summaries/evaluation/2022: mortgage 3.11-7.08, Treasury 1.55-4.02; 2021 delta -0.00608 = -4.5% relative; no registered materiality threshold.",
+        "resolution": "Premises withdrawn; both-readings discussion recommendation retained.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C10",
+        "severity": "MINOR",
+        "target": "M6, R6, abstract audit sentence 9",
+        "wrong": "Default calibration presented as uniformly worse under M2.",
+        "evidence": "Seen absolute mean error 0.000475 -> 0.000239 (improves); slope 0.482 -> 0.350 (worsens).",
+        "resolution": "Full calibration vector required; no blanket claim.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C11",
+        "severity": "MINOR",
+        "target": "section 10",
+        "wrong": "Period ranking called economically negligible and not actionable because the calendar is observed.",
+        "evidence": "No loss or decision-policy evaluation exists in the study.",
+        "resolution": "WITHDRAWN",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C12",
+        "severity": "MINOR",
+        "target": "section 9, minor 1, section 18, estimand E6",
+        "wrong": "'Transport' called the wrong word and in conflict with section 4.5.",
+        "evidence": "Prediction-model validation literature uses transportability for performance assessment beyond the development setting (BMJ 2024;384:e074819).",
+        "resolution": "Softened to a terminology preference; not to be read as independent external validation.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C13",
+        "severity": "MINOR",
+        "target": "section 3, abstract audit sentence 1, claim audit",
+        "wrong": "Abstract sentence 1 classed TOO_BROAD and the central claim 'C - OVERSTATED as written'.",
+        "evidence": "'Can distinguish' is modal, a possibility the study demonstrates.",
+        "resolution": "Reclassified to SUPPORTED with editorial note; scope error withdrawn.",
+        "audit_was_correct": true
+      },
+      {
+        "id": "T20-C14",
+        "severity": "MINOR",
+        "target": "sections 1, 2, 8, 14, 19; minor 4",
+        "wrong": "Several statements of certainty: 'no target leakage'; 143-pass as independently established; DISTINCTIVE_COMBINATION as unqualified; 'interval' as wrong; decisions as objective.",
+        "evidence": "Absence of identified leakage is not proof of an operational information set; the pass-1 working file was not committed; Task 16 conclusion is frozen.",
+        "resolution": "Qualified throughout.",
+        "audit_was_correct": true
+      }
+    ]
+  }
 }

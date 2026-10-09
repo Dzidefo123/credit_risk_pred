@@ -14,8 +14,9 @@
     {
       "n": 1,
       "text": "National macroeconomic inputs can distinguish calendar periods without improving risk ranking among mortgages observed under comparable conditions.",
-      "class": "TOO_BROAD",
-      "note": "Stated as a general capability claim with no scope. The evidence is one model pair, one provider, one realized calendar, one seasoned cohort, and a within-month result on 55 of 86 months. Needs scoping to the studied design."
+      "class": "SUPPORTED",
+      "note": "Modal 'can distinguish' is a statement of possibility the study demonstrates, a conceptual motivation rather than a universal assertion. Design-specific wording would be an editorial improvement. Reclassified per T20-C13.",
+      "reclassified_from": "TOO_BROAD"
     },
     {
       "n": 2,
@@ -47,7 +48,7 @@
       "n": 7,
       "text": "Pooled payoff AUC increases from 0.56543 to 0.62587, but between-year comparisons account for 98.19% of the gain.",
       "class": "MISSING_QUALIFICATION",
-      "note": "98.19% is resolution-dependent: at month resolution the split is 1.98%/98.02% on a different population. The resolution-free statement is the within-stratum gain."
+      "note": "Year-level contribution shares are 1.808%/98.192% on the full primary population. At month resolution, on the eligible subset, pair weights are 1.979%/98.021% and gain contributions -0.016%/100.016%. Neither shares nor within-stratum gains are resolution-free. Naming the resolution and population with the share would sharpen scope. Corrected per T20-C06/C07."
     },
     {
       "n": 8,
@@ -59,7 +60,7 @@
       "n": 9,
       "text": "The joint-loss direction reverses slightly in younger unseen vintages, from 0.070631 to 0.069811, while other scores do not uniformly improve.",
       "class": "MISSING_QUALIFICATION",
-      "note": "'do not uniformly improve' understates it: both Briers, default AUC AND default calibration slope (1.009 -> 0.764, with M2 under-predicting default 3.5x) favour M1."
+      "note": "'do not uniformly improve' understates the default results: default AUC falls, and on unseen vintages M2 under-predicts default incidence 3.5x with slope 0.7639. Report the full calibration vector, including that in seen vintages M2's default mean error improves while its slope worsens (T20-C10)."
     },
     {
       "n": 10,
@@ -91,9 +92,9 @@
   ],
   "tally": {
     "GOOD": 4,
-    "SUPPORTED": 4,
+    "SUPPORTED": 5,
     "MISSING_QUALIFICATION": 3,
-    "TOO_BROAD": 2,
+    "TOO_BROAD": 1,
     "AMBIGUOUS": 1
   },
   "material_omissions": [
@@ -103,5 +104,5 @@
       "severity": "MAJOR"
     }
   ],
-  "verdict": "The abstract survives a reader who never reaches the limitations section on most counts, with two exceptions: the unscoped opening claim, and the absence of the default-discrimination result."
+  "verdict": "The abstract survives a reader who never reaches the limitations section on most counts. One material exception: the absence of the default-discrimination result. Sentence 1 would benefit from editorial tightening."
 }

@@ -6,7 +6,8 @@
     "statements_checked": 143,
     "matched": 143,
     "mismatched": 0,
-    "scope": "Table B, C, D, E, F, G values; abstract numbers; conclusion numbers; calendar weights and contributions; geometry diagnostics; split counts."
+    "scope": "Table B, C, D, E, F, G values; abstract numbers; conclusion numbers; calendar weights and contributions; geometry diagnostics; split counts.",
+    "attestation_note": "Reviewer attestation. The working file for this pass was written to a scratch location and not committed, so its sequence relative to opening the evidence map is not independently established (T20-C14). Pass 2 and the user-side audit independently resolve all 257 bindings."
   },
   "pass_2_map_verification": {
     "bindings": 257,
@@ -19,23 +20,11 @@
   "classification_tally": {
     "VALUE_ERROR": 0,
     "SOURCE_ERROR": 0,
-    "INTERPRETATION_ERROR": 1,
-    "SCOPE_ERROR": 2,
-    "NONE": 254
+    "INTERPRETATION_ERROR": 0,
+    "SCOPE_ERROR": 1,
+    "NONE": 256
   },
   "non_value_findings": [
-    {
-      "classification": "INTERPRETATION_ERROR",
-      "locus": "section 4.4 and abstract sentence 7, bindings Q0167/Q0168",
-      "finding": "The 1.81%/98.19% contribution shares are correct arithmetic but are presented as a property of the models rather than of the chosen stratum resolution. At month resolution the pair weights are 1.979%/98.021%. The share is not invariant; the within-stratum gain is.",
-      "severity": "MAJOR"
-    },
-    {
-      "classification": "SCOPE_ERROR",
-      "locus": "abstract sentence 1",
-      "finding": "General capability claim with no population, model or period scope.",
-      "severity": "MAJOR"
-    },
     {
       "classification": "SCOPE_ERROR",
       "locus": "abstract sentence 9 and section 4.5",
@@ -2940,6 +2929,22 @@
       "finding": "Model columns are means of facility-level CIFs; the observed column is a cohort-level Aalen-Johansen estimate. Different functionals compared in adjacent columns without a note.",
       "severity": "MODERATE",
       "status": "WITHDRAWN_T20-C01"
+    },
+    {
+      "classification": "INTERPRETATION_ERROR",
+      "locus": "section 4.4 and abstract sentence 7, bindings Q0167/Q0168",
+      "finding": "The 1.81%/98.19% contribution shares are correct arithmetic but are presented as a property of the models rather than of the chosen stratum resolution. At month resolution the pair weights are 1.979%/98.021%. The share is not invariant; the within-stratum gain is.",
+      "severity": "MAJOR",
+      "status": "WITHDRAWN_T20-C06_C07",
+      "reason": "v0.3 labels the year decomposition as year-level; the finding also wrongly called within-stratum gains invariant and conflated month pair weights with contribution shares. Retained as a presentation recommendation (R3), not a manuscript interpretation error."
+    },
+    {
+      "classification": "SCOPE_ERROR",
+      "locus": "abstract sentence 1",
+      "finding": "General capability claim with no population, model or period scope.",
+      "severity": "MAJOR",
+      "status": "WITHDRAWN_T20-C13",
+      "reason": "Modal statement of possibility, not a universal scope claim."
     }
   ]
 }

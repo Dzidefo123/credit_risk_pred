@@ -283,7 +283,10 @@ def test_triage_classifies_every_analysis():
         assert analysis["class"] in allowed, analysis["analysis"]
         assert analysis["why"].strip()
     assert sum(triage["summary"].values()) == len(triage["analyses"])
-    assert triage["summary"]["ARXIV_BLOCKER"] >= 1
+    # T20-C08: the calendar-AUC item is disclosure plus optional analysis, not a blocker.
+    assert triage["summary"]["ARXIV_BLOCKER"] == 0
+    item = next(a for a in triage["analyses"] if a["analysis"].startswith("Calendar-block interval"))
+    assert item["class"] == "PEER_REVIEW_RESPONSE" and item["reclassified_from"] == "ARXIV_BLOCKER"
 
 
 def test_terminology_recommendations_are_concrete(verification):
@@ -294,11 +297,15 @@ def test_terminology_recommendations_are_concrete(verification):
     assert set(terms["title_terms_to_replace"]) == {"Regime-Dependent", "Transport"}
 
 
-def test_major_concerns_are_enumerated_and_resolvable(verification, report_text):
+def test_concerns_are_enumerated_and_resolvable(verification, report_text):
     findings = verification["findings"]
-    assert findings["major_concerns"] == len(findings["major_concern_ids"]) == 7
-    assert findings["all_major_concerns_resolvable_by_manuscript_editing"] is True
-    for identifier in findings["major_concern_ids"]:
+    assert len(findings["concern_ids"]) == 7
+    severity = findings["concern_severity"]
+    assert findings["major_concerns"] == sum(v == "MAJOR" for v in severity.values()) == 5
+    assert findings["moderate_concerns"] == sum(v == "MODERATE" for v in severity.values()) == 2
+    assert severity["M2"] == severity["M3"] == "MODERATE"
+    assert findings["all_concerns_resolvable_by_manuscript_editing"] is True
+    for identifier in findings["concern_ids"]:
         tag = identifier.split()[0]
         assert f"### {tag}." in report_text, tag
     assert findings["new_relative_to_tasks_17_18"]
@@ -333,18 +340,27 @@ def test_table_f_and_reproducibility_minors_are_withdrawn(report_text):
     assert "Withdrawn (T20-C02)" in report_text
     audit = read("reports/paper/review/task20_claim_sample_audit.json")
     assert not any(f["locus"].startswith("Table F") for f in audit["non_value_findings"])
-    assert audit["classification_tally"]["INTERPRETATION_ERROR"] == 1
+    assert audit["classification_tally"]["INTERPRETATION_ERROR"] == 0
+    assert audit["classification_tally"]["SCOPE_ERROR"] == 1
     assert sum(audit["classification_tally"].values()) == 257
     estimands = read("reports/paper/review/task20_estimand_audit.json")
     assert not any("Table F" in s for s in estimands["estimand_shifts_found"])
 
 
-def test_macro_coefficient_count_is_two_per_predictor(report_text):
-    """T20-C03: a three-class multinomial with a reference class has two logits per predictor."""
+def test_macro_coefficient_count_is_exact(report_text):
+    """T20-C03 as amended by T20-C05: 14 contrasts, 21 stored coefficients, no macro indicators."""
     protocol = read("docs/track_b/macro_competing_risk_protocol.json")
     assert "classes 0 none / 1 default / 2 payoff" in protocol["family"]
-    assert len(protocol["primary_macro"]) == 7
-    assert "at least 14" in report_text
+    params = read("reports/track_b/macro_competing_risk_validation.json")["development"]["M2"]["parameters"]
+    macro = params["macro"]
+    assert len(macro) == 7
+    assert all(name in params["feature_order"] for name in macro)
+    assert not [f for f in params["feature_order"] if f.endswith(":missing") and f.split(":")[0] in macro]
+    assert len(params["coefficients"]) == 3
+    assert len(params["coefficients"]) * len(macro) == 21
+    assert "14 cause-versus-no-event contrasts (21 stored class coefficients)" in report_text
+    live = [ln for ln in report_text.splitlines() if "at least 14" in ln and "T20-C0" not in ln]
+    assert not live, live
     for path in REVIEW.glob("task20_*.json"):
         if path.name == "task20_corrections.json":
             continue
@@ -364,6 +380,79 @@ def test_slope_near_one_is_not_called_complete_calibration(report_text):
 def test_corrections_did_not_change_decisions(verification):
     assert verification["decisions"]["preprint"] == "REQUIRES_MAJOR_REVISION"
     assert verification["decisions"]["peer_review"] == "BORDERLINE"
-    assert verification["findings"]["major_concerns"] == 7
+    # Round one left concerns unchanged; round two downgraded M2 and M3 (T20-C07/C08).
+    assert verification["findings"]["major_concerns"] == 5
+    assert verification["findings"]["moderate_concerns"] == 2
     assert verification["findings"]["minor_concerns"] == 5
     assert verification["corrections_round"]["decisions_changed"] is False
+    assert verification["corrections_round"]["round_two"]["decisions_changed"] is False
+
+
+# ------------------------------------------- corrections round two (2026-10-09)
+
+
+def test_round_two_ledger_complete():
+    ledger = read("reports/paper/review/task20_corrections.json")
+    ids = [c["id"] for c in ledger["round_two"]["corrections"]]
+    assert ids == [f"T20-C{n:02d}" for n in range(5, 15)]
+    assert all(c["audit_was_correct"] for c in ledger["round_two"]["corrections"])
+    assert next(c for c in ledger["corrections"] if c["id"] == "T20-C03")["superseded_by"] == "T20-C05"
+    assert ledger["net_effect"]["arxiv_blockers"] == "1 -> 0"
+
+
+def test_weights_and_contributions_are_reported_separately(report_text):
+    """T20-C06/C07: month pair weights are not contribution shares; nothing is resolution-free."""
+    closure = read("reports/paper/task19_evidence/local_closure_output.json")["SA01_month"]
+    assert closure["pair_structure"]["within_pair_share"] == pytest.approx(0.019793, abs=5e-6)
+    assert closure["gains"]["within_contribution_share"] == pytest.approx(-0.000163, abs=5e-7)
+    assert "−0.016%" in report_text and "100.016%" in report_text
+    assert "Neither the contribution shares nor the within-stratum gains are resolution-free" in report_text
+    live = [ln for ln in report_text.splitlines()
+            if "resolution-free" in ln and "T20-C06" not in ln and "Neither" not in ln and "not" not in ln]
+    assert not live, live
+
+
+def test_sole_2020_movement_premise_is_withdrawn(report_text):
+    """T20-C09: frozen summaries show large 2022 rate movement."""
+    regime = read("reports/track_b/macro_signal_attribution_stability.json")["macro_shift"]["regime_macro_summaries"]
+    mortgage = regime["evaluation"]["2022"]["mortgage_30y_level"]
+    assert mortgage["minimum"] == pytest.approx(3.11) and mortgage["maximum"] == pytest.approx(7.08)
+    live = [ln for ln in report_text.splitlines()
+            if "only period in which national macro variables moved" in ln and "T20-C09" not in ln]
+    assert not live, live
+    assert "never materially better and sometimes catastrophically worse" not in report_text
+
+
+def test_seen_default_mean_error_improvement_is_reported(macro, report_text):
+    """T20-C10: the calibration vector is mixed, not uniformly worse."""
+    seen = macro["primary"]
+    e1 = seen["M1"]["calibration"]["default"]["absolute_mean_rate_error"]
+    e2 = seen["M2"]["calibration"]["default"]["absolute_mean_rate_error"]
+    s1 = seen["M1"]["calibration"]["default"]["slope"]
+    s2 = seen["M2"]["calibration"]["default"]["slope"]
+    assert e2 < e1 and s2 < s1
+    assert "0.000475 → 0.000239" in report_text
+
+
+def test_withdrawn_economic_and_transport_assertions(report_text):
+    """T20-C11/C12."""
+    assert "ranking calendar periods is not actionable because the calendar is observed" not in report_text
+    assert "**\"Transport\" is the wrong word.**" not in report_text
+    assert "terminology" in report_text.lower()
+
+
+def test_central_claim_no_longer_overstated(verification, report_text):
+    """T20-C13."""
+    assert "abstract sentence 1 no longer classed C" in verification["decisions"]["central_claim_classification"]
+    abstract = read("reports/paper/review/task20_abstract_audit.json")
+    first = next(x for x in abstract["sentences"] if x["n"] == 1)
+    assert first["class"] == "SUPPORTED" and first["reclassified_from"] == "TOO_BROAD"
+    assert sum(abstract["tally"].values()) == len(abstract["sentences"])
+
+
+def test_certainty_statements_are_qualified(verification, report_text):
+    """T20-C14."""
+    assert "| Target leakage | None identified." in report_text
+    assert verification["decisions"]["decisions_are_reviewer_judgments_not_objective_gates"] is True
+    assert "not an upgrade" in verification["decisions"]["novelty"]
+    assert "attestation" in verification["attestation_note"]

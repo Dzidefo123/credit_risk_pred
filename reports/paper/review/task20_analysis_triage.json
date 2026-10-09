@@ -20,7 +20,7 @@
     {
       "analysis": "SA04 complexity adjustment",
       "class": "HIGH_VALUE_BEFORE_SUBMISSION",
-      "why": "The development 'improvement' is 0.00056 for at least 14 added macro coefficients (seven predictors, two cause logits each) whose effective support is ~88 serially-dependent months. Section 4.1 disclaims a complexity-adjusted gain but a referee will ask for one number. Not an arXiv blocker because the development result carries no weight in the conclusion."
+      "why": "The development 'improvement' is 0.00056 from adding 14 cause-versus-no-event macro contrasts (21 stored coefficients). Penalized effective degrees of freedom are not estimated, and 88 distinct months is not an effective sample size. Section 4.1 disclaims a complexity-adjusted gain but a referee will ask for one. Not an arXiv blocker because the development result carries no weight in the conclusion. Corrected per T20-C05."
     },
     {
       "analysis": "SA05 facility-weighted rescoring",
@@ -30,7 +30,7 @@
     {
       "analysis": "SA08 support-restricted evaluation",
       "class": "PEER_REVIEW_RESPONSE",
-      "why": "77 of 86 months lie beyond the development support reference, so the in-support subset is 9 months dominated by 2019. The test is weak by construction and its failure to find anything would not be informative."
+      "why": "77 of 86 months lie beyond the development support reference, so the in-support subset is 9 months dominated by 2019. The small subset limits precision, though that does not guarantee its findings would be uninformative. Reasonable optional sensitivity."
     },
     {
       "analysis": "CG03 conditional-entry / IPCW implementation review",
@@ -64,16 +64,17 @@
     },
     {
       "analysis": "Calendar-block interval for payoff and default AUC",
-      "class": "ARXIV_BLOCKER",
-      "why": "Not on the brief's list, and it is the one analysis this reviewer considers blocking. The paper's central methodological argument is that calendar-dependent claims require calendar-unit uncertainty. Neither AUC has any calendar-block interval frozen, so the headline discrimination claim rests only on the facility interval the paper itself calls inadequate for calendar statements. Either compute it or state plainly in Table G and section 4.4 that it does not exist and why that bounds the claim. The second option is manuscript-only."
+      "class": "PEER_REVIEW_RESPONSE",
+      "why": "Downgraded per T20-C08. The decomposition is an exact descriptive identity of a fixed dataset and needs no interval to be correct; missing calendar uncertainty limits inference and generalisation. The required step is disclosure in the manuscript (R2). Computing calendar-block AUC intervals is optional, separately registered work.",
+      "reclassified_from": "ARXIV_BLOCKER"
     }
   ],
   "summary": {
-    "ARXIV_BLOCKER": 1,
+    "ARXIV_BLOCKER": 0,
     "HIGH_VALUE_BEFORE_SUBMISSION": 4,
-    "PEER_REVIEW_RESPONSE": 2,
+    "PEER_REVIEW_RESPONSE": 3,
     "FUTURE_WORK": 3,
     "UNNECESSARY": 0
   },
-  "note": "The single blocker is resolvable by manuscript text alone if the authors choose disclosure over computation."
+  "note": "No arXiv blocker remains after T20-C08. Classifications are reviewer judgments, not objective gates."
 }
