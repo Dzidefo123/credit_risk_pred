@@ -1,0 +1,107 @@
+{
+  "version": "task20-v1",
+  "base_commit": "1a42d505c6652fecf384d00b2d19d737c4b8524a",
+  "independence": {
+    "independence_status": "COMPROMISED_AND_DISCLOSED",
+    "reason": "This reviewer authored Task 17 and Task 18 in the same working session and carries their conclusions in context. The brief's role statement ('You did NOT write this manuscript', 'Do NOT begin from the conclusions of Tasks 17-19') cannot be honoured by this reviewer.",
+    "section_2_provisional_cold_read": "NOT_SATISFIABLE_BY_THIS_REVIEWER",
+    "what_is_still_valid": "The technical audit: estimand analysis, independent re-derivation of every numeric claim from frozen artifacts, independent resolution of all 257 evidence bindings, and identification of findings the prior tasks did not make. Prior knowledge of the evidence aids rather than impairs these.",
+    "what_is_invalid": "Any assertion that the manuscript communicates its scope adequately to a reader without repository history. This reviewer cannot simulate that reader.",
+    "recommendation": "Section 2's cold read should be executed by a reviewer with no exposure to this project: a fresh session, a different model, or a human reader given only paper/main_v0.3.md and the bibliography. Several findings below concern precisely whether a cold reader could follow the paper, and they are the findings this reviewer is least qualified to settle."
+  },
+  "word_count_claimed": 223,
+  "sentences": [
+    {
+      "n": 1,
+      "text": "National macroeconomic inputs can distinguish calendar periods without improving risk ranking among mortgages observed under comparable conditions.",
+      "class": "TOO_BROAD",
+      "note": "Stated as a general capability claim with no scope. The evidence is one model pair, one provider, one realized calendar, one seasoned cohort, and a within-month result on 55 of 86 months. Needs scoping to the studied design."
+    },
+    {
+      "n": 2,
+      "text": "We study this distinction in a longitudinal Freddie Mac mortgage competing-risk framework...",
+      "class": "SUPPORTED"
+    },
+    {
+      "n": 3,
+      "text": "The macro inputs are vintage-aware and revision-aware; exact provider first-release timestamps were not certified.",
+      "class": "GOOD",
+      "note": "Exemplary. Precisely the distinction the evidence supports."
+    },
+    {
+      "n": 4,
+      "text": "Evaluation combines temporal proper scores, calibration, calendar-stratified discrimination, population comparisons and conditional-entry cumulative incidence.",
+      "class": "SUPPORTED"
+    },
+    {
+      "n": 5,
+      "text": "Development joint log loss decreases from 0.09015 to 0.08959, whereas the seasoned seen-vintage temporal comparison worsens from 0.089201 to 0.105323.",
+      "class": "SUPPORTED"
+    },
+    {
+      "n": 6,
+      "text": "Calendar 2020 contributes 89.34% of that deterioration.",
+      "class": "SUPPORTED"
+    },
+    {
+      "n": 7,
+      "text": "Pooled payoff AUC increases from 0.56543 to 0.62587, but between-year comparisons account for 98.19% of the gain.",
+      "class": "MISSING_QUALIFICATION",
+      "note": "98.19% is resolution-dependent: at month resolution the split is 1.98%/98.02% on a different population. The resolution-free statement is the within-stratum gain."
+    },
+    {
+      "n": 8,
+      "text": "In a separately registered post-hoc closure over 55 supported months, pair-weighted within-month AUC is 0.56014 versus 0.55974; sparse months are excluded.",
+      "class": "MISSING_QUALIFICATION",
+      "note": "Should state 55 of 86 months and 191,938 of 248,939 intervals."
+    },
+    {
+      "n": 9,
+      "text": "The joint-loss direction reverses slightly in younger unseen vintages, from 0.070631 to 0.069811, while other scores do not uniformly improve.",
+      "class": "MISSING_QUALIFICATION",
+      "note": "'do not uniformly improve' understates it: both Briers, default AUC AND default calibration slope (1.009 -> 0.764, with M2 under-predicting default 3.5x) favour M1."
+    },
+    {
+      "n": 10,
+      "text": "Historical cumulative-incidence discrepancies describe a concentrated entry cohort and overlapping realized macro information, rather than an independent prospective forecasting experiment.",
+      "class": "GOOD"
+    },
+    {
+      "n": 11,
+      "text": "Payoff-Brier uncertainty differs under facility and calendar resampling.",
+      "class": "AMBIGUOUS",
+      "note": "Does not say the calendar interval includes zero. 'Differs' could mean width."
+    },
+    {
+      "n": 12,
+      "text": "The observed classification is MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS.",
+      "class": "TOO_BROAD",
+      "note": "An internal repository token presented as a scientific result. Meaningless to any reader outside this project, and 'transport' is itself contested (see E6)."
+    },
+    {
+      "n": 13,
+      "text": "The findings support separating pooled discrimination, within-period ranking and probability quality when validating macro augmentation.",
+      "class": "GOOD"
+    },
+    {
+      "n": 14,
+      "text": "They do not establish universal macro failure or identify a causal mechanism; conditional entry, prior outcome exposure and limited calendar support restrict interpretation.",
+      "class": "GOOD"
+    }
+  ],
+  "tally": {
+    "GOOD": 4,
+    "SUPPORTED": 4,
+    "MISSING_QUALIFICATION": 3,
+    "TOO_BROAD": 2,
+    "AMBIGUOUS": 1
+  },
+  "material_omissions": [
+    {
+      "omission": "Default AUC falls 0.693508 -> 0.622831, a change of -0.070676 whose facility interval [-0.093906, -0.045251] excludes zero.",
+      "why_it_matters": "This is LARGER in magnitude than the payoff AUC gain the abstract does report, it is the loss-relevant event for any credit-risk reader, and it is robust under the one resampling scheme applied to it. It also persists on unseen vintages (0.777935 -> 0.736496). Its absence from the abstract is the single clearest emphasis problem in the paper.",
+      "severity": "MAJOR"
+    }
+  ],
+  "verdict": "The abstract survives a reader who never reaches the limitations section on most counts, with two exceptions: the unscoped opening claim, and the absence of the default-discrimination result."
+}

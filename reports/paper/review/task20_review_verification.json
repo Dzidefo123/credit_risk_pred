@@ -1,0 +1,145 @@
+{
+  "version": "task20-v1",
+  "task": 20,
+  "label": "HOSTILE_MANUSCRIPT_REVIEW",
+  "review_target": "paper/main_v0.3.md",
+  "base_commit": "1a42d505c6652fecf384d00b2d19d737c4b8524a",
+  "repository_state_verification": {
+    "head_matches_expected": true,
+    "working_tree_clean_before_review": true,
+    "required_files_present": {
+      "paper/main_v0.3.md": true,
+      "reports/paper/TASK17_ERRATUM.md": true,
+      "reports/paper/task19_claim_evidence_map.json": true,
+      "reports/paper/task19_revision_register.json": true,
+      "reports/paper/TASK19_MANUSCRIPT_V03_REPORT.md": true
+    },
+    "author_supplied_hashes_verified": {
+      "paper/main_v0.3.md": {
+        "expected": "dd7738c5726b27b703747b253f5e641bb9e3b32ba8507a18d2ba375ba765f17a",
+        "actual": "dd7738c5726b27b703747b253f5e641bb9e3b32ba8507a18d2ba375ba765f17a",
+        "matches": true
+      },
+      "reports/paper/task19_claim_evidence_map.json": {
+        "expected": "64a9fb8ba3da3b047922384954f8f89189294f678bd6fcdd8f4197a60f0d9192",
+        "actual": "64a9fb8ba3da3b047922384954f8f89189294f678bd6fcdd8f4197a60f0d9192",
+        "matches": true
+      },
+      "reports/paper/task19_verification.json": {
+        "expected": "c3f54c8f001da07bbaf58bcb1de2e826762002b284b999544c3a8367b7c0c792",
+        "actual": "c3f54c8f001da07bbaf58bcb1de2e826762002b284b999544c3a8367b7c0c792",
+        "matches": true
+      }
+    }
+  },
+  "independence": {
+    "status": "COMPROMISED_AND_DISCLOSED",
+    "reason": "This reviewer authored Tasks 17 and 18 in the same session.",
+    "brief_section_2_provisional_cold_read": "NOT_SATISFIABLE_BY_THIS_REVIEWER",
+    "disclosed_prominently_in_report": true,
+    "recommendation": "Repeat section 2 with a reviewer having no project exposure.",
+    "concerns_most_affected": [
+      "M5 internal process vocabulary",
+      "M7 absence of figures"
+    ]
+  },
+  "review_only_compliance": {
+    "manuscript_modified": false,
+    "empirical_artifact_modified": false,
+    "task19_artifact_modified": false,
+    "problems_fixed_while_discovering": false,
+    "new_fit_or_prediction": false,
+    "new_macro_acquisition": false,
+    "fannie_outcome_inspected": false
+  },
+  "verification_performed": {
+    "independent_rederivation_from_frozen_artifacts": {
+      "statements": 143,
+      "matched": 143,
+      "mismatched": 0
+    },
+    "evidence_map_independently_resolved": {
+      "bindings": 257,
+      "resolved_exactly": 257,
+      "failed": 0,
+      "orphan_tokens": 0,
+      "unused_bindings": 0
+    },
+    "admitted_closure_integrity": {
+      "prediction_hashes_match_frozen_report": true,
+      "reproduced_frozen_pooled_auc_exactly": true,
+      "note": "The closure reproduces frozen pooled payoff AUC for both models to full precision, evidencing that its environment reproduces the frozen run."
+    },
+    "note": "The brief required verifying the map rather than relying on it; both passes were run."
+  },
+  "findings": {
+    "fatal_flaw": false,
+    "major_concerns": 7,
+    "minor_concerns": 7,
+    "claim_mismatches": {
+      "VALUE_ERROR": 0,
+      "SOURCE_ERROR": 0,
+      "INTERPRETATION_ERROR": 2,
+      "SCOPE_ERROR": 2
+    },
+    "major_concern_ids": [
+      "M1 default-discrimination result buried",
+      "M2 no calendar-unit uncertainty for either AUC",
+      "M3 contribution share is resolution-dependent",
+      "M4 the 2020-is-the-point argument is not confronted",
+      "M5 internal process vocabulary in the manuscript",
+      "M6 default calibration never reported",
+      "M7 no figures"
+    ],
+    "all_major_concerns_resolvable_by_manuscript_editing": true,
+    "new_relative_to_tasks_17_18": [
+      "M1",
+      "M2",
+      "M3",
+      "M6",
+      "resolution-dependence of the decomposition",
+      "Table F comparator mismatch",
+      "default calibration collapse on unseen vintages"
+    ]
+  },
+  "decisions": {
+    "preprint": "REQUIRES_MAJOR_REVISION",
+    "peer_review": "BORDERLINE",
+    "calibrated_to_each_other": false,
+    "central_claim_classification": "B_SUPPORTED_WITH_IMPORTANT_QUALIFICATION_as_scoped_in_body; C_OVERSTATED_as_written_in_abstract_sentence_1",
+    "novelty": "DISTINCTIVE_COMBINATION",
+    "cif_placement": "B_SUPPORTING_RESULT"
+  },
+  "terminology_recommendations": {
+    "pooled_decomposition_statistic": "cross-period concordance",
+    "model_behaviour_producing_it": "calendar-level separation",
+    "rejected": [
+      "between-period discrimination (conflates capability with pair structure)",
+      "calendar-regime separation (imports unestablished 'regime')",
+      "temporal ordering (suggests sequence)"
+    ],
+    "eight_block_resampling_output": "calendar-block sensitivity range, not confidence or bootstrap interval",
+    "title_terms_to_replace": {
+      "Regime-Dependent": "Calendar-Dependent",
+      "Transport": "Behaviour or Sensitivity"
+    }
+  },
+  "triage_summary": {
+    "ARXIV_BLOCKER": 1,
+    "HIGH_VALUE_BEFORE_SUBMISSION": 4,
+    "PEER_REVIEW_RESPONSE": 2,
+    "FUTURE_WORK": 3,
+    "UNNECESSARY": 0
+  },
+  "outputs_created": [
+    "reports/paper/review/TASK20_HOSTILE_MANUSCRIPT_REVIEW.md",
+    "reports/paper/review/task20_estimand_audit.json",
+    "reports/paper/review/task20_abstract_audit.json",
+    "reports/paper/review/task20_claim_sample_audit.json",
+    "reports/paper/review/task20_analysis_triage.json",
+    "reports/paper/review/task20_review_verification.json",
+    "tests/test_hostile_manuscript_review.py"
+  ],
+  "modified_tracked_files_before_commit": [],
+  "task21_not_started": true
+}

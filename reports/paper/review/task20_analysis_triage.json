@@ -1,0 +1,79 @@
+{
+  "version": "task20-v1",
+  "base_commit": "1a42d505c6652fecf384d00b2d19d737c4b8524a",
+  "independence": {
+    "independence_status": "COMPROMISED_AND_DISCLOSED",
+    "reason": "This reviewer authored Task 17 and Task 18 in the same working session and carries their conclusions in context. The brief's role statement ('You did NOT write this manuscript', 'Do NOT begin from the conclusions of Tasks 17-19') cannot be honoured by this reviewer.",
+    "section_2_provisional_cold_read": "NOT_SATISFIABLE_BY_THIS_REVIEWER",
+    "what_is_still_valid": "The technical audit: estimand analysis, independent re-derivation of every numeric claim from frozen artifacts, independent resolution of all 257 evidence bindings, and identification of findings the prior tasks did not make. Prior knowledge of the evidence aids rather than impairs these.",
+    "what_is_invalid": "Any assertion that the manuscript communicates its scope adequately to a reader without repository history. This reviewer cannot simulate that reader.",
+    "recommendation": "Section 2's cold read should be executed by a reviewer with no exposure to this project: a fresh session, a different model, or a human reader given only paper/main_v0.3.md and the bibliography. Several findings below concern precisely whether a cold reader could follow the paper, and they are the findings this reviewer is least qualified to settle."
+  },
+  "classes": [
+    "ARXIV_BLOCKER",
+    "HIGH_VALUE_BEFORE_SUBMISSION",
+    "PEER_REVIEW_RESPONSE",
+    "FUTURE_WORK",
+    "UNNECESSARY"
+  ],
+  "analyses": [
+    {
+      "analysis": "SA04 complexity adjustment",
+      "class": "HIGH_VALUE_BEFORE_SUBMISSION",
+      "why": "The development 'improvement' is 0.00056 for seven parameters whose effective support is ~88 serially-dependent months. Section 4.1 disclaims a complexity-adjusted gain but a referee will ask for one number. Not an arXiv blocker because the development result carries no weight in the conclusion."
+    },
+    {
+      "analysis": "SA05 facility-weighted rescoring",
+      "class": "HIGH_VALUE_BEFORE_SUBMISSION",
+      "why": "The paper declares facilities the statistical unit (3.1) and then weights intervals equally (3.2). Because survival is the complement of the modelled payoff event the weighting is outcome-correlated. Agreement between weightings would retire a standard objection cheaply; disagreement would change how the headline must be described."
+    },
+    {
+      "analysis": "SA08 support-restricted evaluation",
+      "class": "PEER_REVIEW_RESPONSE",
+      "why": "77 of 86 months lie beyond the development support reference, so the in-support subset is 9 months dominated by 2019. The test is weak by construction and its failure to find anything would not be informative."
+    },
+    {
+      "analysis": "CG03 conditional-entry / IPCW implementation review",
+      "class": "HIGH_VALUE_BEFORE_SUBMISSION",
+      "why": "Documentary, no computation, and it underwrites every CIF number plus Table F. An open implementation-compatibility question on the estimator behind a main-text table is an easy referee target and a cheap fix."
+    },
+    {
+      "analysis": "CG06 closest-paper (Bu2026) full-text comparison",
+      "class": "HIGH_VALUE_BEFORE_SUBMISSION",
+      "why": "Recorded threat_to_novelty HIGH with the decisive cells UNKNOWN. For arXiv this is survivable; for a journal the referee may be an author of it. Obtain the full text."
+    },
+    {
+      "analysis": "Nonlinear / interaction-bearing baseline",
+      "class": "FUTURE_WORK",
+      "why": "Would broaden the conclusion from one specification to a model class, but the paper already confines its claim to the frozen specification and says so repeatedly. A new experiment with its own freeze."
+    },
+    {
+      "analysis": "Current-state conditioning",
+      "class": "FUTURE_WORK",
+      "why": "This is the practically interesting question and the paper is explicit that it is untested. It is a follow-on paper, not a precondition for this one."
+    },
+    {
+      "analysis": "Maturity / refinancing separation",
+      "class": "PEER_REVIEW_RESPONSE",
+      "why": "Section 6 concedes a negligible maturity contribution has not been demonstrated. A descriptive count by vintage and original term would settle it in a paragraph."
+    },
+    {
+      "analysis": "Fannie replication",
+      "class": "FUTURE_WORK",
+      "why": "Correctly scoped as DRAFT_NOT_YET_AUTHORIZED with no results claimed. Not needed for a Freddie-scoped paper."
+    },
+    {
+      "analysis": "Calendar-block interval for payoff and default AUC",
+      "class": "ARXIV_BLOCKER",
+      "why": "Not on the brief's list, and it is the one analysis this reviewer considers blocking. The paper's central methodological argument is that calendar-dependent claims require calendar-unit uncertainty. Neither AUC has any calendar-block interval frozen, so the headline discrimination claim rests only on the facility interval the paper itself calls inadequate for calendar statements. Either compute it or state plainly in Table G and section 4.4 that it does not exist and why that bounds the claim. The second option is manuscript-only."
+    }
+  ],
+  "summary": {
+    "ARXIV_BLOCKER": 1,
+    "HIGH_VALUE_BEFORE_SUBMISSION": 4,
+    "PEER_REVIEW_RESPONSE": 2,
+    "FUTURE_WORK": 3,
+    "UNNECESSARY": 0
+  },
+  "note": "The single blocker is resolvable by manuscript text alone if the authors choose disclosure over computation."
+}
