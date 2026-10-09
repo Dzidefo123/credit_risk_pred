@@ -44,7 +44,19 @@ This gate concerns Task 17's quantitative blockers only. It does not mean the ma
 | Within-year, equal-weighted | 0.5171 | 0.5229 | +0.0058 |
 | Between-year, solved | 0.5675 | 0.6391 | **+0.0717** |
 
-**82.81% of the case–control pairs entering the pooled AUC cross year boundaries**, so the pooled statistic is predominantly a between-period quantity by construction. Within-period movement accounts for **10.5%** of the pooled gain.
+**82.81% of the case–control pairs entering the pooled AUC cross year boundaries**, so the pooled statistic is predominantly a between-period quantity by construction.
+
+Pair-weighted contributions to the pooled gain, which is the decomposition that matters:
+
+| Stratum | Pair weight | Stratum gain | Contribution | Share |
+|---|---|---|---|---|
+| Within-year | 0.17195 | +0.006357 | +0.001093 | **1.81%** |
+| Between-year | 0.82805 | +0.071673 | +0.059349 | **98.19%** |
+| | | | **+0.060442** | 100% |
+
+Identity verified: `0.17195 × 0.006357 + 0.82805 × 0.071673 = 0.060442`, the pooled gain exactly.
+
+> *Correction (T18-C01).* An earlier version of this report stated that "within-period movement accounts for 10.5% of the pooled gain". That figure is the ratio of stratum-gain *magnitudes* (`0.006357 / 0.060442`), not a contribution share. The contribution is pair-weighted and is **1.81%**. Raised by user-side audit; the error was mine. It strengthens the conclusion.
 
 | Year | Intervals | Payoffs | Within pairs | M1 AUC | M2 AUC | Gap | M1 mean pred | M2 mean pred |
 |---|---|---|---|---|---|---|---|---|
@@ -61,7 +73,9 @@ All eight years are eligible under the frozen support rule; none excluded, none 
 
 Facility-level horizon AUCs corroborate: gaps of **−0.0006, +0.0002, +0.0017, +0.0031** at 12/24/36/60 months.
 
-Classified `WITHIN_PERIOD_GAIN_NEGLIGIBLE` rather than reversed or absent: the within-year gain is small, positive and consistently signed. Year strata still contain between-month variation, so a month-stratified estimate would be expected to be no larger — an expectation, not a result.
+Classified `WITHIN_PERIOD_GAIN_NEGLIGIBLE` rather than reversed or absent: the within-year gain is small, positive and consistently signed.
+
+**Month-level result, reported by user-side audit** (executed against the frozen arrays with a corrected script; *not* independently verified in this environment): within-month payoff AUC M1 **0.56014**, M2 **0.55974**, gain **−0.00040**, over 55 supported months with 31 excluded as sparse. Consistent in direction and magnitude with the year-level finding, and at month granularity the within-period gain is marginally *negative* rather than marginally positive. The conclusion that there is no material within-period discrimination gain is strengthened. Caveat: 31 of 86 months fall below the frozen 20-event support rule, so the estimate covers 55 months, and excluded months' within-pairs must be held in a separate bucket rather than folded into the between-month residual.
 
 **Status QUALIFIED**, because the brief's month-stratified computation was not possible and Task 17's supporting structural argument is refuted rather than verified.
 
@@ -69,7 +83,9 @@ Classified `WITHIN_PERIOD_GAIN_NEGLIGIBLE` rather than reversed or absent: the w
 
 M2's 2020 mean predicted monthly payoff probability is **0.10048 against an observed 0.02212** — a 4.54× over-prediction — and its across-year predicted spread ratio is **56×** against M1's **1.44×**. Because AUC is scale-free, that exaggerated spread raises between-year concordance while destroying calibration. M2's across-year *ordering* of yearly rates is in fact slightly **worse** than M1's: 0.786 against 0.821 of year-pairs ordered correctly.
 
-**The pooled AUC gain and the probability deterioration are not two independent properties moving in opposite directions. They are two readings of one 2020 over-prediction.** Selecting on AUC would reward precisely the behaviour that proper scores penalise. This is a more precise and more useful methodological message than the manuscript's current "ranking and magnitude are different properties".
+On this reading the pooled AUC gain and the probability deterioration would be two views of one 2020 over-prediction rather than two independent properties, and selecting on AUC would reward precisely what proper scores penalise.
+
+> *Correction (T18-C05).* An earlier version stated this as established. It is a **diagnostic hypothesis**: well supported by the annual means, the scale-free property of AUC and the year-level decomposition, but not established by them. Attributing the between-period concordance gain to the 2020 cell specifically would need evidence the available aggregates do not provide. The decomposition result in the table above stands independently of this interpretation.
 
 ## D. Structural within-month ranking result — **TASK 17 CLAIM REFUTED**
 
@@ -173,6 +189,8 @@ Task 17's inference F6 is **confirmed and upgraded from an inference to a deriva
 
 **Upper bound, derived.** The frozen exclusion mask is `entries["month"] + h − 1 <= ordinal("2026-02")`, verified in `cif.py`. Zero landmarks are excluded at any horizon including 60 months, so for `h=60` every entry satisfies **entry ≤ 2021-03** — 27 of the 86 window months, 31.4%.
 
+**Measured distribution, reported by user-side audit** (not independently verified here): **99.02% of landmarks enter in the single month 2019-01**, with the latest entry in **2020-01**. Far tighter than either bound derived here, and it upgrades the classification from near-single to effectively single: the dominant 24-month window is 2019-01 to 2020-12.
+
 > *Correction:* an earlier draft of this derivation used `entry + h <= cutoff` and reported 2021-02 over 26 months. The frozen mask uses `entry + h − 1`, giving 2021-03 over 27 months. Corrected against source before publication.
 
 **Lower bound, corroborated.** Landmark entry is the first row of each contiguous facility history (`first_month = data["month"][starts]`), so presence in a calendar year implies entry on or before the end of it. The frozen 2019 cell contains **5,615 facilities of the 5,619** in the CIF cohort. Therefore **at least 99.93% of entries occur in calendar 2019**, and at most 4 facilities entered later.
@@ -189,11 +207,13 @@ At least 99.93% in calendar 2019; no entry later than 2021-03. **Effectively syn
 
 **SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH**
 
-With ≥99.93% of entries inside a single 12-month span, every 24-month path covers approximately 2019-01 to 2021-02 with at most twelve months of offset between facilities. This is one macro trajectory observed with small phase shifts, not an average over diverse historical paths.
+With ≥99.93% of entries inside a single twelve-month span, the 24-month paths are overlapping windows separated by at most twelve months of phase shift. This is one macro trajectory observed with small offsets, not an average over diverse historical paths. With the audit's measured concentration — 99.02% entering 2019-01 — it is effectively a single path.
+
+> *Correction (T18-C04).* An earlier version said "every 24-month path spans approximately 2019-01 to 2021-02". That 26-month range is the *union* of possible windows, not the span of any single 24-month path.
 
 **Manuscript language "historical rolling macro paths" is NOT supported.** The plural, with "rolling", implies averaging over many entry dates and therefore many trajectories. Accurate alternatives: *"a single historical macro path, observed from a cohort entering within one twelve-month window"* or *"the realised 2019–2021 macro trajectory"*. The existing and correct statement that these are retrospective evaluations rather than prospective forecasts should be **retained**; only the plurality claim must change.
 
-**Calendar alignment.** Every 24-month path spans approximately 2019-01 to 2021-02, and calendar 2020 lies entirely inside it. **The 24-month CIF comparison and the 2020 calendar deterioration are not statistically independent pieces of evidence** — they are two views of the same period in the same cohort. This is a calendar-alignment statement only; no causal dependence is claimed. The abstract currently presents the CIF discrepancy as a third finding alongside joint log loss and payoff AUC; it cannot stand as independent corroboration.
+**Calendar alignment.** The 24-month paths are overlapping windows whose union spans roughly 2019-01 to 2021-11, and every such window contains most or all of calendar 2020. Under the audit's measured entry concentration the dominant window is 2019-01 to 2020-12, containing calendar 2020 in its entirety. **The 24-month CIF comparison and the 2020 calendar deterioration are not statistically independent pieces of evidence** — they are two views of the same period in the same cohort. This is a calendar-alignment statement only; no causal dependence is claimed. The abstract currently presents the CIF discrepancy as a third finding alongside joint log loss and payoff AUC; it cannot stand as independent corroboration.
 
 ## N. CIF table, all four frozen horizons
 
@@ -204,7 +224,13 @@ With ≥99.93% of entries inside a single 12-month span, every 24-month path cov
 | 36m | 2,611 | 0.5056 | 0.3536 | **0.8079** | 0.0417 | 0.0144 | 0.0149 |
 | 60m | 1,949 | 0.6094 | 0.4860 | **0.8187** | 0.0467 | 0.0193 | 0.0163 |
 
-No horizon is selected as headline. Observations: at 12 months **M2 shows no qualitative failure** and is in fact closer to observed than M1 is; the dramatic over-prediction emerges from 24 months onward as the monthly error compounds; and **all three models under-predict observed default CIF beyond 12 months**, by roughly 3.4× at 24 months — a baseline limitation, not an M2-specific one.
+No horizon is selected as headline. Observations:
+
+- At 12 months **no qualitative failure appears**, in contrast to the 2.25× over-prediction at 24 months — but M1 is the more accurate of the two there: absolute errors are M0 0.00234, M1 0.00547, M2 0.01081, so **M1 is closer by a factor of 1.98**.
+- The dramatic over-prediction emerges from 24 months onward as the monthly error compounds.
+- **All three models under-predict observed default CIF beyond 12 months**, by roughly 3.4× at 24 months — a baseline limitation, not an M2-specific one.
+
+> *Correction (T18-C02).* An earlier version claimed M2 was "in fact closer to observed than M1" at 12 months. That is false, as the absolute errors above show. Task 17 §F5 had this right; the Task 18 report overstated it.
 
 ## O. Payoff Brier uncertainty result
 

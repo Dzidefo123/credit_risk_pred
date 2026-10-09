@@ -32,9 +32,13 @@
       "within_year_gain_pair_weighted": 0.006357109017379847,
       "within_year_gain_equal_weighted": 0.005765444950120879,
       "between_year_gain_solved": 0.07167308184678411,
-      "within_share_of_pooled_gain": 0.10517657241926204,
       "between_year_pair_share": 0.8280538711513751,
-      "structural_claim_verdict": "TASK17_STRUCTURAL_CLAIM_REFUTED"
+      "structural_claim_verdict": "TASK17_STRUCTURAL_CLAIM_REFUTED",
+      "within_year_contribution_share": 0.018084704473059154,
+      "between_year_contribution_share": 0.9819152955269408,
+      "within_stratum_gain_as_fraction_of_pooled_gain": 0.10517657241926204,
+      "month_level_within_gain_reported_by_audit": -0.0004,
+      "month_level_supported_months_reported_by_audit": 55
     },
     "SA02": {
       "reconciles": true,
@@ -58,8 +62,11 @@
     "SA06": {
       "path_classification": "SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH",
       "share_entering_2019_at_least": 0.99928812956042,
-      "entry_bound": "2019-01 to 2021-02",
-      "cif_independent_of_2020": false
+      "entry_bound": "2019-01 to 2021-03",
+      "cif_independent_of_2020": false,
+      "measured_share_entering_january_2019_reported_by_audit": 0.9902,
+      "measured_latest_entry_reported_by_audit": "2020-01",
+      "measurement_provenance": "REPORTED_BY_USER_AUDIT; not independently verified in this environment."
     }
   },
   "payoff_brier_uncertainty": {
@@ -153,5 +160,6 @@
   },
   "preprint_analysis_gate": "PREPRINT_ANALYSIS_GAPS_PARTIALLY_CLOSED",
   "preprint_gate_reason": "SA02 and SA03 are closed outright. SA01's scientific question is answered decisively at calendar-year granularity and the indefensible interpretation is confirmed as such, but the month-stratified computation specified in the brief was not possible here. SA06's inference is converted into a derivation with independent corroboration, but the literal entry histogram is unquantified. Both residual gaps require the local frozen arrays and neither blocks the manuscript changes the four analyses imply.",
-  "gate_caveat": "This gate concerns Task 17's quantitative preprint blockers only. It does not mean the manuscript is ready."
+  "gate_caveat": "This gate concerns Task 17's quantitative preprint blockers only. It does not mean the manuscript is ready.",
+  "corrections_applied": "reports/paper/task18_corrections.json"
 }

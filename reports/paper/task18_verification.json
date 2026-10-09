@@ -40,8 +40,16 @@
   "frozen_arrays_read_note": "The arrays are not present in this checkout, so none was opened. All Task 18 figures derive from frozen published aggregates. scripts/task18_local_closure.py is provided for execution on the machine holding the private artifacts; it was not run here.",
   "input_hash_drift": {},
   "input_hashes_stable": true,
-  "modified_tracked_files": [],
-  "tracked_files_unchanged": true,
+  "modified_tracked_files": [
+    "reports/paper/TASK18_FROZEN_ARRAY_SENSITIVITY_CLOSURE.md",
+    "reports/paper/task18_manuscript_consequences.json",
+    "reports/paper/task18_results.json",
+    "reports/paper/task18_sa01_within_period_auc.json",
+    "reports/paper/task18_sa06_cif_entry_distribution.json",
+    "scripts/task18_local_closure.py",
+    "tests/test_frozen_array_sensitivity.py"
+  ],
+  "tracked_files_unchanged": false,
   "arithmetic_performed": [
     {
       "id": "SA01",
@@ -134,5 +142,65 @@
     "reports/paper/review/task17_claim_survival_matrix.json": "1467cf726ebdac7e19e81a31eb2b645f54ecf14550f90c507e4ac3e5108f2344",
     "reports/paper/TASK17_HOSTILE_SCIENTIFIC_REVIEW.md": "02b3333fa9305a8eb6ec812b61a16b743a247f452e3646e414c8dcbb4b10f571",
     "paper/main_v0.2.md": "8da9a673d3bfe4076523f92a4ce7e18783ae4cbe068de2db6137e46efea1c835"
-  }
+  },
+  "test_results": {
+    "task18_suite": "tests/test_frozen_array_sensitivity.py",
+    "local_closure_suite": "tests/test_task18_local_closure.py \u2014 22 synthetic-fixture tests",
+    "combined": "test_frozen_array_sensitivity + test_task18_local_closure + test_hostile_review \u2014 106 passed",
+    "preexisting_failures": [
+      "tests/test_paper_evidence.py::test_all_prior_research_files_and_tag_preserved",
+      "tests/test_fannie_source_provenance.py::test_preservation_manifest_covers_all_prior_track13r_files"
+    ],
+    "preexisting_failure_cause": "Both require gitignored artifacts/ files absent from a fresh checkout; reproduced at base commit a4479ba before any Task 17 or 18 file existed.",
+    "not_run": "Suites importing the credit_risk package or fastapi require 'uv sync --locked'; not executed in this environment."
+  },
+  "corrections_round": {
+    "ledger": "reports/paper/task18_corrections.json",
+    "raised_by": "User-side audit on the machine holding the private artifacts, 2026-10-08.",
+    "corrections_applied": 6,
+    "audit_findings_upheld": 6,
+    "audit_findings_rejected": 0,
+    "files_amended": [
+      "reports/paper/task18_sa01_within_period_auc.json",
+      "reports/paper/task18_sa06_cif_entry_distribution.json",
+      "reports/paper/task18_manuscript_consequences.json",
+      "reports/paper/task18_results.json",
+      "reports/paper/TASK18_FROZEN_ARRAY_SENSITIVITY_CLOSURE.md",
+      "scripts/task18_local_closure.py"
+    ],
+    "committed_state_preserved_in_history_at": "fde602d",
+    "registration_unchanged": true,
+    "no_frozen_empirical_artifact_touched": true,
+    "effect_on_conclusions": "SA01 strengthened: within-period contribution is 1.81% not 10.5%, and the audit's month-level run reports a marginally negative within-month gain. SA06 strengthened from near-single to effectively single path. One mechanism claim downgraded from finding to diagnostic hypothesis. One false 12-month CIF accuracy claim removed. No status, gate or study-level classification changes.",
+    "statuses_unchanged": true,
+    "gate_unchanged": true
+  },
+  "third_party_reported_figures": {
+    "provenance": "REPORTED_BY_USER_AUDIT; executed against the private frozen arrays with a corrected script.",
+    "independently_verified_here": false,
+    "reason": "The frozen arrays remain absent from this checkout.",
+    "figures": {
+      "within_month_payoff_auc_M1": 0.56014,
+      "within_month_payoff_auc_M2": 0.55974,
+      "within_month_gain": -0.0004,
+      "supported_months": 55,
+      "excluded_sparse_months": 31,
+      "share_entering_january_2019": 0.9902,
+      "latest_entry": "2020-01"
+    },
+    "audit_reported_integrity": {
+      "synthetic_tests_passed": 14,
+      "input_hashes_matched": 3,
+      "frozen_private_hashes_unchanged": 366
+    }
+  },
+  "local_closure_script": {
+    "version": "task18-local-closure-v2",
+    "defects_addressed": 8,
+    "validated_by": "tests/test_task18_local_closure.py, 22 synthetic-fixture tests",
+    "v1_produced_no_results_here": true,
+    "additional_defect_found_reading_production_code": "The repository hashes the ledger with raw bytes (track_b.data.schemas.digest), not LF-normalised. A first v2 draft used LF normalisation and would have failed the ledger check; fixed before validation.",
+    "additional_defect_found_by_fixtures": "A None-valued contribution share crashed the summary print when the pooled gain is exactly zero; guarded."
+  },
+  "tracked_files_note": "Task 18 files amended in this corrections round are tracked and therefore appear as modified. No frozen empirical artifact, protocol, manuscript or Task 14/15/16/17 file is among them."
 }

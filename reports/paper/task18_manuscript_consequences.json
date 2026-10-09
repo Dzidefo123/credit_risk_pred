@@ -10,7 +10,7 @@
     {
       "finding_id": "T18-F01",
       "source_analysis": "SA01",
-      "verified_result": "Pooled temporal payoff AUC gain +0.0604 decomposes into a within-calendar-year gain of +0.0064 (pair-weighted) or +0.0058 (equal-weighted) and a solved between-year gain of +0.0717. 82.81% of the case-control pairs entering the pooled statistic cross year boundaries. Facility-level horizon AUC gaps are -0.0006, +0.0002, +0.0017 and +0.0031 at 12/24/36/60 months.",
+      "verified_result": "Pooled temporal payoff AUC gain +0.0604 decomposes, pair-weighted, into a within-calendar-year contribution of +0.00109 (1.81%) and a between-year contribution of +0.05935 (98.19%). The within-year stratum gain is +0.0064 and the between-year stratum gain +0.0717. 82.81% of the case-control pairs cross year boundaries. Facility-level horizon AUC gaps are -0.0006, +0.0002, +0.0017 and +0.0031 at 12/24/36/60 months. A user-side audit run at month granularity reports a within-month gain of -0.00040 over 55 supported months.",
       "affected_task17_change_ids": [
         "CH03"
       ],
@@ -20,17 +20,18 @@
         "MACRO_DEVELOPMENT_M2_PAYOFF_AUC",
         "MACRO_DEVELOPMENT_M1_PAYOFF_AUC"
       ],
-      "required_manuscript_change": "Restate the payoff AUC result as predominantly across-period ranking. Report the within-year and between-year components and the 82.81% between-year pair share. Report the facility-level horizon AUCs. Remove any phrasing implying improved ordering of mortgages.",
+      "required_manuscript_change": "Restate the payoff AUC result as predominantly across-period ranking. Report the pair-weighted contribution shares (1.81% within, 98.19% between), distinguishing them from the stratum-gain magnitudes. Report the facility-level horizon AUCs. Remove any phrasing implying improved ordering of mortgages.",
       "allowed_language": [
-        "M2 ranks calendar periods more sharply than M1; within calendar years its payoff ordering of risk intervals is almost unchanged.",
-        "Within-period payoff discrimination improves by 0.6 AUC points against a pooled gain of 6.0 points.",
+        "M2 ranks calendar periods more sharply than M1; within calendar periods its payoff ordering of risk intervals is essentially unchanged.",
+        "Within-period comparisons contribute 1.81% of the pooled gain; between-period comparisons contribute 98.19%.",
         "Calendar-period ranking can be useful predictive information, but it is not facility-level discrimination."
       ],
       "prohibited_language": [
         "improved payoff ranking (unqualified)",
         "ordered payoff-prone observations more effectively",
         "facility-level discrimination improvement",
-        "a facility-level ranking gain was structurally unavailable by construction"
+        "a facility-level ranking gain was structurally unavailable by construction",
+        "within-period movement accounts for 10.5% of the pooled gain"
       ],
       "preprint_blocking_resolved": true,
       "residual": "Calendar-month granularity unexecuted; requires local frozen arrays."
@@ -60,7 +61,7 @@
     {
       "finding_id": "T18-F03",
       "source_analysis": "SA01",
-      "verified_result": "The pooled AUC gain and the probability deterioration share one cause. M2's 2020 mean predicted monthly payoff probability is 0.10048 against an observed 0.02212, a 4.54x over-prediction, and its across-year predicted spread ratio is 56x against M1's 1.44x. Because AUC is scale-free, that exaggerated spread raises between-year concordance while destroying calibration. M2's across-year ORDERING of yearly rates is in fact slightly worse than M1's, 0.786 against 0.821 of year-pairs ordered correctly.",
+      "verified_result": "M2's 2020 mean predicted monthly payoff probability is 0.10048 against an observed 0.02212, a 4.54x over-prediction, and its across-year predicted spread ratio is 56x against M1's 1.44x. M2's across-year ordering of yearly rates is slightly worse than M1's, 0.786 against 0.821. Because AUC is scale-free, an exaggerated between-period spread can raise between-period concordance while proper scores penalise it.",
       "affected_task17_change_ids": [
         "CH03",
         "CH09"
@@ -70,17 +71,19 @@
         "MACRO_PRIMARY_M2_PAYOFF_BRIER",
         "MACRO_CAL_M2_PAYOFF"
       ],
-      "required_manuscript_change": "Reframe the central ranking-versus-probability contrast. These are not two independent properties moving in opposite directions; they are two readings of a single 2020 payoff over-prediction. This strengthens the methodological message and makes it precise.",
+      "required_manuscript_change": "Offer the shared-cause reading as a diagnostic interpretation, clearly labelled, not as a finding. The decomposition result stands independently of it.",
       "allowed_language": [
-        "The ranking gain and the probability failure are two readings of one phenomenon: a scale-free metric rewards an exaggerated between-period spread that proper scores penalise.",
-        "Selecting on AUC alone would reward precisely the behaviour that destroys the probability estimates."
+        "A scale-free metric can reward an exaggerated between-period spread that proper scores penalise; the frozen diagnostics are consistent with the 2020 over-prediction driving both.",
+        "Selecting on AUC alone would risk rewarding behaviour that destroys the probability estimates."
       ],
       "prohibited_language": [
-        "ranking and probability quality diverged independently",
-        "an economically plausible predictor improved ranking without improving probabilities (as two separate effects)"
+        "the ranking gain and the probability failure are two readings of one phenomenon (as an established finding)",
+        "one 2020 over-prediction explains the entire AUC gain",
+        "ranking and probability quality diverged independently"
       ],
       "preprint_blocking_resolved": true,
-      "residual": "None."
+      "residual": "None.",
+      "status": "DIAGNOSTIC_HYPOTHESIS"
     },
     {
       "finding_id": "T18-F04",
@@ -160,7 +163,7 @@
     {
       "finding_id": "T18-F07",
       "source_analysis": "SA06",
-      "verified_result": "At least 99.93% of CIF landmark entries occur in calendar 2019 (5,615 of 5,619 facilities carry risk intervals in the 2019 cell), and zero truncation at the 60-month horizon bounds every entry at or before 2021-02. The cohort is effectively synchronised.",
+      "verified_result": "At least 99.93% of CIF landmark entries occur in calendar 2019 (5,615 of 5,619 facilities carry risk intervals in the 2019 cell), and zero truncation at the 60-month horizon bounds every entry at or before 2021-03 under the frozen mask entry + h - 1 <= ordinal('2026-02'). A user-side audit measuring the distribution reports 99.02% entering in the single month 2019-01, with the latest entry in 2020-01.",
       "affected_task17_change_ids": [
         "CH06"
       ],
@@ -187,7 +190,7 @@
     {
       "finding_id": "T18-F08",
       "source_analysis": "SA06",
-      "verified_result": "Every 24-month path spans approximately 2019-01 to 2021-02, so calendar 2020 lies entirely within it. The 24-month CIF comparison and the 2020 calendar deterioration are not statistically independent.",
+      "verified_result": "The 24-month paths are overlapping windows whose union spans roughly 2019-01 to 2021-11 under calendar-2019 entry, and every such window contains most or all of calendar 2020. With the audit's measured entry concentration the dominant window is 2019-01 to 2020-12, containing calendar 2020 entirely. The 24-month CIF comparison and the 2020 calendar deterioration are therefore not statistically independent.",
       "affected_task17_change_ids": [
         "CH05",
         "CH06"
@@ -211,7 +214,7 @@
     {
       "finding_id": "T18-F09",
       "source_analysis": "SA06",
-      "verified_result": "All four frozen horizons: observed payoff CIF 0.1330/0.3367/0.5056/0.6094 against M2 0.1222/0.7581/0.8079/0.8187 and M1 0.1385/0.2587/0.3536/0.4860. At 12 months M2 shows no qualitative failure. Observed default CIF 0.0061/0.0360/0.0417/0.0467 against M1 0.0060/0.0107/0.0144/0.0193: all models under-predict default incidence from 24 months onward.",
+      "verified_result": "All four frozen horizons: observed payoff CIF 0.1330/0.3367/0.5056/0.6094 against M2 0.1222/0.7581/0.8079/0.8187 and M1 0.1385/0.2587/0.3536/0.4860. At 12 months M2's absolute error is 0.01081 against M1's 0.00547, so M1 is closer by a factor of 1.98, but both are of the same order and no qualitative failure appears. Observed default CIF 0.0061/0.0360/0.0417/0.0467 against M1 0.0060/0.0107/0.0144/0.0193: all models under-predict default incidence from 24 months onward.",
       "affected_task17_change_ids": [
         "CH05",
         "CH11"
@@ -224,10 +227,12 @@
       ],
       "required_manuscript_change": "Present all four horizons and both causes in one table.",
       "allowed_language": [
-        "At the shortest horizon the macro model does not fail; the discrepancy emerges from 24 months onward as the monthly error compounds.",
+        "At the shortest horizon neither model fails qualitatively; M1 is nonetheless about twice as accurate as M2 there.",
+        "The discrepancy emerges from 24 months onward as the monthly error compounds.",
         "All three models under-predict observed default incidence beyond 12 months, by roughly a factor of 3.4 at 24 months; this is a baseline limitation, not specific to macro augmentation."
       ],
       "prohibited_language": [
+        "At 12 months M2 is closer to observed than M1.",
         "The 24-month comparison characterises the models' cumulative-incidence behaviour.",
         "M1 provides an acceptable cumulative-incidence baseline."
       ],
@@ -286,5 +291,13 @@
       "preprint_blocking_resolved": true,
       "residual": "CG06 remains PARTIALLY_RESOLVED."
     }
+  ],
+  "corrections_applied": "reports/paper/task18_corrections.json",
+  "corrected_findings": [
+    "T18-F01",
+    "T18-F03",
+    "T18-F07",
+    "T18-F08",
+    "T18-F09"
   ]
 }

@@ -75,9 +75,9 @@
       "final_at_risk": 1949.0
     }
   },
-  "entry_distribution_verdict": "At least 99.93% of CIF landmark entries occur in calendar 2019, and no entry is later than 2021-02. The cohort is effectively synchronised at the start of the evaluation window.",
+  "entry_distribution_verdict": "At least 99.93% of CIF landmark entries occur in calendar 2019, and no entry is later than 2021-03 under the frozen exclusion mask. The cohort is effectively synchronised at the start of the evaluation window. A user-side audit measuring the distribution reports 99.02% entering in the single month 2019-01 with the latest entry in 2020-01.",
   "path_classification": "SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH",
-  "path_classification_justification": "With at least 99.93% of entries inside a single 12-month span, every 24-month path covers approximately 2019-01 to 2021-02 with at most twelve months of offset between facilities. This is one macro trajectory observed with small phase shifts, not an average over diverse historical paths.",
+  "path_classification_justification": "With at least 99.93% of entries inside a single twelve-month span, the 24-month paths are overlapping windows separated by at most twelve months of phase shift. This is one macro trajectory observed with small offsets, not an average over diverse historical paths.",
   "manuscript_language_assessment": {
     "current_phrase": "historical rolling macro paths",
     "supported": false,
@@ -85,10 +85,11 @@
     "accurate_alternative": "'a single historical macro path, observed from a cohort entering within one twelve-month window' or 'the realised 2019-2021 macro trajectory'. The existing and correct statement that these are retrospective evaluations rather than prospective forecasts should be retained; only the plurality claim must change."
   },
   "cif_2020_calendar_alignment": {
-    "statement": "Entry concentrated in calendar 2019 means every 24-month path spans approximately 2019-01 to 2021-02, and calendar 2020 lies entirely inside that span.",
+    "statement": "Entry concentrated in calendar 2019 means the 24-month paths are overlapping windows whose union spans roughly 2019-01 to 2021-11, and every such window contains most or all of calendar 2020.",
     "consequence": "The 24-month CIF comparison and the 2020 calendar deterioration identified in SA02 are not statistically independent pieces of evidence. They are two views of the same calendar period in the same cohort.",
     "scope": "This is a calendar-alignment statement only. No causal dependence is claimed.",
-    "manuscript_consequence": "The abstract currently presents the 24-month CIF discrepancy as a third finding alongside joint log loss and payoff AUC. It cannot be presented as independent corroboration."
+    "manuscript_consequence": "The abstract currently presents the 24-month CIF discrepancy as a third finding alongside joint log loss and payoff AUC. It cannot be presented as independent corroboration.",
+    "correction_note": "An earlier version stated that every 24-month path spans approximately 2019-01 to 2021-02. That range is the union of possible windows, 26 months wide, not the span of any single 24-month path. See task18_corrections.json T18-C04."
   },
   "all_frozen_horizons": {
     "12": {
@@ -137,10 +138,10 @@
     }
   },
   "horizon_observations": [
-    "At 12 months M2 is closer to the observed payoff CIF than M1 is at 24, 36 or 60 months: no qualitative M2 failure appears at the shortest horizon.",
-    "The dramatic M2 payoff over-prediction appears from 24 months onward, consistent with the propagation of a monthly over-prediction through the survival recursion.",
+    "At 12 months M2's absolute error is about twice M1's (0.01081 against 0.00547) and of opposite sign, but of the same order of magnitude. No QUALITATIVE failure appears at the shortest horizon, in contrast to the 2.25x over-prediction at 24 months. M2 is NOT more accurate than M1 at 12 months.",
+    "The dramatic M2 payoff over-prediction appears from 24 months onward, consistent with propagation of a monthly over-prediction through the survival recursion.",
     "All three models under-predict observed default CIF at every horizon beyond 12 months, by roughly a factor of 3.4 at 24 months. This is a baseline failure, not an M2-specific one.",
-    "Reporting the 24-month payoff comparison alone omits both the horizon at which M2 does not fail and the default comparison in which every model fails."
+    "Reporting the 24-month payoff comparison alone omits both the horizon at which M2 does not fail qualitatively and the default comparison in which every model fails."
   ],
   "status": "QUALIFIED",
   "status_reason": "Task 17's inference F6 is confirmed and strengthened from an inference to a derivation with independent corroboration, but the literal entry-month and entry-year histogram specified in the brief could not be produced because the cohort identifier arrays are absent. Median entry, modal month share and modal year share remain unquantified.",
@@ -154,5 +155,13 @@
     "share entering in modal year"
   ],
   "derivation_correction_note": "An earlier draft of this derivation used entry + h <= cutoff and reported a bound of 2021-02 over 26 months. The frozen mask uses entry + h - 1 <= cutoff, giving 2021-03 over 27 months. Corrected against source before publication. The corroborating bound from per-year facility counts is unaffected and is far tighter.",
-  "landmark_definition_verified": "Landmark entry is the first row of each contiguous facility history: first_month = data['month'][starts] in cif.landmarks(). Confirms that presence in a calendar year implies entry on or before the end of that year."
+  "landmark_definition_verified": "Landmark entry is the first row of each contiguous facility history: first_month = data['month'][starts] in cif.landmarks(). Confirms that presence in a calendar year implies entry on or before the end of that year.",
+  "entry_distribution_reported_by_audit": {
+    "provenance": "REPORTED_BY_USER_AUDIT; executed against the frozen arrays with a corrected script. NOT independently verified in this environment.",
+    "share_entering_january_2019": 0.9902,
+    "latest_entry": "2020-01",
+    "relation_to_derived_bounds": "Consistent with and far tighter than both bounds derived here. The derivation bounded entry at 2021-03; the corroboration placed at least 99.93% in calendar 2019; the measured distribution places 99.02% in the single month 2019-01 with the latest entry in 2020-01.",
+    "effect_on_classification": "SINGLE_OR_NEAR_SINGLE_HISTORICAL_PATH is strengthened from near-single to effectively single: the dominant 24-month window is 2019-01 to 2020-12, which contains calendar 2020 in its entirety.",
+    "effect_on_language_verdict": "The plural 'historical rolling macro paths' is now contradicted more sharply: 99.02% of landmarks share one entry month, so there is one path, not many."
+  }
 }

@@ -192,9 +192,84 @@ def test_sa01_auc_decomposition_identity_holds(macro):
 def test_sa01_between_period_dominates():
     sa01 = read("reports/paper/task18_sa01_within_period_auc.json")
     gains = sa01["gains"]
-    assert gains["between_year_solved"] > gains["within_year_pair_weighted"]
-    assert gains["within_share_of_pooled_gain"] < 0.25
+    assert gains["between_year_stratum_gain_solved"] > gains["within_year_stratum_gain_pair_weighted"]
+    assert gains["within_year_contribution_share"] < 0.05
+    assert gains["between_year_contribution_share"] > 0.95
     assert sa01["pair_structure"]["between_year_pair_share"] > 0.8
+
+
+def test_sa01_contribution_shares_are_pair_weighted_and_sum_to_one():
+    """Corrected per audit T18-C01: contribution is pair-weighted, not a magnitude ratio."""
+    sa01 = read("reports/paper/task18_sa01_within_period_auc.json")
+    gains, pairs, agg = sa01["gains"], sa01["pair_structure"], sa01["aggregates"]
+    w_in, w_bt = pairs["within_year_pair_share"], pairs["between_year_pair_share"]
+    g_in = agg["M2"]["within_year_pair_weighted"] - agg["M1"]["within_year_pair_weighted"]
+    g_bt = agg["M2"]["between_year_solved"] - agg["M1"]["between_year_solved"]
+    g_po = agg["M2"]["pooled"] - agg["M1"]["pooled"]
+    assert w_in * g_in + w_bt * g_bt == pytest.approx(g_po, abs=1e-12)
+    assert gains["within_year_contribution_to_pooled_gain"] == pytest.approx(w_in * g_in, abs=1e-12)
+    assert gains["within_year_contribution_share"] == pytest.approx(w_in * g_in / g_po, abs=1e-12)
+    assert gains["identity_reconciles"] is True
+    shares = gains["within_year_contribution_share"] + gains["between_year_contribution_share"]
+    assert shares == pytest.approx(1.0, abs=1e-12)
+    # the magnitude ratio must survive under a name that cannot be mistaken for a share
+    assert gains["within_stratum_gain_as_fraction_of_pooled_gain"] == pytest.approx(g_in / g_po, abs=1e-12)
+    assert "within_share_of_pooled_gain" not in gains
+
+
+def test_twelve_month_cif_accuracy_claim_is_correct(macro):
+    """Corrected per audit T18-C02: M1 is closer than M2 at 12 months."""
+    models = macro["cif"]["horizons"]["12"]["models"]
+    observed = models["M1"]["payoff"]["observed_default_cif"]
+    err = {m: abs(models[m]["payoff"]["mean_predicted_cif"] - observed) for m in ("M0", "M1", "M2")}
+    assert err["M1"] < err["M2"]
+    # The false claim may survive only inside a correction note that quotes it.
+    for line in REPORT.read_text(encoding="utf-8").splitlines():
+        if "closer to observed than M1" in line:
+            assert line.lstrip().startswith(">") and "Correction" in line, line
+    sa06 = read("reports/paper/task18_sa06_cif_entry_distribution.json")
+    assert any("NOT more accurate than M1" in o for o in sa06["horizon_observations"])
+    assert "M1 is closer by a factor of 1.98" in REPORT.read_text(encoding="utf-8")
+
+
+def test_no_stale_entry_bound_as_a_live_claim():
+    """Corrected per audit T18-C03. The stale value may survive only as a quoted correction."""
+    for name in (
+        "task18_manuscript_consequences.json",
+        "task18_results.json",
+    ):
+        assert "2021-02" not in json.dumps(read(f"reports/paper/{name}")), name
+    sa06 = read("reports/paper/task18_sa06_cif_entry_distribution.json")
+    assert sa06["derivation_upper_bound"]["entry_bound"] == "2019-01 to 2021-03"
+    assert sa06["derivation_upper_bound"]["permitted_entry_months"] == 27
+    for key, value in sa06.items():
+        if "2021-02" in json.dumps(value):
+            assert "correction" in key or "correction" in json.dumps(value).lower(), key
+    for line in REPORT.read_text(encoding="utf-8").splitlines():
+        if "2021-02" in line:
+            assert line.lstrip().startswith(">") and "orrection" in line, line
+
+
+def test_auc_mechanism_is_labelled_a_hypothesis():
+    """Corrected per audit T18-C05."""
+    sa01 = read("reports/paper/task18_sa01_within_period_auc.json")
+    assert sa01["between_year_mechanism"]["status"] == "DIAGNOSTIC_HYPOTHESIS"
+    consequences = read("reports/paper/task18_manuscript_consequences.json")
+    finding = next(f for f in consequences["findings"] if f["finding_id"] == "T18-F03")
+    assert finding["status"] == "DIAGNOSTIC_HYPOTHESIS"
+    assert any("established finding" in p for p in finding["prohibited_language"])
+
+
+def test_corrections_ledger_is_complete_and_honest():
+    ledger = read("reports/paper/task18_corrections.json")
+    assert len(ledger["corrections"]) >= 6
+    for correction in ledger["corrections"]:
+        assert correction["severity"] in {"MAJOR", "MODERATE", "MINOR"}
+        assert correction["wrong"].strip()
+        assert correction.get("why_wrong", "").strip() or correction.get("resolution", "").strip()
+        assert correction["audit_was_correct"] is True
+        assert "effect_on_conclusion" in correction or "resolution" in correction
+    assert ledger["audit_items_not_corrections"]
 
 
 def test_sa01_structural_claim_recorded_as_refuted(report_text):
@@ -459,9 +534,14 @@ def test_local_closure_script_is_read_only_and_aggregate_only():
     for forbidden in ("np.save", ".fit(", "joblib.dump", "to_csv", "shutil", "os.remove", "unlink"):
         assert forbidden not in source, forbidden
     assert "roc_auc_score" in source
-    assert 'np.load' in source
-    assert "no_loan_level_values_emitted" in source
+    assert "np.load" in source
+    # v2 is honest that it READS loan-level arrays and only EMITS aggregates
+    assert "reads_loan_level_arrays" in source
+    assert "emits_loan_level_values" in source
     assert "facility_keys" not in source  # never resolves facility identifiers
+    # and it must verify the full chain, not just the prediction arrays
+    assert "risk_array_sha256" in source
+    assert "ledger_sha256" in source
 
 
 def test_preservation_recorded_and_nothing_empirical_changed():
@@ -474,9 +554,26 @@ def test_preservation_recorded_and_nothing_empirical_changed():
         "no_frozen_metrics_changed",
         "no_new_fannie_outcomes",
         "no_manuscript_version_created",
-        "tracked_files_unchanged",
     ):
         assert verification[flag] is True, flag
+    # A corrections round legitimately amends Task 18's own files, so a globally clean tree
+    # is not the gate. The gate is that nothing outside Task 18's own outputs was touched.
+    protected = (
+        "reports/track_b/",
+        "docs/track_b/",
+        "docs/paper/",
+        "paper/",
+        "reports/paper/review/",
+        "reports/paper/TASK17",
+        "reports/paper/task17",
+    )
+    for path in verification.get("modified_tracked_files", []):
+        assert not path.startswith(protected), f"protected path modified: {path}"
+    assert verification["corrections_round"]["no_frozen_empirical_artifact_touched"] is True
+    assert verification["corrections_round"]["registration_unchanged"] is True
+    assert verification["corrections_round"]["statuses_unchanged"] is True
+    assert verification["corrections_round"]["gate_unchanged"] is True
+    assert verification["input_hashes_stable"] is True
     for task in ("task10", "task11", "task12", "task14", "task15", "task16", "task17"):
         assert verification["preserved"][task] is True, task
     assert verification["preserved"]["numeric_bindings"] == 123

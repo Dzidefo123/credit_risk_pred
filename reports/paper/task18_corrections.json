@@ -1,0 +1,102 @@
+{
+  "version": "task18-corrections-v1",
+  "task": 18,
+  "base_commit_of_corrected_work": "fde602d",
+  "raised_by": "User-side audit executed on the machine holding the private artifacts, reported in conversation on 2026-10-08, with a corrected local closure script run against the frozen arrays.",
+  "policy": "Task 18's committed state is preserved in git history at fde602d. These corrections amend the Task 18 artifacts in place and are recorded here so the audit trail shows what changed and why. No frozen empirical artifact was touched.",
+  "corrections": [
+    {
+      "id": "T18-C01",
+      "severity": "MAJOR",
+      "target": "task18_sa01_within_period_auc.json, report section C, consequences T18-F01",
+      "wrong": "within_share_of_pooled_gain reported as 0.1052 and described in the report as 'within-period movement accounts for 10.5% of the pooled gain'.",
+      "why_wrong": "That figure is g_within/g_pooled, a ratio of stratum-gain MAGNITUDES. The contribution of a stratum to the pooled gain is pair-weighted: w_within * g_within. Identity verified: 0.17195*0.006357 + 0.82805*0.071673 = 0.060442 = pooled gain.",
+      "correct": {
+        "within_year_contribution": 0.001093,
+        "within_year_contribution_share": 0.018083,
+        "between_year_contribution": 0.0593487,
+        "between_year_contribution_share": 0.981917,
+        "magnitude_ratio_retained_separately": 0.105176
+      },
+      "effect_on_conclusion": "STRENGTHENS. Within-period contributes 1.81%, not 10.5%.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T18-C02",
+      "severity": "MAJOR",
+      "target": "report section N, task18_sa06 horizon_observations, consequences T18-F09",
+      "wrong": "'At 12 months M2 shows no qualitative failure and is in fact closer to observed than M1 is.'",
+      "why_wrong": "Verified from the frozen artifact: observed 12m payoff CIF 0.13299, M1 0.13845 (|err| 0.00547), M2 0.12217 (|err| 0.01081). M1 is closer by a factor of 1.98. Task 17 F5 stated this correctly; the Task 18 report overstated it.",
+      "correct": {
+        "observed": 0.13299,
+        "M0": 0.13065,
+        "M1": 0.13845,
+        "M2": 0.12217,
+        "abs_err_M0": 0.00234,
+        "abs_err_M1": 0.00547,
+        "abs_err_M2": 0.01081,
+        "ratio_M2_over_M1": 1.98
+      },
+      "replacement_statement": "At 12 months M2's absolute error is about twice M1's and of opposite sign (under- rather than over-prediction), but of the same order of magnitude. No QUALITATIVE failure appears at the shortest horizon, in contrast to the 2.25x over-prediction at 24 months. M2 is not more accurate than M1 at 12 months.",
+      "effect_on_conclusion": "NEUTRAL on horizon selection, which still holds; removes a false accuracy claim.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T18-C03",
+      "severity": "MODERATE",
+      "target": "task18_manuscript_consequences.json T18-F07 and T18-F08",
+      "wrong": "Retained the stale entry bound 2021-02 after SA06 was corrected to 2021-03.",
+      "why_wrong": "The frozen exclusion mask is entry + h - 1 <= ordinal('2026-02'), so h=60 gives entry <= 2021-03.",
+      "correct": {
+        "entry_bound": "2021-03",
+        "permitted_entry_months": 27
+      },
+      "effect_on_conclusion": "NONE. The corroborated bound is far tighter than either.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T18-C04",
+      "severity": "MODERATE",
+      "target": "task18_sa06, report sections K-N, consequences T18-F08",
+      "wrong": "'Every 24-month path spans approximately 2019-01 to 2021-02.'",
+      "why_wrong": "Entry-year concentration implies overlapping 24-month windows, not one universal range. A 2019-01 entry spans 2019-01..2020-12; a 2019-12 entry spans 2019-12..2021-11. The stated range is 26 months wide and is the union, not a path.",
+      "correct": "24-month paths are overlapping windows whose union spans roughly 2019-01 to 2021-11 under calendar-2019 entry. With the audit's measured entry distribution the dominant window is 2019-01..2020-12.",
+      "effect_on_conclusion": "NONE on the 2020-containment conclusion, which is strengthened by the measured entry concentration.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T18-C05",
+      "severity": "MODERATE",
+      "target": "task18_sa01 between_year_mechanism, report section C, consequences T18-F03",
+      "wrong": "Stated as established that 'the pooled AUC gain and the probability deterioration ... are two readings of one phenomenon', i.e. that one 2020 over-prediction explains the entire AUC gain.",
+      "why_wrong": "Annual mean predictions plus a scale-free-metric argument plus the year-level decomposition make this a well-supported diagnostic interpretation. They do not establish it. Establishing it would require attributing the between-period concordance gain to the 2020 cell specifically, which the available aggregates do not support.",
+      "correct_status": "DIAGNOSTIC_HYPOTHESIS, consistent with the frozen evidence and not established by it.",
+      "effect_on_conclusion": "Downgrades the mechanism claim from finding to interpretation. The decomposition result itself is unaffected.",
+      "audit_was_correct": true
+    },
+    {
+      "id": "T18-C06",
+      "severity": "MAJOR",
+      "target": "scripts/task18_local_closure.py",
+      "wrong": "Six defects found by audit before execution: repository-root resolution, incomplete hash verification, mislabelled residual bucket, repeated contribution error, reconciliation not failing closed, registration hash asserted not verified. Plus a missing monthly-continuity check and a docstring claiming no loan-level values are read.",
+      "resolution": "Replaced by a v2 script addressing all eight points. See task18_local_closure.py header.",
+      "effect_on_conclusion": "The v1 script produced no results here; no Task 18 figure derived from it.",
+      "audit_was_correct": true,
+      "why_wrong": "Each defect would have let a wrong or unverifiable number reach the record: a misresolved root reads the wrong files or none; an unverified evaluation.npy leaves outcomes, months and row alignment unchecked; a mislabelled residual attributes sparse-month within-pairs to between-month comparisons; an unweighted contribution repeats T18-C01; a reconciliation that does not fail closed can publish figures from an environment that does not reproduce the frozen run; and an asserted registration hash provides no coverage."
+    }
+  ],
+  "audit_items_not_corrections": [
+    {
+      "item": "Month-constant terms cannot change within-month rankings",
+      "disposition": "Task 18 already retracted this Task 17 claim; audit concurs."
+    },
+    {
+      "item": "Month-level AUC, entry histogram and the ex-2020 bootstrap interval remain unverified in this environment",
+      "disposition": "Correct and already disclosed. The first two are now supplied by the audit's own run; the ex-2020 aggregate-level interval remains unverified against an interval-level computation."
+    },
+    {
+      "item": "The archive lacks the registration, execution code and several outputs",
+      "disposition": "Expected: Task 18 is committed locally at fde602d and was NOT pushed, per the brief. The registration exists at reports/paper/task18_analysis_registration.json, sha256_lf b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed. The audit could not see it because the commit is unpushed. This is a direct cost of the no-push instruction and is a reason to push before the next external audit."
+    }
+  ]
+}

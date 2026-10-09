@@ -169,10 +169,17 @@
   },
   "gains": {
     "pooled": 0.060442253166786086,
-    "within_year_pair_weighted": 0.006357109017379847,
-    "within_year_equal_weighted": 0.005765444950120879,
-    "between_year_solved": 0.07167308184678411,
-    "within_share_of_pooled_gain": 0.10517657241926204
+    "within_year_stratum_gain_pair_weighted": 0.006357109017379847,
+    "within_year_stratum_gain_equal_weighted": 0.005765444950120879,
+    "between_year_stratum_gain_solved": 0.07167308184678411,
+    "within_year_contribution_to_pooled_gain": 0.0010930802862071502,
+    "between_year_contribution_to_pooled_gain": 0.059349172880578935,
+    "within_year_contribution_share": 0.018084704473059154,
+    "between_year_contribution_share": 0.9819152955269408,
+    "within_stratum_gain_as_fraction_of_pooled_gain": 0.10517657241926204,
+    "decomposition_identity_check": 0.060442253166786086,
+    "identity_reconciles": true,
+    "note": "Contribution shares are pair-weighted and sum to 1. The final entry is a magnitude ratio, NOT a contribution share; an earlier version of this file published that ratio under the name within_share_of_pooled_gain. See task18_corrections.json T18-C01."
   },
   "within_year_gain_leave_one_year_out": {
     "2019": 0.0061195774958700605,
@@ -202,7 +209,9 @@
     "M1_spread_ratio": 1.4358653830780166,
     "M2_spread_ratio": 55.987892706248466,
     "finding": "AUC is scale-free. M2 inflates its 2020 mean predicted monthly payoff probability to 0.10048 against an observed 0.02212, a 4.54x over-prediction, and its across-year predicted spread is 56x against M1's 1.44x. That exaggerated spread separates 2020 intervals from other years and raises between-year concordance at interval level, even though M2's across-year ORDERING of yearly rates is slightly worse than M1's (0.786 vs 0.821 of year-pairs ordered correctly). The same 2020 over-prediction that destroys joint log loss and payoff Brier is what produces the pooled AUC gain.",
-    "consequence": "The pooled AUC gain and the probability deterioration are not two independent properties moving in opposite directions. They are two readings of one phenomenon."
+    "consequence": "On this interpretation the pooled AUC gain and the probability deterioration would be two readings of one phenomenon rather than two independent properties. The interpretation is consistent with all frozen evidence examined and is offered as a diagnostic hypothesis, not a finding.",
+    "status": "DIAGNOSTIC_HYPOTHESIS",
+    "status_note": "Well supported by the annual means, the scale-free property of AUC and the year-level decomposition; NOT established by them. Attributing the between-period concordance gain to the 2020 cell specifically would require evidence the available aggregates do not provide. See task18_corrections.json T18-C05."
   },
   "ex_2020_between_year_component": {
     "status": "NOT_EXECUTABLE",
@@ -254,8 +263,20 @@
     "caveat": "Calendar-period ranking can still be useful predictive information; the issue is the interpretation of the phrase 'payoff ranking improved'."
   },
   "interpretation": "WITHIN_PERIOD_GAIN_NEGLIGIBLE",
-  "interpretation_justification": "At year granularity the within-period gain is +0.0064 pair-weighted and +0.0058 equal-weighted, against a pooled gain of +0.0604 and a solved between-year gain of +0.0717. Within-period movement accounts for 10.6% of the pooled gain. The within-year gain is small, positive and consistently signed under leave-one-year-out (+0.0024 to +0.0092), so it is negligible rather than absent or reversed. Per-year gaps are mixed, four positive and four negative. Facility-level horizon AUCs corroborate: gaps of -0.0006, +0.0002, +0.0017 and +0.0031 at 12, 24, 36 and 60 months.",
+  "interpretation_justification": "At year granularity within-period movement contributes 1.81% of the pooled gain and between-period movement 98.19%, pair-weighted. The within-year stratum gain is +0.0064, small, positive and consistently signed under leave-one-year-out (+0.0024 to +0.0092). Facility-level horizon AUC gaps corroborate: -0.0006, +0.0002, +0.0017, +0.0031 at 12/24/36/60 months.",
   "interpretation_caveat": "Year strata still contain between-month variation, so a month-stratified estimate would be expected to be no larger; that expectation is not established here and the month-level analysis remains open.",
   "status": "QUALIFIED",
-  "status_reason": "The scientific question is answered decisively at year granularity and the interpretation Task 17 attacked is confirmed as indefensible, but the brief's specified month-stratified rescoring could not be executed and Task 17's supporting structural argument is refuted rather than verified."
+  "status_reason": "The scientific question is answered decisively at year granularity and the interpretation Task 17 attacked is confirmed indefensible. Task 17's supporting structural argument is refuted rather than verified. Month granularity was not executable here and has since been supplied by the user-side audit, whose figures are recorded as reported rather than independently verified.",
+  "month_level_result_reported_by_audit": {
+    "provenance": "REPORTED_BY_USER_AUDIT; executed on the machine holding the private arrays with a corrected script. NOT independently verified in this environment.",
+    "within_month_payoff_auc_M1": 0.56014,
+    "within_month_payoff_auc_M2": 0.55974,
+    "within_month_gain": -0.0004,
+    "supported_months": 55,
+    "excluded_sparse_months": 31,
+    "total_months": 86,
+    "reconciles_with_year_level": "Consistent in direction and magnitude with the year-level finding. At month granularity the within-period gain is marginally NEGATIVE rather than marginally positive, so the conclusion that there is no material within-period discrimination gain is strengthened.",
+    "support_caveat": "31 of 86 months are excluded under the frozen 20-event support rule, so the within-month estimate covers 55 months. Excluded months' within-month pairs must be held in a separate bucket and not folded into the between-month residual.",
+    "effect_on_classification": "WITHIN_PERIOD_GAIN_NEGLIGIBLE retained; sign now marginally negative."
+  }
 }
