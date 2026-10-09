@@ -32,9 +32,18 @@ def raw_sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="2019-01",
-                  seed=7, with_registration=True, break_continuity=False,
-                  corrupt_prediction=False, shift_predictions=False) -> Path:
+def build_fixture(
+    tmp_path: Path,
+    *,
+    n_facilities=60,
+    months_each=30,
+    start="2019-01",
+    seed=7,
+    with_registration=True,
+    break_continuity=False,
+    corrupt_prediction=False,
+    shift_predictions=False,
+) -> Path:
     """Create a synthetic repository with a self-consistent hash chain."""
     rng = np.random.default_rng(seed)
     root = tmp_path / "repo"
@@ -71,7 +80,9 @@ def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="201
     def softmax_payoff(logit):
         payoff_odds = np.exp(logit)
         total = 1.0 + 0.01 + payoff_odds
-        return np.column_stack([1.0 / total, np.full(len(logit), 0.01) / total, payoff_odds / total])
+        return np.column_stack(
+            [1.0 / total, np.full(len(logit), 0.01) / total, payoff_odds / total]
+        )
 
     m1 = softmax_payoff(-2.0 + 0.35 * latent)
     month_shift = np.where(steps < 12, 1.4, -1.1)
@@ -103,7 +114,9 @@ def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="201
     seen = np.isin(evaluation["vintage"], [2006, 2010])
     pooled1 = float(roc_auc_score(evaluation["event"][seen] == PAYOFF, m1[seen][:, PAYOFF]))
     pooled2 = float(roc_auc_score(evaluation["event"][seen] == PAYOFF, m2[seen][:, PAYOFF]))
-    ids, starts, counts = np.unique(evaluation["facility"][seen], return_index=True, return_counts=True)
+    ids, starts, counts = np.unique(
+        evaluation["facility"][seen], return_index=True, return_counts=True
+    )
     entry = evaluation["month"][seen][starts]
     horizons = [12, 24, 36, 60]
     report = {
@@ -121,7 +134,9 @@ def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="201
             "landmarks": len(ids),
             "horizons": {
                 str(h): {
-                    "calendar_truncated_landmarks": int(np.count_nonzero(entry + h - 1 > CUTOFF_ORDINAL))
+                    "calendar_truncated_landmarks": int(
+                        np.count_nonzero(entry + h - 1 > CUTOFF_ORDINAL)
+                    )
                 }
                 for h in horizons
             },
@@ -131,7 +146,9 @@ def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="201
         json.dumps(report, indent=2), encoding="utf-8"
     )
     (root / "docs/track_b/macro_competing_risk_protocol.json").write_text(
-        json.dumps({"splits": {"primary_vintages": [2006, 2010]}, "cif": {"horizons": horizons}}, indent=2),
+        json.dumps(
+            {"splits": {"primary_vintages": [2006, 2010]}, "cif": {"horizons": horizons}}, indent=2
+        ),
         encoding="utf-8",
     )
     if with_registration:
@@ -144,7 +161,9 @@ def build_fixture(tmp_path: Path, *, n_facilities=60, months_each=30, start="201
 def run(root: Path, *extra, cwd=None):
     return subprocess.run(
         [sys.executable, str(SCRIPT), "--root", str(root), *extra],
-        capture_output=True, text=True, cwd=str(cwd or root),
+        capture_output=True,
+        text=True,
+        cwd=str(cwd or root),
     )
 
 
@@ -268,7 +287,9 @@ def test_wrong_root_is_refused(tmp_path):
     assert result.returncode == 0  # explicit --root still works from anywhere
     bad = subprocess.run(
         [sys.executable, str(SCRIPT), "--root", str(outside)],
-        capture_output=True, text=True, cwd=str(outside),
+        capture_output=True,
+        text=True,
+        cwd=str(outside),
     )
     assert bad.returncode != 0
     assert "not the repository root" in bad.stderr
@@ -290,14 +311,21 @@ def test_auto_location_refuses_when_copied_outside_a_repository(tmp_path):
 
 
 def test_script_in_repo_locates_root_from_any_cwd(tmp_path):
-    """Running the in-repo script from an unrelated cwd resolves the real repository."""
+    """Root lookup is synthetic-only even when real research arrays exist locally."""
+    synthetic = tmp_path / "repo"
+    for name in ["src/credit_risk", "reports/track_b", "scripts"]:
+        (synthetic / name).mkdir(parents=True, exist_ok=True)
+    (synthetic / "pyproject.toml").write_text("[project]\nname='fixture'\n")
+    copied = synthetic / "scripts/task18_local_closure.py"
+    copied.write_bytes(SCRIPT.read_bytes())
     outside = tmp_path / "unrelated"
     outside.mkdir()
     result = subprocess.run(
-        [sys.executable, str(SCRIPT), "--root", str(ROOT)],
-        capture_output=True, text=True, cwd=str(outside),
+        [sys.executable, str(copied)],
+        capture_output=True,
+        text=True,
+        cwd=str(outside),
     )
-    # the real private directory is absent here, so it must refuse for that reason
     assert result.returncode != 0
     assert "frozen model directory not found" in result.stderr
 
@@ -379,8 +407,14 @@ def test_entry_distribution_reconciles_with_truncation_counts(tmp_path):
     assert sa06["landmark_reconciliation"]["matches"] is True
     for record in sa06["per_horizon_truncation_check"].values():
         assert record["matches"] is True
-    assert sum(sa06["entry_month_distribution"].values()) == sa06["landmark_reconciliation"]["computed_landmarks"]
-    assert sum(sa06["entry_year_distribution"].values()) == sa06["landmark_reconciliation"]["computed_landmarks"]
+    assert (
+        sum(sa06["entry_month_distribution"].values())
+        == sa06["landmark_reconciliation"]["computed_landmarks"]
+    )
+    assert (
+        sum(sa06["entry_year_distribution"].values())
+        == sa06["landmark_reconciliation"]["computed_landmarks"]
+    )
 
 
 # ----------------------------------------------------------------- integrity

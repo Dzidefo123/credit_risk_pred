@@ -99,9 +99,12 @@ def locate_root(explicit: str | None) -> pathlib.Path:
         if missing:
             fail(f"--root {root} is not the repository root; missing {missing}")
         return root
-    for candidate in [pathlib.Path.cwd().resolve(), *pathlib.Path.cwd().resolve().parents,
-                      pathlib.Path(__file__).resolve().parent,
-                      *pathlib.Path(__file__).resolve().parents]:
+    for candidate in [
+        pathlib.Path.cwd().resolve(),
+        *pathlib.Path.cwd().resolve().parents,
+        pathlib.Path(__file__).resolve().parent,
+        *pathlib.Path(__file__).resolve().parents,
+    ]:
         if all((candidate / m).exists() for m in MARKERS):
             return candidate
     fail(
@@ -148,7 +151,7 @@ def verify_inputs(root: pathlib.Path, skip_registration: bool) -> dict:
         fail(
             f"Task 18 registration not found at {REGISTRATION_RELATIVE}.\n"
             "  It is committed on the branch carrying Task 18 (commit fde602d or later). If this\n"
-            "  clone predates that commit, fetch it, or pass --no-registration to proceed with the\n"
+            "  clone predates that commit, fetch it, or use --no-registration for an\n"
             "  run explicitly marked as uncovered."
         )
 
@@ -303,11 +306,14 @@ def sa01_month(evaluation, m1, m2, seen, frozen) -> dict:
 
     aggregates = {}
     for key, pooled in (("M1", pooled1), ("M2", pooled2)):
-        pair_weighted = sum(r["within_pairs"] * r[f"{key}_payoff_auc"] for r in rows) / eligible_pairs
+        pair_weighted = (
+            sum(r["within_pairs"] * r[f"{key}_payoff_auc"] for r in rows) / eligible_pairs
+        )
         aggregates[key] = {
             "pooled": pooled,
             "within_month_eligible_pair_weighted": pair_weighted,
-            "within_month_eligible_equal_weighted": sum(r[f"{key}_payoff_auc"] for r in rows) / len(rows),
+            "within_month_eligible_equal_weighted": sum(r[f"{key}_payoff_auc"] for r in rows)
+            / len(rows),
         }
     gain_pooled = aggregates["M2"]["pooled"] - aggregates["M1"]["pooled"]
     gain_within = (
@@ -335,7 +341,7 @@ def sa01_month(evaluation, m1, m2, seen, frozen) -> dict:
         "eligible_within_pair_weight": weight_within,
         "note": (
             "contribution_share is pair-weighted. The final ratio is a magnitude comparison and is "
-            "NOT a contribution share. A between-month stratum AUC is deliberately not solved here, "
+            "NOT a contribution share. A between-month AUC is not solved here, "
             "because the residual contains two buckets and attributing it wholly to between-month "
             "comparisons would mislabel it."
         ),
@@ -428,7 +434,10 @@ def reconciliation_failures(out: dict) -> list[str]:
                 f"SA06 truncation count at horizon {horizon} does not match the frozen report "
                 f"(computed {record['computed_truncated']}, frozen {record['frozen_truncated']})"
             )
-    if out["population"]["seen_vintage_intervals"] != out["population"]["frozen_seen_vintage_intervals"]:
+    if (
+        out["population"]["seen_vintage_intervals"]
+        != out["population"]["frozen_seen_vintage_intervals"]
+    ):
         failures.append("seen-vintage interval count does not match the frozen split counts")
     return failures
 
@@ -492,30 +501,45 @@ def main() -> None:
 
     sa01, sa06 = out["SA01_month"], out["SA06_entry"]
     print(f"wrote {path.relative_to(root)}\n")
-    print(f"verification chain: ledger {verified['chain']['ledger']['matches']}, "
-          f"risk array {verified['chain']['risk_array']['matches']}, "
-          f"predictions {all(v['matches'] for v in verified['chain']['predictions'].values())}")
+    print(
+        f"verification chain: ledger {verified['chain']['ledger']['matches']}, "
+        f"risk array {verified['chain']['risk_array']['matches']}, "
+        f"predictions {all(v['matches'] for v in verified['chain']['predictions'].values())}"
+    )
     if sa01.get("status") == "EXECUTED":
         gains, pairs = sa01["gains"], sa01["pair_structure"]
-        print(f"\nSA01-M  eligible months {sa01['eligible_months']} "
-              f"(excluded {sa01['excluded_month_count']})")
-        print(f"  within-month M1 {sa01['aggregates']['M1']['within_month_eligible_pair_weighted']:.5f}"
-              f"  M2 {sa01['aggregates']['M2']['within_month_eligible_pair_weighted']:.5f}")
-        print(f"  within-month stratum gain {gains['within_month_stratum_gain_pair_weighted']:+.5f}")
+        print(
+            f"\nSA01-M  eligible months {sa01['eligible_months']} "
+            f"(excluded {sa01['excluded_month_count']})"
+        )
+        aggregate = sa01["aggregates"]
+        print(
+            f"  within-month M1 {aggregate['M1']['within_month_eligible_pair_weighted']:.5f}"
+            f"  M2 {aggregate['M2']['within_month_eligible_pair_weighted']:.5f}"
+        )
+        print(
+            f"  within-month stratum gain {gains['within_month_stratum_gain_pair_weighted']:+.5f}"
+        )
         share = gains["within_month_contribution_share"]
         print(
             "  within-month contribution share "
             + (f"{share:+.5f}" if share is not None else "undefined (pooled gain is zero)")
         )
-        print(f"  pair buckets: eligible {pairs['within_month_pairs_eligible']:,} | "
-              f"excluded {pairs['within_month_pairs_excluded']:,} | "
-              f"between {pairs['between_month_pairs']:,}")
+        print(
+            f"  pair buckets: eligible {pairs['within_month_pairs_eligible']:,} | "
+            f"excluded {pairs['within_month_pairs_excluded']:,} | "
+            f"between {pairs['between_month_pairs']:,}"
+        )
         print(f"  -> {sa01['interpretation']}")
-    print(f"\nSA06-H  entry {sa06['earliest_entry']} .. {sa06['latest_entry']} "
-          f"({sa06['span_months']} months, {sa06['distinct_entry_months']} distinct)")
-    print(f"  median {sa06['median_entry']}; modal month {sa06['modal_month']} "
-          f"({sa06['share_in_modal_month']:.4f}); modal year {sa06['modal_year']} "
-          f"({sa06['share_in_modal_year']:.4f})")
+    print(
+        f"\nSA06-H  entry {sa06['earliest_entry']} .. {sa06['latest_entry']} "
+        f"({sa06['span_months']} months, {sa06['distinct_entry_months']} distinct)"
+    )
+    print(
+        f"  median {sa06['median_entry']}; modal month {sa06['modal_month']} "
+        f"({sa06['share_in_modal_month']:.4f}); modal year {sa06['modal_year']} "
+        f"({sa06['share_in_modal_year']:.4f})"
+    )
     print("\nReconciliation clean. Review the JSON, then attach it to the conversation.")
 
 

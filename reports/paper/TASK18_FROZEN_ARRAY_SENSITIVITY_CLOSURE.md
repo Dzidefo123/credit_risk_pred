@@ -269,8 +269,8 @@ No macro data was acquired. CG06 remains PARTIALLY_RESOLVED.
 
 - `MACRO_DELTA_FACILITY_JOINT_LOG_LOSS` — the per-year decomposition reconciles to 2.7×10⁻¹⁵, confirming the frozen delta's internal consistency.
 - `MACRO_CIF_24_SUPPORT` — entry concentration is now derived rather than inferred.
-- `MACRO_PRIMARY_M2_PAYOFF_BRIER` / `MACRO_CAL_M2_PAYOFF` — SA01 supplies the mechanism (2020 over-prediction, 56× spread) that was previously only an association.
-- The study's **methodological** contribution is strengthened: the AUC-versus-proper-score contrast now has an identified numerical cause rather than being two co-occurring observations.
+- `MACRO_PRIMARY_M2_PAYOFF_BRIER` / `MACRO_CAL_M2_PAYOFF` — SA01 verifies the decomposition and supports a diagnostic hypothesis involving 2020 over-prediction and the 56× spread; it does not establish the mechanism.
+- The study's **diagnostic** interpretation is sharpened: the verified decomposition and calendar overprediction suggest a candidate account of the AUC-versus-proper-score contrast, without identifying a unique numerical cause.
 
 ## S. Claims narrowed
 

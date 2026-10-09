@@ -1,0 +1,59 @@
+{
+  "task": "Task 17/18 bundle integration",
+  "date": "2026-10-08",
+  "base_commit": "a4479ba4be115bc9a1d4b53ab77e258b40bd57c7",
+  "bundle_sha256": "c6e583986ded5d226089452432950b05750280ed9969b5488db4da2cf0455d12",
+  "imported_commits": [
+    "b64c20f2ab7f8779e2b1eb233deebd35da2c2645",
+    "fde602d",
+    "7ea0bb4ef06c2104f628034293f26345ac7dbf76"
+  ],
+  "imported_files": 21,
+  "integration_changes": [
+    "Format Task 18 script and tests to existing Ruff rules; replace a test lambda with a named function.",
+    "Make root-resolution regression synthetic-only, independent of real private artifact availability.",
+    "Keep the Task 18 mechanism as a diagnostic hypothesis in claims-strengthened wording; add regression against stale identified-cause claim."
+  ],
+  "tests": {
+    "targeted_passed": 107,
+    "targeted_seconds": 80.47,
+    "full_passed": 1372,
+    "full_failed": 0,
+    "warnings": 4,
+    "full_seconds": 171.53,
+    "report_followup_passed": 45,
+    "lint": "PASSED",
+    "format": "PASSED",
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "git_diff_check": "PASSED"
+  },
+  "preservation": {
+    "public_prior_files_checked": 562,
+    "existing_approved_engineering_exceptions": 6,
+    "private_frozen_hashes_checked": 366,
+    "frozen_refs_unchanged": 2,
+    "numeric_bindings_unchanged": 123,
+    "protected_paths_modified": [],
+    "frozen_data_models_protocols_manuscripts_unchanged": true,
+    "retained_historical_metrics": {
+      "auc": 0.868152,
+      "brier": 0.048545,
+      "log_loss": 0.17603,
+      "new_evaluation": false
+    }
+  },
+  "registration": {
+    "path": "reports/paper/task18_analysis_registration.json",
+    "sha256_lf": "b78aa2b0f63c620d6890efe203d6da811a887bd8a2697dd5a64d2a7bcfcefbed",
+    "matches_recorded_hash": true,
+    "within_commit_creation_chronology_not_independently_proven": true
+  },
+  "no_new_model_or_source_data_analysis": true,
+  "private_datasets_not_staged": true,
+  "local_closure_output_not_staged": true,
+  "prior_history_preserved": true,
+  "hosted_ci": "NOT_YET_VERIFIED",
+  "push_authorized_by_user": true
+}

@@ -166,7 +166,8 @@ def test_sa01_auc_decomposition_identity_holds(macro):
     total_k = sum(calendar[y]["M1"]["payoffs"] for y in calendar)
     total_pairs = total_k * (total_n - total_k)
     within_pairs = sum(
-        calendar[y]["M1"]["payoffs"] * (calendar[y]["M1"]["intervals"] - calendar[y]["M1"]["payoffs"])
+        calendar[y]["M1"]["payoffs"]
+        * (calendar[y]["M1"]["intervals"] - calendar[y]["M1"]["payoffs"])
         for y in calendar
     )
     assert sa01["pair_structure"]["total_case_control_pairs"] == total_pairs
@@ -184,7 +185,9 @@ def test_sa01_auc_decomposition_identity_holds(macro):
         )
         pooled = macro["primary"][model]["scores"]["payoff_auc"]
         between = (pooled * total_pairs - within_pairs * within) / (total_pairs - within_pairs)
-        assert sa01["aggregates"][model]["within_year_pair_weighted"] == pytest.approx(within, abs=1e-12)
+        assert sa01["aggregates"][model]["within_year_pair_weighted"] == pytest.approx(
+            within, abs=1e-12
+        )
         assert sa01["aggregates"][model]["between_year_solved"] == pytest.approx(between, abs=1e-12)
         assert 0.0 <= between <= 1.0
 
@@ -192,7 +195,9 @@ def test_sa01_auc_decomposition_identity_holds(macro):
 def test_sa01_between_period_dominates():
     sa01 = read("reports/paper/task18_sa01_within_period_auc.json")
     gains = sa01["gains"]
-    assert gains["between_year_stratum_gain_solved"] > gains["within_year_stratum_gain_pair_weighted"]
+    assert (
+        gains["between_year_stratum_gain_solved"] > gains["within_year_stratum_gain_pair_weighted"]
+    )
     assert gains["within_year_contribution_share"] < 0.05
     assert gains["between_year_contribution_share"] > 0.95
     assert sa01["pair_structure"]["between_year_pair_share"] > 0.8
@@ -213,7 +218,9 @@ def test_sa01_contribution_shares_are_pair_weighted_and_sum_to_one():
     shares = gains["within_year_contribution_share"] + gains["between_year_contribution_share"]
     assert shares == pytest.approx(1.0, abs=1e-12)
     # the magnitude ratio must survive under a name that cannot be mistaken for a share
-    assert gains["within_stratum_gain_as_fraction_of_pooled_gain"] == pytest.approx(g_in / g_po, abs=1e-12)
+    assert gains["within_stratum_gain_as_fraction_of_pooled_gain"] == pytest.approx(
+        g_in / g_po, abs=1e-12
+    )
     assert "within_share_of_pooled_gain" not in gains
 
 
@@ -293,8 +300,11 @@ def test_sa01_structural_counterexample_is_arithmetically_correct():
     f1, f2 = (0.0, 0.0), (-1.0, -10.0)
     assert h_payoff(*f1, 0.0, 0.0) > h_payoff(*f2, 0.0, 0.0)
     assert h_payoff(*f1, 0.0, 10.0) < h_payoff(*f2, 0.0, 10.0)
+
     # contrast: a single binary logit IS rank invariant
-    sigmoid = lambda z: 1 / (1 + math.exp(-z))
+    def sigmoid(z):
+        return 1 / (1 + math.exp(-z))
+
     for shift in (0.0, 10.0):
         assert sigmoid(0.0 + shift) > sigmoid(-1.0 + shift)
 
@@ -358,7 +368,9 @@ def test_sa02_respects_the_pandemic_interpretation_rule():
     sa02 = read("reports/paper/task18_sa02_calendar_decomposition.json")
     interpretation = sa02["interpretation"]
     assert any("not exclusive to 2020" in s for s in interpretation["permitted_and_supported"])
-    assert any("COVID caused the failure" in s for s in interpretation["prohibited_and_not_asserted"])
+    assert any(
+        "COVID caused the failure" in s for s in interpretation["prohibited_and_not_asserted"]
+    )
     assert "NOT_SUPPORTED" in interpretation["task11_distinction_preserved"]
     diagnostics = read("reports/track_b/macro_signal_attribution_stability.json")
     assert diagnostics["assessment"]["hypothesis_register"]["H7"]["status"] == "NOT_SUPPORTED"
@@ -437,9 +449,7 @@ def test_sa06_entry_bound_matches_the_frozen_exclusion_mask(macro):
         assert label(cutoff - int(horizon) + 1) == expected, horizon
     assert sa06["derivation_upper_bound"]["entry_bound"].endswith(per_horizon["60"])
     start = ordinal("2019-01")
-    assert sa06["derivation_upper_bound"]["permitted_entry_months"] == (
-        cutoff - 60 + 1 - start + 1
-    )
+    assert sa06["derivation_upper_bound"]["permitted_entry_months"] == (cutoff - 60 + 1 - start + 1)
     for horizon in ("12", "24", "36", "60"):
         assert macro["cif"]["horizons"][horizon]["calendar_truncated_landmarks"] == 0
 
@@ -487,7 +497,10 @@ def test_facility_and_calendar_uncertainty_distinguished(macro, results):
     assert macro["paired_facility"]["conditional_on_realized_calendar"] is True
     assert macro["paired_calendar"]["conditional_on_realized_calendar"] is False
     assert "conditional on the realised calendar" in hierarchy["verified_wording"]
-    assert "Neither establishes broad macroeconomic sampling uncertainty" in hierarchy["verified_wording"]
+    assert (
+        "Neither establishes broad macroeconomic sampling uncertainty"
+        in hierarchy["verified_wording"]
+    )
     assert hierarchy["level_3_macro_sampling"]["estimates"].startswith("Not estimated")
 
 
@@ -594,3 +607,11 @@ def test_preprint_gate_recorded(results, report_text):
     }
     assert results["preprint_analysis_gate"] in report_text
     assert "does not mean the manuscript is ready" in results["gate_caveat"]
+
+
+def test_report_does_not_upgrade_diagnostic_hypothesis_to_identified_cause():
+    report = (ROOT / "reports/paper/TASK18_FROZEN_ARRAY_SENSITIVITY_CLOSURE.md").read_text(
+        encoding="utf-8"
+    )
+    assert "now has an identified numerical cause" not in report
+    assert "without identifying a unique numerical cause" in report
