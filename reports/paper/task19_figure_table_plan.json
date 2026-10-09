@@ -1,0 +1,107 @@
+{
+  "status": "SPECIFICATIONS_ONLY_NO_FIGURES_GENERATED",
+  "interpolation_or_new_predictions": false,
+  "figures": [
+    {
+      "figure_id": "F1",
+      "title": "Study design and temporal/vintage structure",
+      "specification": "Timeline and facility-disjoint roles; dates are source protocol fields.",
+      "sources": [
+        "reports/track_b/macro_competing_risk_validation.json#/protocol/splits"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    },
+    {
+      "figure_id": "F2",
+      "title": "Development and seen temporal probability scores",
+      "specification": "Paired M1/M2 bars; development fit separate from temporal score; fixed-model intervals.",
+      "sources": [
+        "reports/track_b/macro_competing_risk_validation.json#/development",
+        "reports/track_b/macro_competing_risk_validation.json#/primary"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    },
+    {
+      "figure_id": "F3",
+      "title": "Calendar contribution to joint-loss difference",
+      "specification": "Retained yearly delta, interval weights and full-denominator contributions; 2020 concentration.",
+      "sources": [
+        "reports/paper/task18_sa02_calendar_decomposition.json#/per_year"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    },
+    {
+      "figure_id": "F4",
+      "title": "Pooled versus within-period payoff discrimination",
+      "specification": "Year pair decomposition with actual weights; month eligible subset separate, never joined as same population.",
+      "sources": [
+        "reports/paper/task18_sa01_within_period_auc.json#/aggregates",
+        "reports/paper/task19_evidence/local_closure_output.json#/SA01_month"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    },
+    {
+      "figure_id": "F5",
+      "title": "Seen versus unseen transport",
+      "specification": "Metric vector for both populations; loss direction reversal and contrary Brier/default-AUC comparisons.",
+      "sources": [
+        "reports/track_b/macro_competing_risk_validation.json#/primary",
+        "reports/track_b/macro_competing_risk_validation.json#/unseen_vintage"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    },
+    {
+      "figure_id": "F6",
+      "title": "Conditional-entry historical CIF",
+      "specification": "All horizons and both causes; concentration in admitted entry histogram; historical information, no prospective forecast or independent replication.",
+      "sources": [
+        "reports/track_b/macro_competing_risk_validation.json#/cif/horizons",
+        "reports/paper/task19_evidence/local_closure_output.json#/SA06_entry"
+      ],
+      "can_render_from_retained_public_aggregates": true,
+      "requires_private_records": false
+    }
+  ],
+  "tables": [
+    {
+      "table_id": "A",
+      "title": "Cohort populations",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "B",
+      "title": "Development and temporal scores",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "C",
+      "title": "Calendar decomposition",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "D",
+      "title": "Year-level discrimination decomposition",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "E",
+      "title": "Seen/unseen comparison",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "F",
+      "title": "All CIF horizons and both causes",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    },
+    {
+      "table_id": "G",
+      "title": "Facility versus calendar uncertainty",
+      "status": "RENDERED_IN_MANUSCRIPT_FROM_BOUND_FIELDS"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "new_analysis": false,
+  "method": "Deterministic metadata extraction and count from retained summaries; no array access",
+  "non2020_positive": 6,
+  "excluded_months": 31,
+  "dominant_path_end": "2020-12",
+  "sources": [
+    "reports/paper/task18_sa02_calendar_decomposition.json",
+    "reports/paper/task19_evidence/local_closure_output.json"
+  ]
+}

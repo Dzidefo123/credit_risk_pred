@@ -1,0 +1,33 @@
+{
+  "status": "PASSED_WITH_SUPPORT_QUALIFICATION",
+  "classification": "AUTHORIZED_POST_HOC_FROZEN_ARRAY_CLOSURE",
+  "original_task18_registration_verified": false,
+  "repository_commit": "a4479ba4be115bc9a1d4b53ab77e258b40bd57c7",
+  "synthetic_tests": {
+    "passed": 14,
+    "failed": 0,
+    "seconds": 3.59
+  },
+  "lint": "PASSED",
+  "format": "PASSED",
+  "all_three_input_hashes_checked_before_and_after": true,
+  "task16_public_preservation": {
+    "prior_public_files": 562,
+    "approved_engineering_exceptions": 6,
+    "tags_unchanged": 2
+  },
+  "final_private_preservation_hashes_checked": 366,
+  "numeric_bindings_unchanged": 123,
+  "manuscripts_unchanged": true,
+  "repository_status": "",
+  "models_fitted": false,
+  "predictions_regenerated": false,
+  "new_source_outcomes_opened": false,
+  "Fannie_accessed": false,
+  "holdout_ledger_modified": false,
+  "committed": false,
+  "pushed": false,
+  "output_sha256": "7a1be6c52f9e81ed8ff11ba2f2088a6c5fc112b0550e026366b56bcbe35e3102",
+  "registration_sha256": "dc011baa90e1736e662fa2de956c365dbef7cc1167177abce45a65ad9c36cdf2",
+  "script_sha256": "188f239f78c27a951632bec9ba5dc7a4135bb7d2c3a33d80cf7c72bc7acde4de"
+}

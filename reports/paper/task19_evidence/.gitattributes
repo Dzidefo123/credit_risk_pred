@@ -1,0 +1,4 @@
+# Preserve the byte-hashed admission chain across LF/CRLF checkouts.
+local_closure_*.json -text whitespace=cr-at-eol
+local_closure_*.sha256 -text whitespace=cr-at-eol
+local_closure_script.py -text whitespace=cr-at-eol

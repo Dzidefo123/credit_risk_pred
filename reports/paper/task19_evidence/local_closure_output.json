@@ -1,0 +1,865 @@
+{
+  "version": "task18-local-closure-corrected-v2",
+  "classification": "AUTHORIZED_POST_HOC_FROZEN_ARRAY_CLOSURE",
+  "registration_sha256": "dc011baa90e1736e662fa2de956c365dbef7cc1167177abce45a65ad9c36cdf2",
+  "inputs_verified": {
+    "data/track_b/models/macro_hazard_v1/evaluation.npy": "409260c6b6aad226577fea0bec90989b3f5045547fb54580a593b2b3006d573b",
+    "data/track_b/models/macro_hazard_v1/M1_evaluation.npy": "fd48582539ac9abc0a0bbf538901af525920aa36a7a65aea0ba75e51f43f817c",
+    "data/track_b/models/macro_hazard_v1/M2_evaluation.npy": "2e6ede15c5d3422b4a41d98c340eded08add18aa0a4d0f13ee5ac8228c10b799"
+  },
+  "population": {
+    "facilities": 5619,
+    "intervals": 248939,
+    "defaults": 280,
+    "payoffs": 3823
+  },
+  "SA01_month": {
+    "status": "EXECUTED",
+    "full_primary_auc_reconciled": {
+      "M1": 0.5654257013618629,
+      "M2": 0.625867954528649
+    },
+    "eligible_months": 55,
+    "excluded_months": [
+      {
+        "month": "2022-10",
+        "cases": 18,
+        "controls": 2201,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2022-11",
+        "cases": 14,
+        "controls": 2185,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-01",
+        "cases": 18,
+        "controls": 2143,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-02",
+        "cases": 9,
+        "controls": 2133,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-05",
+        "cases": 16,
+        "controls": 2074,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-07",
+        "cases": 17,
+        "controls": 2033,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-08",
+        "cases": 15,
+        "controls": 2018,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-11",
+        "cases": 17,
+        "controls": 1952,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2023-12",
+        "cases": 16,
+        "controls": 1935,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-01",
+        "cases": 15,
+        "controls": 1917,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-02",
+        "cases": 12,
+        "controls": 1904,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-03",
+        "cases": 18,
+        "controls": 1886,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-04",
+        "cases": 19,
+        "controls": 1867,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-05",
+        "cases": 11,
+        "controls": 1856,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-06",
+        "cases": 13,
+        "controls": 1842,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-07",
+        "cases": 18,
+        "controls": 1824,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-08",
+        "cases": 16,
+        "controls": 1807,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-10",
+        "cases": 14,
+        "controls": 1768,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2024-11",
+        "cases": 11,
+        "controls": 1757,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-01",
+        "cases": 13,
+        "controls": 1724,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-02",
+        "cases": 8,
+        "controls": 1714,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-03",
+        "cases": 15,
+        "controls": 1696,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-04",
+        "cases": 19,
+        "controls": 1677,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-05",
+        "cases": 18,
+        "controls": 1657,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-06",
+        "cases": 13,
+        "controls": 1644,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-07",
+        "cases": 12,
+        "controls": 1631,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-09",
+        "cases": 17,
+        "controls": 1593,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-11",
+        "cases": 16,
+        "controls": 1547,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2025-12",
+        "cases": 15,
+        "controls": 1532,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2026-01",
+        "cases": 11,
+        "controls": 1521,
+        "reason": "Frozen 20-event/class AUC support rule"
+      },
+      {
+        "month": "2026-02",
+        "cases": 15,
+        "controls": 1504,
+        "reason": "Frozen 20-event/class AUC support rule"
+      }
+    ],
+    "per_month": [
+      {
+        "month": "2019-01",
+        "cases": 53,
+        "controls": 5511,
+        "intervals": 5564,
+        "within_pairs": 292083,
+        "M1_auc": 0.5515795167811889,
+        "M2_auc": 0.5532126142226697,
+        "gap": 0.0016330974414807686
+      },
+      {
+        "month": "2019-02",
+        "cases": 40,
+        "controls": 5468,
+        "intervals": 5508,
+        "within_pairs": 218720,
+        "M1_auc": 0.5570638258961229,
+        "M2_auc": 0.5545674835405998,
+        "gap": -0.0024963423555230957
+      },
+      {
+        "month": "2019-03",
+        "cases": 53,
+        "controls": 5407,
+        "intervals": 5460,
+        "within_pairs": 286571,
+        "M1_auc": 0.47000917748132226,
+        "M2_auc": 0.4716527492314296,
+        "gap": 0.00164357175010732
+      },
+      {
+        "month": "2019-04",
+        "cases": 59,
+        "controls": 5348,
+        "intervals": 5407,
+        "within_pairs": 315532,
+        "M1_auc": 0.5649981618346158,
+        "M2_auc": 0.5589385545681579,
+        "gap": -0.006059607266457934
+      },
+      {
+        "month": "2019-05",
+        "cases": 75,
+        "controls": 5293,
+        "intervals": 5368,
+        "within_pairs": 396975,
+        "M1_auc": 0.4930763902008943,
+        "M2_auc": 0.4919025127526922,
+        "gap": -0.0011738774482020764
+      },
+      {
+        "month": "2019-06",
+        "cases": 61,
+        "controls": 5230,
+        "intervals": 5291,
+        "within_pairs": 319030,
+        "M1_auc": 0.5631100523461743,
+        "M2_auc": 0.5609159013258942,
+        "gap": -0.0021941510202800885
+      },
+      {
+        "month": "2019-07",
+        "cases": 72,
+        "controls": 5155,
+        "intervals": 5227,
+        "within_pairs": 371160,
+        "M1_auc": 0.5597801487229227,
+        "M2_auc": 0.5546368143118872,
+        "gap": -0.005143334411035538
+      },
+      {
+        "month": "2019-08",
+        "cases": 81,
+        "controls": 5073,
+        "intervals": 5154,
+        "within_pairs": 410913,
+        "M1_auc": 0.49688376858361744,
+        "M2_auc": 0.500918685950554,
+        "gap": 0.0040349173669365634
+      },
+      {
+        "month": "2019-09",
+        "cases": 60,
+        "controls": 5028,
+        "intervals": 5088,
+        "within_pairs": 301680,
+        "M1_auc": 0.4499867409175285,
+        "M2_auc": 0.4477360116679926,
+        "gap": -0.002250729249535899
+      },
+      {
+        "month": "2019-10",
+        "cases": 59,
+        "controls": 4972,
+        "intervals": 5031,
+        "within_pairs": 293348,
+        "M1_auc": 0.5826185963429102,
+        "M2_auc": 0.574764443596002,
+        "gap": -0.00785415274690826
+      },
+      {
+        "month": "2019-11",
+        "cases": 58,
+        "controls": 4911,
+        "intervals": 4969,
+        "within_pairs": 284838,
+        "M1_auc": 0.6246743763121494,
+        "M2_auc": 0.624993856156833,
+        "gap": 0.00031947984468361224
+      },
+      {
+        "month": "2019-12",
+        "cases": 67,
+        "controls": 4842,
+        "intervals": 4909,
+        "within_pairs": 324414,
+        "M1_auc": 0.5722656852047076,
+        "M2_auc": 0.5689427706572466,
+        "gap": -0.00332291454746092
+      },
+      {
+        "month": "2020-01",
+        "cases": 53,
+        "controls": 4791,
+        "intervals": 4844,
+        "within_pairs": 253923,
+        "M1_auc": 0.5409277615655139,
+        "M2_auc": 0.5349456331250024,
+        "gap": -0.005982128440511492
+      },
+      {
+        "month": "2020-02",
+        "cases": 50,
+        "controls": 4739,
+        "intervals": 4789,
+        "within_pairs": 236950,
+        "M1_auc": 0.5255370331293522,
+        "M2_auc": 0.5183751846381093,
+        "gap": -0.007161848491242906
+      },
+      {
+        "month": "2020-03",
+        "cases": 64,
+        "controls": 4673,
+        "intervals": 4737,
+        "within_pairs": 299072,
+        "M1_auc": 0.6104817569013481,
+        "M2_auc": 0.6036773753477424,
+        "gap": -0.006804381553605743
+      },
+      {
+        "month": "2020-04",
+        "cases": 103,
+        "controls": 4570,
+        "intervals": 4673,
+        "within_pairs": 470710,
+        "M1_auc": 0.5917125193856091,
+        "M2_auc": 0.5878375220411718,
+        "gap": -0.003874997344437303
+      },
+      {
+        "month": "2020-05",
+        "cases": 90,
+        "controls": 4476,
+        "intervals": 4566,
+        "within_pairs": 402840,
+        "M1_auc": 0.6138715122629332,
+        "M2_auc": 0.6136034157481878,
+        "gap": -0.0002680965147454639
+      },
+      {
+        "month": "2020-06",
+        "cases": 121,
+        "controls": 4349,
+        "intervals": 4470,
+        "within_pairs": 526229,
+        "M1_auc": 0.5501179144440919,
+        "M2_auc": 0.5561343065471496,
+        "gap": 0.0060163921030577105
+      },
+      {
+        "month": "2020-07",
+        "cases": 120,
+        "controls": 4148,
+        "intervals": 4268,
+        "within_pairs": 497760,
+        "M1_auc": 0.5959056573449052,
+        "M2_auc": 0.5972155255544841,
+        "gap": 0.0013098682095789016
+      },
+      {
+        "month": "2020-08",
+        "cases": 88,
+        "controls": 4031,
+        "intervals": 4119,
+        "within_pairs": 354728,
+        "M1_auc": 0.5915236462867324,
+        "M2_auc": 0.5858347804515008,
+        "gap": -0.005688865835231538
+      },
+      {
+        "month": "2020-09",
+        "cases": 109,
+        "controls": 3909,
+        "intervals": 4018,
+        "within_pairs": 426081,
+        "M1_auc": 0.603066083678925,
+        "M2_auc": 0.5969451817846841,
+        "gap": -0.00612090189424086
+      },
+      {
+        "month": "2020-10",
+        "cases": 123,
+        "controls": 3776,
+        "intervals": 3899,
+        "within_pairs": 464448,
+        "M1_auc": 0.5988162291580543,
+        "M2_auc": 0.6052755098525562,
+        "gap": 0.006459280694501857
+      },
+      {
+        "month": "2020-11",
+        "cases": 103,
+        "controls": 3665,
+        "intervals": 3768,
+        "within_pairs": 377495,
+        "M1_auc": 0.5775467224731453,
+        "M2_auc": 0.5806672936065378,
+        "gap": 0.00312057113339248
+      },
+      {
+        "month": "2020-12",
+        "cases": 122,
+        "controls": 3536,
+        "intervals": 3658,
+        "within_pairs": 431392,
+        "M1_auc": 0.6380554113196351,
+        "M2_auc": 0.637311308508271,
+        "gap": -0.0007441028113640558
+      },
+      {
+        "month": "2021-01",
+        "cases": 81,
+        "controls": 3449,
+        "intervals": 3530,
+        "within_pairs": 279369,
+        "M1_auc": 0.5646403144228601,
+        "M2_auc": 0.5630295415740472,
+        "gap": -0.001610772848812947
+      },
+      {
+        "month": "2021-02",
+        "cases": 85,
+        "controls": 3355,
+        "intervals": 3440,
+        "within_pairs": 285175,
+        "M1_auc": 0.6217515560620672,
+        "M2_auc": 0.621811168580696,
+        "gap": 5.961251862873773e-05
+      },
+      {
+        "month": "2021-03",
+        "cases": 102,
+        "controls": 3246,
+        "intervals": 3348,
+        "within_pairs": 331092,
+        "M1_auc": 0.593514793471301,
+        "M2_auc": 0.5887517668805045,
+        "gap": -0.004763026590796526
+      },
+      {
+        "month": "2021-04",
+        "cases": 104,
+        "controls": 3137,
+        "intervals": 3241,
+        "within_pairs": 326248,
+        "M1_auc": 0.5988389200853339,
+        "M2_auc": 0.6107378436036389,
+        "gap": 0.011898923518305016
+      },
+      {
+        "month": "2021-05",
+        "cases": 75,
+        "controls": 3058,
+        "intervals": 3133,
+        "within_pairs": 229350,
+        "M1_auc": 0.5494833224329627,
+        "M2_auc": 0.5502986701547853,
+        "gap": 0.000815347721822568
+      },
+      {
+        "month": "2021-06",
+        "cases": 102,
+        "controls": 2955,
+        "intervals": 3057,
+        "within_pairs": 301410,
+        "M1_auc": 0.5067184234099731,
+        "M2_auc": 0.5117348462227531,
+        "gap": 0.00501642281278003
+      },
+      {
+        "month": "2021-07",
+        "cases": 74,
+        "controls": 2880,
+        "intervals": 2954,
+        "within_pairs": 213120,
+        "M1_auc": 0.5368806306306306,
+        "M2_auc": 0.5257366741741742,
+        "gap": -0.011143956456456383
+      },
+      {
+        "month": "2021-08",
+        "cases": 78,
+        "controls": 2800,
+        "intervals": 2878,
+        "within_pairs": 218400,
+        "M1_auc": 0.5249496336996337,
+        "M2_auc": 0.5327564102564103,
+        "gap": 0.00780677655677664
+      },
+      {
+        "month": "2021-09",
+        "cases": 69,
+        "controls": 2729,
+        "intervals": 2798,
+        "within_pairs": 188301,
+        "M1_auc": 0.5972352775609264,
+        "M2_auc": 0.6011492238490502,
+        "gap": 0.003913946288123804
+      },
+      {
+        "month": "2021-10",
+        "cases": 54,
+        "controls": 2675,
+        "intervals": 2729,
+        "within_pairs": 144450,
+        "M1_auc": 0.5620976116303219,
+        "M2_auc": 0.5752232606438215,
+        "gap": 0.013125649013499552
+      },
+      {
+        "month": "2021-11",
+        "cases": 59,
+        "controls": 2616,
+        "intervals": 2675,
+        "within_pairs": 154344,
+        "M1_auc": 0.5743533924221221,
+        "M2_auc": 0.5765368268283834,
+        "gap": 0.002183434406261231
+      },
+      {
+        "month": "2021-12",
+        "cases": 68,
+        "controls": 2546,
+        "intervals": 2614,
+        "within_pairs": 173128,
+        "M1_auc": 0.529741000877963,
+        "M2_auc": 0.5469652511436626,
+        "gap": 0.017224250265699514
+      },
+      {
+        "month": "2022-01",
+        "cases": 38,
+        "controls": 2508,
+        "intervals": 2546,
+        "within_pairs": 95304,
+        "M1_auc": 0.5899962226139511,
+        "M2_auc": 0.585180055401662,
+        "gap": -0.0048161672122891686
+      },
+      {
+        "month": "2022-02",
+        "cases": 42,
+        "controls": 2466,
+        "intervals": 2508,
+        "within_pairs": 103572,
+        "M1_auc": 0.4918703896806087,
+        "M2_auc": 0.49717105009075807,
+        "gap": 0.0053006604101493715
+      },
+      {
+        "month": "2022-03",
+        "cases": 50,
+        "controls": 2414,
+        "intervals": 2464,
+        "within_pairs": 120700,
+        "M1_auc": 0.4672659486329743,
+        "M2_auc": 0.4615078707539354,
+        "gap": -0.005758077879038925
+      },
+      {
+        "month": "2022-04",
+        "cases": 45,
+        "controls": 2369,
+        "intervals": 2414,
+        "within_pairs": 106605,
+        "M1_auc": 0.5342150931006988,
+        "M2_auc": 0.5520378969091505,
+        "gap": 0.017822803808451693
+      },
+      {
+        "month": "2022-05",
+        "cases": 25,
+        "controls": 2343,
+        "intervals": 2368,
+        "within_pairs": 58575,
+        "M1_auc": 0.5269825010670081,
+        "M2_auc": 0.46176696542893725,
+        "gap": -0.06521553563807081
+      },
+      {
+        "month": "2022-06",
+        "cases": 34,
+        "controls": 2307,
+        "intervals": 2341,
+        "within_pairs": 78438,
+        "M1_auc": 0.4690456156454779,
+        "M2_auc": 0.5180142277977511,
+        "gap": 0.04896861215227316
+      },
+      {
+        "month": "2022-07",
+        "cases": 30,
+        "controls": 2276,
+        "intervals": 2306,
+        "within_pairs": 68280,
+        "M1_auc": 0.5212800234329232,
+        "M2_auc": 0.5091095489162273,
+        "gap": -0.01217047451669595
+      },
+      {
+        "month": "2022-08",
+        "cases": 26,
+        "controls": 2249,
+        "intervals": 2275,
+        "within_pairs": 58474,
+        "M1_auc": 0.36467489824537397,
+        "M2_auc": 0.38249478400656706,
+        "gap": 0.01781988576119309
+      },
+      {
+        "month": "2022-09",
+        "cases": 26,
+        "controls": 2219,
+        "intervals": 2245,
+        "within_pairs": 57694,
+        "M1_auc": 0.42578084376191633,
+        "M2_auc": 0.45200540784137,
+        "gap": 0.02622456407945367
+      },
+      {
+        "month": "2022-12",
+        "cases": 21,
+        "controls": 2162,
+        "intervals": 2183,
+        "within_pairs": 45402,
+        "M1_auc": 0.5064534601999912,
+        "M2_auc": 0.5122681820184132,
+        "gap": 0.0058147218184220195
+      },
+      {
+        "month": "2023-03",
+        "cases": 22,
+        "controls": 2111,
+        "intervals": 2133,
+        "within_pairs": 46442,
+        "M1_auc": 0.5446793850394039,
+        "M2_auc": 0.5747383833598898,
+        "gap": 0.030058998320485864
+      },
+      {
+        "month": "2023-04",
+        "cases": 20,
+        "controls": 2090,
+        "intervals": 2110,
+        "within_pairs": 41800,
+        "M1_auc": 0.6003588516746412,
+        "M2_auc": 0.5876794258373206,
+        "gap": -0.012679425837320624
+      },
+      {
+        "month": "2023-06",
+        "cases": 22,
+        "controls": 2051,
+        "intervals": 2073,
+        "within_pairs": 45122,
+        "M1_auc": 0.46915030362129334,
+        "M2_auc": 0.4353973671379815,
+        "gap": -0.033752936483311846
+      },
+      {
+        "month": "2023-09",
+        "cases": 23,
+        "controls": 1993,
+        "intervals": 2016,
+        "within_pairs": 45839,
+        "M1_auc": 0.4646698226401099,
+        "M2_auc": 0.44370514190972754,
+        "gap": -0.02096468073038238
+      },
+      {
+        "month": "2023-10",
+        "cases": 21,
+        "controls": 1970,
+        "intervals": 1991,
+        "within_pairs": 41370,
+        "M1_auc": 0.5243413101281121,
+        "M2_auc": 0.40183708000966883,
+        "gap": -0.1225042301184433
+      },
+      {
+        "month": "2024-09",
+        "cases": 23,
+        "controls": 1783,
+        "intervals": 1806,
+        "within_pairs": 41009,
+        "M1_auc": 0.5811651100977834,
+        "M2_auc": 0.5161793752590894,
+        "gap": -0.06498573483869396
+      },
+      {
+        "month": "2024-12",
+        "cases": 20,
+        "controls": 1737,
+        "intervals": 1757,
+        "within_pairs": 34740,
+        "M1_auc": 0.3909326424870466,
+        "M2_auc": 0.4591824985607369,
+        "gap": 0.06824985607369027
+      },
+      {
+        "month": "2025-08",
+        "cases": 21,
+        "controls": 1610,
+        "intervals": 1631,
+        "within_pairs": 33810,
+        "M1_auc": 0.4603667553978113,
+        "M2_auc": 0.442413487133984,
+        "gap": -0.017953268263827316
+      },
+      {
+        "month": "2025-10",
+        "cases": 20,
+        "controls": 1569,
+        "intervals": 1589,
+        "within_pairs": 31380,
+        "M1_auc": 0.5092415551306565,
+        "M2_auc": 0.5556405353728489,
+        "gap": 0.046398980242192356
+      }
+    ],
+    "eligible_intervals": 191938,
+    "total_intervals": 248939,
+    "interpretation": "Descriptive post-hoc scores; no inference or causal attribution",
+    "decomposition_population": "Eligible calendar months only; not the full-primary pooled AUC decomposition",
+    "pair_structure": {
+      "total_pairs": 634362936,
+      "within_month_pairs": 12555835,
+      "between_month_pairs": 621807101,
+      "within_pair_share": 0.019792825664076943,
+      "between_pair_share": 0.9802071743359231
+    },
+    "aggregates": {
+      "M1": {
+        "eligible_population_pooled": 0.5612218925413385,
+        "within_month_pair_weighted": 0.5601367013822657,
+        "within_month_equal_weighted": 0.5404778963250596,
+        "between_month_solved": 0.5612438052552893
+      },
+      "M2": {
+        "eligible_population_pooled": 0.6095367668201851,
+        "within_month_pair_weighted": 0.55973808193561,
+        "within_month_equal_weighted": 0.5388012036880964,
+        "between_month_solved": 0.6105423263733362
+      }
+    },
+    "gains": {
+      "eligible_pooled": 0.04831487427884662,
+      "within_month_pair_weighted": -0.00039861944665564586,
+      "between_month": 0.04929852111804689,
+      "within_weighted_contribution": -7.889805213966017e-06,
+      "between_weighted_contribution": 0.048322764084060575,
+      "within_contribution_share": -0.00016329971528913526
+    },
+    "per_month_gap_signs": {
+      "positive": 26,
+      "negative": 29,
+      "zero": 0
+    }
+  },
+  "SA06_entry": {
+    "status": "EXECUTED",
+    "reconciliations_passed": true,
+    "landmarks": 5619,
+    "entry_month_distribution": {
+      "2019-01": 5564,
+      "2019-03": 1,
+      "2019-04": 1,
+      "2019-05": 23,
+      "2019-08": 1,
+      "2019-09": 19,
+      "2019-10": 5,
+      "2019-11": 1,
+      "2020-01": 4
+    },
+    "entry_year_distribution": {
+      "2019": 5615,
+      "2020": 4
+    },
+    "earliest_entry": "2019-01",
+    "latest_entry": "2020-01",
+    "central_order_statistic_months": [
+      "2019-01",
+      "2019-01"
+    ],
+    "modal_months": [
+      "2019-01"
+    ],
+    "modal_month_share": 0.990211781455775,
+    "distinct_months": 9,
+    "per_horizon_truncation": {
+      "12": {
+        "count": 0,
+        "latest_permitted_entry": "2025-03"
+      },
+      "24": {
+        "count": 0,
+        "latest_permitted_entry": "2024-03"
+      },
+      "36": {
+        "count": 0,
+        "latest_permitted_entry": "2023-03"
+      },
+      "60": {
+        "count": 0,
+        "latest_permitted_entry": "2021-03"
+      }
+    },
+    "path_24m_endpoint_distribution": {
+      "2020-12": 5564,
+      "2021-02": 1,
+      "2021-03": 1,
+      "2021-04": 23,
+      "2021-07": 1,
+      "2021-08": 19,
+      "2021-09": 5,
+      "2021-10": 1,
+      "2021-12": 4
+    },
+    "retrospective_paths_are_not_prospective_forecasts": true
+  },
+  "no_fit_or_prediction_regeneration": true,
+  "outputs_are_aggregates_only": true
+}

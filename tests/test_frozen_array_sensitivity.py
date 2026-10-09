@@ -8,6 +8,7 @@ artifact fails this suite rather than silently invalidating the report.
 
 import json
 import re
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -135,7 +136,13 @@ def test_no_fannie_outcome_accessed():
 
 
 def test_no_manuscript_version_created_or_edited():
-    assert not (ROOT / "paper/main_v0.3.md").exists()
+    # Historical review tasks did not create v0.3; later writing tasks may.
+    for commit in ["fde602d", "7ea0bb4"]:
+        assert not subprocess.check_output(
+            ["git", "ls-tree", "--name-only", commit, "--", "paper/main_v0.3.md"],
+            cwd=ROOT,
+            text=True,
+        ).strip()
     consequences = read("reports/paper/task18_manuscript_consequences.json")
     assert consequences["applied"] is False
 

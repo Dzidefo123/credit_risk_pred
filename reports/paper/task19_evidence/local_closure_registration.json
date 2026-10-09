@@ -1,0 +1,37 @@
+{
+  "version": "task18-local-closure-corrected-v2",
+  "registered_at_utc": "2026-10-08T23:45:27.053282+00:00",
+  "repository_commit": "a4479ba4be115bc9a1d4b53ab77e258b40bd57c7",
+  "authorization": "User explicitly authorized corrected script preparation and execution after the external-review audit.",
+  "classification": "AUTHORIZED_POST_HOC_FROZEN_ARRAY_CLOSURE",
+  "original_task18_registration_available": false,
+  "original_registration_hash_is_not_claimed_as_verified": true,
+  "frozen_outputs_will_not_be_overwritten": true,
+  "code_sha256": "188f239f78c27a951632bec9ba5dc7a4135bb7d2c3a33d80cf7c72bc7acde4de",
+  "public_input_hashes": {
+    "reports/track_b/macro_competing_risk_validation.json": "453ffd6f28ccb63f4c35f51be74310c4e51e11303732139aeec5bc7a7be960ec",
+    "docs/track_b/macro_competing_risk_protocol.json": "161cf68432f6b25378460100e634c6dddcc7875f7bef95c811f557c0f371700c",
+    "docs/paper/literature/task16_preservation_manifest.json": "0ad83ee7dd35e25c8911505062938194074ed9a80fef50149ecf10190988e8a0"
+  },
+  "private_input_hashes": {
+    "data/track_b/models/macro_hazard_v1/evaluation.npy": "409260c6b6aad226577fea0bec90989b3f5045547fb54580a593b2b3006d573b",
+    "data/track_b/models/macro_hazard_v1/M1_evaluation.npy": "fd48582539ac9abc0a0bbf538901af525920aa36a7a65aea0ba75e51f43f817c",
+    "data/track_b/models/macro_hazard_v1/M2_evaluation.npy": "2e6ede15c5d3422b4a41d98c340eded08add18aa0a4d0f13ee5ac8228c10b799"
+  },
+  "population": "Task 10 primary seen-vintage evaluation only",
+  "methods": {
+    "SA01_month": "Month AUC: cases and controls >=20. Full-primary AUC reconciled. Exact eligible-month population decomposition only. Sparse months excluded. Pair weights applied to contributions; no significance/materiality threshold.",
+    "SA06_entry": "First interval per sorted contiguous history; continuity and count gates. Month/year histogram, central order statistics, modes and 24m endpoints."
+  },
+  "prohibited": [
+    "fitting",
+    "calibration",
+    "prediction regeneration",
+    "new source outcomes",
+    "Fannie",
+    "model promotion",
+    "holdout ledger API",
+    "bootstrap",
+    "causal mechanism claim"
+  ]
+}

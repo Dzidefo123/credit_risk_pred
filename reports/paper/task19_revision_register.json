@@ -1,0 +1,185 @@
+{
+  "version": "task19-v03",
+  "base_commit": "3098da7bf17dffb7f0d0f5b2a0732b6311402864",
+  "primary_title": "Population- and Regime-Dependent Transport of Vintage-Aware Macroeconomic Features in Mortgage Competing-Risk Models",
+  "alternative_titles": [
+    "When Pooled Mortgage Discrimination Improves but Probability Quality Does Not: An Audited Temporal Evaluation",
+    "Calendar Separation and Population Transport in Vintage-Aware Mortgage Competing-Risk Models",
+    "Pooled Ranking, Within-Period Discrimination and Probability Transport in Longitudinal Mortgage Risk"
+  ],
+  "new_empirical_analysis": false,
+  "prior_manuscripts_unchanged": true,
+  "novelty_decision": "DISTINCTIVE COMBINATION PLAUSIBLE WITH MATERIAL LIMITATIONS",
+  "study_level_interpretation": "MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS",
+  "original_primary_decision_unchanged": true,
+  "local_closure_admitted_without_rerun": true,
+  "changes": [
+    {
+      "change_id": "CH01",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "4.3, Abstract, Discussion",
+      "resolution": "Calendar contribution, subgroup mean and residual separated; retained aggregate interval qualified."
+    },
+    {
+      "change_id": "CH02",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "4.5, Abstract, Discussion",
+      "resolution": "Unseen metric reversal and unfavorable cause metrics promoted to central results."
+    },
+    {
+      "change_id": "CH03",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED_WITH_ERRATUM",
+      "manuscript_sections": "3.5, 4.4",
+      "resolution": "Weighted year and admitted supported-month results; structural argument withdrawn."
+    },
+    {
+      "change_id": "CH04",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "3.5, 4.7, Limitations",
+      "resolution": "Both uncertainty units shown; ROBUST_FACILITY_ONLY explicitly scoped."
+    },
+    {
+      "change_id": "CH05",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "4.6",
+      "resolution": "All frozen horizons and both causes; no dramatic-horizon-only framing."
+    },
+    {
+      "change_id": "CH06",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED_WITH_LOCAL_EVIDENCE_ADMISSION",
+      "manuscript_sections": "4.6",
+      "resolution": "Entry histogram and endpoints admitted; concentrated overlapping historical windows."
+    },
+    {
+      "change_id": "CH07",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "Title, Abstract, 3.4, Limitations",
+      "resolution": "Vintage/revision contract; certified provider releases not claimed."
+    },
+    {
+      "change_id": "CH08",
+      "original_review_status": "PROPOSED",
+      "action_status": "DISCLOSED_ANALYSIS_NOT_EXECUTED",
+      "manuscript_sections": "3.2, Limitations",
+      "resolution": "Equal interval point weighting; facility-weighted sensitivity remains open."
+    },
+    {
+      "change_id": "CH09",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "4.1, 4.2",
+      "resolution": "M0 comparison and joint-loss limitations; prevalence not equated to loss contribution."
+    },
+    {
+      "change_id": "CH10",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "3.3, Limitations",
+      "resolution": "Current state used for eligibility/events, not prediction; state-conditional increment untested."
+    },
+    {
+      "change_id": "CH11",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "4.6",
+      "resolution": "Default CIF reported beside payoff; baseline underprediction visible."
+    },
+    {
+      "change_id": "CH12",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED_WITH_NARROWER_LANGUAGE",
+      "manuscript_sections": "3.4, 4.3",
+      "resolution": "Retained support and correlation geometry; no identified mechanism."
+    },
+    {
+      "change_id": "CH13",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "Title",
+      "resolution": "Population- and regime-dependent scope."
+    },
+    {
+      "change_id": "CH14",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED_WITH_OPEN_LITERATURE_GAP",
+      "manuscript_sections": "Related work, Limitations",
+      "resolution": "Concise unresolved closest-paper comparison without priority claim."
+    },
+    {
+      "change_id": "CH15",
+      "original_review_status": "PROPOSED",
+      "action_status": "CONTEXTUALIZED_NOT_DIRECT_ANSWER_CLAIM",
+      "manuscript_sections": "Related work",
+      "resolution": "Peng future work contextualizes question; full agenda not claimed resolved."
+    },
+    {
+      "change_id": "CH16",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "3.1, Tables A/F, Limitations",
+      "resolution": "Payoff/maturity endpoint; no negligible-maturity assertion."
+    },
+    {
+      "change_id": "CH17",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "3.6, Reproducibility",
+      "resolution": "Non-virgin frozen evaluation and post-hoc status retained."
+    },
+    {
+      "change_id": "CH18",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "Whole manuscript",
+      "resolution": "Central results grouped; scope definitions and dedicated limitations."
+    },
+    {
+      "change_id": "CH19",
+      "original_review_status": "PROPOSED",
+      "action_status": "APPLIED",
+      "manuscript_sections": "Limitations, author-review flags",
+      "resolution": "Future Fannie paragraph; unfinished appendix headings removed."
+    },
+    {
+      "change_id": "CH20",
+      "original_review_status": "PROPOSED",
+      "action_status": "OMITTED_FROM_CENTRAL_PAPER",
+      "manuscript_sections": "Whole manuscript",
+      "resolution": "Earlier bounded PD/XGBoost benchmark omitted rather than generalized to model families."
+    }
+  ],
+  "remaining_placeholders": [
+    "AUTHOR REVIEW REQUIRED",
+    "PUBLICATION TERMS REVIEW REQUIRED",
+    "ETHICS AND AUTHOR REVIEW REQUIRED"
+  ],
+  "open_scientific_reviews": [
+    "CG03 conditional-entry/censoring implementation compatibility",
+    "CG06 exact mortgage vintage-aware literature and closest-paper full text"
+  ],
+  "unexecuted_strengthening": [
+    "SA04 complexity adjustment",
+    "SA05 facility weighting",
+    "SA07 current-state conditioning",
+    "SA08 support restriction",
+    "SA09 flexible challenger",
+    "SA10 maturity separation",
+    "SA11 authorized Fannie replication",
+    "Per-year unseen-vintage decomposition"
+  ],
+  "hosted_ci_at_start": {
+    "run": "https://github.com/Dzidefo123/credit_risk_pred/actions/runs/37864681856",
+    "container": "success",
+    "all_seven_test_matrix_jobs": "failure",
+    "failed_step": "Test without private datasets or historical artifacts",
+    "cause_not_independently_retrieved_from_job_logs": true,
+    "infrastructure_not_modified_in_task19": true
+  }
+}

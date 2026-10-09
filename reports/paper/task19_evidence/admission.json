@@ -1,0 +1,13 @@
+{
+  "classification": "ADMISSION_OF_PREVIOUSLY_REGISTERED_AND_EXECUTED_POST_HOC_AGGREGATES",
+  "new_analysis_performed_in_task19": false,
+  "original_task18_registration_distinct_from_local_registration": true,
+  "source_repository_commit": "a4479ba4be115bc9a1d4b53ab77e258b40bd57c7",
+  "admitted_files_sha256": {
+    "local_closure_registration.json": "dc011baa90e1736e662fa2de956c365dbef7cc1167177abce45a65ad9c36cdf2",
+    "local_closure_registration.sha256": "22b3413d468777cf5003ca6e561c3fc95663cce9f31dc7c51d3393156456dd6c",
+    "local_closure_output.json": "7a1be6c52f9e81ed8ff11ba2f2088a6c5fc112b0550e026366b56bcbe35e3102",
+    "local_closure_verification.json": "cbd9151b1d83e8a5aebf61331c7887cc53749e06d0a19468ea58e67d37c6ecd9",
+    "local_closure_script.py": "188f239f78c27a951632bec9ba5dc7a4135bb7d2c3a33d80cf7c72bc7acde4de"
+  }
+}

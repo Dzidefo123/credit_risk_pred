@@ -1,0 +1,141 @@
+{
+  "status": "PASSED",
+  "quantitative_claims": 257,
+  "mapped": 257,
+  "orphan_numeric_claims": 0,
+  "citations": 23,
+  "manuscript_words": 5995,
+  "abstract_words": 223,
+  "legacy_numeric_bindings": 123,
+  "preservation": {
+    "public": 603,
+    "private": 366,
+    "refs": 2,
+    "engineering_exceptions": 2
+  },
+  "local_evidence_admission": {
+    "admitted_files": 5,
+    "rerun": false
+  },
+  "new_empirical_analysis": false,
+  "recommendation": "READY_FOR_HOSTILE_MANUSCRIPT_REVIEW",
+  "task": "Task 19 \u2014 manuscript v0.3",
+  "base_commit": "3098da7bf17dffb7f0d0f5b2a0732b6311402864",
+  "date": "2026-10-08",
+  "distinct_bound_source_fields": 208,
+  "tests": {
+    "new_regressions": 29,
+    "targeted": {
+      "passed": 182,
+      "failed": 0,
+      "seconds": 16.22
+    },
+    "full": {
+      "passed": 1401,
+      "failed": 0,
+      "warnings": 4,
+      "seconds": 192.69
+    },
+    "initial_full_run": {
+      "passed": 1397,
+      "failed": 2,
+      "warnings": 4,
+      "seconds": 192.64,
+      "cause": "Legacy Task 17/18 tests asserted global absence of future v0.3; now scoped to original commit trees."
+    },
+    "lint": "PASSED",
+    "format": "PASSED",
+    "configuration": "PASSED",
+    "governance": "PASSED",
+    "repository_hygiene": "PASSED",
+    "git_diff_check": "PASSED",
+    "final_formatting_followup": {
+      "passed": 54,
+      "failed": 0,
+      "seconds": 6.51,
+      "scope": "Task 19 plus legacy manuscript tests after final EOF/CRLF evidence-diff cleanup"
+    },
+    "staged_diff_check": "PASSED",
+    "staged_hygiene_files": 623
+  },
+  "archives": {
+    "seven_freddie_archives": "HASH_CHAIN_PASSED",
+    "fannie_archive": "HASH_PASSED",
+    "fannie_provider_documents": 3,
+    "fannie_member_bodies_opened": false,
+    "task13a_authorized": false
+  },
+  "retained_historical_track_a_metrics": {
+    "auc": 0.868152,
+    "brier": 0.048545,
+    "log_loss": 0.17603,
+    "newly_evaluated": false
+  },
+  "novelty_decision": "DISTINCTIVE COMBINATION PLAUSIBLE WITH MATERIAL LIMITATIONS",
+  "interpretation": "MIXED_TEMPORAL_TRANSPORT_ACROSS_POPULATIONS",
+  "remaining_placeholders": [
+    "AUTHOR REVIEW REQUIRED",
+    "PUBLICATION TERMS REVIEW REQUIRED",
+    "ETHICS AND AUTHOR REVIEW REQUIRED"
+  ],
+  "open_scientific_reviews": [
+    "CG03 implementation/censoring compatibility",
+    "CG06 and incomplete closest-paper full-text comparison",
+    "Hostile manuscript review"
+  ],
+  "unexecuted_analyses": [
+    "SA04 complexity adjustment",
+    "SA05 facility weighting",
+    "SA07 current-state conditioning",
+    "SA08 support restriction",
+    "SA09 flexible challenger",
+    "SA10 maturity separation",
+    "SA11 authorized Fannie replication",
+    "Per-year unseen-vintage decomposition"
+  ],
+  "hosted_ci_at_start": {
+    "run": "https://github.com/Dzidefo123/credit_risk_pred/actions/runs/37864681856",
+    "container": "success",
+    "all_seven_test_matrix_jobs": "failure",
+    "failed_step": "Test without private datasets or historical artifacts",
+    "cause_not_independently_retrieved_from_job_logs": true,
+    "infrastructure_not_modified_in_task19": true
+  },
+  "previous_manuscripts_unchanged": true,
+  "historical_task17_task18_scientific_reports_unchanged": true,
+  "models_fitted_or_recalibrated": false,
+  "predictions_regenerated": false,
+  "holdout_consumed": false,
+  "local_closure_rerun": false,
+  "source_or_macro_data_acquired": false,
+  "Fannie_outcomes_inspected": false,
+  "engineering_compatibility_files": [
+    "tests/test_hostile_review.py",
+    "tests/test_frozen_array_sensitivity.py"
+  ],
+  "commit_message": "paper: revise manuscript after sensitivity closure",
+  "push_authorized": false,
+  "pushed": false,
+  "files_created": [
+    "reports/paper/TASK17_ERRATUM.md",
+    "reports/paper/TASK19_MANUSCRIPT_V03_REPORT.md",
+    "reports/paper/task19_claim_evidence_map.json",
+    "reports/paper/task19_evidence/.gitattributes",
+    "reports/paper/task19_evidence/admission.json",
+    "reports/paper/task19_evidence/derived_metadata.json",
+    "reports/paper/task19_evidence/local_closure_output.json",
+    "reports/paper/task19_evidence/local_closure_registration.json",
+    "reports/paper/task19_evidence/local_closure_registration.sha256",
+    "reports/paper/task19_evidence/local_closure_script.py",
+    "reports/paper/task19_evidence/local_closure_verification.json",
+    "reports/paper/task19_figure_table_plan.json",
+    "reports/paper/task19_manuscript_template.md",
+    "reports/paper/task19_preservation_manifest.json",
+    "reports/paper/task19_revision_register.json",
+    "paper/main_v0.3.md",
+    "scripts/build_task19_manuscript.py",
+    "scripts/check_task19_manuscript.py",
+    "tests/test_task19_manuscript_v03.py",
+    "reports/paper/task19_verification.json"
+  ]
+}
